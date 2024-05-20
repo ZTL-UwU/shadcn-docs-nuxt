@@ -26,6 +26,8 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.18.1",
+    "@vueuse/core": "^10.9.0",
+    "@vueuse/nuxt": "^10.9.0",
     "eslint": "9.2.0",
     "vue-tsc": "^2.0.19"
   }
