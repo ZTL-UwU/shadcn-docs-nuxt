@@ -12,11 +12,13 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@nuxt/content": "^2.12.1",
+    "@nuxt/image": "^1.7.0",
     "@nuxtjs/tailwindcss": "^6.12.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "lucide-vue-next": "^0.378.0",
     "nuxt": "^3.11.2",
+    "nuxt-icon": "^0.6.10",
     "radix-vue": "^1.8.0",
     "shadcn-nuxt": "^0.10.4",
     "tailwind-merge": "^2.3.0",
@@ -26,9 +28,11 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.18.1",
+    "@iconify-json/lucide": "^1.1.187",
     "@vueuse/core": "^10.9.0",
     "@vueuse/nuxt": "^10.9.0",
     "eslint": "9.2.0",
+    "shiki": "^1.6.0",
     "vue-tsc": "^2.0.19"
   }
 }

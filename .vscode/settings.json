@@ -44,5 +44,6 @@
     "gql",
     "graphql",
     "astro"
-  ]
+  ],
+  "editor.tabSize": 2
 }
