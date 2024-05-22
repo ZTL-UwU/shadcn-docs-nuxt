@@ -12,6 +12,30 @@ to: https://nuxt.studio/themes/docs
 Use this template on Nuxt Studio and start your documentation in seconds.
 ::
 
+::alert{type="success"}
+关于 Composables 的更多信息，请参阅 [Vue 官方文档](https://cn.vuejs.org/guide/reusability/composables.html)、[Nuxt 文档](https://nuxt.com/docs/guide/directory-structure/composables)
+::
+
+::alert{type="info"}
+关于 Composables 的更多信息，请参阅 [Vue 官方文档](https://cn.vuejs.org/guide/reusability/composables.html)、[Nuxt 文档](https://nuxt.com/docs/guide/directory-structure/composables)
+::
+
+::alert{type="danger"}
+关于 Composables 的更多信息，请参阅 [Vue 官方文档](https://cn.vuejs.org/guide/reusability/composables.html)、[Nuxt 文档](https://nuxt.com/docs/guide/directory-structure/composables)
+::
+
+::alert{type="danger" icon="tabler:check"}
+关于 Composables 的更多信息，请参阅 [Vue 官方文档](https://cn.vuejs.org/guide/reusability/composables.html)、[Nuxt 文档](https://nuxt.com/docs/guide/directory-structure/composables)
+::
+
+::alert{type="danger" icon="tabler:check" title="asd"}
+关于 Composables 的更多信息，请参阅 [Vue 官方文档](https://cn.vuejs.org/guide/reusability/composables.html)、[Nuxt 文档](https://nuxt.com/docs/guide/directory-structure/composables)
+::
+
+::alert{type="warning"}
+关于 Composables 的更多信息，请参阅 [Vue 官方文档](https://cn.vuejs.org/guide/reusability/composables.html)、[Nuxt 文档](https://nuxt.com/docs/guide/directory-structure/composables)
+::
+
 ## Quick Start
 
 You can start a fresh new project with:
