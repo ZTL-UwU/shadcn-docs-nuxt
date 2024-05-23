@@ -8,6 +8,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
+    "typecheck": "nuxt typecheck",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
@@ -32,6 +33,7 @@
     "@vueuse/core": "^10.9.0",
     "@vueuse/nuxt": "^10.9.0",
     "eslint": "9.2.0",
+    "lucide-vue-next": "^0.379.0",
     "shiki": "^1.6.0",
     "vue-tsc": "^2.0.19"
   }
