@@ -1,7 +1,7 @@
 <template>
   <UiAlert
     class="[&:not(:first-child)]:mt-5 transition-all"
-    :class="[typeTwClass[type], to && 'cursor-pointer hover:bg-muted']"
+    :class="[typeTwClass[type], to && 'cursor-pointer hover:bg-zinc-50 dark:hover:bg-zinc-900']"
     @click="alertClick"
   >
     <Icon v-if="icon && title" :name="icon" />
