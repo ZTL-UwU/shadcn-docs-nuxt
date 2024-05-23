@@ -1,6 +1,7 @@
 ---
 title: Installation
 description: Get started with Nuxt UI Pro documentation template.
+navigation: false
 ---
 
 ::callout

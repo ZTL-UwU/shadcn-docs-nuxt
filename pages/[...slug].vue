@@ -24,7 +24,7 @@
             title="Empty Page"
             icon="lucide:circle-x"
           >
-            Start writing in <ProseCodeInline>content/{{ page._file }}</ProseCodeInline> to see this page taking shape.
+            Start writing in <ProseCodeInline>content/{{ page?._file }}</ProseCodeInline> to see this page taking shape.
           </Alert>
 
           <ContentRenderer
@@ -37,7 +37,7 @@
           <LayoutPrevNext />
         </div>
         <div class="hidden text-sm xl:block">
-          <div class="sticky top-16 -mt-10 h-[calc(100vh-3.5rem)] overflow-hidden pt-6">
+          <div class="sticky top-16 h-[calc(100vh-3.5rem)] overflow-hidden">
             <LayoutToc />
           </div>
         </div>

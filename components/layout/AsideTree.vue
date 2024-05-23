@@ -1,10 +1,11 @@
 <template>
-  ↓
-  <ul>
-    <li v-for="link in links" :key="link._id">
-      {{ link.title }}
-      <LayoutAsideTree v-if="link.children" :links="link.children" />
-    </li>
+  <ul :class="[level > 0 ? 'border-l' : 'py-2', level <= 1 && 'mt-2']">
+    <template v-for="link in links" :key="link._id">
+      <LayoutAsideTreeItem
+        :link="link"
+        :level="level"
+      />
+    </template>
   </ul>
 </template>
 
@@ -13,5 +14,6 @@ import type { NavItem } from '@nuxt/content/types';
 
 defineProps<{
   links: NavItem[];
+  level: number;
 }>();
 </script>
