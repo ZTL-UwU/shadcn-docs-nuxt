@@ -19,30 +19,33 @@
         </Transition>
       </span>
     </div>
-    <div
-      class="p-3 bg-zinc-50 dark:bg-zinc-900 text-sm relative"
-      :class="[`highlight-${language}`]"
-      @mouseenter="hovered = true"
-      @mouseleave="hovered = false"
-    >
-      <span v-if="!filename" class="absolute right-4">
-        <Transition name="fade" mode="out-in">
-          <Icon
-            v-if="copied === false"
-            name="lucide:copy"
-            class="self-center cursor-pointer text-muted-foreground hover:text-primary"
-            @click="copyCode"
-          />
-          <Icon
-            v-else
-            ref="checkIconRef"
-            name="lucide:check"
-            class="self-center cursor-pointer text-muted-foreground hover:text-primary"
-          />
-        </Transition>
-      </span>
-      <slot />
-    </div>
+    <UiScrollArea>
+      <div
+        class="p-3 bg-zinc-50 dark:bg-zinc-900 text-sm relative overflow-x-auto "
+        :class="[`highlight-${language}`, !filename && 'pr-10']"
+        @mouseenter="hovered = true"
+        @mouseleave="hovered = false"
+      >
+        <span v-if="!filename" class="absolute right-4">
+          <Transition name="fade" mode="out-in">
+            <Icon
+              v-if="copied === false"
+              name="lucide:copy"
+              class="self-center cursor-pointer text-muted-foreground hover:text-primary"
+              @click="copyCode"
+            />
+            <Icon
+              v-else
+              ref="checkIconRef"
+              name="lucide:check"
+              class="self-center cursor-pointer text-muted-foreground hover:text-primary"
+            />
+          </Transition>
+        </span>
+        <slot />
+      </div>
+      <UiScrollBar orientation="horizontal" />
+    </UiScrollArea>
   </UiCard>
 </template>
 

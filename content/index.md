@@ -44,6 +44,16 @@ You can start a fresh new project with:
 npx nuxi init -t github:nuxt-ui-pro/docs
 ```
 
+```bash
+npx nuxi init -t github:nuxt-ui-pro/docs dasjnasdhashdishdiashduiashdsuahdiashdsaihduiashdashdusahdauhaishdishdadsaddasdasdasdsad
+```
+
+```bash
+npx nuxi init -t github:nuxt-ui-pro/docs dasjnasdhashdishdia
+shduiashdsuahdiashdsaihduiash
+dashdusahdauhaishdishdadsaddasdasdasdsad
+```
+
 or create a new repository from GitHub:
 
 1. Open <https://github.com/nuxt-ui-pro/docs>

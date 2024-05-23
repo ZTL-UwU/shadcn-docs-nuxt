@@ -1,7 +1,7 @@
 <template>
-  <UiAlert class="[&:not(:first-child)]:mt-4" :class="[typeTwClass[type]]">
+  <UiAlert class="[&:not(:first-child)]:mt-5" :class="[typeTwClass[type]]">
     <Icon v-if="icon && title" :name="icon" />
-    <UiAlertTitle v-if="title">
+    <UiAlertTitle v-if="title" class="font-semibold">
       {{ title }}
     </UiAlertTitle>
     <UiAlertDescription>
@@ -16,11 +16,13 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{
-  title: string;
-  icon: string;
-  type: 'info' | 'warning' | 'success' | 'danger';
-}>();
+withDefaults(defineProps<{
+  title?: string;
+  icon?: string;
+  type?: 'info' | 'warning' | 'success' | 'danger';
+}>(), {
+  type: 'info',
+});
 
 const typeTwClass = {
   info: '',

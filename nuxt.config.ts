@@ -20,6 +20,7 @@ export default defineNuxtConfig({
     componentDir: './components/ui',
   },
   content: {
+    documentDriven: true,
     highlight: {
       theme: {
         default: 'github-light',
