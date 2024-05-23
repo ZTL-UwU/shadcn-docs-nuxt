@@ -1,6 +1,6 @@
 <template>
   <UiCard class="[&:not(:first-child)]:mt-5 mb-5 overflow-hidden">
-    <div v-if="filename" class="p-3 border-b flex">
+    <div v-if="filename" class="p-3 border-b flex text-sm font-mono">
       {{ filename }}
       <span class="ml-auto mr-1">
         <Transition name="fade" mode="out-in">
