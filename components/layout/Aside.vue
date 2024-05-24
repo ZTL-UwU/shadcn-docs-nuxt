@@ -4,11 +4,16 @@
       <li v-for="link in navigation" :key="link.id">
         <NuxtLink
           :to="link._path"
-          class="px-2 py-2 mb-1 hover:bg-muted rounded-md w-full block transition-all"
+          class="px-3 py-2 mb-1 hover:bg-muted rounded-md w-full flex gap-2 transition-all"
           :class="[
             path.startsWith(link._path) && 'bg-muted hover:bg-muted font-semibold',
           ]"
         >
+          <Icon
+            v-if="link.icon"
+            :name="link.icon"
+            class="self-center"
+          />
           {{ link.title }}
         </NuxtLink>
       </li>

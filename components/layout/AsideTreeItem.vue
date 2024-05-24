@@ -6,7 +6,12 @@
     >
       <UiCollapsible v-if="link.children" v-model:open="isOpen">
         <UiCollapsibleTrigger class="w-full text-left" :class="[level > 0 ? 'py-1.5' : 'pt-2']">
-          <div class="w-full flex">
+          <div class="w-full flex gap-1">
+            <Icon
+              v-if="link.icon"
+              :name="link.icon"
+              class="self-center"
+            />
             {{ link.title }}
             <Icon
               :name="isOpen ? 'lucide:chevrons-down-up' : 'lucide:chevrons-up-down'"
@@ -22,12 +27,17 @@
       <NuxtLink
         v-else
         :to="link._path"
-        class="w-full block hover:underline text-muted-foreground"
+        class="w-full flex hover:underline text-muted-foreground gap-1"
         :class="[
           isActive && 'font-semibold text-primary',
           level > 0 ? 'py-1.5' : 'pt-2',
         ]"
       >
+        <Icon
+          v-if="link.icon"
+          :name="link.icon"
+          class="self-center"
+        />
         {{ link.title }}
       </NuxtLink>
     </div>
@@ -43,7 +53,7 @@ const props = defineProps<{
 }>();
 
 const collapsed = useCollapsedMap();
-const isOpen = ref(collapsed.value.get(props.link._path) || props.level < 1);
+const isOpen = ref(props.level < 1 || collapsed.value.get(props.link._path) || true);
 watch(isOpen, (v) => {
   collapsed.value.set(props.link._path, v);
 });
