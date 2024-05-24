@@ -1,6 +1,6 @@
 <template>
   <UiScrollArea orientation="vertical" class="relative overflow-hidden h-full py-6 pr-6 text-sm" type="auto">
-    <ul class="pb-3 border-b">
+    <ul v-if="useLevel" class="pb-4 border-b mb-1">
       <li v-for="link in navigation" :key="link.id">
         <NuxtLink
           :to="link._path"
@@ -25,14 +25,19 @@
 <script setup lang="ts">
 const { navDirFromPath } = useContentHelpers();
 const { navigation } = useContent();
+const { useLevel } = useConfig().value.aside;
 
 const tree = computed(() => {
   const route = useRoute();
   const path = route.path.split('/');
-  const leveledPath = path.splice(0, 2).join('/');
+  if (useLevel) {
+    const leveledPath = path.splice(0, 2).join('/');
 
-  const dir = navDirFromPath(leveledPath, navigation.value);
-  return dir ?? [];
+    const dir = navDirFromPath(leveledPath, navigation.value);
+    return dir ?? [];
+  }
+
+  return navigation.value;
 });
 
 const path = useRoute().path;

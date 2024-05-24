@@ -1,0 +1,13 @@
+<template>
+  <NuxtLink v-if="logo.light && logo.dark" to="/" class="flex">
+    <img :src="logo.light" class="dark:hidden h-7">
+    <img :src="logo.dark" class="hidden dark:block h-7">
+    <span v-if="showTitle && title" class="self-center font-bold ml-3">
+      {{ title }}
+    </span>
+  </NuxtLink>
+</template>
+
+<script setup lang="ts">
+const { logo, title, showTitle } = useConfig().value.header;
+</script>

@@ -5,11 +5,11 @@
       <aside class="fixed top-[102px] lg:top-[60px] z-30 -ml-2 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 md:sticky md:block overflow-y-auto">
         <LayoutAside />
       </aside>
-      <main class="relative py-6 lg:gap-10 lg:py-8 lg:grid lg:grid-cols-[1fr_200px]">
+      <main class="relative py-6" :class="[config.toc.enable && 'lg:gap-10 lg:py-8 lg:grid lg:grid-cols-[1fr_200px]']">
         <div class="mx-auto w-full min-w-0">
-          <LayoutBreadcrumb class="mb-4" />
+          <LayoutBreadcrumb v-if="config.main.breadCrumb" class="mb-4" />
 
-          <div class="space-y-2 mb-6">
+          <div v-if="config.main.showTitle" class="space-y-2 mb-6">
             <ProseH1>
               {{ page?.title }}
             </ProseH1>
@@ -35,7 +35,7 @@
 
           <LayoutPrevNext />
         </div>
-        <div class="hidden text-sm lg:block">
+        <div v-if="config.toc.enable" class="hidden text-sm lg:block">
           <div class="sticky top-[90px] h-[calc(100vh-3.5rem)] overflow-hidden">
             <LayoutToc :is-small="false" />
           </div>
@@ -48,4 +48,5 @@
 
 <script setup lang="ts">
 const { page } = useContent();
+const config = useConfig();
 </script>

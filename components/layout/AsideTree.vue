@@ -1,5 +1,5 @@
 <template>
-  <ul :class="[level > 0 ? 'border-l' : 'py-2', level <= 1 && 'mt-2']">
+  <ul :class="[level > 0 ? 'border-l' : '[&:not(:first-child)]:py-2']">
     <template v-for="link in links" :key="link._id">
       <LayoutAsideTreeItem
         :link="link"

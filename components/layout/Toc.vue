@@ -7,7 +7,7 @@
       type="hover"
     >
       <p class="mb-2 text-base font-semibold">
-        On This Page
+        {{ title }}
       </p>
       <LayoutTocTree :links="toc.links" :level="0" />
     </UiScrollArea>
@@ -35,5 +35,6 @@
 defineProps<{ isSmall: boolean }>();
 
 const { toc } = useContent();
+const { title } = useConfig().value.toc;
 const isOpen = ref(false);
 </script>

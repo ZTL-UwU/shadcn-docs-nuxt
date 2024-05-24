@@ -6,10 +6,11 @@
         size="icon"
         class="md:hidden"
       >
-        <Icon name="lucide:menu" />
+        <Icon name="lucide:menu" size="18" />
       </UiButton>
     </UiSheetTrigger>
     <UiSheetContent side="left" class="pr-0">
+      <LayoutHeaderLogo />
       <LayoutAside />
     </UiSheetContent>
   </UiSheet>
