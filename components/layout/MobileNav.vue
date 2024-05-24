@@ -11,7 +11,7 @@
     </UiSheetTrigger>
     <UiSheetContent side="left" class="pr-0">
       <LayoutHeaderLogo />
-      <LayoutAside />
+      <LayoutAside is-mobile />
     </UiSheetContent>
   </UiSheet>
 </template>

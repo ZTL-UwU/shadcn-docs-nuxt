@@ -14,9 +14,9 @@
     <UiCollapsible
       v-else
       v-model:open="isOpen"
-      class="block lg:hidden text-sm px-4 py-3 w-full border-b"
+      class="block lg:hidden text-sm w-full border-b"
     >
-      <UiCollapsibleTrigger class="w-full flex text-left font-semibold">
+      <UiCollapsibleTrigger class="px-4 py-3 w-full flex text-left font-semibold">
         On This Page
         <Icon
           name="lucide:chevron-right"
@@ -25,7 +25,7 @@
         />
       </UiCollapsibleTrigger>
       <UiCollapsibleContent>
-        <LayoutTocTree :links="toc.links" :level="0" class="text-sm pl-4 border-l my-3" />
+        <LayoutTocTree :links="toc.links" :level="0" class="text-sm pl-4 border-l mb-3 mx-4" />
       </UiCollapsibleContent>
     </UiCollapsible>
   </template>

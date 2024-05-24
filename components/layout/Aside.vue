@@ -1,5 +1,6 @@
 <template>
   <UiScrollArea orientation="vertical" class="relative overflow-hidden h-full py-6 pr-6 text-sm" type="auto">
+    <LayoutHeaderNavMobile v-if="isMobile" class="border-b pb-2 mb-5" />
     <ul v-if="useLevel" class="pb-4 border-b mb-1">
       <li v-for="link in navigation" :key="link.id">
         <NuxtLink
@@ -13,6 +14,7 @@
             v-if="link.icon"
             :name="link.icon"
             class="self-center"
+            size="16"
           />
           {{ link.title }}
         </NuxtLink>
@@ -23,6 +25,8 @@
 </template>
 
 <script setup lang="ts">
+defineProps<{ isMobile: boolean }>();
+
 const { navDirFromPath } = useContentHelpers();
 const { navigation } = useContent();
 const { useLevel } = useConfig().value.aside;
