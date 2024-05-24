@@ -5,14 +5,13 @@
       :class="[level > 0 && 'pl-4']"
     >
       <UiCollapsible v-if="link.children" v-model:open="isOpen">
-        <UiCollapsibleTrigger class="w-full text-left" :class="[level > 0 ? 'py-1.5 px-2' : 'pt-2']">
+        <UiCollapsibleTrigger class="w-full text-left" :class="[level > 0 ? 'py-1.5' : 'pt-2']">
           <div class="w-full flex">
             {{ link.title }}
             <Icon
               :name="isOpen ? 'lucide:chevrons-down-up' : 'lucide:chevrons-up-down'"
               size="12"
               class="ml-auto self-center"
-              :class="level === 0 && 'mr-2'"
             />
           </div>
         </UiCollapsibleTrigger>
@@ -26,7 +25,7 @@
         class="w-full block hover:underline text-muted-foreground"
         :class="[
           isActive && 'font-semibold text-primary',
-          level > 0 ? 'py-1.5 px-2' : 'pt-2',
+          level > 0 ? 'py-1.5' : 'pt-2',
         ]"
       >
         {{ link.title }}
