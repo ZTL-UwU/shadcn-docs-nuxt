@@ -1,29 +1,34 @@
 <template>
   <template v-if="toc?.links">
-    <div class="hidden xl:block">
+    <div class="hidden lg:block">
       <UiScrollArea orientation="vertical" class="h-[calc(100vh-6.5rem)] z-30 md:block overflow-y-auto" type="hover">
-        <p class="mb-2 text-base font-semibold">
+        <p v-if="toc.links.length" class="mb-2 text-base font-semibold">
           On This Page
         </p>
         <LayoutTocTree :links="toc.links" :level="0" />
       </UiScrollArea>
     </div>
 
-    <div class="block xl:hidden mb-6">
-      <UiCollapsible>
-        <UiCollapsibleTrigger>
-          <UiButton variant="outline">
-            On This Page
-          </UiButton>
-        </UiCollapsibleTrigger>
-        <UiCollapsibleContent>
-          <LayoutTocTree :links="toc.links" :level="0" class="text-sm pl-4 border-l mt-4" />
-        </UiCollapsibleContent>
-      </UiCollapsible>
-    </div>
+    <UiCollapsible
+      v-model:open="isOpen"
+      class="block lg:hidden text-sm px-4 py-3 w-full"
+    >
+      <UiCollapsibleTrigger class="w-full flex text-left font-semibold">
+        On This Page
+        <Icon
+          name="lucide:chevron-right"
+          class="ml-auto self-center transition-all"
+          :class="[isOpen && 'rotate-90']"
+        />
+      </UiCollapsibleTrigger>
+      <UiCollapsibleContent>
+        <LayoutTocTree :links="toc.links" :level="0" class="text-sm pl-4 border-l my-3" />
+      </UiCollapsibleContent>
+    </UiCollapsible>
   </template>
 </template>
 
 <script setup lang="ts">
 const { toc } = useContent();
+const isOpen = ref(false);
 </script>
