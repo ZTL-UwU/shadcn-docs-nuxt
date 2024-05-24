@@ -43,6 +43,10 @@ const props = defineProps<{
   level: number;
 }>();
 
-const isOpen = ref(props.level < 1);
+const collapsed = useCollapsedMap();
+const isOpen = ref(collapsed.value.get(props.link._path) || props.level < 1);
+watch(isOpen, (v) => {
+  collapsed.value.set(props.link._path, v);
+});
 const isActive = computed(() => props.link._path === useRoute().path);
 </script>
