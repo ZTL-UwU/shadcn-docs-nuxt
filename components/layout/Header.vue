@@ -4,18 +4,21 @@
       <LayoutHeaderLogo class="hidden md:flex flex-1" />
       <LayoutMobileNav />
       <LayoutHeaderNav class="hidden lg:flex flex-1" />
-      <div class="flex flex-1 justify-end">
-        <DarkModeToggle v-if="config.header.darkModeToggle" />
-        <NuxtLink
-          v-for="(link, i) in config.header.links"
-          :key="i"
-          :to="link?.to"
-          :target="link?.target"
-        >
-          <UiButton variant="ghost" size="icon" class="flex gap-2">
-            <Icon v-if="link?.icon" :name="link.icon" size="18" />
-          </UiButton>
-        </NuxtLink>
+      <div class="flex flex-1 justify-end gap-2">
+        <LayoutHeaderSearchButton />
+        <div class="flex">
+          <DarkModeToggle v-if="config.header.darkModeToggle" />
+          <NuxtLink
+            v-for="(link, i) in config.header.links"
+            :key="i"
+            :to="link?.to"
+            :target="link?.target"
+          >
+            <UiButton variant="ghost" size="icon" class="flex gap-2">
+              <Icon v-if="link?.icon" :name="link.icon" size="18" />
+            </UiButton>
+          </NuxtLink>
+        </div>
       </div>
     </div>
     <div v-if="config.toc.enable" class="lg:hidden">

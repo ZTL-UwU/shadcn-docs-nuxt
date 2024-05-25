@@ -16,7 +16,7 @@
       v-model:open="isOpen"
       class="block lg:hidden text-sm w-full border-b"
     >
-      <UiCollapsibleTrigger class="px-4 py-3 w-full flex text-left font-semibold">
+      <UiCollapsibleTrigger class="px-4 py-3 w-full flex text-left font-medium">
         On This Page
         <Icon
           name="lucide:chevron-right"
