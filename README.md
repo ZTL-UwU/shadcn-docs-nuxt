@@ -1,3 +1,5 @@
+![Hero](https://github.com/ZTL-UwU/shadcn-docs-nuxt/assets/49156174/b317288d-092d-4656-af5e-54034351daca)
+
 # shadcn-docs-nuxt
 
 [![npm version][npm-version-src]][npm-version-href]
