@@ -38,23 +38,10 @@
 </template>
 
 <script setup lang="ts">
+import type { AppConfigInput } from 'nuxt/schema';
+
 const props = defineProps<{
-  item: {
-    title: string;
-    links: {
-      title: string;
-      to: string;
-      description: string;
-      target: string;
-    }[];
-    to?: undefined;
-    target?: undefined;
-  } | {
-    title: string;
-    to: string;
-    target: string;
-    links?: undefined;
-  };
+  item: Exclude<AppConfigInput['shadcnDocs'], undefined>['header']['nav'][0];
   index: number;
 }>();
 
