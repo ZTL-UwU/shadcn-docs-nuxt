@@ -1,75 +1,34 @@
-# Nuxt 3 Minimal Starter
+# shadcn-docs-nuxt
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+[![npm version][npm-version-src]][npm-version-href]
+[![npm downloads][npm-downloads-src]][npm-downloads-href]
+[![License][license-src]][license-href]
 
-## Setup
+Beautifully designed _Nuxt Content_ template with _shadcn-vue_. **Customizable. Compatible. Open Source.**
 
-Make sure to install the dependencies:
+- [Documentation / Demo](https://shadcn-docs-nuxt.vercel.app/)
 
-```bash
-# npm
-npm install
+## Contributing
 
-# pnpm
-pnpm install
+1. Clone this repository
+2. Install dependencies `bun install`.
+3. Use `bun run dev` to start dev server.
 
-# yarn
-yarn install
+## Credits
 
-# bun
-bun install
-```
+- [Nuxt Content](https://content.nuxt.com/): Content made easy for Vue Developers.
+- [shadcn-ui](https://ui.shadcn.com/): For the beautiful component & docs design.
+- [shadcn-vue](https://www.shadcn-vue.com/): For the vue port of shadcn-ui & some docs component source.
+- [Docus](https://docus.dev/): For the inspiration & some docs component source.
+- [Nuxt UI Pro Docs](https://docs-template.nuxt.dev/): For the inspiration.
 
-## Development Server
+## License
 
-Start the development server on `http://localhost:3000`:
+MIT
 
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+[npm-version-src]: https://img.shields.io/npm/v/shadcn-docs-nuxt?style=flat&colorA=18181b&colorB=18181b
+[npm-version-href]: https://npmjs.com/package/shadcn-docs-nuxt
+[npm-downloads-src]: https://img.shields.io/npm/dm/shadcn-docs-nuxt?style=flat&colorA=18181b&colorB=18181b
+[npm-downloads-href]: https://npmjs.com/package/shadcn-docs-nuxt
+[license-src]: https://img.shields.io/github/license/ZTL-UwU/shadcn-docs-nuxt.svg?style=flat&colorA=18181b&colorB=18181b
+[license-href]: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/LICENSE
