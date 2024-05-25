@@ -69,5 +69,9 @@ export default defineAppConfig({
       enable: true,
       title: 'On This Page',
     },
+    search: {
+      enable: true,
+      inAside: false,
+    },
   },
 });

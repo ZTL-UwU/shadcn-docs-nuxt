@@ -5,7 +5,7 @@
       <LayoutMobileNav />
       <LayoutHeaderNav class="hidden lg:flex flex-1" />
       <div class="flex flex-1 justify-end gap-2">
-        <LayoutHeaderSearchButton />
+        <LayoutSearchButton v-if="!config.search.inAside" />
         <div class="flex">
           <DarkModeToggle v-if="config.header.darkModeToggle" />
           <NuxtLink

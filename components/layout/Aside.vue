@@ -1,7 +1,8 @@
 <template>
   <UiScrollArea orientation="vertical" class="relative overflow-hidden h-full py-6 pr-6 text-sm" type="auto">
     <LayoutHeaderNavMobile v-if="isMobile" class="border-b pb-2 mb-5" />
-    <ul v-if="useLevel" class="pb-4 border-b mb-1">
+    <LayoutSearchButton v-if="config.search.inAside" />
+    <ul v-if="config.aside.useLevel" class="pb-4 border-b mb-1">
       <li v-for="link in navigation" :key="link.id">
         <NuxtLink
           :to="link._path"
@@ -29,12 +30,12 @@ defineProps<{ isMobile: boolean }>();
 
 const { navDirFromPath } = useContentHelpers();
 const { navigation } = useContent();
-const { useLevel } = useConfig().value.aside;
+const config = useConfig();
 
 const tree = computed(() => {
   const route = useRoute();
   const path = route.path.split('/');
-  if (useLevel) {
+  if (config.value.aside.useLevel) {
     const leveledPath = path.splice(0, 2).join('/');
 
     const dir = navDirFromPath(leveledPath, navigation.value);
