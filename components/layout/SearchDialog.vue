@@ -25,7 +25,7 @@
             </NuxtLink>
           </div>
 
-          <div v-if="!searchResult?.length && input?.length" class="text-center text-muted-foreground p-2">
+          <div v-if="!searchResult?.length && input?.length" class="text-center text-muted-foreground pt-4">
             No results found.
           </div>
 

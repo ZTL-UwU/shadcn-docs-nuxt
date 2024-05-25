@@ -7,7 +7,7 @@
       </aside>
       <main class="relative py-6" :class="[config.toc.enable && 'lg:gap-10 lg:py-8 lg:grid lg:grid-cols-[1fr_200px]']">
         <div class="mx-auto w-full min-w-0">
-          <LayoutBreadcrumb v-if="config.main.breadCrumb" class="mb-4" />
+          <LayoutBreadcrumb v-if="page?.body && config.main.breadCrumb" class="mb-4" />
 
           <div v-if="config.main.showTitle" class="space-y-2 mb-6">
             <ProseH1>
@@ -49,4 +49,10 @@
 <script setup lang="ts">
 const { page } = useContent();
 const config = useConfig();
+
+useSeoMeta({
+  title: `${page.value?.title ?? '404'} - ${config.value.site.name}`,
+  ogTitle: page.value?.title,
+  description: page.value?.description,
+});
 </script>

@@ -1,5 +1,8 @@
 export default defineAppConfig({
   shadcnDocs: {
+    site: {
+      name: 'shadcn-docs',
+    },
     header: {
       title: 'shadcn-docs',
       showTitle: true,
