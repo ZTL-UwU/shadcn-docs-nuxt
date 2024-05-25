@@ -11,7 +11,7 @@
               <li v-for="link in item.links" :key="link.title">
                 <NuxtLink
                   :to="link.to"
-                  :target="link.to"
+                  :target="link.target"
                   class="px-3 py-2 mb-1 hover:bg-muted rounded-md w-full block gap-2 transition-all"
                 >
                   <div class="font-semibold">

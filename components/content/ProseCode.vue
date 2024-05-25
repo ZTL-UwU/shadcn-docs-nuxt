@@ -1,47 +1,19 @@
 <template>
-  <UiCard class="[&:not(:first-child)]:mt-5 mb-5 overflow-hidden">
-    <div v-if="filename" class="p-3 border-b flex text-sm font-mono">
+  <UiCard class="[&:not(:first-child)]:mt-5 mb-5 overflow-hidden" :class="[inGroup && 'rounded-t-none']">
+    <div v-if="!inGroup && filename" class="p-3 border-b flex text-sm font-mono">
       <Icon v-if="icon" :name="icon" class="self-center mr-1.5" />
       {{ filename }}
       <span class="ml-auto mr-1">
-        <Transition name="fade" mode="out-in">
-          <Icon
-            v-if="copied === false"
-            name="lucide:copy"
-            class="self-center cursor-pointer text-muted-foreground hover:text-primary"
-            @click="copyCode"
-          />
-          <Icon
-            v-else
-            ref="checkIconRef"
-            name="lucide:check"
-            class="self-center cursor-pointer text-muted-foreground hover:text-primary"
-          />
-        </Transition>
+        <CodeCopy :code="code" />
       </span>
     </div>
     <UiScrollArea>
       <div
         class="p-3 bg-zinc-50 dark:bg-zinc-900 text-sm relative overflow-x-auto "
         :class="[`highlight-${language}`, !filename && 'pr-10']"
-        @mouseenter="hovered = true"
-        @mouseleave="hovered = false"
       >
         <span v-if="!filename" class="absolute right-4">
-          <Transition name="fade" mode="out-in">
-            <Icon
-              v-if="copied === false"
-              name="lucide:copy"
-              class="self-center cursor-pointer text-muted-foreground hover:text-primary"
-              @click="copyCode"
-            />
-            <Icon
-              v-else
-              ref="checkIconRef"
-              name="lucide:check"
-              class="self-center cursor-pointer text-muted-foreground hover:text-primary"
-            />
-          </Transition>
+          <CodeCopy :code="code" />
         </span>
         <slot />
       </div>
@@ -66,24 +38,14 @@ const props = defineProps({
     type: String,
     default: null,
   },
+  inGroup: {
+    type: Boolean,
+    default: false,
+  },
   highlights: {
     type: Array as () => number[],
     default: () => [],
   },
-});
-const hovered = ref(false);
-
-const { copy } = useClipboard({ source: props.code });
-const copied = ref(false);
-function copyCode() {
-  copy(props.code)
-    .then(
-      () => { copied.value = true; },
-    );
-}
-const checkIconRef = ref<HTMLElement>();
-onClickOutside(checkIconRef, () => {
-  copied.value = false;
 });
 
 const iconMap = new Map(Object.entries(useConfig().value.main.codeIcon));

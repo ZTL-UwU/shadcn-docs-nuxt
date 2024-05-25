@@ -4,13 +4,13 @@
     :class="[typeTwClass[type], to && 'cursor-pointer hover:bg-zinc-50 dark:hover:bg-zinc-900']"
     @click="alertClick"
   >
-    <Icon v-if="icon && title" :name="icon" />
+    <Icon v-if="icon && title" :name="icon" size="16" />
     <UiAlertTitle v-if="title" class="font-semibold">
       {{ title }}
     </UiAlertTitle>
     <UiAlertDescription>
       <div class="flex flex-row space-x-2">
-        <Icon v-if="icon && !title" :name="icon" class="self-center mb-[2px] min-w-5" />
+        <Icon v-if="icon && !title" :name="icon" size="16" class="self-center mb-[2px] min-w-5" />
         <span :class="[to && 'pr-3']">
           <slot />
         </span>

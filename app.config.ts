@@ -12,6 +12,19 @@ export default defineAppConfig({
       },
       darkModeToggle: true,
       nav: [{
+        title: 'Docs',
+        links: [{
+          title: 'Getting Started',
+          to: '/getting-started',
+          description: 'For the beautiful component design & docs design',
+          target: undefined,
+        }, {
+          title: 'API',
+          to: '/api',
+          description: 'For the vue port of shadcn-ui & some docs component source',
+          target: undefined,
+        }],
+      }, {
         title: 'Credits',
         links: [{
           title: 'shadcn-ui',
@@ -91,6 +104,7 @@ export default defineAppConfig({
         'yarn': 'vscode-icons:file-type-yarn',
         'bun': 'vscode-icons:file-type-bun',
         'yml': 'vscode-icons:file-type-yaml',
+        'json': 'vscode-icons:file-type-json',
         'terminal': 'lucide:terminal',
       },
     },
@@ -119,3 +133,66 @@ export default defineAppConfig({
     },
   },
 });
+
+declare module '@nuxt/schema' {
+  interface AppConfigInput {
+    shadcnDocs?: {
+      site: {
+        name: string;
+      };
+      header: {
+        title: string;
+        showTitle: true;
+        logo: {
+          light: string;
+          dark: string;
+        };
+        darkModeToggle: true;
+        nav: ({
+          title: string;
+          to?: string;
+          target?: string;
+          links?: ({
+            title: string;
+            to: string;
+            target?: string;
+            description?: string;
+          })[];
+        })[];
+        links: ({
+          icon: string;
+          to: string;
+          target: string;
+        })[];
+      };
+      aside: {
+        useLevel: boolean;
+        collapse: boolean;
+      };
+      main: {
+        breadCrumb: boolean;
+        showTitle: boolean;
+        codeIcon: {
+          [key: string]: string;
+        };
+      };
+      footer: {
+        credits: string;
+        links: ({
+          icon?: string;
+          title?: string;
+          to: string;
+          target?: string;
+        })[];
+      };
+      toc: {
+        enable: boolean;
+        title: string;
+      };
+      search: {
+        enable: boolean;
+        inAside: boolean;
+      };
+    };
+  }
+}
