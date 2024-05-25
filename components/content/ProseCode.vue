@@ -1,6 +1,7 @@
 <template>
   <UiCard class="[&:not(:first-child)]:mt-5 mb-5 overflow-hidden">
     <div v-if="filename" class="p-3 border-b flex text-sm font-mono">
+      <Icon v-if="icon" :name="icon" class="self-center mr-1.5" />
       {{ filename }}
       <span class="ml-auto mr-1">
         <Transition name="fade" mode="out-in">
@@ -84,6 +85,9 @@ const checkIconRef = ref<HTMLElement>();
 onClickOutside(checkIconRef, () => {
   copied.value = false;
 });
+
+const iconMap = new Map(Object.entries(useConfig().value.main.codeIcon));
+const icon = iconMap.get(props.filename?.toLowerCase()) || iconMap.get(props.language);
 </script>
 
 <style>
