@@ -5,7 +5,7 @@
 <script setup lang="ts">
 import CodeGroupHeader from './CodeGroupHeader.vue';
 
-const _slots = useSlots()?.default?.() || [];
+const _slots = useSlots();
 const activeTabIndex = ref(0);
 
 function isTag(slot: any, tag: string) {
@@ -20,17 +20,18 @@ function onChangeActiveTab(index: number) {
   activeTabIndex.value = index;
 }
 
-const tabs = _slots
-  .filter(slot => checkTag(slot))
-  .map((slot, index) => {
-    return {
-      label: slot?.props?.filename || slot?.props?.label || `${index}`,
-      language: slot?.props?.language || null,
-      code: slot?.props?.code || '',
-    };
-  });
-
 function render() {
+  const _slotsDefault = _slots?.default?.() || [];
+  const tabs = _slotsDefault
+    .filter(slot => checkTag(slot))
+    .map((slot, index) => {
+      return {
+        label: slot?.props?.filename || slot?.props?.label || `${index}`,
+        language: slot?.props?.language || null,
+        code: slot?.props?.code || '',
+      };
+    });
+
   return h(
     'div',
     [
@@ -44,7 +45,7 @@ function render() {
       ),
       h(
         'div',
-        _slots.map((slot, index) => {
+        _slotsDefault.map((slot, index) => {
           if (slot.props && checkTag(slot))
             slot.props.inGroup = true;
           return h(

@@ -1,7 +1,7 @@
 {
   "name": "shadcn-docs-nuxt",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Tony Zhang <zhangtianli2006@gmail.com>",
   "license": "MIT",
   "homepage": "https://shadcn-docs-nuxt.vercel.app/",
@@ -15,12 +15,13 @@
     "app",
     "app.config.ts",
     "app.vue",
-    "assets",
     "components",
     "components.json",
     "composables",
     "layouts",
-    "nuxt.config.ts"
+    "lib",
+    "nuxt.config.ts",
+    "pages"
   ],
   "scripts": {
     "build": "nuxt build",
@@ -38,12 +39,14 @@
     "@nuxtjs/tailwindcss": "^6.12.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "lucide-vue-next": "^0.379.0",
     "nuxt": "^3.11.2",
     "nuxt-icon": "^0.6.10",
     "radix-vue": "^1.8.0",
     "shadcn-nuxt": "^0.10.4",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
+    "typescript": "^5.4.5",
     "vue": "^3.4.27",
     "vue-router": "^4.3.2"
   },
@@ -54,7 +57,6 @@
     "@vueuse/core": "^10.9.0",
     "@vueuse/nuxt": "^10.9.0",
     "eslint": "9.2.0",
-    "lucide-vue-next": "^0.379.0",
     "shiki": "^1.6.0",
     "vue-tsc": "^2.0.19"
   }

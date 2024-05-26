@@ -8,7 +8,7 @@
           :to="link._path"
           class="px-3 py-2 mb-1 hover:bg-muted rounded-md w-full flex gap-2 transition-all"
           :class="[
-            path.startsWith(link._path) && 'bg-muted hover:bg-muted font-semibold',
+            path.startsWith(link._path) && 'bg-muted hover:bg-muted font-semibold text-primary',
           ]"
         >
           <Icon

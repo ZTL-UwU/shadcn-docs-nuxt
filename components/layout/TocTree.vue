@@ -23,7 +23,7 @@ defineProps<{
 
 const { activeHeadings, updateHeadings } = useScrollspy();
 
-onNuxtReady(() =>
+onMounted(() =>
   updateHeadings([
     ...document.querySelectorAll('.docs-content h1'),
     ...document.querySelectorAll('.docs-content h2'),
