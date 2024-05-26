@@ -24,15 +24,16 @@
 const props = withDefaults(defineProps<{
   title?: string;
   icon?: string;
-  type?: 'info' | 'warning' | 'success' | 'danger';
+  type?: 'default' | 'info' | 'warning' | 'success' | 'danger';
   to?: string;
   target?: string;
 }>(), {
-  type: 'info',
+  type: 'default',
 });
 
 const typeTwClass = {
-  info: '',
+  default: '',
+  info: 'border-sky-600 text-sky-600 [&>svg]:text-sky-600',
   warning: 'border-amber-600 text-amber-600 [&>svg]:text-amber-600',
   success: 'border-green-600 text-green-600 [&>svg]:text-green-600',
   danger: 'border-red-600 text-red-600 [&>svg]:text-red-600',
