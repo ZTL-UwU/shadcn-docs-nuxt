@@ -10,6 +10,26 @@ Beautifully designed _Nuxt Content_ template with _shadcn-vue_. **Customizable. 
 
 - [Documentation / Demo](https://shadcn-docs-nuxt.vercel.app/)
 
+## Quick Start
+
+1. Create a project with the starter template
+
+  ```bash
+  npx nuxi@latest init -t github:ZTL-UwU/shadcn-docs-nuxt-starter
+  ```
+
+2. Install dependencies
+
+  ```bash
+  npm install
+  ```
+
+3. Start dev server
+
+  ```bash
+  npm run dev
+  ```
+
 ## Contributing
 
 1. Clone this repository

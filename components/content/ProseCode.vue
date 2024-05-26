@@ -9,8 +9,8 @@
     </div>
     <UiScrollArea>
       <div
-        class="p-3 bg-muted/30 text-sm relative overflow-x-auto"
-        :class="[`highlight-${language}`, !filename && 'pr-10']"
+        class="py-3 bg-muted/30 text-sm relative overflow-x-auto"
+        :class="[`highlight-${language}`, !filename && 'inline-copy']"
       >
         <span v-if="!filename" class="absolute right-4">
           <CodeCopy :code="code" />
@@ -60,5 +60,18 @@ const icon = iconMap.get(props.filename?.toLowerCase()) || iconMap.get(props.lan
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+.shiki .line.highlight {
+  background-color: hsl(var(--muted) / 0.8);
+}
+
+.shiki .line {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.inline-copy .line {
+  padding-right: 2.7rem;
 }
 </style>

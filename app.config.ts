@@ -16,12 +16,12 @@ export default defineAppConfig({
         links: [{
           title: 'Getting Started',
           to: '/getting-started',
-          description: 'For the beautiful component design & docs design',
+          description: 'Start building your document with shadcn-docs-nuxt',
           target: undefined,
         }, {
           title: 'API',
           to: '/api',
-          description: 'For the vue port of shadcn-ui & some docs component source',
+          description: 'Discover the configurations and exposed APIs.',
           target: undefined,
         }],
       }, {
@@ -134,9 +134,13 @@ export default defineAppConfig({
   },
 });
 
+type DeepPartial<T> = T extends object ? {
+  [P in keyof T]?: DeepPartial<T[P]>;
+} : T;
+
 declare module '@nuxt/schema' {
   interface AppConfigInput {
-    shadcnDocs?: {
+    shadcnDocs: DeepPartial<{
       site: {
         name: string;
       };
@@ -150,13 +154,13 @@ declare module '@nuxt/schema' {
         darkModeToggle: true;
         nav: ({
           title: string;
-          to?: string;
-          target?: string;
-          links?: ({
+          to: string;
+          target: string;
+          links: ({
             title: string;
             to: string;
-            target?: string;
-            description?: string;
+            target: string;
+            description: string;
           })[];
         })[];
         links: ({
@@ -179,10 +183,10 @@ declare module '@nuxt/schema' {
       footer: {
         credits: string;
         links: ({
-          icon?: string;
-          title?: string;
+          icon: string;
+          title: string;
           to: string;
-          target?: string;
+          target: string;
         })[];
       };
       toc: {
@@ -193,6 +197,6 @@ declare module '@nuxt/schema' {
         enable: boolean;
         inAside: boolean;
       };
-    };
+    }>;
   }
 }
