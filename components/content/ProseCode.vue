@@ -9,7 +9,7 @@
     </div>
     <UiScrollArea>
       <div
-        class="p-3 bg-zinc-50 dark:bg-zinc-900 text-sm relative overflow-x-auto "
+        class="p-3 bg-muted/30 text-sm relative overflow-x-auto"
         :class="[`highlight-${language}`, !filename && 'pr-10']"
       >
         <span v-if="!filename" class="absolute right-4">

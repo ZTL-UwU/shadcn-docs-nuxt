@@ -1,5 +1,5 @@
 <template>
-  <UiCard class="rounded-t-none p-3 bg-zinc-50 dark:bg-zinc-900">
+  <UiCard class="rounded-t-none p-3 bg-muted/30">
     <slot />
   </UiCard>
 </template>

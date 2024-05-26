@@ -19,6 +19,14 @@ export default defineNuxtConfig({
      */
     componentDir: './components/ui',
   },
+  components: {
+    dirs: [
+      {
+        path: './components',
+        ignore: ['**/*.ts'],
+      },
+    ],
+  },
   content: {
     documentDriven: true,
     highlight: {
