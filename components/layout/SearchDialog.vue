@@ -2,19 +2,27 @@
   <UiDialog v-model:open="open">
     <UiDialogContent class="p-0">
       <UiCommand v-model:search-term="input" class="h-[350px]">
-        <UiCommandInput placeholder="Search documentation..." />
+        <UiCommandInput
+          placeholder="Search documentation..."
+          @keydown.enter="handleEnter"
+          @keydown.down="handleNavigate(1)"
+          @keydown.up="handleNavigate(-1)"
+        />
         <UiCommandList class="text-sm" @escape-key-down="open = false">
           <div v-if="searchResult?.length" class="p-1.5">
             <NuxtLink
-              v-for="item in searchResult"
+              v-for="(item, i) in searchResult"
+              :id="i"
               :key="item.id"
               :to="item.id"
               class="flex p-2 hover:bg-muted hover:cursor-pointer rounded-md select-none"
+              :class="[i === activeSelect && 'bg-muted']"
+              @click="open = false; activeSelect = i;"
             >
               <Icon v-if="getItemIcon(item.id)" :name="getItemIcon(item.id)" class="flex-shrink-0 self-center h-4 w-4 mr-2" />
               <div v-else class="flex-shrink-0 h-4 w-4 mr-2" />
 
-              <span v-for="(subtitle, i) in item.titles" :key="`${subtitle}${i}`" class="flex flex-shrink-0 self-center">
+              <span v-for="(subtitle, j) in item.titles" :key="`${subtitle}${j}`" class="flex flex-shrink-0 self-center">
                 {{ subtitle }}
                 <Icon name="lucide:chevron-right" class="self-center mx-0.5 text-muted-foreground" />
               </span>
@@ -67,6 +75,8 @@
 const open = defineModel<boolean>('open');
 const mode = useColorMode();
 
+const activeSelect = ref(0);
+
 const { Meta_K, Ctrl_K } = useMagicKeys({
   passive: false,
   onEventFired(e) {
@@ -84,6 +94,7 @@ const searchResult = ref();
 watch(
   input,
   async (v) => {
+    activeSelect.value = 0;
     searchResult.value = (await searchContent(v)).value;
   },
 );
@@ -96,5 +107,21 @@ const { navKeyFromPath } = useContentHelpers();
 const { navigation } = useContent();
 function getItemIcon(path: string) {
   return navKeyFromPath(path, 'icon', navigation.value);
+}
+
+watch(activeSelect, (value) => {
+  document.querySelector(`[id="${value}"]`)?.scrollIntoView({ block: 'nearest' });
+});
+
+function handleEnter() {
+  if (searchResult.value[activeSelect.value]?.id) {
+    navigateTo(searchResult.value[activeSelect.value].id);
+    open.value = false;
+  }
+}
+
+function handleNavigate(delta: -1 | 1) {
+  if (activeSelect.value + delta >= 0 && activeSelect.value + delta < searchResult.value.length)
+    activeSelect.value += delta;
 }
 </script>
