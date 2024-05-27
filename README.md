@@ -6,7 +6,7 @@
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![License][license-src]][license-href]
 
-Beautifully designed _Nuxt Content_ template with _shadcn-vue_. **Customizable. Compatible. Open Source.**
+Beautifully designed _Nuxt Content_ template built with _shadcn-vue_. **Customizable. Compatible. Open Source.**
 
 - [Documentation / Demo](https://shadcn-docs-nuxt.vercel.app/)
 

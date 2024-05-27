@@ -49,8 +49,8 @@ export default defineAppConfig({
         }],
       }, {
         title: 'Use This Template',
-        to: 'https://nuxt.com/templates',
-        target: '_blank',
+        to: '/getting-started/installation',
+        target: undefined,
       }],
       links: [{
         icon: 'lucide:github',
