@@ -1,7 +1,7 @@
 <template>
-  <UiCard class="rounded-t-none p-3 bg-muted/30">
+  <div class="p-3 bg-muted/30">
     <slot />
-  </UiCard>
+  </div>
 </template>
 
 <script setup lang="ts">

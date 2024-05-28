@@ -1,5 +1,5 @@
 <template>
-  <UiCard class="rounded-b-none border-b-0 p-0.5 flex text-sm">
+  <div class="border-b p-0.5 flex text-sm">
     <UiTabs v-if="tabs" :default-value="tabs[0].label">
       <UiTabsList>
         <UiTabsTrigger
@@ -15,7 +15,7 @@
       </UiTabsList>
     </UiTabs>
     <CodeCopy v-show="selected.label !== 'Preview'" class="self-center ml-auto mr-3" :code="selected.code" />
-  </UiCard>
+  </div>
   <slot name="footer" />
 </template>
 

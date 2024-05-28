@@ -4,6 +4,7 @@
 
 <script setup lang="ts">
 import CodeGroupHeader from './CodeGroupHeader.vue';
+import { Card as UiCard } from '@/components/ui/card/index';
 
 const _slots = useSlots();
 const activeTabIndex = ref(0);
@@ -33,7 +34,7 @@ function render() {
     });
 
   return h(
-    'div',
+    UiCard,
     [
       h(
         CodeGroupHeader,
