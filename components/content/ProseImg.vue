@@ -4,6 +4,7 @@
     :alt="alt"
     :width="width"
     :height="height"
+    class="my-8"
   />
 </template>
 
