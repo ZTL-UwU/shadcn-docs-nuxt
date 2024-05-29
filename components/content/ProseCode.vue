@@ -13,7 +13,7 @@
     <UiScrollArea>
       <div
         class="py-3 bg-muted/30 text-sm relative overflow-x-auto"
-        :class="[`highlight-${language}`, !filename && 'inline-copy']"
+        :class="[`highlight-${language}`, !filename && 'inline-copy', !language && 'pl-3']"
       >
         <span v-if="!filename" class="absolute right-4">
           <CodeCopy :code="code" />
