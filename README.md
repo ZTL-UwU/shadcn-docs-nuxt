@@ -12,7 +12,7 @@ Beautifully designed _Nuxt Content_ template built with _shadcn-vue_. **Customiz
 
 ## Quick Start
 
-1. Create a project with the starter template
+1. Create a project with the [starter template](https://github.com/ZTL-UwU/shadcn-docs-nuxt-starter)
 
   ```bash
   npx nuxi@latest init -t github:ZTL-UwU/shadcn-docs-nuxt-starter
