@@ -1,5 +1,5 @@
 <template>
-  <div class="[&:not(:first-child)]:mt-4">
+  <div class="[&:not(:first-child)]:mt-4 [&:not(:first-child)]:pt-4">
     <div class="flex mb-2 space-x-2">
       <span class="font-bold text-md text-primary">
         {{ name }}
@@ -12,7 +12,7 @@
         {{ type }}
       </span>
     </div>
-    <span class="text-sm">
+    <span class="text-sm text-muted-foreground">
       <ContentSlot unwrap="p" />
       {{ description }}
     </span>

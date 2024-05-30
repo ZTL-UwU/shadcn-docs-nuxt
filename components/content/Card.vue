@@ -15,7 +15,7 @@
         </UiCardHeader>
         <UiCardContent v-if="content || $slots.content || $slots.default">
           <ContentSlot :use="$slots.content" unwrap="p" />
-          <ContentSlot :use="$slots.default" unwrap="p" />
+          <ContentSlot unwrap="p" />
         </UiCardContent>
         <UiCardFooter v-if="footer || $slots.footer">
           <ContentSlot :use="$slots.footer" unwrap="p" />

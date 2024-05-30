@@ -1,7 +1,7 @@
 <template>
   <NuxtLink :to="to" :target="target" class="mx-0.5">
     <UiBadge :variant="variant" :class="typeTwClass[type]">
-      <ContentSlot :use="$slots.default" unwrap="p" />
+      <ContentSlot unwrap="p" />
     </UiBadge>
   </NuxtLink>
 </template>
