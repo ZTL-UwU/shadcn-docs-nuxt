@@ -35,7 +35,7 @@ function render() {
 
   return h(
     UiCard,
-    [
+    () => [
       h(
         CodeGroupHeader,
         {
