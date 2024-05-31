@@ -2,13 +2,14 @@
 
 # shadcn-docs-nuxt
 
+[![built with nuxt][nuxt-src]][nuxt-href]
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![License][license-src]][license-href]
 
 Beautifully designed _Nuxt Content_ template built with _shadcn-vue_. **Customizable. Compatible. Open Source.**
 
-- [Documentation / Demo](https://shadcn-docs-nuxt.vercel.app/)
+- [Documentation / Demo](https://shadcn-docs-nuxt.nuxt.dev/)
 
 ## Quick Start
 
@@ -54,3 +55,5 @@ MIT
 [npm-downloads-href]: https://npmjs.com/package/shadcn-docs-nuxt
 [license-src]: https://img.shields.io/github/license/ZTL-UwU/shadcn-docs-nuxt.svg?style=flat&colorA=18181b&colorB=18181b
 [license-href]: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/LICENSE
+[nuxt-src]: https://img.shields.io/badge/Built%20With%20Nuxt-18181B?logo=nuxt.js
+[nuxt-href]: https://nuxt.com/
