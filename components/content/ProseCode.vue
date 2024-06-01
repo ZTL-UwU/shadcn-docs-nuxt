@@ -20,13 +20,14 @@
         </span>
         <slot />
       </div>
-      <UiScrollBar orientation="horizontal" />
+      <ScrollBar orientation="horizontal" />
     </UiScrollArea>
   </UiCard>
 </template>
 
 <script setup lang="ts">
 import type { BuiltinLanguage } from 'shiki';
+import ScrollBar from '../ui/scroll-area/ScrollBar.vue';
 
 const props = defineProps({
   code: {
