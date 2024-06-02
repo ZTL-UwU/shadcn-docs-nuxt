@@ -11,6 +11,7 @@ export function useConfig() {
       const main = appConfig?.value?.main || {};
       const aside = appConfig?.value?.aside || {};
       const footer = appConfig?.value?.footer || {};
+      const toc = appConfig?.value?.toc || {};
 
       return {
         ...appConfig.value,
@@ -29,6 +30,11 @@ export function useConfig() {
           ...navKeyFromPath(route.path, 'aside', navigation.value || []),
           ...page.value?.aside,
         } as typeof aside,
+        toc: {
+          ...toc,
+          ...navKeyFromPath(route.path, 'toc', navigation.value || []),
+          ...page.value?.toc,
+        } as typeof toc,
         footer: {
           ...footer,
           ...navKeyFromPath(route.path, 'footer', navigation.value || []),
