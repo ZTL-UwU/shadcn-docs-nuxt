@@ -9,7 +9,7 @@
 
 Beautifully designed _Nuxt Content_ template built with _shadcn-vue_. **Customizable. Compatible. Open Source.**
 
-- [Documentation / Demo](https://shadcn-docs-nuxt.nuxt.dev/)
+- [Documentation / Demo](https://shadcn-docs.nuxt.dev/)
 
 ## Quick Start
 
