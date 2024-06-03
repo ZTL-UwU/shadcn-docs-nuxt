@@ -9,7 +9,25 @@
       <p class="mb-2 text-base font-semibold">
         {{ title }}
       </p>
-      <LayoutTocTree :links="toc.links" :level="0" />
+      <LayoutTocTree :links="toc.links" :level="0" :class="[links && 'pb-5 border-b']" />
+      <div v-if="links" class="pt-5 text-muted-foreground">
+        <NuxtLink
+          v-for="(link, i) in links"
+          :key="i"
+          :to="link.to"
+          :target="link.target"
+          class="w-full flex hover:underline underline-offset-4 gap-1 [&:not(:first-child)]:pt-3"
+        >
+          <Icon
+            v-if="link.icon"
+            :name="link.icon"
+            class="self-center mr-1"
+            size="16"
+          />
+          {{ link.title }}
+          <Icon name="lucide:arrow-up-right" class="ml-auto self-center text-muted-foreground" size="13" />
+        </NuxtLink>
+      </div>
     </UiScrollArea>
     <UiCollapsible
       v-else
@@ -17,7 +35,7 @@
       class="block lg:hidden text-sm w-full border-b"
     >
       <UiCollapsibleTrigger class="px-4 py-3 w-full flex text-left font-medium">
-        On This Page
+        {{ title }}
         <Icon
           name="lucide:chevron-right"
           class="ml-auto self-center transition-all"
@@ -35,6 +53,6 @@
 defineProps<{ isSmall: boolean }>();
 
 const { toc } = useContent();
-const { title } = useConfig().value.toc;
+const { title, links } = useConfig().value.toc;
 const isOpen = ref(false);
 </script>

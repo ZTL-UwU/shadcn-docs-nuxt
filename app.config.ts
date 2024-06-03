@@ -126,6 +126,17 @@ export default defineAppConfig({
     toc: {
       enable: true,
       title: 'On This Page',
+      links: [{
+        title: 'Star on GitHub',
+        icon: 'lucide:star',
+        to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt',
+        target: '_blank',
+      }, {
+        title: 'Create Issues',
+        icon: 'lucide:circle-dot',
+        to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt/issues',
+        target: '_blank',
+      }],
     },
     search: {
       enable: true,

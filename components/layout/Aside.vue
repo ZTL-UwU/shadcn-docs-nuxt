@@ -1,5 +1,5 @@
 <template>
-  <UiScrollArea orientation="vertical" class="relative overflow-hidden h-full py-6 pr-6 text-sm" type="auto">
+  <UiScrollArea orientation="vertical" class="relative overflow-hidden h-full py-6 pr-6 text-sm" type="hover">
     <LayoutHeaderNavMobile v-if="isMobile" class="border-b pb-2 mb-5" />
     <LayoutSearchButton v-if="config.search.inAside" />
     <ul v-if="config.aside.useLevel" class="pb-4 border-b mb-1">
