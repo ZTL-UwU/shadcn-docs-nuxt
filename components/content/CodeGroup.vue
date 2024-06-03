@@ -41,6 +41,8 @@
 </template>
 
 <script setup lang="ts">
+import ScrollBar from '../ui/scroll-area/ScrollBar.vue';
+
 const activeTabIndex = ref(0);
 const selected = computed(() => {
   return useSlots().default?.()[activeTabIndex.value];
