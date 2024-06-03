@@ -1,73 +1,53 @@
 <template>
-  <render class="[&:not(:first-child)]:mt-5" />
+  <UiCard class="[&:not(:first-child)]:mt-5">
+    <UiScrollArea>
+      <div class="border-b p-0.5 flex text-sm relative overflow-x-auto">
+        <div class="flex p-1">
+          <div
+            v-for="(slot, i) in ($slots.default?.() ?? [])"
+            :key="`${i}${slot?.props?.filename}`"
+            :value="slot?.props?.filename"
+            class="flex px-3 py-1.5 rounded-md text-muted-foreground transition-all duration-75 cursor-pointer"
+            :class="[activeTabIndex === i && 'bg-muted text-primary']"
+            @mousedown.left="activeTabIndex = i"
+          >
+            <Icon
+              v-if="getIcon(slot?.props?.filename, slot?.props?.language)"
+              :name="getIcon(slot?.props?.filename, slot?.props?.language)!"
+              class="self-center mr-1.5"
+            />
+            {{ slot?.props?.filename }}
+          </div>
+        </div>
+        <CodeCopy
+          v-if="selected?.props?.code && selected?.type !== 'preview'"
+          class="self-center ml-auto mr-3 pl-2"
+          :code="selected.props.code"
+        />
+      </div>
+      <ScrollBar orientation="horizontal" />
+    </UiScrollArea>
+
+    <div
+      v-for="(slot, i) in $slots.default?.() ?? []"
+      v-show="activeTabIndex === i"
+      :key="`${i}${slot?.props?.filename}`"
+      :value="slot?.props?.filename"
+      class="mt-0"
+    >
+      <component :is="slot" :in-group="true" />
+    </div>
+  </UiCard>
 </template>
 
 <script setup lang="ts">
-import CodeGroupHeader from './CodeGroupHeader.vue';
-import { Card as UiCard } from '@/components/ui/card/index';
-
-const _slots = useSlots();
 const activeTabIndex = ref(0);
+const selected = computed(() => {
+  return useSlots().default?.()[activeTabIndex.value];
+});
 
-function isTag(slot: any, tag: string) {
-  return slot.type && slot.type.tag && slot.type.tag === tag;
-}
-
-function checkTag(slot: any) {
-  return isTag(slot, 'code-block') || isTag(slot, 'code') || isTag(slot, 'pre') || isTag(slot, 'preview');
-}
-
-function onChangeActiveTab(index: number) {
-  activeTabIndex.value = index;
-}
-
-function render() {
-  const _slotsDefault = _slots?.default?.() || [];
-  const tabs = _slotsDefault
-    .filter(slot => checkTag(slot))
-    .map((slot, index) => {
-      return {
-        label: slot?.props?.filename || slot?.props?.label || `${index}`,
-        language: slot?.props?.language || null,
-        code: slot?.props?.code || '',
-      };
-    });
-
-  return h(
-    UiCard,
-    () => [
-      h(
-        CodeGroupHeader,
-        {
-          'activeTabIndex': activeTabIndex.value,
-          tabs,
-          'onUpdate:activeTabIndex': onChangeActiveTab,
-        },
-      ),
-      h(
-        'div',
-        _slotsDefault.map((slot, index) => {
-          if (slot.props && checkTag(slot))
-            slot.props.inGroup = true;
-          return h(
-            'div',
-            {
-              style: {
-                display: index === activeTabIndex.value ? 'block' : 'none',
-              },
-            },
-            [
-              checkTag(slot)
-                ? slot
-                : h(
-                  'div',
-                  [(slot.children as any)?.default?.() || h('div')],
-                ),
-            ],
-          );
-        }),
-      ),
-    ],
-  );
+const iconMap = new Map(Object.entries(useConfig().value.main.codeIcon));
+function getIcon(filename: string, language: string) {
+  return iconMap.get(filename?.toLowerCase()) || iconMap.get(language);
 }
 </script>

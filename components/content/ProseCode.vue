@@ -1,6 +1,6 @@
 <template>
   <UiCard
-    class="[&:not(:first-child)]:mt-5 mb-5 overflow-hidden"
+    class="[&:not(:first-child)]:mt-5 [&:not(:last-child)]:mb-5 overflow-hidden"
     :class="[inGroup && 'rounded-t-none border-none mb-0']"
   >
     <div v-if="!inGroup && filename" class="p-3 border-b flex text-sm font-mono">
