@@ -1,9 +1,14 @@
 <template>
-  <NuxtLoadingIndicator :color="false" class="z-100 bg-primary" />
-  <NuxtPage />
+  <main>
+    <NuxtLoadingIndicator :color="false" class="z-100 bg-primary" />
+    <NuxtPage />
+    <Toaster />
+  </main>
 </template>
 
 <script setup lang="ts">
+import Toaster from '@/components/ui/toast/Toaster.vue';
+
 const config = useConfig();
 
 useSeoMeta({
