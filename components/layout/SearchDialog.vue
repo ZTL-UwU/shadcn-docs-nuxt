@@ -1,6 +1,12 @@
 <template>
   <UiDialog v-model:open="open">
     <UiDialogContent class="p-0">
+      <VisuallyHidden as-child>
+        <UiDialogTitle />
+      </VisuallyHidden>
+      <VisuallyHidden as-child>
+        <UiDialogDescription aria-describedby="undefined" />
+      </VisuallyHidden>
       <UiCommand v-model:search-term="input" class="h-[350px]">
         <UiCommandInput
           placeholder="Search documentation..."
@@ -72,6 +78,8 @@
 </template>
 
 <script setup lang="ts">
+import { VisuallyHidden } from 'radix-vue';
+
 const open = defineModel<boolean>('open');
 const mode = useColorMode();
 
