@@ -1,10 +1,10 @@
 <template>
   <header class="sticky z-40 top-0 bg-background/80 backdrop-blur-lg lg:border-b">
-    <div class="container px-4 lg:px-8 flex h-14 items-center border-b lg:border-none gap-2 justify-between">
+    <div class="container px-4 lg:px-8 flex h-14 items-center border-b lg:border-none gap-2">
       <LayoutHeaderLogo class="hidden lg:flex flex-1" />
       <LayoutMobileNav />
-      <LayoutHeaderNav class="hidden lg:flex flex-1" />
-      <div class="flex flex-1 justify-end gap-2">
+      <LayoutHeaderNav class="hidden lg:flex" />
+      <div class="flex justify-end gap-2 flex-1">
         <LayoutSearchButton v-if="!config.search.inAside" />
         <div class="flex">
           <DarkModeToggle v-if="config.header.darkModeToggle" />
