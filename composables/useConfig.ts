@@ -38,6 +38,7 @@ const defaultConfig: {
   main: {
     breadCrumb: boolean;
     showTitle: boolean;
+    codeCopyToast: boolean;
     codeIcon: {
       [key: string]: string;
     };
@@ -89,6 +90,7 @@ const defaultConfig: {
   main: {
     breadCrumb: true,
     showTitle: true,
+    codeCopyToast: true,
     codeIcon: {
       'package.json': 'vscode-icons:file-type-node',
       'tsconfig.json': 'vscode-icons:file-type-tsconfig',

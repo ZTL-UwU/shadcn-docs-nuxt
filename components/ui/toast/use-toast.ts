@@ -2,8 +2,8 @@ import { computed, ref } from 'vue';
 import type { Component, VNode } from 'vue';
 import type { ToastProps } from '.';
 
-const TOAST_LIMIT = 5;
-const TOAST_REMOVE_DELAY = 3000;
+const TOAST_LIMIT = 1;
+const TOAST_REMOVE_DELAY = 1000000;
 
 export type StringOrVNode =
   | string
@@ -57,7 +57,7 @@ interface State {
 
 const toastTimeouts = new Map<string, ReturnType<typeof setTimeout>>();
 
-function addToRemoveQueue(toastId: string, duration: number) {
+function addToRemoveQueue(toastId: string) {
   if (toastTimeouts.has(toastId))
     return;
 
@@ -67,7 +67,7 @@ function addToRemoveQueue(toastId: string, duration: number) {
       type: actionTypes.REMOVE_TOAST,
       toastId,
     });
-  }, duration);
+  }, TOAST_REMOVE_DELAY);
 
   toastTimeouts.set(toastId, timeout);
 }
@@ -92,13 +92,10 @@ function dispatch(action: Action) {
       const { toastId } = action;
 
       if (toastId) {
-        const toast = state.value.toasts.find(t => t.id === toastId);
-        if (toast) {
-          addToRemoveQueue(toastId, toast.duration ?? TOAST_REMOVE_DELAY);
-        }
+        addToRemoveQueue(toastId);
       } else {
         state.value.toasts.forEach((toast) => {
-          addToRemoveQueue(toast.id, toast.duration ?? TOAST_REMOVE_DELAY);
+          addToRemoveQueue(toast.id);
         });
       }
 
@@ -114,7 +111,11 @@ function dispatch(action: Action) {
     }
 
     case actionTypes.REMOVE_TOAST:
-      state.value.toasts = state.value.toasts.filter(t => t.id !== action.toastId);
+      if (action.toastId === undefined)
+        state.value.toasts = [];
+      else
+        state.value.toasts = state.value.toasts.filter(t => t.id !== action.toastId);
+
       break;
   }
 }
@@ -127,12 +128,12 @@ function useToast() {
   };
 }
 
-type Toast = Omit<ToasterToast, 'id'> & { duration?: number };
+type Toast = Omit<ToasterToast, 'id'>;
 
 function toast(props: Toast) {
   const id = genId();
 
-  const update = (props: Partial<ToasterToast>) =>
+  const update = (props: ToasterToast) =>
     dispatch({
       type: actionTypes.UPDATE_TOAST,
       toast: { ...props, id },
@@ -153,10 +154,6 @@ function toast(props: Toast) {
     },
   });
 
-  setTimeout(() => {
-    dismiss();
-  }, props.duration ?? TOAST_REMOVE_DELAY);
-
   return {
     id,
     dismiss,
@@ -164,4 +161,4 @@ function toast(props: Toast) {
   };
 }
 
-export { state, useToast, toast };
+export { toast, useToast };

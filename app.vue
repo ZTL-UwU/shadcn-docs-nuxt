@@ -1,9 +1,7 @@
 <template>
-  <main>
-    <NuxtLoadingIndicator :color="false" class="z-100 bg-primary" />
-    <NuxtPage />
-    <Toaster />
-  </main>
+  <NuxtLoadingIndicator :color="false" class="z-100 bg-primary" />
+  <NuxtPage />
+  <Toaster />
 </template>
 
 <script setup lang="ts">
