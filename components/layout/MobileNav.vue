@@ -4,7 +4,7 @@
       <UiButton
         variant="ghost"
         size="icon"
-        class="md:hidden"
+        class="lg:hidden"
       >
         <Icon name="lucide:menu" size="18" />
       </UiButton>

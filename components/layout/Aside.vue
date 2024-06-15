@@ -21,7 +21,7 @@
         </NuxtLink>
       </li>
     </ul>
-    <LayoutAsideTree :links="tree" :level="0" class="pl-3 pt-4" />
+    <LayoutAsideTree :links="tree" :level="0" class="pt-4" />
   </UiScrollArea>
 </template>
 
@@ -37,7 +37,6 @@ const tree = computed(() => {
   const path = route.path.split('/');
   if (config.value.aside.useLevel) {
     const leveledPath = path.splice(0, 2).join('/');
-
     const dir = navDirFromPath(leveledPath, navigation.value);
     return dir ?? [];
   }
