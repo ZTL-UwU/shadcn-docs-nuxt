@@ -31,9 +31,7 @@ export function useThemes() {
 
   const themePrimary = computed(() => {
     const t = themes.find(t => t.name === theme.value);
-    return `hsl(${
-			t?.cssVars[isDark ? 'dark' : 'light'].primary
-		})`;
+    return `hsl(${t?.cssVars[isDark ? 'dark' : 'light'].primary})`;
   });
 
   return {
