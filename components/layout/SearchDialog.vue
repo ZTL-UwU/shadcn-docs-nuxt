@@ -57,15 +57,15 @@
               <UiCommandSeparator v-if="item.children" />
             </template>
             <UiCommandGroup heading="Theme" class="p-1.5">
-              <UiCommandItem value="light" @click="mode = 'light'">
+              <UiCommandItem value="light" @click="colorMode.preference = 'light'">
                 <Icon name="lucide:sun" class="h-4 w-4 mr-2" />
                 <span>Light</span>
               </UiCommandItem>
-              <UiCommandItem value="dark" @click="mode = 'dark'">
+              <UiCommandItem value="dark" @click="colorMode.preference = 'dark'">
                 <Icon name="lucide:moon" class="h-4 w-4 mr-2" />
                 <span>Dark</span>
               </UiCommandItem>
-              <UiCommandItem value="system" @click="mode = 'auto'">
+              <UiCommandItem value="system" @click="colorMode.preference = 'auto'">
                 <Icon name="lucide:monitor" class="h-4 w-4 mr-2" />
                 <span>System</span>
               </UiCommandItem>
@@ -81,7 +81,7 @@
 import { VisuallyHidden } from 'radix-vue';
 
 const open = defineModel<boolean>('open');
-const mode = useColorMode();
+const colorMode = useColorMode();
 
 const activeSelect = ref(0);
 
