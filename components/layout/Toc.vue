@@ -29,30 +29,35 @@
         </NuxtLink>
       </div>
     </UiScrollArea>
-    <UiCollapsible
-      v-else
-      v-model:open="isOpen"
-      class="block lg:hidden text-sm w-full border-b"
-    >
-      <UiCollapsibleTrigger class="px-4 py-3 w-full flex text-left font-medium">
-        {{ title }}
-        <Icon
-          name="lucide:chevron-right"
-          class="ml-auto self-center transition-all"
-          :class="[isOpen && 'rotate-90']"
-        />
-      </UiCollapsibleTrigger>
-      <UiCollapsibleContent>
-        <LayoutTocTree :links="toc.links" :level="0" class="text-sm pl-4 border-l mb-3 mx-4" />
-      </UiCollapsibleContent>
-    </UiCollapsible>
+    <ConfigProvider v-else :use-id="useIdFunction">
+      <UiCollapsible
+        v-model:open="isOpen"
+        class="block lg:hidden text-sm w-full border-b"
+      >
+        <UiCollapsibleTrigger class="px-4 py-3 w-full flex text-left font-medium">
+          {{ title }}
+          <Icon
+            name="lucide:chevron-right"
+            class="ml-auto self-center transition-all"
+            :class="[isOpen && 'rotate-90']"
+          />
+        </UiCollapsibleTrigger>
+        <UiCollapsibleContent>
+          <LayoutTocTree :links="toc.links" :level="0" class="text-sm pl-4 border-l mb-3 mx-4" />
+        </UiCollapsibleContent>
+      </UiCollapsible>
+    </ConfigProvider>
   </template>
 </template>
 
 <script setup lang="ts">
+import { ConfigProvider } from 'radix-vue';
+
 defineProps<{ isSmall: boolean }>();
 
 const { toc } = useContent();
 const { title, links } = useConfig().value.toc;
 const isOpen = ref(false);
+
+const useIdFunction = () => useId();
 </script>
