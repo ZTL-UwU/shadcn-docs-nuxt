@@ -25,11 +25,11 @@
             </ul>
           </UiNavigationMenuContent>
         </template>
-        <NuxtLink v-else :to="item.to" :target="item.target" class="relative!">
+        <NuxtLink v-else :to="item.to" :target="item.target">
           <Icon name="lucide:arrow-up-right" class="absolute right-2 top-2 text-muted-foreground" size="13" />
-          <UiNavigationMenuLink class="pr-6 font-semibold bg-transparent" :class="navigationMenuTriggerStyle()">
+          <div class="pr-6 font-semibold bg-transparent" :class="navigationMenuTriggerStyle()">
             {{ item.title }}
-          </UiNavigationMenuLink>
+          </div>
         </NuxtLink>
       </UiNavigationMenuItem>
     </UiNavigationMenuList>
