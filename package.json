@@ -53,6 +53,7 @@
     "@antfu/eslint-config": "^2.19.2",
     "@iconify-json/lucide": "^1.1.188",
     "@iconify-json/vscode-icons": "^1.1.34",
+    "@nuxtjs/color-mode": "^3.4.1",
     "@vueuse/core": "^10.10.0",
     "@vueuse/nuxt": "^10.10.0",
     "eslint": "9.2.0",

@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     '@nuxt/content',
     'nuxt-icon',
     '@nuxt/image',
+    '@nuxtjs/color-mode',
   ],
   shadcn: {
     /**
@@ -28,6 +29,10 @@ export default defineNuxtConfig({
       },
     ],
   },
+  colorMode: {
+    classSuffix: '',
+  },
+  css: ['@/assets/css/themes.css'],
   content: {
     documentDriven: true,
     highlight: {

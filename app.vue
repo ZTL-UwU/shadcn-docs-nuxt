@@ -8,11 +8,19 @@
 import Toaster from '@/components/ui/toast/Toaster.vue';
 
 const config = useConfig();
+const { themeClass, radius } = useThemes();
 
 useSeoMeta({
   description: config.value.site.description,
   ogDescription: config.value.site.description,
   ogImage: config.value.site.ogImage,
   twitterCard: 'summary_large_image',
+});
+
+useServerHead({
+  htmlAttrs: {
+    class: themeClass.value,
+    style: `--radius: ${radius.value}rem;`,
+  },
 });
 </script>
