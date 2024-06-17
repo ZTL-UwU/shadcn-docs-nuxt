@@ -1,13 +1,18 @@
 <template>
-  <NuxtLoadingIndicator :color="false" class="z-100 bg-primary" />
-  <NuxtPage />
-  <Toaster />
+  <ConfigProvider :use-id="useIdFunction">
+    <NuxtLoadingIndicator :color="false" class="z-100 bg-primary" />
+    <NuxtPage />
+    <Toaster />
+  </ConfigProvider>
 </template>
 
 <script setup lang="ts">
+import { ConfigProvider } from 'radix-vue';
 import Toaster from '@/components/ui/toast/Toaster.vue';
 
 const config = useConfig();
+
+const useIdFunction = () => useId();
 
 useSeoMeta({
   description: config.value.site.description,
