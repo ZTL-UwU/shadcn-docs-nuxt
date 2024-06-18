@@ -1,72 +1,6 @@
 import { defu } from 'defu';
 
-const defaultConfig: {
-  site: {
-    name: string;
-    description: string;
-    ogImage: string;
-  };
-  header: {
-    title: string;
-    showTitle: true;
-    logo: {
-      light: string;
-      dark: string;
-    };
-    darkModeToggle: true;
-    nav: ({
-      title: string;
-      to: string;
-      target: string;
-      links: ({
-        title: string;
-        to: string;
-        target: string;
-        description: string;
-      })[];
-    })[];
-    links: ({
-      icon: string;
-      to: string;
-      target: string;
-    })[];
-  };
-  aside: {
-    useLevel: boolean;
-    collapse: boolean;
-  };
-  main: {
-    breadCrumb: boolean;
-    showTitle: boolean;
-    codeCopyToast: boolean;
-    codeIcon: {
-      [key: string]: string;
-    };
-  };
-  footer: {
-    credits: string;
-    links: ({
-      icon: string;
-      title: string;
-      to: string;
-      target: string;
-    })[];
-  };
-  toc: {
-    enable: boolean;
-    title: string;
-    links: ({
-      icon: string;
-      title: string;
-      to: string;
-      target: string;
-    })[];
-  };
-  search: {
-    enable: boolean;
-    inAside: boolean;
-  };
-} = {
+const defaultConfig: DefaultConfig = {
   site: {
     name: 'shadcn-docs',
     description: 'Beautifully designed Nuxt Content template built with shadcn-vue. Customizable. Compatible. Open Source.',
@@ -79,6 +13,7 @@ const defaultConfig: {
       light: '/logo.svg',
       dark: '/logo-dark.svg',
     },
+    themeCustomize: true,
     darkModeToggle: true,
     nav: [],
     links: [],

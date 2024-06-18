@@ -7,6 +7,7 @@
       <div class="flex flex-1 justify-end gap-2">
         <LayoutSearchButton v-if="!config.search.inAside" />
         <div class="flex">
+          <ThemePopover v-if="config.header.themeCustomize" />
           <DarkModeToggle v-if="config.header.darkModeToggle" />
           <NuxtLink
             v-for="(link, i) in config.header.links"
