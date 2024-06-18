@@ -1,10 +1,10 @@
 {
   "name": "shadcn-docs-nuxt",
   "type": "module",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "author": "Tony Zhang <zhangtianli2006@gmail.com>",
   "license": "MIT",
-  "homepage": "https://shadcn-docs-nuxt.vercel.app/",
+  "homepage": "https://shadcn-docs.nuxt.dev/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ZTL-UwU/shadcn-docs-nuxt.git"
@@ -39,25 +39,25 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-vue-next": "^0.379.0",
-    "nuxt": "^3.11.2",
+    "nuxt": "^3.12.2",
     "nuxt-icon": "^0.6.10",
-    "radix-vue": "^1.8.2",
+    "radix-vue": "^1.8.4",
     "shadcn-nuxt": "^0.10.4",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.4.5",
-    "vue": "^3.4.27",
-    "vue-router": "^4.3.2"
+    "vue": "^3.4.29",
+    "vue-router": "^4.3.3"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.19.2",
-    "@iconify-json/lucide": "^1.1.188",
-    "@iconify-json/vscode-icons": "^1.1.34",
+    "@antfu/eslint-config": "^2.21.1",
+    "@iconify-json/lucide": "^1.1.193",
+    "@iconify-json/vscode-icons": "^1.1.35",
     "@nuxtjs/color-mode": "^3.4.1",
-    "@vueuse/core": "^10.10.0",
-    "@vueuse/nuxt": "^10.10.0",
+    "@vueuse/core": "^10.11.0",
+    "@vueuse/nuxt": "^10.11.0",
     "eslint": "9.2.0",
-    "shiki": "^1.6.1",
-    "vue-tsc": "^2.0.19"
+    "shiki": "^1.7.0",
+    "vue-tsc": "^2.0.21"
   }
 }
