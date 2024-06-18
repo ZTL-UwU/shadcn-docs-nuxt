@@ -6,7 +6,7 @@ export default defineAppConfig({
       ogImage: '/hero.png',
     },
     theme: {
-      customizable: false,
+      customizable: true,
       color: 'zinc',
       radius: 0.5,
     },
