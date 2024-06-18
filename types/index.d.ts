@@ -4,6 +4,11 @@ interface DefaultConfig {
     description: string;
     ogImage: string;
   };
+  theme: {
+    customizable: boolean;
+    color: Color;
+    radius: number;
+  };
   header: {
     title: string;
     showTitle: boolean;
@@ -11,7 +16,6 @@ interface DefaultConfig {
       light: string;
       dark: string;
     };
-    themeCustomize: boolean;
     darkModeToggle: boolean;
     nav: ({
       title: string;

@@ -5,6 +5,11 @@ export default defineAppConfig({
       description: 'Beautifully designed Nuxt Content template built with shadcn-vue. Customizable. Compatible. Open Source.',
       ogImage: '/hero.png',
     },
+    theme: {
+      customizable: true,
+      color: 'zinc',
+      radius: 0.5,
+    },
     header: {
       title: 'shadcn-docs',
       showTitle: true,
@@ -12,7 +17,6 @@ export default defineAppConfig({
         light: '/logo.svg',
         dark: '/logo-dark.svg',
       },
-      themeCustomize: true,
       darkModeToggle: true,
       nav: [
         {
@@ -21,12 +25,10 @@ export default defineAppConfig({
             title: 'Getting Started',
             to: '/getting-started',
             description: 'Start building your document with shadcn-docs-nuxt',
-            target: undefined,
           }, {
             title: 'API',
             to: '/api',
             description: 'Discover the configurations and exposed APIs.',
-            target: undefined,
           }],
         },
         {
@@ -56,7 +58,6 @@ export default defineAppConfig({
         {
           title: 'Use This Template',
           to: '/getting-started/installation',
-          target: undefined,
         },
       ],
       links: [{

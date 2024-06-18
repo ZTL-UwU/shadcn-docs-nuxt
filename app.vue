@@ -1,6 +1,6 @@
 <template>
   <ConfigProvider :use-id="useIdFunction">
-    <NuxtLoadingIndicator :color="false" class="z-100 bg-primary" />
+    <NuxtLoadingIndicator :color="false" class="z-100 bg-primary80" />
     <NuxtPage />
     <Toaster />
   </ConfigProvider>

@@ -9,10 +9,11 @@ export function useThemes() {
   const { value: color } = useColorMode();
   const isDark = color === 'dark';
 
+  const defaultTheme = useConfig().value.theme;
   const config = useCookie<Config>('theme', {
     default: () => ({
-      theme: 'zinc',
-      radius: 0.5,
+      theme: defaultTheme.color as Color,
+      radius: defaultTheme.radius,
     }),
   });
 

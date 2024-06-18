@@ -1,10 +1,11 @@
 <template>
   <div class="grid gap-6">
     <div class="grid space-y-1">
-      <h1 class="text-md text-foreground font-semibold">
+      <h1 class="text-lg text-foreground font-semibold">
         Customize
-      </h1><p class="text-xs text-muted-foreground">
-        Pick a style and color for your components.
+      </h1>
+      <p class="text-sm text-muted-foreground">
+        Pick a style and color for the docs.
       </p>
     </div>
     <div class="space-y-1.5">
@@ -18,7 +19,7 @@
             @click="setTheme(color)"
           >
             <span class="h-5 w-5 flex items-center justify-center rounded-full" :style="{ backgroundColor: backgroundColor(color) }">
-              <Icon v-if="theme === color" name="i-radix-icons-check" size="16" class="text-white" />
+              <Icon v-if="theme === color" name="lucide:check" size="16" class="text-white" />
             </span>
             <span class="text-xs capitalize">{{ color }}</span>
           </UiButton>
@@ -49,7 +50,7 @@
           :class="{ 'border-primary border-2': colorMode.preference === 'light' }"
           @click="colorMode.preference = 'light'"
         >
-          <Icon name="i-ph-sun-dim-duotone" size="16" />
+          <Icon name="lucide:sun" size="16" />
           <span class="text-xs capitalize">Light</span>
         </UiButton>
         <UiButton
@@ -58,7 +59,7 @@
           :class="{ 'border-primary border-2': colorMode.preference === 'dark' }"
           @click="colorMode.preference = 'dark'"
         >
-          <Icon name="i-ph-moon-stars-duotone" size="16" />
+          <Icon name="lucide:moon" size="16" />
           <span class="text-xs capitalize">Dark</span>
         </UiButton>
         <UiButton
@@ -67,7 +68,7 @@
           :class="{ 'border-primary border-2': colorMode.preference === 'system' }"
           @click="colorMode.preference = 'system'"
         >
-          <Icon name="i-lucide-monitor" size="16" />
+          <Icon name="lucide:monitor" size="16" />
           <span class="text-xs capitalize">System</span>
         </UiButton>
       </div>
@@ -126,7 +127,3 @@ function backgroundColor(color: Color) {
 
 const colorMode = useColorMode();
 </script>
-
-<style scoped>
-
-</style>

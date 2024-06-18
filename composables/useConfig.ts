@@ -6,6 +6,11 @@ const defaultConfig: DefaultConfig = {
     description: 'Beautifully designed Nuxt Content template built with shadcn-vue. Customizable. Compatible. Open Source.',
     ogImage: '/hero.png',
   },
+  theme: {
+    customizable: true,
+    color: 'zinc',
+    radius: 0.5,
+  },
   header: {
     title: 'shadcn-docs',
     showTitle: true,
@@ -13,7 +18,6 @@ const defaultConfig: DefaultConfig = {
       light: '/logo.svg',
       dark: '/logo-dark.svg',
     },
-    themeCustomize: true,
     darkModeToggle: true,
     nav: [],
     links: [],
