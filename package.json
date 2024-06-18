@@ -1,7 +1,7 @@
 {
   "name": "shadcn-docs-nuxt",
   "type": "module",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "author": "Tony Zhang <zhangtianli2006@gmail.com>",
   "license": "MIT",
   "homepage": "https://shadcn-docs.nuxt.dev/",
@@ -35,6 +35,7 @@
   "dependencies": {
     "@nuxt/content": "^2.12.1",
     "@nuxt/image": "^1.7.0",
+    "@nuxtjs/color-mode": "^3.4.1",
     "@nuxtjs/tailwindcss": "^6.12.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
@@ -53,7 +54,6 @@
     "@antfu/eslint-config": "^2.21.1",
     "@iconify-json/lucide": "^1.1.193",
     "@iconify-json/vscode-icons": "^1.1.35",
-    "@nuxtjs/color-mode": "^3.4.1",
     "@vueuse/core": "^10.11.0",
     "@vueuse/nuxt": "^10.11.0",
     "eslint": "9.2.0",
