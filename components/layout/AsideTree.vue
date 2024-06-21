@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import type { NavItem } from '@nuxt/content/types';
+import type { NavItem } from '@nuxt/content';
 
 defineProps<{
   links: NavItem[];
