@@ -7,7 +7,7 @@
       <VisuallyHidden as-child>
         <UiDialogDescription aria-describedby="undefined" />
       </VisuallyHidden>
-      <UiCommand v-model:search-term="input" class="h-screen md:h-[350px]">
+      <UiCommand v-model:search-term="input" class="h-svh md:h-[350px]">
         <UiCommandInput
           placeholder="Search documentation..."
           @keydown.enter="handleEnter"
