@@ -1,7 +1,7 @@
 {
   "name": "shadcn-docs-nuxt",
   "type": "module",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "author": "Tony Zhang <zhangtianli2006@gmail.com>",
   "license": "MIT",
   "homepage": "https://shadcn-docs.nuxt.dev/",
@@ -36,27 +36,27 @@
     "@nuxt/content": "^2.13.0",
     "@nuxt/icon": "^1.0.0",
     "@nuxt/image": "^1.7.0",
-    "@nuxtjs/color-mode": "^3.4.1",
+    "@nuxtjs/color-mode": "^3.4.2",
     "@nuxtjs/tailwindcss": "^6.12.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-vue-next": "^0.379.0",
     "nuxt": "^3.12.2",
-    "radix-vue": "^1.8.4",
+    "radix-vue": "^1.8.5",
     "shadcn-nuxt": "^0.10.4",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.5.2",
-    "vue": "^3.4.29",
+    "vue": "^3.4.30",
     "vue-router": "^4.4.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.21.1",
-    "@iconify-json/lucide": "^1.1.194",
+    "@iconify-json/lucide": "^1.1.195",
     "@vueuse/core": "^10.11.0",
     "@vueuse/nuxt": "^10.11.0",
     "eslint": "9.2.0",
-    "shiki": "^1.8.0",
-    "vue-tsc": "^2.0.21"
+    "shiki": "^1.9.1",
+    "vue-tsc": "^2.0.22"
   }
 }

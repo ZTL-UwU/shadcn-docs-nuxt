@@ -4,7 +4,7 @@
     :alt="alt"
     :width="width"
     :height="height"
-    class="my-8"
+    class="[&:not(:first-child)]:mt-8 [&:not(:last-child)]:mb-8"
   />
 </template>
 
