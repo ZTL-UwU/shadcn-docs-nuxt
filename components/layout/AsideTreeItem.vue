@@ -14,9 +14,9 @@
           />
           {{ link.title }}
           <Icon
-            :name="isOpen ? 'lucide:chevrons-down-up' : 'lucide:chevrons-up-down'"
-            size="12"
-            class="ml-auto self-center"
+            name="lucide:chevron-down"
+            class="ml-auto self-center transition-all"
+            :class="[!isOpen && '-rotate-90']"
           />
         </div>
       </UiCollapsibleTrigger>
