@@ -33,6 +33,7 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@iconify-json/lucide": "^1.1.198",
     "@nuxt/content": "^2.13.1",
     "@nuxt/icon": "^1.0.0",
     "@nuxt/image": "^1.7.0",
@@ -52,7 +53,6 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.21.2",
-    "@iconify-json/lucide": "^1.1.198",
     "@vueuse/core": "^10.11.0",
     "@vueuse/nuxt": "^10.11.0",
     "eslint": "9.2.0",
