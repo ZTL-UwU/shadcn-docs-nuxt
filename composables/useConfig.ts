@@ -18,6 +18,7 @@ const defaultConfig: DefaultConfig = {
       light: '/logo.svg',
       dark: '/logo-dark.svg',
     },
+    border: false,
     darkModeToggle: true,
     nav: [],
     links: [],
@@ -80,6 +81,7 @@ const defaultConfig: DefaultConfig = {
   },
   toc: {
     enable: true,
+    enableInMobile: false,
     title: 'On This Page',
     links: [],
   },

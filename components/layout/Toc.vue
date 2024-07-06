@@ -32,7 +32,8 @@
     <UiCollapsible
       v-else
       v-model:open="isOpen"
-      class="block lg:hidden text-sm w-full border-b"
+      class="block lg:hidden text-sm w-full"
+      :class="{ 'border-b': border }"
     >
       <UiCollapsibleTrigger class="px-4 py-3 w-full flex text-left font-medium">
         {{ title }}
@@ -54,5 +55,6 @@ defineProps<{ isSmall: boolean }>();
 
 const { toc } = useContent();
 const { title, links } = useConfig().value.toc;
+const { border } = useConfig().value.header;
 const isOpen = ref(false);
 </script>

@@ -1,6 +1,12 @@
 <template>
-  <header class="sticky z-40 top-0 bg-background/80 backdrop-blur-lg lg:border-b">
-    <div class="container px-4 md:px-8 flex h-14 max-w-screen-2xl items-center border-b lg:border-none gap-2 justify-between">
+  <header
+    class="sticky z-40 top-0 bg-background/80 backdrop-blur-lg"
+    :class="{ 'lg:border-b': config.header.border }"
+  >
+    <div
+      class="container px-4 md:px-8 flex h-14 max-w-screen-2xl items-center gap-2 justify-between"
+      :class="{ 'border-b lg:border-none': config.header.border }"
+    >
       <LayoutHeaderLogo class="hidden md:flex flex-1" />
       <LayoutMobileNav />
       <LayoutHeaderNav class="hidden lg:flex flex-1" />
@@ -22,7 +28,7 @@
         </div>
       </div>
     </div>
-    <div v-if="config.toc.enable" class="lg:hidden">
+    <div v-if="config.toc.enable && config.toc.enableInMobile" class="lg:hidden">
       <LayoutToc is-small />
     </div>
   </header>

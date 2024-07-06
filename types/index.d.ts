@@ -12,6 +12,7 @@ interface DefaultConfig {
   header: {
     title: string;
     showTitle: boolean;
+    border: boolean;
     logo: {
       light: string;
       dark: string;
@@ -57,6 +58,7 @@ interface DefaultConfig {
   };
   toc: {
     enable: boolean;
+    enableInMobile: boolean;
     title: string;
     links: ({
       icon: string;
