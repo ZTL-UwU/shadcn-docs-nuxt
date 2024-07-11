@@ -9,7 +9,7 @@
       <p class="mb-2 text-base font-semibold">
         {{ title }}
       </p>
-      <LayoutTocTree :links="toc.links" :level="0" :class="[links && 'pb-5 border-b']" />
+      <LayoutTocTree :links="toc.links" :level="0" :class="[links.length && 'pb-5 border-b']" />
       <div v-if="links" class="pt-5 text-muted-foreground">
         <NuxtLink
           v-for="(link, i) in links"
