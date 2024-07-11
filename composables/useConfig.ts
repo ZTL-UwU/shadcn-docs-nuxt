@@ -31,6 +31,7 @@ const defaultConfig: DefaultConfig = {
     breadCrumb: true,
     showTitle: true,
     codeCopyToast: true,
+    padded: true,
     codeIcon: {
       'package.json': 'vscode-icons:file-type-node',
       'tsconfig.json': 'vscode-icons:file-type-tsconfig',

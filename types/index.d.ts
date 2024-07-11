@@ -46,6 +46,7 @@ interface DefaultConfig {
     codeIcon: {
       [key: string]: string;
     };
+    padded: boolean;
   };
   footer: {
     credits: string;

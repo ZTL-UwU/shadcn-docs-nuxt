@@ -4,8 +4,8 @@
     :class="{ 'lg:border-b': config.header.border }"
   >
     <div
-      class="container px-4 md:px-8 flex h-14 max-w-screen-2xl items-center gap-2 justify-between"
-      :class="{ 'border-b lg:border-none': config.header.border }"
+      class="px-4 md:px-8 flex h-14 items-center gap-2 justify-between"
+      :class="{ 'border-b lg:border-none': config.header.border, 'max-w-screen-2xl container': config.main.padded }"
     >
       <LayoutHeaderLogo class="hidden md:flex flex-1" />
       <LayoutMobileNav />
