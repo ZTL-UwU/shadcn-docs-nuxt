@@ -21,7 +21,7 @@
         </NuxtLink>
       </li>
     </ul>
-    <LayoutAsideTree :links="tree" :level="0" class="px-3 pt-4" />
+    <LayoutAsideTree :links="tree" :level="0" class="px-3" :class="[config.aside.useLevel ? 'pt-4' : 'pt-1']" />
   </UiScrollArea>
 </template>
 
