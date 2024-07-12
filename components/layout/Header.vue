@@ -9,6 +9,7 @@
     >
       <LayoutHeaderLogo class="hidden md:flex flex-1" />
       <LayoutMobileNav />
+      <LayoutHeaderLogo v-if="config.header.showTitleInMobile" class="flex md:hidden" />
       <LayoutHeaderNav class="hidden lg:flex flex-1" />
       <div class="flex flex-1 justify-end gap-2">
         <LayoutSearchButton v-if="!config.search.inAside && config.search.style === 'input'" />

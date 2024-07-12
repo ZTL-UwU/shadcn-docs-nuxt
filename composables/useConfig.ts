@@ -18,6 +18,7 @@ const defaultConfig: DefaultConfig = {
       light: '/logo.svg',
       dark: '/logo-dark.svg',
     },
+    showTitleInMobile: false,
     border: false,
     darkModeToggle: true,
     nav: [],

@@ -17,6 +17,7 @@ interface DefaultConfig {
       light: string;
       dark: string;
     };
+    showTitleInMobile: boolean;
     darkModeToggle: boolean;
     nav: ({
       title: string;
