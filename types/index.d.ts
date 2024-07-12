@@ -71,6 +71,7 @@ interface DefaultConfig {
   search: {
     enable: boolean;
     inAside: boolean;
+    style: 'input' | 'button';
   };
 }
 

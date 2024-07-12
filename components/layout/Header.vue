@@ -11,8 +11,9 @@
       <LayoutMobileNav />
       <LayoutHeaderNav class="hidden lg:flex flex-1" />
       <div class="flex flex-1 justify-end gap-2">
-        <LayoutSearchButton v-if="!config.search.inAside" />
+        <LayoutSearchButton v-if="!config.search.inAside && config.search.style === 'input'" />
         <div class="flex">
+          <LayoutSearchButton v-if="!config.search.inAside && config.search.style === 'button'" />
           <ThemePopover v-if="config.theme.customizable" />
           <DarkModeToggle v-if="config.header.darkModeToggle" />
           <NuxtLink

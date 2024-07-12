@@ -89,6 +89,7 @@ const defaultConfig: DefaultConfig = {
   search: {
     enable: true,
     inAside: false,
+    style: 'input',
   },
 };
 
