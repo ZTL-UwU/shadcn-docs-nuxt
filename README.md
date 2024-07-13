@@ -1,4 +1,4 @@
-![Hero](https://github.com/ZTL-UwU/shadcn-docs-nuxt/assets/49156174/b317288d-092d-4656-af5e-54034351daca)
+![Hero](https://github.com/user-attachments/assets/555cfd9b-3461-40ff-b4fa-6df7f2ba44f5)
 
 # shadcn-docs-nuxt
 
