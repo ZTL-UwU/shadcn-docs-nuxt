@@ -18,4 +18,9 @@
 
 <script setup lang="ts">
 const open = ref(false);
+
+// Close sheet on navigation
+watch(() => useRoute().path, () => {
+  open.value = false;
+});
 </script>
