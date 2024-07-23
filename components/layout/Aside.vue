@@ -45,5 +45,5 @@ const tree = computed(() => {
   return navigation.value;
 });
 
-const path = useRoute().path;
+const path = computed(() => useRoute().path);
 </script>
