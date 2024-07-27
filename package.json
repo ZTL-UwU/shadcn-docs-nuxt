@@ -1,7 +1,7 @@
 {
   "name": "shadcn-docs-nuxt",
   "type": "module",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "author": "Tony Zhang <zhangtianli2006@gmail.com>",
   "license": "MIT",
   "homepage": "https://shadcn-docs.nuxt.dev/",
@@ -14,13 +14,15 @@
   "files": [
     "app",
     "app.vue",
+    "assets",
     "components",
     "components.json",
     "composables",
     "layouts",
     "lib",
     "nuxt.config.ts",
-    "pages"
+    "pages",
+    "types"
   ],
   "scripts": {
     "build": "nuxt build",

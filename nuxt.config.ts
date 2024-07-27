@@ -1,4 +1,8 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
+
+const currentDir = dirname(fileURLToPath(import.meta.url));
+
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
@@ -11,15 +15,8 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
   ],
   shadcn: {
-    /**
-     * Prefix for all the imported component
-     */
     prefix: 'Ui',
-    /**
-     * Directory that the component lives in.
-     * @default "./components/ui"
-     */
-    componentDir: './components/ui',
+    componentDir: join(currentDir, './components/ui'),
   },
   components: {
     dirs: [
@@ -32,7 +29,12 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: '',
   },
-  css: ['@/assets/css/themes.css'],
+  tailwindcss: {
+    cssPath: join(currentDir, './assets/css/tailwind.css'),
+  },
+  css: [
+    join(currentDir, './assets/css/themes.css'),
+  ],
   content: {
     documentDriven: true,
     highlight: {
