@@ -29,9 +29,6 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: '',
   },
-  tailwindcss: {
-    cssPath: join(currentDir, './assets/css/tailwind.css'),
-  },
   css: [
     join(currentDir, './assets/css/themes.css'),
   ],
