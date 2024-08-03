@@ -1,6 +1,6 @@
 <template>
   <UiCard
-    class="[&:not(:first-child)]:mt-5 [&:not(:last-child)]:mb-5 overflow-hidden"
+    class="[&:not(:first-child)]:mt-5 [&:not(:last-child)]:mb-5 relative overflow-hidden"
     :class="[inGroup && 'rounded-t-none border-none mb-0']"
   >
     <div v-if="!inGroup && filename" class="p-3 border-b flex text-sm font-mono">
@@ -8,18 +8,21 @@
       {{ filename }}
       <CodeCopy :code="code" class="ml-auto mr-1" />
     </div>
-    <UiScrollArea>
-      <div
-        class="py-3 bg-muted/30 text-sm relative overflow-x-auto"
-        :class="[`highlight-${language}`, !filename && 'inline-copy', !language && 'pl-3']"
-      >
-        <span v-if="!filename" class="absolute right-4">
-          <CodeCopy :code="code" />
-        </span>
-        <slot />
-      </div>
-      <ScrollBar orientation="horizontal" />
-    </UiScrollArea>
+
+    <span v-if="!filename" class="absolute top-3 right-3">
+      <CodeCopy :code="code" />
+    </span>
+    <div class="pr-9 bg-muted/30">
+      <UiScrollArea>
+        <div
+          class="py-3 text-sm overflow-x-auto"
+          :class="[`highlight-${language}`, !filename && 'inline-copy', !language && 'pl-3']"
+        >
+          <slot />
+        </div>
+        <ScrollBar orientation="horizontal" />
+      </UiScrollArea>
+    </div>
   </UiCard>
 </template>
 
@@ -71,9 +74,5 @@ const icon = iconMap.get(props.filename?.toLowerCase()) || iconMap.get(props.lan
 .shiki .line {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
-}
-
-.inline-copy .line {
-  padding-right: 2.7rem;
 }
 </style>
