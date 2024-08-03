@@ -24,7 +24,7 @@
         <DialogClose
           class="absolute top-3 right-3 p-0.5 transition-colors rounded-md hover:bg-secondary"
         >
-          <X class="w-4 h-4" />
+          <Icon name="lucide:x" class="block w-4 h-4" />
           <span class="sr-only">Close</span>
         </DialogClose>
       </DialogContent>
@@ -43,7 +43,6 @@ import {
   DialogPortal,
   useForwardPropsEmits,
 } from 'radix-vue';
-import { X } from 'lucide-vue-next';
 import { cn } from '@/lib/utils';
 
 const props = defineProps<DialogContentProps & { class?: HTMLAttributes['class'] }>();

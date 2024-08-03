@@ -1,6 +1,6 @@
 <template>
   <div class="flex items-center border-b px-3" cmdk-input-wrapper>
-    <Search class="mr-2 h-4 w-4 shrink-0 opacity-50" />
+    <Icon name="lucide:search" class="mr-2 h-4 w-4 shrink-0 opacity-50" />
     <ComboboxInput
       v-bind="{ ...forwardedProps, ...$attrs }"
       auto-focus
@@ -11,7 +11,6 @@
 
 <script setup lang="ts">
 import { type HTMLAttributes, computed } from 'vue';
-import { Search } from 'lucide-vue-next';
 import { ComboboxInput, type ComboboxInputProps, useForwardProps } from 'radix-vue';
 import { cn } from '@/lib/utils';
 
