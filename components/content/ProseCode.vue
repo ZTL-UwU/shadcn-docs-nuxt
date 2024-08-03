@@ -6,9 +6,7 @@
     <div v-if="!inGroup && filename" class="p-3 border-b flex text-sm font-mono">
       <Icon v-if="icon" :name="icon" class="self-center mr-1.5" />
       {{ filename }}
-      <span class="ml-auto mr-1">
-        <CodeCopy :code="code" />
-      </span>
+      <CodeCopy :code="code" class="ml-auto mr-1" />
     </div>
     <UiScrollArea>
       <div
