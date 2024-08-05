@@ -1,6 +1,7 @@
 <template>
   <div class="flex items-center border-b px-3" cmdk-input-wrapper>
-    <Icon name="lucide:search" class="mr-2 h-4 w-4 shrink-0 opacity-50" />
+    <Icon v-if="!loading" name="lucide:search" class="mr-2 h-4 w-4 shrink-0 opacity-50" />
+    <Icon v-else name="lucide:loader" class="w-4 h-4 mr-2 animate-spin shrink-0 opacity-50" />
     <ComboboxInput
       v-bind="{ ...forwardedProps, ...$attrs }"
       auto-focus
@@ -20,6 +21,7 @@ defineOptions({
 
 const props = defineProps<ComboboxInputProps & {
   class?: HTMLAttributes['class'];
+  loading?: boolean;
 }>();
 
 const delegatedProps = computed(() => {

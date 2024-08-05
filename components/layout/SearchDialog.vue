@@ -9,41 +9,14 @@
       </VisuallyHidden>
       <UiCommand v-model:search-term="input" class="h-svh sm:h-[350px]">
         <UiCommandInput
+          :loading="searchLoading"
           placeholder="Search documentation..."
           @keydown.enter="handleEnter"
           @keydown.down="handleNavigate(1)"
           @keydown.up="handleNavigate(-1)"
         />
         <UiCommandList class="text-sm" @escape-key-down="open = false">
-          <div v-if="searchResult?.length" class="p-1.5">
-            <NuxtLink
-              v-for="(item, i) in searchResult"
-              :id="i"
-              :key="item.id"
-              :to="item.id"
-              class="flex p-2 hover:bg-muted hover:cursor-pointer rounded-md select-none"
-              :class="[i === activeSelect && 'bg-muted']"
-              @click="open = false; activeSelect = i;"
-            >
-              <Icon v-if="getItemIcon(item.id)" :name="getItemIcon(item.id)" class="flex-shrink-0 self-center h-4 w-4 mr-2" />
-              <div v-else class="flex-shrink-0 h-4 w-4 mr-2" />
-
-              <span v-for="(subtitle, j) in item.titles" :key="`${subtitle}${j}`" class="flex flex-shrink-0 self-center">
-                {{ subtitle }}
-                <Icon name="lucide:chevron-right" class="self-center mx-0.5 text-muted-foreground" />
-              </span>
-              <span class="self-center flex-shrink-0">
-                {{ item.title }}
-              </span>
-              <span class="self-center text-xs text-muted-foreground truncate ml-2" v-html="getHighlightedContent(item.content)" />
-            </NuxtLink>
-          </div>
-
-          <div v-if="!searchResult?.length && input?.length" class="text-center text-muted-foreground pt-4">
-            No results found.
-          </div>
-
-          <template v-if="!searchResult?.length && !input?.length">
+          <template v-if="!input?.length">
             <template v-for="item in navigation" :key="item._path">
               <UiCommandGroup v-if="item.children" :heading="item.title" class="p-1.5">
                 <NuxtLink v-for="child in item.children" :key="child.id" :to="child._path">
@@ -71,6 +44,34 @@
               </UiCommandItem>
             </UiCommandGroup>
           </template>
+
+          <div v-else-if="searchResult?.length" class="p-1.5">
+            <NuxtLink
+              v-for="(item, i) in searchResult"
+              :id="i"
+              :key="item.id"
+              :to="item.id"
+              class="flex p-2 hover:bg-muted hover:cursor-pointer rounded-md select-none"
+              :class="[i === activeSelect && 'bg-muted']"
+              @click="open = false; activeSelect = i;"
+            >
+              <Icon v-if="getItemIcon(item.id)" :name="getItemIcon(item.id)" class="flex-shrink-0 self-center h-4 w-4 mr-2" />
+              <div v-else class="flex-shrink-0 h-4 w-4 mr-2" />
+
+              <span v-for="(subtitle, j) in item.titles" :key="`${subtitle}${j}`" class="flex flex-shrink-0 self-center">
+                {{ subtitle }}
+                <Icon name="lucide:chevron-right" class="self-center mx-0.5 text-muted-foreground" />
+              </span>
+              <span class="self-center flex-shrink-0">
+                {{ item.title }}
+              </span>
+              <span class="self-center text-xs text-muted-foreground truncate ml-2" v-html="getHighlightedContent(item.content)" />
+            </NuxtLink>
+          </div>
+
+          <div v-else class="text-center text-muted-foreground pt-4">
+            No results found.
+          </div>
         </UiCommandList>
       </UiCommand>
     </UiDialogContent>
@@ -99,11 +100,17 @@ watch([Meta_K, Ctrl_K], (v) => {
 
 const input = ref('');
 const searchResult = ref();
+const searchLoading = ref(false);
 watch(
   input,
   async (v) => {
     activeSelect.value = 0;
+    if (!v)
+      return;
+
+    searchLoading.value = true;
     searchResult.value = (await searchContent(v)).value;
+    searchLoading.value = false;
   },
 );
 
