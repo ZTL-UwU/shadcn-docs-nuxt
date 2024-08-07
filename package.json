@@ -1,7 +1,7 @@
 {
   "name": "shadcn-docs-nuxt",
   "type": "module",
-  "version": "0.4.6",
+  "version": "0.4.7",
   "author": "Tony Zhang <zhangtianli2006@gmail.com>",
   "license": "MIT",
   "homepage": "https://shadcn-docs.nuxt.dev/",
