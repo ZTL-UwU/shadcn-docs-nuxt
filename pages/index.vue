@@ -19,4 +19,6 @@ useSeoMeta({
   ogTitle: page.value?.title,
   description: page.value?.description,
 });
+
+definePageMeta({ documentDriven: { page: false } });
 </script>
