@@ -44,19 +44,19 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "nuxt": "^3.12.4",
-    "radix-vue": "^1.9.2",
+    "radix-vue": "^1.9.3",
     "shadcn-nuxt": "^0.10.4",
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.5.4",
-    "vue": "^3.4.35",
-    "vue-router": "^4.4.2"
+    "vue": "^3.4.36",
+    "vue-router": "^4.4.3"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.24.1",
     "@vueuse/core": "^10.11.0",
     "@vueuse/nuxt": "^10.11.0",
-    "eslint": "9.2.0",
+    "eslint": "^9.8.0",
     "shiki": "^1.12.1",
     "vue-tsc": "^2.0.29"
   }
