@@ -2,8 +2,8 @@ import { defu } from 'defu';
 
 const defaultConfig: DefaultConfig = {
   site: {
-    name: 'shadcn-docs',
-    description: 'Beautifully designed Nuxt Content template built with shadcn-vue. Customizable. Compatible. Open Source.',
+    name: 'Một Niệm Vãng Sanh',
+    description: 'Tín - Nguyện - Hành',
     ogImage: '/hero.png',
   },
   theme: {
@@ -12,7 +12,7 @@ const defaultConfig: DefaultConfig = {
     radius: 0.5,
   },
   header: {
-    title: 'shadcn-docs',
+    title: 'Một Niệm Vãng Sanh',
     showTitle: true,
     logo: {
       light: '/logo.svg',

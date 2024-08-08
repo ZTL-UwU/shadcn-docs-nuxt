@@ -1,8 +1,8 @@
 export default defineAppConfig({
   shadcnDocs: {
     site: {
-      name: 'shadcn-docs',
-      description: 'Beautifully designed Nuxt Content template built with shadcn-vue. Customizable. Compatible. Open Source.',
+      name: 'Một Niệm Vãng Sanh',
+      description: 'Tín - Nguyện - Hành',
       ogImage: '/hero.png',
     },
     theme: {
@@ -11,58 +11,106 @@ export default defineAppConfig({
       radius: 0.5,
     },
     header: {
-      title: 'shadcn-docs',
+      title: 'Một Niệm Vãng Sanh',
       showTitle: true,
       logo: {
         light: '/logo.svg',
         dark: '/logo-dark.svg',
       },
       darkModeToggle: true,
-      nav: [{
-        title: 'Docs',
+      nav: [
+        {
+        title: 'Hòa thượng',
         links: [{
-          title: 'Getting Started',
-          to: '/getting-started',
+          title: 'HÒA THƯỢNG HƯ VÂN',
+          to: '/hu-van-nien-pho',
           description: 'Start building your document with shadcn-docs-nuxt',
         }, {
-          title: 'API',
-          to: '/api',
+          title: 'LIÊN TÔNG THẬP TAM TỔ',
+          to: '/lien-tong-thap-tam-to',
+          description: 'Discover the configurations and exposed APIs.',
+          target: '_self',
+        }, {
+          title: 'HÒA THƯỢNG TỊNH KHÔNG',
+          to: '/hoa-thuong-tinh-khong',
           description: 'Discover the configurations and exposed APIs.',
           target: '_self',
         }],
-      }, {
-        title: 'Credits',
-        links: [{
-          title: 'shadcn-ui',
-          to: 'https://ui.shadcn.com/',
-          description: 'For the beautiful component design & docs design',
+    },
+        {
+          title: 'Sách',
+          links: [{
+            title: 'NIỆM PHẬT THÀNH PHẬT',
+            to: '/niem-phat-thanh-phat',
+            description: 'For the beautiful component design & docs design',
+            target: '_blank',
+          }, {
+            title: 'NIỆM PHẬT TÔNG YẾU',
+            to: '/niem-phat-tong-yeu',
+            description: 'For the vue port of shadcn-ui & some docs component source',
+            target: '_blank',
+          }, {
+            title: 'THỌ KHANG BẢO GIÁM (壽康寶鑒)',
+            to: '/tho-khang-bao-giam',
+            description: 'For inspiration & some docs component source',
+            target: '_blank',
+          }, {
+            title: 'LƯƠNG HOÀNG SÁM',
+            to: '/luong-hoang-sam',
+            description: 'Content made easy for Vue Developers',
+            target: '_blank',
+          }],
+        },
+        {
+          title: 'Video',
+          links: [
+            {
+              title: 'NHẬN THỨC PHẬT GIÁO',
+              to: '/nhan-thuc-phat-giao',
+              target: '_self',
+            },
+            {
+              title: 'TRĂM NĂM HƯ VÂN LÃO HÒA THƯỢNG',
+              to: 'https://ph.tinhtong.vn/Home/Video/phim-tram-nam-hu-van-lao-hoa-thuong_00000f',
+              description: 'For the vue port of shadcn-ui & some docs component source',
+              target: '_blank',
+            },
+/*            {
+              title: 'Docus',
+              to: 'https://docus.dev/',
+              description: 'For inspiration & some docs component source',
+              target: '_blank',
+            }, {
+              title: 'Nuxt Content',
+              to: 'https://content.nuxt.com/',
+              description: 'Content made easy for Vue Developers',
+              target: '_blank',
+            }*/
+          ],
+        },
+      ],
+      links: [
+        {
+          icon: 'lucide:facebook',
+          to: 'https://www.facebook.com/profile.php?id=61563761920845',
           target: '_blank',
-        }, {
-          title: 'shadcn-vue',
-          to: 'https://www.shadcn-vue.com/',
-          description: 'For the vue port of shadcn-ui & some docs component source',
+        },
+        {
+          icon: 'lucide:headphones',
+          to: 'https://ph.tinhtong.vn/Home/MP3?p=MP3*-+PS+Tinh+Khong',
           target: '_blank',
-        }, {
-          title: 'Docus',
-          to: 'https://docus.dev/',
-          description: 'For inspiration & some docs component source',
+        },
+        {
+          icon: 'lucide:headphones',
+          to: 'https://ph.tinhtong.vn/Home/MP3?p=MP3+tinhkhongphapngu',
           target: '_blank',
-        }, {
-          title: 'Nuxt Content',
-          to: 'https://content.nuxt.com/',
-          description: 'Content made easy for Vue Developers',
+        },
+        {
+          icon: 'lucide:film',
+          to: 'https://ph.tinhtong.vn/Home/Videos',
           target: '_blank',
-        }],
-      }, {
-        title: 'Use This Template',
-        to: '/getting-started/installation',
-        target: '_self',
-      }],
-      links: [{
-        icon: 'lucide:github',
-        to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt',
-        target: '_blank',
-      }],
+        },
+      ],
     },
     aside: {
       useLevel: true,
@@ -117,7 +165,7 @@ export default defineAppConfig({
       },
     },
     footer: {
-      credits: 'Copyright © 2024',
+      credits: '',
       links: [
         {
           title: 'shadcn-vue',
@@ -134,7 +182,7 @@ export default defineAppConfig({
     toc: {
       enable: true,
       title: 'On This Page',
-      links: [{
+     /* links: [{
         title: 'Star on GitHub',
         icon: 'lucide:star',
         to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt',
@@ -144,7 +192,7 @@ export default defineAppConfig({
         icon: 'lucide:circle-dot',
         to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt/issues',
         target: '_blank',
-      }],
+      }],*/
     },
     search: {
       enable: true,
