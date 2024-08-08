@@ -167,7 +167,7 @@ export default defineAppConfig({
     footer: {
       credits: '',
       links: [
-        {
+        /*{
           title: 'shadcn-vue',
           to: 'https://www.shadcn-vue.com/',
           target: '_blank',
@@ -176,7 +176,7 @@ export default defineAppConfig({
           icon: 'lucide:github',
           to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt',
           target: '_blank',
-        },
+        },*/
       ],
     },
     toc: {
