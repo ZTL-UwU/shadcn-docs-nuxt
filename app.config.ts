@@ -24,16 +24,17 @@ export default defineAppConfig({
         links: [{
           title: 'HÒA THƯỢNG HƯ VÂN',
           to: '/hu-van-nien-pho',
-          description: 'Start building your document with shadcn-docs-nuxt',
+          description: '',
+          target: '_self',
         }, {
           title: 'LIÊN TÔNG THẬP TAM TỔ',
           to: '/lien-tong-thap-tam-to',
-          description: 'Discover the configurations and exposed APIs.',
+          description: '',
           target: '_self',
         }, {
           title: 'HÒA THƯỢNG TỊNH KHÔNG',
           to: '/hoa-thuong-tinh-khong',
-          description: 'Discover the configurations and exposed APIs.',
+          description: '',
           target: '_self',
         }],
     },
@@ -42,23 +43,23 @@ export default defineAppConfig({
           links: [{
             title: 'NIỆM PHẬT THÀNH PHẬT',
             to: '/niem-phat-thanh-phat',
-            description: 'For the beautiful component design & docs design',
-            target: '_blank',
+            description: '',
+            target: '_self',
           }, {
             title: 'NIỆM PHẬT TÔNG YẾU',
             to: '/niem-phat-tong-yeu',
-            description: 'For the vue port of shadcn-ui & some docs component source',
-            target: '_blank',
+            description: '',
+            target: '_self',
           }, {
             title: 'THỌ KHANG BẢO GIÁM (壽康寶鑒)',
             to: '/tho-khang-bao-giam',
-            description: 'For inspiration & some docs component source',
-            target: '_blank',
+            description: '',
+            target: '_self',
           }, {
             title: 'LƯƠNG HOÀNG SÁM',
             to: '/luong-hoang-sam',
-            description: 'Content made easy for Vue Developers',
-            target: '_blank',
+            description: '',
+            target: '_self',
           }],
         },
         {
@@ -72,18 +73,18 @@ export default defineAppConfig({
             {
               title: 'TRĂM NĂM HƯ VÂN LÃO HÒA THƯỢNG',
               to: 'https://ph.tinhtong.vn/Home/Video/phim-tram-nam-hu-van-lao-hoa-thuong_00000f',
-              description: 'For the vue port of shadcn-ui & some docs component source',
+              description: '',
               target: '_blank',
             },
 /*            {
               title: 'Docus',
-              to: 'https://docus.dev/',
-              description: 'For inspiration & some docs component source',
+              to: '/',
+              description: '',
               target: '_blank',
             }, {
               title: 'Nuxt Content',
-              to: 'https://content.nuxt.com/',
-              description: 'Content made easy for Vue Developers',
+              to: '/',
+              description: '',
               target: '_blank',
             }*/
           ],
