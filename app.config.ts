@@ -3,7 +3,7 @@ export default defineAppConfig({
     site: {
       name: 'Một Niệm Vãng Sanh',
       description: 'Tín - Nguyện - Hành',
-      ogImage: '/hero.png',
+      ogImage: '/tin-nguyen-hanh.png',
     },
     theme: {
       customizable: true,
