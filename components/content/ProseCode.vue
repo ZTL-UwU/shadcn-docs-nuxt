@@ -12,11 +12,11 @@
     <span v-if="!filename" class="absolute top-3 right-3">
       <CodeCopy :code="code" />
     </span>
-    <div class="pr-9 bg-muted/30">
+    <div class="bg-muted/30">
       <UiScrollArea>
         <div
           class="py-3 text-sm overflow-x-auto"
-          :class="[`highlight-${language}`, !filename && 'inline-copy', !language && 'pl-3']"
+          :class="[!filename && 'inline-copy', !language && 'pl-3', !inGroup && 'in-group']"
         >
           <slot />
         </div>
@@ -74,5 +74,9 @@ const icon = iconMap.get(props.filename?.toLowerCase()) || iconMap.get(props.lan
 .shiki .line {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+}
+
+.in-group .line {
+  padding-right: 3rem;
 }
 </style>
