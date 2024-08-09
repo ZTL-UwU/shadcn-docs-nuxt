@@ -91,6 +91,8 @@ const defaultConfig: DefaultConfig = {
     enable: true,
     inAside: false,
     style: 'input',
+    placeholder: 'Search...',
+    placeholderDetailed: 'Search documentation...',
   },
 };
 

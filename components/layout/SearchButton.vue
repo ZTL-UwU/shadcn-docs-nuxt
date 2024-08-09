@@ -8,7 +8,7 @@
       @click="isOpen = true"
     >
       <span class="overflow-hidden mr-auto">
-        Search...
+        {{ placeholder }}
       </span>
       <Kbd class="hidden md:block ml-auto">
         <span class="text-xs">⌘</span>K
@@ -29,5 +29,5 @@
 
 <script setup lang="ts">
 const isOpen = ref(false);
-const { enable, inAside, style } = useConfig().value.search;
+const { enable, inAside, style, placeholder } = useConfig().value.search;
 </script>

@@ -10,7 +10,7 @@
       <UiCommand v-model:search-term="input" class="h-svh sm:h-[350px]">
         <UiCommandInput
           :loading="searchLoading"
-          placeholder="Search documentation..."
+          :placeholder="placeholderDetailed"
           @keydown.enter="handleEnter"
           @keydown.down="handleNavigate(1)"
           @keydown.up="handleNavigate(-1)"
@@ -83,6 +83,7 @@ import { VisuallyHidden } from 'radix-vue';
 
 const open = defineModel<boolean>('open');
 const colorMode = useColorMode();
+const { placeholderDetailed } = useConfig().value.search;
 
 const activeSelect = ref(0);
 

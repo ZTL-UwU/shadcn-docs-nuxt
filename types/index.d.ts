@@ -73,6 +73,8 @@ interface DefaultConfig {
     enable: boolean;
     inAside: boolean;
     style: 'input' | 'button';
+    placeholder: string;
+    placeholderDetailed: string;
   };
 }
 
