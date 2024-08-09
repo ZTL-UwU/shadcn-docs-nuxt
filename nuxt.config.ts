@@ -4,6 +4,11 @@ import { dirname, join } from 'node:path';
 const currentDir = dirname(fileURLToPath(import.meta.url));
 
 export default defineNuxtConfig({
+  nitro: {
+    prerender: {
+      routes: ['/sitemap.xml']
+    }
+  },
   devtools: { enabled: true },
   modules: [
     '@nuxtjs/tailwindcss',
