@@ -6,7 +6,7 @@ navigation: false
 ::hero
 ---
 announcement:
-  title: 'Release v0.4.7'
+  title: 'Release v0.4.8'
   icon: 'noto:party-popper'
   to: /getting-started/changelog
 actions:

@@ -1,7 +1,7 @@
 {
   "name": "shadcn-docs-nuxt",
   "type": "module",
-  "version": "0.4.7",
+  "version": "0.4.8",
   "author": "Tony Zhang <zhangtianli2006@gmail.com>",
   "license": "MIT",
   "homepage": "https://shadcn-docs.nuxt.dev/",
@@ -49,13 +49,13 @@
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.5.4",
-    "vue": "^3.4.36",
+    "vue": "^3.4.37",
     "vue-router": "^4.4.3"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.24.1",
-    "@vueuse/core": "^10.11.0",
-    "@vueuse/nuxt": "^10.11.0",
+    "@antfu/eslint-config": "^2.25.0",
+    "@vueuse/core": "^10.11.1",
+    "@vueuse/nuxt": "^10.11.1",
     "eslint": "^9.8.0",
     "shiki": "^1.12.1",
     "vue-tsc": "^2.0.29"
