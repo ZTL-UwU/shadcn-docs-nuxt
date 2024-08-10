@@ -1,6 +1,6 @@
 <template>
   <Alert :to="to" :target="target" icon="lucide:bookmark">
-    Read more in <span class="font-semibold capitalize">{{ computedTitle }}</span>
+    Read more in <span class="font-semibold">{{ computedTitle }}</span>
   </Alert>
 </template>
 
@@ -12,6 +12,15 @@ const props = defineProps<{
 }>();
 
 const computedTitle = computed<string>(
-  () => props.title || useBreadcrumb(props.to).map(x => x.title).join(' > '),
+  () => {
+    if (props.title)
+      return props.title;
+
+    try {
+      return useBreadcrumb(props.to).map(x => x.title).join(' > ');
+    } catch {
+      return props.to;
+    }
+  },
 );
 </script>
