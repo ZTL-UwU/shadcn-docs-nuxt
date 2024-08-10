@@ -35,7 +35,7 @@ async function handleClick() {
 
   if (useConfig().value.main.codeCopyToast) {
     toast({
-      description: 'Copied to clipboard!',
+      description: useConfig().value.main.codeCopyToastText,
     });
   }
 }

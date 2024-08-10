@@ -32,6 +32,7 @@ const defaultConfig: DefaultConfig = {
     breadCrumb: true,
     showTitle: true,
     codeCopyToast: true,
+    codeCopyToastText: 'Copied to clipboard!',
     padded: true,
     codeIcon: {
       'package.json': 'vscode-icons:file-type-node',
