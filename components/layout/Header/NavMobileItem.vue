@@ -1,8 +1,8 @@
 <template>
   <template v-if="item.links">
     <UiCollapsible v-model:open="isOpen">
-      <UiCollapsibleTrigger class="w-full text-left p-2">
-        <div class="w-full flex gap-1">
+      <UiCollapsibleTrigger class="w-full p-2 text-left">
+        <div class="flex w-full gap-1">
           {{ item.title }}
           <Icon
             :name="isOpen ? 'lucide:chevrons-down-up' : 'lucide:chevrons-up-down'"
@@ -17,12 +17,12 @@
             <NuxtLink
               :to="link.to"
               :target="link.to"
-              class="px-3 py-2 mb-1 hover:bg-muted rounded-md w-full block gap-2 transition-all"
+              class="mb-1 block w-full gap-2 rounded-md px-3 py-2 transition-all hover:bg-muted"
             >
               <div class="font-semibold">
                 {{ link.title }}
               </div>
-              <div class="text-muted-foreground text-sm">
+              <div class="text-sm text-muted-foreground">
                 {{ link.description }}
               </div>
             </NuxtLink>
@@ -31,7 +31,7 @@
       </UiCollapsibleContent>
     </UiCollapsible>
   </template>
-  <NuxtLink v-else :to="item.to" :target="item.target" class="w-full flex p-2">
+  <NuxtLink v-else :to="item.to" :target="item.target" class="flex w-full p-2">
     {{ item.title }}
     <Icon name="lucide:arrow-up-right" class="ml-1 text-muted-foreground" size="12" />
   </NuxtLink>

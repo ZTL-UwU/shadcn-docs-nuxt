@@ -1,7 +1,7 @@
 <template>
-  <div class="[&:not(:first-child)]:mt-5 group-has-[div]:mt-0">
+  <div class="group-has-[div]:mt-0 [&:not(:first-child)]:mt-5">
     <NuxtLink :to="to" :target="target">
-      <UiCard class="transition-all relative h-full" :class="[to && 'hover:bg-muted']">
+      <UiCard class="relative h-full transition-all" :class="[to && 'hover:bg-muted']">
         <UiCardHeader v-if="icon || title || $slots.title || description || $slots.description">
           <Icon v-if="icon" class="mb-2" :name="icon" size="24" />
           <UiCardTitle v-if="title || $slots.title">

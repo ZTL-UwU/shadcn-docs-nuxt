@@ -1,6 +1,6 @@
 <template>
   <UiAlert
-    class="[&:not(:first-child)]:mt-5 transition-all"
+    class="transition-all [&:not(:first-child)]:mt-5"
     :class="[typeTwClass[type], to && 'cursor-pointer hover:bg-muted/50']"
     @click="alertClick"
   >
@@ -10,7 +10,7 @@
     </UiAlertTitle>
     <UiAlertDescription>
       <div class="flex flex-row space-x-2">
-        <Icon v-if="icon && !title" :name="icon" size="16" class="self-center mb-[2px] min-w-5" />
+        <Icon v-if="icon && !title" :name="icon" size="16" class="mb-[2px] min-w-5 self-center" />
         <span :class="[to && 'pr-3']">
           <slot />
         </span>

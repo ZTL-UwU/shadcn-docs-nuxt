@@ -3,14 +3,14 @@
     <UiButton
       v-if="style === 'input'"
       variant="outline"
-      class="pr-1.5 h-8 self-center w-full rounded-md font-normal text-muted-foreground hover:text-accent-foreground"
+      class="h-8 w-full self-center rounded-md pr-1.5 font-normal text-muted-foreground hover:text-accent-foreground"
       :class="[inAside ? 'mb-4' : 'md:w-40 lg:w-64']"
       @click="isOpen = true"
     >
-      <span class="overflow-hidden mr-auto">
+      <span class="mr-auto overflow-hidden">
         {{ placeholder }}
       </span>
-      <Kbd class="hidden md:block ml-auto">
+      <Kbd class="ml-auto hidden md:block">
         <span class="text-xs">⌘</span>K
       </Kbd>
     </UiButton>

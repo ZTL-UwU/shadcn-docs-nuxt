@@ -11,7 +11,7 @@
         <UiSeparator class="mx-2 h-4" orientation="vertical" />
       </template>
       <span class="underline-offset-4 hover:underline">{{ announcement.title }}</span>
-      <Icon name="lucide:arrow-right" class="ml-1 h-4 w-4" />
+      <Icon name="lucide:arrow-right" class="ml-1 size-4" />
     </NuxtLink>
 
     <h1 class="text-3xl font-bold leading-tight tracking-tighter md:text-4xl lg:leading-[1.1]">

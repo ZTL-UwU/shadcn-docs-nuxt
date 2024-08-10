@@ -1,7 +1,7 @@
 <template>
   <div class="grid gap-6">
     <div class="grid space-y-1">
-      <h1 class="text-lg text-foreground font-semibold">
+      <h1 class="text-lg font-semibold text-foreground">
         Customize
       </h1>
       <p class="text-sm text-muted-foreground">
@@ -15,10 +15,10 @@
           <UiButton
             class="justify-start gap-2"
             variant="outline"
-            :class="{ 'border-primary border-2': theme === color }"
+            :class="{ 'border-2 border-primary': theme === color }"
             @click="setTheme(color)"
           >
-            <span class="h-5 w-5 flex items-center justify-center rounded-full" :style="{ backgroundColor: backgroundColor(color) }">
+            <span class="flex size-5 items-center justify-center rounded-full" :style="{ backgroundColor: backgroundColor(color) }">
               <Icon v-if="theme === color" name="lucide:check" size="16" class="text-white" />
             </span>
             <span class="text-xs capitalize">{{ color }}</span>
@@ -33,7 +33,7 @@
           <UiButton
             class="justify-center gap-2"
             variant="outline"
-            :class="{ 'border-primary border-2': radius === r }"
+            :class="{ 'border-2 border-primary': radius === r }"
             @click="setRadius(r)"
           >
             <span class="text-xs capitalize">{{ r }}</span>
@@ -47,7 +47,7 @@
         <UiButton
           class="justify-center gap-2"
           variant="outline"
-          :class="{ 'border-primary border-2': colorMode.preference === 'light' }"
+          :class="{ 'border-2 border-primary': colorMode.preference === 'light' }"
           @click="colorMode.preference = 'light'"
         >
           <Icon name="lucide:sun" size="16" />
@@ -56,7 +56,7 @@
         <UiButton
           class="justify-center gap-2"
           variant="outline"
-          :class="{ 'border-primary border-2': colorMode.preference === 'dark' }"
+          :class="{ 'border-2 border-primary': colorMode.preference === 'dark' }"
           @click="colorMode.preference = 'dark'"
         >
           <Icon name="lucide:moon" size="16" />
@@ -65,7 +65,7 @@
         <UiButton
           class="justify-center gap-2"
           variant="outline"
-          :class="{ 'border-primary border-2': colorMode.preference === 'system' }"
+          :class="{ 'border-2 border-primary': colorMode.preference === 'system' }"
           @click="colorMode.preference = 'system'"
         >
           <Icon name="lucide:monitor" size="16" />

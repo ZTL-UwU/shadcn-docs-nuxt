@@ -4,12 +4,12 @@
     :to="prevNext._path"
     class="basis-1/3"
   >
-    <div class="border p-4 rounded-lg hover:bg-muted/50 transition-all space-y-2 mb-4">
+    <div class="mb-4 space-y-2 rounded-lg border p-4 transition-all hover:bg-muted/50">
       <div class="flex flex-row gap-3">
-        <div v-if="side === 'left'" class="flex h-6 w-6 min-w-6">
-          <Icon name="lucide:arrow-left" size="20" class="self-center mx-auto" />
+        <div v-if="side === 'left'" class="flex size-6 min-w-6">
+          <Icon name="lucide:arrow-left" size="20" class="mx-auto self-center" />
         </div>
-        <span class="self-center space-y-2">
+        <span class="space-y-2 self-center">
           <div class="text-lg font-semibold">
             {{ prevNext.title }}
           </div>
@@ -17,8 +17,8 @@
             {{ prevNext.description }}
           </div>
         </span>
-        <div v-if="side === 'right'" class="flex h-6 w-6 min-w-6 ml-auto">
-          <Icon name="lucide:arrow-right" size="20" class="self-center mx-auto" />
+        <div v-if="side === 'right'" class="ml-auto flex size-6 min-w-6">
+          <Icon name="lucide:arrow-right" size="20" class="mx-auto self-center" />
         </div>
       </div>
     </div>

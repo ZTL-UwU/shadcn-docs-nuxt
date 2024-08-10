@@ -3,7 +3,7 @@
     <UiScrollArea
       v-if="!isSmall"
       orientation="vertical"
-      class="hidden lg:block h-[calc(100vh-6.5rem)] z-30 md:block overflow-y-auto"
+      class="z-30 hidden h-[calc(100vh-6.5rem)] overflow-y-auto md:block lg:block"
       type="hover"
     >
       <p class="mb-2 text-base font-semibold">
@@ -12,7 +12,7 @@
       <LayoutTocTree
         :links="toc.links.filter((x: any) => x.id !== 'hide-toc')"
         :level="0"
-        :class="[links.length && 'pb-5 border-b']"
+        :class="[links.length && 'border-b pb-5']"
       />
       <div v-if="links" class="pt-5 text-muted-foreground">
         <NuxtLink
@@ -20,12 +20,12 @@
           :key="i"
           :to="link.to"
           :target="link.target"
-          class="w-full flex hover:underline underline-offset-4 gap-1 [&:not(:first-child)]:pt-3"
+          class="flex w-full gap-1 underline-offset-4 hover:underline [&:not(:first-child)]:pt-3"
         >
           <Icon
             v-if="link.icon"
             :name="link.icon"
-            class="self-center mr-1"
+            class="mr-1 self-center"
             size="16"
           />
           {{ link.title }}
@@ -36,10 +36,10 @@
     <UiCollapsible
       v-else
       v-model:open="isOpen"
-      class="block lg:hidden text-sm w-full"
+      class="block w-full text-sm lg:hidden"
       :class="{ 'border-b': border }"
     >
-      <UiCollapsibleTrigger class="px-4 py-3 w-full flex text-left font-medium">
+      <UiCollapsibleTrigger class="flex w-full px-4 py-3 text-left font-medium">
         {{ title }}
         <Icon
           name="lucide:chevron-right"
@@ -48,7 +48,7 @@
         />
       </UiCollapsibleTrigger>
       <UiCollapsibleContent>
-        <LayoutTocTree :links="toc.links" :level="0" class="text-sm pl-4 border-l mb-3 mx-4" />
+        <LayoutTocTree :links="toc.links" :level="0" class="mx-4 mb-3 border-l pl-4 text-sm" />
       </UiCollapsibleContent>
     </UiCollapsible>
   </template>

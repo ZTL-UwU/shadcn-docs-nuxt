@@ -14,7 +14,7 @@
       <span class="hidden sm:inline">
         {{ announcement.title }}
       </span>
-      <Icon name="lucide:arrow-right" class="ml-1 h-4 w-4" />
+      <Icon name="lucide:arrow-right" class="ml-1 size-4" />
     </NuxtLink>
 
     <h1 class="text-center text-3xl font-bold leading-tight tracking-tighter md:text-6xl lg:leading-[1.1]">

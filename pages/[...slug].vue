@@ -1,9 +1,9 @@
 <template>
-  <main class="relative py-6" :class="[config.toc.enable && 'lg:gap-10 lg:py-8 lg:grid lg:grid-cols-[1fr_200px]']">
+  <main class="relative py-6" :class="[config.toc.enable && 'lg:grid lg:grid-cols-[1fr_200px] lg:gap-10 lg:py-8']">
     <div class="mx-auto w-full min-w-0">
       <LayoutBreadcrumb v-if="page?.body && config.main.breadCrumb" class="mb-4" />
 
-      <div v-if="config.main.showTitle" class="space-y-2 mb-6">
+      <div v-if="config.main.showTitle" class="mb-6 space-y-2">
         <ProseH1>
           {{ page?.title }}
         </ProseH1>

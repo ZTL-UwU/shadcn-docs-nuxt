@@ -5,7 +5,7 @@
     :class="cn('[&>svg]:size-3.5', props.class)"
   >
     <slot>
-      <Icon name="lucide:chevron-right" class="size-3.5 block" />
+      <Icon name="lucide:chevron-right" class="block size-3.5" />
     </slot>
   </li>
 </template>

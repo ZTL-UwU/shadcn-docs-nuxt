@@ -56,7 +56,8 @@
     "@antfu/eslint-config": "^2.25.0",
     "@vueuse/core": "^10.11.1",
     "@vueuse/nuxt": "^10.11.1",
-    "eslint": "^9.8.0",
+    "eslint": "^9.9.0",
+    "eslint-plugin-tailwindcss": "^3.17.4",
     "shiki": "^1.12.1",
     "vue-tsc": "^2.0.29"
   }
