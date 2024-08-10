@@ -9,7 +9,7 @@
       <CodeCopy :code="code" class="ml-auto mr-1" />
     </div>
 
-    <span v-if="!filename" class="absolute right-3 top-3">
+    <span v-if="!filename" class="absolute right-3 top-3 z-10">
       <CodeCopy :code="code" />
     </span>
     <div class="bg-muted/30">
