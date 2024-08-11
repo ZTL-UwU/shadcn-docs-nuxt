@@ -33,6 +33,7 @@ const defaultConfig: DefaultConfig = {
     showTitle: true,
     codeCopyToast: true,
     codeCopyToastText: 'Copied to clipboard!',
+    fieldRequiredText: 'required',
     padded: true,
     codeIcon: {
       'package.json': 'vscode-icons:file-type-node',

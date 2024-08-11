@@ -45,6 +45,7 @@ interface DefaultConfig {
     showTitle: boolean;
     codeCopyToast: boolean;
     codeCopyToastText: string;
+    fieldRequiredText: string;
     codeIcon: {
       [key: string]: string;
     };

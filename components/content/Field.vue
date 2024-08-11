@@ -6,7 +6,7 @@
           {{ name }}
         </span>
         <span v-if="required" class="self-center font-mono text-sm text-muted-foreground">
-          required
+          {{ fieldRequiredText }}
         </span>
         <span class="flex-1" />
         <span class="self-center font-mono text-sm text-muted-foreground">
@@ -34,4 +34,6 @@ defineProps<{
   description?: string;
   defaultValue?: string;
 }>();
+
+const { fieldRequiredText } = useConfig().value.main;
 </script>
