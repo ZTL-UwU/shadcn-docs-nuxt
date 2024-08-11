@@ -12,6 +12,7 @@ const defaultConfig: DefaultConfig = {
     radius: 0.5,
   },
   header: {
+    showLoadingIndicator: true,
     title: 'shadcn-docs',
     showTitle: true,
     logo: {

@@ -1,5 +1,5 @@
 <template>
-  <NuxtLoadingIndicator :color="false" class="z-100 bg-primary80" />
+  <NuxtLoadingIndicator :color="false" class="z-100 bg-primary/80" />
   <ConfigProvider :use-id="useIdFunction">
     <LayoutHeader />
 

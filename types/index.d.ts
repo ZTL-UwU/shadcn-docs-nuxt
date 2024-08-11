@@ -10,6 +10,7 @@ interface DefaultConfig {
     radius: number;
   };
   header: {
+    showLoadingIndicator: boolean;
     title: string;
     showTitle: boolean;
     border: boolean;
