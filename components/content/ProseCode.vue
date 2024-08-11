@@ -16,7 +16,7 @@
       <UiScrollArea>
         <div
           class="overflow-x-auto py-3 text-sm"
-          :class="[!filename && 'inline-copy', !language && 'pl-3', !inGroup && 'in-group']"
+          :class="[!inGroup && !filename && 'inline-copy', !language && 'pl-3', !inGroup]"
         >
           <slot />
         </div>
@@ -76,7 +76,7 @@ const icon = iconMap.get(props.filename?.toLowerCase()) || iconMap.get(props.lan
   padding-right: 0.75rem;
 }
 
-.in-group .line {
-  padding-right: 3rem;
+.inline-copy .line {
+  padding-right: 2.75rem;
 }
 </style>
