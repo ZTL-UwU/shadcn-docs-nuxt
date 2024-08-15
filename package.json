@@ -54,7 +54,6 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.25.1",
-    "@iconify-json/vscode-icons": "^1.1.37",
     "@vueuse/core": "^10.11.1",
     "@vueuse/nuxt": "^10.11.1",
     "eslint": "^9.9.0",
