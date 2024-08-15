@@ -7,7 +7,7 @@ navigation: false
 ---
 announcement:
   title: 'Release v0.5.0'
-  icon: 'noto:party-popper'
+  icon: 'lucide:party-popper'
   to: /getting-started/changelog
 actions:
   - name: Get Started
