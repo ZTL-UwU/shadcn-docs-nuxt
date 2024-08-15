@@ -12,7 +12,9 @@
             class="mr-1 self-center"
             size="15"
           />
-          {{ link.title }}
+          <span class="truncate text-nowrap">
+            {{ link.title }}
+          </span>
           <Icon
             name="lucide:chevron-down"
             class="ml-auto self-center transition-all"
@@ -36,7 +38,9 @@
         class="mr-1 self-center"
         size="15"
       />
-      {{ link.title }}
+      <span class="truncate text-nowrap">
+        {{ link.title }}
+      </span>
     </NuxtLink>
   </li>
 </template>
