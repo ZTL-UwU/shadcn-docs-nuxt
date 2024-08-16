@@ -8,7 +8,8 @@ navigation: false
 announcement:
   title: 'Release v0.5.0'
   icon: 'lucide:party-popper'
-  to: /getting-started/changelog
+  to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/releases
+  target: _blank
 actions:
   - name: Get Started
     to: /getting-started
