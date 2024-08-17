@@ -5,7 +5,7 @@
 
       <div v-if="config.main.showTitle" class="space-y-2 mb-6">
         <ProseH1>
-          {{ page?.title }}
+<!--          {{ page?.title }}-->
         </ProseH1>
         <p class="text-lg text-muted-foreground">
           {{ page?.description }}

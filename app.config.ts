@@ -36,16 +36,16 @@ export default defineAppConfig({
           to: '/hoa-thuong-tinh-khong',
           description: '',
           target: '_self',
+        }, {
+          title: 'THIỀN SƯ CHÍ CÔNG',
+          to: '/thien-su-chi-cong',
+          description: '',
+          target: '_self',
         }],
     },
         {
           title: 'Sách',
           links: [{
-            title: 'NIỆM PHẬT THÀNH PHẬT',
-            to: '/niem-phat-thanh-phat',
-            description: '',
-            target: '_self',
-          }, {
             title: 'NIỆM PHẬT TÔNG YẾU',
             to: '/niem-phat-tong-yeu',
             description: '',
@@ -76,17 +76,23 @@ export default defineAppConfig({
               description: '',
               target: '_blank',
             },
-/*            {
-              title: 'Docus',
-              to: '/',
+            {
+              title: 'NIỆM PHẬT THÀNH PHẬT',
+              to: '/niem-phat-thanh-phat',
               description: '',
-              target: '_blank',
-            }, {
-              title: 'Nuxt Content',
-              to: '/',
-              description: '',
-              target: '_blank',
-            }*/
+              target: '_self',
+            },
+            /*            {
+                          title: 'Docus',
+                          to: '/',
+                          description: '',
+                          target: '_blank',
+                        }, {
+                          title: 'Nuxt Content',
+                          to: '/',
+                          description: '',
+                          target: '_blank',
+                        }*/
           ],
         },
       ],
