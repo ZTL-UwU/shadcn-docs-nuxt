@@ -60,6 +60,11 @@ export default defineAppConfig({
             to: '/luong-hoang-sam',
             description: '',
             target: '_self',
+          }, {
+            title: 'SƠN AM TẠP LỤC',
+            to: '/son-am-tap-luc',
+            description: '',
+            target: '_self',
           }],
         },
         {
