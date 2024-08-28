@@ -20,6 +20,10 @@
         Start writing in <ProseCodeInline>content/{{ page?._file }}</ProseCodeInline> to see this page taking shape.
       </Alert>
 
+      <template v-else-if="slug[0] === '48-nguyen-cua-duc-phat-a-di-da'">
+          <StackingCards />
+      </template>
+
       <ContentRenderer
         v-else
         :key="page._id"
@@ -46,4 +50,8 @@ useSeoMeta({
   ogTitle: page.value?.title,
   description: page.value?.description,
 });
+
+const route = useRoute();
+const slug = route.params.slug;
+console.log('slug', slug[0])
 </script>

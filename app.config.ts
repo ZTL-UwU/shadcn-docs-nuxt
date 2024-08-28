@@ -73,7 +73,7 @@ export default defineAppConfig({
             {
               title: 'NHẬN THỨC PHẬT GIÁO',
               to: '/nhan-thuc-phat-giao',
-              target: '_self',
+              target: '_blank',
             },
             {
               title: 'TRĂM NĂM HƯ VÂN LÃO HÒA THƯỢNG',
@@ -85,26 +85,20 @@ export default defineAppConfig({
               title: 'NIỆM PHẬT THÀNH PHẬT',
               to: '/niem-phat-thanh-phat',
               description: '',
-              target: '_self',
+              target: '_blank',
             },
-            /*            {
-                          title: 'Docus',
-                          to: '/',
-                          description: '',
-                          target: '_blank',
-                        }, {
-                          title: 'Nuxt Content',
-                          to: '/',
-                          description: '',
-                          target: '_blank',
-                        }*/
           ],
+        },
+        {
+          title: '48 🪷 CỦA PHẬT A DI ĐÀ',
+          to: '/48-nguyen-cua-duc-phat-a-di-da',
+          target: '_self',
         },
       ],
       links: [
         {
-          icon: 'lucide:facebook',
-          to: 'https://www.facebook.com/profile.php?id=61563761920845',
+          icon: 'lucide:download',
+          to: '/download-mp3',
           target: '_blank',
         },
         {
