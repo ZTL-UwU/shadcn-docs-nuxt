@@ -10,9 +10,6 @@
   </div>-->
 
     <div class="landscape">
-        <div class="text">
-            AI LÀ NGƯỜI ĐANG NIỆM PHẬT?
-        </div>
         <div class="mountain"></div>
         <div class="mountain mountain-2"></div>
         <div class="mountain mountain-3"></div>
