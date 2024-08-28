@@ -90,9 +90,14 @@ export default defineAppConfig({
           ],
         },
         {
-          title: '48 🪷 CỦA PHẬT A DI ĐÀ',
+          title: '48 NGUYỆN',
           to: '/48-nguyen-cua-duc-phat-a-di-da',
-          target: '_self',
+          target: '_blank',
+        },
+        {
+          title: 'TRUYỆN TRANH',
+          to: '/truyen-tranh',
+          target: '_blank',
         },
       ],
       links: [
