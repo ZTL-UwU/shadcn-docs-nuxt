@@ -45,11 +45,9 @@
         <div class="splash splash-stone splash-4"></div>
         <div class="splash splash-stone splash-5"></div>
 
-
-
-        <div class="lotus lotus-1"></div>
-        <div class="lotus lotus-2"></div>
-        <div class="lotus lotus-3"></div>
+        <div class="lotus-leaf lotus-leaf-1"></div>
+        <div class="lotus-leaf lotus-leaf-2"></div>
+        <div class="lotus-leaf lotus-leaf-3"></div>
         <div class="front">
             <div class="stone"></div>
             <div class="grass"></div>
@@ -64,8 +62,6 @@
 </template>
 
 <script setup lang="ts">
-import Lotus from '../components/Lotus.vue'
-
 const { page } = useContent();
 const config = useConfig();
 
@@ -206,20 +202,20 @@ useSeoMeta({
   right: 20%;
 }
 
-.lotus {
+.lotus-leaf {
   width: 10vmin;
   height: 5vmin;
   background: conic-gradient(var(--v3) 0deg 40deg, var(--transparentv3) 50deg 70deg, var(--v3) 80deg);
   border-radius: 50%;
 }
 
-.lotus-1 {
+.lotus-leaf-1 {
   bottom: 10vmin;
   right: 5vmin;
   width: 20vmin;
 }
 
-.lotus-2 {
+.lotus-leaf-2 {
   bottom: 20vmin;
   right: 15vmin;
   height: 3vmin;
@@ -228,7 +224,7 @@ useSeoMeta({
   mix-blend-mode: multiply;
 }
 
-.lotus-3 {
+.lotus-leaf-3 {
   bottom: 10vmin;
   right: 35vmin;
   transform: rotate(180deg) skew(-20deg);
