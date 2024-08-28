@@ -1,5 +1,6 @@
 <template>
-<!--<div
+<!--
+<div
     class="px-4 md:px-8 py-6"
     :class="[config.main.padded && 'container']"
   >
@@ -7,7 +8,8 @@
       :key="page._id"
       :value="page"
     />
-  </div>-->
+  </div>
+-->
 
     <div class="landscape">
         <div class="mountain"></div>
