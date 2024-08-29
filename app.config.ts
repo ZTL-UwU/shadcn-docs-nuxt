@@ -195,11 +195,6 @@ export default defineAppConfig({
           target: '_blank',
         },
         {
-          icon: 'lucide:headphones',
-          to: 'https://ph.tinhtong.vn/Home/MP3?p=MP3+tinhkhongphapngu',
-          target: '_blank',
-        },
-        {
           icon: 'lucide:film',
           to: 'https://ph.tinhtong.vn/Home/Videos',
           target: '_blank',

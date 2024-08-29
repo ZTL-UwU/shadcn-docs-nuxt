@@ -17,7 +17,7 @@
     <NuxtPage v-else />
 
     <Toaster />
-    <LayoutFooter />
+<!--    <LayoutFooter />-->
   </ConfigProvider>
 </template>
 
