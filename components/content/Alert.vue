@@ -27,6 +27,7 @@ const props = withDefaults(defineProps<{
   type?: 'default' | 'info' | 'warning' | 'success' | 'danger';
   to?: string;
   target?: string;
+  external?: boolean;
 }>(), {
   type: 'default',
 });
@@ -43,11 +44,13 @@ function alertClick() {
   if (props.to) {
     if (props.target) {
       navigateTo(props.to, {
-        external: true,
+        external: props.external ?? props.to.startsWith('http'),
         open: { target: props.target },
       });
     } else {
-      navigateTo(props.to, { external: true });
+      navigateTo(props.to, {
+        external: props.external ?? props.to.startsWith('http'),
+      });
     }
   }
 }
