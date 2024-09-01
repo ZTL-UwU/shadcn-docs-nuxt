@@ -30,6 +30,7 @@ const props = withDefaults(defineProps<{
   external?: boolean;
 }>(), {
   type: 'default',
+  external: undefined,
 });
 
 const typeTwClass = {
