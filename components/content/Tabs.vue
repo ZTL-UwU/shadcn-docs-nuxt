@@ -10,7 +10,7 @@
         :key="`${i}${label(slot.props)}`"
         :value="label(slot.props)"
       >
-        <Icon
+        <SmartIcon
           v-if="icon(slot?.props)"
           :name="icon(slot?.props)!"
           class="mr-1.5 self-center"
@@ -40,7 +40,7 @@
             :class="[activeTabIndex === i && 'bg-muted text-primary']"
             @mousedown.left="activeTabIndex = i"
           >
-            <Icon
+            <SmartIcon
               v-if="icon(slot?.props)"
               :name="icon(slot?.props)!"
               class="mr-1.5 self-center"

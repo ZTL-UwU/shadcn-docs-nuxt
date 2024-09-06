@@ -22,11 +22,10 @@
           :target="link.target"
           class="flex w-full gap-1 underline-offset-4 hover:underline [&:not(:first-child)]:pt-3"
         >
-          <Icon
+          <SmartIcon
             v-if="link.icon"
             :name="link.icon"
             class="mr-1 self-center"
-            size="16"
           />
           {{ link.title }}
           <Icon name="lucide:arrow-up-right" class="ml-auto self-center text-muted-foreground" size="13" />

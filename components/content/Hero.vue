@@ -7,7 +7,7 @@
       class="inline-flex items-center rounded-lg bg-muted px-3 py-1 text-sm font-medium"
     >
       <template v-if="announcement.icon">
-        <Icon :name="announcement.icon" size="16" />
+        <SmartIcon :name="announcement.icon" :size="16" />
         <UiSeparator class="mx-2 h-4" orientation="vertical" />
       </template>
       <span class="sm:hidden">{{ announcement.title }}</span>
@@ -32,9 +32,9 @@
         :target="action.target"
       >
         <UiButton :variant="action.variant">
-          <Icon v-if="action.leftIcon" :name="action.leftIcon" class="mr-1" />
+          <SmartIcon v-if="action.leftIcon" :name="action.leftIcon" class="mr-1" />
           {{ action.name }}
-          <Icon v-if="action.rightIcon" :name="action.rightIcon" class="ml-1" />
+          <SmartIcon v-if="action.rightIcon" :name="action.rightIcon" class="ml-1" />
         </UiButton>
       </NuxtLink>
     </section>

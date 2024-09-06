@@ -24,7 +24,7 @@
             :target="link?.target"
           >
             <UiButton variant="ghost" size="icon" class="flex gap-2">
-              <Icon v-if="link?.icon" :name="link.icon" size="18" />
+              <SmartIcon v-if="link?.icon" :name="link.icon" :size="18" />
             </UiButton>
           </NuxtLink>
         </div>

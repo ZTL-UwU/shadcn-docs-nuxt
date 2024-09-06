@@ -6,16 +6,16 @@
     <UiCollapsible v-if="link.children" v-model:open="isOpen">
       <UiCollapsibleTrigger class="w-full text-left">
         <div class="flex w-full gap-1">
-          <Icon
+          <SmartIcon
             v-if="link.icon"
             :name="link.icon"
             class="mr-1 self-center"
-            size="15"
+            :size="15"
           />
           <span class="truncate text-nowrap">
             {{ link.title }}
           </span>
-          <Icon
+          <SmartIcon
             name="lucide:chevron-down"
             class="ml-auto self-center transition-all"
             :class="[!isOpen && '-rotate-90']"
@@ -32,11 +32,11 @@
       class="flex w-full gap-1 text-muted-foreground hover:underline"
       :class="[isActive && 'font-medium text-primary']"
     >
-      <Icon
+      <SmartIcon
         v-if="link.icon"
         :name="link.icon"
         class="mr-1 self-center"
-        size="15"
+        :size="15"
       />
       <span class="truncate text-nowrap">
         {{ link.title }}

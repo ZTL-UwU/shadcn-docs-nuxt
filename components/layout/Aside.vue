@@ -11,11 +11,11 @@
             path.startsWith(link._path) && 'bg-muted font-semibold text-primary hover:bg-muted',
           ]"
         >
-          <Icon
+          <SmartIcon
             v-if="link.icon"
             :name="link.icon"
             class="self-center"
-            size="16"
+            :size="16"
           />
           {{ link.title }}
         </NuxtLink>

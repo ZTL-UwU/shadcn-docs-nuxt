@@ -4,7 +4,7 @@
     :class="[inGroup && 'mb-0 rounded-t-none border-none']"
   >
     <div v-if="!inGroup && filename" class="flex border-b p-3 font-mono text-sm">
-      <Icon v-if="icon" :name="icon" class="mr-1.5 self-center" />
+      <SmartIcon v-if="icon" :name="icon" class="mr-1.5 self-center" />
       {{ filename }}
       <CodeCopy :code="code" class="ml-auto mr-1" />
     </div>

@@ -7,7 +7,7 @@ navigation: false
 ---
 announcement:
   title: 'Release v0.5.2'
-  icon: 'lucide:party-popper'
+  icon: '🎉'
   to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/releases
   target: _blank
 actions:

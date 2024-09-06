@@ -21,7 +21,7 @@
               <UiCommandGroup v-if="item.children" :heading="item.title" class="p-1.5">
                 <NuxtLink v-for="child in item.children" :key="child.id" :to="child._path">
                   <UiCommandItem :value="child._path">
-                    <Icon v-if="child.icon" :name="child.icon" class="mr-2 size-4" />
+                    <SmartIcon v-if="child.icon" :name="child.icon" class="mr-2 size-4" />
                     <div v-else class="mr-2 size-4" />
                     <span>{{ child.title }}</span>
                   </UiCommandItem>
@@ -55,7 +55,7 @@
               :class="[i === activeSelect && 'bg-muted']"
               @click="open = false; activeSelect = i;"
             >
-              <Icon v-if="getItemIcon(item.id)" :name="getItemIcon(item.id)" class="mr-2 size-4 shrink-0 self-center" />
+              <SmartIcon v-if="getItemIcon(item.id)" :name="getItemIcon(item.id)" class="mr-2 size-4 shrink-0 self-center" />
               <div v-else class="mr-2 size-4 shrink-0" />
 
               <span v-for="(subtitle, j) in item.titles" :key="`${subtitle}${j}`" class="flex shrink-0 self-center">

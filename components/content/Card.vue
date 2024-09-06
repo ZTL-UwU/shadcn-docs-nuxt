@@ -3,7 +3,7 @@
     <NuxtLink :to="to" :target="target">
       <UiCard class="relative h-full transition-all" :class="[to && 'hover:bg-muted']">
         <UiCardHeader v-if="icon || title || $slots.title || description || $slots.description">
-          <Icon v-if="icon" class="mb-2" :name="icon" size="24" />
+          <SmartIcon v-if="icon" class="mb-2" :name="icon" :size="24" />
           <UiCardTitle v-if="title || $slots.title">
             <ContentSlot :use="$slots.title" unwrap="p" />
             {{ title }}
@@ -21,7 +21,7 @@
           <ContentSlot :use="$slots.footer" unwrap="p" />
           {{ footer }}
         </UiCardFooter>
-        <Icon v-if="to" name="lucide:arrow-up-right" class="absolute right-4 top-4" />
+        <SmartIcon v-if="to" name="lucide:arrow-up-right" class="absolute right-4 top-4" />
       </UiCard>
     </NuxtLink>
   </div>
