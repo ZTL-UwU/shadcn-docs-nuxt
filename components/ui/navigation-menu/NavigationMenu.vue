@@ -9,15 +9,15 @@
 </template>
 
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from 'vue';
+import { cn } from '@/lib/utils';
 import {
   NavigationMenuRoot,
   type NavigationMenuRootEmits,
   type NavigationMenuRootProps,
   useForwardPropsEmits,
 } from 'radix-vue';
+import { computed, type HTMLAttributes } from 'vue';
 import NavigationMenuViewport from './NavigationMenuViewport.vue';
-import { cn } from '@/lib/utils';
 
 const props = defineProps<NavigationMenuRootProps & { class?: HTMLAttributes['class'] }>();
 

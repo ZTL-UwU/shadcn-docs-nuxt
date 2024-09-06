@@ -33,7 +33,7 @@
 </template>
 
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from 'vue';
+import { cn } from '@/lib/utils';
 import {
   DialogClose,
   DialogContent,
@@ -43,7 +43,7 @@ import {
   DialogPortal,
   useForwardPropsEmits,
 } from 'radix-vue';
-import { cn } from '@/lib/utils';
+import { computed, type HTMLAttributes } from 'vue';
 
 const props = defineProps<DialogContentProps & { class?: HTMLAttributes['class'] }>();
 const emits = defineEmits<DialogContentEmits>();

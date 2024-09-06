@@ -11,14 +11,14 @@
 </template>
 
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from 'vue';
+import { cn } from '@/lib/utils';
 import {
   NavigationMenuContent,
   type NavigationMenuContentEmits,
   type NavigationMenuContentProps,
   useForwardPropsEmits,
 } from 'radix-vue';
-import { cn } from '@/lib/utils';
+import { computed, type HTMLAttributes } from 'vue';
 
 const props = defineProps<NavigationMenuContentProps & { class?: HTMLAttributes['class'] }>();
 
