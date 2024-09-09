@@ -95,92 +95,9 @@ export default defineAppConfig({
           target: '_blank',
         },
         {
-          title: 'TRUYỆN TRANH',
-          links: [
-            {
-              title: '48 Nguyện của A Di Đà Phật',
-              to: '/truyen-tranh/48-nguyen-cua-duc-phat-a-di-da',
-              target: '_blank',
-            },
-            {
-              title: 'Đức Phật A Di Đà',
-              to: '/truyen-tranh/duc-phat-a-di-da',
-              description: '',
-              target: '_blank',
-            },
-            {
-              title: 'Kinh A Di Đà',
-              to: '/truyen-tranh/kinh-a-di-da',
-              description: '',
-              target: '_blank',
-            },
-            {
-              title: 'Đại Thế Chí Bồ Tát Niệm Phật Viên Thông Chương',
-              to: '/truyen-tranh/dai-the-chi-bo-tat-niem-phat-vien-thong-chuong',
-              target: '_blank',
-            },
-            {
-              title: 'Thập Thiện Nghiệp Đạo Kinh',
-              to: '/truyen-tranh/thap-thien-nghiep-dao-kinh',
-              description: '',
-              target: '_blank',
-            },
-            {
-              title: 'Thái Thượng Cảm Ứng Thiên',
-              to: '/truyen-tranh/thai-thuong-cam-ung-thien',
-              description: '',
-              target: '_blank',
-            },
-            {
-              title: 'Nhân Quả Cảm Ứng',
-              to: '/truyen-tranh/nhan-qua-cam-ung',
-              description: '',
-              target: '_blank',
-            },
-            {
-              title: 'Niệm Phật Thành Phật',
-              to: '/truyen-tranh/niem-phat-thanh-phat',
-              description: '',
-              target: '_blank',
-            },
-            {
-              title: 'Kinh Địa Tạng - Trọn Bộ',
-              to: '/truyen-tranh/kinh-dia-tang-tron-bo',
-              description: '',
-              target: '_blank',
-            },
-            {
-              title: 'Liễu Phàm Tứ Huấn',
-              to: '/truyen-tranh/lieu-pham-tu-huan',
-              description: '',
-              target: '_blank',
-            },
-            {
-              title: 'Du Tịnh Ý Công Gặp Táo Thần',
-              to: '/truyen-tranh/du-tinh-y-cong-gap-tao-than',
-              description: '',
-              target: '_blank',
-            },
-            {
-              title: 'Văn Xương Đế Quân Âm Chất Văn',
-              to: '/truyen-tranh/van-xuong-de-quan-am-chat-van',
-              description: '',
-              target: '_blank',
-            },
-            {
-              title: 'Đệ Tử Quy 2022 - Đạo Làm Con',
-              to: '/truyen-tranh/de-tu-quy-2022',
-              description: '',
-              target: '_blank',
-            },
-            {
-              title: 'Đức Dục Khải Mông',
-              to: '/truyen-tranh/duc-duc-khai-mong',
-              description: '',
-              target: '_blank',
-            },
-          ],
-
+          title: 'TỦ SÁCH TỊNH ĐỘ',
+          to: '/tu-sach-tinh-do',
+          target: '_self',
         },
       ],
       links: [
