@@ -129,9 +129,9 @@ watch(activeSelect, (value) => {
   document.querySelector(`[id="${value}"]`)?.scrollIntoView({ block: 'nearest' });
 });
 
-function handleEnter() {
+async function handleEnter() {
   if (searchResult.value[activeSelect.value]?.id) {
-    navigateTo(searchResult.value[activeSelect.value].id);
+    await navigateTo(searchResult.value[activeSelect.value].id);
     open.value = false;
   }
 }

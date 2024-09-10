@@ -41,15 +41,15 @@ const typeTwClass = {
   danger: 'border-red-600 text-red-600 [&>svg]:text-red-600',
 };
 
-function alertClick() {
+async function alertClick() {
   if (props.to) {
     if (props.target) {
-      navigateTo(props.to, {
+      await navigateTo(props.to, {
         external: props.external ?? props.to.startsWith('http'),
         open: { target: props.target },
       });
     } else {
-      navigateTo(props.to, {
+      await navigateTo(props.to, {
         external: props.external ?? props.to.startsWith('http'),
       });
     }
