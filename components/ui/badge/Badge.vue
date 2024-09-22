@@ -5,8 +5,8 @@
 </template>
 
 <script setup lang="ts">
-import { cn } from '@/lib/utils';
 import type { HTMLAttributes } from 'vue';
+import { cn } from '@/lib/utils';
 import { type BadgeVariants, badgeVariants } from '.';
 
 const props = defineProps<{
