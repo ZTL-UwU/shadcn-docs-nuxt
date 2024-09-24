@@ -110,14 +110,14 @@ watch(radius, () => {
 });
 
 function setClassTheme() {
-  document.documentElement.classList.remove(
+  document.body.classList.remove(
     ...allColors.map(color => `theme-${color}`),
   );
-  document.documentElement.classList.add(themeClass.value);
+  document.body.classList.add(themeClass.value);
 }
 
 function setStyleRadius() {
-  document.documentElement.style.setProperty('--radius', `${radius.value}rem`);
+  document.body.style.setProperty('--radius', `${radius.value}rem`);
 }
 
 function backgroundColor(color: Color) {

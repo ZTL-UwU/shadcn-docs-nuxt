@@ -33,7 +33,7 @@ useSeoMeta({
 });
 
 useServerHead({
-  htmlAttrs: {
+  bodyAttrs: {
     class: themeClass.value,
     style: `--radius: ${radius.value}rem;`,
   },
