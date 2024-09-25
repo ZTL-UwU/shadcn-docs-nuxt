@@ -2,7 +2,7 @@
   <NuxtLoadingIndicator :color="false" class="z-100 bg-primary/80" />
   <LayoutHeader />
 
-  <div v-if="$route.path !== '/'" class="min-h-screen border-b">
+  <div v-if="route.path !== '/'" class="min-h-screen border-b">
     <div
       class="flex-1 items-start px-4 md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 md:px-8 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10"
       :class="[config.main.padded && 'container']"
@@ -23,6 +23,7 @@
 import Toaster from '@/components/ui/toast/Toaster.vue';
 
 const config = useConfig();
+const route = useRoute();
 const { themeClass, radius } = useThemes();
 
 useSeoMeta({
