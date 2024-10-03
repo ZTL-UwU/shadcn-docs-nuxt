@@ -33,7 +33,7 @@ Beautifully designed _Nuxt Content_ template built with _shadcn-vue_. **Customiz
 
 ## Contributing
 
-1. Clone this repository
+1. Clone this repository.
 2. Install dependencies `bun install`.
 3. Use `bun run dev` to start dev server.
 
