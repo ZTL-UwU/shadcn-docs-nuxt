@@ -28,6 +28,7 @@ export default defineNuxtConfig({
   },
   colorMode: {
     classSuffix: '',
+    disableTransition: true,
   },
   css: [
     join(currentDir, './assets/css/themes.css'),

@@ -17,7 +17,7 @@
           </span>
           <SmartIcon
             name="lucide:chevron-down"
-            class="ml-auto self-center transition-all"
+            class="ml-auto self-center transition-transform"
             :class="[!isOpen && '-rotate-90']"
           />
         </div>
