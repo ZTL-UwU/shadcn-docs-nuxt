@@ -6,7 +6,7 @@ navigation: false
 ::hero
 ---
 announcement:
-  title: 'Release v0.5.8'
+  title: 'Release v0.6.0'
   icon: '🎉'
   to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/releases
   target: _blank
