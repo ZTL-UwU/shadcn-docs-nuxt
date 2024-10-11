@@ -46,4 +46,9 @@ useSeoMeta({
   ogTitle: page.value?.title,
   description: page.value?.description,
 });
+
+defineOgImageComponent('Docs', {
+  title: page.value.title,
+  description: page.value.description,
+});
 </script>

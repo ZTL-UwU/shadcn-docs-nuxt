@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/icon',
     '@nuxtjs/color-mode',
+    'nuxt-og-image',
   ],
   shadcn: {
     prefix: 'Ui',
