@@ -1,5 +1,5 @@
 <template>
-  <div class="flex size-full flex-col justify-center p-16">
+  <div class="flex size-full flex-col justify-center bg-white p-16">
     <div class="mb-4 flex">
       <img :src="config.header.logo.light" height="65">
       <span class="ml-4 self-center text-4xl font-bold">
