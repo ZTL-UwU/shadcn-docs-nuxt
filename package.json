@@ -1,7 +1,7 @@
 {
   "name": "shadcn-docs-nuxt",
   "type": "module",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Effortless and beautiful docs template built with Nuxt Content & shadcn-vue.",
   "author": "Tony Zhang <zhangtianli2006@gmail.com>",
   "license": "MIT",
@@ -61,12 +61,12 @@
     "tailwind-merge": "^2.5.3",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.6.3",
-    "vue": "^3.5.11",
+    "vue": "^3.5.12",
     "vue-router": "^4.4.5"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.7.3",
-    "@nuxt/devtools": "^1.5.2",
+    "@nuxt/devtools": "^1.6.0",
     "@vueuse/core": "^11.1.0",
     "@vueuse/nuxt": "^11.1.0",
     "eslint": "^9.12.0",
