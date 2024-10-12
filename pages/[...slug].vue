@@ -45,9 +45,11 @@ useSeoMeta({
   title: `${page.value?.title ?? '404'} - ${config.value.site.name}`,
   ogTitle: page.value?.title,
   description: page.value?.description,
+  ogDescription: page.value?.description,
+  twitterCard: 'summary_large_image',
 });
 
-defineOgImageComponent('Docs', {
+defineOgImageComponent(config.value.site.ogImageComponent, {
   title: page.value.title,
   description: page.value.description,
 });

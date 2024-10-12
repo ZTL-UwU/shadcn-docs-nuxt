@@ -3,6 +3,7 @@ interface DefaultConfig {
     name: string;
     description: string;
     ogImage: string;
+    ogImageComponent: string;
   };
   theme: {
     customizable: boolean;

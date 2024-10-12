@@ -4,6 +4,7 @@ export default defineAppConfig({
       name: 'shadcn-docs',
       description: 'Beautifully designed Nuxt Content template built with shadcn-vue. Customizable. Compatible. Open Source.',
       ogImage: '/hero.png',
+      ogImageComponent: 'ShadcnDocs',
     },
     theme: {
       customizable: true,
