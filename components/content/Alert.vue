@@ -1,7 +1,11 @@
 <template>
   <UiAlert
     class="transition-all [&:not(:first-child)]:mt-5"
-    :class="[typeTwClass[type], to && 'cursor-pointer hover:bg-muted/50']"
+    :class="[
+      typeTwClass[type],
+      to && 'cursor-pointer hover:bg-muted/50',
+      inStack && 'm-0 rounded-none border-none',
+    ]"
     @click="alertClick"
   >
     <SmartIcon v-if="icon && title" :name="icon" :size="16" />
@@ -28,9 +32,11 @@ const props = withDefaults(defineProps<{
   to?: string;
   target?: string;
   external?: boolean;
+  inStack?: boolean;
 }>(), {
   type: 'default',
   external: undefined,
+  inStack: false,
 });
 
 const typeTwClass = {

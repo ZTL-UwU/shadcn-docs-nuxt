@@ -28,7 +28,11 @@
     </UiTabsContent>
   </UiTabs>
 
-  <UiCard v-else-if="variant === 'card'" class="[&:not(:first-child)]:mt-5">
+  <UiCard
+    v-else-if="variant === 'card'"
+    class="[&:not(:first-child)]:mt-5"
+    :class="[inStack && 'mb-0 rounded-none border-none shadow-none']"
+  >
     <UiScrollArea>
       <div class="relative flex overflow-x-auto border-b p-0.5 text-sm">
         <div class="flex p-1">
@@ -76,9 +80,11 @@ import ScrollBar from '../ui/scroll-area/ScrollBar.vue';
 withDefaults(defineProps<{
   variant?: 'separate' | 'card';
   padded?: boolean;
+  inStack?: boolean;
 }>(), {
   variant: 'separate',
   padded: true,
+  inStack: false,
 });
 
 const activeTabIndex = ref(0);

@@ -1,7 +1,10 @@
 <template>
   <UiCard
     class="relative overflow-hidden [&:not(:first-child)]:mt-5 [&:not(:last-child)]:mb-5"
-    :class="[inGroup && 'mb-0 rounded-t-none border-none']"
+    :class="[
+      inGroup && 'mb-0 rounded-t-none border-none shadow-none',
+      inStack && 'mb-0 rounded-none border-none shadow-none',
+    ]"
   >
     <div v-if="!inGroup && filename" class="flex border-b p-3 font-mono text-sm">
       <SmartIcon v-if="icon" :name="icon" class="mr-1.5 self-center" />
@@ -44,6 +47,10 @@ const props = defineProps({
     default: null,
   },
   inGroup: {
+    type: Boolean,
+    default: false,
+  },
+  inStack: {
     type: Boolean,
     default: false,
   },
