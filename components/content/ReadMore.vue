@@ -1,6 +1,6 @@
 <template>
   <Alert :to="to" :target="target" icon="lucide:bookmark">
-    Read more in <span class="font-semibold">{{ computedTitle }}</span>
+    Read more at <span class="font-semibold">{{ computedTitle }}</span>
   </Alert>
 </template>
 
