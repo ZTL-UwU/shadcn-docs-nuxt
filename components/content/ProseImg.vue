@@ -1,9 +1,9 @@
 <template>
   <NuxtImg
     :src="refinedSrc"
-    :alt="alt"
-    :width="width"
-    :height="height"
+    :alt
+    :width
+    :height
     class="rounded-md [&:not(:first-child)]:mt-8 [&:not(:last-child)]:mb-8"
   />
 </template>

@@ -1,7 +1,7 @@
 <template>
   <UiAccordion
-    :type="type"
-    :collapsible="collapsible"
+    :type
+    :collapsible
     :default-value="defaultValue"
     class="[&:not(:first-child)]:mt-5"
   >
@@ -10,11 +10,9 @@
 </template>
 
 <script setup lang="ts">
-withDefaults(defineProps<{
+const { type = 'single' } = defineProps<{
   type?: 'single' | 'multiple';
   collapsible?: boolean;
   defaultValue: string | string[];
-}>(), {
-  type: 'single',
-});
+}>();
 </script>

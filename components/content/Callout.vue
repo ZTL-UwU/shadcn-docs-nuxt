@@ -1,5 +1,5 @@
 <template>
-  <Alert :icon="icon" :to="to" :target="target">
+  <Alert :icon :to :target>
     <slot />
   </Alert>
 </template>
@@ -8,6 +8,6 @@
 defineProps<{
   icon?: string;
   to?: string;
-  target?: string;
+  target?: Target;
 }>();
 </script>

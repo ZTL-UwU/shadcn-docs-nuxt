@@ -95,3 +95,5 @@ type Color =
   | 'blue'
   | 'yellow'
   | 'violet';
+
+type Target = '_blank' | '_parent' | '_self' | '_top' | (string & object) | null | undefined;

@@ -20,17 +20,17 @@
 <script setup lang="ts">
 import { useToast } from '@/components/ui/toast/use-toast';
 
-const props = defineProps<{
+const { code } = defineProps<{
   code: string;
 }>();
 
 const { toast } = useToast();
 
-const { copy } = useClipboard({ source: props.code });
+const { copy } = useClipboard({ source: code });
 const copied = ref(false);
 
 async function handleClick() {
-  await copy(props.code);
+  await copy(code);
   copied.value = true;
 
   if (useConfig().value.main.codeCopyToast) {

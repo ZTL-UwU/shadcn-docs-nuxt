@@ -25,19 +25,21 @@
 </template>
 
 <script setup lang="ts">
-const props = withDefaults(defineProps<{
+const {
+  to,
+  target,
+  type = 'default',
+  external = undefined,
+  inStack = false,
+} = defineProps<{
   title?: string;
   icon?: string;
   type?: 'default' | 'info' | 'warning' | 'success' | 'danger';
   to?: string;
-  target?: string;
+  target?: Target;
   external?: boolean;
   inStack?: boolean;
-}>(), {
-  type: 'default',
-  external: undefined,
-  inStack: false,
-});
+}>();
 
 const typeTwClass = {
   default: '',
@@ -48,15 +50,15 @@ const typeTwClass = {
 };
 
 async function alertClick() {
-  if (props.to) {
-    if (props.target) {
-      await navigateTo(props.to, {
-        external: props.external ?? props.to.startsWith('http'),
-        open: { target: props.target },
+  if (to) {
+    if (target) {
+      await navigateTo(to, {
+        external: external ?? to.startsWith('http'),
+        open: { target },
       });
     } else {
-      await navigateTo(props.to, {
-        external: props.external ?? props.to.startsWith('http'),
+      await navigateTo(to, {
+        external: external ?? to.startsWith('http'),
       });
     }
   }

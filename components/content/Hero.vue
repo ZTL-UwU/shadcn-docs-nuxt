@@ -45,7 +45,7 @@
 defineProps<{
   announcement?: {
     to?: string;
-    target?: string;
+    target?: Target;
     icon?: string;
     title: string;
   };
@@ -55,7 +55,7 @@ defineProps<{
     rightIcon?: string;
     variant?: 'default' | 'link' | 'destructive' | 'outline' | 'secondary' | 'ghost';
     to: string;
-    target?: string;
+    target?: Target;
   }];
 }>();
 </script>

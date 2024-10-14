@@ -1,6 +1,6 @@
 <template>
   <!-- Iconify Icons -->
-  <Icon v-if="checkIcon(name)" :name="name" :size="size" />
+  <Icon v-if="checkIcon(name)" :name :size />
   <!-- Emojis -->
   <span
     v-else-if="/(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/g.test(name)"
@@ -18,12 +18,10 @@
 <script setup lang="ts">
 import { stringToIcon, validateIconName } from '@iconify/utils';
 
-withDefaults(defineProps<{
+const { size = 16 } = defineProps<{
   name: string;
   size?: number;
-}>(), {
-  size: 16,
-});
+}>();
 
 function checkIcon(name: string): boolean {
   return validateIconName(stringToIcon(name));

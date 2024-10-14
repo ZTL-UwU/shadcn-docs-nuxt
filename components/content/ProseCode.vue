@@ -9,11 +9,11 @@
     <div v-if="!inGroup && filename" class="flex border-b p-3 font-mono text-sm">
       <SmartIcon v-if="icon" :name="icon" class="mr-1.5 self-center" />
       {{ filename }}
-      <CodeCopy :code="code" class="ml-auto mr-1" />
+      <CodeCopy :code class="ml-auto mr-1" />
     </div>
 
     <span v-if="!filename" class="absolute right-3 top-3 z-10">
-      <CodeCopy :code="code" />
+      <CodeCopy :code />
     </span>
     <div class="bg-muted/30">
       <UiScrollArea>

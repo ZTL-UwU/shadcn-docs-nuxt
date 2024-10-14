@@ -8,11 +8,9 @@
 </template>
 
 <script setup lang="ts">
-withDefaults(defineProps<{
+const { size = 'sm' } = defineProps<{
   size?: 'xs' | 'sm' | 'md';
-}>(), {
-  size: 'sm',
-});
+}>();
 
 const sizeClasses = {
   xs: 'min-h-4 text-[10px] h-4 px-1',

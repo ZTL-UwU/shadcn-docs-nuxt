@@ -1,14 +1,18 @@
 <template>
-  <Alert :to="to" :target="target" :icon>
+  <Alert :to :target :icon>
     Read more at <span class="font-semibold">{{ computedTitle }}</span>
   </Alert>
 </template>
 
 <script setup lang="ts">
-const { title, to, icon = 'lucide:bookmark' } = defineProps<{
+const {
+  title,
+  to,
+  icon = 'lucide:bookmark',
+} = defineProps<{
   title?: string;
   to: string;
-  target?: string;
+  target?: Target;
   icon?: string;
 }>();
 

@@ -1,6 +1,6 @@
 <template>
   <div class="group-has-[div]:mt-0 [&:not(:first-child)]:mt-5">
-    <NuxtLink :to="to" :target="target">
+    <NuxtLink :to :target>
       <UiCard
         class="relative h-full transition-all"
         :class="[
@@ -40,7 +40,7 @@ defineProps<{
   footer?: string;
   content?: string;
   to?: string;
-  target?: string;
+  target?: Target;
   icon?: string;
   inStack?: boolean;
 }>();

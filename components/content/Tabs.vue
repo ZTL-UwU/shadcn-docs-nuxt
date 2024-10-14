@@ -77,15 +77,15 @@
 <script setup lang="ts">
 import ScrollBar from '../ui/scroll-area/ScrollBar.vue';
 
-withDefaults(defineProps<{
+const {
+  variant = 'separate',
+  padded = true,
+  inStack = false,
+} = defineProps<{
   variant?: 'separate' | 'card';
   padded?: boolean;
   inStack?: boolean;
-}>(), {
-  variant: 'separate',
-  padded: true,
-  inStack: false,
-});
+}>();
 
 const activeTabIndex = ref(0);
 

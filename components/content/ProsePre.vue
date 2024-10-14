@@ -40,5 +40,8 @@ defineProps({
 </script>
 
 <style>
-pre code .line{display:block;min-height:1rem}
+pre code .line{
+  display: block;
+  min-height: 1rem
+}
 </style>
