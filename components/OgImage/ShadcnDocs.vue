@@ -4,9 +4,9 @@
     style="background-size: 120px 120px; background-image: linear-gradient(to right, #e5e7eb 1px, transparent 1px), linear-gradient(to bottom, #e5e7eb 1px, transparent 1px);"
   >
     <div class="mb-4 flex">
-      <img :src="config.header.logo.light" height="65">
-      <span class="ml-4 self-center text-4xl font-bold">
-        {{ config.site.name }}
+      <img :src="logo.light" height="65">
+      <span v-if="showTitle && siteTitle" class="ml-4 self-center text-4xl font-bold">
+        {{ siteTitle }}
       </span>
     </div>
     <div class="relative">
@@ -32,5 +32,5 @@ defineProps({
   },
 });
 
-const config = useConfig().value;
+const { logo, title: siteTitle, showTitle } = useConfig().value.header;
 </script>
