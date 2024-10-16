@@ -1,5 +1,17 @@
 <template>
-  <main class="relative py-6" :class="[config.toc.enable && 'lg:grid lg:grid-cols-[1fr_200px] lg:gap-10 lg:py-8']">
+  <div
+    v-if="!page?.body"
+    class="flex h-full items-center justify-center"
+  >
+    <h3 class="scroll-m-20 border-r px-4 py-3 text-2xl font-semibold">
+      404
+    </h3>
+    <span class="scroll-m-20 px-4">
+      This page could not be found.
+    </span>
+  </div>
+
+  <main v-else class="relative py-6" :class="[config.toc.enable && 'lg:grid lg:grid-cols-[1fr_200px] lg:gap-10 lg:py-8']">
     <div class="mx-auto w-full min-w-0">
       <LayoutBreadcrumb v-if="page?.body && config.main.breadCrumb" class="mb-4" />
 
@@ -13,7 +25,7 @@
       </div>
 
       <Alert
-        v-if="!page?.body || page?.body?.children?.length === 0"
+        v-if="page?.body?.children?.length === 0"
         title="Empty Page"
         icon="lucide:circle-x"
       >
@@ -50,7 +62,7 @@ useSeoMeta({
 });
 
 defineOgImageComponent(config.value.site.ogImageComponent, {
-  title: page.value.title,
-  description: page.value.description,
+  title: page.value?.title,
+  description: page.value?.description,
 });
 </script>
