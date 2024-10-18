@@ -16,7 +16,7 @@
             {{ link.title }}
           </span>
           <span v-for="(badge, i) in link.badges" :key="i">
-            <Badge :variant="badge.variant" :type="badge.type" size="sm">
+            <Badge :variant="badge.variant" :type="badge.type" :size="badge.size ?? 'sm'">
               {{ badge.value }}
             </Badge>
           </span>
@@ -47,7 +47,7 @@
         {{ link.title }}
       </span>
       <span v-for="(badge, i) in link.badges" :key="i">
-        <Badge :variant="badge.variant" :type="badge.type" size="sm">
+        <Badge :variant="badge.variant" :type="badge.type" :size="badge.size ?? 'sm'">
           {{ badge.value }}
         </Badge>
       </span>
