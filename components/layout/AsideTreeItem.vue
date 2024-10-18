@@ -15,6 +15,11 @@
           <span class="truncate text-nowrap">
             {{ link.title }}
           </span>
+          <span v-for="(badge, i) in link.badges" :key="i">
+            <Badge :variant="badge.variant" :type="badge.type" size="sm">
+              {{ badge.value }}
+            </Badge>
+          </span>
           <SmartIcon
             name="lucide:chevron-down"
             class="ml-auto self-center transition-transform"
@@ -40,6 +45,11 @@
       />
       <span class="truncate text-nowrap">
         {{ link.title }}
+      </span>
+      <span v-for="(badge, i) in link.badges" :key="i">
+        <Badge :variant="badge.variant" :type="badge.type" size="sm">
+          {{ badge.value }}
+        </Badge>
       </span>
     </NuxtLink>
   </li>

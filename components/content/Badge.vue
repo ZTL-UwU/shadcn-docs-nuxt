@@ -1,6 +1,6 @@
 <template>
   <NuxtLink :to :target class="mx-0.5">
-    <UiBadge :variant :class="typeTwClass[type]">
+    <UiBadge :variant :class="[typeTwClass[type], size === 'sm' && 'rounded-md px-1.5 py-0.5 text-xs leading-none']">
       <ContentSlot unwrap="p" />
     </UiBadge>
   </NuxtLink>
@@ -10,11 +10,13 @@
 const {
   type = 'default',
   variant = 'default',
+  size = 'md',
 } = defineProps<{
-  type?: 'default' | 'info' | 'warning' | 'success' | 'danger';
+  type?: 'default' | 'info' | 'warning' | 'success' | 'danger' | 'lime';
   to?: string;
   target?: Target;
   variant?: 'default' | 'secondary' | 'destructive' | 'outline';
+  size?: 'md' | 'sm';
 }>();
 
 const typeTwClass = {
@@ -23,5 +25,6 @@ const typeTwClass = {
   warning: `${variant !== 'outline' && 'bg-amber-500 hover:bg-amber-400'} ${variant === 'outline' && 'border-amber-500 text-amber-500'}`,
   success: `${variant !== 'outline' && 'bg-green-500 hover:bg-green-400'} ${variant === 'outline' && 'border-green-500 text-green-500'}`,
   danger: `${variant !== 'outline' && 'bg-red-500 hover:bg-red-400'} ${variant === 'outline' && 'border-red-500 text-red-500'}`,
+  lime: `${variant !== 'outline' && 'bg-[#adfa1d] hover:bg-[#adfa1d] text-black'} ${variant === 'outline' && 'border-[#adfa1d] text-black'}`,
 };
 </script>
