@@ -15,7 +15,7 @@
           <span class="truncate text-nowrap">
             {{ link.title }}
           </span>
-          <span v-for="(badge, i) in link.badges" :key="i">
+          <span v-for="(badge, i) in link.navBadges" :key="i">
             <Badge :variant="badge.variant" :type="badge.type" :size="badge.size ?? 'sm'">
               {{ badge.value }}
             </Badge>
@@ -46,7 +46,7 @@
       <span class="truncate text-nowrap">
         {{ link.title }}
       </span>
-      <span v-for="(badge, i) in link.badges" :key="i">
+      <span v-for="(badge, i) in link.navBadges" :key="i">
         <Badge :variant="badge.variant" :type="badge.type" :size="badge.size ?? 'sm'">
           {{ badge.value }}
         </Badge>
