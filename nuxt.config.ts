@@ -56,6 +56,11 @@ export default defineNuxtConfig({
       },
     },
   },
+  icon: {
+    clientBundle: {
+      scan: true,
+    },
+  },
   typescript: {
     tsConfig: {
       compilerOptions: {
