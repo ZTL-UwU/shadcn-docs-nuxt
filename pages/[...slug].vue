@@ -11,7 +11,11 @@
     </span>
   </div>
 
-  <main v-else class="relative py-6" :class="[config.toc.enable && 'lg:grid lg:grid-cols-[1fr_200px] lg:gap-10 lg:py-8']">
+  <main
+    v-else
+    class="relative py-6"
+    :class="[config.toc.enable && (page.toc ?? true) && 'lg:grid lg:grid-cols-[1fr_200px] lg:gap-10 lg:py-8']"
+  >
     <div class="mx-auto w-full min-w-0">
       <LayoutBreadcrumb v-if="page?.body && config.main.breadCrumb" class="mb-4" />
 
@@ -41,7 +45,7 @@
 
       <LayoutPrevNext />
     </div>
-    <div v-if="config.toc.enable" class="hidden text-sm lg:block">
+    <div v-if="config.toc.enable && (page.toc ?? true)" class="hidden text-sm lg:block">
       <div class="sticky top-[90px] h-[calc(100vh-3.5rem)] overflow-hidden">
         <LayoutToc :is-small="false" />
       </div>
