@@ -59,6 +59,7 @@ export default defineNuxtConfig({
   icon: {
     clientBundle: {
       scan: true,
+      sizeLimitKb: 512,
     },
   },
   typescript: {
