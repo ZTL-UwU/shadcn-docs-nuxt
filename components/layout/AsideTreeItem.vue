@@ -1,15 +1,11 @@
 <template>
-  <li
-    class="rounded-md underline-offset-4 transition-all [&:not(:first-child)]:pt-3"
-    :class="[level > 0 && 'pl-4']"
-  >
+  <li>
     <UiCollapsible v-if="link.children" v-model:open="isOpen">
       <UiCollapsibleTrigger class="w-full text-left">
-        <div class="flex w-full gap-1">
+        <div class="flex h-8 items-center gap-2 rounded-md p-2 text-sm text-primary/80 hover:bg-muted hover:text-primary">
           <SmartIcon
             v-if="link.icon"
             :name="link.icon"
-            class="mr-1 self-center"
             :size="15"
           />
           <span class="truncate text-nowrap">
@@ -22,7 +18,7 @@
           </span>
           <SmartIcon
             name="lucide:chevron-down"
-            class="ml-auto self-center transition-transform"
+            class="ml-auto transition-transform"
             :class="[!isOpen && '-rotate-90']"
           />
         </div>
@@ -34,13 +30,12 @@
     <NuxtLink
       v-else
       :to="link._path"
-      class="flex w-full gap-1 text-muted-foreground hover:underline"
-      :class="[isActive && 'font-medium text-primary']"
+      class="flex h-8 items-center gap-2 rounded-md p-2 text-sm text-primary/80 hover:bg-muted hover:text-primary"
+      :class="[isActive && 'bg-muted !text-primary']"
     >
       <SmartIcon
         v-if="link.icon"
         :name="link.icon"
-        class="mr-1 self-center"
         :size="15"
       />
       <span class="truncate text-nowrap">
