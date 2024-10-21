@@ -48,6 +48,7 @@ export default defineNuxtConfig({
         'icon',
         'navBadges',
         'toc',
+        'sidebar',
       ],
     },
     experimental: {

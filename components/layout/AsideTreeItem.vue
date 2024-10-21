@@ -2,12 +2,20 @@
   <li>
     <UiCollapsible v-if="link.children" v-model:open="isOpen">
       <UiCollapsibleTrigger class="w-full text-left">
-        <div class="flex h-8 items-center gap-2 rounded-md p-2 text-sm text-primary/80 hover:bg-muted hover:text-primary">
+        <div class="flex h-8 items-center gap-2 rounded-md p-2 text-sm text-foreground/80 hover:bg-muted hover:text-primary">
+          <SmartIcon
+            v-if="link.sidebar?.leftArrow"
+            name="lucide:chevron-down"
+            class="transition-transform"
+            :class="[!isOpen && '-rotate-90']"
+          />
+
           <SmartIcon
             v-if="link.icon"
             :name="link.icon"
             :size="15"
           />
+
           <span class="truncate text-nowrap">
             {{ link.title }}
           </span>
@@ -16,7 +24,9 @@
               {{ badge.value }}
             </Badge>
           </span>
+
           <SmartIcon
+            v-if="!link.sidebar?.leftArrow"
             name="lucide:chevron-down"
             class="ml-auto transition-transform"
             :class="[!isOpen && '-rotate-90']"
@@ -30,7 +40,7 @@
     <NuxtLink
       v-else
       :to="link._path"
-      class="flex h-8 items-center gap-2 rounded-md p-2 text-sm text-primary/80 hover:bg-muted hover:text-primary"
+      class="flex h-8 items-center gap-2 rounded-md p-2 text-sm text-foreground/80 hover:bg-muted hover:text-primary"
       :class="[isActive && 'bg-muted !text-primary']"
     >
       <SmartIcon
