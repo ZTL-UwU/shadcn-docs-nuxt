@@ -1,10 +1,16 @@
 ---
 title: Shortcut
 icon: lucide:keyboard
+badges:
+  - value: Nuxt UI Pro
+    to: https://ui.nuxt.com/pro/prose/shortcut
+    target: _blank
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Shortcut.vue
+    target: _blank
+  - value: 0.6.3
 ---
-
-:badge[0.6.3]{variant="outline"}
-:badge[Nuxt UI Pro]{variant="outline" to="https://ui.nuxt.com/pro/prose/shortcut" target="_blank"}
 
 ::code-group
   ::div{label="Preview" class="md:p-4"}

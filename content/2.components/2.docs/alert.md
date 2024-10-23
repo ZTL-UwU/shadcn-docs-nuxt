@@ -1,8 +1,14 @@
 ---
 icon: lucide:triangle-alert
+badges:
+  - value: Docus
+    to: https://docus.dev/api/components#alert
+    target: _blank
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Alert.vue
+    target: _blank
 ---
-
-:badge[Docus]{variant="outline" to="https://docus.dev/api/components#alert" target="_blank"}
 
 ::code-group
   ::div{label="Preview" class="md:p-4"}

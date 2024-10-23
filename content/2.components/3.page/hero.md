@@ -1,6 +1,11 @@
 ---
 title: Hero
 icon: lucide:align-center
+badges:
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Hero.vue
+    target: _blank
 ---
 
 ::code-group

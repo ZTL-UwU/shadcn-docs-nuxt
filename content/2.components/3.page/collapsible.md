@@ -1,13 +1,18 @@
 ---
 title: Collapsible
 icon: lucide:list-collapse
+badges:
+  - value: Nuxt UI Pro
+    to: https://ui.nuxt.com/pro/prose/collapsible
+    target: _blank
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Collapsible.vue
+    target: _blank
+  - value: 0.5.8
 ---
 
-:badge[0.5.8]{variant="outline"}
-
 #### Simple
-
-:badge[Nuxt UI Pro]{variant="outline" to="https://ui.nuxt.com/pro/prose/callout" target="_blank"}
 
 ::code-group
   ::div{label="Preview" class="md:p-4"}

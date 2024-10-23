@@ -1,9 +1,13 @@
 ---
 title: Accordion
 icon: lucide:layout-list
+badges:
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Accordion.vue
+    target: _blank
+  - value: 0.5.0
 ---
-
-:badge[0.5.0]{variant="outline"}
 
 ::code-group
   ::div{label="Preview" class="md:p-4"}

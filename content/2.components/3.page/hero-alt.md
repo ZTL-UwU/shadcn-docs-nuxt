@@ -1,9 +1,13 @@
 ---
 title: HeroAlt
 icon: lucide:align-left
+badges:
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/HeroAlt.vue
+    target: _blank
+  - value: 0.4.0
 ---
-
-:badge[0.4.0]{variant="outline"}
 
 ::code-group
   ::div{label="Preview" class="md:p-4"}

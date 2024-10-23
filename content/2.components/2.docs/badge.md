@@ -1,9 +1,15 @@
 ---
 title: Badge
 icon: lucide:badge
+badges:
+  - value: Docus
+    to: https://docus.dev/api/components#badge
+    target: _blank
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Badge.vue
+    target: _blank
 ---
-
-:badge[Docus]{variant="outline" to="https://docus.dev/api/components#badge" target="_blank"}
 
 ::code-group
   ::div{label="Preview" class="md:p-4"}

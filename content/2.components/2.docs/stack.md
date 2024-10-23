@@ -4,9 +4,13 @@ icon: lucide:rows-3
 navBadges:
   - value: New
     type: lime
+badges:
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Stack.vue
+    target: _blank
+  - value: 0.6.2
 ---
-
-:badge[0.6.2]{variant="outline"}
 
 ::code-group
   ::div{label="Preview" class="md:p-4"}

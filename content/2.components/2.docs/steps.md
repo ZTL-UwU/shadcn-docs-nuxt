@@ -1,6 +1,11 @@
 ---
 title: Steps
 icon: lucide:arrow-down-0-1
+badges:
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Steps.vue
+    target: _blank
 ---
 
 ::code-group

@@ -1,10 +1,18 @@
 ---
 title: Card
 icon: lucide:square
+badges:
+  - value: Nuxt UI Pro
+    to: https://ui.nuxt.com/pro/prose/card
+    target: _blank
+  - value: Docus
+    to: https://docus.dev/api/components#card
+    target: _blank
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Card.vue
+    target: _blank
 ---
-
-:badge[Docus]{variant="outline" to="https://docus.dev/api/components#card" target="_blank"}
-:badge[Nuxt UI Pro]{variant="outline" to="https://ui.nuxt.com/pro/prose/card" target="_blank"}
 
 ::code-group
   ::div{label="Preview" class="md:p-4"}

@@ -1,9 +1,15 @@
 ---
 title: Tabs
 icon: lucide:table-2
+badges:
+  - value: Nuxt UI Pro
+    to: https://ui.nuxt.com/pro/prose/tabs
+    target: _blank
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Tabs.vue
+    target: _blank
 ---
-
-:badge[Nuxt UI Pro]{variant="outline" to="https://ui.nuxt.com/pro/prose/tabs" target="_blank"}
 
 #### Default Style
 

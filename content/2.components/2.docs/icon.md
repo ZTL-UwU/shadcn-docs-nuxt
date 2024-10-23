@@ -1,9 +1,15 @@
 ---
 title: Icon
 icon: lucide:star
+badges:
+  - value: Docus
+    to: https://docus.dev/api/components#icon
+    target: _blank
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Icon.vue
+    target: _blank
 ---
-
-:badge[Docus]{variant="outline" to="https://docus.dev/api/components#icon" target="_blank"}
 
 ::alert{to="https://github.com/nuxt-modules/icon" target="_blank"}
 The icon component uses **Nuxt Icon** under the hood. Check out the usage guide from Nuxt Icon.

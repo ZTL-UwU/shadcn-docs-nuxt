@@ -1,9 +1,15 @@
 ---
 title: Field
 icon: lucide:settings-2
+badges:
+  - value: Nuxt UI Pro
+    to: https://ui.nuxt.com/pro/prose/field
+    target: _blank
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Field.vue
+    target: _blank
 ---
-
-:badge[Nuxt UI Pro]{variant="outline" to="https://ui.nuxt.com/pro/prose/field" target="_blank"}
 
 ::code-group
   ::div{label="Preview" class="md:p-4"}

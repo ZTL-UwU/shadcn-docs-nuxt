@@ -1,10 +1,18 @@
 ---
 title: Code Group
 icon: lucide:code-xml
+badges:
+  - value: Nuxt UI Pro
+    to: https://ui.nuxt.com/pro/prose/code-group
+    target: _blank
+  - value: Docus
+    to: https://docus.dev/api/components#codegroup
+    target: _blank
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/CodeGroup.vue
+    target: _blank
 ---
-
-:badge[Docus]{variant="outline" to="https://docus.dev/api/components#codegroup" target="_blank"}
-:badge[Nuxt UI Pro]{variant="outline" to="https://ui.nuxt.com/pro/prose/code-group" target="_blank"}
 
 ::code-group
   ::div{label="Preview" class="md:p-4"}

@@ -4,10 +4,16 @@ icon: lucide:external-link
 navBadges:
   - value: New
     type: lime
+badges:
+  - value: Docus
+    to: https://docus.dev/api/components#buttonlink
+    target: _blank
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/ButtonLink.vue
+    target: _blank
+  - value: 0.6.5
 ---
-
-:badge[0.6.5]{variant="outline"}
-:badge[Docus]{variant="outline" to="https://docus.dev/api/components#buttonlink" target="_blank"}
 
 ::code-group
   ::div{label="Preview" class="md:p-4 flex gap-4"}
