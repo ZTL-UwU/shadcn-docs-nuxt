@@ -6,7 +6,7 @@
         @click="isOpen = !isOpen"
       >
         <SmartIcon
-          v-if="link.sidebar?.leftArrow"
+          v-if="link.sidebar?.style === 'tree'"
           name="lucide:chevron-down"
           class="transition-transform"
           :class="[!isOpen && '-rotate-90']"
@@ -29,7 +29,7 @@
         </span>
 
         <SmartIcon
-          v-if="!link.sidebar?.leftArrow"
+          v-if="link.sidebar?.style !== 'tree'"
           name="lucide:chevron-down"
           class="ml-auto transition-transform"
           :class="[!isOpen && '-rotate-90']"
