@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink :to :target class="mx-0.5">
+  <NuxtLink v-if="to" :to :target class="mx-0.5">
     <UiBadge
       :variant
       :class="[
@@ -10,6 +10,18 @@
       <ContentSlot unwrap="p" />
     </UiBadge>
   </NuxtLink>
+
+  <span v-else class="mx-0.5">
+    <UiBadge
+      :variant
+      :class="[
+        typeTwClass[type],
+        size === 'sm' && 'rounded-md px-1.5 py-0.5 text-xs font-normal leading-none',
+      ]"
+    >
+      <ContentSlot unwrap="p" />
+    </UiBadge>
+  </span>
 </template>
 
 <script setup lang="ts">

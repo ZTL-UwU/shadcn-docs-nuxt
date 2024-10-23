@@ -21,6 +21,7 @@
         <span class="truncate text-nowrap">
           {{ link.title }}
         </span>
+
         <span v-for="(badge, i) in link.navBadges" :key="i">
           <Badge :variant="badge.variant" :type="badge.type" :size="badge.size ?? 'sm'">
             {{ badge.value }}
