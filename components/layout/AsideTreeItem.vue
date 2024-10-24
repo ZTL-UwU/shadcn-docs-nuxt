@@ -15,7 +15,6 @@
         <SmartIcon
           v-if="link.icon"
           :name="link.icon"
-          :size="15"
         />
 
         <span class="truncate text-nowrap">
@@ -48,7 +47,6 @@
       <SmartIcon
         v-if="link.icon"
         :name="link.icon"
-        :size="15"
       />
       <span class="truncate text-nowrap">
         {{ link.title }}
