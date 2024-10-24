@@ -41,7 +41,7 @@ interface DefaultConfig {
   aside: {
     useLevel: boolean;
     collapse: boolean;
-    folderStyle: 'normal' | 'tree' | 'group';
+    folderStyle: 'default' | 'tree' | 'group';
   };
   main: {
     breadCrumb: boolean;

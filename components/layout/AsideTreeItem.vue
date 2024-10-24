@@ -44,7 +44,7 @@
           </span>
 
           <SmartIcon
-            v-if="folderStyle === 'normal'"
+            v-if="folderStyle === 'default'"
             name="lucide:chevron-down"
             class="ml-auto transition-transform"
             :class="[!isOpen && '-rotate-90']"

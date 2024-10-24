@@ -29,7 +29,7 @@ const defaultConfig: DefaultConfig = {
   aside: {
     useLevel: true,
     collapse: false,
-    folderStyle: 'normal',
+    folderStyle: 'default',
   },
   main: {
     breadCrumb: true,
