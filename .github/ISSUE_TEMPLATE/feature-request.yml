@@ -1,6 +1,7 @@
 name: 🚀 Feature request
 description: Suggest a feature that will improve Nuxt
 labels: [✨ feature]
+title: 'feat: '
 body:
   - type: textarea
     id: feature-description

@@ -1,7 +1,17 @@
 name: 🐞 Bug report
 description: Create a report to help us improve
 labels: [🐞 bug]
+title: 'bug: '
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+        This form is only for submitting bug reports. If you have a usage question
+        or are unsure if this is really a bug, make sure to:
+
+        - Read the [docs](https://shadcn-docs-nuxt.vercel.app/)
+        - Ask on [GitHub Discussions](https://github.com/ZTL-UwU/shadcn-docs-nuxt/discussions)
   - type: textarea
     id: bug-env
     attributes:
