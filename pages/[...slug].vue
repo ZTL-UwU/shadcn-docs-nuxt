@@ -18,29 +18,12 @@
   >
     <div class="mx-auto w-full min-w-0">
       <LayoutBreadcrumb v-if="page?.body && config.main.breadCrumb" class="mb-4" />
-
-      <div v-if="config.main.showTitle" class="mb-6">
-        <ProseH1>
-          {{ page?.title }}
-        </ProseH1>
-        <p class="pt-1 text-lg text-muted-foreground">
-          {{ page?.description }}
-        </p>
-
-        <div class="flex gap-2 pt-4">
-          <NuxtLink
-            v-for="(badge, i) in page?.badges"
-            :key="i"
-            :to="badge.to"
-            :target="badge.target"
-          >
-            <UiBadge :variant="badge.variant || 'secondary'" :type="badge.type" class="gap-1 rounded-md">
-              {{ badge.value }}
-              <SmartIcon v-if="badge.to || badge.icon" :size="12" :name="badge.icon || 'lucide:external-link'" />
-            </UiBadge>
-          </NuxtLink>
-        </div>
-      </div>
+      <LayoutTitle
+        v-if="config.main.showTitle"
+        :title="page?.title"
+        :description="page?.description"
+        :badges="page?.badges"
+      />
 
       <Alert
         v-if="page?.body?.children?.length === 0"
