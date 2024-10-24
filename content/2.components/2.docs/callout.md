@@ -11,6 +11,6 @@ badges:
     target: _blank
 ---
 
-::alert{to="/components/alert"}
+::alert{to="/components/docs/alert"}
 `::callout`{lang="mdc"} is an alias to `::alert`{lang="mdc"}.
 ::
