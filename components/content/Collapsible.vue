@@ -45,9 +45,13 @@
 </template>
 
 <script setup lang="ts">
-const { variant = 'simple' } = defineProps<{
+const {
+  variant = 'simple',
+  defaultOpen = false,
+} = defineProps<{
   variant?: 'simple' | 'card';
   title?: string;
+  defaultOpen?: boolean;
 }>();
-const isOpen = ref(false);
+const isOpen = ref(defaultOpen);
 </script>
