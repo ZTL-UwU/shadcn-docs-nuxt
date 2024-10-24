@@ -56,6 +56,6 @@ badges:
   ```
 ::
 
-::alert{to="/components/docs/code-group"}
+::alert{to="/components/docs/tabs"}
 `::code-group`{lang="mdc"} is a wrapper around `::tabs{variant="card"}`{lang="mdc"}.
 ::
