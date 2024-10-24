@@ -68,6 +68,7 @@ export default defineAppConfig({
     aside: {
       useLevel: true,
       collapse: false,
+      folderStyle: 'normal',
     },
     main: {
       breadCrumb: true,

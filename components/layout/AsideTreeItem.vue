@@ -1,42 +1,59 @@
 <template>
   <li>
     <div v-if="link.children">
-      <button
-        class="flex h-8 w-full cursor-pointer items-center gap-2 rounded-md p-2 text-left text-sm font-medium text-foreground/80 hover:bg-muted hover:text-primary"
-        @click="isOpen = !isOpen"
-      >
-        <SmartIcon
-          v-if="link.sidebar?.style === 'tree'"
-          name="lucide:chevron-down"
-          class="transition-transform"
-          :class="[!isOpen && '-rotate-90']"
-        />
-
-        <SmartIcon
-          v-if="link.icon"
-          :name="link.icon"
-        />
-
-        <span class="truncate text-nowrap">
+      <template v-if="folderStyle === 'group'">
+        <div class="mt-2 flex h-8 items-center gap-2 rounded-md px-2 text-xs font-semibold text-foreground/70 outline-none">
+          <SmartIcon
+            v-if="link.icon"
+            :name="link.icon"
+          />
           {{ link.title }}
-        </span>
+          <span v-for="(badge, i) in link.navBadges" :key="i">
+            <Badge :variant="badge.variant" :type="badge.type" :size="badge.size ?? 'sm'">
+              {{ badge.value }}
+            </Badge>
+          </span>
+        </div>
+        <LayoutAsideTree :links="link.children" :level="level" />
+      </template>
+      <template v-else>
+        <button
+          class="flex h-8 w-full cursor-pointer items-center gap-2 rounded-md p-2 text-left text-sm font-medium text-foreground/80 hover:bg-muted hover:text-primary"
+          @click="isOpen = !isOpen"
+        >
+          <SmartIcon
+            v-if="folderStyle === 'tree'"
+            name="lucide:chevron-down"
+            class="transition-transform"
+            :class="[!isOpen && '-rotate-90']"
+          />
 
-        <span v-for="(badge, i) in link.navBadges" :key="i">
-          <Badge :variant="badge.variant" :type="badge.type" :size="badge.size ?? 'sm'">
-            {{ badge.value }}
-          </Badge>
-        </span>
+          <SmartIcon
+            v-if="link.icon"
+            :name="link.icon"
+          />
 
-        <SmartIcon
-          v-if="link.sidebar?.style !== 'tree'"
-          name="lucide:chevron-down"
-          class="ml-auto transition-transform"
-          :class="[!isOpen && '-rotate-90']"
-        />
-      </button>
-      <div v-show="isOpen">
-        <LayoutAsideTree :links="link.children" :level="level + 1" />
-      </div>
+          <span class="truncate text-nowrap">
+            {{ link.title }}
+          </span>
+
+          <span v-for="(badge, i) in link.navBadges" :key="i">
+            <Badge :variant="badge.variant" :type="badge.type" :size="badge.size ?? 'sm'">
+              {{ badge.value }}
+            </Badge>
+          </span>
+
+          <SmartIcon
+            v-if="folderStyle === 'normal'"
+            name="lucide:chevron-down"
+            class="ml-auto transition-transform"
+            :class="[!isOpen && '-rotate-90']"
+          />
+        </button>
+        <div v-show="isOpen">
+          <LayoutAsideTree :links="link.children" :level="level + 1" />
+        </div>
+      </template>
     </div>
     <NuxtLink
       v-else
@@ -63,17 +80,19 @@
 <script setup lang="ts">
 import type { NavItem } from '@nuxt/content';
 
-const props = defineProps<{
+const { link, level } = defineProps<{
   link: NavItem;
   level: number;
 }>();
 
-const { collapse } = useConfig().value.aside;
+const { collapse, folderStyle: defaultFolderStyle } = useConfig().value.aside;
 
 const collapsed = useCollapsedMap();
-const isOpen = ref(collapsed.value.get(props.link._path) || (props.level < 1 && !collapse));
+const isOpen = ref(collapsed.value.get(link._path) || (level < 1 && !collapse));
 watch(isOpen, (v) => {
-  collapsed.value.set(props.link._path, v);
+  collapsed.value.set(link._path, v);
 });
-const isActive = computed(() => props.link._path === useRoute().path);
+const isActive = computed(() => link._path === useRoute().path);
+
+const folderStyle = computed(() => link.sidebar?.style ?? defaultFolderStyle);
 </script>
