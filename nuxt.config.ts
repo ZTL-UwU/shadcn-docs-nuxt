@@ -50,7 +50,7 @@ export default defineNuxtConfig({
         'badges',
         'toc',
         'sidebar',
-        'collapsed',
+        'collapse',
       ],
     },
     experimental: {
