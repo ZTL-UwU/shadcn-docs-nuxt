@@ -29,6 +29,7 @@ const defaultConfig: DefaultConfig = {
   aside: {
     useLevel: true,
     collapse: false,
+    collapseLevel: 1,
     folderStyle: 'default',
   },
   main: {
