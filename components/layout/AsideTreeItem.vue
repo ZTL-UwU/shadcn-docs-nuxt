@@ -88,7 +88,7 @@ const { link, level } = defineProps<{
 const { collapse, folderStyle: defaultFolderStyle } = useConfig().value.aside;
 
 const collapsed = useCollapsedMap();
-const isOpen = ref(collapsed.value.get(link._path) || (level < 1 && !collapse));
+const isOpen = ref(collapsed.value.get(link._path) || (level < 1 && !collapse && !link.collapsed));
 watch(isOpen, (v) => {
   collapsed.value.set(link._path, v);
 });
