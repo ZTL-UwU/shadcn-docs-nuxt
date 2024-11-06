@@ -8,9 +8,11 @@
       >
         {{ link.text }}
       </NuxtLink>
-      <TocTree v-if="link.children"
+      <TocTree
+        v-if="link.children"
         :links="(link.children || []).filter((x: any) => x.id !== 'hide-toc')"
-        :level="level + 1" />
+        :level="level + 1"
+      />
     </li>
   </ul>
 </template>
