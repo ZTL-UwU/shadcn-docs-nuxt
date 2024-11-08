@@ -31,6 +31,7 @@
           <Icon name="lucide:arrow-up-right" class="ml-auto self-center text-muted-foreground" size="13" />
         </NuxtLink>
       </div>
+      <CarbonAds v-if="carbonAds.enable" />
     </UiScrollArea>
     <UiCollapsible
       v-else
@@ -57,7 +58,7 @@
 defineProps<{ isSmall: boolean }>();
 
 const { toc } = useContent();
-const { title, links } = useConfig().value.toc;
+const { title, links, carbonAds } = useConfig().value.toc;
 const { border } = useConfig().value.header;
 const isOpen = ref(false);
 </script>

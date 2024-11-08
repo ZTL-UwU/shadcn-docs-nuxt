@@ -148,6 +148,11 @@ export default defineAppConfig({
         to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt/issues',
         target: '_blank',
       }],
+      carbonAds: {
+        enable: false,
+        code: '',
+        placement: '',
+      },
     },
     search: {
       enable: true,

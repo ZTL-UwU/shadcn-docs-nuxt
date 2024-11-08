@@ -92,6 +92,11 @@ const defaultConfig: DefaultConfig = {
     enableInMobile: false,
     title: 'On This Page',
     links: [],
+    carbonAds: {
+      enable: false,
+      code: '',
+      placement: '',
+    },
   },
   search: {
     enable: true,

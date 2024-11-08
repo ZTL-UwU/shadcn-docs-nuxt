@@ -74,6 +74,11 @@ interface DefaultConfig {
       to: string;
       target: string;
     })[];
+    carbonAds: {
+      enable: boolean;
+      code: string;
+      placement: string;
+    };
   };
   search: {
     enable: boolean;
