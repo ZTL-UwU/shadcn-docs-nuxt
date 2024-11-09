@@ -6,32 +6,37 @@
       class="z-30 hidden h-[calc(100vh-6.5rem)] overflow-y-auto md:block lg:block"
       type="hover"
     >
-      <p class="mb-2 text-base font-semibold">
-        {{ title }}
-      </p>
-      <LayoutTocTree
-        :links="toc.links.filter((x: any) => x.id !== 'hide-toc')"
-        :level="0"
-        :class="[links.length && 'border-b pb-5']"
-      />
-      <div v-if="links" class="pt-5 text-muted-foreground">
-        <NuxtLink
-          v-for="(link, i) in links"
-          :key="i"
-          :to="link.to"
-          :target="link.target"
-          class="flex w-full gap-1 underline-offset-4 hover:underline [&:not(:first-child)]:pt-3"
-        >
-          <SmartIcon
-            v-if="link.icon"
-            :name="link.icon"
-            class="mr-1 self-center"
+      <div class="flex h-[calc(100vh-6.5rem)] flex-col">
+        <div>
+          <p class="mb-2 text-base font-semibold">
+            {{ title }}
+          </p>
+          <LayoutTocTree
+            :links="toc.links.filter((x: any) => x.id !== 'hide-toc')"
+            :level="0"
+            :class="[links.length && 'border-b pb-5']"
           />
-          {{ link.title }}
-          <Icon name="lucide:arrow-up-right" class="ml-auto self-center text-muted-foreground" size="13" />
-        </NuxtLink>
+          <div v-if="links" class="pt-5 text-muted-foreground">
+            <NuxtLink
+              v-for="(link, i) in links"
+              :key="i"
+              :to="link.to"
+              :target="link.target"
+              class="flex w-full gap-1 underline-offset-4 hover:underline [&:not(:first-child)]:pt-3"
+            >
+              <SmartIcon
+                v-if="link.icon"
+                :name="link.icon"
+                class="mr-1 self-center"
+              />
+              {{ link.title }}
+              <Icon name="lucide:arrow-up-right" class="ml-auto self-center text-muted-foreground" size="13" />
+            </NuxtLink>
+          </div>
+        </div>
+        <div class="flex-grow" />
+        <LayoutCarbonAds v-if="carbonAds.enable" />
       </div>
-      <CarbonAds v-if="carbonAds.enable" />
     </UiScrollArea>
     <UiCollapsible
       v-else

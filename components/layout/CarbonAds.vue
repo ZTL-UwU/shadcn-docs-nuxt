@@ -1,9 +1,8 @@
 <!-- Ported from Vitepress -->
-
 <template>
   <div
     ref="container"
-    class="carbon-ads mt-8 flex min-h-[250px] items-center justify-center rounded-lg border p-4 text-center"
+    class="carbon-ads my-6 flex min-h-[260px] items-center justify-center rounded-lg border p-4 text-center"
   />
 </template>
 
@@ -11,11 +10,11 @@
 const { carbonAds } = useConfig().value.toc;
 const container = ref();
 
-let isInitialized = false;
+const isInitialized = ref(false);
 
 function init() {
-  if (!isInitialized) {
-    isInitialized = true;
+  if (!isInitialized.value) {
+    isInitialized.value = true;
     const s = document.createElement('script');
     s.type = 'text/javascript';
     s.id = '_carbonads_js';
@@ -26,7 +25,7 @@ function init() {
 }
 
 watch(() => useRoute().path, () => {
-  if (isInitialized) {
+  if (isInitialized.value) {
     ;(window as any)._carbonads?.refresh();
   }
 });
