@@ -34,7 +34,7 @@ const {
 } = defineProps<{
   title?: string;
   icon?: string;
-  type?: 'default' | 'info' | 'warning' | 'success' | 'danger';
+  type?: 'default' | 'info' | 'warning' | 'success' | 'danger' | 'secondary';
   to?: string;
   target?: Target;
   external?: boolean;
@@ -47,6 +47,7 @@ const typeTwClass = {
   warning: 'border-amber-600 text-amber-600 [&>svg]:text-amber-600',
   success: 'border-green-600 text-green-600 [&>svg]:text-green-600',
   danger: 'border-red-600 text-red-600 [&>svg]:text-red-600',
+  secondary: 'bg-muted/50',
 };
 
 async function alertClick() {

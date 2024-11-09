@@ -13,7 +13,11 @@ badges:
 ::code-group
   ::div{label="Preview" class="md:p-4"}
     ::alert{icon="lucide:info"}
-      An **default** alert with `code` and a [link](/).
+      A **default** alert with `code` and a [link](/).
+    ::
+
+    ::alert{type="secondary" icon="lucide:info"}
+      A **secondary** alert with `code` and a [link](/).
     ::
 
     ::alert{type="info" icon="lucide:info"}
@@ -43,7 +47,11 @@ badges:
 
   ```mdc [Code]
   ::alert{icon="lucide:info"}
-    An **default** alert with `code` and a [link](/).
+    A **default** alert with `code` and a [link](/).
+  ::
+
+  ::alert{type="secondary" icon="lucide:info"}
+    A **secondary** alert with `code` and a [link](/).
   ::
 
   ::alert{type="info" icon="lucide:info"}
