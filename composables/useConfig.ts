@@ -96,6 +96,7 @@ const defaultConfig: DefaultConfig = {
       enable: false,
       code: '',
       placement: '',
+      format: 'cover',
     },
   },
   search: {

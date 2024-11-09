@@ -1,9 +1,6 @@
 <!-- Ported from Vitepress -->
 <template>
-  <div
-    ref="container"
-    class="carbon-ads my-6 flex min-h-[260px] items-center justify-center rounded-lg border p-4 text-center"
-  />
+  <div ref="container" class="mt-6" />
 </template>
 
 <script setup lang="ts">
@@ -18,7 +15,7 @@ function init() {
     const s = document.createElement('script');
     s.type = 'text/javascript';
     s.id = '_carbonads_js';
-    s.src = `//cdn.carbonads.com/carbon.js?serve=${carbonAds.code}&placement=${carbonAds.placement}`;
+    s.src = `//cdn.carbonads.com/carbon.js?serve=${carbonAds.code}&placement=${carbonAds.placement}&format=${carbonAds.format}`;
     s.async = true;
     container.value.appendChild(s);
   }
@@ -37,32 +34,20 @@ if (carbonAds.enable) {
 }
 </script>
 
-<style scoped>
-.carbon-ads {
-  @apply leading-4 text-xs font-medium;
+<style>
+.carbon-responsive-wrap {
+	@apply bg-background border-border px-4 py-6 rounded-lg flex flex-col items-center !important;
 }
 
-.carbon-ads :deep(img) {
-  @apply mx-auto my-0 rounded-md;
+.carbon-responsive-wrap .carbon-img {
+	@apply flex-none rounded overflow-hidden !important;
 }
 
-.carbon-ads :deep(.carbon-text) {
-  @apply block mx-auto my-0 text-sm font-medium pt-4 hover:text-primary transition-colors;
+.carbon-responsive-wrap .carbon-text {
+  @apply text-muted-foreground text-sm flex-none text-center !important;
 }
 
-.carbon-ads :deep(.carbon-poweredby) {
-  @apply block pt-3 text-[11px] uppercase text-muted-foreground;
-}
-
-.carbon-ads :deep(.carbon-poweredby:hover) {
-  @apply text-muted-foreground;
-}
-
-.carbon-ads :deep(> div) {
-  @apply hidden;
-}
-
-.carbon-ads :deep(> div:first-of-type) {
-  @apply block;
+#carbonads .carbon-poweredby {
+	@apply bg-background text-muted-foreground block text-right text-[10px] uppercase no-underline !important;
 }
 </style>

@@ -78,6 +78,7 @@ interface DefaultConfig {
       enable: boolean;
       code: string;
       placement: string;
+      format: 'cover' | 'responsive';
     };
   };
   search: {

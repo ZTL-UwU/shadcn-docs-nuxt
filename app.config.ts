@@ -149,9 +149,10 @@ export default defineAppConfig({
         target: '_blank',
       }],
       carbonAds: {
-        enable: false,
+        enable: true,
         code: '',
         placement: '',
+        format: 'cover',
       },
     },
     search: {
