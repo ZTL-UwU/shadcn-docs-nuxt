@@ -170,3 +170,95 @@ badges:
   ::
   ```
 ::
+
+#### Combobox Style
+:badge[0.7.5]{variant="outline"}
+
+::code-group
+  ::div{label="Preview" class="md:p-4"}
+    ::tabs{variant="combobox"}
+      ::div{label="PostgreSQL"}
+      ### PostgreSQL column types
+
+      ```ts
+      import { integer, pgTable } from 'drizzle-orm/pg-core';
+
+      export const table = pgTable('table', {
+        int: integer('int')
+      });
+      ```
+      ::
+      ::div{label="MySQL"}
+      ### MySQL column types
+
+      ```ts
+      import { int, mysqlTable } from 'drizzle-orm/mysql-core';
+
+      const table = mysqlTable('table', {
+        int: int('int')
+      });
+      ```
+      ::
+      ::div{label="SQLite"}
+      ### SQLite column types
+
+      ```ts
+      import { integer, sqliteTable } from 'drizzle-orm/sqlite-core';
+
+      const table = sqliteTable('table', {
+        id: integer('id')
+      });
+
+      // you can customize integer mode to be number, boolean, timestamp, timestamp_ms
+      integer('id', { mode: 'number' });
+      integer('id', { mode: 'boolean' });
+      integer('id', { mode: 'timestamp_ms' });
+      integer('id', { mode: 'timestamp' }); // Date
+      ```
+      ::
+    ::
+  ::
+  ```mdc [Code]
+  ::tabs{variant="combobox"}
+    ::div{label="PostgreSQL"}
+    ### PostgreSQL column types
+
+    ```ts
+    import { integer, pgTable } from 'drizzle-orm/pg-core';
+
+    export const table = pgTable('table', {
+      int: integer('int')
+    });
+    ```
+    ::
+    ::div{label="MySQL"}
+    ### MySQL column types
+
+    ```ts
+    import { int, mysqlTable } from 'drizzle-orm/mysql-core';
+
+    const table = mysqlTable('table', {
+      int: int('int')
+    });
+    ```
+    ::
+    ::div{label="SQLite"}
+    ### SQLite column types
+
+    ```ts
+    import { integer, sqliteTable } from 'drizzle-orm/sqlite-core';
+
+    const table = sqliteTable('table', {
+      id: integer('id')
+    });
+
+    // you can customize integer mode to be number, boolean, timestamp, timestamp_ms
+    integer('id', { mode: 'number' });
+    integer('id', { mode: 'boolean' });
+    integer('id', { mode: 'timestamp_ms' });
+    integer('id', { mode: 'timestamp' }); // Date
+    ```
+    ::
+  ::
+  ```
+::

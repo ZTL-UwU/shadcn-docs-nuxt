@@ -105,19 +105,90 @@
       <component :is="slot" :in-group="true" />
     </div>
   </UiCard>
+
+  <div v-else-if="variant === 'combobox'">
+    <UiPopover v-model:open="open">
+      <UiPopoverTrigger as-child>
+        <UiButton
+          variant="outline"
+          role="combobox"
+          :aria-expanded="open"
+          class="w-[200px] justify-between"
+        >
+          <div class="flex items-center">
+            <SmartIcon
+              v-if="icon(($slots.default?.() ?? [])[activeTabIndex].props)"
+              :name="icon(($slots.default?.() ?? [])[activeTabIndex].props)!"
+              class="mr-1.5"
+            />
+            <span>
+              {{ label(($slots.default?.() ?? [])[activeTabIndex].props) }}
+            </span>
+          </div>
+          <Icon name="lucide:chevrons-up-down" />
+        </UiButton>
+      </UiPopoverTrigger>
+      <UiPopoverContent class="w-[200px] p-0">
+        <UiCommand>
+          <UiCommandInput v-if="!disableSearch" class="h-9" placeholder="Search Tab..." />
+          <UiCommandEmpty>No tab found.</UiCommandEmpty>
+          <UiCommandList>
+            <UiCommandGroup>
+              <UiCommandItem
+                v-for="(slot, i) in $slots.default?.() ?? []"
+                :key="`${i}${label(slot.props)}`"
+                :value="label(slot.props)"
+                @select="() => {
+                  activeTabIndex = i;
+                  open = false;
+                }"
+              >
+                <SmartIcon
+                  v-if="icon(slot?.props)"
+                  :name="icon(slot?.props)!"
+                  class="mr-1.5 self-center"
+                />
+                {{ label(slot.props) }}
+                <Icon
+                  name="lucide:check"
+                  :class="cn(
+                    'ml-auto h-4 w-4',
+                    activeTabIndex === i ? 'opacity-100' : 'opacity-0',
+                  )"
+                />
+              </UiCommandItem>
+            </UiCommandGroup>
+          </UiCommandList>
+        </UiCommand>
+      </UiPopoverContent>
+    </UiPopover>
+
+    <div
+      v-for="(slot, i) in $slots.default?.() ?? []"
+      v-show="activeTabIndex === i"
+      :key="`${i}${label(slot.props)}`"
+      :value="label(slot.props)"
+      class="mt-4"
+    >
+      <component :is="slot" :in-group="true" />
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
+import { cn } from '@/lib/utils';
 import ScrollBar from '../ui/scroll-area/ScrollBar.vue';
 
 const {
   variant = 'separate',
   padded = true,
   inStack = false,
+  disableSearch = false,
 } = defineProps<{
-  variant?: 'separate' | 'card' | 'line';
+  variant?: 'separate' | 'card' | 'line' | 'combobox';
   padded?: boolean;
   inStack?: boolean;
+  disableSearch?: boolean;
 }>();
 
 const activeTabIndex = ref(0);
@@ -130,4 +201,6 @@ function icon(props: any) {
 function label(props: any) {
   return props?.label || props?.filename;
 }
+
+const open = ref(false);
 </script>
