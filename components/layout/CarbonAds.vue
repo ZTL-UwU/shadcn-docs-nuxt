@@ -36,11 +36,11 @@ if (carbonAds.enable) {
 
 <style>
 .carbon-responsive-wrap {
-	@apply bg-background border-border px-4 py-6 rounded-lg flex flex-col items-center !important;
+  @apply bg-background border-border px-4 py-6 rounded-lg flex flex-col items-center !important;
 }
 
 .carbon-responsive-wrap .carbon-img {
-	@apply flex-none rounded overflow-hidden !important;
+  @apply flex-none rounded overflow-hidden !important;
 }
 
 .carbon-responsive-wrap .carbon-text {
@@ -48,6 +48,6 @@ if (carbonAds.enable) {
 }
 
 #carbonads .carbon-poweredby {
-	@apply bg-background text-muted-foreground block text-right text-[10px] uppercase no-underline !important;
+  @apply bg-background text-muted-foreground block text-right text-[10px] uppercase no-underline !important;
 }
 </style>
