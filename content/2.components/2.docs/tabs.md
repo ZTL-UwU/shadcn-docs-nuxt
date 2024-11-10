@@ -176,7 +176,7 @@ badges:
 
 ::code-group
   ::div{label="Preview" class="md:p-4"}
-    ::tabs{variant="combobox"}
+    ::tabs{variant="combobox" search-placeholder="Search database..." search-empty="No database found."}
       ::div{label="PostgreSQL"}
       ### PostgreSQL column types
 
@@ -219,7 +219,7 @@ badges:
     ::
   ::
   ```mdc [Code]
-  ::tabs{variant="combobox"}
+  ::tabs{variant="combobox" search-placeholder="Search database..." search-empty="No database found."}
     ::div{label="PostgreSQL"}
     ### PostgreSQL column types
 

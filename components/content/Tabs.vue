@@ -130,8 +130,8 @@
       </UiPopoverTrigger>
       <UiPopoverContent class="w-[200px] p-0">
         <UiCommand>
-          <UiCommandInput v-if="!disableSearch" class="h-9" placeholder="Search Tab..." />
-          <UiCommandEmpty>No tab found.</UiCommandEmpty>
+          <UiCommandInput v-if="!disableSearch" class="h-9" :placeholder="searchPlaceholder" />
+          <UiCommandEmpty>{{ searchEmpty }}</UiCommandEmpty>
           <UiCommandList>
             <UiCommandGroup>
               <UiCommandItem
@@ -184,11 +184,15 @@ const {
   padded = true,
   inStack = false,
   disableSearch = false,
+  searchPlaceholder = 'Search Tab...',
+  searchEmpty = 'No tab found.',
 } = defineProps<{
   variant?: 'separate' | 'card' | 'line' | 'combobox';
   padded?: boolean;
   inStack?: boolean;
   disableSearch?: boolean;
+  searchPlaceholder?: string;
+  searchEmpty?: string;
 }>();
 
 const activeTabIndex = ref(0);
