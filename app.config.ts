@@ -77,7 +77,7 @@ export default defineAppConfig({
       codeCopyToast: true,
       editLink: {
         enable: true,
-        pattern: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt/tree/main/content/:path',
+        pattern: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt/edit/main/content/:path',
         text: 'Edit this page',
         icon: 'lucide:square-pen',
         placement: ['docsFooter', 'toc'],
