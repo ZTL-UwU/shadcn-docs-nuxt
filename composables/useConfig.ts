@@ -44,6 +44,7 @@ const defaultConfig: DefaultConfig = {
       pattern: '',
       text: 'Edit this page',
       icon: 'lucide:square-pen',
+      placement: ['docsFooter'],
     },
     codeIcon: {
       'package.json': 'vscode-icons:file-type-node',

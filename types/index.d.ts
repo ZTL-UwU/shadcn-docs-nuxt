@@ -56,6 +56,7 @@ interface DefaultConfig {
       pattern: string;
       text: string;
       icon: string;
+      placement: ('docsFooter' | 'toc')[];
     };
     codeIcon: {
       [key: string]: string;
@@ -75,8 +76,8 @@ interface DefaultConfig {
     enableInMobile: boolean;
     title: string;
     links: ({
-      icon: string;
       title: string;
+      icon: string;
       to: string;
       target: string;
     })[];

@@ -61,7 +61,23 @@
 defineProps<{ isSmall: boolean }>();
 
 const { toc } = useContent();
-const { title, links, carbonAds } = useConfig().value.toc;
+const { title, links: configLinks, carbonAds } = useConfig().value.toc;
 const { border } = useConfig().value.header;
 const isOpen = ref(false);
+
+const { url, enabledToc, text, icon } = useEditLink();
+
+const links = computed(
+  () => {
+    if (enabledToc.value) {
+      return configLinks.concat([{
+        title: text,
+        icon,
+        to: url.value,
+        target: '_blank',
+      }]);
+    }
+    return configLinks;
+  },
+);
 </script>

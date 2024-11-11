@@ -78,8 +78,9 @@ export default defineAppConfig({
       editLink: {
         enable: true,
         pattern: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt/tree/main/content/:path',
-        text: 'Edit this page on GitHub',
+        text: 'Edit this page',
         icon: 'lucide:square-pen',
+        placement: ['docsFooter', 'toc'],
       },
       codeIcon: {
         'package.json': 'vscode-icons:file-type-node',
