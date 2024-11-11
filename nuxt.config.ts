@@ -51,6 +51,7 @@ export default defineNuxtConfig({
         'toc',
         'sidebar',
         'collapse',
+        'editLink',
       ],
     },
     experimental: {

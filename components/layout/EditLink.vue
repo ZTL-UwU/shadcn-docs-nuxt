@@ -1,7 +1,9 @@
 <template>
-  <div>
+  <div
+    v-if="enable && page.editLink !== false && page._file && url !== ''"
+    class="mb-6 w-fit"
+  >
     <NuxtLink
-      v-if="enable && page._file && url !== ''"
       :to="url"
       target="_blank"
       class="text-sm font-semibold text-primary"
