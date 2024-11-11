@@ -75,6 +75,12 @@ export default defineAppConfig({
       breadCrumb: true,
       showTitle: true,
       codeCopyToast: true,
+      editLink: {
+        enable: true,
+        pattern: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt/tree/main/content/:path',
+        text: 'Edit this page on GitHub',
+        icon: 'lucide:square-pen',
+      },
       codeIcon: {
         'package.json': 'vscode-icons:file-type-node',
         'tsconfig.json': 'vscode-icons:file-type-tsconfig',

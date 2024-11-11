@@ -2,7 +2,7 @@
   <h1 :id class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
     <NuxtLink
       v-if="generate"
-      :href="`#${id}`"
+      :to="`#${id}`"
     >
       <slot />
     </NuxtLink>

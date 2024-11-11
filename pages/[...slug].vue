@@ -40,7 +40,7 @@
         class="docs-content"
       />
 
-      <LayoutPrevNext />
+      <LayoutDocsFooter />
     </div>
     <div v-if="config.toc.enable && (page.toc ?? true)" class="hidden text-sm lg:block">
       <div class="sticky top-[90px] h-[calc(100vh-3.5rem)] overflow-hidden">

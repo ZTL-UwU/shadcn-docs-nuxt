@@ -50,10 +50,16 @@ interface DefaultConfig {
     codeCopyToast: boolean;
     codeCopyToastText: string;
     fieldRequiredText: string;
+    padded: boolean;
+    editLink: {
+      enable: boolean;
+      pattern: string;
+      text: string;
+      icon: string;
+    };
     codeIcon: {
       [key: string]: string;
     };
-    padded: boolean;
   };
   footer: {
     credits: string;
