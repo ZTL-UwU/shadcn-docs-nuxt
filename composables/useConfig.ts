@@ -6,6 +6,11 @@ const defaultConfig: DefaultConfig = {
     description: 'Beautifully designed Nuxt Content template built with shadcn-vue. Customizable. Compatible. Open Source.',
     ogImage: '/hero.png',
     ogImageComponent: 'ShadcnDocs',
+    umami: {
+      enable: false,
+      src: 'https://cloud.umami.is/script.js',
+      dataWebsiteId: '',
+    },
   },
   theme: {
     customizable: true,

@@ -4,6 +4,11 @@ interface DefaultConfig {
     description: string;
     ogImage: string;
     ogImageComponent: string;
+    umami: {
+      enable: boolean;
+      src: string;
+      dataWebsiteId: string;
+    };
   };
   theme: {
     customizable: boolean;
