@@ -8,7 +8,7 @@ navigation: false
 announcement:
   title: 'Release v0.7.6'
   icon: '🎉'
-  to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/releases
+  to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/releases/latest
   target: _blank
 actions:
   - name: Get Started
