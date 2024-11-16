@@ -29,7 +29,7 @@
               </UiCommandGroup>
               <UiCommandSeparator v-if="item.children" />
             </template>
-            <UiCommandGroup heading="Theme" class="p-1.5">
+            <UiCommandGroup v-if="darkModeToggle" heading="Theme" class="p-1.5">
               <UiCommandItem value="light" @click="colorMode.preference = 'light'">
                 <Icon name="lucide:sun" class="mr-2 size-4" />
                 <span>Light</span>
@@ -80,6 +80,8 @@
 
 <script setup lang="ts">
 import { VisuallyHidden } from 'radix-vue';
+
+const { darkModeToggle } = useConfig().value.header;
 
 const open = defineModel<boolean>('open');
 const colorMode = useColorMode();
