@@ -41,7 +41,7 @@
         </template>
       </div>
     </div>
-    <div class="space-y-1.5">
+    <div v-if="darkModeToggle" class="space-y-1.5">
       <UiLabel>Theme</UiLabel>
       <div class="grid grid-cols-3 gap-2">
         <UiButton
@@ -80,6 +80,7 @@
 import { themes } from '@/lib/registry/themes';
 
 const { themeClass, theme, radius, setTheme, setRadius } = useThemes();
+const { darkModeToggle } = useConfig().value.header;
 
 // Create an array of color values
 const allColors: Color[] = [
