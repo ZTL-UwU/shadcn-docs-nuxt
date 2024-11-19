@@ -1,5 +1,11 @@
 <template>
-  <ProseCode :code="code" :language="language" :filename="filename" :highlights="highlights" :meta="meta">
+  <ProseCode
+    :code="code"
+    :language="language"
+    :filename="filename"
+    :highlights="highlights"
+    :meta="meta"
+  >
     <pre :class="$props.class" :style="style"><slot /></pre>
   </ProseCode>
 </template>

@@ -19,7 +19,11 @@
       <UiScrollArea>
         <div
           class="overflow-x-auto py-3 text-sm"
-          :class="[!inGroup && !filename && 'inline-copy', !language && 'pl-3', !inGroup]"
+          :class="[
+            !inGroup && !filename && 'inline-copy',
+            !language && 'pl-3', !inGroup,
+            showLineNumber && 'show-line-number',
+          ]"
         >
           <slot />
         </div>
@@ -58,7 +62,13 @@ const props = defineProps({
     type: Array as () => number[],
     default: () => [],
   },
+  meta: {
+    type: String,
+    default: null,
+  },
 });
+
+const showLineNumber = computed(() => props.meta.includes('line-numbers'));
 
 const iconMap = new Map(Object.entries(useConfig().value.main.codeIcon));
 const icon = iconMap.get(props.filename?.toLowerCase()) || iconMap.get(props.language);
@@ -75,7 +85,7 @@ const icon = iconMap.get(props.filename?.toLowerCase()) || iconMap.get(props.lan
 }
 
 .shiki .line.highlight {
-  background-color: hsl(var(--muted) / 0.8);
+  background-color: hsl(var(--muted) / 0.9);
 }
 
 .shiki .line {
@@ -85,5 +95,10 @@ const icon = iconMap.get(props.filename?.toLowerCase()) || iconMap.get(props.lan
 
 .inline-copy .line {
   padding-right: 2.75rem;
+}
+
+.show-line-number .line::before {
+  content: attr(line);
+  @apply text-sm w-5 inline-block text-right mr-4 text-muted-foreground;
 }
 </style>
