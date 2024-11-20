@@ -37,41 +37,30 @@
 import type { BuiltinLanguage } from 'shiki';
 import ScrollBar from '../ui/scroll-area/ScrollBar.vue';
 
-const props = defineProps({
-  code: {
-    type: String,
-    default: '',
-  },
-  language: {
-    type: String as PropType<BuiltinLanguage>,
-    default: null,
-  },
-  filename: {
-    type: String,
-    default: null,
-  },
-  inGroup: {
-    type: Boolean,
-    default: false,
-  },
-  inStack: {
-    type: Boolean,
-    default: false,
-  },
-  highlights: {
-    type: Array as () => number[],
-    default: () => [],
-  },
-  meta: {
-    type: String,
-    default: null,
-  },
-});
+const {
+  code = '',
+  inGroup = false,
+  inStack = false,
+  language,
+  filename,
+  meta,
+} = defineProps<{
+  code?: string;
+  language?: BuiltinLanguage;
+  filename?: string;
+  inGroup?: boolean;
+  inStack?: boolean;
+  highlights?: number[];
+  meta?: string;
+}>();
 
-const showLineNumber = computed(() => props.meta.includes('line-numbers'));
+const showLineNumber = computed(() => meta?.includes('line-numbers'));
 
 const iconMap = new Map(Object.entries(useConfig().value.main.codeIcon));
-const icon = iconMap.get(props.filename?.toLowerCase()) || iconMap.get(props.language);
+const icon = computed(() => {
+  const filenameLow = filename?.toLowerCase();
+  return (filenameLow && iconMap.get(filenameLow)) || (language && iconMap.get(language));
+});
 </script>
 
 <style>
