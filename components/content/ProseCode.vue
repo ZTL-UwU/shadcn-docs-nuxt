@@ -16,13 +16,13 @@
       <CodeCopy :code />
     </span>
     <div class="bg-muted/30">
-      <UiScrollArea>
+      <UiScrollArea :style="[parsedMeta.has('height') && `height: ${parsedMeta.get('height')}px`]">
         <div
           class="overflow-x-auto py-3 text-sm"
           :class="[
             !inGroup && !filename && 'inline-copy',
             !language && 'pl-3', !inGroup,
-            showLineNumber && 'show-line-number',
+            parsedMeta.has('line-numbers') && 'show-line-number',
           ]"
         >
           <slot />
@@ -54,7 +54,17 @@ const {
   meta?: string;
 }>();
 
-const showLineNumber = computed(() => meta?.includes('line-numbers'));
+const parsedMeta = computed(() => {
+  const split = meta?.split(' ') ?? [];
+  const params = new Map<string, string | undefined>();
+
+  for (const param of split) {
+    const [key, val] = param.split('=');
+    params.set(key, val);
+  }
+
+  return params;
+});
 
 const iconMap = new Map(Object.entries(useConfig().value.main.codeIcon));
 const icon = computed(() => {
