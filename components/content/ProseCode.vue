@@ -6,9 +6,9 @@
       inStack && 'mb-0 rounded-none border-none shadow-none',
     ]"
   >
-    <div v-if="!inGroup && filename" class="flex border-b p-3 font-mono text-sm">
-      <SmartIcon v-if="icon" :name="icon" class="mr-1.5 self-center" />
-      {{ filename }}
+    <div v-if="!inGroup && filename" class="flex items-center border-b p-3 font-mono text-sm">
+      <SmartIcon v-if="icon" :name="icon" class="mr-1.5" />
+      <span>{{ filename }}</span>
       <CodeCopy :code class="ml-auto mr-1" />
     </div>
 
@@ -69,7 +69,7 @@ const parsedMeta = computed(() => {
 const iconMap = new Map(Object.entries(useConfig().value.main.codeIcon));
 const icon = computed(() => {
   const filenameLow = filename?.toLowerCase();
-  return (filenameLow && iconMap.get(filenameLow)) || (language && iconMap.get(language));
+  return parsedMeta.value.get('icon') || (filenameLow && iconMap.get(filenameLow)) || (language && iconMap.get(language));
 });
 </script>
 
