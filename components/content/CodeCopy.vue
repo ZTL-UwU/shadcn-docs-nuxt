@@ -1,18 +1,20 @@
 <template>
   <div class="flex">
     <Transition name="fade" mode="out-in">
-      <Icon
-        v-if="copied === false"
-        name="lucide:copy"
-        class="block cursor-pointer self-center text-muted-foreground hover:text-primary"
-        @click="handleClick"
-      />
-      <Icon
-        v-else
-        ref="checkIconRef"
-        name="lucide:check"
-        class="block cursor-pointer self-center text-muted-foreground hover:text-primary"
-      />
+      <div v-if="copied === false">
+        <Icon
+          name="lucide:copy"
+          class="block cursor-pointer self-center text-muted-foreground hover:text-primary"
+          @click="handleClick"
+        />
+      </div>
+      <div v-else>
+        <Icon
+          ref="checkIconRef"
+          name="lucide:check"
+          class="block cursor-pointer self-center text-muted-foreground hover:text-primary"
+        />
+      </div>
     </Transition>
   </div>
 </template>
