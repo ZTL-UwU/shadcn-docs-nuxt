@@ -12,6 +12,7 @@ const {
   disableSearch = false,
   searchPlaceholder = 'Search Tab...',
   searchEmpty = 'No tab found.',
+  sync,
 } = defineProps<{
   variant?: 'separate' | 'card' | 'line' | 'combobox';
   padded?: boolean;
@@ -19,6 +20,7 @@ const {
   disableSearch?: boolean;
   searchPlaceholder?: string;
   searchEmpty?: string;
+  sync?: string;
 }>();
 
 const _slots = useSlots();
@@ -42,6 +44,7 @@ function render() {
       searchEmpty,
       searchPlaceholder,
       slotsData,
+      sync,
     },
     () => slots,
   );

@@ -1,9 +1,6 @@
 ---
 title: Shortcut
 icon: lucide:keyboard
-navBadges:
-  - value: New
-    type: lime
 badges:
   - value: Nuxt UI Pro
     to: https://ui.nuxt.com/pro/prose/shortcut

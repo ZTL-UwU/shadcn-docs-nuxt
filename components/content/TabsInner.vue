@@ -1,15 +1,14 @@
 <template>
   <UiTabs
     v-if="variant === 'separate'"
+    v-model="activeTabIndex"
     class="[&:not(:first-child)]:mt-5"
-    :default-value="label(($slots.default?.() ?? [])[0]?.props)"
   >
     <UiTabsList>
       <UiTabsTrigger
         v-for="(slot, i) in $slots.default?.() ?? []"
         :key="`${i}${label(slot.props)}`"
-        :value="label(slot.props)"
-        @mousedown.left="activeTabIndex = i"
+        :value="i"
       >
         <SmartIcon
           v-if="icon(slot?.props)"
@@ -32,17 +31,16 @@
 
   <UiTabs
     v-else-if="variant === 'line'"
+    v-model="activeTabIndex"
     class="relative mr-auto w-full [&:not(:first-child)]:mt-5"
-    :default-value="label(($slots.default?.() ?? [])[0]?.props)"
   >
     <div class="flex items-center justify-between pb-3">
       <UiTabsList class="h-9 w-full justify-start rounded-none border-b bg-transparent p-0">
         <UiTabsTrigger
           v-for="(slot, i) in $slots.default?.() ?? []"
           :key="`${i}${label(slot.props)}`"
-          :value="label(slot.props)"
+          :value="i"
           class="relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none"
-          @mousedown.left="activeTabIndex = i"
         >
           <SmartIcon
             v-if="icon(slot?.props)"
@@ -182,7 +180,7 @@
 import { cn } from '@/lib/utils';
 import ScrollBar from '../ui/scroll-area/ScrollBar.vue';
 
-defineProps<{
+const { sync, slotsData } = defineProps<{
   slotsData: { label: string; index: number }[];
   variant?: 'separate' | 'card' | 'line' | 'combobox';
   padded?: boolean;
@@ -190,9 +188,40 @@ defineProps<{
   disableSearch?: boolean;
   searchPlaceholder?: string;
   searchEmpty?: string;
+  sync?: string;
 }>();
 
-const activeTabIndex = ref(0);
+const syncState = useCookie<{ scope: string; value?: string }[]>('tabs-sync-state', {
+  default: () => [],
+});
+
+const syncScopeIndex = computed(() => syncState.value.findIndex(x => x.scope === sync));
+
+const activeTabIndexData = ref(0);
+const activeTabIndex = computed<number>({
+  get: () => {
+    if (sync === undefined || syncScopeIndex.value === -1)
+      return activeTabIndexData.value;
+
+    for (const slot of slotsData) {
+      if (syncState.value[syncScopeIndex.value]?.value === slot.label)
+        return slot.index;
+    }
+    return activeTabIndexData.value;
+  },
+  set(index: number) {
+    if (sync === undefined) {
+      activeTabIndexData.value = index;
+      return;
+    }
+
+    if (syncScopeIndex.value === -1)
+      syncState.value.push({ scope: sync, value: undefined });
+
+    syncState.value[syncScopeIndex.value].value = slotsData[index].label;
+    activeTabIndexData.value = index;
+  },
+});
 
 const iconMap = new Map(Object.entries(useConfig().value.main.codeIcon));
 function icon(props: any) {

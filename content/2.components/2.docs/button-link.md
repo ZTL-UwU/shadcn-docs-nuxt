@@ -1,9 +1,6 @@
 ---
 title: Button Link
 icon: lucide:external-link
-navBadges:
-  - value: New
-    type: lime
 badges:
   - value: Docus
     to: https://docus.dev/api/components#buttonlink

@@ -1,6 +1,9 @@
 ---
 title: Tabs
 icon: lucide:table-2
+navBadges:
+  - value: Update
+    type: lime
 badges:
   - value: Nuxt UI Pro
     to: https://ui.nuxt.com/pro/prose/tabs
@@ -259,6 +262,104 @@ badges:
     integer('id', { mode: 'timestamp' }); // Date
     ```
     ::
+  ::
+  ```
+::
+
+### Synced Tabs
+:badge[0.8.0]{variant="outline"}
+
+::code-group
+  ::div{label="Preview" class="md:p-4"}
+    #### Scope 1
+    ::tabs{variant="card" sync="your-scope-name"}
+      ::div{label="Card Tab"}
+      ### This is a card-style tab
+      ::
+      ```ts [Code Tab]
+      console.log('Hello World!');
+      ```
+    ::
+    ::tabs{variant="card" sync="your-scope-name"}
+      ::div{label="Card Tab"}
+      ### This is a card-style tab
+      ::
+      ::div{label="Tab 2" icon="lucide:atom"}
+      This is Tab #2
+      ::
+      ```ts [Code Tab]
+      console.log('Hello World!');
+      ```
+    ::
+
+    #### Scope 2
+    ::tabs{variant="line" sync="scope2"}
+      ::div{label="Card Tab"}
+      ### This is a card-style tab
+      ::
+      ::div{label="Tab 2" icon="lucide:atom"}
+      This is Tab #2
+      ::
+      ```ts [Code Tab]
+      console.log('Hello World!');
+      ```
+    ::
+    ::tabs{variant="separate" sync="scope2"}
+      ::div{label="Card Tab"}
+      ### This is a card-style tab
+      ::
+      ::div{label="Tab 2" icon="lucide:atom"}
+      This is Tab #2
+      ::
+      ```ts [Code Tab]
+      console.log('Hello World!');
+      ```
+    ::
+  ::
+  ```mdc [Code]
+  #### Scope 1
+  ::tabs{variant="card" sync="your-scope-name"}
+    ::div{label="Card Tab"}
+    ### This is a card-style tab
+    ::
+    ```ts [Code Tab]
+    console.log('Hello World!');
+    ```
+  ::
+  ::tabs{variant="card" sync="your-scope-name"}
+    ::div{label="Card Tab"}
+    ### This is a card-style tab
+    ::
+    ::div{label="Tab 2" icon="lucide:atom"}
+    This is Tab #2
+    ::
+    ```ts [Code Tab]
+    console.log('Hello World!');
+    ```
+  ::
+
+  #### Scope 2
+  ::tabs{variant="line" sync="scope2"}
+    ::div{label="Card Tab"}
+    ### This is a card-style tab
+    ::
+    ::div{label="Tab 2" icon="lucide:atom"}
+    This is Tab #2
+    ::
+    ```ts [Code Tab]
+    console.log('Hello World!');
+    ```
+  ::
+  ::tabs{variant="separate" sync="scope2"}
+    ::div{label="Card Tab"}
+    ### This is a card-style tab
+    ::
+    ::div{label="Tab 2" icon="lucide:atom"}
+    This is Tab #2
+    ::
+    ```ts [Code Tab]
+    console.log('Hello World!');
+    ```
   ::
   ```
 ::

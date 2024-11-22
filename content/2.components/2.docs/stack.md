@@ -1,9 +1,6 @@
 ---
 title: Stack
 icon: lucide:rows-3
-navBadges:
-  - value: New
-    type: lime
 badges:
   - value: Source
     icon: lucide:code
