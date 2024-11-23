@@ -5,8 +5,9 @@
 <script setup lang="ts">
 import Tabs from './Tabs.vue';
 
-const { inStack = false } = defineProps<{
+const { inStack = false, sync } = defineProps<{
   inStack?: boolean;
+  sync?: string;
 }>();
 
 const _slots = useSlots();
@@ -17,6 +18,7 @@ function render() {
     {
       variant: 'card',
       inStack,
+      sync,
     },
     () => slots,
   );

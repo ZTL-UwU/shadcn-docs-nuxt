@@ -51,6 +51,7 @@ const defaultConfig: DefaultConfig = {
       icon: 'lucide:square-pen',
       placement: ['docsFooter'],
     },
+    pm: ['npm', 'pnpm', 'bun', 'yarn'],
     codeIcon: {
       'package.json': 'vscode-icons:file-type-node',
       'tsconfig.json': 'vscode-icons:file-type-tsconfig',
@@ -90,6 +91,7 @@ const defaultConfig: DefaultConfig = {
       'npx': 'vscode-icons:file-type-npm',
       'yarn': 'vscode-icons:file-type-yarn',
       'bun': 'vscode-icons:file-type-bun',
+      'deno': 'vscode-icons:file-type-deno',
       'yml': 'vscode-icons:file-type-yaml',
       'json': 'vscode-icons:file-type-json',
       'terminal': 'lucide:terminal',

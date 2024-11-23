@@ -25,20 +25,7 @@ badges:
         </RadiantText>
       </template>
       ```
-      ::code-group
-        ```bash [npm]
-        npm install -D @inspira-ui/plugins
-        ```
-        ```bash [pnpm]
-        pnpm install -D @inspira-ui/plugins
-        ```
-        ```bash [bun]
-        bun add -d @inspira-ui/plugins
-        ```
-        ```bash [yarn]
-        yarn add --dev @inspira-ui/plugins
-        ```
-      ::
+      :pm-install{name="@inspira-ui/plugins" save-dev}
       :read-more{title="Inspira UI Docs" to="https://inspira-ui.com/components/radiant-text"}
       ::card
       ---
@@ -64,20 +51,7 @@ badges:
       </RadiantText>
     </template>
     ```
-    ::code-group
-      ```bash [npm]
-      npm install -D @inspira-ui/plugins
-      ```
-      ```bash [pnpm]
-      pnpm install -D @inspira-ui/plugins
-      ```
-      ```bash [bun]
-      bun add -d @inspira-ui/plugins
-      ```
-      ```bash [yarn]
-      yarn add --dev @inspira-ui/plugins
-      ```
-    ::
+    :pm-install{name="@inspira-ui/plugins" save-dev}
     :read-more{title="Inspira UI Docs" to="https://inspira-ui.com/components/radiant-text"}
     ::card
     ---
@@ -100,3 +74,6 @@ Stackable components:
 - `code-group`
 - `card`
 - `tabs`
+- `pm-install`
+- `pm-run`
+- `pm-x`

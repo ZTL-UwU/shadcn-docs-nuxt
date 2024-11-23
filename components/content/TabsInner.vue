@@ -203,11 +203,8 @@ const activeTabIndex = computed<number>({
     if (sync === undefined || syncScopeIndex.value === -1)
       return activeTabIndexData.value;
 
-    for (const slot of slotsData) {
-      if (syncState.value[syncScopeIndex.value]?.value === slot.label)
-        return slot.index;
-    }
-    return activeTabIndexData.value;
+    return slotsData.find(x => x.label === syncState.value[syncScopeIndex.value]?.value)?.index
+      || activeTabIndexData.value;
   },
   set(index: number) {
     if (sync === undefined) {

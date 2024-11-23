@@ -17,40 +17,48 @@ badges:
 ::code-group
   ::div{label="Preview" class="md:p-4"}
     ::code-group
-      ```bash [npm]
-      npm run dev
+      ```vue [app.vue]
+      <template>
+        <div>
+          <NuxtLayout>
+            <NuxtPage />
+          </NuxtLayout>
+        </div>
+      </template>
       ```
-
-      ```bash [pnpm]
-      pnpm dev
-      ```
-
-      ```bash [yarn]
-      yarn dev
-      ```
-
-      ```bash [bun]
-      bun run dev
+      ```vue [pages/index.vue]
+      <template>
+        <div>
+          <h1>Welcome to the homepage</h1>
+          <AppAlert>
+            This is an auto-imported component
+          </AppAlert>
+        </div>
+      </template>
       ```
     ::
   ::
 
   ```mdc [Code]
   ::code-group
-    ```bash [npm]
-    npm run dev
+    ```vue [app.vue]
+    <template>
+      <div>
+        <NuxtLayout>
+          <NuxtPage />
+        </NuxtLayout>
+      </div>
+    </template>
     ```
-
-    ```bash [pnpm]
-    pnpm dev
-    ```
-
-    ```bash [yarn]
-    yarn dev
-    ```
-
-    ```bash [bun]
-    bun run dev
+    ```vue [pages/index.vue]
+    <template>
+      <div>
+        <h1>Welcome to the homepage</h1>
+        <AppAlert>
+          This is an auto-imported component
+        </AppAlert>
+      </div>
+    </template>
     ```
   ::
   ```

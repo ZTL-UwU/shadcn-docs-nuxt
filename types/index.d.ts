@@ -63,6 +63,7 @@ interface DefaultConfig {
       icon: string;
       placement: ('docsFooter' | 'toc')[];
     };
+    pm: ('npm' | 'pnpm' | 'bun' | 'yarn')[];
     codeIcon: {
       [key: string]: string;
     };

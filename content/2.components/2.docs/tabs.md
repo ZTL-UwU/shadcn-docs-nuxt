@@ -1,9 +1,6 @@
 ---
 title: Tabs
 icon: lucide:table-2
-navBadges:
-  - value: Update
-    type: lime
 badges:
   - value: Nuxt UI Pro
     to: https://ui.nuxt.com/pro/prose/tabs
@@ -268,6 +265,8 @@ badges:
 
 ### Synced Tabs
 :badge[0.8.0]{variant="outline"}
+
+:read-more{to="/components/docs/pm"}
 
 ::code-group
   ::div{label="Preview" class="md:p-4"}
