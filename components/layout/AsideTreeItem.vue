@@ -1,24 +1,20 @@
 <template>
   <li>
+    <!-- Folder -->
     <div v-if="link.children">
       <template v-if="folderStyle === 'group'">
-        <div class="mt-2 flex h-8 items-center gap-2 rounded-md px-2 text-xs font-semibold text-foreground/70 outline-none">
-          <SmartIcon
-            v-if="link.icon"
-            :name="link.icon"
-          />
-          {{ link.title }}
-          <span v-for="(badge, i) in link.navBadges" :key="i">
-            <Badge :variant="badge.variant" :type="badge.type" :size="badge.size ?? 'sm'">
-              {{ badge.value }}
-            </Badge>
-          </span>
+        <div
+          class="mt-2 flex items-center gap-2 rounded-md px-2 text-xs font-semibold text-foreground/70 outline-none"
+          :class="[link.navTruncate !== false && 'h-8']"
+        >
+          <LayoutAsideTreeItemButton :link />
         </div>
         <LayoutAsideTree :links="link.children" :level="level" />
       </template>
       <template v-else>
         <button
-          class="flex h-8 w-full cursor-pointer items-center gap-2 rounded-md p-2 text-left text-sm font-medium text-foreground/80 hover:bg-muted hover:text-primary"
+          class="flex w-full cursor-pointer items-center gap-2 rounded-md p-2 text-left text-sm font-medium text-foreground/80 hover:bg-muted hover:text-primary"
+          :class="[link.navTruncate !== false && 'h-8']"
           @click="isOpen = !isOpen"
         >
           <SmartIcon
@@ -27,22 +23,7 @@
             class="transition-transform"
             :class="[!isOpen && '-rotate-90']"
           />
-
-          <SmartIcon
-            v-if="link.icon"
-            :name="link.icon"
-          />
-
-          <span class="truncate text-nowrap">
-            {{ link.title }}
-          </span>
-
-          <span v-for="(badge, i) in link.navBadges" :key="i">
-            <Badge :variant="badge.variant" :type="badge.type" :size="badge.size ?? 'sm'">
-              {{ badge.value }}
-            </Badge>
-          </span>
-
+          <LayoutAsideTreeItemButton :link />
           <SmartIcon
             v-if="folderStyle === 'default'"
             name="lucide:chevron-down"
@@ -55,24 +36,17 @@
         </div>
       </template>
     </div>
+    <!-- Page -->
     <NuxtLink
       v-else
       :to="link._path"
-      class="flex h-8 items-center gap-2 rounded-md p-2 text-sm text-foreground/80 hover:bg-muted hover:text-primary"
-      :class="[isActive && 'bg-muted !text-primary']"
+      class="flex items-center gap-2 rounded-md p-2 text-sm text-foreground/80 hover:bg-muted hover:text-primary"
+      :class="[
+        isActive && 'bg-muted !text-primary',
+        link.navTruncate !== false && 'h-8',
+      ]"
     >
-      <SmartIcon
-        v-if="link.icon"
-        :name="link.icon"
-      />
-      <span class="truncate text-nowrap">
-        {{ link.title }}
-      </span>
-      <span v-for="(badge, i) in link.navBadges" :key="i">
-        <Badge :variant="badge.variant" :type="badge.type" :size="badge.size ?? 'sm'">
-          {{ badge.value }}
-        </Badge>
-      </span>
+      <LayoutAsideTreeItemButton :link />
     </NuxtLink>
   </li>
 </template>

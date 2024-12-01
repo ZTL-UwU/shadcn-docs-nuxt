@@ -47,6 +47,7 @@ export default defineNuxtConfig({
       fields: [
         'icon',
         'navBadges',
+        'navTruncate',
         'badges',
         'toc',
         'sidebar',
