@@ -51,6 +51,17 @@ badges:
     #content
     Beautifully designed Nuxt Content template with shadcn-vue. Customizable. Compatible. Open Source.
     ::
+
+    ::card
+    ---
+    img: /og-nuxt.png
+    ---
+    #title
+    Image Card
+
+    #content
+    Beautifully designed Nuxt Content template with shadcn-vue. Customizable. Compatible. Open Source.
+    ::
   ::
 
   ```mdc [Code]
@@ -85,6 +96,17 @@ badges:
   ---
   #title
   Card with link
+
+  #content
+  Beautifully designed Nuxt Content template with shadcn-vue. Customizable. Compatible. Open Source.
+  ::
+
+  ::card
+  ---
+  img: /og-nuxt.png
+  ---
+  #title
+  Image Card
 
   #content
   Beautifully designed Nuxt Content template with shadcn-vue. Customizable. Compatible. Open Source.
