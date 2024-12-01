@@ -45,6 +45,7 @@ toc: false
       - name: GitHub
         variant: ghost
         to: https://github.com/ZTL-UwU/shadcn-docs-nuxt
+    mobileRight: 'top' # 'top' | 'bottom'
     ---
 
     #title
@@ -54,13 +55,7 @@ toc: false
     Beautifully designed components that you can copy and paste into your apps.
 
     #right
-    ```bash [Terminal]
-    # Get Starter Template
-    bun x nuxi@latest init <project-name> -t github:ZTL-UwU/shadcn-docs-nuxt-starter
-
-    # Start Development Server
-    bun run dev
-    ```
+    ![logo](/logo.svg)
     ::
   ::
   ```mdc[Code]
@@ -98,6 +93,7 @@ toc: false
     - name: GitHub
       variant: ghost
       to: https://github.com/ZTL-UwU/shadcn-docs-nuxt
+  mobileRight: 'top' # 'top' | 'bottom'
   ---
 
   #title
@@ -107,13 +103,7 @@ toc: false
   Beautifully designed components that you can copy and paste into your apps.
 
   #right
-  ```bash [Terminal]
-  # Get Starter Template
-  bun x nuxi@latest init <project-name> -t github:ZTL-UwU/shadcn-docs-nuxt-starter
-
-  # Start Development Server
-  bun run dev
-  ```
+  ![logo](/logo.svg)
   ::
   ```
 ::

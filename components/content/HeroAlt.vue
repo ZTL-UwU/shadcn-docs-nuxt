@@ -1,6 +1,6 @@
 <template>
   <div
-    class="gap-4 px-4 py-8 md:py-12 md:pb-8 lg:py-12 lg:pb-10"
+    class="gap-8 px-4 py-8 md:py-12 md:pb-8 lg:py-12 lg:pb-10"
     :class="{ 'grid md:grid-cols-3': $slots.right }"
   >
     <section
@@ -43,9 +43,9 @@
         </NuxtLink>
       </div>
     </section>
-    <section>
+    <div class="mx-auto" :class="{ 'order-first md:order-last': mobileRight === 'top' }">
       <ContentSlot :use="$slots.right" unwrap="p" />
-    </section>
+    </div>
   </div>
 </template>
 
@@ -65,5 +65,6 @@ defineProps<{
     to: string;
     target?: Target;
   }];
+  mobileRight?: 'top' | 'bottom';
 }>();
 </script>
