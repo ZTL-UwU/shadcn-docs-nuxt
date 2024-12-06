@@ -141,7 +141,7 @@ export default defineAppConfig({
       },
     },
     footer: {
-      credits: 'Copyright © 2024',
+      credits: 'Made with ❤️ by [**Tony Zhang**](https://github.com/ZTL-UwU/)',
       links: [
         {
           title: 'shadcn-vue',
