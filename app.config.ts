@@ -17,6 +17,14 @@ export default defineAppConfig({
       color: 'zinc',
       radius: 0.5,
     },
+    banner: {
+      enable: false,
+      showClose: true,
+      content: 'Welcome to **shadcn-docs-nuxt**',
+      to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt',
+      target: '_blank',
+      border: true,
+    },
     header: {
       title: 'shadcn-docs',
       showTitle: true,

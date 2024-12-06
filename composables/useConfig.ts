@@ -18,6 +18,14 @@ const defaultConfig: DefaultConfig = {
     color: 'zinc',
     radius: 0.5,
   },
+  banner: {
+    enable: false,
+    showClose: true,
+    content: 'Welcome to **shadcn-docs-nuxt**',
+    to: '',
+    target: '_blank',
+    border: true,
+  },
   header: {
     showLoadingIndicator: true,
     title: 'shadcn-docs',
@@ -136,6 +144,7 @@ export function useConfig() {
       const header = processedConfig.header;
       const main = processedConfig.main;
       const aside = processedConfig.aside;
+      const banner = processedConfig.banner;
       const footer = processedConfig.footer;
       const toc = processedConfig.toc;
 
@@ -147,6 +156,11 @@ export function useConfig() {
           ...navKeyFromPath(route.path, 'header', navigation.value || []),
           ...page.value?.header,
         } as typeof header,
+        banner: {
+          ...banner,
+          ...navKeyFromPath(route.path, 'banner', navigation.value || []),
+          ...page.value?.banner,
+        } as typeof banner,
         main: {
           ...main,
           ...navKeyFromPath(route.path, 'main', navigation.value || []),
