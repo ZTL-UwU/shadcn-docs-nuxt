@@ -13,10 +13,14 @@ export function useBreadcrumb(url: string): BreadcrumbItem[] {
   // Construct breadcrumb for each segment
   let href = '';
   let nav = navigation.value;
+
+  if (!nav)
+    return [];
+
   for (let i = 0; i < segments.length; i++) {
     const segment = segments[i].replace('.html', '');
     href += `/${segment}`;
-    const page = nav.find(x => (x._path as string) === href);
+    const page = nav?.find(x => (x._path as string) === href);
     nav = page?.children;
     breadcrumbItems.push({ title: page?.title ?? segment, href });
   }

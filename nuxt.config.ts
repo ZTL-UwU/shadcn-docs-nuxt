@@ -53,6 +53,8 @@ export default defineNuxtConfig({
         'sidebar',
         'collapse',
         'editLink',
+        'prevNext',
+        'breadcrumb',
       ],
     },
     experimental: {
