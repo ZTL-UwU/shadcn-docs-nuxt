@@ -32,7 +32,7 @@ badges:
       A **success** alert with `code` and a [link](/).
     ::
 
-    ::alert{type="example" icon="lucide:test-tube}
+    ::alert{type="example" icon="lucide:test-tube"}
       An **example** alert with `code` and a [link](/).
     ::
 
