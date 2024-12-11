@@ -24,8 +24,16 @@ badges:
       An **info** alert with `code` and a [link](/).
     ::
 
+    ::alert{type="note" icon="lucide:pencil"}
+      A **note** alert with `code` and a [link](/).
+    ::
+
     ::alert{type="success" icon="lucide:lightbulb"}
       A **success** alert with `code` and a [link](/).
+    ::
+
+    ::alert{type="example" icon="lucide:test-tube}
+      An **example** alert with `code` and a [link](/).
     ::
 
     ::alert{type="warning" icon="lucide:triangle-alert"}
