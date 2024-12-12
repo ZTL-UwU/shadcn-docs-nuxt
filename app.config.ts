@@ -72,6 +72,7 @@ export default defineAppConfig({
         title: 'Use This Template',
         to: '/getting-started/installation',
         target: '_self',
+        showLinkIcon: true,
       }],
       links: [{
         icon: 'lucide:github',
@@ -163,11 +164,13 @@ export default defineAppConfig({
         icon: 'lucide:star',
         to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt',
         target: '_blank',
+        showLinkIcon: true,
       }, {
         title: 'Create Issues',
         icon: 'lucide:circle-dot',
         to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt/issues',
         target: '_blank',
+        showLinkIcon: true,
       }],
       carbonAds: {
         enable: false,

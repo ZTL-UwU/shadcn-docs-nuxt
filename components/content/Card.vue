@@ -31,7 +31,7 @@
         <ContentSlot :use="$slots.footer" unwrap="p" />
         {{ footer }}
       </UiCardFooter>
-      <SmartIcon v-if="to" name="lucide:arrow-up-right" class="absolute right-4 top-4" />
+      <SmartIcon v-if="to && showLinkIcon" name="lucide:arrow-up-right" class="absolute right-4 top-4" />
     </UiCard>
   </UseTemplate>
 
@@ -44,7 +44,7 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{
+const { showLinkIcon = true } = defineProps<{
   title?: string;
   description?: string;
   footer?: string;
@@ -54,6 +54,7 @@ defineProps<{
   icon?: string;
   inStack?: boolean;
   img?: string;
+  showLinkIcon?: boolean;
 }>();
 const [UseTemplate, CardInner] = createReusableTemplate();
 </script>

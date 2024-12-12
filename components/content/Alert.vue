@@ -19,7 +19,7 @@
           <slot />
         </span>
       </div>
-      <SmartIcon v-if="to" name="lucide:arrow-up-right" class="absolute right-4 top-4" />
+      <SmartIcon v-if="to && showLinkIcon" name="lucide:arrow-up-right" class="absolute right-4 top-4" />
     </UiAlertDescription>
   </UiAlert>
 </template>
@@ -31,6 +31,7 @@ const {
   type = 'default',
   external = undefined,
   inStack = false,
+  showLinkIcon = true,
 } = defineProps<{
   title?: string;
   icon?: string;
@@ -39,6 +40,7 @@ const {
   target?: Target;
   external?: boolean;
   inStack?: boolean;
+  showLinkIcon?: boolean;
 }>();
 
 const typeTwClass = {

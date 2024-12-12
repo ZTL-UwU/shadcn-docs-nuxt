@@ -39,6 +39,7 @@ interface DefaultConfig {
       title: string;
       to: string;
       target: string;
+      showLinkIcon: boolean;
       links: ({
         title: string;
         to: string;
@@ -95,6 +96,7 @@ interface DefaultConfig {
       icon: string;
       to: string;
       target: string;
+      showLinkIcon: boolean;
     })[];
     carbonAds: {
       enable: boolean;

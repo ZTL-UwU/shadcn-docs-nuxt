@@ -33,7 +33,7 @@
   </template>
   <NuxtLink v-else :to="item.to" :target="item.target" class="flex w-full p-2">
     {{ item.title }}
-    <Icon name="lucide:arrow-up-right" class="ml-1 text-muted-foreground" size="12" />
+    <Icon v-if="item.showLinkIcon ?? true" name="lucide:arrow-up-right" class="ml-1 text-muted-foreground" size="12" />
   </NuxtLink>
 </template>
 

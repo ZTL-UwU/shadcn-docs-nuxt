@@ -54,6 +54,19 @@ badges:
 
     ::card
     ---
+    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt
+    target: _blank
+    showLinkIcon: false
+    ---
+    #title
+    Disable link icon
+
+    #content
+    Beautifully designed Nuxt Content template with shadcn-vue. Customizable. Compatible. Open Source.
+    ::
+
+    ::card
+    ---
     img: /og-nuxt.png
     ---
     #title
@@ -96,6 +109,19 @@ badges:
   ---
   #title
   Card with link
+
+  #content
+  Beautifully designed Nuxt Content template with shadcn-vue. Customizable. Compatible. Open Source.
+  ::
+
+  ::card
+  ---
+  to: https://github.com/ZTL-UwU/shadcn-docs-nuxt
+  target: _blank
+  showLinkIcon: false
+  ---
+  #title
+  Disable link icon
 
   #content
   Beautifully designed Nuxt Content template with shadcn-vue. Customizable. Compatible. Open Source.
