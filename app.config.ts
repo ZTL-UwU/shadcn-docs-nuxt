@@ -173,9 +173,9 @@ export default defineAppConfig({
         showLinkIcon: true,
       }],
       carbonAds: {
-        enable: false,
-        code: '',
-        placement: '',
+        enable: true,
+        code: 'CW7ITKJN',
+        placement: 'shadcn-docs-nuxtvercelapp',
         format: 'cover',
       },
     },
