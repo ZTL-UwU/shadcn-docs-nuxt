@@ -117,6 +117,7 @@ const defaultConfig: DefaultConfig = {
     links: [],
     carbonAds: {
       enable: false,
+      disableInDev: false,
       code: '',
       placement: '',
       format: 'cover',

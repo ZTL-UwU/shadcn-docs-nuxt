@@ -100,6 +100,7 @@ interface DefaultConfig {
     })[];
     carbonAds: {
       enable: boolean;
+      disableInDev: boolean;
       code: string;
       placement: string;
       format: 'cover' | 'responsive';

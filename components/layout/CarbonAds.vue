@@ -29,7 +29,8 @@ watch(() => useRoute().path, () => {
 
 if (carbonAds.enable) {
   onMounted(() => {
-    init();
+    if (!(import.meta.dev && carbonAds.disableInDev))
+      init();
   });
 }
 </script>

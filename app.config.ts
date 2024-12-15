@@ -174,6 +174,7 @@ export default defineAppConfig({
       }],
       carbonAds: {
         enable: true,
+        disableInDev: true,
         code: 'CW7ITKJN',
         placement: 'shadcn-docs-nuxtvercelapp',
         format: 'cover',
