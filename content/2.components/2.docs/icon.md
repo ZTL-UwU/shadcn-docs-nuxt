@@ -15,19 +15,17 @@ badges:
 The icon component uses **Nuxt Icon** under the hood. Check out the usage guide from Nuxt Icon.
 ::
 
-::code-group
-  ::div{label="Preview" class="md:p-4"}
-    <div class="space-x-2">
+## Usage
 
+::stack
+  ::div{class="p-4 space-x-2"}
     :icon{name="lucide:box"}
     :icon{name="vscode-icons:file-type-js-official"}
     :icon{name="vscode-icons:file-type-vue"}
     :icon{name="vscode-icons:file-type-nuxt" size="30"}
-
-    </div>
   ::
 
-  ```mdc [Code]
+  ```mdc
   :icon{name="lucide:box"}
   :icon{name="vscode-icons:file-type-js-official"}
   :icon{name="vscode-icons:file-type-vue"}
@@ -43,14 +41,14 @@ npm i -D @iconify-json/collection-name
 
 `@iconify-json/lucide` and `@iconify-json/vscode-icons` are installed by default.
 
-#### Smart Icon
+### Smart Icon
 
 :badge[0.5.3]{variant="outline"}
 
 You can put iconify icons, emojis and urls in `smart-icon`. Smart icon will render them automatically.
 
-::code-group
-  ::div{label="Preview" class="md:p-4"}
+::stack
+  ::div{class="p-4"}
     **Iconify**
     <div class="space-x-2">
 
@@ -78,15 +76,18 @@ You can put iconify icons, emojis and urls in `smart-icon`. Smart icon will rend
     </div>
   ::
 
-  ```mdc [Code]
+  ```mdc
+  **Iconify**
   :smart-icon{name="lucide:box"}
   :smart-icon{name="vscode-icons:file-type-js-official"}
   :smart-icon{name="vscode-icons:file-type-vue"}
 
+  **Emojis**
   :smart-icon{name="😍"}
   :smart-icon{name="🚀"}
   :smart-icon{name="🎉" size=30}
 
+  **URL**
   :smart-icon{name="/logo.svg"}
   :smart-icon{name="https://vueuse.org/favicon.svg" size=40}
   ```

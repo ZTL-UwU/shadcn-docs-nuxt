@@ -10,8 +10,10 @@ badges:
 toc: false
 ---
 
-::code-group
-  ::div{label="Preview" class="md:p-4"}
+## Usage
+
+::stack
+  ::div{class="p-4"}
     ::hero-alt
     ---
     announcement:
@@ -32,7 +34,36 @@ toc: false
     #description
     Beautifully designed components that you can copy and paste into your apps.
     ::
+  ::
+  ```mdc
+  ::hero-alt
+  ---
+  announcement:
+    title: 'Introducing Charts'
+    icon: 'lucide:pie-chart'
+    to: /getting-started
+  actions:
+    - name: Get Started
+      to: /getting-started
+    - name: GitHub
+      variant: outline
+      to: https://github.com/ZTL-UwU/shadcn-docs-nuxt
+      leftIcon: 'lucide:github'
+  ---
 
+  #title
+  Build your component library
+
+  #description
+  Beautifully designed components that you can copy and paste into your apps.
+  ::
+  ```
+::
+
+### Right
+
+::stack
+  ::div{class="p-4"}
     ::hero-alt
     ---
     announcement:
@@ -58,29 +89,7 @@ toc: false
     ![logo](/logo.svg)
     ::
   ::
-  ```mdc[Code]
-  ::hero-alt
-  ---
-  announcement:
-    title: 'Introducing Charts'
-    icon: 'lucide:pie-chart'
-    to: /getting-started
-  actions:
-    - name: Get Started
-      to: /getting-started
-    - name: GitHub
-      variant: outline
-      to: https://github.com/ZTL-UwU/shadcn-docs-nuxt
-      leftIcon: 'lucide:github'
-  ---
-
-  #title
-  Build your component library
-
-  #description
-  Beautifully designed components that you can copy and paste into your apps.
-  ::
-
+  ```mdc
   ::hero-alt
   ---
   announcement:

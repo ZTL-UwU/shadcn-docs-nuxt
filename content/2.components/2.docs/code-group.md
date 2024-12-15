@@ -14,8 +14,10 @@ badges:
     target: _blank
 ---
 
-::code-group
-  ::div{label="Preview" class="md:p-4"}
+## Usage
+
+::stack
+  ::div{class="p-4"}
     ::code-group
       ```vue [app.vue]
       <template>
@@ -26,6 +28,7 @@ badges:
         </div>
       </template>
       ```
+
       ```vue [pages/index.vue]
       <template>
         <div>
@@ -39,7 +42,7 @@ badges:
     ::
   ::
 
-  ```mdc [Code]
+  ```mdc
   ::code-group
     ```vue [app.vue]
     <template>
@@ -50,6 +53,7 @@ badges:
       </div>
     </template>
     ```
+
     ```vue [pages/index.vue]
     <template>
       <div>
@@ -67,3 +71,7 @@ badges:
 ::alert{to="/components/docs/tabs"}
 `::code-group`{lang="mdc"} is a wrapper around `::tabs{variant="card"}`{lang="mdc"}.
 ::
+
+## Props
+
+:field{name="sync" type="string"}[Sync scope for `::tabs`]

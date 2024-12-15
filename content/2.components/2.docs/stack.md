@@ -9,8 +9,10 @@ badges:
   - value: 0.6.2
 ---
 
-::code-group
-  ::div{label="Preview" class="md:p-4"}
+## Usage
+
+::stack
+  ::div{class="p-4 md:p-8"}
     ::stack
       ::div{class="p-6 text-3xl font-bold"}
       ✨ Introducing Inspira UI
@@ -36,7 +38,7 @@ badges:
       ::
     ::
   ::
-  ```mdc [Code]
+  ```mdc
   ::stack
     ::div{class="p-6 text-3xl font-bold"}
     ✨ Introducing Inspira UI

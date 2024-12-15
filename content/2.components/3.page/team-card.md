@@ -10,8 +10,8 @@ badges:
   - value: 0.7.7
 ---
 
-::code-group
-  ::div{label="Preview" class="md:p-4"}
+::stack
+  ::div{class="p-4"}
     ::team-card-group
       ::team-card
       ---
@@ -45,7 +45,7 @@ badges:
       ::
     ::
   ::
-  ```mdc [Code]
+  ```mdc
   ::team-card-group
     ::team-card
     ---

@@ -8,8 +8,10 @@ badges:
     target: _blank
 ---
 
-::code-group
-  ::div{label="Preview" class="md:p-4"}
+## Usage
+
+::stack
+  ::div{class="p-4"}
     ::hero
     ---
     announcement:
@@ -32,7 +34,7 @@ badges:
     Beautifully designed Nuxt Content template with shadcn-vue. :br Customizable. Compatible. Open Source.
     ::
   ::
-  ```mdc[Code]
+  ```mdc
   ::hero
   ---
   announcement:

@@ -11,10 +11,10 @@ badges:
     target: _blank
 ---
 
-#### Default Style
+## Usage
 
-::code-group
-  ::div{label="Preview" class="md:p-4"}
+::stack
+  ::div{class="p-4"}
     ::tabs
       ::div{label="PostgreSQL" icon="lucide:database"}
       ### PostgreSQL column types
@@ -57,7 +57,7 @@ badges:
       ::
     ::
   ::
-  ```mdc [Code]
+  ```mdc height=300
   ::tabs
     ::div{label="PostgreSQL" icon="lucide:database"}
     ### PostgreSQL column types
@@ -102,10 +102,10 @@ badges:
   ```
 ::
 
-#### Card Style
+### Card Style
 
-::code-group
-  ::div{label="Preview" class="md:p-4"}
+::stack
+  ::div{class="p-4"}
     ::tabs{variant="card"}
       ::div{label="Card Tab"}
       ### This is a card-style tab
@@ -118,7 +118,7 @@ badges:
       ```
     ::
   ::
-  ```mdc [Code]
+  ```mdc
   ::tabs{variant="card"}
     ::div{label="Card Tab"}
     ### This is a card-style tab
@@ -133,11 +133,11 @@ badges:
   ```
 ::
 
-#### Line Style
+### Line Style
 :badge[0.6.4]{variant="outline"}
 
-::code-group
-  ::div{label="Preview" class="md:p-4"}
+::stack
+  ::div{class="p-4"}
     ::tabs{variant="line"}
       ::div{label="Preview" class="border flex min-h-[200px] w-full justify-center p-10 items-center rounded-lg shadow-sm"}
         :badge[Badge]
@@ -153,7 +153,7 @@ badges:
       ::
     ::
   ::
-  ```mdc [Code]
+  ```mdc
   ::tabs{variant="line"}
     ::div{label="Preview" class="border flex min-h-[200px] w-full justify-center p-10 items-center rounded-lg shadow-sm"}
       :badge[Badge]
@@ -171,11 +171,11 @@ badges:
   ```
 ::
 
-#### Combobox Style
+### Combobox Style
 :badge[0.7.5]{variant="outline"}
 
-::code-group
-  ::div{label="Preview" class="md:p-4"}
+::stack
+  ::div{class="p-4"}
     ::tabs{variant="combobox" search-placeholder="Search database..." search-empty="No database found."}
       ::div{label="PostgreSQL"}
       ### PostgreSQL column types
@@ -218,7 +218,7 @@ badges:
       ::
     ::
   ::
-  ```mdc [Code]
+  ```mdc height=300
   ::tabs{variant="combobox" search-placeholder="Search database..." search-empty="No database found."}
     ::div{label="PostgreSQL"}
     ### PostgreSQL column types
@@ -268,8 +268,8 @@ badges:
 
 :read-more{to="/components/docs/pm"}
 
-::code-group
-  ::div{label="Preview" class="md:p-4"}
+::stack
+  ::div{class="p-4 md:p-8"}
     #### Scope 1
     ::tabs{variant="card" sync="your-scope-name"}
       ::div{label="Card Tab"}
@@ -315,7 +315,7 @@ badges:
       ```
     ::
   ::
-  ```mdc [Code]
+  ```mdc height=400
   #### Scope 1
   ::tabs{variant="card" sync="your-scope-name"}
     ::div{label="Card Tab"}
@@ -361,4 +361,15 @@ badges:
     ```
   ::
   ```
+::
+
+## Props
+
+::field-group
+  :field{name="variant" type="'separate' | 'card' | 'line' | 'combobox'" default-value="'separate'"}
+  :field{name="padded" type="boolean" default-value="true"}
+  :field{name="disableSearch" type="boolean" default-value="false"}[For combobox variant]
+  :field{name="searchPlaceholder" type="string" default-value="'Search Tab...'"}[For combobox variant]
+  :field{name="searchEmpty" type="string" default-value="'No tab found.'"}[For combobox variant]
+  :field{name="sync" type="string"}[Sync scope]
 ::

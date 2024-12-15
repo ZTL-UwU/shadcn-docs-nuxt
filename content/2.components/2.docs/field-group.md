@@ -11,8 +11,10 @@ badges:
     target: _blank
 ---
 
-::code-group
-  ::div{label="Preview" class="md:p-4"}
+## Usage
+
+::stack
+  ::div{class="p-4"}
     ::field-group
       ::field{name="withDefault" type="boolean" defaultValue="true"}
       A field with a default value.
@@ -35,7 +37,7 @@ badges:
     ::
   ::
 
-  ```mdc [Code]
+  ```mdc
   ::field-group
     ::field{name="withDefault" type="boolean" defaultValue="true"}
     A field with a default value.

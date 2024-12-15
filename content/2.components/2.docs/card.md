@@ -14,129 +14,123 @@ badges:
     target: _blank
 ---
 
-::code-group
-  ::div{label="Preview" class="md:p-4"}
-    ::card
-    #title
-    Card with slots
+## Usage
 
-    #description
-    Beautifully designed Nuxt Content template with shadcn-vue. Customizable. Compatible. Open Source.
-
-    #content
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-
-    #footer
-    `Card Footer`
-    ::
-
-    ::card
-    ---
-    title: Card with props
-    description: Beautifully designed Nuxt Content template with shadcn-vue. Customizable. Compatible. Open Source.
-    footer: Card Footer
-    icon: 'lucide:box'
-    ---
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-    ::
-
-    ::card
-    ---
-    title: Horizontal Card
-    description: Beautifully designed Nuxt Content template with shadcn-vue. Customizable. Compatible. Open Source.
-    icon: 'lucide:fold-horizontal'
-    icon-size: 26
-    horizontal: true
-    ---
-    ::
-
-    ::card
-    ---
-    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt
-    target: _blank
-    ---
-    #title
-    Card with link
-
-    #content
-    Beautifully designed Nuxt Content template with shadcn-vue. Customizable. Compatible. Open Source.
-    ::
-
-    ::card
-    ---
-    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt
-    target: _blank
-    showLinkIcon: false
-    ---
-    #title
-    Disable link icon
-
-    #content
-    Beautifully designed Nuxt Content template with shadcn-vue. Customizable. Compatible. Open Source.
-    ::
-
-    ::card
-    ---
-    img: /og-nuxt.png
-    ---
-    #title
-    Image Card
-
-    #content
-    Beautifully designed Nuxt Content template with shadcn-vue. Customizable. Compatible. Open Source.
-    ::
-  ::
-
-  ```mdc [Code]
+::stack
+  ::div{class="p-4"}
   ::card
+  ---
+  icon: lucide:box
+  ---
+
   #title
-  Card with slots
+  Card Title
 
   #description
-  Beautifully designed Nuxt Content template with shadcn-vue. Customizable. Compatible. Open Source.
+  Description
 
   #content
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
+  Beautifully designed **Nuxt Content** template with **shadcn-vue**. _Customizable. Compatible. Open Source._
 
   #footer
-  `Card Footer`
+  Footer
   ::
-
+  ::
+  ```mdc
   ::card
   ---
-  title: Card with props
-  description: Beautifully designed Nuxt Content template with shadcn-vue. Customizable. Compatible. Open Source.
-  footer: Card Footer
-  icon: 'lucide:box'
+  icon: lucide:box
   ---
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-  ::
 
+  #title
+  Card Title
+
+  #description
+  Description
+
+  #content
+  Beautifully designed **Nuxt Content** template with **shadcn-vue**. _Customizable. Compatible. Open Source._
+
+  #footer
+  Footer
+  ::
+  ```
+::
+
+### Link
+
+::stack
+  ::div{class="p-4"}
   ::card
   ---
   to: https://github.com/ZTL-UwU/shadcn-docs-nuxt
   target: _blank
+  # showLinkIcon: false
   ---
+
   #title
-  Card with link
+  Link Card
 
   #content
-  Beautifully designed Nuxt Content template with shadcn-vue. Customizable. Compatible. Open Source.
+  Beautifully designed **Nuxt Content** template with **shadcn-vue**. _Customizable. Compatible. Open Source._
   ::
-
+  ::
+  ```mdc
   ::card
   ---
   to: https://github.com/ZTL-UwU/shadcn-docs-nuxt
   target: _blank
-  showLinkIcon: false
+  # showLinkIcon: false
   ---
+
   #title
-  Disable link icon
+  Link Card
 
   #content
-  Beautifully designed Nuxt Content template with shadcn-vue. Customizable. Compatible. Open Source.
+  Beautifully designed **Nuxt Content** template with **shadcn-vue**. _Customizable. Compatible. Open Source._
   ::
+  ```
+::
 
+### Horizontal
+
+::stack
+  ::div{class="p-4"}
+  ::card
+  ---
+  icon: 'lucide:fold-horizontal'
+  icon-size: 26
+  horizontal: true
+  ---
+
+  #title
+  Horizontal Card
+
+  #description
+  Beautifully designed **Nuxt Content** template with **shadcn-vue**. _Customizable. Compatible. Open Source._
+  ::
+  ::
+  ```mdc
+  ::card
+  ---
+  icon: 'lucide:fold-horizontal'
+  icon-size: 26
+  horizontal: true
+  ---
+
+  #title
+  Horizontal Card
+
+  #description
+  Beautifully designed **Nuxt Content** template with **shadcn-vue**. _Customizable. Compatible. Open Source._
+  ::
+  ```
+::
+
+### Image
+
+::stack
+  ::div{class="p-4"}
   ::card
   ---
   img: /og-nuxt.png
@@ -145,7 +139,35 @@ badges:
   Image Card
 
   #content
-  Beautifully designed Nuxt Content template with shadcn-vue. Customizable. Compatible. Open Source.
+  Beautifully designed **Nuxt Content** template with **shadcn-vue**. _Customizable. Compatible. Open Source._
+  ::
+  ::
+  ```mdc
+  ::card
+  ---
+  img: /og-nuxt.png
+  ---
+  #title
+  Image Card
+
+  #content
+  Beautifully designed **Nuxt Content** template with **shadcn-vue**. _Customizable. Compatible. Open Source._
   ::
   ```
+::
+
+## Props
+
+::field-group
+  :field{name="title" type="string"}[Card title]
+  :field{name="description" type="string"}[Card description]
+  :field{name="content" type="string"}[Card content]
+  :field{name="footer" type="string"}[Card footer]
+  :field{name="icon" type="string"}[Card icon]
+  :field{name="horizontal" type="boolean" default-value="false"}
+  :field{name="to" type="string"}[Link URL]
+  :field{name="target" type="Target"}[A `target` attribute value to apply on the link]
+  :field{name="iconSize" type="number" default-value="24"}
+  :field{name="img" type="string"}[Image URL]
+  :field{name="showLinkIcon" type="boolean" default-value="true"}[Whether to show the link indicator :icon{name="lucide:arrow-up-right"}]
 ::

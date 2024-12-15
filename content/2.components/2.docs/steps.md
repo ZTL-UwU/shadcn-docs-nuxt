@@ -8,8 +8,10 @@ badges:
     target: _blank
 ---
 
-::code-group
-  ::div{label="Preview" class="md:p-4"}
+## Usage
+
+::stack
+  ::div{class="p-4 md:p-6"}
     ::steps
       ### Get Starter Template
 
@@ -58,7 +60,7 @@ badges:
       ::
     ::
   ::
-  ```mdc [Code]
+  ```mdc height=400
   ::steps
     ### Get Starter Template
 
@@ -109,11 +111,11 @@ badges:
   ```
 ::
 
-#### Multi-level headings
+### Multi-level headings
 :badge[0.4.6]{variant="outline"}
 
-::code-group
-  ::div{label="Preview" class="md:p-4"}
+::stack
+  ::div{class="p-4 md:p-6"}
     ::steps{level=5}
       ##### Specify the level of headings to use
 
@@ -126,7 +128,7 @@ badges:
       `h1` through `h6`. Defaults to `h3`.
     ::
   ::
-  ```mdc[Code]
+  ```mdc
   ::steps{level=5}
     ##### Multi-level headings
 
@@ -140,3 +142,7 @@ badges:
   ::
   ```
 ::
+
+## Props
+
+:field{name="level" type="number"}[Specify the level of headings to use]

@@ -10,41 +10,58 @@ badges:
   - value: 0.8.0
 ---
 
-::code-group
-  ::div{label="Preview" class="md:p-4"}
-    #### Install
+## Usage
+
+The package managers shown can be configured in [`main.pm`](/api/configuration/shadcn-docs#main).
+
+### Install
+
+::stack
+  ::div{class="p-4"}
     :pm-install{name="shadcn-docs-nuxt"}
     :pm-install{name="shadcn-docs-nuxt" save-dev}
     :pm-install
     :pm-install{name="-g nuxi@latest"}
-
-    #### Run
-    :pm-run{script="dev"}
-    :pm-run{script="build --watch -o"}
-
-    #### X
-    :pm-x{command="nuxi@latest init <project-name>"}
-
-    #### No Sync
-    :pm-x{command="nuxi@latest init <project-name>" no-sync}
   ::
-  ```mdc [Code]
-  #### Install
+  ```mdc
   :pm-install{name="shadcn-docs-nuxt"}
   :pm-install{name="shadcn-docs-nuxt" save-dev}
   :pm-install
   :pm-install{name="-g nuxi@latest"}
-
-  #### Run
-  :pm-run{script="dev"}
-  :pm-run{script="build --watch -o"}
-
-  #### X
-  :pm-x{command="nuxi@latest init <project-name>"}
-
-  #### No Sync
-  :pm-x{command="nuxi@latest init <project-name>" no-sync}
   ```
 ::
 
-The package managers shown can be configured in [`main.pm`](/api/configuration/shadcn-docs#main).
+### Run
+
+::stack
+  ::div{class="p-4"}
+    :pm-run{script="dev"}
+    :pm-run{script="build --watch -o"}
+  ::
+  ```mdc
+  :pm-run{script="dev"}
+  :pm-run{script="build --watch -o"}
+  ```
+::
+
+### X
+
+::stack
+  ::div{class="p-4"}
+  :pm-x{command="nuxi@latest init <project-name>"}
+  ::
+  ```mdc
+  :pm-x{command="nuxi@latest init <project-name>"}
+  ```
+::
+
+### No Sync
+
+::stack
+  ::div{class="p-4"}
+    :pm-x{command="nuxi@latest init <project-name>" no-sync}
+  ::
+  ```mdc
+  :pm-x{command="nuxi@latest init <project-name>" no-sync}
+  ```
+::

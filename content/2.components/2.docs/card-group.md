@@ -11,8 +11,10 @@ badges:
     target: _blank
 ---
 
-::code-group
-  ::div{label="Preview" class="md:p-4"}
+## Usage
+
+::stack
+  ::div{class="p-4"}
     ::card-group
       ::card
       ---
@@ -52,7 +54,7 @@ badges:
       ::
     ::
   ::
-  ```mdc [Code]
+  ```mdc
   ::card-group
     ::card
     ---
@@ -63,6 +65,7 @@ badges:
     ---
     Explore Nuxt built-in components for pages, layouts, head, and more.
     ::
+
     ::card
     ---
     title: Composables
@@ -72,6 +75,7 @@ badges:
     ---
     Discover Nuxt composable functions for data-fetching, head management and more.
     ::
+
     ::card
     ---
     title: Utils
@@ -81,6 +85,7 @@ badges:
     ---
     Learn about Nuxt utility functions for navigation, error handling and more.
     ::
+
     ::card
     ---
     title: Commands

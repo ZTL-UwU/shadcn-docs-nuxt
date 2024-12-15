@@ -12,10 +12,12 @@ badges:
   - value: 0.5.8
 ---
 
-#### Simple
+## Usage
 
-::code-group
-  ::div{label="Preview" class="md:p-4"}
+### Simple
+
+::stack
+  ::div{class="p-4 md:p-6"}
     ::collapsible
     #title
     Show properties
@@ -24,7 +26,7 @@ badges:
     This is a **Simple** style collapsible.
     ::
   ::
-  ```mdc[Code]
+  ```mdc
   ::collapsible
   #title
   Show properties
@@ -35,17 +37,25 @@ badges:
   ```
 ::
 
-#### Card
+### Card
 
-::code-group
-  ::div{label="Preview" class="md:p-4"}
+::stack
+  ::div{class="p-4 md:p-6"}
     ::collapsible{variant="card" title="@peduarte starred 3 repositories"}
     @radix-ui/primitives
     ::
   ::
-  ```mdc[Code]
+  ```mdc
   ::collapsible{variant="card" title="@peduarte starred 3 repositories"}
   @radix-ui/primitives
   ::
   ```
+::
+
+## Props
+
+::field-group
+  :field{name="variant" type="'simple' | 'card'" default-value="'simple'"}
+  :field{name="title" type="string"}[Collapsible title]
+  :field{name="defaultOpen" type="boolean" default-value="false"}
 ::
