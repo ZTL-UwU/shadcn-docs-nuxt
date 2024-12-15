@@ -42,6 +42,16 @@ badges:
 
     ::card
     ---
+    title: Horizontal Card
+    description: Beautifully designed Nuxt Content template with shadcn-vue. Customizable. Compatible. Open Source.
+    icon: 'lucide:fold-horizontal'
+    icon-size: 26
+    horizontal: true
+    ---
+    ::
+
+    ::card
+    ---
     to: https://github.com/ZTL-UwU/shadcn-docs-nuxt
     target: _blank
     ---

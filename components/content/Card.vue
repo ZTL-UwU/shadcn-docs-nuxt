@@ -12,16 +12,18 @@
         :src="img"
         class="w-full"
       />
-      <UiCardHeader v-if="icon || title || $slots.title || description || $slots.description">
-        <SmartIcon v-if="icon" class="mb-2" :name="icon" :size="24" />
-        <UiCardTitle v-if="title || $slots.title">
-          <ContentSlot :use="$slots.title" unwrap="p" />
-          {{ title }}
-        </UiCardTitle>
-        <UiCardDescription v-if="description || $slots.description">
-          <ContentSlot :use="$slots.description" unwrap="p" />
-          {{ description }}
-        </UiCardDescription>
+      <UiCardHeader v-if="icon || title || $slots.title || description || $slots.description" :class="{ 'flex-row items-center gap-5': horizontal }">
+        <SmartIcon v-if="icon" :name="icon" :size="iconSize" :class="{ 'mb-2': !horizontal }" />
+        <div class="flex flex-col gap-1.5">
+          <UiCardTitle v-if="title || $slots.title">
+            <ContentSlot :use="$slots.title" unwrap="p" />
+            {{ title }}
+          </UiCardTitle>
+          <UiCardDescription v-if="description || $slots.description">
+            <ContentSlot :use="$slots.description" unwrap="p" />
+            {{ description }}
+          </UiCardDescription>
+        </div>
       </UiCardHeader>
       <UiCardContent v-if="content || $slots.content || $slots.default">
         <ContentSlot :use="$slots.content" unwrap="p" />
@@ -44,7 +46,11 @@
 </template>
 
 <script setup lang="ts">
-const { showLinkIcon = true } = defineProps<{
+const {
+  showLinkIcon = true,
+  horizontal = false,
+  iconSize = 24,
+} = defineProps<{
   title?: string;
   description?: string;
   footer?: string;
@@ -52,9 +58,11 @@ const { showLinkIcon = true } = defineProps<{
   to?: string;
   target?: Target;
   icon?: string;
+  iconSize?: number;
   inStack?: boolean;
   img?: string;
   showLinkIcon?: boolean;
+  horizontal?: boolean;
 }>();
 const [UseTemplate, CardInner] = createReusableTemplate();
 </script>
