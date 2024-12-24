@@ -74,6 +74,6 @@
     "eslint": "^9.17.0",
     "eslint-plugin-tailwindcss": "^3.17.5",
     "shiki": "^1.24.4",
-    "vue-tsc": "^2.2.0"
+    "vue-tsc": "2.1.10"
   }
 }
