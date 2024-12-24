@@ -45,6 +45,7 @@ interface DefaultConfig {
         to: string;
         target: string;
         description: string;
+        icon?: string;
       })[];
     })[];
     links: ({

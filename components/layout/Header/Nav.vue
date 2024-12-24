@@ -12,13 +12,17 @@
                 <NuxtLink
                   :to="link.to"
                   :target="link.target"
-                  class="mb-1 block w-full gap-2 rounded-md px-3 py-2 transition-all hover:bg-muted"
+                  class="mb-1 flex w-full gap-2 rounded-md px-3 py-2 transition-all hover:bg-muted"
                 >
-                  <div class="font-semibold">
-                    {{ link.title }}
-                  </div>
-                  <div class="text-sm text-muted-foreground">
-                    {{ link.description }}
+                  <SmartIcon v-if="link?.icon" :name="link.icon" :size="16" class="mt-1 min-w-5" />
+
+                  <div>
+                    <div class="font-semibold">
+                      {{ link.title }}
+                    </div>
+                    <div class="text-sm text-muted-foreground">
+                      {{ link.description }}
+                    </div>
                   </div>
                 </NuxtLink>
               </li>

@@ -163,32 +163,32 @@ export function useConfig() {
           ...header,
           ...navKeyFromPath(route.path, 'header', navigation.value || []),
           ...page.value?.header,
-        } as typeof header,
+        } as (typeof header & DefaultConfig['header']),
         banner: {
           ...banner,
           ...navKeyFromPath(route.path, 'banner', navigation.value || []),
           ...page.value?.banner,
-        } as typeof banner,
+        } as (typeof banner & DefaultConfig['banner']),
         main: {
           ...main,
           ...navKeyFromPath(route.path, 'main', navigation.value || []),
           ...page.value?.main,
-        } as typeof main,
+        } as (typeof main & DefaultConfig['main']),
         aside: {
           ...aside,
           ...navKeyFromPath(route.path, 'aside', navigation.value || []),
           ...page.value?.aside,
-        } as typeof aside,
+        } as (typeof aside & DefaultConfig['aside']),
         toc: {
           ...toc,
           ...navKeyFromPath(route.path, 'toc', navigation.value || []),
           ...page.value?.toc,
-        } as typeof toc,
+        } as (typeof toc & DefaultConfig['toc']),
         footer: {
           ...footer,
           ...navKeyFromPath(route.path, 'footer', navigation.value || []),
           ...page.value?.footer,
-        } as typeof footer,
+        } as (typeof footer & DefaultConfig['footer']),
       };
     },
   );
