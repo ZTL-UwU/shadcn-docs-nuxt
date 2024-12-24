@@ -39,7 +39,7 @@ export default defineAppConfig({
           title: 'Getting Started',
           to: '/getting-started',
           description: 'Start building your document with shadcn-docs-nuxt',
-          icon: 'lucide:book',
+          icon: 'lucide:rocket',
         }, {
           title: 'API',
           to: '/api',
