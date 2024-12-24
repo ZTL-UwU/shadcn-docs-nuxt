@@ -1,4 +1,11 @@
-import { defu } from 'defu';
+import { createDefu } from 'defu';
+
+const customDefu = createDefu((obj, key, value) => {
+  if (Array.isArray(value) && value.every((x: any) => typeof x === 'string')) {
+    obj[key] = value;
+    return true;
+  }
+});
 
 const defaultConfig: DefaultConfig = {
   site: {
@@ -141,7 +148,7 @@ export function useConfig() {
 
   return computed(
     () => {
-      const processedConfig = defu(appConfig.value, defaultConfig);
+      const processedConfig = customDefu(appConfig.value, defaultConfig);
       const header = processedConfig.header;
       const main = processedConfig.main;
       const aside = processedConfig.aside;
