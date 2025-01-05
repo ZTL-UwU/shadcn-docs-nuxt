@@ -12,6 +12,8 @@
     <UiSheetContent side="left" class="pr-0">
       <LayoutHeaderLogo />
       <LayoutAside is-mobile />
+      <UiDialogTitle class="sr-only" />
+      <UiDialogDescription class="sr-only" />
     </UiSheetContent>
   </UiSheet>
 </template>
