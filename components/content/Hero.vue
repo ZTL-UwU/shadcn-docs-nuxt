@@ -58,4 +58,5 @@ defineProps<{
     target?: Target;
   }];
 }>();
+defineSlots();
 </script>

@@ -8,3 +8,7 @@
     </div>
   </UiCard>
 </template>
+
+<script setup lang="ts">
+defineSlots();
+</script>

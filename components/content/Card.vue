@@ -64,5 +64,8 @@ const {
   showLinkIcon?: boolean;
   horizontal?: boolean;
 }>();
+
+defineSlots();
+
 const [UseTemplate, CardInner] = createReusableTemplate();
 </script>

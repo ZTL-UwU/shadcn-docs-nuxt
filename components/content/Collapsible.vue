@@ -53,5 +53,6 @@ const {
   title?: string;
   defaultOpen?: boolean;
 }>();
+defineSlots();
 const isOpen = ref(defaultOpen);
 </script>

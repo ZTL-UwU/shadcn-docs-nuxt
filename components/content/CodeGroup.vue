@@ -3,6 +3,7 @@
 </template>
 
 <script setup lang="ts">
+import type { SetupContext } from 'vue';
 import Tabs from './Tabs.vue';
 
 const { inStack = false, sync } = defineProps<{
@@ -10,7 +11,7 @@ const { inStack = false, sync } = defineProps<{
   sync?: string;
 }>();
 
-const _slots = useSlots();
+const _slots: SetupContext['slots'] = useSlots();
 function render() {
   const slots = _slots?.default?.() || [];
   return h(

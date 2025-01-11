@@ -3,6 +3,7 @@
 </template>
 
 <script setup lang="ts">
+import type { SetupContext } from 'vue';
 import TabsInner from './TabsInner.vue';
 
 const {
@@ -23,7 +24,7 @@ const {
   sync?: string;
 }>();
 
-const _slots = useSlots();
+const _slots: SetupContext['slots'] = useSlots();
 function render() {
   const slots = _slots?.default?.() || [];
 

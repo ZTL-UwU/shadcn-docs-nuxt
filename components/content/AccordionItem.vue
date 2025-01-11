@@ -20,5 +20,7 @@ defineProps<{
   content?: string;
 }>();
 
+defineSlots();
+
 const autoValue = useId();
 </script>

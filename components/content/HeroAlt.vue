@@ -67,4 +67,5 @@ defineProps<{
   }];
   mobileRight?: 'top' | 'bottom';
 }>();
+defineSlots();
 </script>

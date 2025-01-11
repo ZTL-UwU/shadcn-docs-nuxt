@@ -190,6 +190,7 @@ const { sync, slotsData } = defineProps<{
   searchEmpty?: string;
   sync?: string;
 }>();
+defineSlots();
 
 const syncState = useCookie<{ scope: string; value?: string }[]>('tabs-sync-state', {
   default: () => [],
