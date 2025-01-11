@@ -1,6 +1,9 @@
 ---
 title: File Tree
 icon: lucide:folder-tree
+navBadges:
+  - value: New
+    type: lime
 badges:
   - value: 0.8.10
   - value: Source
