@@ -12,7 +12,7 @@ announcement:
   target: _blank
 actions:
   - name: Get Started
-    to: /getting-started
+    to: /getting-started/introduction
   - name: GitHub
     variant: outline
     to: https://github.com/ZTL-UwU/shadcn-docs-nuxt

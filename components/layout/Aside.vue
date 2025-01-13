@@ -5,7 +5,7 @@
     <ul v-if="config.aside.useLevel" class="flex flex-col gap-1 border-b pb-4">
       <li v-for="link in navigation" :key="link.id">
         <NuxtLink
-          :to="link._path"
+          :to="link.redirect ?? link._path"
           class="flex h-8 items-center gap-2 rounded-md p-2 text-sm text-foreground/80 hover:bg-muted hover:text-primary"
           :class="[
             path.startsWith(link._path) && 'bg-muted !text-primary',
