@@ -25,7 +25,6 @@ badges:
 
 ### Highlighting Lines
 
-
 ::stack
 ::div{class="p-4"}
 :code-snippet{file="/composables/useBreadcrumb.ts" language="ts" title="useBreadcrumb" highlights="9-11" meta="line-numbers height=300"}
