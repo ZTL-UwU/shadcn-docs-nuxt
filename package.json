@@ -43,7 +43,8 @@
     "postinstall": "nuxt prepare",
     "typecheck": "nuxt typecheck",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "prepare": "husky"
   },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.23",
@@ -73,6 +74,7 @@
     "@vueuse/nuxt": "^12.4.0",
     "eslint": "^9.18.0",
     "eslint-plugin-tailwindcss": "^3.17.5",
+    "husky": "^9.1.7",
     "shiki": "^1.27.2",
     "vue-tsc": "^2.2.0"
   }
