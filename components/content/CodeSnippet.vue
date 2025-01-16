@@ -43,12 +43,9 @@ if (file) {
   }
 } else if (url) {
   try {
-    const { data } = await useFetch(url, {
-      key: url,
-      transform: response => response as string,
-    });
-    if (data.value) {
-      loadedCode.value = data.value;
+    const data = await $fetch(url);
+    if (data) {
+      loadedCode.value = data as string;
     }
   } catch {}
 }
