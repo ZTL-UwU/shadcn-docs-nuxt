@@ -3,34 +3,61 @@
   <UiAlert v-else variant="destructive">
     <UiAlertTitle>Error</UiAlertTitle>
     <UiAlertDescription>
-      Cannot load code: <ProseCodeInline>{{ file }}</ProseCodeInline>
+      Cannot load code: <ProseCodeInline>{{ file || url }}</ProseCodeInline>
     </UiAlertDescription>
   </UiAlert>
 </template>
 
 <script setup lang="ts">
-const { file, language, title, highlights, meta } = defineProps<{
-  file: string;
+const {
+  file,
+  url,
+  language,
+  title,
+  highlights,
+  meta,
+  start,
+  offset,
+} = defineProps<{
+  file?: string;
+  url?: string;
   language: string;
   title?: string;
   highlights?: string;
   meta?: string;
+  start?: number;
+  offset?: string;
 }>();
+
+const loadedCode = ref('');
 
 const rawFiles = import.meta.glob(['@/**/*', '!@/**/nuxt.config.ts'], {
   query: '?raw',
   import: 'default',
 });
 
-const importer = rawFiles[file];
+if (file) {
+  const importer = rawFiles[file];
+  if (importer) {
+    loadedCode.value = (await importer()) as string;
+  }
+} else if (url) {
+  try {
+    const data = await $fetch(url);
+    if (data) {
+      loadedCode.value = data as string;
+    }
+  } catch {}
+}
 
-const loadedCode = ref('');
-if (importer)
-  loadedCode.value = await importer() as string;
+if (loadedCode.value && offset) {
+  const lines = loadedCode.value.split('\n');
+  loadedCode.value = lines.slice(Number(start || 0), Number(start || 0) + Number(offset)).join('\n');
+}
 
 const md = `
 ::div
-\`\`\`${language} ${title && `[${title}]`} ${highlights && `{${highlights}}`} ${meta}
+\`\`\`${language} ${title && `[${title}]`} ${highlights && `{${highlights}}`} ${meta || ''}
 ${loadedCode.value}
 \`\`\`
 ::
