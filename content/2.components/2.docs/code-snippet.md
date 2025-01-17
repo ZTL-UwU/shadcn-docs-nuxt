@@ -46,10 +46,10 @@ Translates to:
 
 ::stack
 ::div{class="p-4"}
-:code-snippet{file="/composables/useBreadcrumb.ts" language="ts" start="3" offset="3"}
+:code-snippet{file="/composables/useBreadcrumb.ts" language="ts" start="6" offset="4"}
 ::
 ```mdc
-:code-snippet{file="/composables/useBreadcrumb.ts" language="ts" start="3" offset="3"}
+:code-snippet{file="/composables/useBreadcrumb.ts" language="ts" start="6" offset="4"}
 ```
 ::
 

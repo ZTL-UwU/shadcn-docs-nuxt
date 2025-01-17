@@ -43,23 +43,23 @@ if (file) {
   }
 } else if (url) {
   try {
-    const data = await $fetch(url);
+    const data = await $fetch(url, { parseResponse: txt => txt });
     if (data) {
       loadedCode.value = data as string;
     }
   } catch {}
 }
 
-if (loadedCode.value && offset) {
+if (loadedCode.value && start && offset) {
   const lines = loadedCode.value.split('\n');
-  loadedCode.value = lines.slice(Number(start || 0), Number(start || 0) + Number(offset)).join('\n');
+  loadedCode.value = lines.slice(Number(start || 1) - 1, Number(start || 1) - 1 + Number(offset)).join('\n');
 }
 
 const md = `
 ::div
-\`\`\`${language} ${title && `[${title}]`} ${highlights && `{${highlights}}`} ${meta || ''}
+\`\`\`\`${language} ${title && `[${title}]`} ${highlights && `{${highlights}}`} ${meta || ''}
 ${loadedCode.value}
-\`\`\`
+\`\`\`\`
 ::
 `;
 </script>
