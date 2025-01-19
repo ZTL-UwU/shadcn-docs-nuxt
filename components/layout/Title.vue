@@ -20,6 +20,22 @@
         </UiBadge>
       </NuxtLink>
     </div>
+
+    <div v-if="authors" class="-mx-4 flex divide-x pt-4">
+      <NuxtLink v-for="author in authors" :key="author.name" :to="author.to" :target="author.target" class="flex items-center gap-2 px-4">
+        <UiAvatar v-if="author.avatar" class="size-8">
+          <UiAvatarImage :src="author.avatar" :alt="author.name" />
+        </UiAvatar>
+        <div>
+          <div class="text-sm font-semibold">
+            {{ author.name }}
+          </div>
+          <div v-if="author.username" class="text-xs font-medium leading-4 text-muted-foreground">
+            @{{ author.username }}
+          </div>
+        </div>
+      </NuxtLink>
+    </div>
   </div>
 </template>
 
@@ -34,6 +50,13 @@ defineProps<{
     target?: Target;
     type?: 'default' | 'info' | 'warning' | 'success' | 'danger' | 'lime';
     variant?: 'default' | 'secondary' | 'destructive' | 'outline';
+  }[];
+  authors?: {
+    name: string;
+    username?: string;
+    avatar?: string;
+    to?: string;
+    target?: Target;
   }[];
 }>();
 </script>

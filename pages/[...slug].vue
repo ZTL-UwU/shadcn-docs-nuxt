@@ -23,6 +23,7 @@
         :title="page?.title"
         :description="page?.description"
         :badges="page?.badges"
+        :authors="page?.authors"
       />
 
       <Alert

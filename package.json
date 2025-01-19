@@ -46,7 +46,7 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@iconify-json/lucide": "^1.2.23",
+    "@iconify-json/lucide": "^1.2.24",
     "@iconify-json/vscode-icons": "^1.2.10",
     "@nuxt/content": "^2.13.4",
     "@nuxt/icon": "^1.10.3",
@@ -72,7 +72,7 @@
     "@vueuse/core": "^12.4.0",
     "@vueuse/nuxt": "^12.4.0",
     "eslint": "^9.18.0",
-    "eslint-plugin-tailwindcss": "^3.17.5",
+    "eslint-plugin-tailwindcss": "^3.18.0",
     "shiki": "^1.27.2",
     "vue-tsc": "^2.2.0"
   }
