@@ -26,7 +26,7 @@ const {
   highlights?: string;
   meta?: string;
   start?: number;
-  offset?: string;
+  offset?: number;
 }>();
 
 const loadedCode = ref('');

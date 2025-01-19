@@ -16,10 +16,20 @@ badges:
 
 ::stack
 ::div{class="p-4"}
-:code-snippet{file="/components/DarkModeToggle.vue" language="vue"}
+  ::code-snippet
+  ---
+  file: /components/DarkModeToggle.vue
+  language: vue
+  ---
+  ::
 ::
 ```mdc
-:code-snippet{file="/components/DarkModeToggle.vue" language="vue"}
+::code-snippet
+---
+file: /components/DarkModeToggle.vue
+language: vue
+---
+::
 ```
 ::
 
@@ -27,29 +37,59 @@ badges:
 
 ::stack
 ::div{class="p-4"}
-:code-snippet{file="/composables/useBreadcrumb.ts" language="ts" title="useBreadcrumb" highlights="9-11" meta="line-numbers height=300"}
+  ::code-snippet
+  ---
+  file: /composables/useBreadcrumb.ts
+  language: ts
+  title: useBreadcrumb
+  highlights: 9-11
+  meta: line-numbers height=300
+  ---
+  ::
 ::
 ```mdc
-:code-snippet{file="/composables/useBreadcrumb.ts" language="ts" title="useBreadcrumb" highlights="9-11" meta="line-numbers height=300"}
+::code-snippet
+---
+file: /composables/useBreadcrumb.ts
+language: ts
+title: useBreadcrumb
+highlights: 9-11
+meta: line-numbers height=300
+---
+::
 ```
 ::
 
 Translates to:
 
-````md
-```ts [useBreadcrumb] {9-11} line-numbers height=300
+`````md
+````ts [useBreadcrumb] {9-11} line-numbers height=300
 // code imported from /composables/useBreadcrumb.ts
-```
 ````
+`````
 
 ### Using Offset Props
 
 ::stack
 ::div{class="p-4"}
-:code-snippet{file="/composables/useBreadcrumb.ts" language="ts" start="6" offset="4"}
+  ::code-snippet
+  ---
+  file: /composables/useBreadcrumb.ts
+  language: ts
+  start: 6
+  offset: 4
+  ---
+  ::
 ::
 ```mdc
-:code-snippet{file="/composables/useBreadcrumb.ts" language="ts" start="6" offset="4"}
+::code-snippet
+---
+file: /composables/useBreadcrumb.ts
+language: ts
+start: 6
+offset: 4
+---
+::
 ```
 ::
 
@@ -57,10 +97,20 @@ Translates to:
 
 ::stack
 ::div{class="p-4"}
-:code-snippet{url="https://raw.githubusercontent.com/ZTL-UwU/shadcn-docs-nuxt/refs/heads/main/pages/index.vue" language="vue"}
+  ::code-snippet
+  ---
+  url: https://raw.githubusercontent.com/ZTL-UwU/shadcn-docs-nuxt/refs/heads/main/pages/index.vue
+  language: vue
+  ---
+  ::
 ::
 ```mdc
-:code-snippet{url="https://raw.githubusercontent.com/ZTL-UwU/shadcn-docs-nuxt/refs/heads/main/pages/index.vue" language="vue"}
+::code-snippet
+---
+url: https://raw.githubusercontent.com/ZTL-UwU/shadcn-docs-nuxt/refs/heads/main/pages/index.vue
+language: vue
+---
+::
 ```
 ::
 
