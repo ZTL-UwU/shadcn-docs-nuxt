@@ -39,7 +39,7 @@ useSeoMeta({
 
 useServerHead({
   bodyAttrs: {
-    class: themeClass.value,
+    class: config.value.theme.customizable ? themeClass.value : undefined,
     style: `--radius: ${radius.value}rem;`,
   },
 });
