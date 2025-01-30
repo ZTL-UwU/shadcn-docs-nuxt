@@ -5,7 +5,7 @@ export default defineAppConfig({
       description: 'Beautifully designed Nuxt Content template built with shadcn-vue. Customizable. Compatible. Open Source.',
       ogImage: '/hero.png',
       ogImageComponent: 'ShadcnDocs',
-      ogImageColor: 'dark',
+      ogImageColor: 'light',
       umami: {
         enable: true,
         src: 'https://cloud.umami.is/script.js',
