@@ -5,7 +5,8 @@
 </template>
 
 <script setup lang="ts">
-import { AvatarFallback, type AvatarFallbackProps } from 'radix-vue';
+import type { AvatarFallbackProps } from 'radix-vue';
+import { AvatarFallback } from 'radix-vue';
 
 const props = defineProps<AvatarFallbackProps>();
 </script>

@@ -5,9 +5,11 @@
 </template>
 
 <script setup lang="ts">
+import type { ToastActionProps } from 'radix-vue';
+import type { HTMLAttributes } from 'vue';
 import { cn } from '@/lib/utils';
-import { ToastAction, type ToastActionProps } from 'radix-vue';
-import { computed, type HTMLAttributes } from 'vue';
+import { ToastAction } from 'radix-vue';
+import { computed } from 'vue';
 
 const props = defineProps<ToastActionProps & { class?: HTMLAttributes['class'] }>();
 

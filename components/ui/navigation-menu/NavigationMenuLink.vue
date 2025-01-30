@@ -5,10 +5,10 @@
 </template>
 
 <script setup lang="ts">
+import type { NavigationMenuLinkEmits, NavigationMenuLinkProps } from 'radix-vue';
 import {
   NavigationMenuLink,
-  type NavigationMenuLinkEmits,
-  type NavigationMenuLinkProps,
+
   useForwardPropsEmits,
 } from 'radix-vue';
 
