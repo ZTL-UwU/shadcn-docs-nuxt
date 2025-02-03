@@ -5,7 +5,7 @@
     class="min-w-4"
   />
 
-  <span :class="{ 'truncate text-nowrap': link.navTruncate }">
+  <span :class="{ 'truncate text-nowrap': link.navTruncate !== false }">
     {{ link.title }}
   </span>
 
