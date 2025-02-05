@@ -85,4 +85,3 @@ jobs:
 
       - name: Generate
         run: bun run generate
-      

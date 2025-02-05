@@ -74,8 +74,8 @@
     "@vueuse/nuxt": "^12.5.0",
     "eslint": "^9.19.0",
     "eslint-plugin-tailwindcss": "^3.18.0",
-    "shiki": "^2.2.0",
-    "taze": "^18.3.0",
+    "shiki": "^2.3.1",
+    "taze": "^18.4.0",
     "vue-tsc": "^2.2.0"
   }
 }
