@@ -1,5 +1,5 @@
 <template>
-  <div v-if="enabledDocsFooter" class="mb-6 w-fit">
+  <div v-if="enabledDocsFooter" class="w-fit">
     <NuxtLink
       :to="url"
       target="_blank"
