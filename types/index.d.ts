@@ -74,6 +74,7 @@ interface DefaultConfig {
       icon: string;
       placement: ('docsFooter' | 'toc')[];
     };
+    backToTop: boolean;
     pm: ('npm' | 'pnpm' | 'bun' | 'yarn')[];
     codeIcon: {
       [key: string]: string;

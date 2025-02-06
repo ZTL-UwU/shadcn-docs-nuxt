@@ -67,6 +67,7 @@ const defaultConfig: DefaultConfig = {
       icon: 'lucide:square-pen',
       placement: ['docsFooter'],
     },
+    backToTop: true,
     pm: ['npm', 'pnpm', 'bun', 'yarn'],
     codeIcon: {
       'package.json': 'vscode-icons:file-type-node',

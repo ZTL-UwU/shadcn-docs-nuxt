@@ -104,6 +104,7 @@ export default defineAppConfig({
         icon: 'lucide:square-pen',
         placement: ['docsFooter', 'toc'],
       },
+      backToTop: true,
       codeIcon: {
         'package.json': 'vscode-icons:file-type-node',
         'tsconfig.json': 'vscode-icons:file-type-tsconfig',
