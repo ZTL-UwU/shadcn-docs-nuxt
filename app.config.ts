@@ -41,6 +41,11 @@ export default defineAppConfig({
           description: 'Start building your document with shadcn-docs-nuxt',
           icon: 'lucide:rocket',
         }, {
+          title: 'Components',
+          to: '/components',
+          description: 'Explore available UI components and usage examples.',
+          icon: 'lucide:box',
+        }, {
           title: 'API',
           to: '/api',
           description: 'Discover the configurations and exposed APIs.',
@@ -99,6 +104,7 @@ export default defineAppConfig({
         icon: 'lucide:square-pen',
         placement: ['docsFooter', 'toc'],
       },
+      backToTop: true,
       codeIcon: {
         'package.json': 'vscode-icons:file-type-node',
         'tsconfig.json': 'vscode-icons:file-type-tsconfig',
