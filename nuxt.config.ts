@@ -19,9 +19,6 @@ export default defineNuxtConfig({
     prefix: 'Ui',
     componentDir: join(currentDir, './components/ui'),
   },
-  routeRules: {
-    '/': { prerender: true },
-  },
   components: {
     dirs: [
       {
