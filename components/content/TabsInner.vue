@@ -34,7 +34,7 @@
     v-model="activeTabIndex"
     class="relative mr-auto w-full [&:not(:first-child)]:mt-5"
   >
-    <div class="flex items-center justify-between pb-3">
+    <div class="flex items-center justify-between overflow-x-auto pb-3">
       <UiTabsList class="h-9 w-full justify-start rounded-none border-b bg-transparent p-0">
         <UiTabsTrigger
           v-for="(slot, i) in $slots.default?.() ?? []"
