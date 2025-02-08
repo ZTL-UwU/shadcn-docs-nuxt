@@ -3,6 +3,7 @@
     :serve="carbonAds.code"
     :placement="carbonAds.placement"
     :format="carbonAds.format"
+    class="mt-6"
   >
     <template v-if="carbonAds.fallback" #error>
       <div class="flex flex-col items-center rounded-lg border border-border bg-background px-4 py-6 text-muted-foreground">
