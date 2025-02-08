@@ -183,6 +183,8 @@ export default defineAppConfig({
       carbonAds: {
         enable: true,
         disableInDev: true,
+        fallback: false,
+        fallbackMessage: 'Please support us by disabling your ad blocker.',
         code: 'CW7ITKJN',
         placement: 'shadcn-docs-nuxtvercelapp',
         format: 'cover',

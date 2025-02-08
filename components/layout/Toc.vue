@@ -34,7 +34,7 @@
         </div>
       </div>
       <div class="flex-grow" />
-      <LayoutCarbonAds v-if="carbonAds.enable" />
+      <LayoutCarbonAds v-if="carbonAdsEnabled" />
     </div>
   </UiScrollArea>
   <UiCollapsible
@@ -62,6 +62,9 @@ defineProps<{ isSmall: boolean }>();
 
 const { toc } = useContent();
 const { title, links: configLinks, carbonAds } = useConfig().value.toc;
+const carbonAdsEnabled = computed(
+  () => carbonAds.enable && !(import.meta.dev && carbonAds.disableInDev),
+);
 const { border } = useConfig().value.header;
 const isOpen = ref(false);
 

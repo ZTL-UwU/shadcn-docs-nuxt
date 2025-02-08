@@ -9,6 +9,7 @@
         "@nuxt/content": "^2.13.4",
         "@nuxt/icon": "^1.10.3",
         "@nuxt/image": "^1.9.0",
+        "@nuxt/scripts": "^0.10.0",
         "@nuxtjs/color-mode": "^3.5.2",
         "@nuxtjs/tailwindcss": "^6.13.1",
         "class-variance-authority": "^0.7.1",
@@ -288,6 +289,8 @@
     "@nuxt/kit": ["@nuxt/kit@3.15.4", "", { "dependencies": { "c12": "^2.0.1", "consola": "^3.4.0", "defu": "^6.1.4", "destr": "^2.0.3", "globby": "^14.0.2", "ignore": "^7.0.3", "jiti": "^2.4.2", "klona": "^2.0.6", "knitwork": "^1.2.0", "mlly": "^1.7.4", "ohash": "^1.1.4", "pathe": "^2.0.2", "pkg-types": "^1.3.1", "scule": "^1.3.0", "semver": "^7.6.3", "std-env": "^3.8.0", "ufo": "^1.5.4", "unctx": "^2.4.1", "unimport": "^4.0.0", "untyped": "^1.5.2" } }, "sha512-dr7I7eZOoRLl4uxdxeL2dQsH0OrbEiVPIyBHnBpA4co24CBnoJoF+JINuP9l3PAM3IhUzc5JIVq3/YY3lEc3Hw=="],
 
     "@nuxt/schema": ["@nuxt/schema@3.15.4", "", { "dependencies": { "consola": "^3.4.0", "defu": "^6.1.4", "pathe": "^2.0.2", "std-env": "^3.8.0" } }, "sha512-pAYZb/3ocSC/db1EFd5y+otmgHqUkvfxfhd9EknDB5DygnJuOIQNuGJ7LMJM6S2c0DYgBIHOdEelLxKHOjwbgQ=="],
+
+    "@nuxt/scripts": ["@nuxt/scripts@0.10.0", "", { "dependencies": { "@nuxt/kit": "^3.15.4", "@vueuse/core": "^12.5.0", "consola": "^3.4.0", "defu": "^6.1.4", "h3": "^1.15.0", "magic-string": "^0.30.17", "ofetch": "^1.4.1", "ohash": "^1.1.4", "pathe": "^2.0.2", "pkg-types": "^1.3.1", "semver": "^7.7.1", "sirv": "^3.0.0", "std-env": "^3.8.0", "ufo": "^1.5.4", "unplugin": "^2.1.2", "unstorage": "^1.14.4", "valibot": "^1.0.0-beta.15" }, "peerDependencies": { "@stripe/stripe-js": "^5.6.0", "@types/google.maps": "^3.58.1", "@types/vimeo__player": "^2.18.3", "@types/youtube": "^0.1.0", "@unhead/vue": "^1" }, "optionalPeers": ["@stripe/stripe-js", "@types/google.maps", "@types/vimeo__player", "@types/youtube"] }, "sha512-Bj0UxenZxzCGR0EU19DDvR2p1Pzoxle3+tkOt3fkq9+qwc2UH+uSHJHRW7m63gKJj1iLahU0yqodHqbRAhQyNA=="],
 
     "@nuxt/telemetry": ["@nuxt/telemetry@2.6.4", "https://registry.npmmirror.com/@nuxt/telemetry/-/telemetry-2.6.4.tgz", { "dependencies": { "@nuxt/kit": "^3.15.1", "citty": "^0.1.6", "consola": "^3.3.1", "destr": "^2.0.3", "dotenv": "^16.4.7", "git-url-parse": "^16.0.0", "is-docker": "^3.0.0", "ofetch": "^1.4.1", "package-manager-detector": "^0.2.8", "parse-git-config": "^3.0.0", "pathe": "^2.0.0", "rc9": "^2.1.2", "std-env": "^3.8.0" }, "bin": { "nuxt-telemetry": "bin/nuxt-telemetry.mjs" } }, "sha512-2Lgdn07Suraly5dSfVQ4ttBQBMtmjvCTGKGUHpc1UyH87HT9xCm3KLFO0UcVQ8+LNYCgoOaK7lq9qDJOfBfZ5A=="],
 
@@ -1541,6 +1544,8 @@
 
     "node-gyp-build": ["node-gyp-build@4.8.4", "https://registry.npmmirror.com/node-gyp-build/-/node-gyp-build-4.8.4.tgz", { "bin": { "node-gyp-build": "bin.js", "node-gyp-build-optional": "optional.js", "node-gyp-build-test": "build-test.js" } }, "sha512-LA4ZjwlnUblHVgq0oBF3Jl/6h/Nvs5fzBLwdEF4nuxnFdsfajde4WfxtJr3CaiH+F6ewcIB/q4jQ4UzPyid+CQ=="],
 
+    "node-mock-http": ["node-mock-http@1.0.0", "", {}, "sha512-0uGYQ1WQL1M5kKvGRXWQ3uZCHtLTO8hln3oBjIusM75WoesZ909uQJs/Hb946i2SS+Gsrhkaa6iAO17jRIv6DQ=="],
+
     "node-releases": ["node-releases@2.0.19", "https://registry.npmmirror.com/node-releases/-/node-releases-2.0.19.tgz", {}, "sha512-xxOWJsBKtzAq7DY0J+DTzuz58K8e7sJbdgwkbMWQe8UYB6ekmsQ45q0M/tJDsGaZmbC+l7n57UV8Hl5tHxO9uw=="],
 
     "nopt": ["nopt@8.0.0", "https://registry.npmmirror.com/nopt/-/nopt-8.0.0.tgz", { "dependencies": { "abbrev": "^2.0.0" }, "bin": { "nopt": "bin/nopt.js" } }, "sha512-1L/fTJ4UmV/lUxT2Uf006pfZKTvAgCF+chz+0OgBHO8u2Z67pE7AaAUUj7CJy0lXqHmymUvGFt6NE9R3HER0yw=="],
@@ -2121,6 +2126,8 @@
 
     "util-deprecate": ["util-deprecate@1.0.2", "https://registry.npmmirror.com/util-deprecate/-/util-deprecate-1.0.2.tgz", {}, "sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw=="],
 
+    "valibot": ["valibot@1.0.0-beta.15", "", { "peerDependencies": { "typescript": ">=5" }, "optionalPeers": ["typescript"] }, "sha512-BKy8XosZkDHWmYC+cJG74LBzP++Gfntwi33pP3D3RKztz2XV9jmFWnkOi21GoqARP8wAWARwhV6eTr1JcWzjGw=="],
+
     "validate-npm-package-license": ["validate-npm-package-license@3.0.4", "https://registry.npmmirror.com/validate-npm-package-license/-/validate-npm-package-license-3.0.4.tgz", { "dependencies": { "spdx-correct": "^3.0.0", "spdx-expression-parse": "^3.0.0" } }, "sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew=="],
 
     "vary": ["vary@1.1.2", "https://registry.npmmirror.com/vary/-/vary-1.1.2.tgz", {}, "sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg=="],
@@ -2322,6 +2329,8 @@
     "@nuxt/image/pathe": ["pathe@2.0.1", "https://registry.npmmirror.com/pathe/-/pathe-2.0.1.tgz", {}, "sha512-6jpjMpOth5S9ITVu5clZ7NOgHNsv5vRQdheL9ztp2vZmM6fRbLvyua1tiBIL4lk8SAe3ARzeXEly6siXCjDHDw=="],
 
     "@nuxt/kit/semver": ["semver@7.6.3", "https://registry.npmmirror.com/semver/-/semver-7.6.3.tgz", { "bin": { "semver": "bin/semver.js" } }, "sha512-oVekP1cKtI+CTDvHWYFUcMtsK/00wmAEfyqKfNdARm8u1wNVhSgaX7A8d4UuIlUI5e84iEwOhs7ZPYRmzU9U6A=="],
+
+    "@nuxt/scripts/h3": ["h3@1.15.0", "", { "dependencies": { "cookie-es": "^1.2.2", "crossws": "^0.3.3", "defu": "^6.1.4", "destr": "^2.0.3", "iron-webcrypto": "^1.2.1", "node-mock-http": "^1.0.0", "ohash": "^1.1.4", "radix3": "^1.1.2", "ufo": "^1.5.4", "uncrypto": "^0.1.3" } }, "sha512-OsjX4JW8J4XGgCgEcad20pepFQWnuKH+OwkCJjogF3C+9AZ1iYdtB4hX6vAb5DskBiu5ljEXqApINjR8CqoCMQ=="],
 
     "@nuxt/telemetry/@nuxt/kit": ["@nuxt/kit@3.15.1", "https://registry.npmmirror.com/@nuxt/kit/-/kit-3.15.1.tgz", { "dependencies": { "@nuxt/schema": "3.15.1", "c12": "^2.0.1", "consola": "^3.3.3", "defu": "^6.1.4", "destr": "^2.0.3", "globby": "^14.0.2", "ignore": "^7.0.0", "jiti": "^2.4.2", "klona": "^2.0.6", "knitwork": "^1.2.0", "mlly": "^1.7.3", "ohash": "^1.1.4", "pathe": "^2.0.0", "pkg-types": "^1.3.0", "scule": "^1.3.0", "semver": "^7.6.3", "ufo": "^1.5.4", "unctx": "^2.4.1", "unimport": "^3.14.5", "untyped": "^1.5.2" } }, "sha512-7cVWjzfz3L6CsZrg6ppDZa7zGrZxCSfZjEQDIvVFn4mFKtJlK9k2izf5EewL6luzWwIQojkZAC3iq/1wtgI0Xw=="],
 
@@ -2878,6 +2887,8 @@
     "@nuxt/image/@nuxt/kit/semver": ["semver@7.6.3", "https://registry.npmmirror.com/semver/-/semver-7.6.3.tgz", { "bin": { "semver": "bin/semver.js" } }, "sha512-oVekP1cKtI+CTDvHWYFUcMtsK/00wmAEfyqKfNdARm8u1wNVhSgaX7A8d4UuIlUI5e84iEwOhs7ZPYRmzU9U6A=="],
 
     "@nuxt/image/@nuxt/kit/unimport": ["unimport@3.14.5", "https://registry.npmmirror.com/unimport/-/unimport-3.14.5.tgz", { "dependencies": { "@rollup/pluginutils": "^5.1.3", "acorn": "^8.14.0", "escape-string-regexp": "^5.0.0", "estree-walker": "^3.0.3", "fast-glob": "^3.3.2", "local-pkg": "^0.5.1", "magic-string": "^0.30.14", "mlly": "^1.7.3", "pathe": "^1.1.2", "picomatch": "^4.0.2", "pkg-types": "^1.2.1", "scule": "^1.3.0", "strip-literal": "^2.1.1", "unplugin": "^1.16.0" } }, "sha512-tn890SwFFZxqaJSKQPPd+yygfKSATbM8BZWW1aCR2TJBTs1SDrmLamBueaFtYsGjHtQaRgqEbQflOjN2iW12gA=="],
+
+    "@nuxt/scripts/h3/crossws": ["crossws@0.3.3", "", { "dependencies": { "uncrypto": "^0.1.3" } }, "sha512-/71DJT3xJlqSnBr83uGJesmVHSzZEvgxHt/fIKxBAAngqMHmnBWQNxCphVxxJ2XL3xleu5+hJD6IQ3TglBedcw=="],
 
     "@nuxt/telemetry/@nuxt/kit/@nuxt/schema": ["@nuxt/schema@3.15.1", "https://registry.npmmirror.com/@nuxt/schema/-/schema-3.15.1.tgz", { "dependencies": { "consola": "^3.3.3", "defu": "^6.1.4", "pathe": "^2.0.0", "std-env": "^3.8.0" } }, "sha512-n5kOHt8uUyUM9z4Wu/8tIZkBYh3KTCGvyruG6oD9bfeT4OaS21+X3M7XsTXFMe+eYBZA70IFFlWn1JJZIPsKeA=="],
 

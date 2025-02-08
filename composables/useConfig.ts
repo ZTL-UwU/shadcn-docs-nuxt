@@ -126,6 +126,8 @@ const defaultConfig: DefaultConfig = {
     carbonAds: {
       enable: false,
       disableInDev: false,
+      fallback: false,
+      fallbackMessage: 'Please support us by disabling your ad blocker.',
       code: '',
       placement: '',
       format: 'cover',

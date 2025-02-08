@@ -4,7 +4,7 @@ icon: lucide:cloud
 description: Integration for Umami analytics.
 ---
 
-**shadcn-docs-nuxt** has built-in support for [Umami Analytics](https://umami.is/). Add your Umami `data-website-id` to `app.config.ts`.
+**shadcn-docs-nuxt** uses [Nuxt Scripts](https://scripts.nuxt.com/scripts/analytics/umami-analytics) under the hood for [Umami Analytics](https://umami.is/). Add your Umami `data-website-id` to `app.config.ts`.
 
 ```ts [app.config.ts]
 export default defineAppConfig({
@@ -18,12 +18,6 @@ export default defineAppConfig({
     },
   },
 });
-```
-
-These values are used to add the Umami script to `<head>`{lang="html"} as shown below.
-
-```html
-<script defer src="https://cloud.umami.is/script.js" data-website-id="your-data-website-id"></script>
 ```
 
 ## Parameters
