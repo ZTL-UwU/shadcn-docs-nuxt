@@ -9,15 +9,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - id: setup-bun
-        name: Setup Bun
-        uses: oven-sh/setup-bun@v2
+      - run: corepack enable
+      - uses: actions/setup-node@v4
         with:
-          bun-version: latest
+          node-version: 20
+          cache: "pnpm"
 
-      - id: install-deps
-        name: Install dependencies
-        run: |
-          bun install
+      - name: Install dependencies
+        run: pnpm install
 
-      - run: bunx pkg-pr-new publish
+      - name: Build
+        run: pnpm build
+
+      - run: pnpx pkg-pr-new publish --comment=update
