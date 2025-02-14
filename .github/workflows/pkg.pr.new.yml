@@ -1,0 +1,23 @@
+name: Preview Release
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - id: setup-bun
+        name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - id: install-deps
+        name: Install dependencies
+        run: |
+          bun install
+
+      - run: bunx pkg-pr-new publish
