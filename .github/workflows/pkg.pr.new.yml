@@ -9,9 +9,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - uses: pnpm/action-setup@v4
+      - id: setup-bun
+        name: Setup Bun
+        uses: oven-sh/setup-bun@v2
         with:
-          version: 10
-          run_install: true
+          bun-version: latest
 
-      - run: pnpx pkg-pr-new publish --comment=update
+      - id: install-deps
+        name: Install dependencies
+        run: |
+          bun install
+      - run: bunx pkg-pr-new publish
