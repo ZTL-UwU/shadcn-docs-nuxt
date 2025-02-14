@@ -1,8 +1,8 @@
-name: Preview Release
+name: Publish Any Commit
 on: [push, pull_request]
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
 
     steps:

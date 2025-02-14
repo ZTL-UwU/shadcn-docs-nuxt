@@ -53,11 +53,18 @@ function getItem(key: string, type: 'folder' | 'file', children?: InputTreeItem[
     highlighted = true;
   }
 
+  let diff: FileTreeItemDiff = 'none';
+  if (title.startsWith('+'))
+    diff = 'addition';
+  else if (title.startsWith('-'))
+    diff = 'deletion';
+
   if (type === 'file') {
     return {
       title,
       icon: getIcon(title, 'file'),
       highlighted,
+      diff,
     };
   } else {
     return {
@@ -65,6 +72,7 @@ function getItem(key: string, type: 'folder' | 'file', children?: InputTreeItem[
       icon: getIcon(title, 'folder'),
       children: children && getTree(children),
       highlighted,
+      diff,
     };
   }
 }

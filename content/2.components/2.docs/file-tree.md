@@ -95,7 +95,6 @@ tree:
 ::
 ```
 ::
-
 ### Disable Icons
 
 ::stack
@@ -125,6 +124,45 @@ tree:
     - components:
       - Header.vue
       - Footer.vue
+    - composables:
+      - useErrorHandler.ts
+    - ^app.vue^
+  - docs:
+    - index.md
+---
+::
+```
+::
+
+### Diff
+
+::stack
+::div{class="p-4"}
+  ::file-tree
+  ---
+  showIcon: false
+  tree:
+    - app:
+      - + components:
+        - Header.vue
+        - "- Footer.vue"
+      - composables:
+        - useErrorHandler.ts
+      - ^app.vue^
+    - docs:
+      - index.md
+  ---
+  ::
+::
+```mdc
+::file-tree
+---
+showIcon: false
+tree:
+  - app:
+    - + components:
+      - Header.vue
+      - "- Footer.vue"
     - composables:
       - useErrorHandler.ts
     - ^app.vue^
