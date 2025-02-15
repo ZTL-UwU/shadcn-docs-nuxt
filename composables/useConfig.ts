@@ -121,6 +121,7 @@ const defaultConfig: DefaultConfig = {
   toc: {
     enable: true,
     enableInMobile: false,
+    enableInHomepage: false,
     title: 'On This Page',
     links: [],
     carbonAds: {
