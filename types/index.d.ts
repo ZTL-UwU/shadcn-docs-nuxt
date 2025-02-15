@@ -92,6 +92,7 @@ interface DefaultConfig {
   toc: {
     enable: boolean;
     enableInMobile: boolean;
+    enableInHomepage: boolean;
     title: string;
     links: ({
       title: string;
