@@ -17,20 +17,22 @@
 const { carbonAds } = useConfig().value.toc;
 </script>
 
-<style lang="postcss">
+<style>
+@reference "../../assets/css/tailwind.css";
+
 .carbon-responsive-wrap {
-  @apply bg-background border-border px-4 py-6 rounded-lg flex flex-col items-center !important;
+  @apply !bg-background border-border !px-4 !py-6 rounded-lg flex flex-col items-center;
 }
 
 .carbon-responsive-wrap .carbon-img {
-  @apply flex-none rounded overflow-hidden !important;
+  @apply !flex-none !rounded overflow-hidden;
 }
 
 .carbon-responsive-wrap .carbon-text {
-  @apply text-muted-foreground text-sm flex-none text-center !important;
+  @apply !text-muted-foreground !text-sm !flex-none !text-center;
 }
 
 #carbonads .carbon-poweredby {
-  @apply bg-background text-muted-foreground block text-right text-[10px] uppercase no-underline !important;
+  @apply bg-background text-muted-foreground block text-right !text-[10px] uppercase no-underline;
 }
 </style>

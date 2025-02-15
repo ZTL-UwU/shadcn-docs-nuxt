@@ -73,7 +73,9 @@ const icon = computed(() => {
 });
 </script>
 
-<style lang="postcss">
+<style>
+@reference "../../assets/css/tailwind.css";
+
 .fade-enter-active {
   transition: opacity 0.5s ease;
 }
@@ -97,7 +99,7 @@ const icon = computed(() => {
 }
 
 .show-line-number .line::before {
+  @apply text-xs w-5 inline-block text-right mr-4 text-muted-foreground;
   content: attr(line);
-  @apply text-sm w-5 inline-block text-right mr-4 text-muted-foreground;
 }
 </style>

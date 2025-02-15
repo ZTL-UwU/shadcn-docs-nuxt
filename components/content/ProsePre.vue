@@ -45,7 +45,7 @@ defineProps({
 });
 </script>
 
-<style lang="postcss">
+<style>
 pre code .line{
   display: block;
   min-height: 1rem
