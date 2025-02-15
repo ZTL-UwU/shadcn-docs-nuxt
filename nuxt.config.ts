@@ -84,6 +84,9 @@ export default defineNuxtConfig({
     transpile: ['shiki'],
   },
   vite: {
+    build: {
+      cssMinify: 'lightningcss',
+    },
     plugins: [
       tailwindcss(),
     ],
