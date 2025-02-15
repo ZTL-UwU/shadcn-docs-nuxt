@@ -30,7 +30,7 @@
         </div>
       </div>
     </div>
-    <div v-if="config.toc.enable && config.toc.enableInMobile" class="lg:hidden">
+    <div v-if="showToc" class="lg:hidden">
       <LayoutToc is-small />
     </div>
   </header>
@@ -38,4 +38,11 @@
 
 <script setup lang="ts">
 const config = useConfig();
+const { page } = useContent();
+
+const showToc = computed(() => {
+  return config.value.toc.enable
+    && config.value.toc.enableInMobile
+    && (page.value?._path === '/' ? config.value.toc.enableInHomepage : true);
+});
 </script>

@@ -166,6 +166,8 @@ export default defineAppConfig({
     },
     toc: {
       enable: true,
+      enableInMobile: false,
+      enableInHomepage: false,
       title: 'On This Page',
       links: [{
         title: 'Star on GitHub',
