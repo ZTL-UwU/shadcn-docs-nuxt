@@ -3,7 +3,6 @@ import { defineConfig } from 'taze';
 export default defineConfig({
   exclude: [
     '@nuxt/content',
-    'tailwind-merge',
   ],
   force: true,
   write: true,

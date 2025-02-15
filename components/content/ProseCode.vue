@@ -73,7 +73,7 @@ const icon = computed(() => {
 });
 </script>
 
-<style>
+<style lang="postcss">
 .fade-enter-active {
   transition: opacity 0.5s ease;
 }
