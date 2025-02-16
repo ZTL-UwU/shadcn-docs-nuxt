@@ -74,7 +74,7 @@ const icon = computed(() => {
 </script>
 
 <style>
-@reference "../../assets/css/tailwind.css";
+@reference "../../assets/css/main.css";
 
 .fade-enter-active {
   transition: opacity 0.5s ease;

@@ -18,7 +18,7 @@ const { carbonAds } = useConfig().value.toc;
 </script>
 
 <style>
-@reference "../../assets/css/tailwind.css";
+@reference "../../assets/css/main.css";
 
 .carbon-responsive-wrap {
   @apply !bg-background border-border !px-4 !py-6 rounded-lg flex flex-col items-center;
