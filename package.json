@@ -33,7 +33,6 @@
     "nuxt.config.ts",
     "pages",
     "plugins",
-    "tailwind.config.js",
     "types"
   ],
   "scripts": {
