@@ -74,8 +74,6 @@ const icon = computed(() => {
 </script>
 
 <style>
-@reference "../../assets/css/main.css";
-
 .fade-enter-active {
   transition: opacity 0.5s ease;
 }
@@ -99,7 +97,14 @@ const icon = computed(() => {
 }
 
 .show-line-number .line::before {
-  @apply text-xs w-5 inline-block text-right mr-4 text-muted-foreground;
+  font-size: var(--text-xs);
+  line-height: var(--tw-leading, var(--text-xs--line-height));
+  width: calc(var(--spacing) * 5);
+  display: inline-block;
+  text-align: right;
+  margin-right: calc(var(--spacing) * 4);
+  color: hsl(var(--muted-foreground));
+
   content: attr(line);
 }
 </style>
