@@ -10,9 +10,7 @@
       <span class="mr-auto overflow-hidden">
         {{ placeholder }}
       </span>
-      <Kbd class="ml-auto hidden md:block">
-        <span class="text-xs">⌘</span>K
-      </Kbd>
+      <Kbd class="ml-auto hidden md:flex">⌘K</Kbd>
     </UiButton>
     <UiButton
       v-else
