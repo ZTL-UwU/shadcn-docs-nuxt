@@ -59,8 +59,8 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "nuxt": "^3.15.4",
-    "nuxt-og-image": "^4.1.2",
-    "radix-vue": "^1.9.14",
+    "nuxt-og-image": "^4.1.4",
+    "radix-vue": "^1.9.15",
     "shadcn-nuxt": "^0.11.3",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
@@ -69,17 +69,17 @@
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^4.2.0",
-    "@iconify-json/simple-icons": "^1.2.24",
-    "@nuxt/devtools": "^2.0.0",
+    "@antfu/eslint-config": "^4.3.0",
+    "@iconify-json/simple-icons": "^1.2.25",
+    "@nuxt/devtools": "^2.1.0",
     "@nuxt/kit": "^3.15.4",
-    "@vueuse/core": "^12.6.1",
-    "@vueuse/nuxt": "^12.6.1",
+    "@vueuse/core": "^12.7.0",
+    "@vueuse/nuxt": "^12.7.0",
     "eslint": "^9.20.1",
     "eslint-plugin-tailwindcss": "^3.18.0",
     "pkg-pr-new": "^0.0.39",
-    "shiki": "^2.3.2",
-    "taze": "^18.5.0",
-    "vue-tsc": "^2.2.0"
+    "shiki": "^2.5.0",
+    "taze": "^18.6.0",
+    "vue-tsc": "^2.2.2"
   }
 }
