@@ -48,11 +48,11 @@
   },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.26",
-    "@iconify-json/vscode-icons": "^1.2.14",
+    "@iconify-json/vscode-icons": "^1.2.16",
     "@nuxt/content": "^2.13.4",
     "@nuxt/icon": "^1.10.3",
     "@nuxt/image": "^1.9.0",
-    "@nuxt/scripts": "^0.10.3",
+    "@nuxt/scripts": "^0.10.5",
     "@nuxtjs/color-mode": "^3.5.2",
     "@nuxtjs/mdc": "^0.13.5",
     "@nuxtjs/tailwindcss": "^6.13.1",
@@ -60,8 +60,8 @@
     "clsx": "^2.1.1",
     "nuxt": "^3.15.4",
     "nuxt-og-image": "^4.1.4",
-    "radix-vue": "^1.9.15",
-    "shadcn-nuxt": "^0.11.3",
+    "radix-vue": "^1.9.16",
+    "shadcn-nuxt": "^1.0.1",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.7.3",
@@ -70,16 +70,15 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.3.0",
-    "@iconify-json/simple-icons": "^1.2.25",
     "@nuxt/devtools": "^2.1.0",
     "@nuxt/kit": "^3.15.4",
     "@vueuse/core": "^12.7.0",
     "@vueuse/nuxt": "^12.7.0",
-    "eslint": "^9.20.1",
+    "eslint": "^9.21.0",
     "eslint-plugin-tailwindcss": "^3.18.0",
     "pkg-pr-new": "^0.0.39",
     "shiki": "^2.5.0",
     "taze": "^18.6.0",
-    "vue-tsc": "^2.2.2"
+    "vue-tsc": "^2.2.4"
   }
 }
