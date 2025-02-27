@@ -118,6 +118,9 @@ interface DefaultConfig {
     placeholder: string;
     placeholderDetailed: string;
   };
+  data?: {
+    [key: string]: any;
+  };
 }
 
 type Color =
