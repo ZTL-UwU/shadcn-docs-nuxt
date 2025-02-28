@@ -196,5 +196,6 @@ export default defineAppConfig({
       enable: true,
       inAside: false,
     },
+    data: {},
   },
 });

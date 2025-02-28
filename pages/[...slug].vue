@@ -38,6 +38,7 @@
         v-else
         :key="page._id"
         :value="page"
+        :data="appConfig.shadcnDocs.data"
         class="docs-content"
       />
 
@@ -54,6 +55,7 @@
 <script setup lang="ts">
 const { page } = useContent();
 const config = useConfig();
+const appConfig = useAppConfig();
 
 useSeoMeta({
   title: `${page.value?.title ?? '404'} - ${config.value.site.name}`,
