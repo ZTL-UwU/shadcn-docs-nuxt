@@ -28,6 +28,6 @@
 </template>
 
 <script setup lang="ts">
-const isOpen = ref(false);
+const isOpen = ref<boolean | undefined>(false);
 const { enable, inAside, style, placeholder } = useConfig().value.search;
 </script>

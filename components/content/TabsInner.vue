@@ -1,7 +1,7 @@
 <template>
   <UiTabs
     v-if="variant === 'separate'"
-    v-model="activeTabIndex"
+    v-model="activeTabIndex as string | number"
     class="[&:not(:first-child)]:mt-5"
   >
     <UiTabsList>
@@ -31,7 +31,7 @@
 
   <UiTabs
     v-else-if="variant === 'line'"
-    v-model="activeTabIndex"
+    v-model="activeTabIndex as string | number"
     class="relative mr-auto w-full [&:not(:first-child)]:mt-5"
   >
     <div class="flex items-center justify-between overflow-x-auto pb-3">
