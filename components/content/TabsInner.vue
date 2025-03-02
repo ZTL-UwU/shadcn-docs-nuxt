@@ -1,7 +1,7 @@
 <template>
   <UiTabs
     v-if="variant === 'separate'"
-    v-model="activeTabIndex as string | number"
+    v-model="activeTabIndex"
     class="[&:not(:first-child)]:mt-5"
   >
     <UiTabsList>
@@ -31,7 +31,7 @@
 
   <UiTabs
     v-else-if="variant === 'line'"
-    v-model="activeTabIndex as string | number"
+    v-model="activeTabIndex"
     class="relative mr-auto w-full [&:not(:first-child)]:mt-5"
   >
     <div class="flex items-center justify-between overflow-x-auto pb-3">
@@ -87,9 +87,9 @@
           </div>
         </div>
         <CodeCopy
-          v-if="$slots.default?.()[activeTabIndex]?.props?.code"
+          v-if="$slots.default?.()[activeTabIndex as number]?.props?.code"
           class="ml-auto mr-3 self-center pl-2"
-          :code="$slots.default?.()[activeTabIndex]?.props?.code"
+          :code="$slots.default?.()[activeTabIndex as number]?.props?.code"
         />
       </div>
       <ScrollBar orientation="horizontal" />
@@ -101,7 +101,7 @@
       :key="`${i}${label(slot.props)}`"
       :value="label(slot.props)"
       class="mt-0"
-      :class="[padded && ($slots.default?.()[activeTabIndex]?.type as any).tag !== 'pre' && 'p-3']"
+      :class="[padded && ($slots.default?.()[activeTabIndex as number]?.type as any).tag !== 'pre' && 'p-3']"
     >
       <component :is="slot" :in-group="true" />
     </div>
@@ -118,12 +118,12 @@
         >
           <div class="flex items-center">
             <SmartIcon
-              v-if="icon(($slots.default?.() ?? [])[activeTabIndex].props)"
-              :name="icon(($slots.default?.() ?? [])[activeTabIndex].props)!"
+              v-if="icon(($slots.default?.() ?? [])[activeTabIndex as number].props)"
+              :name="icon(($slots.default?.() ?? [])[activeTabIndex as number].props)!"
               class="mr-1.5"
             />
             <span>
-              {{ label(($slots.default?.() ?? [])[activeTabIndex].props) }}
+              {{ label(($slots.default?.() ?? [])[activeTabIndex as number].props) }}
             </span>
           </div>
           <Icon name="lucide:chevrons-up-down" />
@@ -199,7 +199,7 @@ const syncState = useCookie<{ scope: string; value?: string }[]>('tabs-sync-stat
 const syncScopeIndex = computed(() => syncState.value.findIndex(x => x.scope === sync));
 
 const activeTabIndexData = ref(0);
-const activeTabIndex = computed<number>({
+const activeTabIndex = computed<number | string>({
   get: () => {
     if (sync === undefined || syncScopeIndex.value === -1)
       return activeTabIndexData.value;
@@ -207,7 +207,10 @@ const activeTabIndex = computed<number>({
     return slotsData.find(x => x.label === syncState.value[syncScopeIndex.value]?.value)?.index
       || activeTabIndexData.value;
   },
-  set(index: number) {
+  set(index: number | string) {
+    if (typeof index === 'string')
+      return;
+
     if (sync === undefined) {
       activeTabIndexData.value = index;
       return;
