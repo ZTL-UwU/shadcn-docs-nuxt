@@ -3,7 +3,7 @@
     <Transition name="fade" mode="out-in">
       <div v-if="copied === false">
         <Icon
-          name="lucide:copy"
+          :name="codeCopyIcon"
           class="block cursor-pointer self-center text-muted-foreground hover:text-primary"
           @click="handleClick"
         />
@@ -30,6 +30,8 @@ const { toast } = useToast();
 
 const { copy } = useClipboard({ source: code });
 const copied = ref(false);
+
+const { codeCopyIcon } = useConfig().value.main;
 
 async function handleClick() {
   await copy(code);

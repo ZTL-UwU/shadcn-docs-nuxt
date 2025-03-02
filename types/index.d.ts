@@ -64,6 +64,7 @@ interface DefaultConfig {
     breadCrumb: boolean;
     showTitle: boolean;
     codeCopyToast: boolean;
+    codeCopyIcon: string;
     codeCopyToastText: string;
     fieldRequiredText: string;
     padded: boolean;
