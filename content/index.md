@@ -6,10 +6,9 @@ navigation: false
 ::hero
 ---
 announcement:
-  title: 'Release v0.8.14'
-  icon: '🎉'
-  to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/releases/latest
-  target: _blank
+  title: 'Code Tree Component'
+  icon: lucide:folder-code
+  to: /components/docs/code-tree
 actions:
   - name: Get Started
     to: /getting-started/introduction

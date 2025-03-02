@@ -74,6 +74,7 @@ Stackable components:
 - `callout`
 - `read-more`
 - `code-group`
+- `code-tree`
 - `card`
 - `tabs`
 - `pm-install`

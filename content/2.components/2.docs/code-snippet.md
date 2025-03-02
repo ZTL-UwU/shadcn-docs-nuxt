@@ -1,9 +1,6 @@
 ---
 title: Code Snippet
 icon: lucide:clipboard
-navBadges:
-  - value: New
-    type: lime
 badges:
   - value: 0.8.11
   - value: Source

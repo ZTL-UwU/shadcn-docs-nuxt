@@ -2,7 +2,7 @@
   <UiCard
     class="relative overflow-hidden [&:not(:first-child)]:mt-5 [&:not(:last-child)]:mb-5"
     :class="[
-      inGroup && 'mb-0 rounded-t-none border-none shadow-none',
+      (inGroup || inTree) && 'mb-0 rounded-t-none border-none shadow-none',
       inStack && 'mb-0 rounded-none border-none shadow-none',
     ]"
   >
@@ -16,12 +16,12 @@
       <CodeCopy :code />
     </span>
     <div class="bg-muted/30">
-      <UiScrollArea :style="[parsedMeta.has('height') && `height: ${parsedMeta.get('height')}px`]">
+      <UiScrollArea :style="[(parsedMeta.has('height') || height) && `height: ${height || parsedMeta.get('height')}px`]">
         <div
           class="overflow-x-auto py-3 text-sm"
           :class="[
-            !inGroup && !filename && 'inline-copy',
-            !language && 'pl-3', !inGroup,
+            !inGroup && !inTree && !filename && 'inline-copy',
+            !language && 'pl-3',
             parsedMeta.has('line-numbers') && 'show-line-number',
           ]"
         >
@@ -40,6 +40,7 @@ import ScrollBar from '../ui/scroll-area/ScrollBar.vue';
 const {
   code = '',
   inGroup = false,
+  inTree = false,
   inStack = false,
   language,
   filename,
@@ -49,9 +50,11 @@ const {
   language?: BuiltinLanguage;
   filename?: string;
   inGroup?: boolean;
+  inTree?: boolean;
   inStack?: boolean;
   highlights?: number[];
   meta?: string;
+  height?: number;
 }>();
 
 const parsedMeta = computed(() => {

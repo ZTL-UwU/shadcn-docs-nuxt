@@ -146,4 +146,9 @@ interface FileTreeItem {
   children?: FileTreeItem[];
   highlighted: boolean;
   diff: FileTreeItemDiff;
+  path?: string;
 }
+
+type InputTreeItem = string | {
+  [key: string]: InputTreeItem[];
+};

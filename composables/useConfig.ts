@@ -102,6 +102,7 @@ const defaultConfig: DefaultConfig = {
       'jsx': 'vscode-icons:file-type-js',
       'md': 'vscode-icons:file-type-markdown',
       'mdc': 'vscode-icons:file-type-markdown',
+      'css': 'vscode-icons:file-type-css',
       'py': 'vscode-icons:file-type-python',
       'npm': 'vscode-icons:file-type-npm',
       'pnpm': 'vscode-icons:file-type-pnpm',
