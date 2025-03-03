@@ -105,6 +105,7 @@ interface DefaultConfig {
     carbonAds: {
       enable: boolean;
       disableInDev: boolean;
+      disableInMobile: boolean;
       fallback: boolean;
       fallbackMessage: string;
       code: string;

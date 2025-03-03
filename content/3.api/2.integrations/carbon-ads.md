@@ -48,6 +48,9 @@ toc:
   ::field{name="disableInDev" type="boolean" default-value="false"}
   Whether to disable Carbon Ads in dev environment.
   ::
+  ::field{name="disableInMobile" type="boolean" default-value="false"}
+  Whether to disable Carbon Ads on mobile.
+  ::
   ::field{name="fallback" type="boolean" default-value="false"}
   Whether to show fallback message when blocked by ad blockers
   ::

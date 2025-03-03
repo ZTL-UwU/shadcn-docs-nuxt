@@ -34,7 +34,7 @@
         </div>
       </div>
       <div class="flex-grow" />
-      <LayoutCarbonAds v-if="carbonAdsEnabled" />
+      <LayoutCarbonAds v-if="isDesktop && carbonAdsEnabled" />
     </div>
   </UiScrollArea>
   <UiCollapsible
@@ -62,9 +62,12 @@ defineProps<{ isSmall: boolean }>();
 
 const { toc } = useContent();
 const { title, links: configLinks, carbonAds } = useConfig().value.toc;
+
+const isDesktop = useMediaQuery('(min-width: 1024px)');
 const carbonAdsEnabled = computed(
   () => carbonAds.enable && !(import.meta.dev && carbonAds.disableInDev),
 );
+
 const { border } = useConfig().value.header;
 const isOpen = ref(false);
 
