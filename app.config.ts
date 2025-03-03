@@ -82,6 +82,10 @@ export default defineAppConfig({
         showLinkIcon: true,
       }],
       links: [{
+        icon: 'lucide:coffee',
+        to: 'https://ko-fi.com/ztl_uwu',
+        target: '_blank',
+      }, {
         icon: 'lucide:github',
         to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt',
         target: '_blank',
@@ -153,18 +157,24 @@ export default defineAppConfig({
     },
     footer: {
       credits: 'Made with ❤️ by [**Tony Zhang**](https://github.com/ZTL-UwU/)',
-      links: [
-        {
-          title: 'shadcn-vue',
-          to: 'https://www.shadcn-vue.com/',
-          target: '_blank',
-        },
-        {
-          icon: 'lucide:github',
-          to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt',
-          target: '_blank',
-        },
-      ],
+      links: [{
+        icon: 'lucide:heart',
+        title: 'Sponsor Me',
+        to: 'https://ko-fi.com/ztl_uwu',
+        target: '_blank',
+      }, {
+        icon: 'lucide:twitter',
+        to: 'https://x.com/ZTL_UwU',
+        target: '_blank',
+      }, {
+        icon: 'lucide-lab:butterfly',
+        to: 'https://bsky.app/profile/ztl-uwu.bsky.social',
+        target: '_blank',
+      }, {
+        icon: 'lucide:github',
+        to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt',
+        target: '_blank',
+      }],
     },
     toc: {
       enable: true,

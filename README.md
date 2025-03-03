@@ -6,23 +6,24 @@
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![License][license-src]][license-href]
+[![sponsor][sponsor-src]][sponsor-href]
 
 Beautifully designed _Nuxt Content_ template built with _shadcn-vue_. **Customizable. Compatible. Open Source.**
 
-- [Documentation / Demo](https://shadcn-docs-nuxt.vercel.app/)
+📖 [Documentation / Demo](https://shadcn-docs-nuxt.vercel.app/)
 
 ## Quick Start
 
 1. Create a project with the [starter template](https://github.com/ZTL-UwU/shadcn-docs-nuxt-starter)
 
   ```bash
-  npx nuxi@latest init -t github:ZTL-UwU/shadcn-docs-nuxt-starter
+  npx nuxi@latest init shadcn-docs -t github:ZTL-UwU/shadcn-docs-nuxt-starter
   ```
 
-2. Install dependencies
+2. Navigating to the Project Directory
 
   ```bash
-  npm install
+  cd shadcn-docs
   ```
 
 3. Start dev server
@@ -36,6 +37,7 @@ Beautifully designed _Nuxt Content_ template built with _shadcn-vue_. **Customiz
 1. Clone this repository.
 2. Install dependencies `bun install`.
 3. Use `bun run dev` to start dev server.
+4. Before committing, run `bun run lint:fix` and `bun run typecheck`.
 
 ## Credits
 
@@ -45,9 +47,18 @@ Beautifully designed _Nuxt Content_ template built with _shadcn-vue_. **Customiz
 - [Docus](https://docus.dev/): For the inspiration & some docs component source.
 - [Nuxt UI Pro Docs](https://docs-template.nuxt.dev/): For the inspiration.
 
+## Who's Using
+
+- [unovue/inspira-ui](https://github.com/unovue/inspira-ui)
+- [unovue/motion-vue](https://github.com/unovue/motion-vue)
+- [nuxt-monaco-editor](https://github.com/e-chan1007/nuxt-monaco-editor)
+- [nuxt-umami](https://github.com/ijkml/nuxt-umami)
+- [Msty](https://docs.msty.app/getting-started/onboarding)
+- [Add your project 🚀](https://github.com/ZTL-UwU/shadcn-docs-nuxt/edit/main/README.md)
+
 ## License
 
-MIT
+[MIT](https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/LICENSE)
 
 ---
 
@@ -61,3 +72,5 @@ MIT
 [license-href]: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/LICENSE
 [nuxt-src]: https://img.shields.io/badge/Built%20With%20Nuxt-18181B?logo=nuxt
 [nuxt-href]: https://nuxt.com/
+[sponsor-src]: https://img.shields.io/badge/sponsor%20me-18181B?logo=kofi
+[sponsor-href]: https://ko-fi.com/ztl_uwu

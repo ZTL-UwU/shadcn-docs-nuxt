@@ -14,6 +14,7 @@ export default defineAppConfig({
       carbonAds: {
         enable: true,
         disableInDev: false,
+        disableInMobile: false,
         fallback: false, // whether to show fallback message when blocked by ad blockers
         code: 'your-carbon-code', // aka the 'serve' code
         placement: 'your-carbon-placement',
