@@ -1,6 +1,6 @@
 <template>
   <UiCard
-    class="overflow-clip lg:grid lg:grid-cols-3"
+    class="overflow-clip lg:grid lg:grid-cols-3 [&:not(:first-child)]:mt-5"
     :class="[inStack && 'mb-0 rounded-none border-none shadow-none']"
   >
     <div class="border-b lg:border-b-0 lg:border-r">
