@@ -30,9 +30,9 @@ function render() {
 
     let p = tree;
     parts.forEach((item, i) => {
-      let node = tree.find(x => x.title === item);
+      let node = p.find(x => x.title === item);
+      const isFile = i === parts.length - 1;
       if (!node) {
-        const isFile = i === parts.length - 1;
         node = {
           title: item,
           children: isFile ? undefined : [],
@@ -43,7 +43,7 @@ function render() {
         };
         p.push(node);
       }
-      if (node.children) {
+      if (!isFile && node.children) {
         p = node.children;
       }
     });
