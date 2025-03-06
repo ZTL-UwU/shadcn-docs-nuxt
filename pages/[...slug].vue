@@ -11,45 +11,58 @@
     </span>
   </div>
 
-  <main
-    v-else
-    class="relative py-6"
-    :class="[config.toc.enable && (page.toc ?? true) && 'lg:grid lg:grid-cols-[1fr_220px] lg:gap-14 lg:py-8']"
-  >
-    <div class="mx-auto w-full min-w-0">
-      <LayoutBreadcrumb v-if="page?.body && config.main.breadCrumb && (page.breadcrumb ?? true)" class="mb-4" />
-      <LayoutTitle
-        v-if="config.main.showTitle"
-        :title="page?.title"
-        :description="page?.description"
-        :badges="page?.badges"
-        :authors="page?.authors"
-      />
-
-      <Alert
-        v-if="page?.body?.children?.length === 0"
-        title="Empty Page"
-        icon="lucide:circle-x"
-      >
-        Start writing in <ProseCodeInline>content/{{ page?._file }}</ProseCodeInline> to see this page taking shape.
-      </Alert>
-
+  <template v-else>
+    <div
+      v-if="page?.fullpage"
+      class="px-4 py-6 md:px-8"
+      :class="[config.main.padded && 'container']"
+    >
       <ContentRenderer
-        v-else
         :key="page._id"
         :value="page"
         :data="appConfig.shadcnDocs.data"
-        class="docs-content"
       />
+    </div>
+    <main
+      v-else
+      class="relative py-6"
+      :class="[config.toc.enable && (page.toc ?? true) && 'lg:grid lg:grid-cols-[1fr_220px] lg:gap-14 lg:py-8']"
+    >
+      <div class="mx-auto w-full min-w-0">
+        <LayoutBreadcrumb v-if="page?.body && config.main.breadCrumb && (page.breadcrumb ?? true)" class="mb-4" />
+        <LayoutTitle
+          v-if="config.main.showTitle"
+          :title="page?.title"
+          :description="page?.description"
+          :badges="page?.badges"
+          :authors="page?.authors"
+        />
 
-      <LayoutDocsFooter />
-    </div>
-    <div v-if="config.toc.enable && (page.toc ?? true)" class="hidden text-sm lg:block">
-      <div class="sticky top-[90px] h-[calc(100vh-3.5rem)] overflow-hidden">
-        <LayoutToc :is-small="false" />
+        <Alert
+          v-if="page?.body?.children?.length === 0"
+          title="Empty Page"
+          icon="lucide:circle-x"
+        >
+          Start writing in <ProseCodeInline>content/{{ page?._file }}</ProseCodeInline> to see this page taking shape.
+        </Alert>
+
+        <ContentRenderer
+          v-else
+          :key="page._id"
+          :value="page"
+          :data="appConfig.shadcnDocs.data"
+          class="docs-content"
+        />
+
+        <LayoutDocsFooter />
       </div>
-    </div>
-  </main>
+      <div v-if="config.toc.enable && (page.toc ?? true)" class="hidden text-sm lg:block">
+        <div class="sticky top-[90px] h-[calc(100vh-3.5rem)] overflow-hidden">
+          <LayoutToc :is-small="false" />
+        </div>
+      </div>
+    </main>
+  </template>
 </template>
 
 <script setup lang="ts">
