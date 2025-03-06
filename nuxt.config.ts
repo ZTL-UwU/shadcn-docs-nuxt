@@ -56,6 +56,7 @@ export default defineNuxtConfig({
         'editLink',
         'prevNext',
         'breadcrumb',
+        'fullpage',
       ],
     },
     experimental: {

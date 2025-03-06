@@ -50,6 +50,7 @@
           v-else
           :key="page._id"
           :value="page"
+          :data="appConfig.shadcnDocs.data"
           class="docs-content"
         />
 
