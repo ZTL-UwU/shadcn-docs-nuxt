@@ -85,15 +85,11 @@ export default defineAppConfig({
         icon: 'lucide:coffee',
         to: 'https://ko-fi.com/ztl_uwu',
         target: '_blank',
-      }],
-      githubButton: {
-        enable: true,
-        owner: 'ZTL-UwU',
-        repo: 'shadcn-docs-nuxt',
-        showStarCount: true,
-        target: '_blank',
+      }, {
         icon: 'lucide:github',
-      },
+        to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt',
+        target: '_blank',
+      }],
     },
     aside: {
       useLevel: true,

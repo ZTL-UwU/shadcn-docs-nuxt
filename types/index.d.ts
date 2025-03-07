@@ -35,14 +35,6 @@ interface DefaultConfig {
     };
     showTitleInMobile: boolean;
     darkModeToggle: boolean;
-    githubButton: {
-      enable: boolean;
-      owner: string;
-      repo: string;
-      showStarCount: boolean;
-      target: Target;
-      icon: string;
-    };
     nav: ({
       title: string;
       to: string;

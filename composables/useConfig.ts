@@ -46,14 +46,6 @@ const defaultConfig: DefaultConfig = {
     darkModeToggle: true,
     nav: [],
     links: [],
-    githubButton: {
-      enable: false,
-      owner: '',
-      repo: '',
-      showStarCount: false,
-      target: '_blank',
-      icon: 'lucide:github',
-    },
   },
   aside: {
     useLevel: true,

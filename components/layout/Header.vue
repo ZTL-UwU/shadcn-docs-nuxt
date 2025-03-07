@@ -27,23 +27,6 @@
               <SmartIcon v-if="link?.icon" :name="link.icon" :size="18" />
             </UiButton>
           </NuxtLink>
-          <NuxtLink
-            v-if="githubButton.enable"
-            :to="`https://github.com/${githubButton.owner}/${githubButton.repo}`"
-            :target="githubButton.target"
-          >
-            <UiButton
-              variant="ghost"
-              :size="githubButton.showStarCount ? 'default' : 'icon'"
-              class="flex gap-2"
-              :class="[githubButton.showStarCount && 'px-3']"
-            >
-              <SmartIcon v-if="githubButton?.icon" :name="githubButton.icon" :size="18" />
-              <span v-if="githubButton.showStarCount && data?.stargazers_count" class="text-xs font-semibold">
-                {{ formatNumber(data.stargazers_count) }}
-              </span>
-            </UiButton>
-          </NuxtLink>
         </div>
       </div>
     </div>
@@ -57,14 +40,9 @@
 const config = useConfig();
 const { page } = useContent();
 
-const { githubButton } = useConfig().value.header;
-
 const showToc = computed(() => {
   return config.value.toc.enable
     && config.value.toc.enableInMobile
     && (page.value?._path === '/' ? config.value.toc.enableInHomepage : true);
 });
-
-const { data } = await useFetch<{ stargazers_count: number }>(`https://api.github.com/repos/${githubButton.owner}/${githubButton.repo}`);
-const { format: formatNumber } = Intl.NumberFormat('en-US', { notation: 'compact', maximumFractionDigits: 1 });
 </script>
