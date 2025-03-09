@@ -49,8 +49,8 @@ Beautifully designed _Nuxt Content_ template built with _shadcn-vue_. **Customiz
 
 ## Who's Using
 
-- [unovue/inspira-ui](https://github.com/unovue/inspira-ui) 1.9K ⭐️
-- [motion-vue](https://github.com/motiondivision/motion-vue) 1.5K ⭐️
+- [unovue/inspira-ui](https://github.com/unovue/inspira-ui)
+- [unovue/motion-vue](https://github.com/unovue/motion-vue)
 - [nuxt-monaco-editor](https://github.com/e-chan1007/nuxt-monaco-editor)
 - [nuxt-umami](https://github.com/ijkml/nuxt-umami)
 - [Msty](https://docs.msty.app/getting-started/onboarding)
