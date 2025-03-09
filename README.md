@@ -23,7 +23,7 @@ Beautifully designed _Nuxt Content_ template built with _shadcn-vue_. **Customiz
 2. Navigating to the Project Directory
 
   ```bash
-  cd <project-name>
+  cd [project-name]
   ```
 
 3. Start dev server
