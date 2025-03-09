@@ -35,6 +35,11 @@ export default defineNuxtConfig({
   css: [
     join(currentDir, './assets/css/themes.css'),
   ],
+  tailwindcss: {
+    config: {
+      content: ['./pages/**/*.{vue,js,ts}', './components/**/*.{vue,js,ts}'],
+    },
+  },
   content: {
     documentDriven: true,
     highlight: {

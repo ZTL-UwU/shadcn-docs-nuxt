@@ -4,7 +4,6 @@ export default defineConfig({
   exclude: [
     '@nuxt/content',
     'tailwind-merge',
-    'shiki',
   ],
   force: true,
   write: true,
