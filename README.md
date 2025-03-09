@@ -17,13 +17,13 @@ Beautifully designed _Nuxt Content_ template built with _shadcn-vue_. **Customiz
 1. Create a project with the [starter template](https://github.com/ZTL-UwU/shadcn-docs-nuxt-starter)
 
   ```bash
-  npx nuxi@latest init shadcn-docs -t github:ZTL-UwU/shadcn-docs-nuxt-starter
+  npx nuxi@latest init -t github:ZTL-UwU/shadcn-docs-nuxt-starter
   ```
 
 2. Navigating to the Project Directory
 
   ```bash
-  cd shadcn-docs
+  cd <project-name>
   ```
 
 3. Start dev server
