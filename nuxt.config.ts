@@ -15,6 +15,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     'nuxt-og-image',
     '@nuxt/scripts',
+    '@nuxtjs/i18n',
   ],
   shadcn: {
     prefix: 'Ui',
@@ -64,7 +65,7 @@ export default defineNuxtConfig({
         'editLink',
         'prevNext',
         'breadcrumb',
-        'fullpage',
+        'fullpage'
       ],
     },
     experimental: {
@@ -90,4 +91,19 @@ export default defineNuxtConfig({
     transpile: ['shiki', 'ohash'],
   },
   compatibilityDate: '2024-07-05',
+  i18n: {
+    detectBrowserLanguage: false,
+    strategy: 'prefix_except_default',
+    defaultLocale: 'en',
+    locales: [
+      {
+        code: 'en',
+        name: 'English'
+      },
+      {
+        code: 'fr',
+        name: 'Français'
+      }
+    ]
+  }
 });

@@ -15,6 +15,7 @@
         <LayoutSearchButton v-if="!config.search.inAside && config.search.style === 'input'" />
         <div class="flex">
           <LayoutSearchButton v-if="!config.search.inAside && config.search.style === 'button'" />
+          <LangSwitcher v-if="i18nEnabled" />
           <ThemePopover v-if="config.theme.customizable" />
           <DarkModeToggle v-if="config.header.darkModeToggle" />
           <NuxtLink
@@ -38,6 +39,7 @@
 
 <script setup lang="ts">
 const config = useConfig();
+const i18nEnabled = !!useNuxtApp().$config.public.i18n;
 const { page } = useContent();
 
 const showToc = computed(() => {
