@@ -37,7 +37,10 @@ export default defineNuxtConfig({
   ],
   tailwindcss: {
     config: {
-      content: ['./pages/**/*.{vue,js,ts}', './components/**/*.{vue,js,ts}'],
+      content: [
+        join(currentDir, './pages/**/*.{vue,js,ts}'),
+        join(currentDir, './components/**/*.{vue,js,ts}'),
+      ],
     },
   },
   content: {
