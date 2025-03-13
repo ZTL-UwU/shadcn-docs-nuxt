@@ -3,7 +3,7 @@
     <LayoutHeaderNavMobile v-if="isMobile" class="mb-5 border-b pb-2" />
     <LayoutSearchButton v-if="config.search.inAside" />
     <ul v-if="config.aside.useLevel" class="flex flex-col gap-1 border-b pb-4">
-      <li v-for="link in navigation" :key="link.id">
+      <li v-for="link in localizedNav" :key="link.id">
         <NuxtLink
           :to="link.redirect ?? link._path"
           class="flex h-8 items-center gap-2 rounded-md p-2 text-sm text-foreground/80 hover:bg-muted hover:text-primary"
@@ -36,23 +36,39 @@
 </template>
 
 <script setup lang="ts">
+import type {NavItem} from '@nuxt/content';
+
 defineProps<{ isMobile: boolean }>();
 
 const { navDirFromPath } = useContentHelpers();
-const { navigation } = useContent();
+const { navigation, page } = useContent();
 const config = useConfig();
+const { locale, defaultLocale, availableLocales } = useI18n();
+
+const localizedNav = computed(() => {
+  const currentLocale = locale.value;
+  const otherLocales = availableLocales.filter(l => l !== defaultLocale);
+  const filteredNav = navigation.value.filter(nav => {
+    if (currentLocale === defaultLocale) {
+      return !otherLocales.some(l => nav._path.startsWith(`/${l}`))
+    }
+    return nav._path.startsWith(`/${currentLocale}`)
+  })
+  return currentLocale === defaultLocale ? filteredNav : filteredNav[0].children;
+})
 
 const tree = computed(() => {
+  const currentLocale = locale.value;
   const route = useRoute();
   const path = route.path.split('/');
   if (config.value.aside.useLevel) {
-    const leveledPath = path.splice(0, 2).join('/');
+    const leveledPath = path.splice(0,  currentLocale === defaultLocale ? 2 : 3).join('/');
 
-    const dir = navDirFromPath(leveledPath, navigation.value);
+    const dir = navDirFromPath(leveledPath, localizedNav.value);
     return dir ?? [];
   }
 
-  return navigation.value;
+  return localizedNav.value;
 });
 
 const path = computed(() => useRoute().path);
