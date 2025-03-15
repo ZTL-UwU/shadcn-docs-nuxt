@@ -47,7 +47,7 @@
     "taze": "taze"
   },
   "dependencies": {
-    "@iconify-json/lucide": "^1.2.29",
+    "@iconify-json/lucide": "^1.2.30",
     "@iconify-json/vscode-icons": "^1.2.16",
     "@nuxt/content": "^2.13.4",
     "@nuxt/icon": "^1.11.0",
@@ -59,7 +59,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "nuxt": "^3.16.0",
-    "nuxt-og-image": "^5.0.2",
+    "nuxt-og-image": "^5.0.3",
     "radix-vue": "^1.9.17",
     "shadcn-nuxt": "^1.0.3",
     "tailwind-merge": "^2.6.0",
