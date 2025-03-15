@@ -5,7 +5,7 @@
   >
     <ContentRenderer
       :key="page._id"
-      :value="page"
+      :value="data || page"
       :data="appConfig.shadcnDocs.data"
     />
   </div>
@@ -15,6 +15,8 @@
 const { page } = useContent();
 const config = useConfig();
 const appConfig = useAppConfig();
+
+const { data } = useLocalizedContent();
 
 useSeoMeta({
   title: `${page.value?.title ?? '404'} - ${config.value.site.name}`,

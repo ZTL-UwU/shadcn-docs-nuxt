@@ -210,5 +210,8 @@ export default defineAppConfig({
       inAside: false,
     },
     data: {},
+    i18n: {
+      enable: true,
+    },
   },
 });

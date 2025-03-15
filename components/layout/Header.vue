@@ -17,6 +17,7 @@
           <LayoutSearchButton v-if="!config.search.inAside && config.search.style === 'button'" />
           <ThemePopover v-if="config.theme.customizable" />
           <DarkModeToggle v-if="config.header.darkModeToggle" />
+          <I18nSwitcher v-if="config.i18n.enable" />
           <NuxtLink
             v-for="(link, i) in config.header.links"
             :key="i"
@@ -39,7 +40,6 @@
 <script setup lang="ts">
 const config = useConfig();
 const { page } = useContent();
-
 const showToc = computed(() => {
   return config.value.toc.enable
     && config.value.toc.enableInMobile

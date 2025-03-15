@@ -3,7 +3,7 @@
     <LayoutHeaderNavMobile v-if="isMobile" class="mb-5 border-b pb-2" />
     <LayoutSearchButton v-if="config.search.inAside" />
     <ul v-if="config.aside.useLevel" class="flex flex-col gap-1 border-b pb-4">
-      <li v-for="link in navigation" :key="link.id">
+      <li v-for="link in filteredNavigation" :key="link.id">
         <NuxtLink
           :to="link.redirect ?? link._path"
           class="flex h-8 items-center gap-2 rounded-md p-2 text-sm text-foreground/80 hover:bg-muted hover:text-primary"
@@ -28,7 +28,7 @@
       </li>
     </ul>
     <LayoutAsideTree
-      :links="tree"
+      :links="filteredTree"
       :level="0"
       :class="[config.aside.useLevel ? 'pt-4' : 'pt-1']"
     />
@@ -42,17 +42,43 @@ const { navDirFromPath } = useContentHelpers();
 const { navigation } = useContent();
 const config = useConfig();
 
-const tree = computed(() => {
+const filteredNavigation = computed(() => {
+  return filterEnglishContent(navigation.value);
+});
+
+function filterEnglishContent(items) {
+  if (!items)
+    return [];
+
+  return items
+    .filter(item => !item._path.match(/\.[a-z]{2}(-[a-z]{2})?$/i))
+    .map((item) => {
+      const newItem = { ...item };
+
+      if (item.children && item.children.length > 0) {
+        newItem.children = filterEnglishContent(item.children);
+      }
+
+      return newItem;
+    });
+}
+
+const filteredTree = computed(() => {
   const route = useRoute();
   const path = route.path.split('/');
+
   if (config.value.aside.useLevel) {
     const leveledPath = path.splice(0, 2).join('/');
 
-    const dir = navDirFromPath(leveledPath, navigation.value);
-    return dir ?? [];
+    const dir = navDirFromPath(leveledPath, filteredNavigation.value);
+    if (dir && dir.length > 0) {
+      return dir;
+    }
+
+    return [];
   }
 
-  return navigation.value;
+  return filteredNavigation.value;
 });
 
 const path = computed(() => useRoute().path);

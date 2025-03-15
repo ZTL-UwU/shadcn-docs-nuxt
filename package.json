@@ -54,6 +54,7 @@
     "@nuxt/image": "^1.9.0",
     "@nuxt/scripts": "^0.11.2",
     "@nuxtjs/color-mode": "^3.5.2",
+    "@nuxtjs/i18n": "9.3.1",
     "@nuxtjs/mdc": "^0.15.0",
     "@nuxtjs/tailwindcss": "^6.13.2",
     "class-variance-authority": "^0.7.1",
@@ -66,6 +67,7 @@
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.8.2",
     "vue": "^3.5.13",
+    "vue-i18n": "^11.1.2",
     "vue-router": "^4.5.0"
   },
   "devDependencies": {

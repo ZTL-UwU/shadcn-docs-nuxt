@@ -15,6 +15,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     'nuxt-og-image',
     '@nuxt/scripts',
+    '@nuxtjs/i18n',
   ],
   shadcn: {
     prefix: 'Ui',
@@ -88,6 +89,17 @@ export default defineNuxtConfig({
   },
   build: {
     transpile: ['shiki', 'ohash'],
+  },
+  i18n: {
+    vueI18n: './locales/i18n.config.ts',
+    locales: [
+      { code: 'en', language: 'en-US', name: 'English', file: 'en.json' },
+      { code: 'ja', language: 'ja', name: '日本語', file: 'ja.json' },
+    ],
+    defaultLocale: 'en',
+    langDir: '../locales',
+    strategy: 'no_prefix',
+    lazy: true,
   },
   compatibilityDate: '2024-07-05',
 });
