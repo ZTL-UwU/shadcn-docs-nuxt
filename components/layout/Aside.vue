@@ -46,7 +46,7 @@ const filteredNavigation = computed(() => {
   return filterEnglishContent(navigation.value);
 });
 
-function filterEnglishContent(items) {
+function filterEnglishContent(items: typeof navigation.value) {
   if (!items)
     return [];
 

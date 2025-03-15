@@ -39,7 +39,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Locale, LocaleMessageObject } from 'vue-i18n';
+import type { Locale } from 'vue-i18n';
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core';
 
 const breakpoints = useBreakpoints(breakpointsTailwind);
