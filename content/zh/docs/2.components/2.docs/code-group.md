@@ -1,5 +1,5 @@
 ---
-title: Code Group
+title: 代码组
 icon: lucide:code-xml
 badges:
   - value: Nuxt UI Pro
@@ -8,13 +8,13 @@ badges:
   - value: Docus
     to: https://docus.dev/api/components#codegroup
     target: _blank
-  - value: Source
+  - value: 源码
     icon: lucide:code
     to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/CodeGroup.vue
     target: _blank
 ---
 
-## Usage
+## 使用方法
 
 ::stack
   ::div{class="p-4"}
@@ -32,9 +32,9 @@ badges:
       ```vue [pages/index.vue]
       <template>
         <div>
-          <h1>Welcome to the homepage</h1>
+          <h1>欢迎来到首页</h1>
           <AppAlert>
-            This is an auto-imported component
+            这是一个自动导入的组件
           </AppAlert>
         </div>
       </template>
@@ -57,9 +57,9 @@ badges:
     ```vue [pages/index.vue]
     <template>
       <div>
-        <h1>Welcome to the homepage</h1>
+        <h1>欢迎来到首页</h1>
         <AppAlert>
-          This is an auto-imported component
+          这是一个自动导入的组件
         </AppAlert>
       </div>
     </template>
@@ -69,9 +69,9 @@ badges:
 ::
 
 ::alert{to="/docs/components/docs/tabs"}
-`::code-group`{lang="mdc"} is a wrapper around `::tabs{variant="card"}`{lang="mdc"}.
+`::code-group`{lang="mdc"} 是 `::tabs{variant="card"}`{lang="mdc"} 的包装器。
 ::
 
-## Props
+## 属性
 
-:field{name="sync" type="string"}[Sync scope for `::tabs`]
+:field{name="sync" type="string"}[`::tabs` 的同步作用域] 

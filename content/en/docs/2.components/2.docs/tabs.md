@@ -266,7 +266,7 @@ badges:
 ### Synced Tabs
 :badge[0.8.0]{variant="outline"}
 
-:read-more{to="/components/docs/pm"}
+:read-more{to="/docs/components/docs/pm"}
 
 ::stack
   ::div{class="p-4 md:p-8"}
