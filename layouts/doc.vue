@@ -20,6 +20,5 @@ const route = useRoute();
 const config = useConfig();
 const { page } = await useContent();
 const { navigation } = await useNavigation();
-console.log('navigation.value', navigation.value);
 </script>
 

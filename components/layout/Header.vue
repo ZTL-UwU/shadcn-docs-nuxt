@@ -18,7 +18,7 @@
           <ThemePopover v-if="config.theme.customizable" />
           <DarkModeToggle v-if="config.header.darkModeToggle" />
           <ChooseLanguage />
-          <NuxtLink
+          <NuxtLinkLocale
             v-for="(link, i) in config.header.links"
             :key="i"
             :to="link?.to"
@@ -27,7 +27,7 @@
             <UiButton variant="ghost" size="icon" class="flex gap-2">
               <SmartIcon v-if="link?.icon" :name="link.icon" :size="18" />
             </UiButton>
-          </NuxtLink>
+          </NuxtLinkLocale>
         </div>
       </div>
     </div>

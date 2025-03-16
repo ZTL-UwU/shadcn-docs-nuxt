@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="!page?.body"
+    v-if="!page"
     class="flex h-[calc(100vh-3.5rem)] items-center justify-center"
   >
     <h3 class="scroll-m-20 border-r px-4 py-3 text-2xl font-semibold">

@@ -2,37 +2,61 @@
  * 替代 Nuxt Content v2 中的 useContent 组合式函数
  * 在 Nuxt Content v3 中，useContent 被移除了，需要使用 queryCollection 替代
  */
-import type { Collections } from '@nuxt/content';
+import type { Collections, ContentNavigationItem } from '@nuxt/content';
 
 export async function useContent() {
   const route = useRoute();
   const { locale } = useI18n();
   const config = useConfig();
   const appConfig = useAppConfig();
-  const slug = computed(() => `/${typeof route.params.slug === 'string' ? route.params.slug : route.params.slug?.join('/') ?? ''}`);
   
   const localePath = useLocalePath()
 
-  console.log('slug.value', slug.value);
-  console.log('route.path', route.path);
-  console.log('route.path locale', route.path.replace(`/${locale.value}/`, '/'));
-  console.log('localePath route.path ', localePath(route.path));
+  let path = route.path
+  if (!path.startsWith(`/${locale.value}`)) {
+    path = `/${locale.value}${path}`
+  }
+  // if (path.startsWith(`/${locale.value}`)) {
+  //   path = path.replace(`/${locale.value}/`, '/')
+  // }
+  console.log('path', path);
   
-  const { data: page } = await useAsyncData(slug.value, () => {
-    return queryCollection(`doc_${locale.value}`).path(route.path).first();
+  const { data: page } = await useAsyncData('content', () => {
+    return queryCollection(`doc_${locale.value}`).path(path).first();
   });
   return {
     page,
   };
 }
 
-export async function useNavigation() {
+export async function useNavigation(collectionName: string = 'docs') {
   const { locale } = useI18n();
   const { data } = await useAsyncData('navigation', () => {
     return queryCollectionNavigation(`doc_${locale.value}`)
   });
+  function getNavigationByChildPath(data: ContentNavigationItem[],path: string) {
+    const child = data.find(item => item.path === path)
+    if (child) {
+      return child.children
+    }
+    return []
+  }
   return {
-    navigation: computed(() => data.value?.[0]?.children?.[0]?.children),
+    navigation: computed(() => {
+      const children = [`/${locale.value}`, `/${locale.value}/${collectionName}`]
+      if (!data.value) {
+        return []
+      }
+      let currentData = data.value
+      for (const child of children) {
+        const childData = getNavigationByChildPath(currentData, child)
+        if (!childData || childData.length === 0) {
+          return currentData
+        }
+        currentData = childData
+      }
+      return currentData
+    }),
   };
 }
 

@@ -38,8 +38,7 @@
 <script setup lang="ts">
 defineProps<{ isMobile: boolean }>();
 
-
-const { navigation } = await useNavigation();
+const { navigation } = await useNavigation('docs');
 const { page } = await useContent();
 const config = useConfig();
 
