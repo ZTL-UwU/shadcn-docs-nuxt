@@ -4,7 +4,7 @@ interface BreadcrumbItem {
 }
 
 export function useBreadcrumb(url: string): BreadcrumbItem[] {
-  const { navigation } = useContent();
+  const { navigation } = useContentV3();
 
   const breadcrumbItems: BreadcrumbItem[] = [];
   // Remove empty segments

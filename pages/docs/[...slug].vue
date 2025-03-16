@@ -1,42 +1,29 @@
 <template>
-  <div
-    class="px-4 py-6 md:px-8"
-    :class="[config.main.padded && 'container']"
-  >
-    <ContentRenderer
-      v-if="page"
-      :key="page.id"
-      :value="page"
-      :data="appConfig.shadcnDocs.data"
-      :dir="localeProperties?.dir ?? 'ltr'"
-    />
-    <ProseCode
-      code="console.log('Hello, world!')"
-    >
-      111
-    </ProseCode>
-  </div>
+  <ContentRenderer
+    v-if="page"
+    :key="page.id"
+    :value="page"
+    :data="appConfig.shadcnDocs.data"
+    :dir="localeProperties?.dir ?? 'ltr'"
+  />
 </template>
 
 <script setup lang="ts">
 import type { Collections } from '@nuxt/content';
-import { withLeadingSlash } from 'ufo';
 
 const route = useRoute();
 const { locale, localeProperties } = useI18n();
 const config = useConfig();
 const appConfig = useAppConfig();
-const slug = computed(() => withLeadingSlash(String(route.params.slug || '')));
+const slug = computed(() => `/${typeof route.params.slug === 'string' ? route.params.slug : route.params.slug?.join('/') ?? ''}`);
 
 const { data: page } = await useAsyncData(`page-${slug.value}`, async () => {
-  console.log('locale.value', locale.value, 'slug.value', slug.value);
-  const collection = (`content_${locale.value}`) as keyof Collections;
+  const collection = (`doc_${locale.value}`) as keyof Collections;
   const content = await queryCollection(collection).path(slug.value).first();
-  console.log('content', content);
 
   // 如果在非默认语言中找不到内容，可能会回退到默认语言
   if (!content && locale.value !== config.value.defaultLocale) {
-    const defaultCollection = (`content_${config.value.defaultLocale}`) as keyof Collections;
+    const defaultCollection = (`doc_${config.value.defaultLocale}`) as keyof Collections;
     return await queryCollection(defaultCollection).path(slug.value).first();
   }
 
@@ -44,7 +31,7 @@ const { data: page } = await useAsyncData(`page-${slug.value}`, async () => {
 }, {
   watch: [locale],
 });
-
+console.log('page', page.value);
 if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: '页面未找到', fatal: true });
 }

@@ -65,7 +65,7 @@ tree:
       - content:
         - Accordion.vue
         - Alert.vue
-        - ProseCode.vue
+        - ProsePre.vue
         - ...
   ---
   ::
@@ -86,7 +86,7 @@ tree:
     - content:
       - Accordion.vue
       - Alert.vue
-      - ProseCode.vue
+      - ProsePre.vue
       - ...
 ---
 ::

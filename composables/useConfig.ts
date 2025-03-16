@@ -149,9 +149,34 @@ const defaultConfig: DefaultConfig = {
 export function useConfig() {
   const appConfig = computed(() => useAppConfig()?.shadcnDocs || {});
 
-  const { navKeyFromPath } = useContentHelpers();
-  const { navigation, page } = useContent();
-  const route = useRoute();
+  // TODO if unsplash, the unami will not throw error: Must be called at the top of a `setup` function
+
+  // // 替换先前删除的navKeyFromPath函数
+  // function navKeyFromPath(path: string, key: string, navigation: any[]): any {
+  //   if (!navigation)
+  //     return null;
+
+  //   for (const item of navigation) {
+  //     if ((item.path === path || item._path === path) && key in item) {
+  //       return item[key];
+  //     }
+
+  //     // 递归查找
+  //     if (item.children?.length) {
+  //       const result: any = navKeyFromPath(path, key, item.children);
+  //       if (result !== null && result !== undefined)
+  //         return result;
+  //     }
+  //   }
+
+  //   return null;
+  // }
+
+  // // 使用新的useContentV3替代原来的useContent
+  // const { navigation, page } = useContentV3();
+  // const result = queryCollection('content_en').path('index').first();
+  // console.log('result', result.page);
+  // const route = useRoute();
 
   return computed(
     () => {
@@ -168,33 +193,33 @@ export function useConfig() {
         ...processedConfig,
         header: {
           ...header,
-          ...navKeyFromPath(route.path, 'header', navigation.value || []),
-          ...page.value?.header,
+          // ...navKeyFromPath(route.path, 'header', navigation.value || []),
+          // ...page.value?.header,
         } as (typeof header & DefaultConfig['header']),
         banner: {
           ...banner,
-          ...navKeyFromPath(route.path, 'banner', navigation.value || []),
-          ...page.value?.banner,
+          // ...navKeyFromPath(route.path, 'banner', navigation.value || []),
+          // ...page.value?.banner,
         } as (typeof banner & DefaultConfig['banner']),
         main: {
           ...main,
-          ...navKeyFromPath(route.path, 'main', navigation.value || []),
-          ...page.value?.main,
+          // ...navKeyFromPath(route.path, 'main', navigation.value || []),
+          // ...page.value?.main,
         } as (typeof main & DefaultConfig['main']),
         aside: {
           ...aside,
-          ...navKeyFromPath(route.path, 'aside', navigation.value || []),
-          ...page.value?.aside,
+          // ...navKeyFromPath(route.path, 'aside', navigation.value || []),
+          // ...page.value?.aside,
         } as (typeof aside & DefaultConfig['aside']),
         toc: {
           ...toc,
-          ...navKeyFromPath(route.path, 'toc', navigation.value || []),
-          ...page.value?.toc,
+          // ...navKeyFromPath(route.path, 'toc', navigation.value || []),
+          // ...page.value?.toc,
         } as (typeof toc & DefaultConfig['toc']),
         footer: {
           ...footer,
-          ...navKeyFromPath(route.path, 'footer', navigation.value || []),
-          ...page.value?.footer,
+          // ...navKeyFromPath(route.path, 'footer', navigation.value || []),
+          // ...page.value?.footer,
         } as (typeof footer & DefaultConfig['footer']),
       };
     },

@@ -74,3 +74,24 @@ Beautifully designed _Nuxt Content_ template built with _shadcn-vue_. **Customiz
 [nuxt-href]: https://nuxt.com/
 [sponsor-src]: https://img.shields.io/badge/sponsor%20me-18181B?logo=kofi
 [sponsor-href]: https://ko-fi.com/ztl_uwu
+
+## 迁移解决问题
+
+### 在PmX中没有显示对应的CodeGroup组件
+解决办法：
+在nuxt.config.ts的components中添加
+```
+    global: true,
+```
+来源:https://github.com/nuxt/content/issues/2443#issuecomment-1944028599
+
+
+## 已知问题
+
+### 在pm-x解析中代码块显示不正确
+
+没有对应的高亮
+
+但是在直接显示代码块的时候是好的
+
+关联迁移：官方把`ProseCode`变成了`ProsePre`，把`ProseCodeInline`变成了`ProseCode`

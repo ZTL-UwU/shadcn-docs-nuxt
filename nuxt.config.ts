@@ -15,12 +15,14 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     'nuxt-og-image',
     '@nuxt/scripts',
+    '@nuxtjs/i18n',
   ],
   shadcn: {
     prefix: 'Ui',
     componentDir: join(currentDir, './components/ui'),
   },
   components: {
+    global: true,
     dirs: [
       {
         path: './components',
@@ -43,36 +45,6 @@ export default defineNuxtConfig({
       ],
     },
   },
-  content: {
-    documentDriven: true,
-    highlight: {
-      theme: {
-        default: 'github-light',
-        dark: 'github-dark',
-      },
-      preload: ['json', 'js', 'ts', 'html', 'css', 'vue', 'diff', 'shell', 'markdown', 'mdc', 'yaml', 'bash', 'ini', 'dotenv'],
-    },
-    navigation: {
-      fields: [
-        'icon',
-        'navBadges',
-        'navTruncate',
-        'badges',
-        'toc',
-        'sidebar',
-        'collapse',
-        'editLink',
-        'prevNext',
-        'breadcrumb',
-        'fullpage',
-      ],
-    },
-    experimental: {
-      search: {
-        indexed: true,
-      },
-    },
-  },
   icon: {
     clientBundle: {
       scan: true,
@@ -90,4 +62,17 @@ export default defineNuxtConfig({
     transpile: ['shiki', 'ohash'],
   },
   compatibilityDate: '2024-07-05',
+  i18n: {
+    locales: [
+      { code: 'en', name: 'English', language: 'en-US', dir: 'ltr' },
+      { code: 'zh', name: 'Chinese', language: 'zh-CN', dir: 'ltr' },
+    ],
+    strategy: 'prefix_except_default',
+    defaultLocale: 'en',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root', // recommended
+    },
+  },
 });

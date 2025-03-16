@@ -8,10 +8,10 @@ navigation: false
 announcement:
   title: 'Code Tree Component'
   icon: lucide:folder-code
-  to: /components/docs/code-tree
+  to: /docs/components/docs/code-tree
 actions:
   - name: Get Started
-    to: /getting-started/introduction
+    to: /docs/getting-started/introduction
   - name: GitHub
     variant: outline
     to: https://github.com/ZTL-UwU/shadcn-docs-nuxt
@@ -31,5 +31,7 @@ Beautifully designed Nuxt Content template built with shadcn-vue. :br Customizab
 ::
 
 ::div{class="border rounded-lg shadow-md"}
-  :iframe{src="/getting-started/introduction" height="700" width="100%" class="rounded-lg" scrolling="no" frameborder="0"}
+  :iframe{src="/docs/getting-started/introduction" height="700" width="100%" class="rounded-lg" scrolling="no" frameborder="0"}
 ::
+
+

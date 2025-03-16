@@ -60,7 +60,7 @@
 <script setup lang="ts">
 defineProps<{ isSmall: boolean }>();
 
-const { toc } = useContent();
+const { toc } = useContentV3();
 const { title, links: configLinks, carbonAds } = useConfig().value.toc;
 
 const isDesktop = useMediaQuery('(min-width: 1024px)');

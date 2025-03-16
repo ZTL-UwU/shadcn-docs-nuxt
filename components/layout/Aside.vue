@@ -38,8 +38,33 @@
 <script setup lang="ts">
 defineProps<{ isMobile: boolean }>();
 
-const { navDirFromPath } = useContentHelpers();
-const { navigation } = useContent();
+// 替换 useContentHelpers 中的 navDirFromPath 函数
+function navDirFromPath(path: string, navigation: any[]) {
+  if (!navigation)
+    return null;
+
+  for (const item of navigation) {
+    if (item.path === path && item.children?.length) {
+      return item.children;
+    }
+
+    // 处理 _path 向 path 的迁移（Nuxt Content v3）
+    if (item._path === path && item.children?.length) {
+      return item.children;
+    }
+
+    // 递归查找
+    if (item.children?.length) {
+      const result = navDirFromPath(path, item.children);
+      if (result)
+        return result;
+    }
+  }
+
+  return null;
+}
+
+const { navigation } = useContentV3();
 const config = useConfig();
 
 const tree = computed(() => {

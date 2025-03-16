@@ -1,5 +1,5 @@
 <template>
-  <ProseCode
+  <ProsePreInsider
     :code="code"
     :language="language"
     :filename="filename"
@@ -7,7 +7,7 @@
     :meta="meta"
   >
     <pre :class="$props.class" :style="style"><slot /></pre>
-  </ProseCode>
+  </ProsePreInsider>
 </template>
 
 <script setup lang="ts">

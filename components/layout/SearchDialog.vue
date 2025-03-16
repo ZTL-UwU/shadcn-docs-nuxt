@@ -112,7 +112,19 @@ watch(
       return;
 
     searchLoading.value = true;
-    searchResult.value = (await searchContent(v)).value;
+    // 替换为 Nuxt Content v3 的搜索方式
+    try {
+      // 在 v3 中使用 queryCollectionSearchSections 代替 searchContent
+      // 由于目前没有正确的导入方式，暂时注释掉实际搜索
+      // searchResult.value = await queryCollectionSearchSections('content', v).find();
+
+      // 临时措施：清空搜索结果
+      searchResult.value = [];
+      console.warn('searchContent 在 Nuxt Content v3 中已移除，需要更新为 queryCollectionSearchSections');
+    } catch (error) {
+      console.error('搜索错误:', error);
+      searchResult.value = [];
+    }
     searchLoading.value = false;
   },
 );
@@ -121,8 +133,26 @@ function getHighlightedContent(text: string) {
   return text.replace(input.value, `<span class="font-semibold underline">${input.value}</span>`);
 }
 
-const { navKeyFromPath } = useContentHelpers();
-const { navigation } = useContent();
+function navKeyFromPath(path: string, key: string, navigation: any[]) {
+  if (!navigation)
+    return null;
+
+  for (const item of navigation) {
+    if ((item.path === path || item._path === path) && key in item) {
+      return item[key];
+    }
+
+    if (item.children?.length) {
+      const result = navKeyFromPath(path, key, item.children);
+      if (result !== null && result !== undefined)
+        return result;
+    }
+  }
+
+  return null;
+}
+
+const { navigation } = useContentV3();
 function getItemIcon(path: string) {
   return navKeyFromPath(path, 'icon', navigation.value);
 }

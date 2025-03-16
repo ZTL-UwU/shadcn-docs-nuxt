@@ -1,5 +1,5 @@
 export function useEditLink() {
-  const { page } = useContent();
+  const { page } = useContentV3();
   const { enable, pattern, text, icon, placement } = useConfig().value.main.editLink;
 
   const url = computed(
@@ -7,7 +7,7 @@ export function useEditLink() {
   );
 
   const enabled = computed(
-    () => enable && page.value.editLink !== false && page.value._file && url.value !== '',
+    () => enable && page.value?.editLink !== false && page.value?._file && url.value !== '',
   );
 
   const enabledToc = computed(

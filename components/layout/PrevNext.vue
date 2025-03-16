@@ -7,6 +7,5 @@
 </template>
 
 <script setup lang="ts">
-const { page } = useContent();
-const { prev, next } = useContent();
+const { page, prev, next } = useContentV3();
 </script>

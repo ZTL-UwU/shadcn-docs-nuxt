@@ -17,6 +17,7 @@
           <LayoutSearchButton v-if="!config.search.inAside && config.search.style === 'button'" />
           <ThemePopover v-if="config.theme.customizable" />
           <DarkModeToggle v-if="config.header.darkModeToggle" />
+          <ChooseLanguage />
           <NuxtLink
             v-for="(link, i) in config.header.links"
             :key="i"
@@ -38,7 +39,7 @@
 
 <script setup lang="ts">
 const config = useConfig();
-const { page } = useContent();
+const { page } = useContentV3();
 
 const showToc = computed(() => {
   return config.value.toc.enable

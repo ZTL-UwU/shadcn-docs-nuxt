@@ -25,7 +25,7 @@
     </span>
 
     <section class="flex w-full items-center justify-center space-x-4 py-4 md:pb-10">
-      <NuxtLink
+      <NuxtLinkLocale
         v-for="(action, i) in actions"
         :key="i"
         :to="action.to"
@@ -36,7 +36,7 @@
           {{ action.name }}
           <SmartIcon v-if="action.rightIcon" :name="action.rightIcon" class="ml-1" />
         </UiButton>
-      </NuxtLink>
+      </NuxtLinkLocale>
     </section>
   </section>
 </template>
