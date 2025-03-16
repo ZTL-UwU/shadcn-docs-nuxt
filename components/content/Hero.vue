@@ -18,10 +18,10 @@
     </NuxtLink>
 
     <h1 class="text-center text-3xl font-bold leading-tight tracking-tighter md:text-6xl lg:leading-[1.1]">
-      <ContentSlot :use="$slots.title" unwrap="p" />
+      <slot :use="$slots.title" mdc-unwrap="p" />
     </h1>
     <span class="max-w-[750px] text-center text-lg text-muted-foreground sm:text-xl">
-      <ContentSlot :use="$slots.description" unwrap="p" />
+      <slot :use="$slots.description" mdc-unwrap="p" />
     </span>
 
     <section class="flex w-full items-center justify-center space-x-4 py-4 md:pb-10">

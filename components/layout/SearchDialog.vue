@@ -152,7 +152,7 @@ function navKeyFromPath(path: string, key: string, navigation: any[]) {
   return null;
 }
 
-const { navigation } = useContentV3();
+const { navigation } = await useNavigation();
 function getItemIcon(path: string) {
   return navKeyFromPath(path, 'icon', navigation.value);
 }

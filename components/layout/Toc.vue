@@ -71,7 +71,7 @@ const carbonAdsEnabled = computed(
 const { border } = useConfig().value.header;
 const isOpen = ref(false);
 
-const { url, enabledToc, text, icon } = useEditLink();
+const { url, enabledToc, text, icon } = {};
 
 const links = computed(
   () => {

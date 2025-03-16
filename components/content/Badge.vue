@@ -7,7 +7,7 @@
         size === 'sm' && 'rounded-md px-1.5 py-0.5 text-xs font-normal leading-none',
       ]"
     >
-      <ContentSlot unwrap="p" />
+      <slot mdc-unwrap="p" />
     </UiBadge>
   </NuxtLink>
 
@@ -19,7 +19,7 @@
         size === 'sm' && 'rounded-md px-1.5 py-0.5 text-xs font-normal leading-none',
       ]"
     >
-      <ContentSlot unwrap="p" />
+      <slot mdc-unwrap="p" />
     </UiBadge>
   </span>
 </template>

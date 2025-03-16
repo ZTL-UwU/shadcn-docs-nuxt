@@ -9,7 +9,7 @@
           <UiNavigationMenuContent>
             <ul class="w-[250px] p-2">
               <li v-for="link in item.links" :key="link.title">
-                <NuxtLink
+                <NuxtLinkLocale
                   :to="link.to"
                   :target="link.target"
                   class="mb-1 flex w-full gap-2 rounded-md px-3 py-2 transition-all hover:bg-muted"
@@ -24,17 +24,17 @@
                       {{ link.description }}
                     </div>
                   </div>
-                </NuxtLink>
+                </NuxtLinkLocale>
               </li>
             </ul>
           </UiNavigationMenuContent>
         </template>
-        <NuxtLink v-else :to="item.to" :target="item.target">
+        <NuxtLinkLocale v-else :to="item.to" :target="item.target">
           <Icon v-if="item.showLinkIcon ?? true" name="lucide:arrow-up-right" class="absolute right-2 top-2 text-muted-foreground" size="13" />
           <div class="bg-transparent font-semibold" :class="[navigationMenuTriggerStyle(), (item.showLinkIcon ?? true) && 'pr-6']">
             {{ item.title }}
           </div>
-        </NuxtLink>
+        </NuxtLinkLocale>
       </UiNavigationMenuItem>
     </UiNavigationMenuList>
   </UiNavigationMenu>

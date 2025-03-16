@@ -10,7 +10,6 @@
       :data="appConfig.shadcnDocs.data"
       :dir="localeProperties?.dir ?? 'ltr'"
     />
-    {{ tree }}
   </div>
 </template>
 

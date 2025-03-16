@@ -1,5 +1,5 @@
 export function useEditLink() {
-  const { page } = useContentV3();
+  const { page } = useContent();
   const { enable, pattern, text, icon, placement } = useConfig().value.main.editLink;
 
   const url = computed(

@@ -151,33 +151,6 @@ export function useConfig() {
 
   // TODO if unsplash, the unami will not throw error: Must be called at the top of a `setup` function
 
-  // // 替换先前删除的navKeyFromPath函数
-  // function navKeyFromPath(path: string, key: string, navigation: any[]): any {
-  //   if (!navigation)
-  //     return null;
-
-  //   for (const item of navigation) {
-  //     if ((item.path === path || item._path === path) && key in item) {
-  //       return item[key];
-  //     }
-
-  //     // 递归查找
-  //     if (item.children?.length) {
-  //       const result: any = navKeyFromPath(path, key, item.children);
-  //       if (result !== null && result !== undefined)
-  //         return result;
-  //     }
-  //   }
-
-  //   return null;
-  // }
-
-  // // 使用新的useContentV3替代原来的useContent
-  // const { navigation, page } = useContentV3();
-  // const result = queryCollection('content_en').path('index').first();
-  // console.log('result', result.page);
-  // const route = useRoute();
-
   return computed(
     () => {
       const processedConfig = customDefu(appConfig.value, defaultConfig);

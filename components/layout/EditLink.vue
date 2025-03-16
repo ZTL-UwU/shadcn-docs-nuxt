@@ -16,5 +16,5 @@
 </template>
 
 <script setup lang="ts">
-const { url, enabledDocsFooter, text, icon } = useEditLink();
+const { url, enabledDocsFooter, text, icon } = {};
 </script>

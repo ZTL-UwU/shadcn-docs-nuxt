@@ -22,10 +22,10 @@
       </NuxtLink>
 
       <h1 class="text-3xl font-bold leading-tight tracking-tighter md:text-4xl lg:leading-[1.1]">
-        <ContentSlot :use="$slots.title" unwrap="p" />
+        <slot :use="$slots.title" mdc-unwrap="p" />
       </h1>
       <p class="max-w-2xl text-lg font-light text-foreground">
-        <ContentSlot :use="$slots.description" unwrap="p" />
+        <slot :use="$slots.description" mdc-unwrap="p" />
       </p>
 
       <div class="flex w-full items-center justify-start gap-2 py-2">
@@ -44,7 +44,7 @@
       </div>
     </section>
     <div class="mx-auto" :class="{ 'order-first md:order-last': mobileRight === 'top' }">
-      <ContentSlot :use="$slots.right" unwrap="p" />
+      <slot :use="$slots.right" mdc-unwrap="p" />
     </div>
   </div>
 </template>

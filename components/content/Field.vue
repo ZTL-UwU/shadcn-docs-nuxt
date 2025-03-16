@@ -13,13 +13,13 @@
         </span>
       </div>
       <div v-if="defaultValue" class="text-muted-foreground">
-        <ProseCodeInline>
+        <ProseCode>
           {{ defaultValue }}
-        </ProseCodeInline>
+        </ProseCode>
       </div>
     </div>
     <span class="text-sm text-muted-foreground">
-      <ContentSlot unwrap="p" />
+      <slot mdc-unwrap="p" />
       {{ description }}
     </span>
   </div>

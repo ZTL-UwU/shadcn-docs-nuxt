@@ -16,21 +16,21 @@
         <SmartIcon v-if="icon" :name="icon" :size="iconSize" :class="{ 'mb-2': !horizontal }" />
         <div class="flex flex-col gap-1.5">
           <UiCardTitle v-if="title || $slots.title">
-            <ContentSlot :use="$slots.title" unwrap="p" />
+            <slot :use="$slots.title" mdc-unwrap="p" />
             {{ title }}
           </UiCardTitle>
           <UiCardDescription v-if="description || $slots.description">
-            <ContentSlot :use="$slots.description" unwrap="p" />
+            <slot :use="$slots.description" mdc-unwrap="p" />
             {{ description }}
           </UiCardDescription>
         </div>
       </UiCardHeader>
       <UiCardContent v-if="content || $slots.content || $slots.default">
-        <ContentSlot :use="$slots.content" unwrap="p" />
-        <ContentSlot unwrap="p" />
+        <slot :use="$slots.content" mdc-unwrap="p" />
+        <slot mdc-unwrap="p" />
       </UiCardContent>
       <UiCardFooter v-if="footer || $slots.footer">
-        <ContentSlot :use="$slots.footer" unwrap="p" />
+        <slot :use="$slots.footer" mdc-unwrap="p" />
         {{ footer }}
       </UiCardFooter>
       <SmartIcon v-if="to && showLinkIcon" name="lucide:arrow-up-right" class="absolute right-4 top-4" />
