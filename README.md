@@ -75,22 +75,22 @@ Beautifully designed _Nuxt Content_ template built with _shadcn-vue_. **Customiz
 [sponsor-src]: https://img.shields.io/badge/sponsor%20me-18181B?logo=kofi
 [sponsor-href]: https://ko-fi.com/ztl_uwu
 
-## 迁移解决问题
+## Migration Issues
 
-### 在PmX中没有显示对应的CodeGroup组件
-解决办法：
-在nuxt.config.ts的components中添加
+### CodeGroup Component Not Showing in PmX
+Solution:
+Add the following to the components section in nuxt.config.ts:
 ```
     global: true,
 ```
-来源:https://github.com/nuxt/content/issues/2443#issuecomment-1944028599
+Source: https://github.com/nuxt/content/issues/2443#issuecomment-1944028599
 
-### Navigation中的路由问题
+### Navigation Routing Issues
 
-#### 方案1，定义prefix为/docs
-1. 定义`content.config.ts`中的`prefix`为对应的`/docs`
-2. 这样useContnent可以直接通过`queryCollection(`doc_${locale.value}`).path(route.path).first();`拿到content
-3. 在navigation中，由于我们定义了/docs,所以我们直接拿到的就是根路径/docs的导航，只有一个对象，所以我们要获取一次第一个对象的children
+#### Solution 1: Define prefix as /docs
+1. Define `prefix` as `/docs` in `content.config.ts`
+2. This allows useContent to directly get content through `queryCollection(`doc_${locale.value}`).path(route.path).first();`
+3. In navigation, since we defined /docs, we get the root path /docs navigation with only one object, so we need to get the children of the first object once:
 
 ```
 export async function useNavigation() {
@@ -104,28 +104,24 @@ export async function useNavigation() {
 }
 ```
 
-问题在于这样不支持多语言
+Note: This approach doesn't support multilingual functionality.
 
-#### 方案2，删除prefix为默认的
-同时设置nuxt.config.ts中的i18n.strategy: 'prefix',
+#### Solution 2: Remove prefix to default
+Set i18n.strategy: 'prefix' in nuxt.config.ts.
 
-这样navigation中的path就能正确链接
+This ensures correct path linking in navigation.
 
-唯一的问题是所有的页面都有/en和/zh这样的语言前缀
+The only issue is that all pages will have language prefixes like /en and /zh.
 
+## Known Issues
 
+### Code blocks not displaying correctly in pm-x parsing
+Syntax highlighting is not working.
+However, it works fine when displaying code blocks directly.
 
-## 已知问题
+Related migration: Official change from `ProseCode` to `ProsePre`, and `ProseCodeInline` to `ProseCode`.
 
-### 在pm-x解析中代码块显示不正确
+### Icons not showing in file tree files
 
-没有对应的高亮
-
-但是在直接显示代码块的时候是好的
-
-关联迁移：官方把`ProseCode`变成了`ProsePre`，把`ProseCodeInline`变成了`ProseCode`
-
-### 在文件树的文件中没有显示icon
-
-
-### 在点击导航的时候出发[...slug].vue里的redirect的时候，会响应一下下404
+### Brief 404 flash when clicking navigation
+This occurs when triggering redirect in [...slug].vue
