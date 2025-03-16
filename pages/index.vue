@@ -23,17 +23,13 @@ const config = useConfig();
 const appConfig = useAppConfig();
 const { navigation } = await useNavigation();
 const tree = computed(() => {
-  console.log('navigation.value', navigation.value);
-  console.log('page.value', page.value);
   return navigation.value?.find(n => page.value?.path.startsWith(n.path))?.children ?? [];
 });
 const slug = computed(() => withLeadingSlash(String(route.params.slug || '')));
 
 const { data: page } = await useAsyncData(`page-${slug.value}`, async () => {
-  console.log('locale.value', locale.value, 'slug.value', slug.value);
   const collection = (`content_${locale.value}`) as keyof Collections;
   const content = await queryCollection(collection).path(slug.value).first();
-  console.log('content', content);
 
   // 如果在非默认语言中找不到内容，可能会回退到默认语言
   if (!content && locale.value !== config.value.defaultLocale) {

@@ -60,7 +60,6 @@
 <script setup lang="ts">
 defineProps<{ isSmall: boolean }>();
 
-const { toc } = useContentV3();
 const { title, links: configLinks, carbonAds } = useConfig().value.toc;
 
 const isDesktop = useMediaQuery('(min-width: 1024px)');
@@ -71,7 +70,9 @@ const carbonAdsEnabled = computed(
 const { border } = useConfig().value.header;
 const isOpen = ref(false);
 
-const { url, enabledToc, text, icon } = {};
+const { page } = await useContent();
+const toc = computed(() => page.value?.body?.toc);
+const { url, enabledToc, text, icon } = useEditLink(page.value);
 
 const links = computed(
   () => {

@@ -17,10 +17,10 @@
         />
         <UiCommandList class="text-sm" @escape-key-down="open = false">
           <template v-if="!input?.length">
-            <template v-for="item in navigation" :key="item._path">
+            <template v-for="item in navigation" :key="item.path">
               <UiCommandGroup v-if="item.children" :heading="item.title" class="p-1.5">
-                <NuxtLink v-for="child in item.children" :key="child.id" :to="child._path">
-                  <UiCommandItem :value="child._path">
+                <NuxtLink v-for="child in item.children" :key="child.id" :to="child.path">
+                  <UiCommandItem :value="child.path">
                     <SmartIcon v-if="child.icon" :name="child.icon" class="mr-2 size-4" />
                     <div v-else class="mr-2 size-4" />
                     <span>{{ child.title }}</span>
@@ -104,6 +104,13 @@ watch([Meta_K, Ctrl_K], (v) => {
 const input = ref('');
 const searchResult = ref();
 const searchLoading = ref(false);
+const { locale } = useI18n();
+
+const { data: surround } = await useAsyncData('foo-surround', () => {
+  return queryCollectionSearchSections(`doc_${locale.value}`, {
+    ignoredTags: ['code']
+  })
+})
 watch(
   input,
   async (v) => {
@@ -112,17 +119,9 @@ watch(
       return;
 
     searchLoading.value = true;
-    // 替换为 Nuxt Content v3 的搜索方式
     try {
-      // 在 v3 中使用 queryCollectionSearchSections 代替 searchContent
-      // 由于目前没有正确的导入方式，暂时注释掉实际搜索
-      // searchResult.value = await queryCollectionSearchSections('content', v).find();
-
-      // 临时措施：清空搜索结果
-      searchResult.value = [];
-      console.warn('searchContent 在 Nuxt Content v3 中已移除，需要更新为 queryCollectionSearchSections');
+      searchResult.value = surround.value?.filter(item => item.title.toLowerCase().includes(v.toLowerCase()) || item.content.toLowerCase().includes(v.toLowerCase()));
     } catch (error) {
-      console.error('搜索错误:', error);
       searchResult.value = [];
     }
     searchLoading.value = false;
@@ -138,7 +137,7 @@ function navKeyFromPath(path: string, key: string, navigation: any[]) {
     return null;
 
   for (const item of navigation) {
-    if ((item.path === path || item._path === path) && key in item) {
+    if ((item.path === path || item.path === path) && key in item) {
       return item[key];
     }
 

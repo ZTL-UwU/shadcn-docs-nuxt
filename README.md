@@ -126,3 +126,6 @@ export async function useNavigation() {
 关联迁移：官方把`ProseCode`变成了`ProsePre`，把`ProseCodeInline`变成了`ProseCode`
 
 ### 在文件树的文件中没有显示icon
+
+
+### 在点击导航的时候出发[...slug].vue里的redirect的时候，会响应一下下404

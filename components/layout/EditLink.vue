@@ -16,5 +16,6 @@
 </template>
 
 <script setup lang="ts">
-const { url, enabledDocsFooter, text, icon } = {};
+const { page } = await useContent();
+const { url, enabledDocsFooter, text, icon } = useEditLink(page.value);
 </script>
