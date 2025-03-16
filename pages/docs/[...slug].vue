@@ -1,37 +1,79 @@
 <template>
-  <ContentRenderer
-    v-if="page"
-    :key="page.id"
-    :value="page"
-    :data="appConfig.shadcnDocs.data"
-    :dir="localeProperties?.dir ?? 'ltr'"
-  />
+  <div
+    v-if="!page?.body"
+    class="flex h-[calc(100vh-3.5rem)] items-center justify-center"
+  >
+    <h3 class="scroll-m-20 border-r px-4 py-3 text-2xl font-semibold">
+      404
+    </h3>
+    <span class="scroll-m-20 px-4">
+      This page could not be found.
+    </span>
+  </div>
+  <template v-else>
+    <div
+      v-if="page?.meta?.fullpage"
+      class="px-4 py-6 md:px-8"
+      :class="[config.main.padded && 'container']"
+    >
+      <ContentRenderer
+        :key="page.id"
+        :value="page"
+        :data="appConfig.shadcnDocs.data"
+      />
+    </div>
+    <main
+      v-else
+      class="relative py-6"
+      :class="[config.toc.enable && (page.toc ?? true) && 'lg:grid lg:grid-cols-[1fr_220px] lg:gap-14 lg:py-8']"
+    >
+      <div class="mx-auto w-full min-w-0">
+        <LayoutBreadcrumb v-if="page?.body && config.main.breadCrumb && (page.meta?.breadcrumb ?? true)" class="mb-4" />
+        <LayoutTitle
+          v-if="config.main.showTitle"
+          :title="page?.title"
+          :description="page?.description"
+          :badges="page?.badges"
+          :authors="page?.authors"
+        />
+
+        <Alert
+          v-if="page?.body?.children?.length === 0"
+          title="Empty Page"
+          icon="lucide:circle-x"
+        >
+          Start writing in <ProseCodeInline>content/{{ page?._file }}</ProseCodeInline> to see this page taking shape.
+        </Alert>
+
+        <ContentRenderer
+          v-if="page"
+          :key="page.id"
+          :value="page"
+          :data="appConfig.shadcnDocs.data"
+          :dir="localeProperties?.dir ?? 'ltr'"
+        />
+
+        <LayoutDocsFooter />
+      </div>
+      <div v-if="config.toc.enable && (page.toc ?? true)" class="hidden text-sm lg:block">
+        <div class="sticky top-[90px] h-[calc(100vh-3.5rem)] overflow-hidden">
+          <LayoutToc :is-small="false" />
+        </div>
+      </div>
+    </main>
+  </template>
 </template>
 
 <script setup lang="ts">
-import type { Collections } from '@nuxt/content';
 
-const route = useRoute();
-const { locale, localeProperties } = useI18n();
+definePageMeta({
+  layout: 'doc'
+})
+const { localeProperties } = useI18n();
 const config = useConfig();
 const appConfig = useAppConfig();
-const slug = computed(() => `/${typeof route.params.slug === 'string' ? route.params.slug : route.params.slug?.join('/') ?? ''}`);
 
-const { data: page } = await useAsyncData(`page-${slug.value}`, async () => {
-  const collection = (`doc_${locale.value}`) as keyof Collections;
-  const content = await queryCollection(collection).path(slug.value).first();
-
-  // 如果在非默认语言中找不到内容，可能会回退到默认语言
-  if (!content && locale.value !== config.value.defaultLocale) {
-    const defaultCollection = (`doc_${config.value.defaultLocale}`) as keyof Collections;
-    return await queryCollection(defaultCollection).path(slug.value).first();
-  }
-
-  return content;
-}, {
-  watch: [locale],
-});
-console.log('page', page.value);
+const { page } = await useContent();
 if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: '页面未找到', fatal: true });
 }

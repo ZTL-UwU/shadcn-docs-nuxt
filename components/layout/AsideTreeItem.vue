@@ -37,9 +37,9 @@
       </template>
     </div>
     <!-- Page -->
-    <NuxtLink
+    <NuxtLinkLocale
       v-else
-      :to="link._path"
+      :to="link.path"
       class="flex items-center gap-2 rounded-md p-2 text-sm text-foreground/80 hover:bg-muted hover:text-primary"
       :class="[
         isActive && 'bg-muted !text-primary',
@@ -47,22 +47,22 @@
       ]"
     >
       <LayoutAsideTreeItemButton :link />
-    </NuxtLink>
+    </NuxtLinkLocale>
   </li>
 </template>
 
 <script setup lang="ts">
-import type { NavItem } from '@nuxt/content';
+import type { ContentNavigationItem } from '@nuxt/content';
 
 const { link, level } = defineProps<{
-  link: NavItem;
+  link: ContentNavigationItem;
   level: number;
 }>();
 
 const { collapse, collapseLevel, folderStyle: defaultFolderStyle } = useConfig().value.aside;
 
 const collapsed = useCollapsedMap();
-const isOpen = ref(collapsed.value.get(link._path) || defaultOpen());
+const isOpen = ref(collapsed.value.get(link.path) || defaultOpen());
 
 function defaultOpen() {
   if (link.collapse !== undefined)
@@ -72,9 +72,9 @@ function defaultOpen() {
 }
 
 watch(isOpen, (v) => {
-  collapsed.value.set(link._path, v);
+  collapsed.value.set(link.path, v);
 });
-const isActive = computed(() => link._path === useRoute().path);
+const isActive = computed(() => link.path === useRoute().path);
 
 const folderStyle = computed(() => link.sidebar?.style ?? defaultFolderStyle);
 </script>

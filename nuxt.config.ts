@@ -67,7 +67,7 @@ export default defineNuxtConfig({
       { code: 'en', name: 'English', language: 'en-US', dir: 'ltr' },
       { code: 'zh', name: 'Chinese', language: 'zh-CN', dir: 'ltr' },
     ],
-    strategy: 'prefix_except_default',
+    strategy: 'prefix',
     defaultLocale: 'en',
     detectBrowserLanguage: {
       useCookie: true,

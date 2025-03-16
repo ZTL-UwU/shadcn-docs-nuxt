@@ -39,7 +39,12 @@
 
 <script setup lang="ts">
 const config = useConfig();
-const { page } = useContentV3();
+const { locale } = useI18n();
+const route = useRoute();
+const slug = computed(() => `/${typeof route.params.slug === 'string' ? route.params.slug : route.params.slug?.join('/') ?? ''}`);
+const { data: page } = await useAsyncData(slug.value, () => {
+  return queryCollection(`doc_${locale.value}`).path(slug.value).first();
+});
 
 const showToc = computed(() => {
   return config.value.toc.enable

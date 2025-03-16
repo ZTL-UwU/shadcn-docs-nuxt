@@ -4,11 +4,11 @@
     <LayoutSearchButton v-if="config.search.inAside" />
     <ul v-if="config.aside.useLevel" class="flex flex-col gap-1 border-b pb-4">
       <li v-for="link in navigation" :key="link.id">
-        <NuxtLink
-          :to="link.redirect ?? link._path"
+        <NuxtLinkLocale
+          :to="link.redirect ?? link.path"
           class="flex h-8 items-center gap-2 rounded-md p-2 text-sm text-foreground/80 hover:bg-muted hover:text-primary"
           :class="[
-            path.startsWith(link._path) && 'bg-muted !text-primary',
+            path.startsWith(link.path) && 'bg-muted !text-primary',
           ]"
         >
           <SmartIcon
@@ -24,7 +24,7 @@
               {{ badge.value }}
             </Badge>
           </span>
-        </NuxtLink>
+        </NuxtLinkLocale>
       </li>
     </ul>
     <LayoutAsideTree
@@ -38,47 +38,14 @@
 <script setup lang="ts">
 defineProps<{ isMobile: boolean }>();
 
-// 替换 useContentHelpers 中的 navDirFromPath 函数
-function navDirFromPath(path: string, navigation: any[]) {
-  if (!navigation)
-    return null;
 
-  for (const item of navigation) {
-    if (item.path === path && item.children?.length) {
-      return item.children;
-    }
-
-    // 处理 _path 向 path 的迁移（Nuxt Content v3）
-    if (item._path === path && item.children?.length) {
-      return item.children;
-    }
-
-    // 递归查找
-    if (item.children?.length) {
-      const result = navDirFromPath(path, item.children);
-      if (result)
-        return result;
-    }
-  }
-
-  return null;
-}
-
-const { navigation } = useContentV3();
+const { navigation } = await useNavigation();
+const { page } = await useContent();
 const config = useConfig();
 
 const tree = computed(() => {
-  const route = useRoute();
-  const path = route.path.split('/');
-  if (config.value.aside.useLevel) {
-    const leveledPath = path.splice(0, 2).join('/');
-
-    const dir = navDirFromPath(leveledPath, navigation.value);
-    return dir ?? [];
-  }
-
-  return navigation.value;
+  return navigation.value?.find(n => page.value?.path.startsWith(n.path))?.children ?? [];
 });
 
-const path = computed(() => useRoute().path);
+const path = computed(() => page.value?.path ?? '');
 </script>

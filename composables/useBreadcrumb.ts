@@ -1,21 +1,27 @@
+import type { ContentNavigationItem } from '@nuxt/content';
+
 interface BreadcrumbItem {
   title: string;
   href: string;
 }
 
-export function useBreadcrumb(url: string): BreadcrumbItem[] {
-  const { navigation } = useContentV3();
-
+export function useBreadcrumb(url: string, navigation: ContentNavigationItem[]): BreadcrumbItem[] {
+  const { locale } = useI18n();
   const breadcrumbItems: BreadcrumbItem[] = [];
   // Remove empty segments
-  const segments = url.split('/').filter(segment => segment !== '');
+  let localUrl = url;
+  if (url.startsWith(`/${locale.value}/`)) {
+    localUrl = url.slice(locale.value.length + 1);
+  }
+  const segments = localUrl.split('/').filter(segment => segment !== '');
 
   // Construct breadcrumb for each segment
   let href = '';
-  let nav = navigation.value;
+  let nav: ContentNavigationItem[] | undefined = navigation;
 
-  if (!nav)
+  if (!nav) {
     return [];
+  }
 
   for (let i = 0; i < segments.length; i++) {
     const segment = segments[i].replace('.html', '');

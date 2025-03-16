@@ -4,6 +4,38 @@
  */
 import type { Collections } from '@nuxt/content';
 
+export async function useContent() {
+  const route = useRoute();
+  const { locale } = useI18n();
+  const config = useConfig();
+  const appConfig = useAppConfig();
+  const slug = computed(() => `/${typeof route.params.slug === 'string' ? route.params.slug : route.params.slug?.join('/') ?? ''}`);
+  
+  const localePath = useLocalePath()
+
+  console.log('slug.value', slug.value);
+  console.log('route.path', route.path);
+  console.log('route.path locale', route.path.replace(`/${locale.value}/`, '/'));
+  console.log('localePath route.path ', localePath(route.path));
+  
+  const { data: page } = await useAsyncData(slug.value, () => {
+    return queryCollection(`doc_${locale.value}`).path(route.path).first();
+  });
+  return {
+    page,
+  };
+}
+
+export async function useNavigation() {
+  const { locale } = useI18n();
+  const { data } = await useAsyncData('navigation', () => {
+    return queryCollectionNavigation(`doc_${locale.value}`)
+  });
+  return {
+    navigation: computed(() => data.value?.[0]?.children?.[0]?.children),
+  };
+}
+
 export function useContentV3() {
   const route = useRoute();
   const slug = computed(() => `/${typeof route.params.slug === 'string' ? route.params.slug : route.params.slug?.join('/') ?? ''}`);

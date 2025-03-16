@@ -13,10 +13,10 @@
 </template>
 
 <script setup lang="ts">
-import type { NavItem } from '@nuxt/content';
+import type { ContentNavigationItem } from '@nuxt/content';
 
 defineProps<{
-  links: NavItem[];
+  links: ContentNavigationItem[];
   level: number;
 }>();
 </script>

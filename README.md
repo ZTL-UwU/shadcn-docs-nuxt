@@ -85,6 +85,35 @@ Beautifully designed _Nuxt Content_ template built with _shadcn-vue_. **Customiz
 ```
 来源:https://github.com/nuxt/content/issues/2443#issuecomment-1944028599
 
+### Navigation中的路由问题
+
+#### 方案1，定义prefix为/docs
+1. 定义`content.config.ts`中的`prefix`为对应的`/docs`
+2. 这样useContnent可以直接通过`queryCollection(`doc_${locale.value}`).path(route.path).first();`拿到content
+3. 在navigation中，由于我们定义了/docs,所以我们直接拿到的就是根路径/docs的导航，只有一个对象，所以我们要获取一次第一个对象的children
+
+```
+export async function useNavigation() {
+  const { locale } = useI18n();
+  const { data } = await useAsyncData('navigation', () => {
+    return queryCollectionNavigation(`doc_${locale.value}`)
+  });
+  return {
+    navigation: computed(() => data.value?.[0]?.children),
+  };
+}
+```
+
+问题在于这样不支持多语言
+
+#### 方案2，删除prefix为默认的
+同时设置nuxt.config.ts中的i18n.strategy: 'prefix',
+
+这样navigation中的path就能正确链接
+
+唯一的问题是所有的页面都有/en和/zh这样的语言前缀
+
+
 
 ## 已知问题
 

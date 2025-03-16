@@ -10,11 +10,7 @@
       :data="appConfig.shadcnDocs.data"
       :dir="localeProperties?.dir ?? 'ltr'"
     />
-    <ProseCode
-      code="console.log('Hello, world!')"
-    >
-      111
-    </ProseCode>
+    {{ tree }}
   </div>
 </template>
 
@@ -26,6 +22,12 @@ const route = useRoute();
 const { locale, localeProperties } = useI18n();
 const config = useConfig();
 const appConfig = useAppConfig();
+const { navigation } = await useNavigation();
+const tree = computed(() => {
+  console.log('navigation.value', navigation.value);
+  console.log('page.value', page.value);
+  return navigation.value?.find(n => page.value?.path.startsWith(n.path))?.children ?? [];
+});
 const slug = computed(() => withLeadingSlash(String(route.params.slug || '')));
 
 const { data: page } = await useAsyncData(`page-${slug.value}`, async () => {

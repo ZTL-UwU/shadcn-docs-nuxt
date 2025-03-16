@@ -24,7 +24,6 @@ export default defineContentConfig({
       type: 'page',
       source: {
         include: 'en/docs/**',
-        prefix: '',
       },
       schema: commonSchema,
     }),
@@ -32,7 +31,6 @@ export default defineContentConfig({
       type: 'page',
       source: {
         include: 'zh/docs/**',
-        prefix: '',
       },
       schema: commonSchema,
     }),

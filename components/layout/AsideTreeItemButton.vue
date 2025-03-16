@@ -17,9 +17,9 @@
 </template>
 
 <script setup lang="ts">
-import type { NavItem } from '@nuxt/content';
+import type { ContentNavigationItem } from '@nuxt/content';
 
 const { link } = defineProps<{
-  link: NavItem;
+  link: ContentNavigationItem;
 }>();
 </script>
