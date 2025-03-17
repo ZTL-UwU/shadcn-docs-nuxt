@@ -4,11 +4,12 @@
   "typescript": true,
   "tailwind": {
     "config": "tailwind.config.js",
-    "css": "assets/css/tailwind.css",
+    "css": "app/assets/css/tailwind.css",
     "baseColor": "zinc",
-    "cssVariables": true
+    "cssVariables": true,
+    "prefix": ""
   },
-  "framework": "nuxt",
+  "iconLibrary": "lucide",
   "aliases": {
     "components": "@/components",
     "utils": "@/lib/utils"

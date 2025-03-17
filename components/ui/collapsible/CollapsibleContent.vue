@@ -5,8 +5,8 @@
 </template>
 
 <script setup lang="ts">
-import type { CollapsibleContentProps } from 'radix-vue';
-import { CollapsibleContent } from 'radix-vue';
+import type { CollapsibleContentProps } from 'reka-ui';
+import { CollapsibleContent } from 'reka-ui';
 
 const props = defineProps<CollapsibleContentProps>();
 </script>

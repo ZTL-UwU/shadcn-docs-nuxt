@@ -13,10 +13,10 @@
 </template>
 
 <script setup lang="ts">
-import type { NavigationMenuListProps } from 'radix-vue';
+import type { NavigationMenuListProps } from 'reka-ui';
 import type { HTMLAttributes } from 'vue';
 import { cn } from '@/lib/utils';
-import { NavigationMenuList, useForwardProps } from 'radix-vue';
+import { NavigationMenuList, useForwardProps } from 'reka-ui';
 import { computed } from 'vue';
 
 const props = defineProps<NavigationMenuListProps & { class?: HTMLAttributes['class'] }>();
