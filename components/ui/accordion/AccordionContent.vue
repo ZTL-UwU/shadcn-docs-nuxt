@@ -10,10 +10,10 @@
 </template>
 
 <script setup lang="ts">
-import type { AccordionContentProps } from 'radix-vue';
+import type { AccordionContentProps } from 'reka-ui';
 import type { HTMLAttributes } from 'vue';
 import { cn } from '@/lib/utils';
-import { AccordionContent } from 'radix-vue';
+import { AccordionContent } from 'reka-ui';
 import { computed } from 'vue';
 
 const props = defineProps<AccordionContentProps & { class?: HTMLAttributes['class'] }>();

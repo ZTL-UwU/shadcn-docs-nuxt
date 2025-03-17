@@ -5,8 +5,8 @@
 </template>
 
 <script setup lang="ts">
-import type { CollapsibleTriggerProps } from 'radix-vue';
-import { CollapsibleTrigger } from 'radix-vue';
+import type { CollapsibleTriggerProps } from 'reka-ui';
+import { CollapsibleTrigger } from 'reka-ui';
 
 const props = defineProps<CollapsibleTriggerProps>();
 </script>

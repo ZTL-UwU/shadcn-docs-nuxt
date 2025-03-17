@@ -7,8 +7,9 @@
       <VisuallyHidden as-child>
         <UiDialogDescription aria-describedby="undefined" />
       </VisuallyHidden>
-      <UiCommand v-model:search-term="input" class="h-svh sm:h-[350px]">
-        <UiCommandInput
+      <UiCommand class="h-svh sm:h-[350px]">
+        <UiCommandInputOnly
+          v-model="input"
           :loading="searchLoading"
           :placeholder="placeholderDetailed"
           @keydown.enter="handleEnter"
@@ -44,7 +45,6 @@
               </UiCommandItem>
             </UiCommandGroup>
           </template>
-
           <div v-else-if="searchResult?.length" class="p-1.5">
             <NuxtLink
               v-for="(item, i) in searchResult"
@@ -68,7 +68,6 @@
               <span class="ml-2 self-center truncate text-xs text-muted-foreground" v-html="getHighlightedContent(item.content)" />
             </NuxtLink>
           </div>
-
           <div v-else class="pt-4 text-center text-muted-foreground">
             No results found.
           </div>

@@ -8,10 +8,10 @@
 </template>
 
 <script setup lang="ts">
-import type { AccordionItemProps } from 'radix-vue';
+import type { AccordionItemProps } from 'reka-ui';
 import type { HTMLAttributes } from 'vue';
 import { cn } from '@/lib/utils';
-import { AccordionItem, useForwardProps } from 'radix-vue';
+import { AccordionItem, useForwardProps } from 'reka-ui';
 import { computed } from 'vue';
 
 const props = defineProps<AccordionItemProps & { class?: HTMLAttributes['class'] }>();
