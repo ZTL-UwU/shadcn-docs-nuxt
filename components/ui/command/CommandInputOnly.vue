@@ -24,9 +24,10 @@ defineOptions({
 
 const props = defineProps<ListboxFilterProps & {
   class?: HTMLAttributes['class'];
+  loading?: boolean;
 }>();
 
-const model = defineModel();
+const model = defineModel<string>();
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props;
