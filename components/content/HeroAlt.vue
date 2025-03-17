@@ -22,10 +22,10 @@
       </NuxtLink>
 
       <h1 class="text-3xl font-bold leading-tight tracking-tighter md:text-4xl lg:leading-[1.1]">
-        <slot :use="$slots.title" mdc-unwrap="p" />
+        <slot name="title" mdc-unwrap="p" />
       </h1>
       <p class="max-w-2xl text-lg font-light text-foreground">
-        <slot :use="$slots.description" mdc-unwrap="p" />
+        <slot name="description" mdc-unwrap="p" />
       </p>
 
       <div class="flex w-full items-center justify-start gap-2 py-2">

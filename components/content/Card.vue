@@ -15,12 +15,16 @@
       <UiCardHeader v-if="icon || title || $slots.title || description || $slots.description" :class="{ 'flex-row items-center gap-5': horizontal }">
         <SmartIcon v-if="icon" :name="icon" :size="iconSize" :class="{ 'mb-2': !horizontal }" />
         <div class="flex flex-col gap-1.5">
-          <UiCardTitle v-if="title || $slots.title">
-            <slot :use="$slots.title" mdc-unwrap="p" />
+          <UiCardTitle v-if="$slots.title">
+            <slot name="title" mdc-unwrap="p" />
+          </UiCardTitle>
+          <UiCardTitle v-else>
             {{ title }}
           </UiCardTitle>
-          <UiCardDescription v-if="description || $slots.description">
-            <slot :use="$slots.description" mdc-unwrap="p" />
+          <UiCardDescription v-if="$slots.description">
+            <slot name="description" mdc-unwrap="p" />
+          </UiCardDescription>
+          <UiCardDescription v-else>
             {{ description }}
           </UiCardDescription>
         </div>

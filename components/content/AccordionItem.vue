@@ -1,11 +1,15 @@
 <template>
   <UiAccordionItem :value="value ?? autoValue">
-    <UiAccordionTrigger>
-      <slot :use="$slots.title" mdc-unwrap="p" />
+    <UiAccordionTrigger v-if="$slots.title">
+      <slot name="title" mdc-unwrap="p" />
+    </UiAccordionTrigger>
+    <UiAccordionTrigger v-else>
       {{ title }}
     </UiAccordionTrigger>
-    <UiAccordionContent>
-      <slot :use="$slots.content" mdc-unwrap="p" />
+    <UiAccordionContent v-if="$slots.content">
+      <slot name="content" mdc-unwrap="p" />
+    </UiAccordionContent>
+    <UiAccordionContent v-else>
       {{ content }}
     </UiAccordionContent>
   </UiAccordionItem>

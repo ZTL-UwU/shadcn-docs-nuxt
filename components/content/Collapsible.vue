@@ -1,8 +1,10 @@
 <template>
   <UiCollapsible v-if="variant === 'card'" v-model:open="isOpen" class="space-y-2">
     <div class="flex items-center justify-between space-x-4">
-      <h4 class="text-sm font-semibold">
-        <slot :use="$slots.title" mdc-unwrap="p" />
+      <h4 v-if="$slots.title" class="text-sm font-semibold">
+        <slot name="title" mdc-unwrap="p" />
+      </h4>
+      <h4 v-else class="text-sm font-semibold">
         {{ title }}
       </h4>
       <UiCollapsibleTrigger as-child>
@@ -15,7 +17,7 @@
 
     <UiCollapsibleContent class="space-y-2">
       <div class="rounded-md border px-4 py-3 font-mono text-sm">
-        <slot :use="$slots.content" mdc-unwrap="p" />
+        <slot name="content" mdc-unwrap="p" />
         <slot mdc-unwrap="p" />
       </div>
     </UiCollapsibleContent>
@@ -30,14 +32,18 @@
           :class="[!isOpen && '-rotate-90']"
         />
         <span>
-          <slot :use="$slots.title" mdc-unwrap="p" />
-          {{ title }}
+          <template v-if="$slots.title">
+            <slot name="title" mdc-unwrap="p" />
+          </template>
+          <template v-else>
+            {{ title }}
+          </template>
         </span>
       </div>
     </UiCollapsibleTrigger>
     <UiCollapsibleContent>
       <div class="ml-2 border-l py-2 pl-4">
-        <slot :use="$slots.content" mdc-unwrap="p" />
+        <slot name="content" mdc-unwrap="p" />
         <slot mdc-unwrap="p" />
       </div>
     </UiCollapsibleContent>
