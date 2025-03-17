@@ -35,6 +35,7 @@ interface DefaultConfig {
     };
     showTitleInMobile: boolean;
     darkModeToggle: boolean;
+    chooseLanguage: boolean;
     nav: ({
       title: string;
       to: string;

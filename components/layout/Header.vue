@@ -17,7 +17,7 @@
           <LayoutSearchButton v-if="!config.search.inAside && config.search.style === 'button'" />
           <ThemePopover v-if="config.theme.customizable" />
           <DarkModeToggle v-if="config.header.darkModeToggle" />
-          <ChooseLanguage />
+          <ChooseLanguage v-if="config.header.chooseLanguage" />
           <NuxtLinkLocale
             v-for="(link, i) in config.header.links"
             :key="i"
