@@ -60,7 +60,6 @@
     "clsx": "^2.1.1",
     "nuxt": "^3.16.0",
     "nuxt-og-image": "^5.0.3",
-    "radix-vue": "^1.9.17",
     "reka-ui": "^2.1.0",
     "shadcn-nuxt": "^1.0.3",
     "tailwind-merge": "^2.6.0",
