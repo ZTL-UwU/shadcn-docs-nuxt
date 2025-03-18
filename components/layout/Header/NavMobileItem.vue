@@ -3,7 +3,7 @@
     <UiCollapsible v-model:open="isOpen">
       <UiCollapsibleTrigger class="w-full p-2 text-left">
         <div class="flex w-full gap-1">
-          {{ item.title }}
+          {{ $t(item.title) }}
           <Icon
             :name="isOpen ? 'lucide:chevrons-down-up' : 'lucide:chevrons-up-down'"
             size="12"
@@ -23,10 +23,10 @@
 
               <div>
                 <div class="font-semibold">
-                  {{ link.title }}
+                  {{ $t(link.title) }}
                 </div>
                 <div class="text-sm text-muted-foreground">
-                  {{ link.description }}
+                  {{ $t(link.description) }}
                 </div>
               </div>
             </NuxtLink>
@@ -36,7 +36,7 @@
     </UiCollapsible>
   </template>
   <NuxtLink v-else :to="item.to" :target="item.target" class="flex w-full p-2">
-    {{ item.title }}
+    {{ $t(item.title) }}
     <Icon v-if="item.showLinkIcon ?? true" name="lucide:arrow-up-right" class="ml-1 text-muted-foreground" size="12" />
   </NuxtLink>
 </template>

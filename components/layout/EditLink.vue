@@ -8,7 +8,7 @@
       <div class="flex items-center gap-2">
         <SmartIcon :name="icon" />
         <span>
-          {{ text }}
+          {{ $t(text) }}
         </span>
       </div>
     </NuxtLink>

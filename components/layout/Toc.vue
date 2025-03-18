@@ -8,7 +8,7 @@
     <div class="flex h-[calc(100vh-6.5rem)] flex-col">
       <div v-if="toc?.links.length">
         <p class="mb-2 text-base font-semibold">
-          {{ title }}
+          {{ $t(title) }}
         </p>
         <LayoutTocTree
           :links="toc.links.filter((x: any) => x.id !== 'hide-toc')"
@@ -28,7 +28,7 @@
               :name="link.icon"
               class="mr-1 self-center"
             />
-            {{ link.title }}
+            {{ $t(link.title) }}
             <Icon v-if="link.showLinkIcon ?? true" name="lucide:arrow-up-right" class="ml-auto self-center text-muted-foreground" size="13" />
           </NuxtLink>
         </div>

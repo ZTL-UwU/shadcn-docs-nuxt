@@ -11,14 +11,14 @@
         <UiCommandInputOnly
           v-model="input"
           :loading="searchLoading"
-          :placeholder="placeholderDetailed"
+          :placeholder="$t(placeholderDetailed)"
           @keydown.enter="handleEnter"
           @keydown.down="handleNavigate(1)"
           @keydown.up="handleNavigate(-1)"
         />
         <UiCommandList class="text-sm" @escape-key-down="open = false">
           <template v-if="!input?.length">
-            <template v-for="item in navigation" :key="item._path">
+            <template v-for="item in localizedNav" :key="item._path">
               <UiCommandGroup v-if="item.children" :heading="item.title" class="p-1.5">
                 <NuxtLink v-for="child in item.children" :key="child.id" :to="child._path">
                   <UiCommandItem :value="child._path">
@@ -33,15 +33,15 @@
             <UiCommandGroup v-if="darkModeToggle" heading="Theme" class="p-1.5">
               <UiCommandItem value="light" @click="colorMode.preference = 'light'">
                 <Icon name="lucide:sun" class="mr-2 size-4" />
-                <span>Light</span>
+                <span>{{$t('Light')}}</span>
               </UiCommandItem>
               <UiCommandItem value="dark" @click="colorMode.preference = 'dark'">
                 <Icon name="lucide:moon" class="mr-2 size-4" />
-                <span>Dark</span>
+                <span>{{$t('Dark')}}</span>
               </UiCommandItem>
               <UiCommandItem value="system" @click="colorMode.preference = 'auto'">
                 <Icon name="lucide:monitor" class="mr-2 size-4" />
-                <span>System</span>
+                <span>{{$t('System')}}</span>
               </UiCommandItem>
             </UiCommandGroup>
           </template>
@@ -69,7 +69,7 @@
             </NuxtLink>
           </div>
           <div v-else class="pt-4 text-center text-muted-foreground">
-            No results found.
+            {{ $t('No results found.') }}
           </div>
         </UiCommandList>
       </UiCommand>
@@ -103,6 +103,10 @@ watch([Meta_K, Ctrl_K], (v) => {
 const input = ref('');
 const searchResult = ref();
 const searchLoading = ref(false);
+
+
+const { locale, defaultLocale, availableLocales } = useI18n();
+
 watch(
   input,
   async (v) => {
@@ -111,7 +115,16 @@ watch(
       return;
 
     searchLoading.value = true;
-    searchResult.value = (await searchContent(v)).value;
+    const result = (await searchContent(v)).value;
+    const currentLocale = locale.value;
+    const otherLocales = availableLocales.filter(l => l !== defaultLocale);
+    const localizedResult = result.filter(r => {
+      if (currentLocale === defaultLocale) {
+        return !otherLocales.some(l => r.id.startsWith(`/${l}/`))
+      }
+      return r.id.startsWith(`/${currentLocale}`)
+    })
+    searchResult.value = localizedResult;
     searchLoading.value = false;
   },
 );
@@ -122,6 +135,19 @@ function getHighlightedContent(text: string) {
 
 const { navKeyFromPath } = useContentHelpers();
 const { navigation } = useContent();
+
+const localizedNav = computed(() => {
+  const currentLocale = locale.value;
+  const otherLocales = availableLocales.filter(l => l !== defaultLocale);
+  const filteredNav = navigation.value.filter(nav => {
+    if (currentLocale === defaultLocale) {
+      return !otherLocales.some(l => nav._path.startsWith(`/${l}`))
+    }
+    return nav._path.startsWith(`/${currentLocale}`)
+  })
+  return currentLocale === defaultLocale ? filteredNav : filteredNav[0].children;
+})
+
 function getItemIcon(path: string) {
   return navKeyFromPath(path, 'icon', navigation.value);
 }

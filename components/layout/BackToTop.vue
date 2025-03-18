@@ -3,7 +3,7 @@
     <UiButton variant="link" class="text-sm font-semibold text-primary" @click="y = 0">
       <div class="flex items-center gap-2 ">
         <SmartIcon name="lucide:arrow-up" />
-        <span>Back to Top</span>
+        <span>{{ $t('Back to Top') }}</span>
       </div>
     </UiButton>
   </div>

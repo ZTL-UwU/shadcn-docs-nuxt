@@ -156,7 +156,7 @@ export default defineAppConfig({
       },
     },
     footer: {
-      credits: 'Made with ❤️ by [**Tony Zhang**](https://github.com/ZTL-UwU/)',
+      credits: 'FOOTER_CREDIT',
       links: [{
         icon: 'lucide:heart',
         title: 'Sponsor Me',

@@ -4,7 +4,7 @@
       <UiNavigationMenuItem v-for="(item, i) in nav" :key="i" class="relative">
         <template v-if="item.links">
           <UiNavigationMenuTrigger class="bg-transparent font-semibold">
-            {{ item.title }}
+            {{ $t(item.title) }}
           </UiNavigationMenuTrigger>
           <UiNavigationMenuContent>
             <ul class="w-[250px] p-2">
@@ -18,10 +18,10 @@
 
                   <div>
                     <div class="font-semibold">
-                      {{ link.title }}
+                      {{ $t(link.title) }}
                     </div>
                     <div class="text-sm text-muted-foreground">
-                      {{ link.description }}
+                      {{ $t(link.description) }}
                     </div>
                   </div>
                 </NuxtLink>
@@ -32,7 +32,7 @@
         <NuxtLink v-else :to="item.to" :target="item.target">
           <Icon v-if="item.showLinkIcon ?? true" name="lucide:arrow-up-right" class="absolute right-2 top-2 text-muted-foreground" size="13" />
           <div class="bg-transparent font-semibold" :class="[navigationMenuTriggerStyle(), (item.showLinkIcon ?? true) && 'pr-6']">
-            {{ item.title }}
+            {{ $t(item.title) }}
           </div>
         </NuxtLink>
       </UiNavigationMenuItem>
