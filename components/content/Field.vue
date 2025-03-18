@@ -19,8 +19,12 @@
       </div>
     </div>
     <span class="text-sm text-muted-foreground">
-      <slot mdc-unwrap="p" />
-      {{ description }}
+      <template v-if="description">
+        {{ description }}
+      </template>
+      <template v-else-if="$slots.default">
+        <slot mdc-unwrap="p" />
+      </template>
     </span>
   </div>
 </template>

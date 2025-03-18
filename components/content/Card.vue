@@ -18,23 +18,31 @@
           <UiCardTitle v-if="$slots.title">
             <slot name="title" mdc-unwrap="p" />
           </UiCardTitle>
-          <UiCardTitle v-else>
+          <UiCardTitle v-else-if="title">
             {{ title }}
           </UiCardTitle>
           <UiCardDescription v-if="$slots.description">
             <slot name="description" mdc-unwrap="p" />
           </UiCardDescription>
-          <UiCardDescription v-else>
+          <UiCardDescription v-else-if="description">
             {{ description }}
           </UiCardDescription>
         </div>
       </UiCardHeader>
-      <UiCardContent v-if="content || $slots.content || $slots.default">
+      <UiCardContent v-if="content">
+        {{ content }}
+      </UiCardContent>
+      <UiCardContent v-else-if="$slots.content">
         <slot :use="$slots.content" mdc-unwrap="p" />
+      </UiCardContent>
+      <UiCardContent v-else-if="$slots.default">
         <slot mdc-unwrap="p" />
       </UiCardContent>
-      <UiCardFooter v-if="footer || $slots.footer">
+
+      <UiCardFooter v-if="$slots.footer">
         <slot :use="$slots.footer" mdc-unwrap="p" />
+      </UiCardFooter>
+      <UiCardFooter v-else-if="footer">
         {{ footer }}
       </UiCardFooter>
       <SmartIcon v-if="to && showLinkIcon" name="lucide:arrow-up-right" class="absolute right-4 top-4" />

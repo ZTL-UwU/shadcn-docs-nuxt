@@ -17,8 +17,8 @@
 
     <UiCollapsibleContent class="space-y-2">
       <div class="rounded-md border px-4 py-3 font-mono text-sm">
-        <slot name="content" mdc-unwrap="p" />
-        <slot mdc-unwrap="p" />
+        <slot v-if="$slots.content" name="content" mdc-unwrap="p" />
+        <slot v-else mdc-unwrap="p" />
       </div>
     </UiCollapsibleContent>
   </UiCollapsible>
@@ -43,8 +43,8 @@
     </UiCollapsibleTrigger>
     <UiCollapsibleContent>
       <div class="ml-2 border-l py-2 pl-4">
-        <slot name="content" mdc-unwrap="p" />
-        <slot mdc-unwrap="p" />
+        <slot v-if="$slots.content" name="content" mdc-unwrap="p" />
+        <slot v-else mdc-unwrap="p" />
       </div>
     </UiCollapsibleContent>
   </UiCollapsible>
