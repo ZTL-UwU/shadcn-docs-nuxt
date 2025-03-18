@@ -30,7 +30,7 @@ export default defineI18nConfig(() => ({
             'Light': 'Clair',
             'Dark': 'Sombre',
             'System': 'Système',
-            'On This Page': 'On This Page',
+            'On This Page': 'Sur cette Page',
             'Star on GitHub': 'Star sur GitHub',
             'Create Issues': 'Créer une Issue',
             'Edit this page': 'Editer cette page',
