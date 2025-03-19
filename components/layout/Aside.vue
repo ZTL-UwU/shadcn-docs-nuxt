@@ -36,8 +36,6 @@
 </template>
 
 <script setup lang="ts">
-import type {NavItem} from '@nuxt/content';
-
 defineProps<{ isMobile: boolean }>();
 
 const { navDirFromPath } = useContentHelpers();
