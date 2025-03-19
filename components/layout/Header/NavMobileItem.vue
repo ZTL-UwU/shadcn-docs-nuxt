@@ -15,7 +15,7 @@
         <ul class="pl-2">
           <li v-for="link in item.links" :key="link.title">
             <NuxtLink
-              :to="link.to"
+              :to="localePath(link.to)"
               :target="link.to"
               class="mb-1 flex w-full gap-2 rounded-md px-3 py-2 transition-all hover:bg-muted"
             >
@@ -35,7 +35,7 @@
       </UiCollapsibleContent>
     </UiCollapsible>
   </template>
-  <NuxtLink v-else :to="item.to" :target="item.target" class="flex w-full p-2">
+  <NuxtLink v-else :to="localePath(item.to)" :target="item.target" class="flex w-full p-2">
     {{ $t(item.title) }}
     <Icon v-if="item.showLinkIcon ?? true" name="lucide:arrow-up-right" class="ml-1 text-muted-foreground" size="12" />
   </NuxtLink>
@@ -46,6 +46,7 @@ const props = defineProps<{
   item: any;
   index: number;
 }>();
+const { localePath } = useI18nDocs();
 
 const collapsed = useCollapsedMap();
 const isOpen = ref(collapsed.value.get(`mobile-header-nav${props.index}`) || false);

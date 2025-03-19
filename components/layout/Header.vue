@@ -21,7 +21,7 @@
           <NuxtLink
             v-for="(link, i) in config.header.links"
             :key="i"
-            :to="link?.to"
+            :to="localePath(link?.to)"
             :target="link?.target"
           >
             <UiButton variant="ghost" size="icon" class="flex gap-2">
@@ -39,7 +39,7 @@
 
 <script setup lang="ts">
 const config = useConfig();
-const i18nEnabled = !!useNuxtApp().$config.public.i18n;
+const { i18nEnabled, localePath } = useI18nDocs();
 const { page } = useContent();
 
 const showToc = computed(() => {

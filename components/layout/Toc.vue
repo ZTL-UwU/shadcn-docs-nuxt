@@ -19,7 +19,7 @@
           <NuxtLink
             v-for="(link, i) in links"
             :key="i"
-            :to="link.to"
+            :to="localePath(link.to)"
             :target="link.target"
             class="flex w-full gap-1 underline-offset-4 hover:underline [&:not(:first-child)]:pt-3"
           >
@@ -61,6 +61,7 @@
 defineProps<{ isSmall: boolean }>();
 
 const { toc } = useContent();
+const { localePath } = useI18nDocs();
 const { title, links: configLinks, carbonAds } = useConfig().value.toc;
 
 const isDesktop = useMediaQuery('(min-width: 1024px)');
