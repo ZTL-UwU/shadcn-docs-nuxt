@@ -7,7 +7,7 @@ import type {SearchResult} from 'minisearch';
  */
 export function useI18nDocs() {
   // Check if i18n is enabled by verifying config exists and there are multiple locales
-  const i18nEnabled = !!useNuxtApp().$config.public.i18n && useI18n().availableLocales.length > 1;
+  const i18nEnabled = !!useI18n() && useI18n().availableLocales?.length > 1;
 
   // Get content navigation and i18n utilities
   const { navigation, next, prev } = useContent();
