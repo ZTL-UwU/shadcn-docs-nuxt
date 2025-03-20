@@ -65,7 +65,7 @@ export default defineNuxtConfig({
         'editLink',
         'prevNext',
         'breadcrumb',
-        'fullpage'
+        'fullpage',
       ],
     },
     experimental: {
@@ -100,13 +100,13 @@ export default defineNuxtConfig({
       {
         code: 'en',
         name: 'English',
-        language: 'en-US'
+        language: 'en-US',
       },
       {
         code: 'fr',
         name: 'Français',
-        language: 'fr-FR'
-      }
-    ]
-  }
+        language: 'fr-FR',
+      },
+    ],
+  },
 });

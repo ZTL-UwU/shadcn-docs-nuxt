@@ -33,15 +33,15 @@
             <UiCommandGroup v-if="darkModeToggle" heading="Theme" class="p-1.5">
               <UiCommandItem value="light" @click="colorMode.preference = 'light'">
                 <Icon name="lucide:sun" class="mr-2 size-4" />
-                <span>{{$t('Light')}}</span>
+                <span>{{ $t('Light') }}</span>
               </UiCommandItem>
               <UiCommandItem value="dark" @click="colorMode.preference = 'dark'">
                 <Icon name="lucide:moon" class="mr-2 size-4" />
-                <span>{{$t('Dark')}}</span>
+                <span>{{ $t('Dark') }}</span>
               </UiCommandItem>
               <UiCommandItem value="system" @click="colorMode.preference = 'auto'">
                 <Icon name="lucide:monitor" class="mr-2 size-4" />
-                <span>{{$t('System')}}</span>
+                <span>{{ $t('System') }}</span>
               </UiCommandItem>
             </UiCommandGroup>
           </template>
@@ -104,7 +104,7 @@ const input = ref('');
 const searchResult = ref();
 const searchLoading = ref(false);
 
-
+const { localizeSearchResult } = useI18nDocs();
 
 watch(
   input,
@@ -116,7 +116,7 @@ watch(
     searchLoading.value = true;
     const result = (await searchContent(v)).value;
 
-    searchResult.value = localizeResult(result);
+    searchResult.value = localizeSearchResult(result);
     searchLoading.value = false;
   },
 );

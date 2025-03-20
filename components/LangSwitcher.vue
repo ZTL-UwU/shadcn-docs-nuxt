@@ -7,10 +7,12 @@
         </UiNavigationMenuTrigger>
         <UiNavigationMenuContent>
           <ul class="w-auto p-2">
-            <li v-for="locale in locales" :key="locale.code">
-              <NuxtLink :to="switchLocalePath(locale.code)"
-                        class="mb-1 flex w-full gap-2 rounded-md px-3 py-2 transition-all hover:bg-muted">
-                {{ locale.name }}
+            <li v-for="l in locales" :key="l.code">
+              <NuxtLink
+                :to="switchLocalePath(l.code)"
+                class="mb-1 flex w-full gap-2 rounded-md px-3 py-2 transition-all hover:bg-muted"
+              >
+                {{ l.name }}
               </NuxtLink>
             </li>
           </ul>
@@ -21,5 +23,5 @@
 </template>
 
 <script setup lang="ts">
-const { locale, locales, switchLocalePath } = useI18nDocs()
+const { locale, locales, switchLocalePath } = useI18nDocs();
 </script>
