@@ -1,4 +1,4 @@
-import type {SearchResult} from 'minisearch';
+import type { SearchResult } from 'minisearch';
 
 /**
  * A wrapper around useI18n that provides safe internationalization utilities
@@ -84,11 +84,11 @@ export function useI18nDocs() {
    */
   const localizeSearchResult = i18nEnabled
     ? (result: SearchResult[]) => result.filter((r) => {
-      if (locale.value === defaultLocale) {
-        return !otherLocales.some(l => r.id.startsWith(`/${l}/`));
-      }
-      return r.id.startsWith(`/${locale.value}`);
-    })
+        if (locale.value === defaultLocale) {
+          return !otherLocales.some(l => r.id.startsWith(`/${l}/`));
+        }
+        return r.id.startsWith(`/${locale.value}`);
+      })
     : (result: SearchResult[]) => result;
 
   // Get the locale switcher utility
