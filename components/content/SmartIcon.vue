@@ -24,6 +24,9 @@ const { size = 16 } = defineProps<{
 }>();
 
 function checkIcon(name: string): boolean {
+  if (name.includes('http'))
+    return false;
+
   return validateIconName(stringToIcon(name));
 }
 </script>
