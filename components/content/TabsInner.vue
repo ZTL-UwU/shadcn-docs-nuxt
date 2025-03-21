@@ -88,7 +88,7 @@
         </div>
         <CodeCopy
           v-if="$slots.default?.()[activeTabIndex]?.props?.code"
-          class="ml-auto mr-3 self-center pl-2"
+          class="ml-auto mr-2 self-center"
           :code="$slots.default?.()[activeTabIndex]?.props?.code"
         />
       </div>

@@ -6,15 +6,15 @@
       inStack && 'mb-0 rounded-none border-none shadow-none',
     ]"
   >
-    <div v-if="!inGroup && filename" class="flex items-center border-b p-3 font-mono text-sm">
+    <div v-if="!inGroup && filename" class="flex items-center border-b py-2 pl-3 pr-2 font-mono text-sm">
       <SmartIcon v-if="icon" :name="icon" class="mr-1.5" />
       <span>{{ filename }}</span>
-      <CodeCopy :code class="ml-auto mr-1" />
+      <CodeCopy :code class="ml-auto" />
     </div>
 
-    <span v-if="!filename" class="absolute right-3 top-3 z-10">
+    <div v-if="!filename" class="absolute right-2 top-2 z-10">
       <CodeCopy :code />
-    </span>
+    </div>
     <div class="bg-muted/30">
       <UiScrollArea :style="[(parsedMeta.has('height') || height) && `height: ${height || parsedMeta.get('height')}px`]">
         <div
