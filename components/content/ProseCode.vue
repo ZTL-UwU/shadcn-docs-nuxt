@@ -6,7 +6,7 @@
       inStack && 'mb-0 rounded-none border-none shadow-none',
     ]"
   >
-    <div v-if="!inGroup && filename" class="flex items-center border-b py-2 pl-3 pr-2 font-mono text-sm">
+    <div v-if="!inGroup && filename" class="flex items-center border-b bg-background py-2 pl-3 pr-2 font-mono text-sm">
       <SmartIcon v-if="icon" :name="icon" class="mr-1.5" />
       <span>{{ filename }}</span>
       <CodeCopy :code class="ml-auto" />
