@@ -20,7 +20,7 @@
       <ContentRenderer
         :key="page._id"
         :value="page"
-        :data="appConfig.shadcnDocs.data"
+        :data="(appConfig.shadcnDocs as any)?.data"
       />
     </div>
     <main
@@ -50,7 +50,7 @@
           v-else
           :key="page._id"
           :value="page"
-          :data="appConfig.shadcnDocs.data"
+          :data="(appConfig.shadcnDocs as any)?.data"
           class="docs-content"
         />
 
