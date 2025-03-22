@@ -59,15 +59,12 @@
     "@nuxtjs/tailwindcss": "^6.13.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "nuxt": "^3.16.1",
     "nuxt-og-image": "^5.0.5",
     "reka-ui": "^2.1.0",
     "shadcn-nuxt": "^1.0.3",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
-    "typescript": "^5.8.2",
-    "vue": "^3.5.13",
-    "vue-router": "^4.5.0"
+    "typescript": "^5.8.2"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.10.1",
@@ -77,9 +74,12 @@
     "@vueuse/nuxt": "^13.0.0",
     "eslint": "^9.22.0",
     "eslint-plugin-tailwindcss": "^3.18.0",
+    "nuxt": "^3.16.1",
     "pkg-pr-new": "^0.0.41",
     "shiki": "^3.2.1",
     "taze": "^19.0.2",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0",
     "vue-tsc": "^2.2.8"
   }
 }
