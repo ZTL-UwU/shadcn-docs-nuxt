@@ -2,6 +2,7 @@
   "name": "shadcn-docs-nuxt",
   "type": "module",
   "version": "0.8.21",
+  "packageManager": "pnpm@10.6.5",
   "description": "Effortless and beautiful docs template built with Nuxt Content & shadcn-vue.",
   "author": "Tony Zhang <zhangtianli2006@gmail.com>",
   "license": "MIT",
@@ -84,5 +85,15 @@
     "vue": "^3.5.13",
     "vue-router": "^4.5.0",
     "vue-tsc": "^2.2.8"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sharp"
+    ],
+    "ignoredBuiltDependencies": [
+      "@parcel/watcher",
+      "esbuild",
+      "vue-demi"
+    ]
   }
 }
