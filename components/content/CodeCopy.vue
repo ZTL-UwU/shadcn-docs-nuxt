@@ -4,12 +4,12 @@
       <Icon
         v-if="copied === false"
         :name="codeCopyIcon"
-        class="cursor-pointer text-muted-foreground"
+        class="text-muted-foreground cursor-pointer"
       />
       <Icon
         v-else
         name="lucide:check"
-        class="cursor-pointer self-center text-muted-foreground"
+        class="text-muted-foreground cursor-pointer self-center"
       />
     </Transition>
   </UiButton>

@@ -3,7 +3,7 @@
     <NuxtLink
       :to="url"
       target="_blank"
-      class="text-sm font-semibold text-primary"
+      class="text-primary text-sm font-semibold"
     >
       <div class="flex items-center gap-2">
         <SmartIcon :name="icon" />

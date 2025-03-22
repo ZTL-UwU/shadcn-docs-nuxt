@@ -7,7 +7,7 @@
       <span>{{ title }}</span>
     </div>
 
-    <div class="w-auto bg-muted/30 p-2">
+    <div class="bg-muted/30 w-auto p-2">
       <FileTreeRoot :tree="parsedTree" :show-arrow :show-icon :level="0" />
     </div>
   </UiCard>

@@ -17,7 +17,7 @@
             <NuxtLink
               :to="localePath(link.to)"
               :target="link.to"
-              class="mb-1 flex w-full gap-2 rounded-md px-3 py-2 transition-all hover:bg-muted"
+              class="hover:bg-muted mb-1 flex w-full gap-2 rounded-md px-3 py-2 transition-all"
             >
               <SmartIcon v-if="link.icon" :name="link.icon" :size="16" class="mt-1 min-w-5" />
 
@@ -25,7 +25,7 @@
                 <div class="font-semibold">
                   {{ $t(link.title) }}
                 </div>
-                <div class="text-sm text-muted-foreground">
+                <div class="text-muted-foreground text-sm">
                   {{ $t(link.description) }}
                 </div>
               </div>
@@ -37,7 +37,7 @@
   </template>
   <NuxtLink v-else :to="localePath(item.to)" :target="item.target" class="flex w-full p-2">
     {{ $t(item.title) }}
-    <Icon v-if="item.showLinkIcon ?? true" name="lucide:arrow-up-right" class="ml-1 text-muted-foreground" size="12" />
+    <Icon v-if="item.showLinkIcon ?? true" name="lucide:arrow-up-right" class="text-muted-foreground ml-1" size="12" />
   </NuxtLink>
 </template>
 

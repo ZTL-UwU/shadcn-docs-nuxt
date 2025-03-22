@@ -3,7 +3,7 @@
     class="transition-all [&:not(:first-child)]:mt-5"
     :class="[
       typeTwClass[type],
-      to && 'cursor-pointer hover:bg-muted/50',
+      to && 'hover:bg-muted/50 cursor-pointer',
       inStack && 'm-0 rounded-none border-none',
     ]"
     @click="alertClick"

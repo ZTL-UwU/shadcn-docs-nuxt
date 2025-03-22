@@ -12,7 +12,7 @@
                 <NuxtLink
                   :to="localePath(link.to)"
                   :target="link.target"
-                  class="mb-1 flex w-full gap-2 rounded-md px-3 py-2 transition-all hover:bg-muted"
+                  class="hover:bg-muted mb-1 flex w-full gap-2 rounded-md px-3 py-2 transition-all"
                 >
                   <SmartIcon v-if="link?.icon" :name="link.icon" :size="16" class="mt-1 min-w-5" />
 
@@ -20,7 +20,7 @@
                     <div class="font-semibold">
                       {{ $t(link.title) }}
                     </div>
-                    <div class="text-sm text-muted-foreground">
+                    <div class="text-muted-foreground text-sm">
                       {{ $t(link.description) }}
                     </div>
                   </div>
@@ -30,7 +30,7 @@
           </UiNavigationMenuContent>
         </template>
         <NuxtLink v-else :to="localePath(item.to)" :target="item.target">
-          <Icon v-if="item.showLinkIcon ?? true" name="lucide:arrow-up-right" class="absolute right-2 top-2 text-muted-foreground" size="13" />
+          <Icon v-if="item.showLinkIcon ?? true" name="lucide:arrow-up-right" class="text-muted-foreground absolute right-2 top-2" size="13" />
           <div class="bg-transparent font-semibold" :class="[navigationMenuTriggerStyle(), (item.showLinkIcon ?? true) && 'pr-6']">
             {{ $t(item.title) }}
           </div>

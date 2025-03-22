@@ -2,13 +2,13 @@
   <div class="[&:not(:first-child)]:mt-4 [&:not(:first-child)]:pt-4">
     <div class="mb-2">
       <div class="flex items-center gap-2">
-        <span class="text-md font-bold text-primary">
+        <span class="text-md text-primary font-bold">
           {{ name }}
         </span>
-        <span v-if="required" class="font-mono text-sm text-muted-foreground">
+        <span v-if="required" class="text-muted-foreground font-mono text-sm">
           {{ fieldRequiredText }}
         </span>
-        <span class="ml-auto font-mono text-sm text-muted-foreground">
+        <span class="text-muted-foreground ml-auto font-mono text-sm">
           {{ type }}
         </span>
       </div>
@@ -18,7 +18,7 @@
         </ProseCodeInline>
       </div>
     </div>
-    <span class="text-sm text-muted-foreground">
+    <span class="text-muted-foreground text-sm">
       <ContentSlot unwrap="p" />
       {{ description }}
     </span>

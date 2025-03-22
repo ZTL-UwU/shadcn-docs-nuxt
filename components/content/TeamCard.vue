@@ -9,11 +9,11 @@
           <div class="text-lg font-bold">
             {{ name }}
           </div>
-          <div class="text-sm text-muted-foreground">
+          <div class="text-muted-foreground text-sm">
             {{ title }}
           </div>
         </div>
-        <div class="flex gap-3 text-secondary-foreground" :class="{ 'mx-auto': center }">
+        <div class="text-secondary-foreground flex gap-3" :class="{ 'mx-auto': center }">
           <NuxtLink v-for="link in links" :key="link.to" :to="link.to" :target="link.target">
             <SmartIcon :name="link.icon" />
           </NuxtLink>

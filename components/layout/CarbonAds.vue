@@ -6,7 +6,7 @@
     class="lg:mt-6"
   >
     <template v-if="carbonAds.fallback" #error>
-      <div class="flex flex-col items-center rounded-lg border border-border bg-background px-4 py-6 text-muted-foreground">
+      <div class="border-border bg-background text-muted-foreground flex flex-col items-center rounded-lg border px-4 py-6">
         {{ carbonAds.fallbackMessage }}
       </div>
     </template>

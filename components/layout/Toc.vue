@@ -30,7 +30,7 @@
             class="mr-1 self-center"
           />
           {{ $t(link.title) }}
-          <Icon v-if="link.showLinkIcon ?? true" name="lucide:arrow-up-right" class="ml-auto self-center text-muted-foreground" size="13" />
+          <Icon v-if="link.showLinkIcon ?? true" name="lucide:arrow-up-right" class="text-muted-foreground ml-auto self-center" size="13" />
         </NuxtLink>
       </div>
       <div class="flex-grow" />

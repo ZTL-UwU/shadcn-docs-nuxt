@@ -40,7 +40,7 @@
           v-for="(slot, i) in $slots.default?.() ?? []"
           :key="`${i}${label(slot.props)}`"
           :value="i"
-          class="relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none"
+          class="text-muted-foreground data-[state=active]:border-b-primary data-[state=active]:text-foreground relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold shadow-none transition-none data-[state=active]:shadow-none"
         >
           <SmartIcon
             v-if="icon(slot?.props)"
@@ -74,7 +74,7 @@
             v-for="(slot, i) in ($slots.default?.() ?? [])"
             :key="`${i}${label(slot.props)}`"
             :value="label(slot.props)"
-            class="flex cursor-pointer rounded-md px-3 py-1.5 text-muted-foreground transition-all duration-75"
+            class="text-muted-foreground flex cursor-pointer rounded-md px-3 py-1.5 transition-all duration-75"
             :class="[activeTabIndex === i && 'bg-muted text-primary']"
             @mousedown.left="activeTabIndex = i"
           >

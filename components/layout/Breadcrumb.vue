@@ -5,7 +5,7 @@
         <UiBreadcrumbItem>
           <NuxtLink
             :href="index === 0 ? undefined : breadcrumb.href"
-            class="transition-colors hover:text-foreground"
+            class="hover:text-foreground transition-colors"
             :class="{ 'text-foreground': index === breadcrumbs.length - 1 }"
           >
             {{ breadcrumb.title }}

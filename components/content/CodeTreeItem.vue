@@ -3,7 +3,7 @@
     <!-- Folder -->
     <div v-if="tree.children">
       <button
-        class="flex h-8 w-full cursor-pointer select-none items-center gap-2 rounded-md p-2 text-left text-sm font-medium text-foreground/80 hover:bg-muted hover:text-primary"
+        class="text-foreground/80 hover:bg-muted hover:text-primary flex h-8 w-full cursor-pointer select-none items-center gap-2 rounded-md p-2 text-left text-sm font-medium"
         @click="isOpen = !isOpen"
       >
         <SmartIcon
@@ -27,7 +27,7 @@
     <!-- File -->
     <button
       v-else
-      class="flex h-8 w-full items-center gap-2 rounded-md p-2 text-sm font-medium text-foreground/80 hover:bg-muted hover:text-primary"
+      class="text-foreground/80 hover:bg-muted hover:text-primary flex h-8 w-full items-center gap-2 rounded-md p-2 text-sm font-medium"
       :class="[
         state === tree.path && 'bg-muted',
       ]"

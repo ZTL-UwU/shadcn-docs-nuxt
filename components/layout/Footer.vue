@@ -1,5 +1,5 @@
 <template>
-  <footer class="py-6 text-muted-foreground md:px-8 md:py-0">
+  <footer class="text-muted-foreground py-6 md:px-8 md:py-0">
     <div class="container flex flex-col items-center justify-between gap-2 md:h-24 md:flex-row">
       <MDC :value="$t(footer.credits)" class="text-sm" />
       <span class="flex-1" />

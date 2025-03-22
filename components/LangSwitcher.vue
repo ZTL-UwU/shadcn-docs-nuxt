@@ -10,7 +10,7 @@
             <li v-for="l in locales" :key="l.code">
               <NuxtLink
                 :to="switchLocalePath(l.code)"
-                class="mb-1 flex w-full gap-2 rounded-md px-3 py-2 transition-all hover:bg-muted"
+                class="hover:bg-muted mb-1 flex w-full gap-2 rounded-md px-3 py-2 transition-all"
               >
                 {{ l.name }}
               </NuxtLink>

@@ -4,7 +4,7 @@
       v-if="announcement"
       :to="announcement.to"
       :target="announcement.target"
-      class="inline-flex items-center rounded-lg bg-muted px-3 py-1 text-sm font-medium"
+      class="bg-muted inline-flex items-center rounded-lg px-3 py-1 text-sm font-medium"
     >
       <template v-if="announcement.icon">
         <SmartIcon :name="announcement.icon" :size="16" />
@@ -20,7 +20,7 @@
     <h1 class="text-center text-3xl font-bold leading-tight tracking-tighter md:text-6xl lg:leading-[1.1]">
       <ContentSlot :use="$slots.title" unwrap="p" />
     </h1>
-    <span class="max-w-[750px] text-center text-lg text-muted-foreground sm:text-xl">
+    <span class="text-muted-foreground max-w-[750px] text-center text-lg sm:text-xl">
       <ContentSlot :use="$slots.description" unwrap="p" />
     </span>
 

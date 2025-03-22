@@ -3,7 +3,7 @@
     <div
       v-if="open"
       class="block transition-colors"
-      :class="{ 'hover:cursor-pointer hover:bg-muted/40': to, 'border-b': border }"
+      :class="{ 'hover:bg-muted/40 hover:cursor-pointer': to, 'border-b': border }"
       @click="navigate"
     >
       <div class="container flex h-12 max-w-screen-2xl items-center justify-between">
@@ -29,7 +29,7 @@ function navigate() {
     navigateTo(to, {
       external: true,
       open: {
-        target,
+        target: target ?? '_blank',
       },
     });
   }
