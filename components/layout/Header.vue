@@ -15,12 +15,13 @@
         <LayoutSearchButton v-if="!config.search.inAside && config.search.style === 'input'" />
         <div class="flex">
           <LayoutSearchButton v-if="!config.search.inAside && config.search.style === 'button'" />
+          <LangSwitcher v-if="i18nEnabled" />
           <ThemePopover v-if="config.theme.customizable" />
           <DarkModeToggle v-if="config.header.darkModeToggle" />
           <NuxtLink
             v-for="(link, i) in config.header.links"
             :key="i"
-            :to="link?.to"
+            :to="localePath(link?.to)"
             :target="link?.target"
           >
             <UiButton variant="ghost" size="icon" class="flex gap-2">
@@ -38,6 +39,7 @@
 
 <script setup lang="ts">
 const config = useConfig();
+const { i18nEnabled, localePath } = useI18nDocs();
 const { page } = useContent();
 
 const showToc = computed(() => {

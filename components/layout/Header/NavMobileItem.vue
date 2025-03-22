@@ -3,7 +3,7 @@
     <UiCollapsible v-model:open="isOpen">
       <UiCollapsibleTrigger class="w-full p-2 text-left">
         <div class="flex w-full gap-1">
-          {{ item.title }}
+          {{ $t(item.title) }}
           <Icon
             :name="isOpen ? 'lucide:chevrons-down-up' : 'lucide:chevrons-up-down'"
             size="12"
@@ -15,7 +15,7 @@
         <ul class="pl-2">
           <li v-for="link in item.links" :key="link.title">
             <NuxtLink
-              :to="link.to"
+              :to="localePath(link.to)"
               :target="link.to"
               class="mb-1 flex w-full gap-2 rounded-md px-3 py-2 transition-all hover:bg-muted"
             >
@@ -23,10 +23,10 @@
 
               <div>
                 <div class="font-semibold">
-                  {{ link.title }}
+                  {{ $t(link.title) }}
                 </div>
                 <div class="text-sm text-muted-foreground">
-                  {{ link.description }}
+                  {{ $t(link.description) }}
                 </div>
               </div>
             </NuxtLink>
@@ -35,8 +35,8 @@
       </UiCollapsibleContent>
     </UiCollapsible>
   </template>
-  <NuxtLink v-else :to="item.to" :target="item.target" class="flex w-full p-2">
-    {{ item.title }}
+  <NuxtLink v-else :to="localePath(item.to)" :target="item.target" class="flex w-full p-2">
+    {{ $t(item.title) }}
     <Icon v-if="item.showLinkIcon ?? true" name="lucide:arrow-up-right" class="ml-1 text-muted-foreground" size="12" />
   </NuxtLink>
 </template>
@@ -46,6 +46,7 @@ const props = defineProps<{
   item: any;
   index: number;
 }>();
+const { localePath } = useI18nDocs();
 
 const collapsed = useCollapsedMap();
 const isOpen = ref(collapsed.value.get(`mobile-header-nav${props.index}`) || false);

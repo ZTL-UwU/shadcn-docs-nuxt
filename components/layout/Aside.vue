@@ -39,14 +39,14 @@
 defineProps<{ isMobile: boolean }>();
 
 const { navDirFromPath } = useContentHelpers();
-const { navigation } = useContent();
 const config = useConfig();
+const { locale, defaultLocale, navigation } = useI18nDocs();
 
 const tree = computed(() => {
   const route = useRoute();
   const path = route.path.split('/');
   if (config.value.aside.useLevel) {
-    const leveledPath = path.splice(0, 2).join('/');
+    const leveledPath = path.splice(0, locale.value === defaultLocale ? 2 : 3).join('/');
 
     const dir = navDirFromPath(leveledPath, navigation.value);
     return dir ?? [];

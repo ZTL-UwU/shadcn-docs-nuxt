@@ -8,7 +8,7 @@
     <div class="flex h-[calc(100vh-6.5rem)] flex-col gap-5">
       <div v-if="toc?.links.length">
         <p class="mb-2 text-base font-semibold">
-          {{ title }}
+          {{ $t(title) }}
         </p>
         <LayoutTocTree
           :links="toc.links.filter((x: any) => x.id !== 'hide-toc')"
@@ -20,7 +20,7 @@
         <NuxtLink
           v-for="(link, i) in links"
           :key="i"
-          :to="link.to"
+          :to="localePath(link.to)"
           :target="link.target"
           class="flex w-full gap-1 underline-offset-4 hover:underline [&:not(:first-child)]:pt-3"
         >
@@ -29,7 +29,7 @@
             :name="link.icon"
             class="mr-1 self-center"
           />
-          {{ link.title }}
+          {{ $t(link.title) }}
           <Icon v-if="link.showLinkIcon ?? true" name="lucide:arrow-up-right" class="ml-auto self-center text-muted-foreground" size="13" />
         </NuxtLink>
       </div>
@@ -61,6 +61,7 @@
 defineProps<{ isSmall: boolean }>();
 
 const { toc } = useContent();
+const { localePath } = useI18nDocs();
 const { title, links: configLinks, carbonAds } = useConfig().value.toc;
 
 const isDesktop = useMediaQuery('(min-width: 1024px)');

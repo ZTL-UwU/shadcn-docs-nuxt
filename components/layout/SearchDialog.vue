@@ -11,7 +11,7 @@
         <UiCommandInputOnly
           v-model="input"
           :loading="searchLoading"
-          :placeholder="placeholderDetailed"
+          :placeholder="$t(placeholderDetailed)"
           @keydown.enter="handleEnter"
           @keydown.down="handleNavigate(1)"
           @keydown.up="handleNavigate(-1)"
@@ -33,15 +33,15 @@
             <UiCommandGroup v-if="darkModeToggle" heading="Theme" class="p-1.5">
               <UiCommandItem value="light" @click="colorMode.preference = 'light'">
                 <Icon name="lucide:sun" class="mr-2 size-4" />
-                <span>Light</span>
+                <span>{{ $t('Light') }}</span>
               </UiCommandItem>
               <UiCommandItem value="dark" @click="colorMode.preference = 'dark'">
                 <Icon name="lucide:moon" class="mr-2 size-4" />
-                <span>Dark</span>
+                <span>{{ $t('Dark') }}</span>
               </UiCommandItem>
               <UiCommandItem value="system" @click="colorMode.preference = 'auto'">
                 <Icon name="lucide:monitor" class="mr-2 size-4" />
-                <span>System</span>
+                <span>{{ $t('System') }}</span>
               </UiCommandItem>
             </UiCommandGroup>
           </template>
@@ -69,7 +69,7 @@
             </NuxtLink>
           </div>
           <div v-else class="pt-4 text-center text-muted-foreground">
-            No results found.
+            {{ $t('No results found.') }}
           </div>
         </UiCommandList>
       </UiCommand>
@@ -103,6 +103,9 @@ watch([Meta_K, Ctrl_K], (v) => {
 const input = ref('');
 const searchResult = ref();
 const searchLoading = ref(false);
+
+const { localizeSearchResult } = useI18nDocs();
+
 watch(
   input,
   async (v) => {
@@ -111,7 +114,9 @@ watch(
       return;
 
     searchLoading.value = true;
-    searchResult.value = (await searchContent(v)).value;
+    const result = (await searchContent(v)).value;
+
+    searchResult.value = localizeSearchResult(result);
     searchLoading.value = false;
   },
 );
@@ -121,7 +126,8 @@ function getHighlightedContent(text: string) {
 }
 
 const { navKeyFromPath } = useContentHelpers();
-const { navigation } = useContent();
+const { navigation } = useI18nDocs();
+
 function getItemIcon(path: string) {
   return navKeyFromPath(path, 'icon', navigation.value);
 }
