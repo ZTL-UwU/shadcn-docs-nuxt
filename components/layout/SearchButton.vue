@@ -4,7 +4,7 @@
       v-if="style === 'input'"
       variant="outline"
       class="text-muted-foreground hover:text-accent-foreground h-8 w-full self-center rounded-md pr-1.5 font-normal"
-      :class="[inAside ? 'mb-4' : 'md:w-40 lg:w-64']"
+      :class="[inAside ? 'mb-4' : 'md:w-40 lg:w-60']"
       @click="isOpen = true"
     >
       <span class="mr-auto overflow-hidden">
@@ -20,7 +20,7 @@
       size="icon"
       @click="isOpen = true"
     >
-      <Icon name="lucide:search" size="16" />
+      <Icon name="lucide:search" size="18" />
     </UiButton>
   </template>
 

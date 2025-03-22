@@ -33,6 +33,11 @@ export default defineAppConfig({
         dark: '/logo-dark.svg',
       },
       darkModeToggle: true,
+      languageSwitcher: {
+        enable: true,
+        triggerType: 'icon',
+        dropdownType: 'select',
+      },
       nav: [{
         title: 'Docs',
         links: [{
@@ -208,6 +213,7 @@ export default defineAppConfig({
     search: {
       enable: true,
       inAside: false,
+      style: 'input',
     },
     data: {},
   },

@@ -44,6 +44,11 @@ const defaultConfig: DefaultConfig = {
     showTitleInMobile: false,
     border: false,
     darkModeToggle: true,
+    languageSwitcher: {
+      enable: false,
+      triggerType: 'icon',
+      dropdownType: 'select',
+    },
     nav: [],
     links: [],
   },

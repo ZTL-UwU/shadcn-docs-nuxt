@@ -23,6 +23,10 @@ export default defineI18nConfig(() => ({
       // Collapse Code
       'Expand': 'Expand',
       'Collapse': 'Collapse',
+
+      // Language Switcher
+      'Language': 'Language',
+      'Choose your language': 'Choose your language',
     },
     fr: {
       // Search
@@ -45,6 +49,10 @@ export default defineI18nConfig(() => ({
       // Collapse Code
       'Expand': 'Développer',
       'Collapse': 'Réduire',
+
+      // Language Switcher
+      'Language': 'Langue',
+      'Choose your language': 'Choisissez votre langue',
     },
   },
 }));
