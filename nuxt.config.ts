@@ -92,6 +92,9 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2024-07-05',
   i18n: {
+    bundle: {
+      optimizeTranslationDirective: false,
+    },
     baseUrl: 'https://shadcn-docs-nuxt.vercel.app/',
     detectBrowserLanguage: false,
     strategy: 'prefix_except_default',
