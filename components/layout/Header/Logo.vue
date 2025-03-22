@@ -4,7 +4,7 @@
       <NuxtImg :src="logo.light" class="h-7 dark:hidden" />
       <NuxtImg :src="logo.dark" class="hidden h-7 dark:block" />
       <span v-if="showTitle && title" class="ml-3 self-center font-bold">
-        {{ title }}
+        {{ $t(title) }}
       </span>
     </NuxtLink>
   </div>

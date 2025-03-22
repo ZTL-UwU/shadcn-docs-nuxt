@@ -1,5 +1,5 @@
-import type { Theme } from '@/lib/registry/themes';
-import { themes } from '@/lib/registry/themes';
+import type { Theme } from '@/lib/themes';
+import { themes } from '@/lib/themes';
 
 interface Config {
   theme?: Theme['name'];

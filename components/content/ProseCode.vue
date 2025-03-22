@@ -1,12 +1,12 @@
 <template>
   <UiCard
-    class="relative overflow-hidden bg-muted/30 [&:not(:first-child)]:mt-5 [&:not(:last-child)]:mb-5"
+    class="bg-muted/30 relative overflow-hidden [&:not(:first-child)]:mt-5 [&:not(:last-child)]:mb-5"
     :class="[
       (inGroup || inTree) && 'mb-0 rounded-t-none border-none shadow-none',
       inStack && 'mb-0 rounded-none border-none shadow-none',
     ]"
   >
-    <div v-if="!inGroup && filename" class="flex items-center border-b bg-background py-2 pl-3 pr-2 font-mono text-sm">
+    <div v-if="!inGroup && filename" class="bg-background flex items-center border-b py-2 pl-3 pr-2 font-mono text-sm">
       <SmartIcon v-if="icon" :name="icon" class="mr-1.5" />
       <span>{{ filename }}</span>
       <CodeCopy :code class="ml-auto" />
@@ -47,11 +47,11 @@
     <div
       v-if="parsedMeta.has('collapse')"
       class="absolute inset-x-0 bottom-0 flex h-16 items-center justify-center rounded-b"
-      :class="[!expanded && 'bg-gradient-to-t from-muted dark:from-zinc-950']"
+      :class="[!expanded && 'from-muted bg-gradient-to-t dark:from-zinc-950']"
     >
       <UiButton size="sm" variant="outline" @click="expanded = !expanded">
         <Icon :name="expanded ? 'lucide:chevron-up' : 'lucide:chevron-down'" size="18" />
-        {{ expanded ? 'Collapse' : 'Expand' }}
+        {{ expanded ? $t('Collapse') : $t('Expand') }}
       </UiButton>
     </div>
   </UiCard>

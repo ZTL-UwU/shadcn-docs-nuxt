@@ -1,10 +1,10 @@
 <template>
   <div class="grid gap-6">
     <div class="grid space-y-1">
-      <h1 class="text-lg font-semibold text-foreground">
+      <h1 class="text-foreground text-lg font-semibold">
         Customize
       </h1>
-      <p class="text-sm text-muted-foreground">
+      <p class="text-muted-foreground text-sm">
         Pick a style and color for the docs.
       </p>
     </div>
@@ -15,7 +15,7 @@
           <UiButton
             class="justify-start gap-2"
             variant="outline"
-            :class="{ 'border-2 border-primary': theme === color }"
+            :class="{ 'border-primary border-2': theme === color }"
             @click="setTheme(color)"
           >
             <span class="flex size-5 items-center justify-center rounded-full" :style="{ backgroundColor: backgroundColor(color) }">
@@ -33,7 +33,7 @@
           <UiButton
             class="justify-center gap-2"
             variant="outline"
-            :class="{ 'border-2 border-primary': radius === r }"
+            :class="{ 'border-primary border-2': radius === r }"
             @click="setRadius(r)"
           >
             <span class="text-xs capitalize">{{ r }}</span>
@@ -47,7 +47,7 @@
         <UiButton
           class="justify-center gap-2"
           variant="outline"
-          :class="{ 'border-2 border-primary': colorMode.preference === 'light' }"
+          :class="{ 'border-primary border-2': colorMode.preference === 'light' }"
           @click="colorMode.preference = 'light'"
         >
           <Icon name="lucide:sun" size="16" />
@@ -56,7 +56,7 @@
         <UiButton
           class="justify-center gap-2"
           variant="outline"
-          :class="{ 'border-2 border-primary': colorMode.preference === 'dark' }"
+          :class="{ 'border-primary border-2': colorMode.preference === 'dark' }"
           @click="colorMode.preference = 'dark'"
         >
           <Icon name="lucide:moon" size="16" />
@@ -65,7 +65,7 @@
         <UiButton
           class="justify-center gap-2"
           variant="outline"
-          :class="{ 'border-2 border-primary': colorMode.preference === 'system' }"
+          :class="{ 'border-primary border-2': colorMode.preference === 'system' }"
           @click="colorMode.preference = 'system'"
         >
           <Icon name="lucide:monitor" size="16" />
@@ -77,7 +77,7 @@
 </template>
 
 <script setup lang="ts">
-import { themes } from '@/lib/registry/themes';
+import { themes } from '@/lib/themes';
 
 const { themeClass, theme, radius, setTheme, setRadius } = useThemes();
 const { darkModeToggle } = useConfig().value.header;
