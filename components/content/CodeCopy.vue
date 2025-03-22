@@ -1,22 +1,18 @@
 <template>
-  <div class="flex">
+  <UiButton ref="checkIconRef" variant="outline" class="size-7 p-1" @click="handleClick">
     <Transition name="fade" mode="out-in">
-      <div v-if="copied === false">
-        <Icon
-          :name="codeCopyIcon"
-          class="block cursor-pointer self-center text-muted-foreground hover:text-primary"
-          @click="handleClick"
-        />
-      </div>
-      <div v-else>
-        <Icon
-          ref="checkIconRef"
-          name="lucide:check"
-          class="block cursor-pointer self-center text-muted-foreground hover:text-primary"
-        />
-      </div>
+      <Icon
+        v-if="copied === false"
+        :name="codeCopyIcon"
+        class="cursor-pointer text-muted-foreground"
+      />
+      <Icon
+        v-else
+        name="lucide:check"
+        class="cursor-pointer self-center text-muted-foreground"
+      />
     </Transition>
-  </div>
+  </UiButton>
 </template>
 
 <script setup lang="ts">
@@ -44,7 +40,7 @@ async function handleClick() {
   }
 }
 
-const checkIconRef = ref<HTMLElement>();
+const checkIconRef = useTemplateRef('checkIconRef');
 onClickOutside(checkIconRef, () => {
   copied.value = false;
 });

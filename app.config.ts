@@ -101,7 +101,7 @@ export default defineAppConfig({
       breadCrumb: true,
       showTitle: true,
       codeCopyToast: true,
-      codeCopyIcon: 'lucide:copy',
+      codeCopyIcon: 'lucide:clipboard',
       editLink: {
         enable: true,
         pattern: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt/edit/main/content/:path',
