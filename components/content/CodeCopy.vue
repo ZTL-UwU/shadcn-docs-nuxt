@@ -23,6 +23,7 @@ const { code } = defineProps<{
 }>();
 
 const { toast } = useToast();
+const { t } = useI18n();
 
 const { copy } = useClipboard({ source: code });
 const copied = ref(false);
@@ -35,7 +36,7 @@ async function handleClick() {
 
   if (useConfig().value.main.codeCopyToast) {
     toast({
-      description: useConfig().value.main.codeCopyToastText,
+      description: t(useConfig().value.main.codeCopyToastText),
     });
   }
 }

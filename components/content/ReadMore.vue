@@ -1,6 +1,6 @@
 <template>
   <Alert :to :target :icon>
-    Read more at <span class="font-semibold">{{ computedTitle }}</span>
+    {{ $t('Read more at') }} <span class="font-semibold">{{ computedTitle }}</span>
   </Alert>
 </template>
 

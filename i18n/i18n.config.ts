@@ -9,7 +9,7 @@ export default defineI18nConfig(() => ({
       'No results found.': 'No results found.',
 
       // TOC
-      'On This Page': 'On This Page', // Default title for the table of contents
+      'On This Page': 'On This Page',
 
       // Search command
       'Light': 'Light',
@@ -27,6 +27,18 @@ export default defineI18nConfig(() => ({
       // Language Switcher
       'Language': 'Language',
       'Choose your language': 'Choose your language',
+
+      // Copy Code
+      'Copied to clipboard!': 'Copied to clipboard!',
+
+      // Carbon Ads
+      'Please support us by disabling your ad blocker.': 'Please support us by disabling your ad blocker.',
+
+      // Read More
+      'Read more at': 'Read more at',
+
+      // Field
+      'required': 'required',
     },
     fr: {
       // Search
@@ -53,6 +65,18 @@ export default defineI18nConfig(() => ({
       // Language Switcher
       'Language': 'Langue',
       'Choose your language': 'Choisissez votre langue',
+
+      // Copy Code
+      'Copied to clipboard!': 'Copié dans le presse-papiers !',
+
+      // Carbon Ads
+      'Please support us by disabling your ad blocker.': 'Veuillez nous soutenir en désactivant votre bloqueur de publicités.',
+
+      // Read More
+      'Read more at': 'Lire la suite à',
+
+      // Field
+      'required': 'requis',
     },
   },
 }));

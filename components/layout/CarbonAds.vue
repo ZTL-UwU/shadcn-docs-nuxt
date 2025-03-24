@@ -7,7 +7,7 @@
   >
     <template v-if="carbonAds.fallback" #error>
       <div class="border-border bg-background text-muted-foreground flex flex-col items-center rounded-lg border px-4 py-6">
-        {{ carbonAds.fallbackMessage }}
+        {{ $t(carbonAds.fallbackMessage) }}
       </div>
     </template>
   </ScriptCarbonAds>
