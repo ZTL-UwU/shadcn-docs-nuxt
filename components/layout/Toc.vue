@@ -13,10 +13,10 @@
         <LayoutTocTree
           :links="toc.links.filter((x: any) => x.id !== 'hide-toc')"
           :level="0"
-          :class="[links.length && 'border-b pb-5']"
+          :class="[(links.length || iconLinks?.length) && 'border-b pb-5']"
         />
       </div>
-      <div v-if="links" class="text-muted-foreground" :class="[iconLinks?.length && 'border-b pb-5']">
+      <div v-if="links.length" class="text-muted-foreground" :class="[iconLinks?.length && 'border-b pb-5']">
         <NuxtLink
           v-for="(link, i) in links"
           :key="i"

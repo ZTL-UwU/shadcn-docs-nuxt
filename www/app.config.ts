@@ -198,7 +198,7 @@ export default defineAppConfig({
       enable: true,
       enableInMobile: false,
       enableInHomepage: false,
-      title: 'On This Page',
+      title: 'On this page',
       links: [
         {
           title: 'Star on GitHub',

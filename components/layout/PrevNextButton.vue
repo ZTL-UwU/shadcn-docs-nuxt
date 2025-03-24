@@ -9,7 +9,7 @@
         <div v-if="side === 'left'" class="flex size-6 min-w-6">
           <Icon name="lucide:arrow-left" size="20" class="mx-auto self-center" />
         </div>
-        <span class="space-y-2 self-center">
+        <span class="w-full space-y-2 self-center" :class="[side === 'left' ? 'text-left' : 'text-right']">
           <div class="text-lg font-semibold">
             {{ prevNext.title }}
           </div>

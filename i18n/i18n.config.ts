@@ -9,7 +9,7 @@ export default defineI18nConfig(() => ({
       'No results found.': 'No results found.',
 
       // TOC
-      'On This Page': 'On This Page',
+      'On this page': 'On this page',
 
       // Search command
       'Light': 'Light',
@@ -47,7 +47,7 @@ export default defineI18nConfig(() => ({
       'No results found.': 'Aucun résultat trouvé.',
 
       // TOC
-      'On This Page': 'Sur cette Page',
+      'On this page': 'Sur cette page',
 
       // Search command
       'Light': 'Clair',
