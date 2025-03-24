@@ -131,6 +131,7 @@ const defaultConfig: DefaultConfig = {
     enableInHomepage: false,
     title: 'On This Page',
     links: [],
+    iconLinks: [],
     carbonAds: {
       enable: false,
       disableInDev: false,

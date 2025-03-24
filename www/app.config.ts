@@ -86,15 +86,18 @@ export default defineAppConfig({
         target: '_self',
         showLinkIcon: true,
       }],
-      links: [{
-        icon: 'lucide:coffee',
-        to: 'https://ko-fi.com/ztl_uwu',
-        target: '_blank',
-      }, {
-        icon: 'lucide:github',
-        to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt',
-        target: '_blank',
-      }],
+      links: [
+        {
+          icon: 'lucide:coffee',
+          to: 'https://ko-fi.com/ztl_uwu',
+          target: '_blank',
+        },
+        {
+          icon: 'lucide:github',
+          to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt',
+          target: '_blank',
+        },
+      ],
     },
     aside: {
       useLevel: true,
@@ -112,7 +115,7 @@ export default defineAppConfig({
         pattern: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt/edit/main/content/:path',
         text: 'Edit this page',
         icon: 'lucide:square-pen',
-        placement: ['docsFooter', 'toc'],
+        placement: ['docsFooter'],
       },
       backToTop: true,
       codeIcon: {
@@ -162,43 +165,78 @@ export default defineAppConfig({
     },
     footer: {
       credits: 'FOOTER_CREDIT',
-      links: [{
-        icon: 'lucide:heart',
-        title: 'Sponsor Me',
-        to: 'https://ko-fi.com/ztl_uwu',
-        target: '_blank',
-      }, {
-        icon: 'lucide:twitter',
-        to: 'https://x.com/ZTL_UwU',
-        target: '_blank',
-      }, {
-        icon: 'lucide-lab:butterfly',
-        to: 'https://bsky.app/profile/ztl-uwu.bsky.social',
-        target: '_blank',
-      }, {
-        icon: 'lucide:github',
-        to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt',
-        target: '_blank',
-      }],
+      links: [
+        {
+          icon: 'lucide:heart',
+          title: 'Sponsor Me',
+          to: 'https://ko-fi.com/ztl_uwu',
+          target: '_blank',
+        },
+        {
+          icon: 'lucide:twitter',
+          to: 'https://x.com/ZTL_UwU',
+          target: '_blank',
+        },
+        {
+          icon: 'lucide-lab:butterfly',
+          to: 'https://bsky.app/profile/ztl-uwu.bsky.social',
+          target: '_blank',
+        },
+        {
+          icon: 'simple-icons:discord',
+          to: 'https://discord.gg/9P5HzAz8DT',
+          target: '_blank',
+        },
+        {
+          icon: 'lucide:github',
+          to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt',
+          target: '_blank',
+        },
+      ],
     },
     toc: {
       enable: true,
       enableInMobile: false,
       enableInHomepage: false,
       title: 'On This Page',
-      links: [{
-        title: 'Star on GitHub',
-        icon: 'lucide:star',
-        to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt',
-        target: '_blank',
-        showLinkIcon: true,
-      }, {
-        title: 'Create Issues',
-        icon: 'lucide:circle-dot',
-        to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt/issues',
-        target: '_blank',
-        showLinkIcon: true,
-      }],
+      links: [
+        {
+          title: 'Star on GitHub',
+          icon: 'lucide:star',
+          to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt',
+          target: '_blank',
+          showLinkIcon: true,
+        },
+        {
+          title: 'Create Issues',
+          icon: 'lucide:circle-dot',
+          to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt/issues',
+          target: '_blank',
+          showLinkIcon: true,
+        },
+      ],
+      iconLinks: [
+        {
+          icon: 'lucide:coffee',
+          to: 'https://ko-fi.com/ztl_uwu',
+          target: '_blank',
+        },
+        {
+          icon: 'lucide:twitter',
+          to: 'https://x.com/ZTL_UwU',
+          target: '_blank',
+        },
+        {
+          icon: 'lucide-lab:butterfly',
+          to: 'https://bsky.app/profile/ztl-uwu.bsky.social',
+          target: '_blank',
+        },
+        {
+          icon: 'simple-icons:discord',
+          to: 'https://discord.gg/9P5HzAz8DT',
+          target: '_blank',
+        },
+      ],
       carbonAds: {
         enable: true,
         disableInDev: true,

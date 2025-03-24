@@ -107,6 +107,11 @@ interface DefaultConfig {
       target: string;
       showLinkIcon: boolean;
     })[];
+    iconLinks: ({
+      icon: string;
+      to: string;
+      target: string;
+    })[];
     carbonAds: {
       enable: boolean;
       disableInDev: boolean;

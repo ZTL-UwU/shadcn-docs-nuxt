@@ -16,7 +16,7 @@
           :class="[links.length && 'border-b pb-5']"
         />
       </div>
-      <div v-if="links" class="text-muted-foreground">
+      <div v-if="links" class="text-muted-foreground" :class="[iconLinks?.length && 'border-b pb-5']">
         <NuxtLink
           v-for="(link, i) in links"
           :key="i"
@@ -30,7 +30,22 @@
             class="mr-1 self-center"
           />
           {{ $t(link.title) }}
-          <Icon v-if="link.showLinkIcon ?? true" name="lucide:arrow-up-right" class="text-muted-foreground ml-auto self-center" size="13" />
+          <Icon v-if="link.showLinkIcon ?? (link.target === '_blank')" name="lucide:arrow-up-right" class="text-muted-foreground ml-auto self-center" size="13" />
+        </NuxtLink>
+      </div>
+      <div v-if="iconLinks" class="text-muted-foreground">
+        <NuxtLink
+          v-for="(link, i) in iconLinks"
+          :key="i"
+          :to="localePath(link.to)"
+          :target="link.target"
+        >
+          <UiButton size="icon" variant="ghost" class="size-7">
+            <SmartIcon
+              v-if="link.icon"
+              :name="link.icon"
+            />
+          </UiButton>
         </NuxtLink>
       </div>
       <div class="flex-grow" />
@@ -62,7 +77,7 @@ defineProps<{ isSmall: boolean }>();
 
 const { toc } = useContent();
 const { localePath } = useI18nDocs();
-const { title, links: configLinks, carbonAds } = useConfig().value.toc;
+const { title, links: configLinks, iconLinks, carbonAds } = useConfig().value.toc;
 
 const isDesktop = useMediaQuery('(min-width: 1024px)');
 const carbonAdsEnabled = computed(
