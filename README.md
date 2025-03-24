@@ -12,6 +12,8 @@ Beautifully designed _Nuxt Content_ template built with _shadcn-vue_. **Customiz
 
 📖 [Documentation / Demo](https://shadcn-docs-nuxt.vercel.app/)
 
+💬 [Discord](https://discord.gg/9P5HzAz8DT)
+
 ## Quick Start
 
 1. Create a project with the [starter template](https://github.com/ZTL-UwU/shadcn-docs-nuxt-starter)
