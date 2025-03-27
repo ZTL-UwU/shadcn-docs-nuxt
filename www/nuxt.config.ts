@@ -23,5 +23,11 @@ export default defineNuxtConfig({
       },
     ],
   },
+  fonts: {
+    families: [
+      { name: 'Geist', provider: 'google' },
+      { name: 'Geist Mono', provider: 'google' },
+    ],
+  },
   compatibilityDate: '2024-07-06',
 });
