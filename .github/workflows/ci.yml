@@ -71,7 +71,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build
-        run: pnpm run build
+        run: DEBUG=1 pnpm run build
 
   ssg:
     runs-on: ubuntu-latest
