@@ -62,19 +62,23 @@ const { link, level } = defineProps<{
 const { collapse, collapseLevel, folderStyle: defaultFolderStyle } = useConfig().value.aside;
 
 const collapsed = useCollapsedMap();
-const isOpen = ref(collapsed.value.get(link._path) || defaultOpen());
+const route = useRoute();
 
 function defaultOpen() {
+  if (route.path.includes(link._path))
+    return true;
   if (link.collapse !== undefined)
     return !link.collapse;
 
   return level < collapseLevel && !collapse;
 }
 
+const isOpen = ref(collapsed.value.get(link._path) || defaultOpen());
+
 watch(isOpen, (v) => {
   collapsed.value.set(link._path, v);
 });
-const isActive = computed(() => link._path === useRoute().path);
+const isActive = computed(() => link._path === route.path);
 
 const folderStyle = computed(() => link.sidebar?.style ?? defaultFolderStyle);
 </script>
