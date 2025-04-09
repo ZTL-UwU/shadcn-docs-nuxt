@@ -13,7 +13,7 @@
       </template>
       <template v-else>
         <button
-          class="text-foreground/80 hover:bg-muted hover:text-primary flex w-full cursor-pointer items-center gap-2 rounded-md p-2 text-left text-sm font-medium"
+          class="text-foreground/80 hover:bg-muted hover:text-primary flex w-full cursor-pointer items-center gap-2 rounded-md p-2 text-left text-sm"
           :class="[link.navTruncate !== false && 'h-8']"
           @click="isOpen = !isOpen"
         >
@@ -42,7 +42,7 @@
       :to="link._path"
       class="text-foreground/80 hover:bg-muted hover:text-primary flex items-center gap-2 rounded-md p-2 text-sm"
       :class="[
-        isActive && 'bg-muted !text-primary',
+        isActive && 'bg-muted !text-primary font-medium',
         link.navTruncate !== false && 'h-8',
       ]"
     >
