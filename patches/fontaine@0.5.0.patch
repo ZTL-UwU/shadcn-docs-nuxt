@@ -1,0 +1,557 @@
+diff --git a/dist/index.cjs b/dist/index.cjs
+index 0618902e0d5c9fdf3c60ff1bed368b0e3cd773a1..3012c806477c66ae77561c1ba49d76398c427c0d 100644
+--- a/dist/index.cjs
++++ b/dist/index.cjs
+@@ -1,13 +1,13 @@
+ 'use strict';
+ 
+-const unplugin = require('unplugin');
+ const magicRegexp = require('magic-regexp');
+-const MagicString = require('magic-string');
+-const ufo = require('ufo');
+-const pathe = require('pathe');
+ const node_url = require('node:url');
+-const unpack = require('@capsizecss/unpack');
+ const metrics = require('@capsizecss/metrics');
++const unpack = require('@capsizecss/unpack');
++const ufo = require('ufo');
++const MagicString = require('magic-string');
++const pathe = require('pathe');
++const unplugin = require('unplugin');
+ 
+ function _interopDefaultCompat (e) { return e && typeof e === 'object' && 'default' in e ? e.default : e; }
+ 
+@@ -56,12 +56,7 @@ function generateFallbackName(name) {
+   return `${firstFamily} fallback`;
+ }
+ function generateFontFace(metrics, fallback) {
+-  const {
+-    name: fallbackName,
+-    font: fallbackFontName,
+-    metrics: fallbackMetrics,
+-    ...properties
+-  } = fallback;
++  const { name: fallbackName, font: fallbackFontName, metrics: fallbackMetrics, ...properties } = fallback;
+   const preferredFontXAvgRatio = metrics.xWidthAvg / metrics.unitsPerEm;
+   const fallbackFontXAvgRatio = fallbackMetrics ? fallbackMetrics.xWidthAvg / fallbackMetrics.unitsPerEm : 1;
+   const sizeAdjust = fallbackMetrics && preferredFontXAvgRatio && fallbackFontXAvgRatio ? preferredFontXAvgRatio / fallbackFontXAvgRatio : 1;
+@@ -85,13 +80,7 @@ ${toCSS(declaration)}
+ }
+ 
+ const metricCache = {};
+-function filterRequiredMetrics({
+-  ascent,
+-  descent,
+-  lineGap,
+-  unitsPerEm,
+-  xWidthAvg
+-}) {
++function filterRequiredMetrics({ ascent, descent, lineGap, unitsPerEm, xWidthAvg }) {
+   return {
+     ascent,
+     descent,
+@@ -108,6 +97,10 @@ async function getMetricsForFamily(family) {
+     const name = metrics.fontFamilyToCamelCase(family);
+     const { entireMetricsCollection } = await import('@capsizecss/metrics/entireMetricsCollection');
+     const metrics$1 = entireMetricsCollection[name];
++    if (!("descent" in metrics$1)) {
++      metricCache[family] = null;
++      return null;
++    }
+     const filteredMetrics = filterRequiredMetrics(metrics$1);
+     metricCache[family] = filteredMetrics;
+     return filteredMetrics;
+@@ -116,14 +109,26 @@ async function getMetricsForFamily(family) {
+     return null;
+   }
+ }
++const urlRequestCache = /* @__PURE__ */ new Map();
+ async function readMetrics(_source) {
+   const source = typeof _source !== "string" && "href" in _source ? _source.href : _source;
+   if (source in metricCache)
+-    return Promise.resolve(metricCache[source]);
++    return metricCache[source];
+   const { protocol } = ufo.parseURL(source);
+   if (!protocol)
+     return null;
+-  const metrics = protocol === "file:" ? await unpack.fromFile(node_url.fileURLToPath(source)) : await unpack.fromUrl(source);
++  let metrics;
++  if (protocol === "file:") {
++    metrics = await unpack.fromFile(node_url.fileURLToPath(source));
++  } else {
++    if (urlRequestCache.has(source)) {
++      metrics = await urlRequestCache.get(source);
++    } else {
++      const requestPromise = unpack.fromUrl(source);
++      urlRequestCache.set(source, requestPromise);
++      metrics = await requestPromise;
++    }
++  }
+   const filteredMetrics = filterRequiredMetrics(metrics);
+   metricCache[source] = filteredMetrics;
+   return filteredMetrics;
+diff --git a/dist/index.d.cts b/dist/index.d.cts
+index bbf04a7284c07c3de3c97939365c76b7c1d32f61..9fe5da131297ecdee31ca1790d22985bb6e8ca43 100644
+--- a/dist/index.d.cts
++++ b/dist/index.d.cts
+@@ -1,32 +1,104 @@
+-import * as unplugin from 'unplugin';
+ import { Font } from '@capsizecss/unpack';
++import * as unplugin from 'unplugin';
++
++/**
++ * Generates a fallback name based on the first font family specified in the input string.
++ * @param {string} name - The full font family string.
++ * @returns {string} - The fallback font name.
++ */
++declare function generateFallbackName(name: string): string;
++interface FallbackOptions {
++    /**
++     * The name of the fallback font.
++     */
++    name: string;
++    /**
++     * The fallback font family name.
++     */
++    font: string;
++    /**
++     * Metrics for fallback face calculations.
++     * @optional
++     */
++    metrics?: FontFaceMetrics;
++    /**
++     * Additional properties that may be included dynamically
++     */
++    [key: string]: any;
++}
++type FontFaceMetrics = Pick<Font, 'ascent' | 'descent' | 'lineGap' | 'unitsPerEm' | 'xWidthAvg'>;
++/**
++ * Generates a CSS `@font-face' declaration for a font, taking fallback and resizing into account.
++ * @param {FontFaceMetrics} metrics - The metrics of the preferred font. See {@link FontFaceMetrics}.
++ * @param {FallbackOptions} fallback - The fallback options, including name, font and optional metrics. See {@link FallbackOptions}.
++ * @returns {string} - The full `@font-face` CSS declaration.
++ */
++declare function generateFontFace(metrics: FontFaceMetrics, fallback: FallbackOptions): string;
++
++/**
++ * Retrieves the font metrics for a given font family from the metrics collection. Uses caching to avoid redundant calculations.
++ * @param {string} family - The name of the font family for which metrics are requested.
++ * @returns {Promise<FontFaceMetrics | null>} - A promise that resolves with the filtered font metrics or null if not found. See {@link FontFaceMetrics}.
++ * @async
++ */
++declare function getMetricsForFamily(family: string): Promise<FontFaceMetrics | null>;
++/**
++ * Reads font metrics from a specified source URL or file path. This function supports both local files and remote URLs.
++ * It caches the results to optimise subsequent requests for the same source.
++ * @param {URL | string} _source - The source URL or local file path from which to read the font metrics.
++ * @returns {Promise<FontFaceMetrics | null>} - A promise that resolves to the filtered font metrics or null if the source cannot be processed.
++ * @async
++ */
++declare function readMetrics(_source: URL | string): Promise<FontFaceMetrics | null>;
+ 
+ interface FontaineTransformOptions {
++    /**
++     * Configuration options for the CSS transformation.
++     * @optional
++     */
+     css?: {
++        /**
++         * Holds the current value of the CSS being transformed.
++         * @optional
++         */
+         value?: string;
+     };
++    /**
++     * An array of fallback font family names to use.
++     */
+     fallbacks: string[];
++    /**
++     * Function to resolve a given path to a valid URL or local path.
++     * This is typically used to resolve font file paths.
++     * @optional
++     */
+     resolvePath?: (path: string) => string | URL;
++    /**
++     * A function to determine whether to skip font face generation for a given fallback name.
++     * @optional
++     */
+     skipFontFaceGeneration?: (fallbackName: string) => boolean;
+-    /** this should produce an unquoted font family name */
++    /**
++     * Function to generate an unquoted font family name to use as a fallback.
++     * This should return a valid CSS font family name and should not include quotes.
++     * @optional
++     */
+     fallbackName?: (name: string) => string;
+     /** @deprecated use fallbackName */
+     overrideName?: (name: string) => string;
++    /**
++     * Specifies whether to create a source map for the transformation.
++     * @optional
++     */
+     sourcemap?: boolean;
+ }
++/**
++ * Transforms CSS files to include font fallbacks.
++ *
++ * @param options - The transformation options. See {@link FontaineTransformOptions}.
++ * @returns The unplugin instance.
++ */
+ declare const FontaineTransform: unplugin.UnpluginInstance<FontaineTransformOptions, boolean>;
+ 
+-declare function generateFallbackName(name: string): string;
+-interface FallbackOptions {
+-    name: string;
+-    font: string;
+-    metrics?: FontFaceMetrics;
+-    [key: string]: any;
+-}
+-type FontFaceMetrics = Pick<Font, 'ascent' | 'descent' | 'lineGap' | 'unitsPerEm' | 'xWidthAvg'>;
+-declare function generateFontFace(metrics: FontFaceMetrics, fallback: FallbackOptions): string;
+-
+-declare function getMetricsForFamily(family: string): Promise<FontFaceMetrics | null>;
+-declare function readMetrics(_source: URL | string): Promise<FontFaceMetrics | null>;
+-
+-export { FontaineTransform, type FontaineTransformOptions, generateFallbackName, generateFontFace, getMetricsForFamily, readMetrics };
++export { FontaineTransform, generateFallbackName, generateFontFace, getMetricsForFamily, readMetrics };
++export type { FontaineTransformOptions };
+diff --git a/dist/index.d.mts b/dist/index.d.mts
+index bbf04a7284c07c3de3c97939365c76b7c1d32f61..9fe5da131297ecdee31ca1790d22985bb6e8ca43 100644
+--- a/dist/index.d.mts
++++ b/dist/index.d.mts
+@@ -1,32 +1,104 @@
+-import * as unplugin from 'unplugin';
+ import { Font } from '@capsizecss/unpack';
++import * as unplugin from 'unplugin';
++
++/**
++ * Generates a fallback name based on the first font family specified in the input string.
++ * @param {string} name - The full font family string.
++ * @returns {string} - The fallback font name.
++ */
++declare function generateFallbackName(name: string): string;
++interface FallbackOptions {
++    /**
++     * The name of the fallback font.
++     */
++    name: string;
++    /**
++     * The fallback font family name.
++     */
++    font: string;
++    /**
++     * Metrics for fallback face calculations.
++     * @optional
++     */
++    metrics?: FontFaceMetrics;
++    /**
++     * Additional properties that may be included dynamically
++     */
++    [key: string]: any;
++}
++type FontFaceMetrics = Pick<Font, 'ascent' | 'descent' | 'lineGap' | 'unitsPerEm' | 'xWidthAvg'>;
++/**
++ * Generates a CSS `@font-face' declaration for a font, taking fallback and resizing into account.
++ * @param {FontFaceMetrics} metrics - The metrics of the preferred font. See {@link FontFaceMetrics}.
++ * @param {FallbackOptions} fallback - The fallback options, including name, font and optional metrics. See {@link FallbackOptions}.
++ * @returns {string} - The full `@font-face` CSS declaration.
++ */
++declare function generateFontFace(metrics: FontFaceMetrics, fallback: FallbackOptions): string;
++
++/**
++ * Retrieves the font metrics for a given font family from the metrics collection. Uses caching to avoid redundant calculations.
++ * @param {string} family - The name of the font family for which metrics are requested.
++ * @returns {Promise<FontFaceMetrics | null>} - A promise that resolves with the filtered font metrics or null if not found. See {@link FontFaceMetrics}.
++ * @async
++ */
++declare function getMetricsForFamily(family: string): Promise<FontFaceMetrics | null>;
++/**
++ * Reads font metrics from a specified source URL or file path. This function supports both local files and remote URLs.
++ * It caches the results to optimise subsequent requests for the same source.
++ * @param {URL | string} _source - The source URL or local file path from which to read the font metrics.
++ * @returns {Promise<FontFaceMetrics | null>} - A promise that resolves to the filtered font metrics or null if the source cannot be processed.
++ * @async
++ */
++declare function readMetrics(_source: URL | string): Promise<FontFaceMetrics | null>;
+ 
+ interface FontaineTransformOptions {
++    /**
++     * Configuration options for the CSS transformation.
++     * @optional
++     */
+     css?: {
++        /**
++         * Holds the current value of the CSS being transformed.
++         * @optional
++         */
+         value?: string;
+     };
++    /**
++     * An array of fallback font family names to use.
++     */
+     fallbacks: string[];
++    /**
++     * Function to resolve a given path to a valid URL or local path.
++     * This is typically used to resolve font file paths.
++     * @optional
++     */
+     resolvePath?: (path: string) => string | URL;
++    /**
++     * A function to determine whether to skip font face generation for a given fallback name.
++     * @optional
++     */
+     skipFontFaceGeneration?: (fallbackName: string) => boolean;
+-    /** this should produce an unquoted font family name */
++    /**
++     * Function to generate an unquoted font family name to use as a fallback.
++     * This should return a valid CSS font family name and should not include quotes.
++     * @optional
++     */
+     fallbackName?: (name: string) => string;
+     /** @deprecated use fallbackName */
+     overrideName?: (name: string) => string;
++    /**
++     * Specifies whether to create a source map for the transformation.
++     * @optional
++     */
+     sourcemap?: boolean;
+ }
++/**
++ * Transforms CSS files to include font fallbacks.
++ *
++ * @param options - The transformation options. See {@link FontaineTransformOptions}.
++ * @returns The unplugin instance.
++ */
+ declare const FontaineTransform: unplugin.UnpluginInstance<FontaineTransformOptions, boolean>;
+ 
+-declare function generateFallbackName(name: string): string;
+-interface FallbackOptions {
+-    name: string;
+-    font: string;
+-    metrics?: FontFaceMetrics;
+-    [key: string]: any;
+-}
+-type FontFaceMetrics = Pick<Font, 'ascent' | 'descent' | 'lineGap' | 'unitsPerEm' | 'xWidthAvg'>;
+-declare function generateFontFace(metrics: FontFaceMetrics, fallback: FallbackOptions): string;
+-
+-declare function getMetricsForFamily(family: string): Promise<FontFaceMetrics | null>;
+-declare function readMetrics(_source: URL | string): Promise<FontFaceMetrics | null>;
+-
+-export { FontaineTransform, type FontaineTransformOptions, generateFallbackName, generateFontFace, getMetricsForFamily, readMetrics };
++export { FontaineTransform, generateFallbackName, generateFontFace, getMetricsForFamily, readMetrics };
++export type { FontaineTransformOptions };
+diff --git a/dist/index.d.ts b/dist/index.d.ts
+index bbf04a7284c07c3de3c97939365c76b7c1d32f61..9fe5da131297ecdee31ca1790d22985bb6e8ca43 100644
+--- a/dist/index.d.ts
++++ b/dist/index.d.ts
+@@ -1,32 +1,104 @@
+-import * as unplugin from 'unplugin';
+ import { Font } from '@capsizecss/unpack';
++import * as unplugin from 'unplugin';
++
++/**
++ * Generates a fallback name based on the first font family specified in the input string.
++ * @param {string} name - The full font family string.
++ * @returns {string} - The fallback font name.
++ */
++declare function generateFallbackName(name: string): string;
++interface FallbackOptions {
++    /**
++     * The name of the fallback font.
++     */
++    name: string;
++    /**
++     * The fallback font family name.
++     */
++    font: string;
++    /**
++     * Metrics for fallback face calculations.
++     * @optional
++     */
++    metrics?: FontFaceMetrics;
++    /**
++     * Additional properties that may be included dynamically
++     */
++    [key: string]: any;
++}
++type FontFaceMetrics = Pick<Font, 'ascent' | 'descent' | 'lineGap' | 'unitsPerEm' | 'xWidthAvg'>;
++/**
++ * Generates a CSS `@font-face' declaration for a font, taking fallback and resizing into account.
++ * @param {FontFaceMetrics} metrics - The metrics of the preferred font. See {@link FontFaceMetrics}.
++ * @param {FallbackOptions} fallback - The fallback options, including name, font and optional metrics. See {@link FallbackOptions}.
++ * @returns {string} - The full `@font-face` CSS declaration.
++ */
++declare function generateFontFace(metrics: FontFaceMetrics, fallback: FallbackOptions): string;
++
++/**
++ * Retrieves the font metrics for a given font family from the metrics collection. Uses caching to avoid redundant calculations.
++ * @param {string} family - The name of the font family for which metrics are requested.
++ * @returns {Promise<FontFaceMetrics | null>} - A promise that resolves with the filtered font metrics or null if not found. See {@link FontFaceMetrics}.
++ * @async
++ */
++declare function getMetricsForFamily(family: string): Promise<FontFaceMetrics | null>;
++/**
++ * Reads font metrics from a specified source URL or file path. This function supports both local files and remote URLs.
++ * It caches the results to optimise subsequent requests for the same source.
++ * @param {URL | string} _source - The source URL or local file path from which to read the font metrics.
++ * @returns {Promise<FontFaceMetrics | null>} - A promise that resolves to the filtered font metrics or null if the source cannot be processed.
++ * @async
++ */
++declare function readMetrics(_source: URL | string): Promise<FontFaceMetrics | null>;
+ 
+ interface FontaineTransformOptions {
++    /**
++     * Configuration options for the CSS transformation.
++     * @optional
++     */
+     css?: {
++        /**
++         * Holds the current value of the CSS being transformed.
++         * @optional
++         */
+         value?: string;
+     };
++    /**
++     * An array of fallback font family names to use.
++     */
+     fallbacks: string[];
++    /**
++     * Function to resolve a given path to a valid URL or local path.
++     * This is typically used to resolve font file paths.
++     * @optional
++     */
+     resolvePath?: (path: string) => string | URL;
++    /**
++     * A function to determine whether to skip font face generation for a given fallback name.
++     * @optional
++     */
+     skipFontFaceGeneration?: (fallbackName: string) => boolean;
+-    /** this should produce an unquoted font family name */
++    /**
++     * Function to generate an unquoted font family name to use as a fallback.
++     * This should return a valid CSS font family name and should not include quotes.
++     * @optional
++     */
+     fallbackName?: (name: string) => string;
+     /** @deprecated use fallbackName */
+     overrideName?: (name: string) => string;
++    /**
++     * Specifies whether to create a source map for the transformation.
++     * @optional
++     */
+     sourcemap?: boolean;
+ }
++/**
++ * Transforms CSS files to include font fallbacks.
++ *
++ * @param options - The transformation options. See {@link FontaineTransformOptions}.
++ * @returns The unplugin instance.
++ */
+ declare const FontaineTransform: unplugin.UnpluginInstance<FontaineTransformOptions, boolean>;
+ 
+-declare function generateFallbackName(name: string): string;
+-interface FallbackOptions {
+-    name: string;
+-    font: string;
+-    metrics?: FontFaceMetrics;
+-    [key: string]: any;
+-}
+-type FontFaceMetrics = Pick<Font, 'ascent' | 'descent' | 'lineGap' | 'unitsPerEm' | 'xWidthAvg'>;
+-declare function generateFontFace(metrics: FontFaceMetrics, fallback: FallbackOptions): string;
+-
+-declare function getMetricsForFamily(family: string): Promise<FontFaceMetrics | null>;
+-declare function readMetrics(_source: URL | string): Promise<FontFaceMetrics | null>;
+-
+-export { FontaineTransform, type FontaineTransformOptions, generateFallbackName, generateFontFace, getMetricsForFamily, readMetrics };
++export { FontaineTransform, generateFallbackName, generateFontFace, getMetricsForFamily, readMetrics };
++export type { FontaineTransformOptions };
+diff --git a/dist/index.mjs b/dist/index.mjs
+index 8268c38091eea294c768bfd300700a6e3a5b25ba..11d93e02adbc0584aec3b7dab64494c772134d7f 100644
+--- a/dist/index.mjs
++++ b/dist/index.mjs
+@@ -1,11 +1,11 @@
+-import { createUnplugin } from 'unplugin';
+ import { createRegExp, charIn, exactly, whitespace, charNotIn, anyOf } from 'magic-regexp';
+-import MagicString from 'magic-string';
+-import { parseURL } from 'ufo';
+-import { isAbsolute, join } from 'pathe';
+ import { fileURLToPath } from 'node:url';
+-import { fromFile, fromUrl } from '@capsizecss/unpack';
+ import { fontFamilyToCamelCase } from '@capsizecss/metrics';
++import { fromFile, fromUrl } from '@capsizecss/unpack';
++import { parseURL } from 'ufo';
++import MagicString from 'magic-string';
++import { isAbsolute, join } from 'pathe';
++import { createUnplugin } from 'unplugin';
+ 
+ function toPercentage(value, fractionDigits = 4) {
+   const percentage = value * 100;
+@@ -50,12 +50,7 @@ function generateFallbackName(name) {
+   return `${firstFamily} fallback`;
+ }
+ function generateFontFace(metrics, fallback) {
+-  const {
+-    name: fallbackName,
+-    font: fallbackFontName,
+-    metrics: fallbackMetrics,
+-    ...properties
+-  } = fallback;
++  const { name: fallbackName, font: fallbackFontName, metrics: fallbackMetrics, ...properties } = fallback;
+   const preferredFontXAvgRatio = metrics.xWidthAvg / metrics.unitsPerEm;
+   const fallbackFontXAvgRatio = fallbackMetrics ? fallbackMetrics.xWidthAvg / fallbackMetrics.unitsPerEm : 1;
+   const sizeAdjust = fallbackMetrics && preferredFontXAvgRatio && fallbackFontXAvgRatio ? preferredFontXAvgRatio / fallbackFontXAvgRatio : 1;
+@@ -79,13 +74,7 @@ ${toCSS(declaration)}
+ }
+ 
+ const metricCache = {};
+-function filterRequiredMetrics({
+-  ascent,
+-  descent,
+-  lineGap,
+-  unitsPerEm,
+-  xWidthAvg
+-}) {
++function filterRequiredMetrics({ ascent, descent, lineGap, unitsPerEm, xWidthAvg }) {
+   return {
+     ascent,
+     descent,
+@@ -102,6 +91,10 @@ async function getMetricsForFamily(family) {
+     const name = fontFamilyToCamelCase(family);
+     const { entireMetricsCollection } = await import('@capsizecss/metrics/entireMetricsCollection');
+     const metrics = entireMetricsCollection[name];
++    if (!("descent" in metrics)) {
++      metricCache[family] = null;
++      return null;
++    }
+     const filteredMetrics = filterRequiredMetrics(metrics);
+     metricCache[family] = filteredMetrics;
+     return filteredMetrics;
+@@ -110,14 +103,26 @@ async function getMetricsForFamily(family) {
+     return null;
+   }
+ }
++const urlRequestCache = /* @__PURE__ */ new Map();
+ async function readMetrics(_source) {
+   const source = typeof _source !== "string" && "href" in _source ? _source.href : _source;
+   if (source in metricCache)
+-    return Promise.resolve(metricCache[source]);
++    return metricCache[source];
+   const { protocol } = parseURL(source);
+   if (!protocol)
+     return null;
+-  const metrics = protocol === "file:" ? await fromFile(fileURLToPath(source)) : await fromUrl(source);
++  let metrics;
++  if (protocol === "file:") {
++    metrics = await fromFile(fileURLToPath(source));
++  } else {
++    if (urlRequestCache.has(source)) {
++      metrics = await urlRequestCache.get(source);
++    } else {
++      const requestPromise = fromUrl(source);
++      urlRequestCache.set(source, requestPromise);
++      metrics = await requestPromise;
++    }
++  }
+   const filteredMetrics = filterRequiredMetrics(metrics);
+   metricCache[source] = filteredMetrics;
+   return filteredMetrics;

@@ -95,6 +95,9 @@
       "@parcel/watcher",
       "esbuild",
       "vue-demi"
-    ]
+    ],
+    "patchedDependencies": {
+      "fontaine@0.5.0": "patches/fontaine@0.5.0.patch"
+    }
   }
 }

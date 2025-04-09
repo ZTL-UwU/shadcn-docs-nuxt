@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  fontaine@0.5.0:
+    hash: 05168e0f4b5ab9724e5b8cf972342693526a54e813e97b323eac11c96f7a97c8
+    path: patches/fontaine@0.5.0.patch
+
 importers:
 
   .:
@@ -7195,7 +7200,7 @@ snapshots:
       css-tree: 3.1.0
       defu: 6.1.4
       esbuild: 0.25.2
-      fontaine: 0.5.0
+      fontaine: 0.5.0(patch_hash=05168e0f4b5ab9724e5b8cf972342693526a54e813e97b323eac11c96f7a97c8)
       h3: 1.15.1
       jiti: 2.4.2
       magic-regexp: 0.8.0
@@ -10048,7 +10053,7 @@ snapshots:
 
   flatted@3.3.3: {}
 
-  fontaine@0.5.0:
+  fontaine@0.5.0(patch_hash=05168e0f4b5ab9724e5b8cf972342693526a54e813e97b323eac11c96f7a97c8):
     dependencies:
       '@capsizecss/metrics': 2.2.0
       '@capsizecss/unpack': 2.4.0
