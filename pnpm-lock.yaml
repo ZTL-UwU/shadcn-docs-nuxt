@@ -125,6 +125,9 @@ importers:
 
   www:
     dependencies:
+      '@iconify-json/simple-icons':
+        specifier: ^1.2.31
+        version: 1.2.31
       nuxt:
         specifier: ^3.16.0
         version: 3.16.1(@parcel/watcher@2.5.1)(@types/node@22.13.17)(db0@0.3.1)(eslint@9.24.0(jiti@2.4.2))(ioredis@5.6.0)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.39.0)(terser@5.39.0)(typescript@5.8.3)(vite@6.2.3(@types/node@22.13.17)(jiti@2.4.2)(terser@5.39.0)(yaml@2.7.1))(vue-tsc@2.2.8(typescript@5.8.3))(yaml@2.7.1)
@@ -768,6 +771,9 @@ packages:
 
   '@iconify-json/lucide@1.2.35':
     resolution: {integrity: sha512-q1OFEufIzxaiMuuLOrFmhVPvlj0asriU84w1MsfooeOAB2Tk1DFCuL61HJnb4lGxDhcxhU28m6bjYLW1fwox9Q==}
+
+  '@iconify-json/simple-icons@1.2.31':
+    resolution: {integrity: sha512-xBUPtvkcSAiXs9DfVtudhLddQtQYin3I3Ph/W5FNYA0oE6r2hmLB8TgOog9OjOt1Sxn3IB5+4n5+64DMf2xNmQ==}
 
   '@iconify-json/vscode-icons@1.2.18':
     resolution: {integrity: sha512-TFkzbQb6X87xf4OyPQc9TFYEz0Qlw6tfIqtOPS81U1cbfQgYSuEGoAdvqiO9wEVms6bzVOyDfwYG/IysA7Wl9A==}
@@ -6728,6 +6734,10 @@ snapshots:
       '@iconify/types': 2.0.0
 
   '@iconify-json/lucide@1.2.35':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/simple-icons@1.2.31':
     dependencies:
       '@iconify/types': 2.0.0
 
