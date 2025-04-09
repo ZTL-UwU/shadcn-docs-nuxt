@@ -25,7 +25,7 @@ const { code } = defineProps<{
 const { toast } = useToast();
 const { t } = useI18n();
 
-const { copy } = useClipboard({ source: code });
+const { copy } = useClipboard({ source: code, legacy: true });
 const copied = ref(false);
 
 const { codeCopyIcon } = useConfig().value.main;
