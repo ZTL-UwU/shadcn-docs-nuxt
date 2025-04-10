@@ -139,7 +139,7 @@ badges:
 ::stack
   ::div{class="p-4"}
     ::tabs{variant="line"}
-      ::div{label="Preview" class="border flex min-h-[200px] w-full justify-center p-10 items-center rounded-lg shadow-sm"}
+      ::div{label="Preview" class="border flex min-h-[200px] w-full justify-center p-10 items-center rounded-lg shadow-xs"}
         :badge[Badge]
       ::
       ::div{label="Code"}
@@ -155,7 +155,7 @@ badges:
   ::
   ```mdc
   ::tabs{variant="line"}
-    ::div{label="Preview" class="border flex min-h-[200px] w-full justify-center p-10 items-center rounded-lg shadow-sm"}
+    ::div{label="Preview" class="border flex min-h-[200px] w-full justify-center p-10 items-center rounded-lg shadow-xs"}
       :badge[Badge]
     ::
     ::div{label="Code"}

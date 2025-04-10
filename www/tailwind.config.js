@@ -6,6 +6,7 @@ export default {
   prefix: '',
   content: [
     './content/**/*',
+    '../',
   ],
   theme: {
     container: {

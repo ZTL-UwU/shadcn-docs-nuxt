@@ -24,7 +24,7 @@
       <ContentSlot :use="$slots.description" unwrap="p" />
     </span>
 
-    <section class="flex w-full items-center justify-center space-x-4 py-4 md:pb-10">
+    <section class="flex w-full items-center justify-center gap-4 py-4 md:pb-10">
       <NuxtLink
         v-for="(action, i) in actions"
         :key="i"

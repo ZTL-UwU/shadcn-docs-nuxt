@@ -126,7 +126,13 @@ const icon = computed(() => {
 }
 
 .show-line-number .line::before {
+  font-size: var(--text-xs);
+  line-height: var(--tw-leading, var(--text-xs--line-height));
+  width: calc(var(--spacing) * 5);
+  display: inline-block;
+  text-align: right;
+  margin-right: calc(var(--spacing) * 4);
+  color: hsl(var(--muted-foreground));
   content: attr(line);
-  @apply text-sm w-5 inline-block text-right mr-4 text-muted-foreground;
 }
 </style>

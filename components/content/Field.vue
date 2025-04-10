@@ -1,5 +1,5 @@
 <template>
-  <div class="[&:not(:first-child)]:mt-4 [&:not(:first-child)]:pt-4">
+  <div class="[&:not(:first-child)]:mt-4 [&:not(:last-child)]:pb-4">
     <div class="mb-2">
       <div class="flex items-center gap-2">
         <span class="text-md text-primary font-bold">
