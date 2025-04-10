@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-6">
+  <div class="mb-8">
     <ProseH1>
       {{ title }}
     </ProseH1>

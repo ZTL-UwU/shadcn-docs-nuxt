@@ -125,14 +125,63 @@ const icon = computed(() => {
   padding-right: 2.75rem;
 }
 
+.has-diff .line::before,
 .show-line-number .line::before {
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   line-height: var(--tw-leading, var(--text-xs--line-height));
   width: calc(var(--spacing) * 5);
   display: inline-block;
   text-align: right;
   margin-right: calc(var(--spacing) * 4);
   color: hsl(var(--muted-foreground));
+}
+
+.show-line-number .line:not(.diff)::before {
+  font-size: var(--text-xs);
   content: attr(line);
+}
+
+.has-diff:not(.show-line-number>.has-diff) .line:not(.diff)::before {
+  font-size: var(--text-sm);
+  content: '';
+}
+
+.diff.add {
+  background-color: color-mix(in oklab,var(--color-green-500)15%,transparent) !important;
+}
+
+.diff.remove {
+  background-color: color-mix(in oklab,var(--color-red-500)15%,transparent) !important;
+}
+
+.diff.add.line::before {
+  font-size: var(--text-sm);
+  color: var(--color-green-600);
+  content: '+';
+}
+
+.diff.remove.line::before {
+  font-size: var(--text-sm);
+  color: var(--color-red-600);
+  content: '-';
+}
+
+.highlighted.warning {
+  background-color: color-mix(in oklab,var(--color-yellow-500)15%,transparent) !important;
+}
+
+.highlighted.error {
+  background-color: color-mix(in oklab,var(--color-red-500)15%,transparent) !important;
+}
+
+.has-focused .line:not(.focused) {
+  opacity: 0.5;
+  filter: blur(.095rem);
+  transition: filter .35s, opacity .35s;
+}
+
+.has-focused:hover .line:not(.focused) {
+  opacity: 1;
+  filter: blur(0);
 }
 </style>

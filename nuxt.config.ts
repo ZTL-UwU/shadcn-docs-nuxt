@@ -30,6 +30,9 @@ export default defineNuxtConfig({
       },
     ],
   },
+  i18n: {
+    strategy: 'prefix_except_default',
+  },
   colorMode: {
     classSuffix: '',
     disableTransition: true,

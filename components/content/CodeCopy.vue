@@ -31,7 +31,7 @@ const copied = ref(false);
 const { codeCopyIcon } = useConfig().value.main;
 
 async function handleClick() {
-  await copy(code);
+  await copy(code.replaceAll(/\s*\/\/\s*\[!code (focus|\+\+|--|error|warning)\]/g, ''));
   copied.value = true;
 
   if (useConfig().value.main.codeCopyToast) {

@@ -3,12 +3,6 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   extends: ['..'],
   i18n: {
-    bundle: {
-      optimizeTranslationDirective: false,
-    },
-    baseUrl: 'https://shadcn-docs-nuxt.vercel.app/',
-    detectBrowserLanguage: false,
-    strategy: 'prefix_except_default',
     defaultLocale: 'en',
     locales: [
       {
