@@ -10,7 +10,7 @@ export default defineI18nConfig(() => ({
       'No results found.': 'No results found.',
 
       // TOC
-      'On this page': 'On this page',
+      'On This Page': 'On This Page',
 
       // Search command
       'Light': 'Light',
@@ -28,6 +28,13 @@ export default defineI18nConfig(() => ({
       // Language Switcher
       'Language': 'Language',
       'Choose your language': 'Choose your language',
+
+      // Theme Switcher
+      'Customize': 'Customize',
+      'Pick a style and color for the docs.': 'Pick a style and color for the docs.',
+      'Color': 'Color',
+      'Radius': 'Radius',
+      'Theme': 'Theme',
 
       // Copy Code
       'Copied to clipboard!': 'Copied to clipboard!',
@@ -48,7 +55,7 @@ export default defineI18nConfig(() => ({
       'No results found.': 'Aucun résultat trouvé.',
 
       // TOC
-      'On this page': 'Sur cette page',
+      'On This Page': 'Sur cette page',
 
       // Search command
       'Light': 'Clair',
@@ -66,6 +73,13 @@ export default defineI18nConfig(() => ({
       // Language Switcher
       'Language': 'Langue',
       'Choose your language': 'Choisissez votre langue',
+
+      // Theme Switcher
+      'Customize': 'Personnaliser',
+      'Pick a style and color for the docs.': 'Choisissez un style et une couleur pour la documentation.',
+      'Color': 'Couleur',
+      'Radius': 'Rayon',
+      'Theme': 'Thème',
 
       // Copy Code
       'Copied to clipboard!': 'Copié dans le presse-papiers !',
@@ -86,7 +100,7 @@ export default defineI18nConfig(() => ({
       'No results found.': '没有找到结果。',
 
       // TOC
-      'On this page': '本页目录',
+      'On This Page': '本页目录',
 
       // Search command
       'Light': '明亮',
@@ -104,6 +118,13 @@ export default defineI18nConfig(() => ({
       // Language Switcher
       'Language': '语言',
       'Choose your language': '选择语言',
+
+      // Theme Switcher
+      'Customize': '自定义',
+      'Pick a style and color for the docs.': '选择文档的样式和颜色。',
+      'Color': '颜色',
+      'Radius': '圆角',
+      'Theme': '主题',
 
       // Copy Code
       'Copied to clipboard!': '已复制到剪贴板！',
@@ -124,7 +145,7 @@ export default defineI18nConfig(() => ({
       'No results found.': '沒有找到結果。',
 
       // TOC
-      'On this page': '本頁目錄',
+      'On This Page': '本頁目錄',
 
       // Search command
       'Light': '明亮',
@@ -142,6 +163,13 @@ export default defineI18nConfig(() => ({
       // Language Switcher
       'Language': '語言',
       'Choose your language': '選擇語言',
+
+      // Theme Switcher
+      'Customize': '自定義',
+      'Pick a style and color for the docs.': '選擇文件的樣式和顏色。',
+      'Color': '顏色',
+      'Radius': '圓角',
+      'Theme': '主題',
 
       // Copy Code
       'Copied to clipboard!': '已複製到剪貼簿！',
@@ -162,7 +190,7 @@ export default defineI18nConfig(() => ({
       'No results found.': '結果が見つかりません。',
 
       // TOC
-      'On this page': 'このページの目次',
+      'On This Page': 'このページの目次',
 
       // Search command
       'Light': '明るい',
@@ -180,6 +208,13 @@ export default defineI18nConfig(() => ({
       // Language Switcher
       'Language': '言語',
       'Choose your language': '言語を選択',
+
+      // Theme Switcher
+      'Customize': 'カスタマイズ',
+      'Pick a style and color for the docs.': 'ドキュメントのスタイルと色を選択してください。',
+      'Color': '色',
+      'Radius': '半径',
+      'Theme': 'テーマ',
 
       // Copy Code
       'Copied to clipboard!': 'クリップボードにコピーされました！',
