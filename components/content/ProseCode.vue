@@ -113,7 +113,7 @@ const icon = computed(() => {
 }
 
 .shiki .line.highlight {
-  background-color: hsl(var(--muted) / 0.9);
+  background-color: hsl(var(--muted));
 }
 
 .shiki .line {
