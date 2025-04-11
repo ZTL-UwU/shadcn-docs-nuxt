@@ -8,7 +8,7 @@
     </UiButton>
   </UseTemplate>
 
-  <template v-if="enable">
+  <template v-if="enable && locales.length > 1">
     <UiPopover v-if="dropdownType === 'popover'">
       <UiPopoverTrigger as-child>
         <Trigger />

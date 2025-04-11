@@ -45,7 +45,7 @@ const defaultConfig: DefaultConfig = {
     border: false,
     darkModeToggle: true,
     languageSwitcher: {
-      enable: false,
+      enable: true,
       triggerType: 'icon',
       dropdownType: 'select',
     },
