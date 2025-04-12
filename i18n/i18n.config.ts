@@ -228,5 +228,142 @@ export default defineI18nConfig(() => ({
       // Field
       'required': '必須',
     },
+    'ru': {
+      // Search
+      'Search...': 'Поиск...',
+      'Search documentation...': 'Поиск в документации...',
+      'No results found.': 'Ничего не найдено.',
+
+      // TOC
+      'On This Page': 'На этой странице',
+
+      // Search command
+      'Light': 'Светлая',
+      'Dark': 'Тёмная',
+      'System': 'Система',
+
+      // Doc footer
+      'Edit this page': 'Редактировать эту страницу',
+      'Back to Top': 'Наверх',
+
+      // Collapse Code
+      'Expand': 'Развернуть',
+      'Collapse': 'Свернуть',
+
+      // Language Switcher
+      'Language': 'Язык',
+      'Choose your language': 'Выберите язык',
+
+      // Theme Switcher
+      'Customize': 'Настроить',
+      'Pick a style and color for the docs.': 'Выберите стиль и цвет документации.',
+      'Color': 'Цвет',
+      'Radius': 'Радиус',
+      'Theme': 'Тема',
+
+      // Copy Code
+      'Copied to clipboard!': 'Скопировано в буфер обмена!',
+
+      // Carbon Ads
+      'Please support us by disabling your ad blocker.': 'Пожалуйста, поддержите нас, отключив блокировщик рекламы.',
+
+      // Read More
+      'Read more at': 'Читать далее на',
+
+      // Field
+      'required': 'обязательно',
+    },
+
+    'ko': {
+      // Search
+      'Search...': '검색...',
+      'Search documentation...': '문서 검색...',
+      'No results found.': '결과를 찾을 수 없습니다.',
+
+      // TOC
+      'On This Page': '이 페이지에서',
+
+      // Search command
+      'Light': '라이트',
+      'Dark': '다크',
+      'System': '시스템',
+
+      // Doc footer
+      'Edit this page': '이 페이지 수정하기',
+      'Back to Top': '맨 위로',
+
+      // Collapse Code
+      'Expand': '펼치기',
+      'Collapse': '접기',
+
+      // Language Switcher
+      'Language': '언어',
+      'Choose your language': '언어를 선택하세요',
+
+      // Theme Switcher
+      'Customize': '사용자 설정',
+      'Pick a style and color for the docs.': '문서의 스타일과 색상을 선택하세요.',
+      'Color': '색상',
+      'Radius': '반경',
+      'Theme': '테마',
+
+      // Copy Code
+      'Copied to clipboard!': '클립보드에 복사됨!',
+
+      // Carbon Ads
+      'Please support us by disabling your ad blocker.': '광고 차단기를 꺼서 저희를 지원해 주세요.',
+
+      // Read More
+      'Read more at': '더 읽기:',
+
+      // Field
+      'required': '필수',
+    },
+
+    'hindi': {
+      // Search
+      'Search...': 'खोजें...',
+      'Search documentation...': 'दस्तावेज़ खोजें...',
+      'No results found.': 'कोई परिणाम नहीं मिला।',
+
+      // TOC
+      'On This Page': 'इस पृष्ठ पर',
+
+      // Search command
+      'Light': 'हल्का',
+      'Dark': 'गहरा',
+      'System': 'सिस्टम',
+
+      // Doc footer
+      'Edit this page': 'इस पृष्ठ को संपादित करें',
+      'Back to Top': 'ऊपर जाएं',
+
+      // Collapse Code
+      'Expand': 'विस्तारित करें',
+      'Collapse': 'संकुचित करें',
+
+      // Language Switcher
+      'Language': 'भाषा',
+      'Choose your language': 'अपनी भाषा चुनें',
+
+      // Theme Switcher
+      'Customize': 'अनुकूलित करें',
+      'Pick a style and color for the docs.': 'दस्तावेज़ों के लिए शैली और रंग चुनें।',
+      'Color': 'रंग',
+      'Radius': 'त्रिज्या',
+      'Theme': 'थीम',
+
+      // Copy Code
+      'Copied to clipboard!': 'क्लिपबोर्ड पर कॉपी किया गया!',
+
+      // Carbon Ads
+      'Please support us by disabling your ad blocker.': 'कृपया हमारा समर्थन करने के लिए अपना विज्ञापन अवरोधक अक्षम करें।',
+
+      // Read More
+      'Read more at': 'और पढ़ें:',
+
+      // Field
+      'required': 'आवश्यक',
+    },
   },
 }));
