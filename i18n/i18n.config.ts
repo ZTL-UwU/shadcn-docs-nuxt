@@ -320,7 +320,7 @@ export default defineI18nConfig(() => ({
       'required': '필수',
     },
 
-    'hindi': {
+    'hi': {
       // Search
       'Search...': 'खोजें...',
       'Search documentation...': 'दस्तावेज़ खोजें...',
