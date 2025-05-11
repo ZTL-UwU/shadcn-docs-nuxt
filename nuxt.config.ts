@@ -9,7 +9,7 @@ export default defineNuxtConfig({
   modules: [
     'shadcn-nuxt',
     '@vueuse/nuxt',
-    '@nuxt/content',
+    '@ztl-uwu/nuxt-content',
     '@nuxt/image',
     '@nuxt/icon',
     '@nuxtjs/color-mode',
@@ -91,9 +91,6 @@ export default defineNuxtConfig({
     transpile: ['shiki', 'ohash'],
   },
   vite: {
-    build: {
-      cssMinify: 'lightningcss',
-    },
     plugins: [
       tailwindcss(),
     ],

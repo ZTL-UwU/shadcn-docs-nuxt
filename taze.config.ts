@@ -1,9 +1,6 @@
 import { defineConfig } from 'taze';
 
 export default defineConfig({
-  exclude: [
-    '@nuxt/content',
-  ],
   force: true,
   write: true,
   install: true,
