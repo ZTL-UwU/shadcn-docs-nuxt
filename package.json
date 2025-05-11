@@ -50,7 +50,7 @@
   "dependencies": {
     "@iconify-json/lucide": "^1.2.41",
     "@iconify-json/vscode-icons": "^1.2.20",
-    "@nuxt/fonts": "^0.11.2",
+    "@nuxt/fonts": "0.11.2",
     "@nuxt/icon": "^1.12.0",
     "@nuxt/image": "^1.10.0",
     "@nuxt/scripts": "^0.11.6",
@@ -58,7 +58,7 @@
     "@nuxtjs/i18n": "^9.5.4",
     "@nuxtjs/mdc": "^0.17.0",
     "@tailwindcss/vite": "^4.1.6",
-    "@ztl-uwu/nuxt-content": "^2.13.6",
+    "@ztl-uwu/nuxt-content": "^2.13.7",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "fontaine": "^0.6.0",
