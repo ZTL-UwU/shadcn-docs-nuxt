@@ -87,6 +87,9 @@ export default defineNuxtConfig({
       },
     },
   },
+  build: {
+    transpile: ['ohash'],
+  },
   vite: {
     plugins: [
       tailwindcss(),
