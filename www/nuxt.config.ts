@@ -1,9 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: [
-    'nuxt-component-meta',
-  ],
+  // modules: [
+  //   'nuxt-component-meta',
+  // ],
   extends: ['..'],
   i18n: {
     defaultLocale: 'en',
