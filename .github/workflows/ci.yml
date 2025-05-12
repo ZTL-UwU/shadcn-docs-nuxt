@@ -54,6 +54,7 @@ jobs:
 
   build:
     strategy:
+      fail-fast: true
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
     runs-on: ${{ matrix.os }}
@@ -74,10 +75,11 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build
-        run: DEBUG=1 pnpm run build
+        run: pnpm run build
 
   generate:
     strategy:
+      fail-fast: true
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
     runs-on: ${{ matrix.os }}
