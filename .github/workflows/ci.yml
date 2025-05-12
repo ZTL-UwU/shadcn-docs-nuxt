@@ -53,7 +53,7 @@ jobs:
         run: pnpm run typecheck
 
   build:
-    runs-on: ubuntu-latest
+    runs-on: [ubuntu-latest, windows-latest, macos-latest]
     steps:
       - uses: actions/checkout@v4
 
@@ -73,8 +73,8 @@ jobs:
       - name: Build
         run: DEBUG=1 pnpm run build
 
-  ssg:
-    runs-on: ubuntu-latest
+  generate:
+    runs-on: [ubuntu-latest, windows-latest, macos-latest]
     steps:
       - uses: actions/checkout@v4
 
