@@ -21,6 +21,9 @@ const computedTitle = computed<string>(
     if (title)
       return title;
 
+    if (to.startsWith('http'))
+      return to;
+
     try {
       return useBreadcrumb(to).map(x => x.title).join(' > ');
     } catch {
