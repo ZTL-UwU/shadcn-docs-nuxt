@@ -14,9 +14,9 @@
           </div>
         </div>
         <div class="text-secondary-foreground flex gap-3" :class="{ 'mx-auto': center }">
-          <NuxtLink v-for="link in links" :key="link.to" :to="link.to" :target="link.target">
+          <NuxtLinkLocale v-for="link in links" :key="link.to" :to="link.to" :target="link.target">
             <SmartIcon :name="link.icon" />
-          </NuxtLink>
+          </NuxtLinkLocale>
         </div>
       </div>
     </UiCardHeader>

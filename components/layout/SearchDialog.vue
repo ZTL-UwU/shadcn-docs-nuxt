@@ -20,13 +20,13 @@
           <template v-if="!input?.length">
             <template v-for="item in navigation" :key="item._path">
               <UiCommandGroup v-if="item.children" :heading="item.title" class="p-1.5">
-                <NuxtLink v-for="child in item.children" :key="child.id" :to="child._path">
+                <NuxtLinkLocale v-for="child in item.children" :key="child.id" :to="child._path">
                   <UiCommandItem :value="child._path">
                     <SmartIcon v-if="child.icon" :name="child.icon" class="mr-2 size-4" />
                     <div v-else class="mr-2 size-4" />
                     <span>{{ child.title }}</span>
                   </UiCommandItem>
-                </NuxtLink>
+                </NuxtLinkLocale>
               </UiCommandGroup>
               <UiCommandSeparator v-if="item.children" />
             </template>
@@ -46,7 +46,7 @@
             </UiCommandGroup>
           </template>
           <div v-else-if="searchResult?.length" class="p-1.5">
-            <NuxtLink
+            <NuxtLinkLocale
               v-for="(item, i) in searchResult"
               :id="i"
               :key="item.id"
@@ -66,7 +66,7 @@
                 {{ item.title }}
               </span>
               <span class="text-muted-foreground ml-2 self-center truncate text-xs" v-html="getHighlightedContent(item.content)" />
-            </NuxtLink>
+            </NuxtLinkLocale>
           </div>
           <div v-else class="text-muted-foreground pt-4 text-center">
             {{ $t('No results found.') }}

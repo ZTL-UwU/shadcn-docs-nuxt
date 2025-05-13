@@ -1,11 +1,11 @@
 <template>
   <h1 :id class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-    <NuxtLink
+    <NuxtLinkLocale
       v-if="generate"
       :to="`#${id}`"
     >
       <slot />
-    </NuxtLink>
+    </NuxtLinkLocale>
     <slot v-else />
   </h1>
 </template>

@@ -14,7 +14,7 @@
       <UiCollapsibleContent>
         <ul class="pl-2">
           <li v-for="link in item.links" :key="link.title">
-            <NuxtLink
+            <NuxtLinkLocale
               :to="localePath(link.to)"
               :target="link.to"
               class="hover:bg-muted mb-1 flex w-full gap-2 rounded-md px-3 py-2 transition-all"
@@ -29,16 +29,16 @@
                   {{ $t(link.description) }}
                 </div>
               </div>
-            </NuxtLink>
+            </NuxtLinkLocale>
           </li>
         </ul>
       </UiCollapsibleContent>
     </UiCollapsible>
   </template>
-  <NuxtLink v-else :to="localePath(item.to)" :target="item.target" class="flex w-full p-2">
+  <NuxtLinkLocale v-else :to="localePath(item.to)" :target="item.target" class="flex w-full p-2">
     {{ $t(item.title) }}
     <Icon v-if="item.showLinkIcon ?? true" name="lucide:arrow-up-right" class="text-muted-foreground ml-1" size="12" />
-  </NuxtLink>
+  </NuxtLinkLocale>
 </template>
 
 <script setup lang="ts">

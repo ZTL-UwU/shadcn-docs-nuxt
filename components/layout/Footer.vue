@@ -3,7 +3,7 @@
     <div class="container flex flex-col items-center justify-between gap-2 md:h-24 md:flex-row">
       <MDC :value="$t(footer.credits)" class="text-sm" />
       <span class="flex-1" />
-      <NuxtLink
+      <NuxtLinkLocale
         v-for="(link, i) in footer.links"
         :key="i"
         :to="link?.to"
@@ -13,7 +13,7 @@
           <SmartIcon v-if="link?.icon" :name="link.icon" :size="20" />
           <span v-if="link?.title">{{ $t(link.title) }}</span>
         </UiButton>
-      </NuxtLink>
+      </NuxtLinkLocale>
     </div>
   </footer>
 </template>

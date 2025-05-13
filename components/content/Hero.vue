@@ -1,6 +1,6 @@
 <template>
   <section class="mx-auto flex max-w-[980px] flex-col items-center gap-2 py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20">
-    <NuxtLink
+    <NuxtLinkLocale
       v-if="announcement"
       :to="announcement.to"
       :target="announcement.target"
@@ -15,7 +15,7 @@
         {{ announcement.title }}
       </span>
       <Icon name="lucide:arrow-right" class="ml-1 size-4" />
-    </NuxtLink>
+    </NuxtLinkLocale>
 
     <h1 class="text-center text-3xl font-bold leading-tight tracking-tighter md:text-6xl lg:leading-[1.1]">
       <ContentSlot :use="$slots.title" unwrap="p" />
@@ -25,7 +25,7 @@
     </span>
 
     <section class="flex w-full items-center justify-center gap-4 py-4 md:pb-10">
-      <NuxtLink
+      <NuxtLinkLocale
         v-for="(action, i) in actions"
         :key="i"
         :to="action.to"
@@ -36,7 +36,7 @@
           {{ action.name }}
           <SmartIcon v-if="action.rightIcon" :name="action.rightIcon" class="ml-1" />
         </UiButton>
-      </NuxtLink>
+      </NuxtLinkLocale>
     </section>
   </section>
 </template>

@@ -25,8 +25,10 @@ const open = useCookie<boolean>('banner-open', { default: () => true });
 const { showClose, content, to, target, border } = useConfig().value.banner;
 
 function navigate() {
+  const localePath = useLocalePath();
+
   if (open.value && to) {
-    navigateTo(to, {
+    navigateTo(localePath(to), {
       external: true,
       open: {
         target: target ?? '_blank',

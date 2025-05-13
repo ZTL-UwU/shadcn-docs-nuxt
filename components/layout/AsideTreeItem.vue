@@ -37,7 +37,7 @@
       </template>
     </div>
     <!-- Page -->
-    <NuxtLink
+    <NuxtLinkLocale
       v-else
       :to="link._path"
       class="text-foreground/80 hover:bg-muted hover:text-primary flex items-center gap-2 rounded-md p-2 text-sm"
@@ -47,7 +47,7 @@
       ]"
     >
       <LayoutAsideTreeItemButton :link />
-    </NuxtLink>
+    </NuxtLinkLocale>
   </li>
 </template>
 

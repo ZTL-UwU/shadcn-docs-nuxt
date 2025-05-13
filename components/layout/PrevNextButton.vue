@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink
+  <NuxtLinkLocale
     v-if="prevNext && prevNext._path"
     :to="prevNext._path"
     class="basis-1/3"
@@ -22,7 +22,7 @@
         </div>
       </div>
     </div>
-  </NuxtLink>
+  </NuxtLinkLocale>
 </template>
 
 <script setup lang="ts">

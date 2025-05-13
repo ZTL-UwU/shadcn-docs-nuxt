@@ -55,14 +55,17 @@ const typeTwClass = {
 };
 
 async function alertClick() {
+  const localePath = useLocalePath();
+
   if (to) {
+    const localeTo = localePath(to);
     if (target) {
-      await navigateTo(to, {
+      await navigateTo(localeTo, {
         external: external ?? to.startsWith('http'),
         open: { target },
       });
     } else {
-      await navigateTo(to, {
+      await navigateTo(localeTo, {
         external: external ?? to.startsWith('http'),
       });
     }

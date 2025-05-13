@@ -4,7 +4,7 @@
     <LayoutSearchButton v-if="config.search.inAside" />
     <ul v-if="config.aside.useLevel" class="flex flex-col gap-1 border-b pb-4">
       <li v-for="link in navigation" :key="link.id">
-        <NuxtLink
+        <NuxtLinkLocale
           :to="link.redirect ?? link._path"
           class="text-foreground/80 hover:bg-muted hover:text-primary flex h-8 items-center gap-2 rounded-md p-2 text-sm"
           :class="[
@@ -24,7 +24,7 @@
               {{ badge.value }}
             </Badge>
           </span>
-        </NuxtLink>
+        </NuxtLinkLocale>
       </li>
     </ul>
     <LayoutAsideTree

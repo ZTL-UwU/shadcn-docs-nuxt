@@ -7,7 +7,7 @@
       class="flex flex-col items-start gap-2"
       :class="{ 'md:col-span-2': $slots.right }"
     >
-      <NuxtLink
+      <NuxtLinkLocale
         v-if="announcement"
         :to="announcement.to"
         :target="announcement.target"
@@ -19,7 +19,7 @@
         </template>
         <span class="underline-offset-4 hover:underline">{{ announcement.title }}</span>
         <Icon name="lucide:arrow-right" class="ml-1 size-4" />
-      </NuxtLink>
+      </NuxtLinkLocale>
 
       <h1 class="text-3xl font-bold leading-tight tracking-tighter md:text-4xl lg:leading-[1.1]">
         <ContentSlot :use="$slots.title" unwrap="p" />
@@ -29,7 +29,7 @@
       </p>
 
       <div class="flex w-full items-center justify-start gap-2 py-2">
-        <NuxtLink
+        <NuxtLinkLocale
           v-for="(action, i) in actions"
           :key="i"
           :to="action.to"
@@ -40,7 +40,7 @@
             {{ action.name }}
             <SmartIcon v-if="action.rightIcon" :name="action.rightIcon" class="ml-1" />
           </UiButton>
-        </NuxtLink>
+        </NuxtLinkLocale>
       </div>
     </section>
     <div class="mx-auto" :class="{ 'order-first md:order-last': mobileRight === 'top' }">
@@ -57,7 +57,7 @@ defineProps<{
     icon?: string;
     title: string;
   };
-  actions: [{
+  actions?: [{
     name: string;
     leftIcon?: string;
     rightIcon?: string;

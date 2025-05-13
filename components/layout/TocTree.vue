@@ -1,13 +1,13 @@
 <template>
   <ul :class="[level !== 0 && 'pl-4']">
     <li v-for="link in links" :key="link.id" class="pt-2">
-      <NuxtLink
+      <NuxtLinkLocale
         :to="`#${link.id}`"
         class="text-muted-foreground hover:text-primary transition-all"
         :class="[activeHeadings.includes(link.id) && 'text-primary']"
       >
         {{ link.text }}
-      </NuxtLink>
+      </NuxtLinkLocale>
       <TocTree
         v-if="link.children"
         :links="(link.children || []).filter((x: any) => x.id !== 'hide-toc')"
