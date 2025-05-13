@@ -365,5 +365,50 @@ export default defineI18nConfig(() => ({
       // Field
       'required': 'आवश्यक',
     },
+    'bn': {
+      // Search
+      'Search...': 'অনুসন্ধান...',
+      'Search documentation...': 'ডকুমেন্টেশন খুঁজুন...',
+      'No results found.': 'কোন ফলাফল পাওয়া যায়নি।',
+
+      // TOC
+      'On This Page': 'এই পৃষ্ঠায়',
+
+      // Search command
+      'Light': 'আলো',
+      'Dark': 'অন্ধকার',
+      'System': 'सिस्टम',
+
+      // Doc footer
+      'Edit this page': 'এই পাতাটি সম্পাদনা করুন',
+      'Back to Top': 'উপরে ফিরে যান',
+
+      // Collapse Code
+      'Expand': 'প্রসারিত করুন',
+      'Collapse': 'সঙ্কুচিত করুন',
+
+      // Language Switcher
+      'Language': 'ভাষা',
+      'Choose your language': 'আপনার ভাষা বেছে নিন',
+
+      // Theme Switcher
+      'Customize': 'কাস্টমাইজ করুন',
+      'Pick a style and color for the docs.': 'ডকুমেন্টেশন জন্য একটি স্টাইল এবং রঙ বেছে নিন।',
+      'Color': 'রঙ',
+      'Radius': 'ব্যাসার্ধ',
+      'Theme': 'থিম',
+
+      // Copy Code
+      'Copied to clipboard!': 'ক্লিপবোর্ডে কপি করা হয়েছে!',
+
+      // Carbon Ads
+      'Please support us by disabling your ad blocker.': 'আমাদের সমর্থন করার জন্য অনুগ্রহ করে আপনার ad blocker নিষ্ক্রিয় করুন।',
+
+      // Read More
+      'Read more at': 'আরও পড়ুন:',
+
+      // Field
+      'required': 'অবশ্যক',
+    },
   },
 }));
