@@ -116,7 +116,8 @@ const icon = computed(() => {
   background-color: hsl(var(--muted));
 }
 
-.shiki .line {
+.shiki .line,
+.language-text {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 }
