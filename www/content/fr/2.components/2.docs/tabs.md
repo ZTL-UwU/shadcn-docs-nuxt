@@ -266,7 +266,7 @@ badges:
 ### Onglets Synchronisés
 :badge[0.8.0]{variant="outline"}
 
-:read-more{to="/fr/components/docs/pm"}
+:read-more{to="/components/docs/pm"}
 
 ::stack
   ::div{class="p-4 md:p-8"}

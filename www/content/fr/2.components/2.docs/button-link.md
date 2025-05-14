@@ -16,7 +16,7 @@ badges:
 
 ::stack
   ::div{class="p-3 flex gap-4"}
-  ::button-link{right-icon="lucide:arrow-up-right" to="/fr/getting-started" target="_blank"}
+  ::button-link{right-icon="lucide:arrow-up-right" to="/getting-started" target="_blank"}
     Commencer
   ::
   ::button-link{left-icon="lucide:github" variant="outline" to="https://github.com/ZTL-UwU/shadcn-docs-nuxt" target="_blank"}
@@ -27,7 +27,7 @@ badges:
   ::
   ::
   ```mdc
-  ::button-link{right-icon="lucide:arrow-up-right" to="/fr/getting-started" target="_blank"}
+  ::button-link{right-icon="lucide:arrow-up-right" to="/getting-started" target="_blank"}
     Commencer
   ::
   ::button-link{left-icon="lucide:github" variant="outline" to="https://github.com/ZTL-UwU/shadcn-docs-nuxt" target="_blank"}

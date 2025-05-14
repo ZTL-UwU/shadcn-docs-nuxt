@@ -1,5 +1,5 @@
 <template>
-  <UiCollapsible v-if="variant === 'card'" v-model:open="isOpen" class="space-y-2">
+  <UiCollapsible v-if="variant === 'card'" v-model:open="isOpen" class="space-y-2 [&:not(:first-child)]:mt-6">
     <div class="flex items-center justify-between space-x-4">
       <h4 class="text-sm font-semibold">
         <ContentSlot :use="$slots.title" unwrap="p" />
@@ -21,7 +21,7 @@
     </UiCollapsibleContent>
   </UiCollapsible>
 
-  <UiCollapsible v-else-if="variant === 'simple'" v-model:open="isOpen">
+  <UiCollapsible v-else-if="variant === 'simple'" v-model:open="isOpen" class="[&:not(:first-child)]:mt-6">
     <UiCollapsibleTrigger class="w-full text-left">
       <div class="flex w-full gap-1">
         <SmartIcon

@@ -87,13 +87,10 @@ export default defineNuxtConfig({
       },
     },
   },
-  build: {
-    transpile: ['ohash'],
-  },
   vite: {
     plugins: [
       tailwindcss(),
     ],
   },
-  compatibilityDate: '2024-07-05',
+  compatibilityDate: '2025-05-13',
 });

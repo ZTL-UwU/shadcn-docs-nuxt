@@ -7,12 +7,12 @@ fullpage: true
 ::hero
 ---
 announcement:
-    title: 'Mise en route'
-    icon: lucide:languages
-    to: /fr/getting-started/introduction
+  title: 'v1.0 est sorti'
+  icon: lucide:party-popper
+  to: /blog/v1.0
 actions:
 - name: Commencer
-  to: /fr/getting-started/introduction
+  to: /getting-started/introduction
 - name: GitHub
   variant: outline
   to: https://github.com/ZTL-UwU/shadcn-docs-nuxt
@@ -32,5 +32,5 @@ Modèle de documentation Nuxt Content basé sur shadcn-vue. :br Personnalisable.
 ::
 
 ::div{class="border rounded-lg shadow-md"}
-:iframe{src="/fr/getting-started/introduction" height="700" width="100%" class="rounded-lg" scrolling="no" frameborder="0"}
+:iframe{src="/getting-started/introduction" height="700" width="100%" class="rounded-lg" scrolling="no" frameborder="0"}
 ::

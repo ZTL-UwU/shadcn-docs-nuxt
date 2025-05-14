@@ -68,7 +68,7 @@ badges:
   ```
 ::
 
-::alert{to="/fr/components/docs/tabs"}
+::alert{to="/components/docs/tabs"}
 `::code-group`{lang="mdc"} est un wrapper autour de `::tabs{variant="card"}`{lang="mdc"}.
 ::
 

@@ -16,7 +16,9 @@
       <NuxtPage />
     </div>
   </div>
-  <NuxtPage v-else />
+  <div v-else class="min-h-screen">
+    <NuxtPage />
+  </div>
 
   <Toaster />
   <LayoutFooter />

@@ -81,10 +81,10 @@ export default defineAppConfig({
           target: '_blank',
         }],
       }, {
-        title: 'Use This Template',
-        to: '/getting-started/installation',
+        title: 'Blog',
+        to: '/blog',
         target: '_self',
-        showLinkIcon: true,
+        showLinkIcon: false,
       }],
       links: [
         {
@@ -158,7 +158,7 @@ export default defineAppConfig({
         'npx': 'vscode-icons:file-type-npm',
         'yarn': 'vscode-icons:file-type-yarn',
         'bun': 'vscode-icons:file-type-bun',
-        'yml': 'vscode-icons:file-type-yaml',
+        'yml': 'vscode-icons:file-type-light-yaml',
         'json': 'vscode-icons:file-type-json',
         'terminal': 'lucide:terminal',
       },

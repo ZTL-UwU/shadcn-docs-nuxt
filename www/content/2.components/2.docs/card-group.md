@@ -98,3 +98,78 @@ badges:
   ::
   ```
 ::
+
+### Cols
+
+::stack
+  ::div{class="p-4"}
+    ::card-group{cols=3}
+      ::card
+      ---
+      title: Components
+      icon: lucide:box
+      to: https://nuxt.com/docs/api/components/client-only
+      target: _blank
+      ---
+      Explore Nuxt built-in components for pages, layouts, head, and more.
+      ::
+      ::card
+      ---
+      title: Composables
+      icon: lucide:arrow-right-left
+      to: https://nuxt.com/docs/api/composables/use-app-config
+      target: _blank
+      ---
+      Discover Nuxt composable functions for data-fetching, head management and more.
+      ::
+      ::card
+      ---
+      title: Utils
+      icon: lucide:scissors
+      to: https://nuxt.com/docs/api/utils/dollarfetch
+      target: _blank
+      ---
+      Learn about Nuxt utility functions for navigation, error handling and more.
+      ::
+    ::
+  ::
+  ```mdc
+  ::card-group{cols=3}
+    ::card
+    ---
+    title: Components
+    icon: lucide:box
+    to: https://nuxt.com/docs/api/components/client-only
+    target: _blank
+    ---
+    Explore Nuxt built-in components for pages, layouts, head, and more.
+    ::
+
+    ::card
+    ---
+    title: Composables
+    icon: lucide:arrow-right-left
+    to: https://nuxt.com/docs/api/composables/use-app-config
+    target: _blank
+    ---
+    Discover Nuxt composable functions for data-fetching, head management and more.
+    ::
+
+    ::card
+    ---
+    title: Utils
+    icon: lucide:scissors
+    to: https://nuxt.com/docs/api/utils/dollarfetch
+    target: _blank
+    ---
+    Learn about Nuxt utility functions for navigation, error handling and more.
+    ::
+  ::
+  ```
+::
+
+## Props
+
+::field-group
+  :field{name="cols" type="1 | 2 | 3 | 4 | 5 | 6" default-value="2"}[Number of columns (only for desktop)]
+::
