@@ -80,6 +80,11 @@ export default defineNuxtConfig({
       sizeLimitKb: 512,
     },
   },
+  fonts: {
+    defaults: {
+      weights: ['300 800'],
+    },
+  },
   typescript: {
     tsConfig: {
       compilerOptions: {
