@@ -13,13 +13,13 @@
 <script setup lang="ts">
 import type { NavigationMenuContentEmits, NavigationMenuContentProps } from 'reka-ui';
 import type { HTMLAttributes } from 'vue';
-import { cn } from '@/lib/utils';
 import {
   NavigationMenuContent,
 
   useForwardPropsEmits,
 } from 'reka-ui';
 import { computed } from 'vue';
+import { cn } from '@/lib/utils';
 
 const props = defineProps<NavigationMenuContentProps & { class?: HTMLAttributes['class'] }>();
 

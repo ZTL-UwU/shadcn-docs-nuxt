@@ -10,9 +10,9 @@
 <script setup lang="ts">
 import type { DialogTitleProps } from 'reka-ui';
 import type { HTMLAttributes } from 'vue';
-import { cn } from '@/lib/utils';
 import { DialogTitle } from 'reka-ui';
 import { computed } from 'vue';
+import { cn } from '@/lib/utils';
 
 const props = defineProps<DialogTitleProps & { class?: HTMLAttributes['class'] }>();
 
