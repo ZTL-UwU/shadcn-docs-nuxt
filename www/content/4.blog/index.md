@@ -8,7 +8,7 @@ icon: lucide:newspaper
 ---
 announcement:
   icon: lucide:newspaper
-  to: /blog/v1.0
+  to: /blog/v1
   title: shadcn-docs v1.0
 ---
 
@@ -23,7 +23,7 @@ Read the latest articles and news about the project.
   ::card
   ---
   img: /blog/v1.png
-  to: /blog/v1.0
+  to: /blog/v1
   ---
 
   #title

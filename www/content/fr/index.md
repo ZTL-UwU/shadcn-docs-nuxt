@@ -9,7 +9,7 @@ fullpage: true
 announcement:
   title: 'v1.0 est sorti'
   icon: '🎉'
-  to: /blog/v1.0
+  to: /blog/v1
 actions:
 - name: Commencer
   to: /getting-started/introduction

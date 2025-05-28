@@ -8,7 +8,7 @@ navigation: false
 announcement:
   title: 'v1.0 release'
   icon: '🎉'
-  to: /blog/v1.0
+  to: /blog/v1
 actions:
   - name: Get Started
     to: /getting-started/introduction
