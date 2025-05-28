@@ -96,6 +96,9 @@ export default defineNuxtConfig({
     plugins: [
       tailwindcss(),
     ],
+    optimizeDeps: {
+      include: ['debug'],
+    },
   },
   compatibilityDate: '2025-05-13',
 });
