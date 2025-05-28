@@ -7,7 +7,7 @@ navigation: false
 ---
 announcement:
   title: 'v1.0 release'
-  icon: lucide:party-popper
+  icon: '🎉'
   to: /blog/v1.0
 actions:
   - name: Get Started

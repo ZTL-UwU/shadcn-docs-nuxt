@@ -8,7 +8,7 @@ fullpage: true
 ---
 announcement:
   title: 'v1.0 est sorti'
-  icon: lucide:party-popper
+  icon: '🎉'
   to: /blog/v1.0
 actions:
 - name: Commencer
