@@ -6,13 +6,13 @@ navBadges:
     type: lime
 badges:
   - value: 0.8.17
-  - value: Source
+  - value: ប្រភពកូដ
     icon: lucide:code
     to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/CodeTree.vue
     target: _blank
 ---
 
-## Usage
+## ការប្រើប្រាស់
 
 ::stack
 ::div{class="p-4"}

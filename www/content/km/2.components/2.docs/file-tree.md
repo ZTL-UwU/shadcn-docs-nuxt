@@ -3,13 +3,13 @@ title: File Tree
 icon: lucide:folder-tree
 badges:
   - value: 0.8.10
-  - value: Source
+  - value: ប្រភពកូដ
     icon: lucide:code
     to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/FileTree.vue
     target: _blank
 ---
 
-## Usage
+## ការប្រើប្រាស់
 
 ::stack
 ::div{class="p-4"}
@@ -46,7 +46,7 @@ tree:
 ```
 ::
 
-### Customizations
+### ការកែច្នៃ
 
 ::stack
 ::div{class="p-4"}
@@ -92,7 +92,7 @@ tree:
 ::
 ```
 ::
-### Disable Icons
+### បិទការបង្ហាញ Icons
 
 ::stack
 ::div{class="p-4"}
@@ -176,7 +176,7 @@ tree:
   :field{name="tree"}[The file tree]
   :field{name="title" type="string"}[File tree title]
   :field{name="icon" type="string"}[File tree title icon]
-  :field{name="autoSlash" type="boolean" default-value="true"}[Whether to add a slash after every folder automatically]
-  :field{name="showArrow" type="boolean" default-value="false"}[Whether to show the collapse arrow]
-  :field{name="showIcon" type="boolean" default-value="true"}[Whether to show file & folder icons]
+  :field{name="autoSlash" type="boolean" default-value="true"}[ការបន្ថែម slash គ្រប់ folder ដោយស្វ័យប្រវត្តិ]
+  :field{name="showArrow" type="boolean" default-value="false"}[ការបង្ហាញព្រួញដើម្បីបិទ]
+  :field{name="showIcon" type="boolean" default-value="true"}[ការបង្ហាញ file & folder icons]
 ::

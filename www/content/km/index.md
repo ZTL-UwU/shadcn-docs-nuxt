@@ -1,22 +1,22 @@
 ---
-title: Home
+title: ទំព័រដើម
 navigation: false
 ---
 
 ::hero
 ---
 announcement:
-  title: 'v1.0 release'
+  title: 'ការបញ្ចេញជំនាន់ v1.0 ផ្លូវការ'
   icon: '🎉'
   to: /blog/v1
 actions:
-  - name: Get Started
+  - name: ចាប់ផ្តើម
     to: /getting-started/introduction
   - name: GitHub
     variant: outline
     to: https://github.com/ZTL-UwU/shadcn-docs-nuxt
     leftIcon: 'lucide:github'
-  - name: Sponsor
+  - name: ឧបត្ថម្ភ
     variant: outline
     target: _blank
     to: https://ko-fi.com/ztl_uwu
@@ -24,10 +24,10 @@ actions:
 ---
 
 #title
-Effortless and Beautiful :br Docs Template.
+បង្កើតទំព័រឯកសារ :br ដែលស្រស់ស្អាត និងងាយស្រួល
 
 #description
-Beautifully designed Nuxt Content template built with shadcn-vue. :br Customizable. Compatible. Open Source.
+គំរូវេបសាយសម្រាប់សំណេរឯកសារជាមួយនឹង Nuxt Content ដែលរចនាឡើងយ៉ាងស្រស់ស្អាត ជាមួយ shadcn-vue។ :br អាចកែប្រែតាមតម្រូវការ សុីចង្វាក់គ្នា បើកចំហប្រភពកូដ
 ::
 
 ::div{class="border rounded-lg shadow-md"}

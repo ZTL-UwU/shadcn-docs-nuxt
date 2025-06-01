@@ -3,18 +3,18 @@ title: Package Manager
 icon: lucide:package
 description: ''
 badges:
-  - value: Source
+  - value: ប្រភពកូដ
     icon: lucide:code
     to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/PmInstall.vue
     target: _blank
   - value: 0.8.0
 ---
 
-## Usage
+## ការប្រើប្រាស់
 
-The package managers shown can be configured in [`main.pm`](/api/configuration/shadcn-docs#main).
+ការបង្ហាញនូវ Package managers អាចកែប្រែបាននៅក្នុង [`main.pm`](/api/configuration/shadcn-docs#main)។
 
-### Install
+### តម្លើង
 
 ::stack
   ::div{class="p-4"}

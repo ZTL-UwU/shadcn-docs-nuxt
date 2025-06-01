@@ -5,13 +5,13 @@ badges:
   - value: Nuxt UI Pro
     to: https://ui.nuxt.com/pro/prose/field-group
     target: _blank
-  - value: Source
+  - value: ប្រភពកូដ
     icon: lucide:code
     to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/FieldGroup.vue
     target: _blank
 ---
 
-## Usage
+## ការប្រើប្រាស់
 
 ::stack
   ::div{class="p-4"}

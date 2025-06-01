@@ -1,15 +1,15 @@
 ---
-title: Stack
+title: តម្រួត
 icon: lucide:rows-3
 badges:
-  - value: Source
+  - value: ប្រភពកូដ
     icon: lucide:code
     to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Stack.vue
     target: _blank
   - value: 0.6.2
 ---
 
-## Usage
+## ការប្រើប្រាស់
 
 ::stack
   ::div{class="p-4 md:p-8"}

@@ -2,7 +2,7 @@
 title: HeroAlt
 icon: lucide:align-left
 badges:
-  - value: Source
+  - value: ប្រភពកូដ
     icon: lucide:code
     to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/HeroAlt.vue
     target: _blank
@@ -10,7 +10,7 @@ badges:
 toc: false
 ---
 
-## Usage
+## ការប្រើប្រាស់
 
 ::stack
   ::div{class="p-4"}
@@ -60,7 +60,7 @@ toc: false
   ```
 ::
 
-### Right
+### ស្តាំ
 
 ::stack
   ::div{class="p-4"}

@@ -15,6 +15,11 @@ export default defineNuxtConfig({
         name: 'Français',
         language: 'fr-FR',
       },
+      {
+        code: 'km',
+        name: 'ភាសាខ្មែរ',
+        language: 'km-KH',
+      },
     ],
   },
   compatibilityDate: '2025-05-13',

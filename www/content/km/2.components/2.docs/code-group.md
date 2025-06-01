@@ -1,5 +1,5 @@
 ---
-title: Code Group
+title: បណ្តុំកូដ
 icon: lucide:code-xml
 badges:
   - value: Nuxt UI Pro
@@ -8,13 +8,13 @@ badges:
   - value: Docus
     to: https://docus.dev/api/components#codegroup
     target: _blank
-  - value: Source
+  - value: ប្រភពកូដ
     icon: lucide:code
     to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/CodeGroup.vue
     target: _blank
 ---
 
-## Usage
+## ការប្រើប្រាស់
 
 ::stack
   ::div{class="p-4"}

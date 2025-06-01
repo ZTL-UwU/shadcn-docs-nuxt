@@ -1,9 +1,9 @@
 ---
-title: Team Card
+title: កាតសម្រាប់ក្រុមការងារ
 icon: lucide:users
 description: ''
 badges:
-  - value: Source
+  - value: ប្រភពកូដ
     icon: lucide:code
     to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/TeamCard.vue
     target: _blank

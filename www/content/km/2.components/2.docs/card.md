@@ -1,5 +1,5 @@
 ---
-title: Card
+title: កាត
 icon: lucide:square
 badges:
   - value: Nuxt UI Pro
@@ -8,13 +8,13 @@ badges:
   - value: Docus
     to: https://docus.dev/api/components#card
     target: _blank
-  - value: Source
+  - value: ប្រភពកូដ
     icon: lucide:code
     to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Card.vue
     target: _blank
 ---
 
-## Usage
+## ការប្រើប្រាស់
 
 ::stack
   ::div{class="p-4"}
@@ -57,7 +57,7 @@ badges:
   ```
 ::
 
-### Link
+### តំណភ្ជាប់
 
 ::stack
   ::div{class="p-4"}
@@ -92,7 +92,7 @@ badges:
   ```
 ::
 
-### Horizontal
+### ទម្រង់ផ្តេក
 
 ::stack
   ::div{class="p-4"}
@@ -127,7 +127,7 @@ badges:
   ```
 ::
 
-### Image
+### រូបភាព
 
 ::stack
   ::div{class="p-4"}
@@ -166,8 +166,8 @@ badges:
   :field{name="icon" type="string"}[Card icon]
   :field{name="horizontal" type="boolean" default-value="false"}
   :field{name="to" type="string"}[Link URL]
-  :field{name="target" type="Target"}[A `target` attribute value to apply on the link]
+  :field{name="target" type="Target"}[តម្លៃ `target` attribute ដែលដាក់ទៅតំណភ្ជាប់]
   :field{name="iconSize" type="number" default-value="24"}
-  :field{name="img" type="string"}[Image URL]
-  :field{name="showLinkIcon" type="boolean" default-value="true"}[Whether to show the link indicator :icon{name="lucide:arrow-up-right"}]
+  :field{name="img" type="string"}[URL​ រូបភាព]
+  :field{name="showLinkIcon" type="boolean" default-value="true"}[ការបង្ហាញ link indicator :icon{name="lucide:arrow-up-right"}]
 ::

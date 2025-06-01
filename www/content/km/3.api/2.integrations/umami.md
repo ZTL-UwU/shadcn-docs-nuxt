@@ -1,10 +1,10 @@
 ---
 title: Umami
 icon: lucide:cloud
-description: Integration for Umami analytics.
+description: ការរួមបញ្ចូលជាមួយនឹង Umami analytics។
 ---
 
-**shadcn-docs-nuxt** uses [Nuxt Scripts](https://scripts.nuxt.com/scripts/analytics/umami-analytics) under the hood for [Umami Analytics](https://umami.is/). Add your Umami `data-website-id` to `app.config.ts`.
+**shadcn-docs-nuxt** ប្រើប្រាស់ [Nuxt Scripts](https://scripts.nuxt.com/scripts/analytics/umami-analytics) ដើម្បីប្រើប្រាស់ [Umami Analytics](https://umami.is/)។ ដាក់ Umami `data-website-id` របស់អ្នកទៅកាន់ `app.config.ts`។
 
 ```ts [app.config.ts]
 export default defineAppConfig({
@@ -20,16 +20,16 @@ export default defineAppConfig({
 });
 ```
 
-## Parameters
+## អថេរប៉ារ៉ាមែត្រ
 
 ::field-group
   ::field{name="enable" type="boolean" default-value="false"}
-  Whether to turn on the umami integration.
+  កំណត់ថាតើបើកមុខងារ umami ឬអត់។
   ::
   ::field{name="src" type="string" default-value="https://cloud.umami.is/script.js"}
-  The link src in the tracking code.
+  តំណភ្ជាប់សម្រាប់តាមដាន
   ::
   ::field{name="dataWebsiteId" type="string"}
-  The _Website ID_ from umami dashboard.
+  The _Website ID_ ដែលបានមកពី umami។
   ::
 ::

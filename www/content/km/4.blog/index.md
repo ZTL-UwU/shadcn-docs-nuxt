@@ -1,5 +1,5 @@
 ---
-title: Blog
+title: មាតិកា
 fullpage: true
 icon: lucide:newspaper
 ---
@@ -13,10 +13,10 @@ announcement:
 ---
 
 #title
-Blog
+មាតិកា
 
 #description
-Read the latest articles and news about the project.
+អាននូវការបង្ហោះមាតិកានិងព័ត៌មានផ្សេងៗ និងថ្មីៗបំផុតអំពីគម្រោងនេះ។
 ::
 
 ::card-group{cols=3}
@@ -30,9 +30,9 @@ Read the latest articles and news about the project.
   shadcn-docs v1.0
 
   #description
-  Changes and upgrade guide for v1.0.
+  ការណែនាំអំពីការផ្លាស់ប្តូរ និងបច្ចុប្បន្នភាពទៅកាន់ជំនាន់ v1.0។
 
   #footer
-  May 13, 2025
+  ១៣ ឧសភា ២០២៥
   ::
 ::

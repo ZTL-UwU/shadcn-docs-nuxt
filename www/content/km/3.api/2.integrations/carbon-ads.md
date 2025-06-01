@@ -1,10 +1,10 @@
 ---
-title: Carbon Ads
+title: ពាណិជ្ជកម្ម Carbon Ads
 icon: lucide:chart-line
-description: Run ads at the bottom of the TOC section.
+description: ដាក់ពាណិជ្ជកម្មនៅក្រោមផ្នែក TOC។
 ---
 
-**shadcn-docs-nuxt** uses [Nuxt Scripts](https://scripts.nuxt.com/scripts/ads/carbon-ads) under the hood for [Carbon Ads](https://www.carbonads.net/). Add your Carbon Ads credentials to `app.config.ts` and ads will be displayed at the bottom of the toc section.
+**shadcn-docs-nuxt** ប្រើប្រាស់ [Nuxt Scripts](https://scripts.nuxt.com/scripts/ads/carbon-ads) ដើម្បីដំណើរការ [Carbon Ads](https://www.carbonads.net/)។ ដាក់ Carbon Ads credentials របស់អ្នកទៅកាន់ `app.config.ts` នោះពាណិជ្ជកម្មនឹងបង្ហាញនៅខាងក្រោមផ្នែក toc ឬបញ្ជីមាតិកា។
 
 ```ts [app.config.ts]
 export default defineAppConfig({
@@ -25,9 +25,9 @@ export default defineAppConfig({
 });
 ```
 
-:read-more{title="Carbon Ads website" to="https://www.carbonads.net/"}
+:read-more{title="គេហទំព័ររបស់ Carbon Ads" to="https://www.carbonads.net/"}
 
-### Disabling on certain pages
+### បិទមុខងារនេះចំពោះទំព័រជាក់លាក់
 
 ```md
 ---
@@ -40,31 +40,31 @@ toc:
 <!-- Page Content -->
 ```
 
-## Parameters
+## អថេតប៉ារ៉ាមែត្រ
 
 ::field-group
   ::field{name="enable" type="boolean" default-value="false"}
-  Whether to turn on Carbon Ads.
+  កំណត់ថាតើបើកការបង្ហាញពាណិជ្ជកម្ម Carbon Ads ឬទេ។
   ::
   ::field{name="disableInDev" type="boolean" default-value="false"}
-  Whether to disable Carbon Ads in dev environment.
+  កំណត់ថាតើបិទការបង្ហាញ Carbon Ads នៅក្នុង dev environment ឬទេ។
   ::
   ::field{name="disableInMobile" type="boolean" default-value="false"}
-  Whether to disable Carbon Ads on mobile.
+  កំណត់ថាតើបិទការបង្ហាញ Carbon Ads លើទូរស័ព្ទដៃ ឬទេ។
   ::
   ::field{name="fallback" type="boolean" default-value="false"}
-  Whether to show fallback message when blocked by ad blockers
+  កំណត់ថាតើបង្ហាញសារជំនួស នៅពេលដែលត្រូវបានបិទដោយកម្មវិធីទប់ស្កាត់ពាណិជ្ជកម្ម (ad blockers) ឬទេ។
   ::
   ::field{name="fallbackMessage" type="string" default-value="'Please support us by disabling your ad blocker.'"}
-  Fallback message.
+  សារជំនួស Fallback។
   ::
   ::field{name="code" type="string"}
-  Carbon Ads serve code.
+  Carbon Ads serve code។
   ::
   ::field{name="placement" type="string"}
-  Carbon Ads placement.
+  ទីតាំងបង្ហាញនៃ Carbon Ads។
   ::
   ::field{name="format" type="'cover' | 'responsive'" default-value="cover"}
-  Carbon Ads format.
+  ទ្រង់ទ្រាយនៃ Carbon Ads។
   ::
 ::

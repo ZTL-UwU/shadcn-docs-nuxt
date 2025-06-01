@@ -1,7 +1,7 @@
 ---
 icon: lucide:sigma
-title: Math Equations
-description: Write LaTeX in shadcn-docs-nuxt.
+title: សមីការគណិតវិទ្យា
+description: សរសេរ LaTeX នៅក្នុង shadcn-docs-nuxt។
 ---
 
 ::tabs{variant="line"}

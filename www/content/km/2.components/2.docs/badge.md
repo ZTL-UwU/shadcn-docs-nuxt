@@ -1,17 +1,17 @@
 ---
-title: Badge
+title: ស្លាក
 icon: lucide:badge
 badges:
   - value: Docus
     to: https://docus.dev/api/components#badge
     target: _blank
-  - value: Source
+  - value: ប្រភពកូដ
     icon: lucide:code
     to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Badge.vue
     target: _blank
 ---
 
-## Usage
+## ការប្រើប្រាស់
 
 ::stack
   ::div{class="p-3"}
@@ -32,7 +32,7 @@ badges:
   ```
 ::
 
-### Variants
+### ប្រភេទ
 
 ::tabs{variant="line"}
   ::stack{label="outline"}
@@ -99,7 +99,7 @@ badges:
   ::
 ::
 
-### Link
+### តំណភ្ជាប់
 
 ::stack
   ::div{class="p-3"}
@@ -120,6 +120,6 @@ badges:
   :field{name="type" type="'default' | 'info' | 'warning' | 'success' | 'danger' | 'lime'" default-value="'default'"}
   :field{name="variant" type="'default' | 'secondary' | 'destructive' | 'outline'" default-value="'default'"}
   :field{name="size" type="'md' | 'sm'" default-value="'md'"}
-  :field{name="to" type="string"}[Link URL]
-  :field{name="target" type="Target"}[A `target` attribute value to apply on the link]
+  :field{name="to" type="string"}[តំណភ្ជាប់ URL]
+  :field{name="target" type="Target"}[តម្លៃ `target` attribute ដែលដាក់ទៅលើតំណភ្ជាប់។]
 ::

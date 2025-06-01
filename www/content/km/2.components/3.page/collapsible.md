@@ -5,16 +5,16 @@ badges:
   - value: Nuxt UI Pro
     to: https://ui.nuxt.com/pro/prose/collapsible
     target: _blank
-  - value: Source
+  - value: ប្រភពកូដ
     icon: lucide:code
     to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Collapsible.vue
     target: _blank
   - value: 0.5.8
 ---
 
-## Usage
+## ការប្រើប្រាស់
 
-### Simple
+### ទម្រង់សាមញ្ញ
 
 ::stack
   ::div{class="p-4 md:p-6"}
@@ -37,7 +37,7 @@ badges:
   ```
 ::
 
-### Card
+### ទម្រង់កាត
 
 ::stack
   ::div{class="p-4 md:p-6"}

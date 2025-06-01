@@ -1,18 +1,18 @@
 ---
-title: Button Link
+title: ប៊ូតុងដាក់តំណភ្ជាប់
 icon: lucide:external-link
 badges:
   - value: Docus
     to: https://docus.dev/api/components#buttonlink
     target: _blank
-  - value: Source
+  - value: ប្រភពកូដ
     icon: lucide:code
     to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/ButtonLink.vue
     target: _blank
   - value: 0.6.5
 ---
 
-## Usage
+## ការប្រើប្រាស់
 
 ::stack
   ::div{class="p-3 flex gap-4"}

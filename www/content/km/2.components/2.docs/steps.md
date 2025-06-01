@@ -1,14 +1,14 @@
 ---
-title: Steps
+title: ជំហាន
 icon: lucide:arrow-down-0-1
 badges:
-  - value: Source
+  - value: ប្រភពកូដ
     icon: lucide:code
     to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Steps.vue
     target: _blank
 ---
 
-## Usage
+## ការប្រើប្រាស់
 
 ::stack
   ::div{class="p-4 md:p-6"}
@@ -111,7 +111,7 @@ badges:
   ```
 ::
 
-### Multi-level headings
+### ចំណងជើងដែលមានពហុកម្រិត
 :badge[0.4.6]{variant="outline"}
 
 ::stack
@@ -145,4 +145,4 @@ badges:
 
 ## Props
 
-:field{name="level" type="number"}[Specify the level of headings to use]
+:field{name="level" type="number"}[កំណត់កម្រិតនៃចំណងជើងដើម្បីប្រើ]

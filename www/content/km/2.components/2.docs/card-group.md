@@ -1,17 +1,17 @@
 ---
-title: Card Group
+title: បណ្តុំកាត
 icon: lucide:layout-grid
 badges:
   - value: Nuxt UI Pro
     to: https://ui.nuxt.com/pro/prose/card-group
     target: _blank
-  - value: Source
+  - value: ប្រភពកូដ
     icon: lucide:code
     to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/CardGroup.vue
     target: _blank
 ---
 
-## Usage
+## ការប្រើប្រាស់
 
 ::stack
   ::div{class="p-4"}
@@ -99,7 +99,7 @@ badges:
   ```
 ::
 
-### Cols
+### ជួរឈរ
 
 ::stack
   ::div{class="p-4"}
@@ -171,5 +171,5 @@ badges:
 ## Props
 
 ::field-group
-  :field{name="cols" type="1 | 2 | 3 | 4 | 5 | 6" default-value="2"}[Number of columns (only for desktop)]
+  :field{name="cols" type="1 | 2 | 3 | 4 | 5 | 6" default-value="2"}[ចំនួនជួរឈរ (ចំពោះតែ desktop ប៉ុណ្ណោះ)]
 ::

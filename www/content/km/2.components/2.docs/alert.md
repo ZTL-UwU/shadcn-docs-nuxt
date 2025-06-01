@@ -1,16 +1,17 @@
 ---
+title: ការជូនដំណឹង
 icon: lucide:triangle-alert
 badges:
   - value: Docus
     to: https://docus.dev/api/components#alert
     target: _blank
-  - value: Source
+  - value: ប្រភពកូដ
     icon: lucide:code
     to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Alert.vue
     target: _blank
 ---
 
-## Usage
+## ការប្រើប្រាស់
 
 ::stack
   ::div{class="p-4"}
@@ -33,7 +34,7 @@ badges:
   ```
 ::
 
-### Link
+### តំណភ្ជាប់
 
 ::stack
   ::div{class="p-4"}
@@ -48,7 +49,7 @@ badges:
   ```
 ::
 
-### Variants
+### ប្រភេទ
 
 ::tabs{variant="line"}
   ::stack{label="info" icon="lucide:info"}
@@ -130,7 +131,7 @@ badges:
   ::
 ::
 
-### Title
+### ចំណងជើង
 
 ::stack
   ::div{class="p-4"}

@@ -5,17 +5,17 @@ badges:
   - value: Docus
     to: https://docus.dev/api/components#icon
     target: _blank
-  - value: Source
+  - value: ប្រភពកូដ
     icon: lucide:code
     to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Icon.vue
     target: _blank
 ---
 
 ::alert{to="https://github.com/nuxt-modules/icon" target="_blank"}
-The icon component uses **Nuxt Icon** under the hood. Check out the usage guide from Nuxt Icon.
+The icon component ប្រើប្រាស់ **Nuxt Icon** មកជាមួយស្រាប់។ សូមពិនិត្យមើលការណែនាំពីការប្រើប្រាស់ Nuxt Icon។
 ::
 
-## Usage
+## ការប្រើប្រាស់
 
 ::stack
   ::div{class="p-4 space-x-2"}
@@ -33,7 +33,7 @@ The icon component uses **Nuxt Icon** under the hood. Check out the usage guide 
   ```
 ::
 
-If you want to use other icons, it is highly recommended to install them locally, which is faster and more reliable on both SSR and client-side.
+បើអ្នកប្រើ icons ផ្សេងទៀត, យើងណែនាំឲ្យអ្នកតម្លើងកញ្ចប់ icons នោះនៅ local ដើម្បីទទួលបានល្បឿនលឿន និងមានស្ថេរភាពទាំង SSR និង client-side។
 
 ```bash [Terminal]
 npm i -D @iconify-json/collection-name
@@ -45,7 +45,7 @@ npm i -D @iconify-json/collection-name
 
 :badge[0.5.3]{variant="outline"}
 
-You can put iconify icons, emojis and urls in `smart-icon`. Smart icon will render them automatically.
+អ្នកអាចដាក់ iconify icons, emojis និង urls នៅក្នុង `smart-icon`។ Smart icon នឹង render ដោយស្វ័យប្រវត្តិ។
 
 ::stack
   ::div{class="p-4"}

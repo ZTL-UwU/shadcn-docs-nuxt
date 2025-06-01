@@ -1,17 +1,17 @@
 ---
-title: Tabs
+title: របារ
 icon: lucide:table-2
 badges:
   - value: Nuxt UI Pro
     to: https://ui.nuxt.com/pro/prose/tabs
     target: _blank
-  - value: Source
+  - value: ប្រភពកូដ
     icon: lucide:code
     to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Tabs.vue
     target: _blank
 ---
 
-## Usage
+## ការប្រើប្រាស់
 
 ::stack
   ::div{class="p-4"}
@@ -102,7 +102,7 @@ badges:
   ```
 ::
 
-### Card Style
+### ម៉ូតកាត
 
 ::stack
   ::div{class="p-4"}
@@ -133,7 +133,7 @@ badges:
   ```
 ::
 
-### Line Style
+### ម៉ូតបន្ទាត់
 :badge[0.6.4]{variant="outline"}
 
 ::stack
@@ -171,7 +171,7 @@ badges:
   ```
 ::
 
-### Combobox Style
+### ម៉ូត Combobox
 :badge[0.7.5]{variant="outline"}
 
 ::stack
@@ -263,7 +263,7 @@ badges:
   ```
 ::
 
-### Synced Tabs
+### របារដែលស៊ីចង្វាក់គ្នា
 :badge[0.8.0]{variant="outline"}
 
 :read-more{to="/components/docs/pm"}
@@ -368,8 +368,8 @@ badges:
 ::field-group
   :field{name="variant" type="'separate' | 'card' | 'line' | 'combobox'" default-value="'separate'"}
   :field{name="padded" type="boolean" default-value="true"}
-  :field{name="disableSearch" type="boolean" default-value="false"}[For combobox variant]
-  :field{name="searchPlaceholder" type="string" default-value="'Search Tab...'"}[For combobox variant]
-  :field{name="searchEmpty" type="string" default-value="'No tab found.'"}[For combobox variant]
+  :field{name="disableSearch" type="boolean" default-value="false"}[សម្រាប់ combobox variant]
+  :field{name="searchPlaceholder" type="string" default-value="'Search Tab...'"}[សម្រាប់ combobox variant]
+  :field{name="searchEmpty" type="string" default-value="'No tab found.'"}[សម្រាប់ combobox variant]
   :field{name="sync" type="string"}[Sync scope]
 ::
