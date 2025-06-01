@@ -1,0 +1,263 @@
+---
+title: Markdown
+description: A showcase of all shadcn-docs prose components.
+icon: lucide:arrow-big-down
+---
+
+## Heading
+
+::stack
+  ::div{class="p-4 md:p-8"}
+  # Heading 1
+  ## Heading 2
+  ### Heading 3
+  #### Heading 4
+  ##### Heading 5
+  ###### Heading 6
+  ::
+
+  ```md
+  # Heading 1
+  ## Heading 2
+  ### Heading 3
+  #### Heading 4
+  ##### Heading 5
+  ###### Heading 6
+  ```
+::
+
+## Link
+
+::stack
+  ::div{class="p-4"}
+  [Link](/getting-started/introduction)
+  ::
+
+  ```md
+  [Link](/getting-started/introduction)
+  ```
+::
+
+## Blockquote
+
+::stack
+  ::div{class="p-4"}
+  > Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  ::
+
+  ```md
+  > Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  ```
+::
+
+## Code Blocks
+
+:read-more{title="Code Blocks" to="/components/prose/code-blocks"}
+
+## Horizontal Rule
+
+::stack
+  ::div{class="p-4"}
+  Before
+
+  ---
+
+  After
+  ::
+
+  ```md
+  Before
+
+  ---
+
+  After
+  ```
+::
+
+## Image
+
+::stack
+  ::div{class="p-4"}
+  ![Photo by Drew Beamer](https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=800&dpr=2&q=80)
+  ::
+
+  ```md
+  ![Photo by Drew Beamer](https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=800&dpr=2&q=80)
+  ```
+::
+
+## Unordered List
+
+::stack
+  ::div{class="p-4"}
+  - Foo
+  - Bar
+  - Baz
+  ::
+
+  ```md
+  - Foo
+  - Bar
+  - Baz
+  ```
+::
+
+## Ordered List
+
+::stack
+  ::div{class="p-4"}
+  1. Foo
+  2. Bar
+  3. Baz
+  ::
+
+  ```md
+  1. Foo
+  2. Bar
+  3. Baz
+  ```
+::
+
+## Paragraph
+
+::stack
+  ::div{class="p-4"}
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  ::
+
+  ```md
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  ```
+::
+
+## Strong
+
+::stack
+  ::div{class="p-4"}
+  **Just a strong paragraph.**
+  ::
+
+  ```md
+  **Just a strong paragraph.**
+  ```
+::
+
+## Italic
+
+::stack
+  ::div{class="p-4"}
+  _Just an italic paragraph._
+  ::
+
+  ```md
+  _Just an italic paragraph._
+  ```
+::
+
+## Table
+
+::stack
+  ::div{class="p-4"}
+  | Key | Type      | Description                                 |
+  | --- | --------- | ------------------------------------------- |
+  | 1   | Wonderful | Table with `some long code snippet example` |
+  | 2   | Wonderful | Data                                        |
+  | 3   | Wonderful | Website                                     |
+  ::
+
+  ```md
+  | Key | Type      | Description                                 |
+  | --- | --------- | ------------------------------------------- |
+  | 1   | Wonderful | Table with `some long code snippet example` |
+  | 2   | Wonderful | Data                                        |
+  | 3   | Wonderful | Website                                     |
+  ```
+::
+
+## Overview
+
+::stack
+  ::div{class="p-8"}
+  # The Joke Tax Chronicles
+
+  Once upon a time, in a far-off land, there was a very lazy king who spent all day lounging on his throne. One day, his advisors came to him with a problem: the kingdom was running out of money.
+
+  ## The King's Plan
+
+  The king thought long and hard, and finally came up with [a brilliant plan](#): he would tax the jokes in the kingdom.
+
+  > "After all," he said, "everyone enjoys a good joke, so it's only fair that they should pay for the privilege."
+
+  ### The Joke Tax
+
+  The king's subjects were not amused. They grumbled and complained, but the king was firm:
+
+  - 1st level of puns: 5 gold coins
+  - 2nd level of jokes: 10 gold coins
+  - 3rd level of one-liners : 20 gold coins
+
+  As a result, people stopped telling jokes, and the kingdom fell into a gloom. But there was one person who refused to let the king's foolishness get him down: a court jester named Jokester.
+
+  ### Jokester's Revolt
+
+  Jokester began sneaking into the castle in the middle of the night and leaving jokes all over the place: under the king's pillow, in his soup, even in the royal toilet. The king was furious, but he couldn't seem to stop Jokester.
+
+  And then, one day, the people of the kingdom discovered that the jokes left by Jokester were so funny that they couldn't help but laugh. And once they started laughing, they couldn't stop.
+
+  ### The People's Rebellion
+
+  The people of the kingdom, feeling uplifted by the laughter, started to tell jokes and puns again, and soon the entire kingdom was in on the joke.
+
+  | King's Treasury | People's happiness |
+  | :-------------- | :----------------- |
+  | Empty           | Overflowing        |
+  | Modest          | Satisfied          |
+  | Full            | Ecstatic           |
+
+  The king, seeing how much happier his subjects were, realized the error of his ways and repealed the joke tax. Jokester was declared a hero, and the kingdom lived happily ever after.
+
+  The moral of the story is: never underestimate the power of a good laugh and always be careful of bad ideas.
+  ::
+
+  ```md height=400
+  # The Joke Tax Chronicles
+
+  Once upon a time, in a far-off land, there was a very lazy king who spent all day lounging on his throne. One day, his advisors came to him with a problem: the kingdom was running out of money.
+
+  ## The King's Plan
+
+  The king thought long and hard, and finally came up with [a brilliant plan](#): he would tax the jokes in the kingdom.
+
+  > "After all," he said, "everyone enjoys a good joke, so it's only fair that they should pay for the privilege."
+
+  ### The Joke Tax
+
+  The king's subjects were not amused. They grumbled and complained, but the king was firm:
+
+  - 1st level of puns: 5 gold coins
+  - 2nd level of jokes: 10 gold coins
+  - 3rd level of one-liners : 20 gold coins
+
+  As a result, people stopped telling jokes, and the kingdom fell into a gloom. But there was one person who refused to let the king's foolishness get him down: a court jester named Jokester.
+
+  ### Jokester's Revolt
+
+  Jokester began sneaking into the castle in the middle of the night and leaving jokes all over the place: under the king's pillow, in his soup, even in the royal toilet. The king was furious, but he couldn't seem to stop Jokester.
+
+  And then, one day, the people of the kingdom discovered that the jokes left by Jokester were so funny that they couldn't help but laugh. And once they started laughing, they couldn't stop.
+
+  ### The People's Rebellion
+
+  The people of the kingdom, feeling uplifted by the laughter, started to tell jokes and puns again, and soon the entire kingdom was in on the joke.
+
+  | King's Treasury | People's happiness |
+  | :-------------- | :----------------- |
+  | Empty           | Overflowing        |
+  | Modest          | Satisfied          |
+  | Full            | Ecstatic           |
+
+  The king, seeing how much happier his subjects were, realized the error of his ways and repealed the joke tax. Jokester was declared a hero, and the kingdom lived happily ever after.
+
+  The moral of the story is: never underestimate the power of a good laugh and always be careful of bad ideas.
+  ```
+::
