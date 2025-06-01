@@ -228,6 +228,51 @@ export default defineI18nConfig(() => ({
       // Field
       'required': '必須',
     },
+    'km': {
+      // Search
+      'Search...': 'ស្វែងរក...',
+      'Search documentation...': 'ស្វែងរកឯកសារ...',
+      'No results found.': 'មិនមានលទ្ធផលទេ',
+
+      // TOC
+      'On This Page': 'នៅលើទំព័រនេះ',
+
+      // Search command
+      'Light': 'ផ្ទៃភ្លឺ',
+      'Dark': 'ផ្ទៃងងឹត',
+      'System': 'តាមប្រព័ន្ធ',
+
+      // Doc footer
+      'Edit this page': 'កែសម្រួលទំព័រនេះ',
+      'Back to Top': 'រំកិលទៅខាងលើវិញ',
+
+      // Collapse Code
+      'Expand': 'ពន្លាតបង្ហាញ',
+      'Collapse': 'បង្រួម',
+
+      // Language Switcher
+      'Language': 'ភាសា',
+      'Choose your language': 'ជ្រើសរើសភាសារបស់អ្នក',
+
+      // Theme Switcher
+      'Customize': 'ប្ដូរតាមចំណង់ចំណូលចិត្ត',
+      'Pick a style and color for the docs.': 'ជ្រើសរើសរចនាប័ទ្ម និងពណ៌សម្រាប់ឯកសារ',
+      'Color': 'ពណ៌',
+      'Radius': 'កាំកំណោង',
+      'Theme': 'ផ្ទៃស្បែក',
+
+      // Copy Code
+      'Copied to clipboard!': 'បានចម្លងទុកទៅកាន់ក្តារចម្លង!',
+
+      // Carbon Ads
+      'Please support us by disabling your ad blocker.': 'សូមគាំទ្រពួកយើងដោយការបិទកម្មវិធីរាំងខ្ទប់ពាណិជ្ជកម្ម',
+
+      // Read More
+      'Read more at': 'អានបន្ថែមនៅ',
+
+      // Field
+      'required': 'តម្រូវឲ្យមានជាដាច់ខាត',
+    },
     'ru': {
       // Search
       'Search...': 'Поиск...',
