@@ -60,7 +60,7 @@ export default defineI18nConfig(() => ({
       'FOOTER_CREDIT': 'Fait avec ❤️ par [**Tony Zhang**](https://github.com/ZTL-UwU/)',
       'Sponsor Me': 'Me Sponsoriser',
     },
-    'km': {
+    km: {
       // Header nav
       'shadcn-docs': 'shadcn-docs',
       'Docs': 'ឯកសារ',
