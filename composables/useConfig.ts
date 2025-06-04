@@ -61,7 +61,7 @@ const defaultConfig: DefaultConfig = {
   main: {
     breadCrumb: true,
     showTitle: true,
-    codeCopyToast: true,
+    codeCopyToast: false,
     codeCopyIcon: 'lucide:clipboard',
     codeCopyToastText: 'Copied to clipboard!',
     fieldRequiredText: 'required',

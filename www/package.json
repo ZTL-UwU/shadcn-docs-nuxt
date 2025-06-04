@@ -10,8 +10,8 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@iconify-json/simple-icons": "^1.2.36",
-    "nuxt": "^3.17.4",
+    "@iconify-json/simple-icons": "^1.2.37",
+    "nuxt": "^3.17.5",
     "vue": "^3.5.16",
     "vue-router": "^4.5.1"
   }

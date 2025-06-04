@@ -108,7 +108,7 @@ export default defineAppConfig({
     main: {
       breadCrumb: true,
       showTitle: true,
-      codeCopyToast: true,
+      codeCopyToast: false,
       codeCopyIcon: 'lucide:clipboard',
       editLink: {
         enable: true,
