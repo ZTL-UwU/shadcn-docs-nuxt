@@ -37,12 +37,11 @@
     "types"
   ],
   "scripts": {
-    "build": "nuxt build www",
-    "dev": "nuxt dev www",
-    "dev:prepare": "nuxt prepare www",
-    "generate": "nuxt generate www",
-    "preview": "nuxt preview www",
-    "typecheck": "nuxt typecheck",
+    "build": "nuxt prepare && nuxt build www",
+    "dev": "nuxt prepare && nuxt dev www",
+    "generate": "nuxt prepare && nuxt generate www",
+    "preview": "nuxt prepare && nuxt preview www",
+    "typecheck": "nuxt prepare && nuxt typecheck",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
