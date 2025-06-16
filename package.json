@@ -37,11 +37,11 @@
     "types"
   ],
   "scripts": {
-    "build": "nuxi build www",
-    "dev": "nuxi dev www",
+    "build": "nuxt build www",
+    "dev": "nuxt dev www",
     "dev:prepare": "nuxt prepare www",
-    "generate": "nuxi generate www",
-    "preview": "nuxi preview www",
+    "generate": "nuxt generate www",
+    "preview": "nuxt preview www",
     "typecheck": "nuxt typecheck",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
