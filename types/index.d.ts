@@ -46,10 +46,10 @@ interface DefaultConfig {
       target: string;
       showLinkIcon: boolean;
       links: ({
-        title: string;
-        to: string;
-        target: string;
-        description: string;
+        title?: string;
+        to?: string;
+        target?: string;
+        description?: string;
         icon?: string;
       })[];
     })[];

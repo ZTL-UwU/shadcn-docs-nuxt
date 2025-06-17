@@ -10,17 +10,17 @@
             <ul class="w-[250px] p-2">
               <li v-for="link in item.links" :key="link.title">
                 <NuxtLinkLocale
-                  :to="localePath(link.to)"
+                  :to="link.to && localePath(link.to)"
                   :target="link.target"
                   class="hover:bg-muted mb-1 flex w-full gap-2 rounded-md px-3 py-2 transition-all"
                 >
                   <SmartIcon v-if="link?.icon" :name="link.icon" :size="16" class="mt-1 min-w-5" />
 
                   <div>
-                    <div class="font-semibold">
+                    <div v-if="link.title" class="font-semibold">
                       {{ $t(link.title) }}
                     </div>
-                    <div class="text-muted-foreground text-sm">
+                    <div v-if="link.description" class="text-muted-foreground text-sm">
                       {{ $t(link.description) }}
                     </div>
                   </div>
