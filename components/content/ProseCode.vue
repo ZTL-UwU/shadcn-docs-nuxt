@@ -1,6 +1,6 @@
 <template>
   <UiCard
-    class="bg-muted/30 relative overflow-hidden [&:not(:first-child)]:mt-5 [&:not(:last-child)]:mb-5"
+    class="bg-[#FBFBFB] relative overflow-hidden [&:not(:first-child)]:mt-5 [&:not(:last-child)]:mb-5"
     :class="[
       (inGroup || inTree) && 'mb-0 rounded-t-none border-none shadow-none',
       inStack && 'mb-0 rounded-none border-none shadow-none',
