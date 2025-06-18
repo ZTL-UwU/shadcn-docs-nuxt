@@ -17,6 +17,14 @@ export function useI18nDocs() {
   const otherLocales = availableLocales.filter(l => l !== defaultLocale);
 
   /**
+   * Helper function to check if a path belongs to a specific locale
+   * Uses proper boundary matching to avoid false positives like /frontend matching /fr
+   */
+  const isLocaleSpecificPath = (path: string, localeCode: string): boolean => {
+    return path === `/${localeCode}` || path.startsWith(`/${localeCode}/`);
+  };
+
+  /**
    * Filters navigation items based on the current locale
    * - For default locale: shows only default paths (no locale prefix)
    * - For other locales: shows only paths with matching locale prefix
@@ -24,12 +32,16 @@ export function useI18nDocs() {
   const localizedNavigation = computed(() => {
     if (!i18nEnabled)
       return navigation.value;
+
     const filteredNav = navigation.value.filter((nav) => {
       if (locale.value === defaultLocale) {
-        return !otherLocales.some(l => nav._path.startsWith(`/${l}`));
+        // Check if path is actually prefixed by any other locale
+        return !otherLocales.some(l => isLocaleSpecificPath(nav._path, l));
       }
-      return nav._path.startsWith(`/${locale.value}`);
+      // For non-default locales
+      return isLocaleSpecificPath(nav._path, locale.value);
     });
+
     return locale.value === defaultLocale ? filteredNav : filteredNav[0].children;
   });
 
@@ -41,11 +53,14 @@ export function useI18nDocs() {
   const localizedPrev = computed(() => {
     if (!i18nEnabled)
       return prev.value;
+
     if (locale.value === defaultLocale) {
-      if (otherLocales.some(l => prev.value?._path.startsWith(`/${l}/`)))
+      // For default locale, hide if prev belongs to any other locale
+      if (otherLocales.some(l => prev.value && isLocaleSpecificPath(prev.value._path, l)))
         return null;
     } else {
-      if (!prev.value?._path.startsWith(`/${locale.value}`)) {
+      // For non-default locales, show only if prev belongs to current locale
+      if (!prev.value || !isLocaleSpecificPath(prev.value._path, locale.value)) {
         return null;
       }
     }
@@ -60,11 +75,14 @@ export function useI18nDocs() {
   const localizedNext = computed(() => {
     if (!i18nEnabled)
       return next.value;
+
     if (locale.value === defaultLocale) {
-      if (otherLocales.some(l => next.value?._path.startsWith(`/${l}/`)))
+      // For default locale, hide if next belongs to any other locale
+      if (otherLocales.some(l => next.value && isLocaleSpecificPath(next.value._path, l)))
         return null;
     } else {
-      if (!next.value?._path.startsWith(`/${locale.value}`)) {
+      // For non-default locales, show only if next belongs to current locale
+      if (!next.value || !isLocaleSpecificPath(next.value._path, locale.value)) {
         return null;
       }
     }
@@ -85,9 +103,11 @@ export function useI18nDocs() {
   const localizeSearchResult = i18nEnabled
     ? (result: SearchResult[]) => result.filter((r) => {
         if (locale.value === defaultLocale) {
-          return !otherLocales.some(l => r.id.startsWith(`/${l}/`));
+          // For default locale, exclude results that belong to other locales
+          return !otherLocales.some(l => isLocaleSpecificPath(r.id, l));
         }
-        return r.id.startsWith(`/${locale.value}`);
+        // For non-default locales, include only results that belong to current locale
+        return isLocaleSpecificPath(r.id, locale.value);
       })
     : (result: SearchResult[]) => result;
 
