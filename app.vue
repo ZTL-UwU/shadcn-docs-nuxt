@@ -40,7 +40,7 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
 });
 
-useServerHead({
+useHead({
   bodyAttrs: {
     class: themeClass.value,
     style: `--radius: ${radius.value}rem;`,
