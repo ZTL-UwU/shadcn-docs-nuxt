@@ -1,7 +1,7 @@
 {
   "name": "shadcn-docs-nuxt",
   "type": "module",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "packageManager": "pnpm@10.12.1",
   "description": "Effortless and beautiful docs template built with Nuxt Content & shadcn-vue.",
   "author": "Tony Zhang <zhangtianli2006@gmail.com>",
@@ -56,7 +56,7 @@
     "@nuxtjs/i18n": "^9.5.5",
     "@nuxtjs/mdc": "^0.17.0",
     "@tailwindcss/vite": "^4.1.10",
-    "@ztl-uwu/nuxt-content": "^2.13.7",
+    "@ztl-uwu/nuxt-content": "^2.13.8",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "fontaine": "^0.6.0",
