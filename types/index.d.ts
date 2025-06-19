@@ -62,6 +62,7 @@ interface DefaultConfig {
   aside: {
     useLevel: boolean;
     levelStyle: 'aside' | 'header';
+    headerLevelNavAlign: 'start' | 'center' | 'end';
     collapse: boolean;
     collapseLevel: number;
     folderStyle: 'default' | 'tree' | 'group';

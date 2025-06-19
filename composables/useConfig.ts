@@ -55,6 +55,7 @@ const defaultConfig: DefaultConfig = {
   aside: {
     useLevel: true,
     levelStyle: 'aside',
+    headerLevelNavAlign: 'start',
     collapse: false,
     collapseLevel: 1,
     folderStyle: 'default',
