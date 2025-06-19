@@ -1,7 +1,7 @@
 {
   "name": "shadcn-docs-nuxt",
   "type": "module",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "packageManager": "pnpm@10.12.1",
   "description": "Effortless and beautiful docs template built with Nuxt Content & shadcn-vue.",
   "author": "Tony Zhang <zhangtianli2006@gmail.com>",

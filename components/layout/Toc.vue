@@ -3,12 +3,14 @@
     v-if="!isSmall"
     orientation="vertical"
     class="z-30 hidden overflow-y-auto md:block lg:block"
-    :class="[
-      (config.aside.useLevel && config.aside.levelStyle === 'aside') ? 'h-[calc(100vh-6.5rem)]' : 'h-[calc(100vh-10rem)]',
-    ]"
     type="hover"
   >
-    <div class="flex flex-col gap-5">
+    <div
+      class="flex flex-col gap-5"
+      :class="[
+        (config.aside.useLevel && config.aside.levelStyle === 'aside') ? 'h-[calc(100vh-6.5rem)]' : 'h-[calc(100vh-10rem)]',
+      ]"
+    >
       <div v-if="toc?.links.length">
         <p class="mb-2 text-base font-semibold">
           {{ $t(title) }}
