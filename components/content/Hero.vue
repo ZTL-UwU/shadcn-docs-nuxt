@@ -49,14 +49,14 @@ defineProps<{
     icon?: string;
     title: string;
   };
-  actions: [{
+  actions: {
     name: string;
     leftIcon?: string;
     rightIcon?: string;
     variant?: 'default' | 'link' | 'destructive' | 'outline' | 'secondary' | 'ghost';
     to: string;
     target?: Target;
-  }];
+  }[];
 }>();
 defineSlots();
 </script>
