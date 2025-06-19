@@ -1,9 +1,6 @@
 ---
 title: Arborescence de Code
 icon: lucide:folder-code
-navBadges:
-  - value: Nouveau
-    type: lime
 badges:
   - value: 0.8.17
   - value: Source

@@ -10,7 +10,13 @@
         (page.aside ?? true) && 'md:grid-cols-[220px_minmax(0,1fr)] lg:grid-cols-[240px_minmax(0,1fr)]',
       ]"
     >
-      <aside v-if="page.aside ?? true" class="fixed top-[102px] z-30 -ml-2 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 overflow-y-auto md:sticky md:top-[60px] md:block">
+      <aside
+        v-if="page.aside ?? true"
+        class="fixed z-30 -ml-2 hidden w-full shrink-0 overflow-y-auto top-[102px] md:sticky md:block"
+        :class="[
+          (config.aside.useLevel && config.aside.levelStyle === 'aside') ? 'h-[calc(100vh-3.5rem)] md:top-[61px]' : 'h-[calc(100vh-6rem)] md:top-[101px]',
+        ]"
+      >
         <LayoutAside :is-mobile="false" />
       </aside>
       <NuxtPage />

@@ -2,10 +2,13 @@
   <UiScrollArea
     v-if="!isSmall"
     orientation="vertical"
-    class="z-30 hidden h-[calc(100vh-6.5rem)] overflow-y-auto md:block lg:block"
+    class="z-30 hidden overflow-y-auto md:block lg:block"
+    :class="[
+      (config.aside.useLevel && config.aside.levelStyle === 'aside') ? 'h-[calc(100vh-6.5rem)]' : 'h-[calc(100vh-10rem)]',
+    ]"
     type="hover"
   >
-    <div class="flex h-[calc(100vh-6.5rem)] flex-col gap-5">
+    <div class="flex flex-col gap-5">
       <div v-if="toc?.links.length">
         <p class="mb-2 text-base font-semibold">
           {{ $t(title) }}
@@ -56,9 +59,8 @@
     v-else
     v-model:open="isOpen"
     class="block w-full text-sm lg:hidden"
-    :class="{ 'border-b': border }"
   >
-    <UiCollapsibleTrigger class="flex w-full px-4 py-3 text-left font-medium">
+    <UiCollapsibleTrigger class="flex w-full px-4 md:px-8 py-3 text-left font-medium">
       {{ title }}
       <Icon
         name="lucide:chevron-right"
@@ -74,6 +76,7 @@
 
 <script setup lang="ts">
 defineProps<{ isSmall: boolean }>();
+const config = useConfig();
 
 const { toc } = useContent();
 const { localePath } = useI18nDocs();
@@ -84,7 +87,6 @@ const carbonAdsEnabled = computed(
   () => carbonAds.enable && !(import.meta.dev && carbonAds.disableInDev),
 );
 
-const { border } = useConfig().value.header;
 const isOpen = ref(false);
 
 const { url, enabledToc, text, icon } = useEditLink();

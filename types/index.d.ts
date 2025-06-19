@@ -61,6 +61,7 @@ interface DefaultConfig {
   };
   aside: {
     useLevel: boolean;
+    levelStyle: 'aside' | 'header';
     collapse: boolean;
     collapseLevel: number;
     folderStyle: 'default' | 'tree' | 'group';
@@ -135,19 +136,19 @@ interface DefaultConfig {
   };
 }
 
-type Color =
-  | 'zinc'
-  | 'slate'
-  | 'stone'
-  | 'gray'
-  | 'neutral'
-  | 'red'
-  | 'rose'
-  | 'orange'
-  | 'green'
-  | 'blue'
-  | 'yellow'
-  | 'violet';
+type Color
+  = | 'zinc'
+    | 'slate'
+    | 'stone'
+    | 'gray'
+    | 'neutral'
+    | 'red'
+    | 'rose'
+    | 'orange'
+    | 'green'
+    | 'blue'
+    | 'yellow'
+    | 'violet';
 
 type Target = '_blank' | '_parent' | '_self' | '_top' | (string & object) | null | undefined;
 

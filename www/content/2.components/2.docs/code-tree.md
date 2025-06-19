@@ -1,9 +1,6 @@
 ---
 title: Code Tree
 icon: lucide:folder-code
-navBadges:
-  - value: New
-    type: lime
 badges:
   - value: 0.8.17
   - value: Source

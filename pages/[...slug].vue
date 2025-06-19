@@ -57,7 +57,12 @@
         <LayoutDocsFooter />
       </div>
       <div v-if="config.toc.enable && (page.toc ?? true)" class="hidden text-sm lg:block">
-        <div class="sticky top-[90px] h-[calc(100vh-3.5rem)] overflow-hidden">
+        <div
+          class="sticky"
+          :class="[
+            (config.aside.useLevel && config.aside.levelStyle === 'aside') ? 'md:top-[91px]' : 'md:top-[133px]',
+          ]"
+        >
           <LayoutToc :is-small="false" />
         </div>
       </div>

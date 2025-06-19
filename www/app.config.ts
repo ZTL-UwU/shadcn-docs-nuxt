@@ -32,6 +32,7 @@ export default defineAppConfig({
         light: '/logo.svg',
         dark: '/logo-dark.svg',
       },
+      border: false,
       darkModeToggle: true,
       languageSwitcher: {
         enable: true,
@@ -101,11 +102,13 @@ export default defineAppConfig({
     },
     aside: {
       useLevel: true,
+      levelStyle: 'aside',
       collapse: false,
       collapseLevel: 1,
       folderStyle: 'default',
     },
     main: {
+      padded: true,
       breadCrumb: true,
       showTitle: true,
       codeCopyToast: false,
@@ -196,7 +199,7 @@ export default defineAppConfig({
     },
     toc: {
       enable: true,
-      enableInMobile: false,
+      enableInMobile: true,
       enableInHomepage: false,
       title: 'On this page',
       links: [
