@@ -84,6 +84,7 @@ interface DefaultConfig {
     };
     backToTop: boolean;
     pm: ('npm' | 'pnpm' | 'bun' | 'yarn')[];
+    imageZoom: boolean;
     codeIcon: {
       [key: string]: string;
     };

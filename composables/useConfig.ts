@@ -77,6 +77,7 @@ const defaultConfig: DefaultConfig = {
     },
     backToTop: true,
     pm: ['npm', 'pnpm', 'bun', 'yarn'],
+    imageZoom: true,
     codeIcon: {
       'package.json': 'vscode-icons:file-type-node',
       'tsconfig.json': 'vscode-icons:file-type-tsconfig',

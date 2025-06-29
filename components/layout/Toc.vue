@@ -63,7 +63,7 @@
     class="block w-full text-sm lg:hidden"
   >
     <UiCollapsibleTrigger class="flex w-full px-4 md:px-8 py-3 text-left font-medium">
-      {{ title }}
+      {{ $t(title) }}
       <Icon
         name="lucide:chevron-right"
         class="ml-auto self-center transition-all"
