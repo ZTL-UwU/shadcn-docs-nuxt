@@ -116,11 +116,11 @@ badges:
 
 ::stack
   ::div{class="p-4 md:p-6"}
-    ::steps{level=5}
+    ::steps{:level="5"}
       ##### Spécifier le niveau des titres à utiliser
 
       ```mdc
-      ::steps{level=5}
+      ::steps{:level="5"}
       ```
 
       ##### Titres Disponibles
@@ -129,11 +129,11 @@ badges:
     ::
   ::
   ```mdc
-  ::steps{level=5}
+  ::steps{:level="5"}
     ##### Titres Multi-niveaux
 
     ```mdc
-    ::steps{level=5}
+    ::steps{:level="5"}
     ```
 
     ##### Titres Disponibles

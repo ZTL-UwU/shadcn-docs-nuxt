@@ -15,52 +15,59 @@ badges:
   ::div{class="p-4 md:p-8"}
     ::stack
       ::div{class="p-6 text-3xl font-bold"}
-      ✨ Présentation d'Inspira UI
+      ✨ shadcn-docs-nuxt
       ::
-      ```vue
-      <template>
-        <RadiantText
-          class="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 dark:hover:text-neutral-400"
-          :duration="5"
-        >
-          <span class="text-3xl font-bold">✨ Présentation d'Inspira UI</span>
-        </RadiantText>
-      </template>
+
+      ```mdc
+      ---
+      title: Installation
+      description: How to install shadcn-docs-nuxt in your app.
+      icon: lucide:play
+      ---
+
+      ## Using the starter template
       ```
-      :pm-install{name="@inspira-ui/plugins" save-dev}
-      :read-more{title="Documentation Inspira UI" to="https://inspira-ui.com/components/radiant-text"}
+
+      :pm-x{command="nuxi@latest init <project-name> -t github:ZTL-UwU/shadcn-docs-nuxt-starter"}
+
+      :read-more{title="Installation" to="/getting-started/installation"}
+
       ::card
       ---
-      title: Commandes
-      icon: lucide:square-terminal
+      title: Components
+      icon: lucide:box
       ---
-      Liste des commandes CLI Nuxt pour initialiser, analyser, construire et prévisualiser votre application.
+      See MDC components provided by **shadcn-docs-nuxt**.
       ::
     ::
   ::
+
   ```mdc
   ::stack
     ::div{class="p-6 text-3xl font-bold"}
-    ✨ Présentation d'Inspira UI
+    ✨ shadcn-docs-nuxt
     ::
-    ```vue
-    <template>
-      <RadiantText
-        class="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 dark:hover:text-neutral-400"
-        :duration="5"
-      >
-        <span class="text-3xl font-bold">✨ Présentation d'Inspira UI</span>
-      </RadiantText>
-    </template>
+
+    ```mdc
+    ---
+    title: Installation
+    description: How to install shadcn-docs-nuxt in your app.
+    icon: lucide:play
+    ---
+
+    ## Using the starter template
     ```
-    :pm-install{name="@inspira-ui/plugins" save-dev}
-    :read-more{title="Documentation Inspira UI" to="https://inspira-ui.com/components/radiant-text"}
+
+    :pm-x{command="nuxi@latest init <project-name> -t github:ZTL-UwU/shadcn-docs-nuxt-starter"}
+
+    :read-more{title="Installation" to="/getting-started/installation"}
+
     ::card
     ---
-    title: Commandes
-    icon: lucide:square-terminal
+    title: Components
+    icon: lucide:box
     ---
-    Liste des commandes CLI Nuxt pour initialiser, analyser, construire et prévisualiser votre application.
+    See MDC components provided by **shadcn-docs-nuxt**.
     ::
   ::
   ```

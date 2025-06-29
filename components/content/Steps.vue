@@ -8,8 +8,8 @@
 </template>
 
 <script setup lang="ts">
-const { level = '3' } = defineProps<{
-  level?: '1' | '2' | '3' | '4' | '5' | '6';
+const { level = 3 } = defineProps<{
+  level?: 1 | 2 | 3 | 4 | 5 | 6;
 }>();
 
 const levelClass = {

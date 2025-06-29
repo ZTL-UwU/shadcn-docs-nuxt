@@ -116,11 +116,11 @@ badges:
 
 ::stack
   ::div{class="p-4 md:p-6"}
-    ::steps{level=5}
+    ::steps{:level="5"}
       ##### Specify the level of headings to use
 
       ```mdc
-      ::steps{level=5}
+      ::steps{:level="5"}
       ```
 
       ##### Available Headings
@@ -129,11 +129,11 @@ badges:
     ::
   ::
   ```mdc
-  ::steps{level=5}
+  ::steps{:level="5"}
     ##### Multi-level headings
 
     ```mdc
-    ::steps{level=5}
+    ::steps{:level="5"}
     ```
 
     ##### Available Headings

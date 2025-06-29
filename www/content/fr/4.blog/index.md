@@ -19,7 +19,7 @@ Blog
 Lisez les derniers articles et actualités concernant le projet.
 ::
 
-::card-group{cols=3}
+::card-group{:cols="3"}
   ::card
   ---
   img: /blog/v1.png

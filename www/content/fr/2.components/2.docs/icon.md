@@ -22,14 +22,14 @@ Le composant icône utilise **Nuxt Icon** en interne. Consultez le guide d'utili
     :icon{name="lucide:box"}
     :icon{name="vscode-icons:file-type-js-official"}
     :icon{name="vscode-icons:file-type-vue"}
-    :icon{name="vscode-icons:file-type-nuxt" :size=30}
+    :icon{name="vscode-icons:file-type-nuxt" :size="30"}
   ::
 
   ```mdc
   :icon{name="lucide:box"}
   :icon{name="vscode-icons:file-type-js-official"}
   :icon{name="vscode-icons:file-type-vue"}
-  :icon{name="vscode-icons:file-type-nuxt" :size=30}
+  :icon{name="vscode-icons:file-type-nuxt" :size="30"}
   ```
 ::
 
@@ -63,7 +63,7 @@ Vous pouvez mettre des icônes Iconify, des émojis et des URLs dans `smart-icon
 
     :smart-icon{name="😍"}
     :smart-icon{name="🚀"}
-    :smart-icon{name="🎉" :size=30}
+    :smart-icon{name="🎉" :size="30"}
 
     </div>
 
@@ -71,7 +71,7 @@ Vous pouvez mettre des icônes Iconify, des émojis et des URLs dans `smart-icon
     <div class="space-x-2">
 
     :smart-icon{name="/logo.svg"}
-    :smart-icon{name="https://vueuse.org/favicon.svg" :size=40}
+    :smart-icon{name="https://vueuse.org/favicon.svg" :size="40"}
 
     </div>
   ::
@@ -85,10 +85,10 @@ Vous pouvez mettre des icônes Iconify, des émojis et des URLs dans `smart-icon
   **Émojis**
   :smart-icon{name="😍"}
   :smart-icon{name="🚀"}
-  :smart-icon{name="🎉" :size=30}
+  :smart-icon{name="🎉" :size="30"}
 
   **URL**
   :smart-icon{name="/logo.svg"}
-  :smart-icon{name="https://vueuse.org/favicon.svg" :size=40}
+  :smart-icon{name="https://vueuse.org/favicon.svg" :size="40"}
   ```
 ::

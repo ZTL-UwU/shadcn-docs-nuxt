@@ -103,7 +103,7 @@ badges:
 
 ::stack
   ::div{class="p-4"}
-    ::card-group{cols=3}
+    ::card-group{:cols="3"}
       ::card
       ---
       title: Components
@@ -134,7 +134,7 @@ badges:
     ::
   ::
   ```mdc
-  ::card-group{cols=3}
+  ::card-group{:cols="3"}
     ::card
     ---
     title: Components

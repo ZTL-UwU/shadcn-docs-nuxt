@@ -19,7 +19,7 @@ announcement:
 អាននូវការបង្ហោះមាតិកានិងព័ត៌មានផ្សេងៗ និងថ្មីៗបំផុតអំពីគម្រោងនេះ។
 ::
 
-::card-group{cols=3}
+::card-group{:cols="3"}
   ::card
   ---
   img: /blog/v1.png
