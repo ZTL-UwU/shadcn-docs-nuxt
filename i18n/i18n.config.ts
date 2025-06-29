@@ -10,7 +10,7 @@ export default defineI18nConfig(() => ({
       'No results found.': 'No results found.',
 
       // TOC
-      'On This Page': 'On This Page',
+      'On this page': 'On this page',
 
       // Search command
       'Light': 'Light',
@@ -55,7 +55,7 @@ export default defineI18nConfig(() => ({
       'No results found.': 'Aucun résultat trouvé.',
 
       // TOC
-      'On This Page': 'Sur cette page',
+      'On this page': 'Sur cette page',
 
       // Search command
       'Light': 'Clair',
@@ -100,7 +100,7 @@ export default defineI18nConfig(() => ({
       'No results found.': '没有找到结果。',
 
       // TOC
-      'On This Page': '本页目录',
+      'On this page': '本页目录',
 
       // Search command
       'Light': '明亮',
@@ -145,7 +145,7 @@ export default defineI18nConfig(() => ({
       'No results found.': '沒有找到結果。',
 
       // TOC
-      'On This Page': '本頁目錄',
+      'On this page': '本頁目錄',
 
       // Search command
       'Light': '明亮',
@@ -190,7 +190,7 @@ export default defineI18nConfig(() => ({
       'No results found.': '結果が見つかりません。',
 
       // TOC
-      'On This Page': 'このページの目次',
+      'On this page': 'このページの目次',
 
       // Search command
       'Light': '明るい',
@@ -235,7 +235,7 @@ export default defineI18nConfig(() => ({
       'No results found.': 'មិនមានលទ្ធផលទេ',
 
       // TOC
-      'On This Page': 'នៅលើទំព័រនេះ',
+      'On this page': 'នៅលើទំព័រនេះ',
 
       // Search command
       'Light': 'ផ្ទៃភ្លឺ',
@@ -280,7 +280,7 @@ export default defineI18nConfig(() => ({
       'No results found.': 'Ничего не найдено.',
 
       // TOC
-      'On This Page': 'На этой странице',
+      'On this page': 'На этой странице',
 
       // Search command
       'Light': 'Светлая',
@@ -326,7 +326,7 @@ export default defineI18nConfig(() => ({
       'No results found.': '결과를 찾을 수 없습니다.',
 
       // TOC
-      'On This Page': '이 페이지에서',
+      'On this page': '이 페이지에서',
 
       // Search command
       'Light': '라이트',
@@ -372,7 +372,7 @@ export default defineI18nConfig(() => ({
       'No results found.': 'कोई परिणाम नहीं मिला।',
 
       // TOC
-      'On This Page': 'इस पृष्ठ पर',
+      'On this page': 'इस पृष्ठ पर',
 
       // Search command
       'Light': 'हल्का',
@@ -417,7 +417,7 @@ export default defineI18nConfig(() => ({
       'No results found.': 'কোন ফলাফল পাওয়া যায়নি।',
 
       // TOC
-      'On This Page': 'এই পৃষ্ঠায়',
+      'On this page': 'এই পৃষ্ঠায়',
 
       // Search command
       'Light': 'আলো',
