@@ -21,11 +21,11 @@ export function useBreadcrumb(url: string): BreadcrumbItem[] {
   for (let i = 0; i < segments.length; i++) {
     const segment = segments[i].replace('.html', '');
     href += `/${segment}`;
-    
+
     const page = nav?.find(x => (x._path as string) === href);
     nav = page?.children;
-    
-    if (i !== 0 && segment !== locale.value)
+
+    if (!(i === 0 && segment === locale.value))
       breadcrumbItems.push({ title: page?.title ?? segment, href });
   }
   return breadcrumbItems;

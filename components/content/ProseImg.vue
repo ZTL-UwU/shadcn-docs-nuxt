@@ -5,7 +5,7 @@
       :alt
       :width
       :height
-      class="rounded-md [&:not(:first-child)]:mt-8 [&:not(:last-child)]:mb-8"
+      class="rounded-md"
       :class="{
         'rounded-lg border bg-card text-card-foreground shadow-xs': lifted,
         'cursor-zoom-in': !noZoom && config.main.imageZoom,
@@ -14,7 +14,7 @@
   </DefineTemplate>
 
   <DialogRoot v-if="!noZoom && config.main.imageZoom">
-    <DialogTrigger>
+    <DialogTrigger class="block">
       <ReuseTemplate />
     </DialogTrigger>
     <DialogPortal>
