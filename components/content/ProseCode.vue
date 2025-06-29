@@ -16,7 +16,7 @@
       <CodeCopy :code />
     </div>
 
-    <div v-if="parsedMeta.has('collapse')">
+    <UiScrollArea v-if="parsedMeta.has('collapse')">
       <div
         :style="[((parsedMeta.has('height') || height) && !expanded) ? `height: ${height || parsedMeta.get('height')}px` : undefined]"
         class="overflow-x-auto overflow-y-hidden py-3 text-sm"
@@ -29,7 +29,8 @@
       >
         <slot />
       </div>
-    </div>
+      <ScrollBar orientation="horizontal" />
+    </UiScrollArea>
     <UiScrollArea v-else :style="[(parsedMeta.has('height') || height) && `height: ${height || parsedMeta.get('height')}px`]">
       <div
         class="overflow-x-auto py-3 text-sm"
