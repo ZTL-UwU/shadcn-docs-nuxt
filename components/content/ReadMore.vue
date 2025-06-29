@@ -1,6 +1,6 @@
 <template>
   <Alert :to :target :icon>
-    {{ $t('Read more at') }} <span class="font-semibold">{{ computedTitle }}</span>
+    {{ $t('Read more at') }} <span class="font-semibold">{{ getTitle() }}</span>
   </Alert>
 </template>
 
@@ -16,19 +16,17 @@ const {
   icon?: string;
 }>();
 
-const computedTitle = computed<string>(
-  () => {
-    if (title)
-      return title;
+function getTitle() {
+  if (title)
+    return title;
 
-    if (to.startsWith('http'))
-      return to;
+  if (to.startsWith('http'))
+    return to;
 
-    try {
-      return useBreadcrumb(to).map(x => x.title).join(' > ');
-    } catch {
-      return to;
-    }
-  },
-);
+  try {
+    return useBreadcrumb(to).map(x => x.title).join(' > ');
+  } catch {
+    return to;
+  }
+}
 </script>
