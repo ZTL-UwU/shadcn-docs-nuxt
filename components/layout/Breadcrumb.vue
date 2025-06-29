@@ -20,5 +20,5 @@
 <script setup lang="ts">
 const route = useRoute();
 
-const breadcrumbs = computed(() => useBreadcrumb(route.path));
+const breadcrumbs = useBreadcrumb(route.path);
 </script>

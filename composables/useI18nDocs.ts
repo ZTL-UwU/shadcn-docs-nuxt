@@ -1,3 +1,4 @@
+import type { NavItem } from '@ztl-uwu/nuxt-content';
 import type { SearchResult } from 'minisearch';
 
 /**
@@ -42,7 +43,7 @@ export function useI18nDocs() {
       return isLocaleSpecificPath(nav._path, locale.value);
     });
 
-    return locale.value === defaultLocale ? filteredNav : filteredNav[0].children;
+    return locale.value === defaultLocale ? filteredNav : (filteredNav[0].children as NavItem[]);
   });
 
   /**
