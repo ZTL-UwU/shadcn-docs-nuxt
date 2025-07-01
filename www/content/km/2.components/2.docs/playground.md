@@ -1,9 +1,12 @@
 ---
-title: កន្លែងលេង
+title: កន្លែងតេស្តសាកល្បង
 icon: lucide:app-window
+navBadges:
+  - value: ថ្មី
+    type: lime
 ---
 
-## ការប្រើប្រាស់
+## ឧទាហរណ៍បង្ហាញពីការប្រើប្រាស់
 
 ### Stackblitz
 
@@ -55,7 +58,7 @@ icon: lucide:app-window
   ```
 ::
 
-## លក្ខណៈ
+## របៀបប្រើប្រាស់
 
 ::field-group
   :field{name="provider" type="'stackblitz' | 'codesandbox'"}[អ្នកផ្តល់សេវាដែលត្រូវប្រើ]

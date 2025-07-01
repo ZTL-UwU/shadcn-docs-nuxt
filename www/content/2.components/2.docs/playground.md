@@ -1,6 +1,9 @@
 ---
 title: Playground
 icon: lucide:app-window
+navBadges:
+  - value: New
+    type: lime
 ---
 
 ## Usage
