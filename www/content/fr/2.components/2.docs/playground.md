@@ -1,6 +1,9 @@
 ---
 title: Aire de jeu
 icon: lucide:app-window
+navBadges:
+  - value: Nouveau
+    type: lime
 ---
 
 ## Utilisation
