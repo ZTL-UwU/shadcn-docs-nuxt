@@ -6,9 +6,9 @@ navigation: false
 ::hero
 ---
 announcement:
-  title: 'v1.0 release'
+  title: 'v1.1 release'
   icon: '🎉'
-  to: /blog/v1
+  to: /blog/v1-1
 actions:
   - name: Get Started
     to: /getting-started/introduction

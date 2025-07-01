@@ -8,8 +8,8 @@ icon: lucide:newspaper
 ---
 announcement:
   icon: lucide:newspaper
-  to: /blog/v1
-  title: shadcn-docs v1.0
+  to: /blog/v1-1
+  title: shadcn-docs v1.1
 ---
 
 #title
@@ -20,6 +20,21 @@ announcement:
 ::
 
 ::card-group{:cols="3"}
+  ::card
+  ---
+  img: /blog/v1-1.png
+  to: /blog/v1-1
+  ---
+
+  #title
+  shadcn-docs v1.1
+
+  #description
+  ការណែនាំអំពីការផ្លាស់ប្តូរ និងបច្ចុប្បន្នភាពទៅកាន់ជំនាន់ v1.1។
+
+  #footer
+  ៣០ ខែមិថុនា ២០២៥
+  ::
   ::card
   ---
   img: /blog/v1.png

@@ -4,6 +4,11 @@ icon: lucide:app-window
 navBadges:
   - value: ថ្មី
     type: lime
+badges:
+  - value: ប្រភពកូដ
+    icon: lucide:code
+    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Playground.vue
+    target: _blank
 ---
 
 ## ឧទាហរណ៍បង្ហាញពីការប្រើប្រាស់

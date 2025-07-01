@@ -8,8 +8,8 @@ icon: lucide:newspaper
 ---
 announcement:
   icon: lucide:newspaper
-  to: /blog/v1
-  title: shadcn-docs v1.0
+  to: /blog/v1-1
+  title: shadcn-docs v1.1
 ---
 
 #title
@@ -20,6 +20,20 @@ Read the latest articles and news about the project.
 ::
 
 ::card-group{:cols="3"}
+  ::card
+  ---
+  img: /blog/v1-1.png
+  to: /blog/v1-1
+  ---
+  #title
+  shadcn-docs v1.1
+
+  #description
+  Changes and upgrade guide for v1.1.
+
+  #footer
+  Jun 30, 2025
+  ::
   ::card
   ---
   img: /blog/v1.png

@@ -6,9 +6,9 @@ navigation: false
 ::hero
 ---
 announcement:
-  title: 'ការបញ្ចេញជំនាន់ v1.0 ផ្លូវការ'
+  title: 'ការបញ្ចេញជំនាន់ v1.1 ផ្លូវការ'
   icon: '🎉'
-  to: /blog/v1
+  to: /blog/v1-1
 actions:
   - name: ចាប់ផ្តើម
     to: /getting-started/introduction

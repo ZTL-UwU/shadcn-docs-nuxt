@@ -7,9 +7,9 @@ fullpage: true
 ::hero
 ---
 announcement:
-  title: 'v1.0 est sorti'
+  title: 'v1.1 est sorti'
   icon: '🎉'
-  to: /blog/v1
+  to: /blog/v1-1
 actions:
 - name: Commencer
   to: /getting-started/introduction
