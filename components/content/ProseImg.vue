@@ -6,15 +6,16 @@
       :width
       :height
       class="rounded-md"
-      :class="{
-        'rounded-lg border bg-card text-card-foreground shadow-xs': lifted,
-        'cursor-zoom-in': !noZoom && config.main.imageZoom,
-      }"
+      :class="[
+        lifted && 'rounded-lg border bg-card text-card-foreground shadow-xs',
+        (!noZoom && config.main.imageZoom) && 'cursor-zoom-in',
+        className,
+      ]"
     />
   </DefineTemplate>
 
   <DialogRoot v-if="!noZoom && config.main.imageZoom">
-    <DialogTrigger class="block">
+    <DialogTrigger class="block w-full">
       <ReuseTemplate />
     </DialogTrigger>
     <DialogPortal>
@@ -40,47 +41,38 @@
 </template>
 
 <script setup lang="ts">
-import { computed, useRuntimeConfig } from '#imports';
+import type { HTMLAttributes } from 'vue';
 import { DialogClose, DialogContent, DialogOverlay, DialogPortal, DialogRoot, DialogTrigger } from 'reka-ui';
 import { joinURL, withLeadingSlash, withTrailingSlash } from 'ufo';
 
-const props = defineProps({
-  src: {
-    type: String,
-    default: '',
-  },
-  alt: {
-    type: String,
-    default: '',
-  },
-  width: {
-    type: [String, Number],
-    default: undefined,
-  },
-  height: {
-    type: [String, Number],
-    default: undefined,
-  },
-  lifted: {
-    type: Boolean,
-    default: false,
-  },
-  noZoom: {
-    type: Boolean,
-    default: false,
-  },
-});
+const {
+  src = '',
+  alt = '',
+  width,
+  height,
+  lifted = false,
+  noZoom = false,
+  class: className = '',
+} = defineProps<{
+  src?: string;
+  alt?: string;
+  width?: string | number;
+  height?: string | number;
+  lifted?: boolean;
+  noZoom?: boolean;
+  class?: HTMLAttributes['class'];
+}>();
 
 const config = useConfig();
 
 const [DefineTemplate, ReuseTemplate] = createReusableTemplate();
 
 const refinedSrc = computed(() => {
-  if (props.src?.startsWith('/') && !props.src.startsWith('//')) {
+  if (src?.startsWith('/') && !src.startsWith('//')) {
     const _base = withLeadingSlash(withTrailingSlash(useRuntimeConfig().app.baseURL));
-    if (_base !== '/' && !props.src.startsWith(_base))
-      return joinURL(_base, props.src);
+    if (_base !== '/' && !src.startsWith(_base))
+      return joinURL(_base, src);
   }
-  return props.src;
+  return src;
 });
 </script>
