@@ -8,13 +8,13 @@
       class="rounded-md"
       :class="[
         lifted && 'rounded-lg border bg-card text-card-foreground shadow-xs',
-        (!noZoom && config.main.imageZoom) && 'cursor-zoom-in',
+        enableZoom && 'cursor-zoom-in',
         className,
       ]"
     />
   </DefineTemplate>
 
-  <DialogRoot v-if="!noZoom && config.main.imageZoom">
+  <DialogRoot v-if="enableZoom">
     <DialogTrigger class="block w-full">
       <ReuseTemplate />
     </DialogTrigger>
@@ -51,7 +51,7 @@ const {
   width,
   height,
   lifted = false,
-  noZoom = false,
+  zoom = undefined,
   class: className = '',
 } = defineProps<{
   src?: string;
@@ -59,7 +59,7 @@ const {
   width?: string | number;
   height?: string | number;
   lifted?: boolean;
-  noZoom?: boolean;
+  zoom?: boolean;
   class?: HTMLAttributes['class'];
 }>();
 
@@ -74,5 +74,11 @@ const refinedSrc = computed(() => {
       return joinURL(_base, src);
   }
   return src;
+});
+
+const enableZoom = computed(() => {
+  if (zoom === undefined)
+    return config.value.main.imageZoom;
+  return zoom;
 });
 </script>
