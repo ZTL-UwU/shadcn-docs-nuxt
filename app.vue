@@ -2,7 +2,11 @@
   <NuxtLoadingIndicator :color="false" class="z-100 bg-primary/80" />
   <LayoutBanner v-if="config.banner.enable" />
   <LayoutHeader />
-  <div v-if="page && !page.fullpage && baseRouteName !== 'index'" class="min-h-screen">
+  <div
+    v-if="page && !page.fullpage && baseRouteName !== 'index'"
+    class="min-h-screen"
+    :class="{ 'border-b': config.footer.border }"
+  >
     <div
       class="flex-1 items-start px-4 md:grid md:gap-6 md:px-8 lg:gap-10"
       :class="[
