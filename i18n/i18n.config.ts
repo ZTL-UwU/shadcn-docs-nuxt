@@ -118,7 +118,7 @@ export default defineI18nConfig(() => ({
 
       // Empty page
       'Empty page': '空页面',
-      'Start writing content': '在 {fileLink} 中开始编写内容，以查看此页面的形成。',
+      'Start writing content': '开始在 {fileLink} 中书写，让这个页面慢慢成型。',
 
       // TOC
       'On this page': '本页目录',
@@ -170,7 +170,7 @@ export default defineI18nConfig(() => ({
 
       // Empty page
       'Empty page': '空頁面',
-      'Start writing content': '在 {fileLink} 中開始編寫內容，以查看此頁面的形成。',
+      'Start writing content': '開始在 {fileLink} 中書寫，讓這個頁面慢慢成型。',
 
       // TOC
       'On this page': '本頁目錄',
@@ -222,7 +222,7 @@ export default defineI18nConfig(() => ({
 
       // Empty page
       'Empty page': '空のページ',
-      'Start writing content': '{fileLink} にコンテンツを書き始めて、このページが形作られるのを確認してください。',
+      'Start writing content': '{fileLink} に書き始めて、このページが少しずつ形になっていくのを見てみましょう。',
 
       // TOC
       'On this page': 'このページの目次',
@@ -274,7 +274,7 @@ export default defineI18nConfig(() => ({
 
       // Empty page
       'Empty page': 'ទំព័រទទេ',
-      'Start writing content': 'ចាប់ផ្តើមសរសេរមាតិកានៅក្នុង {fileLink} ដើម្បីមើលទំព័រនេះមានរូបរាង។',
+      'Start writing content': 'ចាប់ផ្តើមសរសេរនៅក្នុង {fileLink} ដើម្បីឲ្យទំព័រនេះបង្ហាញខ្លួនបន្តិចម្តងៗ។',
 
       // TOC
       'On this page': 'នៅលើទំព័រនេះ',
@@ -326,7 +326,7 @@ export default defineI18nConfig(() => ({
 
       // Empty page
       'Empty page': 'Пустая страница',
-      'Start writing content': 'Начните писать контент в {fileLink}, чтобы увидеть, как эта страница обретает форму.',
+      'Start writing content': 'Начните писать в {fileLink}, и страница постепенно начнёт обретать форму.',
 
       // TOC
       'On this page': 'На этой странице',
@@ -379,7 +379,7 @@ export default defineI18nConfig(() => ({
 
       // Empty page
       'Empty page': '빈 페이지',
-      'Start writing content': '{fileLink}에 콘텐츠 작성을 시작하여 이 페이지가 어떻게 구성되는지 확인하세요.',
+      'Start writing content': '{fileLink}에서 글쓰기를 시작하면 이 페이지가 서서히 형태를 갖춰갑니다.',
 
       // TOC
       'On this page': '이 페이지에서',
@@ -432,7 +432,7 @@ export default defineI18nConfig(() => ({
 
       // Empty page
       'Empty page': 'खाली पृष्ठ',
-      'Start writing content': 'इस पृष्ठ को आकार लेते देखने के लिए {fileLink} में सामग्री लिखना प्रारंभ करें।',
+      'Start writing content': '{fileLink} में लिखना शुरू करें और देखें यह पृष्ठ धीरे-धीरे आकार लेता है।',
 
       // TOC
       'On this page': 'इस पृष्ठ पर',
@@ -484,7 +484,7 @@ export default defineI18nConfig(() => ({
 
       // Empty page
       'Empty page': 'খালি পৃষ্ঠা',
-      'Start writing content': 'এই পৃষ্ঠাটিকে আকার নিতে দেখতে {fileLink}-এ সামগ্রী লেখা শুরু করুন।',
+      'Start writing content': '{fileLink}-এ লেখা শুরু করুন এবং দেখুন কীভাবে এই পৃষ্ঠাটি ধীরে ধীরে গঠন নিচ্ছে।',
 
       // TOC
       'On this page': 'এই পৃষ্ঠায়',
