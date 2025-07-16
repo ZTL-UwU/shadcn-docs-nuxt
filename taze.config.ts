@@ -6,6 +6,10 @@ export default defineConfig({
   install: true,
   mode: 'major',
   recursive: true,
+  exclude: [
+    'nuxt',
+    '@nuxt/kit',
+  ],
   // ignore paths for looking for package.json in monorepo
   ignorePaths: [
     '**/node_modules/**',
