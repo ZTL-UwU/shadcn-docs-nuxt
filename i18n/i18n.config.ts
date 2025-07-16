@@ -9,6 +9,13 @@ export default defineI18nConfig(() => ({
       'Search documentation...': 'Search documentation...',
       'No results found.': 'No results found.',
 
+      // 404
+      'This page could not be found.': 'This page could not be found.',
+
+      // Empty page
+      'Empty page': 'Empty page',
+      'Start writing content': 'Start writing in {fileLink} to see this page taking shape.',
+
       // TOC
       'On this page': 'On this page',
 
@@ -53,6 +60,13 @@ export default defineI18nConfig(() => ({
       'Search...': 'Rechercher...',
       'Search documentation...': 'Rechercher dans la documentation...',
       'No results found.': 'Aucun résultat trouvé.',
+
+      // 404
+      'This page could not be found.': 'Cette page est introuvable.',
+
+      // Empty page
+      'Empty page': 'Page vide',
+      'Start writing content': 'Commencez à écrire du contenu dans {fileLink} pour voir la page prendre forme.',
 
       // TOC
       'On this page': 'Sur cette page',
@@ -99,6 +113,13 @@ export default defineI18nConfig(() => ({
       'Search documentation...': '搜索文档...',
       'No results found.': '没有找到结果。',
 
+      // 404
+      'This page could not be found.': '找不到此页面。',
+
+      // Empty page
+      'Empty page': '空页面',
+      'Start writing content': '开始在 {fileLink} 中书写，让这个页面慢慢成型。',
+
       // TOC
       'On this page': '本页目录',
 
@@ -143,6 +164,13 @@ export default defineI18nConfig(() => ({
       'Search...': '搜尋...',
       'Search documentation...': '搜尋文件...',
       'No results found.': '沒有找到結果。',
+
+      // 404
+      'This page could not be found.': '找不到此頁面。',
+
+      // Empty page
+      'Empty page': '空頁面',
+      'Start writing content': '開始在 {fileLink} 中書寫，讓這個頁面慢慢成型。',
 
       // TOC
       'On this page': '本頁目錄',
@@ -189,6 +217,13 @@ export default defineI18nConfig(() => ({
       'Search documentation...': 'ドキュメントを検索...',
       'No results found.': '結果が見つかりません。',
 
+      // 404
+      'This page could not be found.': 'このページは見つかりませんでした。',
+
+      // Empty page
+      'Empty page': '空のページ',
+      'Start writing content': '{fileLink} に書き始めて、このページが少しずつ形になっていくのを見てみましょう。',
+
       // TOC
       'On this page': 'このページの目次',
 
@@ -234,6 +269,13 @@ export default defineI18nConfig(() => ({
       'Search documentation...': 'ស្វែងរកឯកសារ...',
       'No results found.': 'មិនមានលទ្ធផលទេ',
 
+      // 404
+      'This page could not be found.': 'រកមិនឃើញទំព័រនេះទេ។',
+
+      // Empty page
+      'Empty page': 'ទំព័រទទេ',
+      'Start writing content': 'ចាប់ផ្តើមសរសេរនៅក្នុង {fileLink} ដើម្បីឲ្យទំព័រនេះបង្ហាញខ្លួនបន្តិចម្តងៗ។',
+
       // TOC
       'On this page': 'នៅលើទំព័រនេះ',
 
@@ -278,6 +320,13 @@ export default defineI18nConfig(() => ({
       'Search...': 'Поиск...',
       'Search documentation...': 'Поиск в документации...',
       'No results found.': 'Ничего не найдено.',
+
+      // 404
+      'This page could not be found.': 'Эта страница не найдена.',
+
+      // Empty page
+      'Empty page': 'Пустая страница',
+      'Start writing content': 'Начните писать в {fileLink}, и страница постепенно начнёт обретать форму.',
 
       // TOC
       'On this page': 'На этой странице',
@@ -325,6 +374,13 @@ export default defineI18nConfig(() => ({
       'Search documentation...': '문서 검색...',
       'No results found.': '결과를 찾을 수 없습니다.',
 
+      // 404
+      'This page could not be found.': '이 페이지를 찾을 수 없습니다.',
+
+      // Empty page
+      'Empty page': '빈 페이지',
+      'Start writing content': '{fileLink}에서 글쓰기를 시작하면 이 페이지가 서서히 형태를 갖춰갑니다.',
+
       // TOC
       'On this page': '이 페이지에서',
 
@@ -371,6 +427,13 @@ export default defineI18nConfig(() => ({
       'Search documentation...': 'दस्तावेज़ खोजें...',
       'No results found.': 'कोई परिणाम नहीं मिला।',
 
+      // 404
+      'This page could not be found.': 'यह पृष्ठ नहीं मिला।',
+
+      // Empty page
+      'Empty page': 'खाली पृष्ठ',
+      'Start writing content': '{fileLink} में लिखना शुरू करें और देखें यह पृष्ठ धीरे-धीरे आकार लेता है।',
+
       // TOC
       'On this page': 'इस पृष्ठ पर',
 
@@ -415,6 +478,13 @@ export default defineI18nConfig(() => ({
       'Search...': 'অনুসন্ধান...',
       'Search documentation...': 'ডকুমেন্টেশন খুঁজুন...',
       'No results found.': 'কোন ফলাফল পাওয়া যায়নি।',
+
+      // 404
+      'This page could not be found.': 'এই পৃষ্ঠাটি খুঁজে পাওয়া যায়নি।',
+
+      // Empty page
+      'Empty page': 'খালি পৃষ্ঠা',
+      'Start writing content': '{fileLink}-এ লেখা শুরু করুন এবং দেখুন কীভাবে এই পৃষ্ঠাটি ধীরে ধীরে গঠন নিচ্ছে।',
 
       // TOC
       'On this page': 'এই পৃষ্ঠায়',

@@ -167,6 +167,7 @@ export default defineAppConfig({
       },
     },
     footer: {
+      border: true,
       credits: 'FOOTER_CREDIT',
       links: [
         {
