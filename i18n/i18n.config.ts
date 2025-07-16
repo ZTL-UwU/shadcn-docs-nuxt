@@ -60,7 +60,7 @@ export default defineI18nConfig(() => ({
       'Search...': 'Rechercher...',
       'Search documentation...': 'Rechercher dans la documentation...',
       'No results found.': 'Aucun résultat trouvé.',
-      
+
       // 404
       'This page could not be found.': 'Cette page est introuvable.',
 
@@ -112,7 +112,7 @@ export default defineI18nConfig(() => ({
       'Search...': '搜索...',
       'Search documentation...': '搜索文档...',
       'No results found.': '没有找到结果。',
-      
+
       // 404
       'This page could not be found.': '找不到此页面。',
 
@@ -373,7 +373,7 @@ export default defineI18nConfig(() => ({
       'Search...': '검색...',
       'Search documentation...': '문서 검색...',
       'No results found.': '결과를 찾을 수 없습니다.',
-      
+
       // 404
       'This page could not be found.': '이 페이지를 찾을 수 없습니다.',
 
