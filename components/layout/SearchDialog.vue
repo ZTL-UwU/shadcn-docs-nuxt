@@ -154,6 +154,6 @@ watch(
   () => router.currentRoute.value,
   () => {
     open.value = false;
-  }
+  },
 );
 </script>
