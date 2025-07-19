@@ -136,6 +136,7 @@ const defaultConfig: DefaultConfig = {
     enable: true,
     enableInMobile: false,
     enableInHomepage: false,
+    progressBar: true,
     title: 'On This Page',
     links: [],
     iconLinks: [],

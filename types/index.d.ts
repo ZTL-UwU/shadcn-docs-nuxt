@@ -103,6 +103,7 @@ interface DefaultConfig {
     enable: boolean;
     enableInMobile: boolean;
     enableInHomepage: boolean;
+    progressBar: boolean;
     title: string;
     links: ({
       title: string;
