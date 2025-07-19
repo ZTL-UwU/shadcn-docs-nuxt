@@ -147,4 +147,13 @@ function handleNavigate(delta: -1 | 1) {
   if (activeSelect.value + delta >= 0 && activeSelect.value + delta < searchResult.value.length)
     activeSelect.value += delta;
 }
+
+const router = useRouter();
+
+watch(
+  () => router.currentRoute.value,
+  () => {
+    open.value = false;
+  },
+);
 </script>
