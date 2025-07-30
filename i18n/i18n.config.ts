@@ -525,7 +525,7 @@ export default defineI18nConfig(() => ({
       // Field
       'required': 'অবশ্যক',
     },
-    
+
     'it': {
       // Search
       'Search...': 'Cerca...',
