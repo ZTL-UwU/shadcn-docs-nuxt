@@ -134,7 +134,7 @@ badges:
 ::
 
 ### Stile Line
-:badge[0.6.4]{variant="outline"}  
+:badge[0.6.4]{variant="outline"}
 
 ::stack
   ::div{class="p-4"}
