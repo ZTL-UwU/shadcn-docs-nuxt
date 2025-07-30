@@ -154,5 +154,5 @@ badges:
   :field{name="to" type="string"}[URL del link]
   :field{name="target" type="Target"}[Valore dell'attributo `target` da applicare sul link]
   :field{name="external" type="boolean"}[Alias per `target='_blank'`]
-  :field{name="showLinkIcon" type="boolean" default-value="true"}[Se mostrare l'indicatore del link :icon{name="lucide:arrow-up-right"}]
+  :field{name="showLinkIcon" type="boolean" default-value="true"}[Definisce se mostrare l'indicatore del link :icon{name="lucide:arrow-up-right"}]
 ::

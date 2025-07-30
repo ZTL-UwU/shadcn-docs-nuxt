@@ -35,5 +35,5 @@ Il testo `required` è configurabile in [`main.fieldRequiredText`](/api/configur
   :field{name="type" type="string"}[Tipo del campo]
   :field{name="description" type="string"}[Descrizione del campo]
   :field{name="defaultValue" type="string"}[Valore predefinito del campo]
-  :field{name="required" type="boolean"}[Se il campo è obbligatorio]
+  :field{name="required" type="boolean"}[Definisce se il campo è obbligatorio]
 ::

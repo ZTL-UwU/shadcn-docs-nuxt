@@ -169,5 +169,5 @@ badges:
   :field{name="target" type="Target"}[Valore dell'attributo `target` da applicare sul link]
   :field{name="iconSize" type="number" default-value="24"}
   :field{name="img" type="string"}[URL dell'immagine]
-  :field{name="showLinkIcon" type="boolean" default-value="true"}[Se mostrare l'indicatore del link :icon{name="lucide:arrow-up-right"}]
+  :field{name="showLinkIcon" type="boolean" default-value="true"}[Definisce se mostrare l'indicatore del link :icon{name="lucide:arrow-up-right"}]
 ::
