@@ -89,5 +89,34 @@ export default defineI18nConfig(() => ({
       'FOOTER_CREDIT': 'បានបង្កើតជាមួយនឹង ❤️ ដោយ [**Tony Zhang**](https://github.com/ZTL-UwU/)',
       'Sponsor Me': 'គាំទ្រខ្ញុំ',
     },
+    it: {
+      // Header nav
+      'shadcn-docs': 'shadcn-docs',
+      'Docs': 'Documentazione',
+      'Getting Started': 'Inizia subito',
+      'Start building your document with shadcn-docs-nuxt': 'Inizia a costruire la tua documentazione con shadcn-docs-nuxt',
+      'Components': 'Componenti',
+      'Explore available UI components and usage examples.': 'Esplora i componenti UI disponibili e gli esempi di utilizzo.',
+      'API': 'API',
+      'Discover the configurations and exposed APIs.': 'Scopri le configurazioni e le API esposte.',
+      'Credits': 'Crediti',
+      'shadcn-ui': 'shadcn-ui',
+      'For the beautiful component design & docs design': 'Per il bellissimo design dei componenti e della documentazione',
+      'shadcn-vue': 'shadcn-vue',
+      'For the vue port of shadcn-ui & some docs component source': 'Per il port Vue di shadcn-ui e alcune fonti dei componenti della documentazione',
+      'Docus': 'Docus',
+      'For inspiration & some docs component source': 'Per l\'ispirazione e alcune fonti dei componenti della documentazione',
+      'Nuxt Content': 'Nuxt Content',
+      'Content made easy for Vue Developers': 'Content reso facile per gli sviluppatori di Vue',
+      'Use This Template': 'Usa questo Template',
+
+      // TOC
+      'Star on GitHub': 'Stella su GitHub',
+      'Create Issues': 'Crea Segnalazioni',
+
+      // Footer
+      'FOOTER_CREDIT': 'Realizzato con ❤️ da [**Tony Zhang**](https://github.com/ZTL-UwU/)',
+      'Sponsor Me': 'Sponsorizzami',
+    },
   },
 }));

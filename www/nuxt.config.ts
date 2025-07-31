@@ -20,6 +20,11 @@ export default defineNuxtConfig({
         name: 'ភាសាខ្មែរ',
         language: 'km-KH',
       },
+      {
+        code: 'it',
+        name: 'Italiano',
+        language: 'it-IT',
+      },
     ],
   },
   ogImage: {

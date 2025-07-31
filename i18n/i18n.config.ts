@@ -525,5 +525,58 @@ export default defineI18nConfig(() => ({
       // Field
       'required': 'অবশ্যক',
     },
+
+    'it': {
+      // Search
+      'Search...': 'Cerca...',
+      'Search documentation...': 'Cerca nella documentazione...',
+      'No results found.': 'Nessun risultato trovato.',
+
+      // 404
+      'This page could not be found.': 'Questa pagina non è stata trovata.',
+
+      // Empty page
+      'Empty page': 'Pagina vuota',
+      'Start writing content': 'Inizia a scrivere in {fileLink} per vedere questa pagina prendere forma.',
+
+      // TOC
+      'On this page': 'In questa pagina',
+
+      // Search command
+      'Light': 'Chiaro',
+      'Dark': 'Scuro',
+      'System': 'Sistema',
+
+      // Doc footer
+      'Edit this page': 'Modifica questa pagina',
+      'Back to Top': 'Torna in cima',
+
+      // Collapse Code
+      'Expand': 'Espandi',
+      'Collapse': 'Comprimi',
+
+      // Language Switcher
+      'Language': 'Lingua',
+      'Choose your language': 'Scegli la tua lingua',
+
+      // Theme Switcher
+      'Customize': 'Personalizza',
+      'Pick a style and color for the docs.': 'Scegli uno stile e un colore per la documentazione.',
+      'Color': 'Colore',
+      'Radius': 'Raggio',
+      'Theme': 'Tema',
+
+      // Copy Code
+      'Copied to clipboard!': 'Copiato negli appunti!',
+
+      // Carbon Ads
+      'Please support us by disabling your ad blocker.': 'Per favore sostienici disabilitando il tuo ad blocker.',
+
+      // Read More
+      'Read more at': 'Leggi di più su',
+
+      // Field
+      'required': 'obbligatorio',
+    },
   },
 }));
