@@ -50,5 +50,9 @@
     "strings": "on"
   },
 
-  "mdc.enableComponentMetadataCompletions": true
+  "mdc.enableComponentMetadataCompletions": true,
+  "i18n-ally.localesPaths": [
+    "i18n",
+    "www/i18n"
+  ]
 }

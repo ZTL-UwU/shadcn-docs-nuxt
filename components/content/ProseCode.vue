@@ -16,11 +16,14 @@
       <CodeCopy :code />
     </div>
 
+    <MermaidRenderer v-if="isMermaid" :code="code">
+      <slot />
+    </MermaidRenderer>
+
     <UiScrollArea v-if="parsedMeta.has('collapse')">
       <div
         :style="[((parsedMeta.has('height') || height) && !expanded) ? `height: ${height || parsedMeta.get('height')}px` : undefined]"
-        class="overflow-x-auto overflow-y-hidden py-3 text-sm"
-        :class="[
+        class="overflow-x-auto overflow-y-hidden py-3 text-sm" :class="[
           !inGroup && !inTree && !filename && 'inline-copy',
           !language && 'pl-3',
           parsedMeta.has('line-numbers') && 'show-line-number',
@@ -31,10 +34,12 @@
       </div>
       <ScrollBar orientation="horizontal" />
     </UiScrollArea>
-    <UiScrollArea v-else :style="[(parsedMeta.has('height') || height) && `height: ${height || parsedMeta.get('height')}px`]">
+    <UiScrollArea
+      v-else
+      :style="[(parsedMeta.has('height') || height) && `height: ${height || parsedMeta.get('height')}px`]"
+    >
       <div
-        class="overflow-x-auto py-3 text-sm"
-        :class="[
+        class="overflow-x-auto py-3 text-sm" :class="[
           !inGroup && !inTree && !filename && 'inline-copy',
           !language && 'pl-3',
           parsedMeta.has('line-numbers') && 'show-line-number',
@@ -82,6 +87,8 @@ const {
   height?: number;
 }>();
 
+const MermaidRenderer = defineAsyncComponent(() => import('./MermaidRenderer.vue'));
+
 const parsedMeta = computed(() => {
   const split = meta?.split(' ') ?? [];
   const params = new Map<string, string | undefined>();
@@ -95,6 +102,8 @@ const parsedMeta = computed(() => {
 });
 
 const expanded = ref(false);
+
+const isMermaid = computed(() => language === 'mermaid' || parsedMeta.value.has('mermaid'));
 
 const iconMap = new Map(Object.entries(useConfig().value.main.codeIcon));
 const icon = computed(() => {
