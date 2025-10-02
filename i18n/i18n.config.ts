@@ -46,6 +46,10 @@ export default defineI18nConfig(() => ({
       // Copy Code
       'Copied to clipboard!': 'Copied to clipboard!',
 
+      // Mermaid
+      'Mermaid Chart Error: ': 'Mermaid Chart Error: ',
+      'Rendering Chart': 'Rendering Chart',
+
       // Carbon Ads
       'Please support us by disabling your ad blocker.': 'Please support us by disabling your ad blocker.',
 
@@ -97,6 +101,10 @@ export default defineI18nConfig(() => ({
 
       // Copy Code
       'Copied to clipboard!': 'Copié dans le presse-papiers !',
+
+      // Mermaid
+      'Mermaid Chart Error: ': 'Erreur de graphique Mermaid : ',
+      'Rendering Chart': 'Rendu du graphique',
 
       // Carbon Ads
       'Please support us by disabling your ad blocker.': 'Veuillez nous soutenir en désactivant votre bloqueur de publicités.',
@@ -150,6 +158,10 @@ export default defineI18nConfig(() => ({
       // Copy Code
       'Copied to clipboard!': '已复制到剪贴板！',
 
+      // Mermaid
+      'Mermaid Chart Error: ': 'Mermaid 图表错误：',
+      'Rendering Chart': '正在渲染图表',
+
       // Carbon Ads
       'Please support us by disabling your ad blocker.': '请通过禁用广告拦截器来支持我们。',
 
@@ -201,6 +213,10 @@ export default defineI18nConfig(() => ({
 
       // Copy Code
       'Copied to clipboard!': '已複製到剪貼簿！',
+
+      // Mermaid
+      'Mermaid Chart Error: ': 'Mermaid 圖表錯誤：',
+      'Rendering Chart': '正在渲染圖表',
 
       // Carbon Ads
       'Please support us by disabling your ad blocker.': '請通過禁用廣告攔截器來支持我們。',
@@ -254,6 +270,10 @@ export default defineI18nConfig(() => ({
       // Copy Code
       'Copied to clipboard!': 'クリップボードにコピーされました！',
 
+      // Mermaid
+      'Mermaid Chart Error: ': 'Mermaid チャートエラー：',
+      'Rendering Chart': 'チャートをレンダリングしています',
+
       // Carbon Ads
       'Please support us by disabling your ad blocker.': '広告ブロッカーを無効にしてサポートしてください。',
 
@@ -306,6 +326,10 @@ export default defineI18nConfig(() => ({
       // Copy Code
       'Copied to clipboard!': 'បានចម្លងទុកទៅកាន់ក្តារចម្លង!',
 
+      // Mermaid
+      'Mermaid Chart Error: ': 'កំហុសតារាង Mermaid៖ ',
+      'Rendering Chart': 'កំពុងបង្ហាញតារាង',
+
       // Carbon Ads
       'Please support us by disabling your ad blocker.': 'សូមគាំទ្រពួកយើងដោយការបិទកម្មវិធីរាំងខ្ទប់ពាណិជ្ជកម្ម',
 
@@ -357,6 +381,10 @@ export default defineI18nConfig(() => ({
 
       // Copy Code
       'Copied to clipboard!': 'Скопировано в буфер обмена!',
+
+      // Mermaid
+      'Mermaid Chart Error: ': 'Ошибка диаграммы Mermaid: ',
+      'Rendering Chart': 'Отрисовка диаграммы',
 
       // Carbon Ads
       'Please support us by disabling your ad blocker.': 'Пожалуйста, поддержите нас, отключив блокировщик рекламы.',
@@ -411,6 +439,10 @@ export default defineI18nConfig(() => ({
       // Copy Code
       'Copied to clipboard!': '클립보드에 복사됨!',
 
+      // Mermaid
+      'Mermaid Chart Error: ': 'Mermaid 차트 오류: ',
+      'Rendering Chart': '차트 렌더링 중',
+
       // Carbon Ads
       'Please support us by disabling your ad blocker.': '광고 차단기를 꺼서 저희를 지원해 주세요.',
 
@@ -464,6 +496,10 @@ export default defineI18nConfig(() => ({
       // Copy Code
       'Copied to clipboard!': 'क्लिपबोर्ड पर कॉपी किया गया!',
 
+      // Mermaid
+      'Mermaid Chart Error: ': 'मर्मेड चार्ट त्रुटि: ',
+      'Rendering Chart': 'चार्ट रेंडर हो रहा है',
+
       // Carbon Ads
       'Please support us by disabling your ad blocker.': 'कृपया हमारा समर्थन करने के लिए अपना विज्ञापन अवरोधक अक्षम करें।',
 
@@ -515,6 +551,10 @@ export default defineI18nConfig(() => ({
 
       // Copy Code
       'Copied to clipboard!': 'ক্লিপবোর্ডে কপি করা হয়েছে!',
+
+      // Mermaid
+      'Mermaid Chart Error: ': 'মারমেইড চার্ট ত্রুটি: ',
+      'Rendering Chart': 'চার্ট রেন্ডার হচ্ছে',
 
       // Carbon Ads
       'Please support us by disabling your ad blocker.': 'আমাদের সমর্থন করার জন্য অনুগ্রহ করে আপনার ad blocker নিষ্ক্রিয় করুন।',
@@ -568,6 +608,10 @@ export default defineI18nConfig(() => ({
 
       // Copy Code
       'Copied to clipboard!': 'Copiato negli appunti!',
+
+      // Mermaid
+      'Mermaid Chart Error: ': 'Errore nel grafico Mermaid: ',
+      'Rendering Chart': 'Rendering del grafico',
 
       // Carbon Ads
       'Please support us by disabling your ad blocker.': 'Per favore sostienici disabilitando il tuo ad blocker.',

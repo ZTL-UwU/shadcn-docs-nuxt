@@ -1,17 +1,19 @@
 <template>
-  <div class="mermaid-container">
-    <div v-if="error" class="mermaid-error p-4 text-red-500 dark:text-red-400 bg-red-50 dark:bg-red-950/20 rounded">
-      ⚠️ Mermaid Chart Error: {{ error }}
-    </div>
-
-    <div v-else-if="loading" class="mermaid-loading p-8 flex items-center justify-center">
-      <div class="flex flex-col items-center">
-        <div class="w-8 h-8 border-4 border-current border-t-transparent rounded-full animate-spin mb-2" />
-        <span class="text-sm text-muted-foreground">Rendering chart...</span>
+  <UiAlert v-if="error" variant="destructive">
+    {{ $t('Mermaid Chart Error: ') + error }}
+  </UiAlert>
+  <div
+    v-else class="p-4 rounded-lg text-card-foreground [&:not(:first-child)]:mt-5 [&:not(:last-child)]:mb-5" :class="[
+      parsedMeta.has('lifted') && 'shadow-xs border',
+    ]"
+  >
+    <div v-if="loading" class="flex items-center justify-center">
+      <div class="p-4 flex flex-col items-center gap-2">
+        <Icon name="lucide:loader-circle" class="!size-6 animate-spin" />
+        <span class="text-sm text-muted-foreground">{{ $t('Rendering Chart') }}</span>
       </div>
     </div>
-
-    <div v-else ref="mermaidContainer" class="mermaid" v-html="svgContent" />
+    <div ref="mermaidContainer" class="flex justify-center transition-all overflow-x-auto" v-html="svgContent" />
   </div>
 </template>
 
@@ -22,12 +24,13 @@ import { computed, nextTick, onMounted, onUnmounted, ref, useSlots, watch } from
 
 const props = defineProps<{
   code?: string;
+  parsedMeta: Map<string, string | undefined>;
 }>();
 
 const mermaidContainer = ref<HTMLDivElement | null>(null);
 const svgContent = ref<string>('');
 const error = ref<string | null>(null);
-const loading = ref(false);
+const loading = ref(true);
 const hasRenderedOnce = ref(false);
 const mermaidDefinition = ref('');
 let observer: IntersectionObserver | null = null;
@@ -87,7 +90,7 @@ onMounted(() => {
     observer = new IntersectionObserver(
       (entries) => {
         if (entries[0]?.isIntersecting && !hasRenderedOnce.value) {
-          setTimeout(() => renderMermaid(), 50);
+          renderMermaid();
           if (observer) {
             observer.disconnect();
             observer = null;
@@ -107,13 +110,11 @@ onUnmounted(() => {
   }
 });
 
-// 主题切换时重新渲染
 watch(mermaidTheme, () => {
   if (hasRenderedOnce.value)
     renderMermaid();
 });
 
-// code prop 改变时重新渲染
 watch(
   () => props.code,
   () => {
@@ -122,38 +123,3 @@ watch(
   },
 );
 </script>
-
-<style scoped>
-.mermaid-container {
-  padding: 1rem;
-}
-
-.mermaid {
-  display: flex;
-  justify-content: center;
-  background: transparent;
-  border: 1px solid var(--mermaid-border, #e5e7eb);
-  border-radius: 0.375rem;
-  padding: 1rem;
-  margin: 0;
-  transition: all 0.2s ease;
-  overflow-x: auto;
-}
-
-.dark .mermaid {
-  border-color: #333;
-}
-
-.mermaid-error {
-  border: 1px solid #ef4444;
-  border-radius: 0.375rem;
-  background-color: color-mix(in oklab, var(--color-red-500) 10%, transparent) !important;
-}
-
-.mermaid-loading {
-  min-height: 100px;
-  background: var(--mermaid-background, #ffffff);
-  border: 1px solid var(--mermaid-border, #e5e7eb);
-  border-radius: 0.375rem;
-}
-</style>

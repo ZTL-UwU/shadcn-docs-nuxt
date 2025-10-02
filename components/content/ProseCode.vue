@@ -1,5 +1,10 @@
 <template>
+  <MermaidRenderer v-if="isMermaid" :code="code" :parsed-meta="parsedMeta">
+    <slot />
+  </MermaidRenderer>
+
   <UiCard
+    v-else
     class="bg-[#FBFBFB] dark:bg-[#121215] relative overflow-hidden [&:not(:first-child)]:mt-5 [&:not(:last-child)]:mb-5"
     :class="[
       (inGroup || inTree) && 'mb-0 rounded-t-none border-none shadow-none',
@@ -15,10 +20,6 @@
     <div v-if="!filename" class="absolute right-2 top-2 z-10">
       <CodeCopy :code />
     </div>
-
-    <MermaidRenderer v-if="isMermaid" :code="code">
-      <slot />
-    </MermaidRenderer>
 
     <UiScrollArea v-if="parsedMeta.has('collapse')">
       <div
@@ -86,8 +87,6 @@ const {
   meta?: string;
   height?: number;
 }>();
-
-const MermaidRenderer = defineAsyncComponent(() => import('./MermaidRenderer.vue'));
 
 const parsedMeta = computed(() => {
   const split = meta?.split(' ') ?? [];
