@@ -78,7 +78,12 @@ const isOpen = ref(collapsed.value.get(link._path) || defaultOpen());
 watch(isOpen, (v) => {
   collapsed.value.set(link._path, v);
 });
-const isActive = computed(() => link._path === route.path);
+
+function normalizePath(p: string) {
+  const out = p.replace(/\/+$/, '');
+  return out === '' ? '/' : out;
+}
+const isActive = computed(() => normalizePath(link._path) === normalizePath(route.path));
 
 const folderStyle = computed(() => link.sidebar?.style ?? defaultFolderStyle);
 </script>
