@@ -31,9 +31,6 @@ export default defineNuxtConfig({
     ],
   },
   i18n: {
-    bundle: {
-      optimizeTranslationDirective: false,
-    },
     strategy: 'prefix_except_default',
   },
   colorMode: {
