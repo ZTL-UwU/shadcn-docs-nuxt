@@ -9,6 +9,7 @@ export default defineConfig({
   exclude: [
     'nuxt',
     '@nuxt/kit',
+    '@nuxt/icon',
   ],
   // ignore paths for looking for package.json in monorepo
   ignorePaths: [
