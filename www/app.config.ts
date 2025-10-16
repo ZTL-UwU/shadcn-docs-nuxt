@@ -202,6 +202,7 @@ export default defineAppConfig({
       enable: true,
       enableInMobile: true,
       enableInHomepage: false,
+      progressBar: true,
       title: 'On this page',
       links: [
         {
