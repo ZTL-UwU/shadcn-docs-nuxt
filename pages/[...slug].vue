@@ -38,18 +38,21 @@
           :authors="page?.authors"
         />
 
-        <Alert
-          v-if="page?.body?.children?.length === 0"
-          icon="lucide:circle-x"
-
-          :title="$t('Empty page')"
-        >
-          <i18n-t keypath="Start writing content">
-            <template #fileLink>
-              <ProseCodeInline>content/{{ page?._file }}</ProseCodeInline>
-            </template>
-          </i18n-t>
-        </Alert>
+        <UiEmpty v-if="page?.body?.children?.length === 0">
+          <UiEmptyHeader class="max-w-full">
+            <UiEmptyMedia variant="icon">
+              <Icon name="lucide:circle-x" />
+            </UiEmptyMedia>
+            <UiEmptyTitle>{{ $t('Empty page') }}</UiEmptyTitle>
+            <UiEmptyDescription v-if="isDev">
+              <i18n-t keypath="Start writing content">
+                <template #fileLink>
+                  <ProseCodeInline>content/{{ page?._file }}</ProseCodeInline>
+                </template>
+              </i18n-t>
+            </UiEmptyDescription>
+          </UiEmptyHeader>
+        </UiEmpty>
 
         <ContentRenderer
           v-else
@@ -79,6 +82,8 @@
 const { page } = useContent();
 const config = useConfig();
 const appConfig = useAppConfig();
+
+const isDev = import.meta.dev;
 
 useSeoMeta({
   title: `${page.value?.title ?? '404'} - ${config.value.site.name}`,
