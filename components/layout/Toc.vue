@@ -71,7 +71,7 @@
       />
     </UiCollapsibleTrigger>
     <UiCollapsibleContent>
-      <LayoutTocTree :links="toc.links" :level="0" class="mx-4 mb-3 pl-4 text-sm" />
+      <LayoutTocTree :links="toc.links" :level="0" class="mx-4 mb-3 pl-2 text-sm" />
     </UiCollapsibleContent>
   </UiCollapsible>
 </template>
