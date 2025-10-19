@@ -1,6 +1,13 @@
 <template>
   <ul :class="[level !== 0 && 'pl-4']">
-    <li v-for="link in links" :key="link.id" class="relative py-1 [&:last-child]:pb-0 [&:first-child]:pt-2">
+    <li
+      v-for="link in links"
+      :key="link.id"
+      class="relative py-1"
+      :class="[
+        level !== 0 && '[&:first-child]:pt-2 [&:last-child]:pb-0',
+      ]"
+    >
       <div class="flex items-center">
         <div
           v-if="level === 0 && progressBar"
