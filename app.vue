@@ -40,7 +40,7 @@ import Toaster from '@/components/ui/toast/Toaster.vue';
 const { page } = useContent();
 const config = useConfig();
 const route = useRoute();
-const { themeClass, radius } = useThemes();
+const { themeClass, radius, setClassTheme } = useThemes();
 
 const baseRouteName = computed(() => useRouteBaseName()(route));
 
@@ -55,5 +55,9 @@ useHead({
     class: themeClass.value,
     style: `--radius: ${radius.value}rem;`,
   },
+});
+
+onMounted(() => {
+  setClassTheme();
 });
 </script>

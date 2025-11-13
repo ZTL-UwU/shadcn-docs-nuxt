@@ -18,6 +18,22 @@ export function useThemes() {
     }),
   });
 
+  // Create an array of color values
+  const allColors: Color[] = [
+    'zinc',
+    'rose',
+    'blue',
+    'green',
+    'orange',
+    'red',
+    'slate',
+    'stone',
+    'gray',
+    'neutral',
+    'yellow',
+    'violet',
+  ];
+
   const theme = computed(() => config.value.theme);
   const radius = computed(() => config.value.radius);
 
@@ -31,6 +47,13 @@ export function useThemes() {
     config.value.radius = newRadius;
   }
 
+  function setClassTheme() {
+    document.body.classList.remove(
+      ...allColors.map(color => `theme-${color}`),
+    );
+    document.body.classList.add(themeClass.value);
+  }
+
   const themePrimary = computed(() => {
     const t = themes.find(t => t.name === theme.value);
     return `hsl(${t?.cssVars[isDark ? 'dark' : 'light'].primary})`;
@@ -42,6 +65,8 @@ export function useThemes() {
     setTheme,
     radius,
     setRadius,
+    setClassTheme,
+    allColors,
     themePrimary,
   };
 }

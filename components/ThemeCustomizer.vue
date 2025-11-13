@@ -79,24 +79,8 @@
 <script setup lang="ts">
 import { themes } from '@/lib/themes';
 
-const { themeClass, theme, radius, setTheme, setRadius } = useThemes();
+const { setClassTheme, theme, radius, setTheme, setRadius, allColors } = useThemes();
 const { darkModeToggle } = useConfig().value.header;
-
-// Create an array of color values
-const allColors: Color[] = [
-  'zinc',
-  'rose',
-  'blue',
-  'green',
-  'orange',
-  'red',
-  'slate',
-  'stone',
-  'gray',
-  'neutral',
-  'yellow',
-  'violet',
-];
 
 const RADII = [0, 0.25, 0.5, 0.75, 1];
 
@@ -109,13 +93,6 @@ watch(theme, () => {
 watch(radius, () => {
   setStyleRadius();
 });
-
-function setClassTheme() {
-  document.body.classList.remove(
-    ...allColors.map(color => `theme-${color}`),
-  );
-  document.body.classList.add(themeClass.value);
-}
 
 function setStyleRadius() {
   document.body.style.setProperty('--radius', `${radius.value}rem`);
