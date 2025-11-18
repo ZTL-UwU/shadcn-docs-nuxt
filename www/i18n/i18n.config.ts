@@ -118,5 +118,60 @@ export default defineI18nConfig(() => ({
       'FOOTER_CREDIT': 'Realizzato con ❤️ da [**Tony Zhang**](https://github.com/ZTL-UwU/)',
       'Sponsor Me': 'Sponsorizzami',
     },
+    zh: {
+      // Header nav
+      'shadcn-docs': 'shadcn-docs',
+      'Docs': '文档',
+      'Getting Started': '开始使用',
+      'Start building your document with shadcn-docs-nuxt': '开始使用 shadcn-docs-nuxt 构建您的文档',
+      'Components': '组件',
+      'Explore available UI components and usage examples.': '探索可用的 UI 组件和使用示例。',
+      'API': 'API',
+      'Discover the configurations and exposed APIs.': '发现配置和公开的 API。',
+      'Credits': '致谢',
+      'shadcn-ui': 'shadcn-ui',
+      'For the beautiful component design & docs design': '用于精美的组件设计与文档设计',
+      'shadcn-vue': 'shadcn-vue',
+      'For the vue port of shadcn-ui & some docs component source': '用于 shadcn-ui 的 Vue 移植及一些文档组件源码',
+      'Docus': 'Docus',
+      'For inspiration & some docs component source': '用于灵感和一些文档组件源码',
+      'Nuxt Content': 'Nuxt Content',
+      'Content made easy for Vue Developers': '为 Vue 开发者简化内容',
+      'Use This Template': '使用此模板',
+
+      // Customize
+      'Customize': '自定义',
+      'Pick a style and color for the docs.': '为文档选择一种样式和颜色.',
+
+      'Color': '颜色',
+      'Radius': '圆角',
+      'Theme': '主题',
+
+      'Light': '浅色',
+      'Dark': '深色',
+      'System': '跟随系统',
+
+      // Search
+      'Search...': '搜索...',
+      'Search documentation...': '搜索文档...',
+      'No results found.': '未找到任何结果.',
+
+      // TOC
+      'On this page': '在本页中',
+      'Star on GitHub': '在 GitHub 上 Star',
+      'Create Issues': '创建一个议题',
+
+      // Footer
+      'FOOTER_CREDIT': '由 [**Tony Zhang**](https://github.com/ZTL-UwU/) 用 ❤️ 制作',
+      'Sponsor Me': '赞助我',
+
+      // Doc Footer
+      'Back to Top': '回到顶部',
+      'Edit this page': '编辑此页面',
+
+      // Markdown Components
+      'required': '必填',
+      'Read more at': '阅读更多内容: ',
+    },
   },
 }));

@@ -25,6 +25,11 @@ export default defineNuxtConfig({
         name: 'Italiano',
         language: 'it-IT',
       },
+      {
+        code: 'zh',
+        name: '中文 (简体)',
+        language: 'zh-CN',
+    },
     ],
   },
   ogImage: {
