@@ -29,7 +29,7 @@ export default defineNuxtConfig({
         code: 'zh',
         name: '中文 (简体)',
         language: 'zh-CN',
-    },
+      },
     ],
   },
   ogImage: {
