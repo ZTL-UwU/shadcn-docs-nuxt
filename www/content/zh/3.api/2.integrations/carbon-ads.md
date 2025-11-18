@@ -1,10 +1,10 @@
 ---
-title: Carbon Ads
+title: Carbon 广告
 icon: lucide:chart-line
-description: Run ads at the bottom of the TOC section.
+description: 在目录部分底部投放广告.
 ---
 
-**shadcn-docs-nuxt** uses [Nuxt Scripts](https://scripts.nuxt.com/scripts/ads/carbon-ads) under the hood for [Carbon Ads](https://www.carbonads.net/). Add your Carbon Ads credentials to `app.config.ts` and ads will be displayed at the bottom of the toc section.
+**shadcn-docs-nuxt** 在底层使用 [Nuxt Scripts](https://scripts.nuxt.com/scripts/ads/carbon-ads) 来支持 [Carbon Ads](https://www.carbonads.net/). 将您的 Carbon Ads 凭证添加到 `app.config.ts` 中, 广告将显示在目录部分的底部.
 
 ```ts [app.config.ts]
 export default defineAppConfig({
@@ -15,10 +15,10 @@ export default defineAppConfig({
         enable: true,
         disableInDev: false,
         disableInMobile: false,
-        fallback: false, // whether to show fallback message when blocked by ad blockers
-        code: 'your-carbon-code', // aka the 'serve' code
+        fallback: false, // 当被广告拦截器阻止时是否显示备用消息
+        code: 'your-carbon-code', // 也就是 'serve' 代码
         placement: 'your-carbon-placement',
-        format: 'your-carbon-format', // defaults to 'cover'
+        format: 'your-carbon-format', // 默认为 "cover"
       },
     }
   },
@@ -27,7 +27,7 @@ export default defineAppConfig({
 
 :read-more{title="Carbon Ads website" to="https://www.carbonads.net/"}
 
-### Disabling on certain pages
+### 在某些页面禁用
 
 ```md
 ---
@@ -37,10 +37,10 @@ toc:
     enable: false
 ---
 
-<!-- Page Content -->
+<!-- 页面内容 -->
 ```
 
-## Parameters
+## 参数
 
 ::field-group
   ::field{name="enable" type="boolean" default-value="false"}

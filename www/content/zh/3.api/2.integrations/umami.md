@@ -1,10 +1,10 @@
 ---
 title: Umami
 icon: lucide:cloud
-description: Integration for Umami analytics.
+description: Umami 分析的集成.
 ---
 
-**shadcn-docs-nuxt** uses [Nuxt Scripts](https://scripts.nuxt.com/scripts/analytics/umami-analytics) under the hood for [Umami Analytics](https://umami.is/). Add your Umami `data-website-id` to `app.config.ts`.
+**shadcn-docs-nuxt** 在底层使用 [Nuxt Scripts](https://scripts.nuxt.com/scripts/analytics/umami-analytics) 来集成 [Umami Analytics](https://umami.is/). 将你的 Umami `data-website-id` 添加到 `app.config.ts` 中.
 
 ```ts [app.config.ts]
 export default defineAppConfig({
@@ -20,16 +20,16 @@ export default defineAppConfig({
 });
 ```
 
-## Parameters
+## 参数
 
 ::field-group
   ::field{name="enable" type="boolean" default-value="false"}
-  Whether to turn on the umami integration.
+  是否开启 umami 整合.
   ::
   ::field{name="src" type="string" default-value="https://cloud.umami.is/script.js"}
-  The link src in the tracking code.
+  跟踪代码中的链接源.
   ::
   ::field{name="dataWebsiteId" type="string"}
-  The _Website ID_ from umami dashboard.
+  来自 umami 仪表板的 _Website ID_.
   ::
 ::

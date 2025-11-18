@@ -16,7 +16,7 @@ announcement:
 Blog
 
 #description
-Read the latest articles and news about the project.
+阅读有关该项目的最新文章和新闻.
 ::
 
 ::card-group{:cols="3"}
@@ -29,10 +29,10 @@ Read the latest articles and news about the project.
   shadcn-docs v1.1
 
   #description
-  Changes and upgrade guide for v1.1.
+  v1.1 版本的变更与升级指南.
 
   #footer
-  Jun 30, 2025
+  2025 年 6 月 30 日
   ::
   ::card
   ---
@@ -44,9 +44,9 @@ Read the latest articles and news about the project.
   shadcn-docs v1.0
 
   #description
-  Changes and upgrade guide for v1.0.
+  v1.0 变更与升级指南.
 
   #footer
-  May 13, 2025
+  2025 年 5 月 13 日
   ::
 ::

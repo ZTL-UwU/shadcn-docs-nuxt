@@ -1,16 +1,16 @@
 ---
 icon: lucide:sigma
-title: Math Equations
-description: Write LaTeX in shadcn-docs-nuxt.
+title: 数学方程式
+description: 在 shadcn-docs-nuxt 中编写 LaTeX.
 ---
 
 ::tabs{variant="line"}
   ::div{label="KaTeX"}
     ::steps
-      ### Install Plugins
+      ### 安装插件
       :pm-install{name="remark-math rehype-katex" save-dev}
 
-      ### Add Plugins to Nuxt Config
+      ### 将插件添加到 Nuxt 配置
       ```ts [nuxt.config.ts]
       export default defineNuxtConfig({
         devtools: { enabled: true },
@@ -33,7 +33,7 @@ description: Write LaTeX in shadcn-docs-nuxt.
       });
       ```
 
-      ### Write LaTeX
+      ### 编写 LaTeX
       ````mdc
       #### Inline
       $E = mc^2$
@@ -51,10 +51,10 @@ description: Write LaTeX in shadcn-docs-nuxt.
   ::
   ::div{label="MathJax"}
     ::steps
-      ### Install Plugins
+      ### 安装插件
       :pm-install{name="remark-math rehype-mathjax" save-dev}
 
-      ### Add Plugins to Nuxt Config
+      ### 将插件添加到 Nuxt 配置
       ```ts [nuxt.config.ts]
       export default defineNuxtConfig({
         devtools: { enabled: true },
@@ -72,7 +72,7 @@ description: Write LaTeX in shadcn-docs-nuxt.
       });
       ```
 
-      ### Write LaTeX
+      ### 编写 LaTeX
       ````mdc
       $E = mc^2$
 
