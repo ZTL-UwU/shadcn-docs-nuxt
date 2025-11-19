@@ -3,7 +3,7 @@ export default defineI18nConfig(() => ({
   // disable missing warn so that the starter doesn't show warnings when only one language is used
   missingWarn: false,
   messages: {
-    'en': {
+    en: {
       // Search
       'Search...': 'Search...',
       'Search documentation...': 'Search documentation...',
@@ -59,7 +59,7 @@ export default defineI18nConfig(() => ({
       // Field
       'required': 'required',
     },
-    'fr': {
+    fr: {
       // Search
       'Search...': 'Rechercher...',
       'Search documentation...': 'Rechercher dans la documentation...',
@@ -115,7 +115,7 @@ export default defineI18nConfig(() => ({
       // Field
       'required': 'requis',
     },
-    'zh-CN': {
+    zhcn: {
       // Search
       'Search...': '搜索...',
       'Search documentation...': '搜索文档...',
@@ -171,7 +171,7 @@ export default defineI18nConfig(() => ({
       // Field
       'required': '必填',
     },
-    'zh-TW': {
+    zhtw: {
       // Search
       'Search...': '搜尋...',
       'Search documentation...': '搜尋文件...',
@@ -227,7 +227,7 @@ export default defineI18nConfig(() => ({
       // Field
       'required': '必填',
     },
-    'ja': {
+    ja: {
       // Search
       'Search...': '検索...',
       'Search documentation...': 'ドキュメントを検索...',
@@ -283,7 +283,7 @@ export default defineI18nConfig(() => ({
       // Field
       'required': '必須',
     },
-    'km': {
+    km: {
       // Search
       'Search...': 'ស្វែងរក...',
       'Search documentation...': 'ស្វែងរកឯកសារ...',
@@ -339,7 +339,7 @@ export default defineI18nConfig(() => ({
       // Field
       'required': 'តម្រូវឲ្យមានជាដាច់ខាត',
     },
-    'ru': {
+    ru: {
       // Search
       'Search...': 'Поиск...',
       'Search documentation...': 'Поиск в документации...',
@@ -396,7 +396,7 @@ export default defineI18nConfig(() => ({
       'required': 'обязательно',
     },
 
-    'ko': {
+    ko: {
       // Search
       'Search...': '검색...',
       'Search documentation...': '문서 검색...',
@@ -453,7 +453,7 @@ export default defineI18nConfig(() => ({
       'required': '필수',
     },
 
-    'hi': {
+    hi: {
       // Search
       'Search...': 'खोजें...',
       'Search documentation...': 'दस्तावेज़ खोजें...',
@@ -509,7 +509,7 @@ export default defineI18nConfig(() => ({
       // Field
       'required': 'आवश्यक',
     },
-    'bn': {
+    bn: {
       // Search
       'Search...': 'অনুসন্ধান...',
       'Search documentation...': 'ডকুমেন্টেশন খুঁজুন...',
@@ -566,7 +566,7 @@ export default defineI18nConfig(() => ({
       'required': 'অবশ্যক',
     },
 
-    'it': {
+    it: {
       // Search
       'Search...': 'Cerca...',
       'Search documentation...': 'Cerca nella documentazione...',

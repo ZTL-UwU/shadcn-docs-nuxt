@@ -1,15 +1,14 @@
 ---
-title: 全屏页面示例
+title: Home
 navigation: false
-fullpage: true
 ---
 
-::heroAlt
+::hero
 ---
 announcement:
-  title: '全屏页面模板'
-  icon: lucide:layout-template
-  to: /getting-started/writing/pages
+  title: 'v1.1 发布'
+  icon: '🎉'
+  to: /blog/v1-1
 actions:
   - name: 开始使用
     to: /getting-started/introduction
@@ -25,12 +24,12 @@ actions:
 ---
 
 #title
-全屏页面示例
+轻松且美观的 :br 文档模板.
 
 #description
-精美设计的 Nuxt Content 模板, 基于 shadcn-vue 构建.:br 可定制, 兼容, 开源.
+精美设计的 Nuxt Content 模板, 基于 shadcn-vue 构建. :br 可定制, 兼容, 开源.
 ::
 
 ::div{class="border rounded-lg shadow-md"}
-  :iframe{src="/zh/getting-started/introduction" height="700" width="100%" class="rounded-lg" scrolling="no" frameborder="0"}
+  :iframe{src="/zhcn/getting-started/introduction" height="700" width="100%" class="rounded-lg" scrolling="no" frameborder="0"}
 ::

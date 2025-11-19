@@ -118,7 +118,7 @@ export default defineI18nConfig(() => ({
       'FOOTER_CREDIT': 'Realizzato con ❤️ da [**Tony Zhang**](https://github.com/ZTL-UwU/)',
       'Sponsor Me': 'Sponsorizzami',
     },
-    zh: {
+    zhcn: {
       // Header nav
       'shadcn-docs': 'shadcn-docs',
       'Docs': '文档',
@@ -137,41 +137,15 @@ export default defineI18nConfig(() => ({
       'For inspiration & some docs component source': '用于灵感和一些文档组件源码',
       'Nuxt Content': 'Nuxt Content',
       'Content made easy for Vue Developers': '为 Vue 开发者简化内容',
-      'Use This Template': '使用此模板',
-
-      // Customize
-      'Customize': '自定义',
-      'Pick a style and color for the docs.': '为文档选择一种样式和颜色.',
-
-      'Color': '颜色',
-      'Radius': '圆角',
-      'Theme': '主题',
-
-      'Light': '浅色',
-      'Dark': '深色',
-      'System': '跟随系统',
-
-      // Search
-      'Search...': '搜索...',
-      'Search documentation...': '搜索文档...',
-      'No results found.': '未找到任何结果.',
+      'Blog': '博客',
 
       // TOC
-      'On this page': '在本页中',
       'Star on GitHub': '在 GitHub 上 Star',
-      'Create Issues': '创建一个议题',
+      'Create Issues': '创建一个 Issue',
 
       // Footer
-      'FOOTER_CREDIT': '由 [**Tony Zhang**](https://github.com/ZTL-UwU/) 用 ❤️ 制作',
+      'FOOTER_CREDIT': '由 [**Tony Zhang**](https://github.com/ZTL-UwU/) ❤️ 制作',
       'Sponsor Me': '赞助我',
-
-      // Doc Footer
-      'Back to Top': '回到顶部',
-      'Edit this page': '编辑此页面',
-
-      // Markdown Components
-      'required': '必填',
-      'Read more at': '阅读更多内容: ',
     },
   },
 }));

@@ -1,5 +1,5 @@
 ---
-title: Blog
+title: 博客
 fullpage: true
 icon: lucide:newspaper
 ---

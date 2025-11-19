@@ -1,6 +1,6 @@
 ---
 icon: lucide:sigma
-title: 数学方程式
+title: 数学公式
 description: 在 shadcn-docs-nuxt 中编写 LaTeX.
 ---
 

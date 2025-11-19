@@ -1,5 +1,5 @@
 ---
-title: 警报
+title: 提示
 icon: lucide:triangle-alert
 badges:
   - value: Docus

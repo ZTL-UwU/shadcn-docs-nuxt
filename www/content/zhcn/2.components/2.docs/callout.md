@@ -12,5 +12,5 @@ badges:
 ---
 
 ::alert{to="/components/docs/alert"}
-`::callout`{lang="mdc"} 是 `::alert`{lang="mdc"}` 的别名.
+`::callout`{lang="mdc"} 是 `::alert`{lang="mdc"} 的别名.
 ::
