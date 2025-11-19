@@ -1,9 +1,123 @@
+const zhCN = {
+  // Search
+  'Search...': '搜索...',
+  'Search documentation...': '搜索文档...',
+  'No results found.': '没有找到结果。',
+
+  // 404
+  'This page could not be found.': '找不到此页面。',
+
+  // Empty page
+  'Empty page': '空页面',
+  'Start writing content': '开始在 {fileLink} 中书写，让这个页面慢慢成型。',
+
+  // TOC
+  'On this page': '本页目录',
+
+  // Search command
+  'Light': '明亮',
+  'Dark': '黑暗',
+  'System': '系统',
+
+  // Doc footer
+  'Edit this page': '编辑此页面',
+  'Back to Top': '回到顶部',
+
+  // Collapse Code
+  'Expand': '展开',
+  'Collapse': '折叠',
+
+  // Language Switcher
+  'Language': '语言',
+  'Choose your language': '选择语言',
+
+  // Theme Switcher
+  'Customize': '自定义',
+  'Pick a style and color for the docs.': '选择文档的样式和颜色。',
+  'Color': '颜色',
+  'Radius': '圆角',
+  'Theme': '主题',
+
+  // Copy Code
+  'Copied to clipboard!': '已复制到剪贴板！',
+
+  // Mermaid
+  'Mermaid Chart Error: ': 'Mermaid 图表错误：',
+  'Rendering Chart': '正在渲染图表',
+
+  // Carbon Ads
+  'Please support us by disabling your ad blocker.': '请通过禁用广告拦截器来支持我们。',
+
+  // Read More
+  'Read more at': '阅读更多于',
+
+  // Field
+  'required': '必填',
+};
+
+const zhTW = {
+  // Search
+  'Search...': '搜尋...',
+  'Search documentation...': '搜尋文件...',
+  'No results found.': '沒有找到結果。',
+
+  // 404
+  'This page could not be found.': '找不到此頁面。',
+
+  // Empty page
+  'Empty page': '空頁面',
+  'Start writing content': '開始在 {fileLink} 中書寫，讓這個頁面慢慢成型。',
+
+  // TOC
+  'On this page': '本頁目錄',
+
+  // Search command
+  'Light': '明亮',
+  'Dark': '黑暗',
+  'System': '系統',
+
+  // Doc footer
+  'Edit this page': '編輯此頁面',
+  'Back to Top': '回到頂部',
+
+  // Collapse Code
+  'Expand': '展開',
+  'Collapse': '折疊',
+
+  // Language Switcher
+  'Language': '語言',
+  'Choose your language': '選擇語言',
+
+  // Theme Switcher
+  'Customize': '自定義',
+  'Pick a style and color for the docs.': '選擇文件的樣式和顏色。',
+  'Color': '顏色',
+  'Radius': '圓角',
+  'Theme': '主題',
+
+  // Copy Code
+  'Copied to clipboard!': '已複製到剪貼簿！',
+
+  // Mermaid
+  'Mermaid Chart Error: ': 'Mermaid 圖表錯誤：',
+  'Rendering Chart': '正在渲染圖表',
+
+  // Carbon Ads
+  'Please support us by disabling your ad blocker.': '請通過禁用廣告攔截器來支持我們。',
+
+  // Read More
+  'Read more at': '閱讀更多於',
+
+  // Field
+  'required': '必填',
+};
+
 export default defineI18nConfig(() => ({
   legacy: false,
   // disable missing warn so that the starter doesn't show warnings when only one language is used
   missingWarn: false,
   messages: {
-    en: {
+    'en': {
       // Search
       'Search...': 'Search...',
       'Search documentation...': 'Search documentation...',
@@ -59,7 +173,7 @@ export default defineI18nConfig(() => ({
       // Field
       'required': 'required',
     },
-    fr: {
+    'fr': {
       // Search
       'Search...': 'Rechercher...',
       'Search documentation...': 'Rechercher dans la documentation...',
@@ -115,119 +229,11 @@ export default defineI18nConfig(() => ({
       // Field
       'required': 'requis',
     },
-    zhcn: {
-      // Search
-      'Search...': '搜索...',
-      'Search documentation...': '搜索文档...',
-      'No results found.': '没有找到结果。',
-
-      // 404
-      'This page could not be found.': '找不到此页面。',
-
-      // Empty page
-      'Empty page': '空页面',
-      'Start writing content': '开始在 {fileLink} 中书写，让这个页面慢慢成型。',
-
-      // TOC
-      'On this page': '本页目录',
-
-      // Search command
-      'Light': '明亮',
-      'Dark': '黑暗',
-      'System': '系统',
-
-      // Doc footer
-      'Edit this page': '编辑此页面',
-      'Back to Top': '回到顶部',
-
-      // Collapse Code
-      'Expand': '展开',
-      'Collapse': '折叠',
-
-      // Language Switcher
-      'Language': '语言',
-      'Choose your language': '选择语言',
-
-      // Theme Switcher
-      'Customize': '自定义',
-      'Pick a style and color for the docs.': '选择文档的样式和颜色。',
-      'Color': '颜色',
-      'Radius': '圆角',
-      'Theme': '主题',
-
-      // Copy Code
-      'Copied to clipboard!': '已复制到剪贴板！',
-
-      // Mermaid
-      'Mermaid Chart Error: ': 'Mermaid 图表错误：',
-      'Rendering Chart': '正在渲染图表',
-
-      // Carbon Ads
-      'Please support us by disabling your ad blocker.': '请通过禁用广告拦截器来支持我们。',
-
-      // Read More
-      'Read more at': '阅读更多于',
-
-      // Field
-      'required': '必填',
-    },
-    zhtw: {
-      // Search
-      'Search...': '搜尋...',
-      'Search documentation...': '搜尋文件...',
-      'No results found.': '沒有找到結果。',
-
-      // 404
-      'This page could not be found.': '找不到此頁面。',
-
-      // Empty page
-      'Empty page': '空頁面',
-      'Start writing content': '開始在 {fileLink} 中書寫，讓這個頁面慢慢成型。',
-
-      // TOC
-      'On this page': '本頁目錄',
-
-      // Search command
-      'Light': '明亮',
-      'Dark': '黑暗',
-      'System': '系統',
-
-      // Doc footer
-      'Edit this page': '編輯此頁面',
-      'Back to Top': '回到頂部',
-
-      // Collapse Code
-      'Expand': '展開',
-      'Collapse': '折疊',
-
-      // Language Switcher
-      'Language': '語言',
-      'Choose your language': '選擇語言',
-
-      // Theme Switcher
-      'Customize': '自定義',
-      'Pick a style and color for the docs.': '選擇文件的樣式和顏色。',
-      'Color': '顏色',
-      'Radius': '圓角',
-      'Theme': '主題',
-
-      // Copy Code
-      'Copied to clipboard!': '已複製到剪貼簿！',
-
-      // Mermaid
-      'Mermaid Chart Error: ': 'Mermaid 圖表錯誤：',
-      'Rendering Chart': '正在渲染圖表',
-
-      // Carbon Ads
-      'Please support us by disabling your ad blocker.': '請通過禁用廣告攔截器來支持我們。',
-
-      // Read More
-      'Read more at': '閱讀更多於',
-
-      // Field
-      'required': '必填',
-    },
-    ja: {
+    'zhcn': zhCN,
+    'zh-CN': zhCN,
+    'zhtw': zhTW,
+    'zh-TW': zhTW,
+    'ja': {
       // Search
       'Search...': '検索...',
       'Search documentation...': 'ドキュメントを検索...',
@@ -283,7 +289,7 @@ export default defineI18nConfig(() => ({
       // Field
       'required': '必須',
     },
-    km: {
+    'km': {
       // Search
       'Search...': 'ស្វែងរក...',
       'Search documentation...': 'ស្វែងរកឯកសារ...',
@@ -339,7 +345,7 @@ export default defineI18nConfig(() => ({
       // Field
       'required': 'តម្រូវឲ្យមានជាដាច់ខាត',
     },
-    ru: {
+    'ru': {
       // Search
       'Search...': 'Поиск...',
       'Search documentation...': 'Поиск в документации...',
@@ -396,7 +402,7 @@ export default defineI18nConfig(() => ({
       'required': 'обязательно',
     },
 
-    ko: {
+    'ko': {
       // Search
       'Search...': '검색...',
       'Search documentation...': '문서 검색...',
@@ -453,7 +459,7 @@ export default defineI18nConfig(() => ({
       'required': '필수',
     },
 
-    hi: {
+    'hi': {
       // Search
       'Search...': 'खोजें...',
       'Search documentation...': 'दस्तावेज़ खोजें...',
@@ -509,7 +515,7 @@ export default defineI18nConfig(() => ({
       // Field
       'required': 'आवश्यक',
     },
-    bn: {
+    'bn': {
       // Search
       'Search...': 'অনুসন্ধান...',
       'Search documentation...': 'ডকুমেন্টেশন খুঁজুন...',
@@ -566,7 +572,7 @@ export default defineI18nConfig(() => ({
       'required': 'অবশ্যক',
     },
 
-    it: {
+    'it': {
       // Search
       'Search...': 'Cerca...',
       'Search documentation...': 'Cerca nella documentazione...',
