@@ -18,7 +18,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Geist'],
+        sans: ['Geist', 'Noto Sans CJK SC'],
         mono: ['Geist Mono'],
       },
       colors: {
