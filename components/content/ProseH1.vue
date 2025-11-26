@@ -1,5 +1,5 @@
 <template>
-  <h1 :id class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+  <h1 :id class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl wrap-break-word">
     <NuxtLink
       v-if="generate"
       :to="`#${id}`"
