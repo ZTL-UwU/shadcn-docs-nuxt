@@ -628,5 +628,61 @@ export default defineI18nConfig(() => ({
       // Field
       'required': 'obbligatorio',
     },
+    'es': {
+      // Search
+      'Search...': 'Buscar...',
+      'Search documentation...': 'Buscar documentación...',
+      'No results found.': 'No se encontraron resultados.',
+
+      // 404
+      'This page could not be found.': 'No se pudo encontrar esta página.',
+
+      // Empty page
+      'Empty page': 'Página vacía',
+      'Start writing content': 'Empieza a escribir contenido en {fileLink} para ver esta página tomar forma.',
+
+      // TOC
+      'On this page': 'En esta página',
+
+      // Search command
+      'Light': 'Claro',
+      'Dark': 'Oscuro',
+      'System': 'Sistema',
+
+      // Doc footer
+      'Edit this page': 'Editar esta página',
+      'Back to Top': 'Volver arriba',
+
+      // Collapse Code
+      'Expand': 'Expandir',
+      'Collapse': 'Contraer',
+
+      // Language Switcher
+      'Language': 'Idioma',
+      'Choose your language': 'Elige tu idioma',
+
+      // Theme Switcher
+      'Customize': 'Personalizar',
+      'Pick a style and color for the docs.': 'Elige un estilo y color para la documentación.',
+      'Color': 'Color',
+      'Radius': 'Radio',
+      'Theme': 'Tema',
+
+      // Copy Code
+      'Copied to clipboard!': '¡Copiado al portapapeles!',
+
+      // Mermaid
+      'Mermaid Chart Error: ': 'Error en el gráfico Mermaid: ',
+      'Rendering Chart': 'Renderizando gráfico',
+
+      // Carbon Ads
+      'Please support us by disabling your ad blocker.': 'Por favor apóyanos desactivando tu bloqueador de anuncios.',
+
+      // Read More
+      'Read more at': 'Lee más en',
+
+      // Field
+      'required': 'obligatorio',
+    },
   },
 }));
