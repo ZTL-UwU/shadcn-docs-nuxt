@@ -86,15 +86,5 @@
     "vue": "^3.5.25",
     "vue-router": "^4.6.4",
     "vue-tsc": "^3.1.8"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "sharp"
-    ],
-    "ignoredBuiltDependencies": [
-      "@parcel/watcher",
-      "esbuild",
-      "vue-demi"
-    ]
   }
 }

@@ -1,2 +1,12 @@
+shellEmulator: true
+
+trustPolicy: no-downgrade
+
 packages:
   - www/
+ignoredBuiltDependencies:
+  - '@parcel/watcher'
+  - esbuild
+  - vue-demi
+onlyBuiltDependencies:
+  - sharp
