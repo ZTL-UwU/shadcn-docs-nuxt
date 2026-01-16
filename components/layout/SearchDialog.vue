@@ -53,7 +53,7 @@
               :to="item.id"
               class="hover:bg-muted flex select-none rounded-md p-2 hover:cursor-pointer"
               :class="[i === activeSelect && 'bg-muted']"
-              @click="open = false; activeSelect = i;"
+              @click="open = false; activeSelect = i as number;"
             >
               <SmartIcon v-if="getItemIcon(item.id)" :name="getItemIcon(item.id)" class="mr-2 size-4 shrink-0 self-center" />
               <div v-else class="mr-2 size-4 shrink-0" />
@@ -86,7 +86,7 @@ const open = defineModel<boolean>('open');
 const colorMode = useColorMode();
 const { placeholderDetailed } = useConfig().value.search;
 
-const activeSelect = ref(0);
+const activeSelect = ref<number>(0);
 
 const { Meta_K, Ctrl_K } = useMagicKeys({
   passive: false,
