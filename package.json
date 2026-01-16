@@ -2,7 +2,7 @@
   "name": "shadcn-docs-nuxt",
   "type": "module",
   "version": "1.1.8",
-  "packageManager": "pnpm@10.26.0",
+  "packageManager": "pnpm@10.28.0",
   "description": "Effortless and beautiful docs template built with Nuxt Content & shadcn-vue.",
   "author": "Tony Zhang <zhangtianli2006@gmail.com>",
   "license": "MIT",
@@ -46,12 +46,12 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@iconify-json/lucide": "^1.2.81",
-    "@iconify-json/vscode-icons": "^1.2.37",
+    "@iconify-json/lucide": "^1.2.85",
+    "@iconify-json/vscode-icons": "^1.2.39",
     "@nuxt/fonts": "^0.11.4",
     "@nuxt/icon": "^1.15.0",
     "@nuxt/image": "^1.11.0",
-    "@nuxt/scripts": "^0.13.1",
+    "@nuxt/scripts": "^0.13.2",
     "@nuxtjs/color-mode": "^3.5.2",
     "@nuxtjs/i18n": "^10.2.1",
     "@nuxtjs/mdc": "^0.18.4",
@@ -62,7 +62,7 @@
     "fontaine": "^0.6.0",
     "mermaid": "^11.12.2",
     "nuxt-og-image": "^5.1.13",
-    "reka-ui": "^2.6.1",
+    "reka-ui": "^2.7.0",
     "shadcn-nuxt": "^2.4.3",
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.18",
@@ -70,7 +70,7 @@
     "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^6.7.1",
+    "@antfu/eslint-config": "^6.7.3",
     "@iconify-json/lucide-lab": "^1.2.3",
     "@iconify/utils": "^3.1.0",
     "@nuxt/devtools": "^2.7.0",
@@ -81,10 +81,10 @@
     "minisearch": "^7.2.0",
     "nuxt": "^3.20.2",
     "pkg-pr-new": "^0.0.60",
-    "shiki": "^3.20.0",
+    "shiki": "^3.21.0",
     "taze": "^19.9.2",
-    "vue": "^3.5.25",
+    "vue": "^3.5.26",
     "vue-router": "^4.6.4",
-    "vue-tsc": "^3.1.8"
+    "vue-tsc": "^3.2.2"
   }
 }
