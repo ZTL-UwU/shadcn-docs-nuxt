@@ -99,7 +99,7 @@ onMounted(() => {
       },
       { threshold: 0.1 },
     );
-    observer.observe(mermaidContainer.value);
+    observer.observe(mermaidContainer.value as HTMLDivElement);
   }
 });
 
