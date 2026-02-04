@@ -51,7 +51,6 @@ Beautifully designed _Nuxt Content_ template built with _shadcn-vue_. **Customiz
 
 ## Who's Using
 
-- [unovue/inspira-ui](https://github.com/unovue/inspira-ui) 3.1K ⭐️
 - [unjs/magic-regexp](https://github.com/unjs/magic-regexp) 4K ⭐️
 - [nuxt-monaco-editor](https://github.com/e-chan1007/nuxt-monaco-editor)
 - [nuxt-umami](https://github.com/ijkml/nuxt-umami)

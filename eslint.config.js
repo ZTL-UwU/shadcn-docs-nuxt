@@ -17,5 +17,6 @@ export default antfu({
     'vue/block-order': ['error', {
       order: ['template', 'script', 'style'],
     }],
+    'pnpm/yaml-enforce-settings': 'off',
   },
 });
