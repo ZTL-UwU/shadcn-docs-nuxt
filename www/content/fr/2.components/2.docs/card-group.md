@@ -173,4 +173,3 @@ badges:
 ::field-group
   :field{name="cols" type="1 | 2 | 3 | 4 | 5 | 6" default-value="2"}[Nombre de colonnes (bureau uniquement)]
 ::
-

@@ -78,4 +78,3 @@ badges:
 - `pm-install`
 - `pm-run`
 - `pm-x`
-

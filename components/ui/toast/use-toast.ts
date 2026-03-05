@@ -1,6 +1,6 @@
 import type { Component, VNode } from 'vue';
 import type { ToastProps } from '.';
-import { computed, ref } from 'vue';
+import { computed, shallowReactive } from 'vue';
 
 const TOAST_LIMIT = 1;
 const TOAST_REMOVE_DELAY = 1000000;
@@ -72,18 +72,18 @@ function addToRemoveQueue(toastId: string) {
   toastTimeouts.set(toastId, timeout);
 }
 
-const state = ref<State>({
+const state = shallowReactive<State>({
   toasts: [],
 });
 
 function dispatch(action: Action) {
   switch (action.type) {
     case actionTypes.ADD_TOAST:
-      state.value.toasts = [action.toast, ...state.value.toasts].slice(0, TOAST_LIMIT);
+      state.toasts = [action.toast].slice(0, TOAST_LIMIT);
       break;
 
     case actionTypes.UPDATE_TOAST:
-      state.value.toasts = state.value.toasts.map(t =>
+      state.toasts = state.toasts.map(t =>
         t.id === action.toast.id ? { ...t, ...action.toast } : t,
       );
       break;
@@ -94,12 +94,12 @@ function dispatch(action: Action) {
       if (toastId) {
         addToRemoveQueue(toastId);
       } else {
-        state.value.toasts.forEach((toast) => {
+        state.toasts.forEach((toast) => {
           addToRemoveQueue(toast.id);
         });
       }
 
-      state.value.toasts = state.value.toasts.map(t =>
+      state.toasts = state.toasts.map(t =>
         t.id === toastId || toastId === undefined
           ? {
               ...t,
@@ -112,9 +112,9 @@ function dispatch(action: Action) {
 
     case actionTypes.REMOVE_TOAST:
       if (action.toastId === undefined)
-        state.value.toasts = [];
+        state.toasts = [];
       else
-        state.value.toasts = state.value.toasts.filter(t => t.id !== action.toastId);
+        state.toasts = state.toasts.filter(t => t.id !== action.toastId);
 
       break;
   }
@@ -122,7 +122,7 @@ function dispatch(action: Action) {
 
 function useToast() {
   return {
-    toasts: computed(() => state.value.toasts),
+    toasts: computed(() => state.toasts),
     toast,
     dismiss: (toastId?: string) => dispatch({ type: actionTypes.DISMISS_TOAST, toastId }),
   };

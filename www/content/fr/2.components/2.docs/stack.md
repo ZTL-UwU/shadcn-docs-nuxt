@@ -78,4 +78,3 @@ Composants empilables :
 - `pm-install`
 - `pm-run`
 - `pm-x`
-
