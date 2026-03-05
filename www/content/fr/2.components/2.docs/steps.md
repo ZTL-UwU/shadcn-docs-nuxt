@@ -14,7 +14,6 @@ badges:
   ::div{class="p-4 md:p-6"}
     ::steps
       ### Obtenir le Template de Démarrage
-
       ::code-group
         ```bash [npm]
         npx nuxi@latest init <project-name> -t github:ZTL-UwU/shadcn-docs-nuxt-starter
@@ -26,13 +25,10 @@ badges:
         bunx nuxi@latest init <project-name> -t github:ZTL-UwU/shadcn-docs-nuxt-starter
         ```
       ::
-
       ::alert
       Alternativement, vous pouvez cloner ou télécharger le template depuis le [dépôt GitHub](https://github.com/ZTL-UwU/shadcn-docs-nuxt-starter).
       ::
-
       ### Installer les Dépendances
-
       ::code-group
         ```bash [npm]
         npm install
@@ -44,9 +40,7 @@ badges:
         bun install
         ```
       ::
-
       ### Serveur de Développement
-
       ::code-group
         ```bash [npm]
         npm run dev -- -o
@@ -63,7 +57,6 @@ badges:
   ```mdc height=400
   ::steps
     ### Obtenir le Template de Démarrage
-
     ::code-group
       ```bash [npm]
       npx nuxi@latest init <project-name> -t github:ZTL-UwU/shadcn-docs-nuxt-starter
@@ -75,13 +68,10 @@ badges:
       bunx nuxi@latest init <project-name> -t github:ZTL-UwU/shadcn-docs-nuxt-starter
       ```
     ::
-
     ::alert
     Alternativement, vous pouvez cloner ou télécharger le template depuis le [dépôt GitHub](https://github.com/ZTL-UwU/shadcn-docs-nuxt-starter).
     ::
-
     ### Installer les Dépendances
-
     ::code-group
       ```bash [npm]
       npm install
@@ -93,9 +83,7 @@ badges:
       bun install
       ```
     ::
-
     ### Serveur de Développement
-
     ::code-group
       ```bash [npm]
       npm run dev -- -o

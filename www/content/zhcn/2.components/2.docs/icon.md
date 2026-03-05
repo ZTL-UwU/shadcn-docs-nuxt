@@ -48,33 +48,33 @@ npm i -D @iconify-json/collection-name
 你可以在 `smart-icon` 中放置 iconify 图标、表情符号和网址。智能图标会自动渲染它们.
 
 ::stack
-  ::div{class="p-4"}
-    **Iconify**
-    <div class="space-x-2">
+::div{class="p-4"}
+  **Iconify**
+  <div class="space-x-2">
 
-    :smart-icon{name="lucide:box"}
-    :smart-icon{name="vscode-icons:file-type-js-official"}
-    :smart-icon{name="vscode-icons:file-type-vue"}
+  :smart-icon{name="lucide:box"}
+  :smart-icon{name="vscode-icons:file-type-js-official"}
+  :smart-icon{name="vscode-icons:file-type-vue"}
 
-    </div>
+  </div>
 
-    **Emojis**
-    <div class="space-x-2">
+  **Emojis**
+  <div class="space-x-2">
 
-    :smart-icon{name="😍"}
-    :smart-icon{name="🚀"}
-    :smart-icon{name="🎉" :size="30"}
+  :smart-icon{name="😍"}
+  :smart-icon{name="🚀"}
+  :smart-icon{name="🎉" :size="30"}
 
-    </div>
+  </div>
 
-    **URL**
-    <div class="space-x-2">
+  **URL**
+  <div class="space-x-2">
 
-    :smart-icon{name="/logo.svg"}
-    :smart-icon{name="https://vueuse.org/favicon.svg" :size="40"}
+  :smart-icon{name="/logo.svg"}
+  :smart-icon{name="https://vueuse.org/favicon.svg" :size="40"}
 
-    </div>
-  ::
+  </div>
+::
 
   ```mdc
   **Iconify**

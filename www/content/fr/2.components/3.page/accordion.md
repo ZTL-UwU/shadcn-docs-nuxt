@@ -12,26 +12,7 @@ badges:
 ## Utilisation
 
 ::stack
-  ::div{class="p-4"}
-    ::accordion{default-value="first-item" collapsible}
-      ::accordion-item{value="first-item"}
-      #title
-      Est-il accessible ?
-
-      #content
-      Oui. Il suit le modèle de conception WAI-ARIA.
-      ::
-      ::accordion-item
-      #title
-      Est-il non stylisé ?
-
-      #content
-      Oui. Il est non stylisé par défaut, vous donnant la liberté sur l'apparence.
-      ::
-      :accordion-item{title="Peut-il être animé ?" content="Oui ! Vous pouvez utiliser la prop transition pour configurer l'animation."}
-    ::
-  ::
-  ```mdc
+::div{class="p-4"}
   ::accordion{default-value="first-item" collapsible}
     ::accordion-item{value="first-item"}
     #title
@@ -40,7 +21,6 @@ badges:
     #content
     Oui. Il suit le modèle de conception WAI-ARIA.
     ::
-
     ::accordion-item
     #title
     Est-il non stylisé ?
@@ -50,7 +30,27 @@ badges:
     ::
     :accordion-item{title="Peut-il être animé ?" content="Oui ! Vous pouvez utiliser la prop transition pour configurer l'animation."}
   ::
-  ```
+::
+```mdc
+::accordion{default-value="first-item" collapsible}
+  ::accordion-item{value="first-item"}
+  #title
+  Est-il accessible ?
+
+  #content
+  Oui. Il suit le modèle de conception WAI-ARIA.
+  ::
+
+  ::accordion-item
+  #title
+  Est-il non stylisé ?
+
+  #content
+  Oui. Il est non stylisé par défaut, vous donnant la liberté sur l'apparence.
+  ::
+  :accordion-item{title="Peut-il être animé ?" content="Oui ! Vous pouvez utiliser la prop transition pour configurer l'animation."}
+::
+```
 ::
 
 La prop `value` dans `::accordion-item`{lang="mdc"} est auto-générée par défaut. Vous pouvez les définir à d'autres valeurs _uniques_ et les mettre dans la prop `default-value` de `::accordion`{lang="mdc"}.

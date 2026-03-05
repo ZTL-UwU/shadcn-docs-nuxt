@@ -159,10 +159,8 @@ badges:
 
   Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
   ````
-
   ::
 ::
-
 `````mdc height=400
 ::code-tree{defaultValue="nuxt.config.ts" title="Sample Nuxt App"}
 

@@ -14,47 +14,7 @@ badges:
 ## Utilisation
 
 ::stack
-  ::div{class="p-4"}
-    ::card-group
-      ::card
-      ---
-      title: Composants
-      icon: lucide:box
-      to: https://nuxt.com/docs/api/components/client-only
-      target: _blank
-      ---
-      Explorez les composants intégrés de Nuxt pour les pages, les layouts, le head et plus encore.
-      ::
-      ::card
-      ---
-      title: Composables
-      icon: lucide:arrow-right-left
-      to: https://nuxt.com/docs/api/composables/use-app-config
-      target: _blank
-      ---
-      Découvrez les fonctions composables de Nuxt pour la récupération de données, la gestion du head et plus encore.
-      ::
-      ::card
-      ---
-      title: Utilitaires
-      icon: lucide:scissors
-      to: https://nuxt.com/docs/api/utils/dollarfetch
-      target: _blank
-      ---
-      Apprenez-en plus sur les fonctions utilitaires de Nuxt pour la navigation, la gestion des erreurs et plus encore.
-      ::
-      ::card
-      ---
-      title: Commandes
-      icon: lucide:square-terminal
-      to: https://nuxt.com/docs/api/commands/add
-      target: _blank
-      ---
-      Liste des commandes CLI de Nuxt pour initialiser, analyser, construire et prévisualiser votre application.
-      ::
-    ::
-  ::
-  ```mdc
+::div{class="p-4"}
   ::card-group
     ::card
     ---
@@ -65,7 +25,6 @@ badges:
     ---
     Explorez les composants intégrés de Nuxt pour les pages, les layouts, le head et plus encore.
     ::
-
     ::card
     ---
     title: Composables
@@ -75,7 +34,6 @@ badges:
     ---
     Découvrez les fonctions composables de Nuxt pour la récupération de données, la gestion du head et plus encore.
     ::
-
     ::card
     ---
     title: Utilitaires
@@ -85,7 +43,6 @@ badges:
     ---
     Apprenez-en plus sur les fonctions utilitaires de Nuxt pour la navigation, la gestion des erreurs et plus encore.
     ::
-
     ::card
     ---
     title: Commandes
@@ -96,5 +53,124 @@ badges:
     Liste des commandes CLI de Nuxt pour initialiser, analyser, construire et prévisualiser votre application.
     ::
   ::
-  ```
 ::
+```mdc
+::card-group
+  ::card
+  ---
+  title: Composants
+  icon: lucide:box
+  to: https://nuxt.com/docs/api/components/client-only
+  target: _blank
+  ---
+  Explorez les composants intégrés de Nuxt pour les pages, les layouts, le head et plus encore.
+  ::
+
+  ::card
+  ---
+  title: Composables
+  icon: lucide:arrow-right-left
+  to: https://nuxt.com/docs/api/composables/use-app-config
+  target: _blank
+  ---
+  Découvrez les fonctions composables de Nuxt pour la récupération de données, la gestion du head et plus encore.
+  ::
+
+  ::card
+  ---
+  title: Utilitaires
+  icon: lucide:scissors
+  to: https://nuxt.com/docs/api/utils/dollarfetch
+  target: _blank
+  ---
+  Apprenez-en plus sur les fonctions utilitaires de Nuxt pour la navigation, la gestion des erreurs et plus encore.
+  ::
+
+  ::card
+  ---
+  title: Commandes
+  icon: lucide:square-terminal
+  to: https://nuxt.com/docs/api/commands/add
+  target: _blank
+  ---
+  Liste des commandes CLI de Nuxt pour initialiser, analyser, construire et prévisualiser votre application.
+  ::
+::
+```
+::
+
+### Colonnes
+
+::stack
+::div{class="p-4"}
+  ::card-group{:cols="3"}
+    ::card
+    ---
+    title: Composants
+    icon: lucide:box
+    to: https://nuxt.com/docs/api/components/client-only
+    target: _blank
+    ---
+    Explorez les composants intégrés de Nuxt pour les pages, les layouts, le head et plus encore.
+    ::
+    ::card
+    ---
+    title: Composables
+    icon: lucide:arrow-right-left
+    to: https://nuxt.com/docs/api/composables/use-app-config
+    target: _blank
+    ---
+    Découvrez les fonctions composables de Nuxt pour la récupération de données, la gestion du head et plus encore.
+    ::
+    ::card
+    ---
+    title: Utilitaires
+    icon: lucide:scissors
+    to: https://nuxt.com/docs/api/utils/dollarfetch
+    target: _blank
+    ---
+    Apprenez-en plus sur les fonctions utilitaires de Nuxt pour la navigation, la gestion des erreurs et plus encore.
+    ::
+  ::
+::
+```mdc
+::card-group{:cols="3"}
+  ::card
+  ---
+  title: Composants
+  icon: lucide:box
+  to: https://nuxt.com/docs/api/components/client-only
+  target: _blank
+  ---
+  Explorez les composants intégrés de Nuxt pour les pages, les layouts, le head et plus encore.
+  ::
+
+  ::card
+  ---
+  title: Composables
+  icon: lucide:arrow-right-left
+  to: https://nuxt.com/docs/api/composables/use-app-config
+  target: _blank
+  ---
+  Découvrez les fonctions composables de Nuxt pour la récupération de données, la gestion du head et plus encore.
+  ::
+
+  ::card
+  ---
+  title: Utilitaires
+  icon: lucide:scissors
+  to: https://nuxt.com/docs/api/utils/dollarfetch
+  target: _blank
+  ---
+  Apprenez-en plus sur les fonctions utilitaires de Nuxt pour la navigation, la gestion des erreurs et plus encore.
+  ::
+::
+```
+::
+
+## Props
+
+::field-group
+  :field{name="cols" type="1 | 2 | 3 | 4 | 5 | 6" default-value="2"}[Nombre de colonnes (bureau uniquement)]
+::
+

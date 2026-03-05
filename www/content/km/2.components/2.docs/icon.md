@@ -48,33 +48,33 @@ npm i -D @iconify-json/collection-name
 អ្នកអាចដាក់ iconify icons, emojis និង urls នៅក្នុង `smart-icon`។ Smart icon នឹង render ដោយស្វ័យប្រវត្តិ។
 
 ::stack
-  ::div{class="p-4"}
-    **Iconify**
-    <div class="space-x-2">
+::div{class="p-4"}
+  **Iconify**
+  <div class="space-x-2">
 
-    :smart-icon{name="lucide:box"}
-    :smart-icon{name="vscode-icons:file-type-js-official"}
-    :smart-icon{name="vscode-icons:file-type-vue"}
+  :smart-icon{name="lucide:box"}
+  :smart-icon{name="vscode-icons:file-type-js-official"}
+  :smart-icon{name="vscode-icons:file-type-vue"}
 
-    </div>
+  </div>
 
-    **Emojis**
-    <div class="space-x-2">
+  **Emojis**
+  <div class="space-x-2">
 
-    :smart-icon{name="😍"}
-    :smart-icon{name="🚀"}
-    :smart-icon{name="🎉" :size="30"}
+  :smart-icon{name="😍"}
+  :smart-icon{name="🚀"}
+  :smart-icon{name="🎉" :size="30"}
 
-    </div>
+  </div>
 
-    **URL**
-    <div class="space-x-2">
+  **URL**
+  <div class="space-x-2">
 
-    :smart-icon{name="/logo.svg"}
-    :smart-icon{name="https://vueuse.org/favicon.svg" :size="40"}
+  :smart-icon{name="/logo.svg"}
+  :smart-icon{name="https://vueuse.org/favicon.svg" :size="40"}
 
-    </div>
-  ::
+  </div>
+::
 
   ```mdc
   **Iconify**

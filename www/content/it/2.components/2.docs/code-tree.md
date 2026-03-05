@@ -159,7 +159,6 @@ badges:
 
   Consulta la [documentazione di deployment](https://nuxt.com/docs/getting-started/deployment) per maggiori informazioni.
   ````
-
   ::
 ::
 

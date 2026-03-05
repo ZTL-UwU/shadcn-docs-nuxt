@@ -12,65 +12,56 @@ badges:
 ## Utilizzo
 
 ::stack
-  ::div{class="p-4 md:p-8"}
-    ::stack
-      ::div{class="p-6 text-3xl font-bold"}
-      ✨ shadcn-docs-nuxt
-      ::
-
-      ```mdc
-      ---
-      title: Installazione
-      description: Come installare shadcn-docs-nuxt nella tua app.
-      icon: lucide:play
-      ---
-
-      ## Utilizzando il template starter
-      ```
-
-      :pm-x{command="nuxi@latest init <project-name> -t github:ZTL-UwU/shadcn-docs-nuxt-starter"}
-
-      :read-more{title="Installazione" to="/getting-started/installation"}
-
-      ::card
-      ---
-      title: Componenti
-      icon: lucide:box
-      ---
-      Vedi i componenti MDC forniti da **shadcn-docs-nuxt**.
-      ::
-    ::
-  ::
-
-  ```mdc
+::div{class="p-4 md:p-8"}
   ::stack
-    ::div{class="p-6 text-3xl font-bold"}
-    ✨ shadcn-docs-nuxt
-    ::
-
-    ```mdc
-    ---
-    title: Installazione
-    description: Come installare shadcn-docs-nuxt nella tua app.
-    icon: lucide:play
-    ---
-
-    ## Utilizzando il template starter
-    ```
-
-    :pm-x{command="nuxi@latest init <project-name> -t github:ZTL-UwU/shadcn-docs-nuxt-starter"}
-
-    :read-more{title="Installazione" to="/getting-started/installation"}
-
-    ::card
-    ---
-    title: Componenti
-    icon: lucide:box
-    ---
-    Vedi i componenti MDC forniti da **shadcn-docs-nuxt**.
-    ::
+  ::div{class="p-6 text-3xl font-bold"}
+  ✨ shadcn-docs-nuxt
   ::
+  ```mdc
+  ---
+  title: Installazione
+  description: Come installare shadcn-docs-nuxt nella tua app.
+  icon: lucide:play
+  ---
+
+  ## Utilizzando il template starter
   ```
+  :pm-x{command="nuxi@latest init <project-name> -t github:ZTL-UwU/shadcn-docs-nuxt-starter"}
+  :read-more{title="Installazione" to="/getting-started/installation"}
+  ::card
+  ---
+  title: Componenti
+  icon: lucide:box
+  ---
+  Vedi i componenti MDC forniti da **shadcn-docs-nuxt**.
+  ::
+  ::
+::
+````mdc
+::stack
+  ::div{class="p-6 text-3xl font-bold"}
+  ✨ shadcn-docs-nuxt
+  ::
+  ```mdc
+  ---
+  title: Installazione
+  description: Come installare shadcn-docs-nuxt nella tua app.
+  icon: lucide:play
+  ---
+
+  ## Utilizzando il template starter
+  ```
+  :pm-x{command="nuxi@latest init <project-name> -t github:ZTL-UwU/shadcn-docs-nuxt-starter"}
+  :read-more{title="Installazione" to="/getting-started/installation"}
+  ::card
+  ---
+  title: Componenti
+  icon: lucide:box
+  ---
+  Vedi i componenti MDC forniti da **shadcn-docs-nuxt**.
+  ::
+::
+````
 ::
 
 Componenti impilabili:

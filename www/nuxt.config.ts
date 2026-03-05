@@ -38,5 +38,10 @@ export default defineNuxtConfig({
       'Geist:700',
     ],
   },
+  content: {
+    highlight: {
+      langs: ['mdc', 'mermaid', 'tsx'],
+    },
+  },
   compatibilityDate: '2025-05-13',
 });

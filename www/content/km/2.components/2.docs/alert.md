@@ -14,24 +14,23 @@ badges:
 ## ការប្រើប្រាស់
 
 ::stack
-  ::div{class="p-4"}
+::div{class="p-4"}
   ::alert{icon="lucide:info"}
     A **default** alert with `code` and a [link](/).
   ::
-
   ::alert{type="secondary" icon="lucide:info"}
     A **secondary** alert with `code` and a [link](/).
   ::
-  ::
-  ```mdc
-  ::alert{icon="lucide:info"}
-    A **default** alert with `code` and a [link](/).
-  ::
+::
+```mdc
+::alert{icon="lucide:info"}
+  A **default** alert with `code` and a [link](/).
+::
 
-  ::alert{type="secondary" icon="lucide:info"}
-    A **secondary** alert with `code` and a [link](/).
-  ::
-  ```
+::alert{type="secondary" icon="lucide:info"}
+  A **secondary** alert with `code` and a [link](/).
+::
+```
 ::
 
 ### តំណភ្ជាប់

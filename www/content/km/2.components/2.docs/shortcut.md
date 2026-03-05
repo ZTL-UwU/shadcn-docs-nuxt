@@ -15,15 +15,15 @@ badges:
 ## ការប្រើប្រាស់
 
 ::stack
-  ::div{class="p-4"}
-    :shortcut{value="meta"} :shortcut{value="K"} :br
-    :shortcut{value="xs" size="xs"} :shortcut{value="sm"} :shortcut{value="md" size="md"}
-  ::
-  ```mdc
-  :shortcut{value="meta"} :shortcut{value="K"}
-
+::div{class="p-4"}
+  :shortcut{value="meta"} :shortcut{value="K"} :br
   :shortcut{value="xs" size="xs"} :shortcut{value="sm"} :shortcut{value="md" size="md"}
-  ```
+::
+```mdc
+:shortcut{value="meta"} :shortcut{value="K"}
+
+:shortcut{value="xs" size="xs"} :shortcut{value="sm"} :shortcut{value="md" size="md"}
+```
 ::
 
 អ្នកអាចដាក់ `meta` ក្នុង `value` field ដើម្បីបង្ហាញស្វ័យប្រវត្តិមិនថា :shortcut{value="⌘"} ឬក៏ :shortcut{value="Ctrl"} ផ្អែកលើឧបករណ៍របស់អ្នក។

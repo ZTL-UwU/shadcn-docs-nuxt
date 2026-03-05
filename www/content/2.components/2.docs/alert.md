@@ -13,33 +13,33 @@ badges:
 ## Usage
 
 ::stack
-  ::div{class="p-4"}
+::div{class="p-4"}
   ::alert{icon="lucide:info"}
-    A **default** alert with `code` and a [link](/).
+  A **default** alert with `code` and a [link](/).
   ::
-
   ::alert{type="secondary" icon="lucide:info"}
-    A **secondary** alert with `code` and a [link](/).
+  A **secondary** alert with `code` and a [link](/).
   ::
-  ::
-  ```mdc
-  ::alert{icon="lucide:info"}
-    A **default** alert with `code` and a [link](/).
-  ::
+::
 
-  ::alert{type="secondary" icon="lucide:info"}
-    A **secondary** alert with `code` and a [link](/).
-  ::
-  ```
+```mdc
+::alert{icon="lucide:info"}
+  A **default** alert with `code` and a [link](/).
+::
+
+::alert{type="secondary" icon="lucide:info"}
+  A **secondary** alert with `code` and a [link](/).
+::
+```
 ::
 
 ### Link
 
 ::stack
   ::div{class="p-4"}
-  ::alert{to="https://github.com/ZTL-UwU/shadcn-docs-nuxt" target="_blank" icon="lucide:link"}
-    A **link** alert.
-  ::
+    ::alert{to="https://github.com/ZTL-UwU/shadcn-docs-nuxt" target="_blank" icon="lucide:link"}
+      A **link** alert.
+    ::
   ::
   ```mdc
   ::alert{to="https://github.com/ZTL-UwU/shadcn-docs-nuxt" target="_blank" icon="lucide:link"}

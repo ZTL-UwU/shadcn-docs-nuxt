@@ -13,24 +13,23 @@ badges:
 ## Utilizzo
 
 ::stack
-  ::div{class="p-4"}
+::div{class="p-4"}
   ::alert{icon="lucide:info"}
     Un alert **predefinito** con `codice` e un [link](/).
   ::
-
   ::alert{type="secondary" icon="lucide:info"}
     Un alert **secondario** con `codice` e un [link](/).
   ::
-  ::
-  ```mdc
-  ::alert{icon="lucide:info"}
-    Un alert **predefinito** con `codice` e un [link](/).
-  ::
+::
+```mdc
+::alert{icon="lucide:info"}
+  Un alert **predefinito** con `codice` e un [link](/).
+::
 
-  ::alert{type="secondary" icon="lucide:info"}
-    Un alert **secondario** con `codice` e un [link](/).
-  ::
-  ```
+::alert{type="secondary" icon="lucide:info"}
+  Un alert **secondario** con `codice` e un [link](/).
+::
+```
 ::
 
 ### Link

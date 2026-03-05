@@ -12,26 +12,7 @@ badges:
 ## Utilizzo
 
 ::stack
-  ::div{class="p-4"}
-    ::accordion{default-value="first-item" collapsible}
-      ::accordion-item{value="first-item"}
-      #title
-      È accessibile?
-
-      #content
-      Sì. Aderisce al pattern di design WAI-ARIA.
-      ::
-      ::accordion-item
-      #title
-      È senza stile?
-
-      #content
-      Sì. È senza stile di default, dandoti libertà sull'aspetto e la sensazione.
-      ::
-      :accordion-item{title="Può essere animato?" content="Sì! Puoi utilizzare la proprietà transition per configurare l'animazione."}
-    ::
-  ::
-  ```mdc
+::div{class="p-4"}
   ::accordion{default-value="first-item" collapsible}
     ::accordion-item{value="first-item"}
     #title
@@ -40,7 +21,6 @@ badges:
     #content
     Sì. Aderisce al pattern di design WAI-ARIA.
     ::
-
     ::accordion-item
     #title
     È senza stile?
@@ -50,7 +30,27 @@ badges:
     ::
     :accordion-item{title="Può essere animato?" content="Sì! Puoi utilizzare la proprietà transition per configurare l'animazione."}
   ::
-  ```
+::
+```mdc
+::accordion{default-value="first-item" collapsible}
+  ::accordion-item{value="first-item"}
+  #title
+  È accessibile?
+
+  #content
+  Sì. Aderisce al pattern di design WAI-ARIA.
+  ::
+
+  ::accordion-item
+  #title
+  È senza stile?
+
+  #content
+  Sì. È senza stile di default, dandoti libertà sull'aspetto e la sensazione.
+  ::
+  :accordion-item{title="Può essere animato?" content="Sì! Puoi utilizzare la proprietà transition per configurare l'animazione."}
+::
+```
 ::
 
 La proprietà `value` in `::accordion-item`{lang="mdc"} è generata automaticamente di default. Puoi impostarla su altri valori _unici_ e metterli nella proprietà `default-value` di `::accordion`{lang="mdc"}.

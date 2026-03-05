@@ -12,26 +12,7 @@ badges:
 ## 使用
 
 ::stack
-  ::div{class="p-4"}
-    ::accordion{default-value="first-item" collapsible}
-      ::accordion-item{value="first-item"}
-      #title
-      Is it accessible?
-
-      #content
-      Yes. It adheres to the WAI-ARIA design pattern.
-      ::
-      ::accordion-item
-      #title
-      Is it unstyled?
-
-      #content
-      Yes. It's unstyled by default, giving you freedom over the look and feel.
-      ::
-      :accordion-item{title="Can it be animated?" content="Yes! You can use the transition prop to configure the animation."}
-    ::
-  ::
-  ```mdc
+::div{class="p-4"}
   ::accordion{default-value="first-item" collapsible}
     ::accordion-item{value="first-item"}
     #title
@@ -40,7 +21,6 @@ badges:
     #content
     Yes. It adheres to the WAI-ARIA design pattern.
     ::
-
     ::accordion-item
     #title
     Is it unstyled?
@@ -50,7 +30,27 @@ badges:
     ::
     :accordion-item{title="Can it be animated?" content="Yes! You can use the transition prop to configure the animation."}
   ::
-  ```
+::
+```mdc
+::accordion{default-value="first-item" collapsible}
+  ::accordion-item{value="first-item"}
+  #title
+  Is it accessible?
+
+  #content
+  Yes. It adheres to the WAI-ARIA design pattern.
+  ::
+
+  ::accordion-item
+  #title
+  Is it unstyled?
+
+  #content
+  Yes. It's unstyled by default, giving you freedom over the look and feel.
+  ::
+  :accordion-item{title="Can it be animated?" content="Yes! You can use the transition prop to configure the animation."}
+::
+```
 ::
 
 `::accordion-item`{lang="mdc"} 中的 `value` 属性默认是自动生成的. 你可以将其设置为其他唯一值, 并将它们放在 `::accordion`{lang="mdc"} 的 `default-value` 属性中.
