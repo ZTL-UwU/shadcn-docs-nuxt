@@ -58,6 +58,7 @@ Beautifully designed _Nuxt Content_ template built with _shadcn-vue_. **Customiz
 - [Archiver](https://github.com/Ast3risk-ops/archiver)
 - [ePoc](https://epoc.inria.fr/en)
 - [hexo-theme-solitude](https://github.com/everfu/hexo-theme-solitude) 1k ⭐️
+- [ai-elements-vue](https://github.com/vuepont/ai-elements-vue) 1k ⭐️
 - [Add your project 🚀](https://github.com/ZTL-UwU/shadcn-docs-nuxt/edit/main/README.md)
 
 ## License
