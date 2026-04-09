@@ -94,7 +94,11 @@ export default defineNuxtConfig({
       tailwindcss(),
     ],
     optimizeDeps: {
-      include: ['debug'],
+      include: [
+        'debug',
+        // https://github.com/ZTL-UwU/shadcn-docs-nuxt/issues/205
+        'mermaid',
+      ],
     },
   },
   compatibilityDate: '2025-05-13',
