@@ -9,7 +9,7 @@ export default antfu({
   typescript: true,
   vue: true,
   ignores: [
-    'www/content/km/**/*.md',
+    'www/content/**/*.md',
   ],
 }, {
   rules: {
@@ -18,5 +18,10 @@ export default antfu({
       order: ['template', 'script', 'style'],
     }],
     'pnpm/yaml-enforce-settings': 'off',
+  },
+}, {
+  files: ['**/*.md'],
+  rules: {
+    'vue/block-order': 'off',
   },
 });

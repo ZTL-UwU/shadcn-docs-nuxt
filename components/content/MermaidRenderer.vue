@@ -20,7 +20,6 @@
 <script setup lang="ts">
 import { useNuxtApp } from '#app';
 import { useColorMode } from '#imports';
-import { computed, nextTick, onMounted, onUnmounted, ref, useSlots, watch } from 'vue';
 
 const props = defineProps<{
   code?: string;

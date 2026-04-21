@@ -12,7 +12,7 @@ const { value, size = 'sm' } = defineProps<{
 
 const metaSymbol = ref('Ctrl');
 onMounted(() => {
-  metaSymbol.value = navigator && navigator.userAgent && navigator.userAgent.match(/Macintosh;/) ? '⌘' : 'Ctrl';
+  metaSymbol.value = navigator && navigator.userAgent && /Macintosh;/.test(navigator.userAgent) ? '⌘' : 'Ctrl';
 });
 
 const computedValue = computed(() => value === 'meta' ? metaSymbol : value);

@@ -1,5 +1,5 @@
-import { defineNuxtPlugin } from '#app';
 import mermaid from 'mermaid';
+import { defineNuxtPlugin } from '#app';
 
 export default defineNuxtPlugin(() => {
   mermaid.initialize({
