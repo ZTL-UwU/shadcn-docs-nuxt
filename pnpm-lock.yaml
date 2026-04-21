@@ -56,6 +56,9 @@ importers:
       reka-ui:
         specifier: ^2.9.6
         version: 2.9.6(vue@3.5.32(typescript@6.0.3))
+      satori:
+        specifier: ^0.26.0
+        version: 0.26.0
       shadcn-nuxt:
         specifier: ^2.6.2
         version: 2.6.2(@emnapi/core@1.9.2)(@emnapi/runtime@1.10.0)(magicast@0.5.2)
@@ -10578,8 +10581,8 @@ snapshots:
 
   '@typescript-eslint/project-service@8.56.1(typescript@6.0.3)':
     dependencies:
-      '@typescript-eslint/tsconfig-utils': 8.56.1(typescript@6.0.3)
-      '@typescript-eslint/types': 8.56.1
+      '@typescript-eslint/tsconfig-utils': 8.59.0(typescript@6.0.3)
+      '@typescript-eslint/types': 8.59.0
       debug: 4.4.3
       typescript: 6.0.3
     transitivePeerDependencies:

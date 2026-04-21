@@ -62,6 +62,7 @@
     "mermaid": "^11.14.0",
     "nuxt-og-image": "^6.4.5",
     "reka-ui": "^2.9.6",
+    "satori": "^0.26.0",
     "shadcn-nuxt": "^2.6.2",
     "tailwind-merge": "^3.5.0",
     "tailwindcss": "^4.2.3",
