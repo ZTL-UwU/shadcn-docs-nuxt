@@ -35,7 +35,7 @@
 <script setup lang="ts">
 const props = defineProps<{
   colorMode?: 'dark' | 'light';
-  title: string;
+  title?: string;
   description?: string;
 }>();
 
