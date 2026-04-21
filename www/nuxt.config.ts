@@ -32,12 +32,6 @@ export default defineNuxtConfig({
       },
     ],
   },
-  ogImage: {
-    fonts: [
-      'Geist:400',
-      'Geist:700',
-    ],
-  },
   content: {
     highlight: {
       langs: ['mdc', 'mermaid', 'tsx'],

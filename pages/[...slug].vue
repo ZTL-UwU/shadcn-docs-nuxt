@@ -79,6 +79,8 @@
 </template>
 
 <script setup lang="ts">
+import type { OgImageComponents } from '#og-image/components';
+
 const { page } = useContent();
 const config = useConfig();
 const appConfig = useAppConfig();
@@ -93,7 +95,7 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
 });
 
-defineOgImageComponent(config.value.site.ogImageComponent, {
+defineOgImage(config.value.site.ogImageComponent as keyof OgImageComponents, {
   title: page.value?.title,
   description: page.value?.description,
 });

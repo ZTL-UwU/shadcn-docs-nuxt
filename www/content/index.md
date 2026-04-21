@@ -1,6 +1,7 @@
 ---
 title: Home
 navigation: false
+description: Beautifully designed Nuxt Content template built with shadcn-vue. Customizable. Compatible. Open Source.
 ---
 
 ::hero

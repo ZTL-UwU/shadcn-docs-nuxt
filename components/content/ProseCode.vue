@@ -94,6 +94,8 @@ const parsedMeta = computed(() => {
 
   for (const param of split) {
     const [key, val] = param.split('=');
+    if (!key)
+      continue;
     params.set(key, val);
   }
 

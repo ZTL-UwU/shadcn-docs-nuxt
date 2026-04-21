@@ -51,10 +51,20 @@ useSeoMeta({
 });
 
 useHead({
+  htmlAttrs: {
+    lang: useI18n().locale,
+  },
   bodyAttrs: {
     class: themeClass.value,
     style: `--radius: ${radius.value}rem;`,
   },
+  link: [
+    {
+      rel: 'icon',
+      type: 'image/x-icon',
+      href: '/favicon.ico',
+    },
+  ],
 });
 
 onMounted(() => {

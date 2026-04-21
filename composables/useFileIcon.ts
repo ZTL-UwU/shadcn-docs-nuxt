@@ -6,7 +6,9 @@ export function useFileIcon(filename: string, type: 'folder' | 'file') {
   if (filename.endsWith('/'))
     return 'lucide:folder';
 
+  const ext = filename.split('.').pop();
+
   return iconMap.get(filename.toLowerCase())
-    || iconMap.get(filename.split('.')[filename.split('.').length - 1])
+    || (ext && iconMap.get(ext))
     || (type === 'file' ? 'lucide:file' : 'lucide:folder');
 }

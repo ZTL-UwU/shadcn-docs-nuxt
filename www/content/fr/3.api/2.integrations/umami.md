@@ -12,7 +12,6 @@ export default defineAppConfig({
     site: {
       umami: {
         enable: true,
-        src: 'https://cloud.umami.is/script.js',
         dataWebsiteId: 'votre-data-website-id',
       },
     },
@@ -25,9 +24,6 @@ export default defineAppConfig({
 ::field-group
   ::field{name="enable" type="boolean" default-value="false"}
   Si l'intégration umami doit être activée.
-  ::
-  ::field{name="src" type="string" default-value="https://cloud.umami.is/script.js"}
-  Le lien src dans le code de suivi.
   ::
   ::field{name="dataWebsiteId" type="string"}
   L'ID du site web depuis le tableau de bord umami.

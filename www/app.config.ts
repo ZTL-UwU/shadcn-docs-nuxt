@@ -8,7 +8,6 @@ export default defineAppConfig({
       ogImageColor: 'light',
       umami: {
         enable: true,
-        src: 'https://cloud.umami.is/script.js',
         dataWebsiteId: 'd793fbf3-461e-4e26-9ec9-4e9141df96ee',
       },
     },

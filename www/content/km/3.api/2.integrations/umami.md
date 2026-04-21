@@ -12,7 +12,6 @@ export default defineAppConfig({
     site: {
       umami: {
         enable: true,
-        src: 'https://cloud.umami.is/script.js',
         dataWebsiteId: 'your-data-website-id',
       },
     },
@@ -25,9 +24,6 @@ export default defineAppConfig({
 ::field-group
   ::field{name="enable" type="boolean" default-value="false"}
   កំណត់ថាតើបើកមុខងារ umami ឬអត់។
-  ::
-  ::field{name="src" type="string" default-value="https://cloud.umami.is/script.js"}
-  តំណភ្ជាប់សម្រាប់តាមដាន
   ::
   ::field{name="dataWebsiteId" type="string"}
   The _Website ID_ ដែលបានមកពី umami។

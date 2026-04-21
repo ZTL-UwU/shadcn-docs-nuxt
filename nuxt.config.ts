@@ -82,13 +82,6 @@ export default defineNuxtConfig({
       weights: ['300 800'],
     },
   },
-  typescript: {
-    tsConfig: {
-      compilerOptions: {
-        baseUrl: '.',
-      },
-    },
-  },
   vite: {
     plugins: [
       tailwindcss(),

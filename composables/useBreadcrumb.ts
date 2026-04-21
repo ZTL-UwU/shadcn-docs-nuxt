@@ -19,7 +19,7 @@ export function useBreadcrumb(url: string): BreadcrumbItem[] {
 
   const { locale } = useI18n();
   for (let i = 0; i < segments.length; i++) {
-    const segment = segments[i].replace('.html', '');
+    const segment = segments[i]!.replace('.html', '');
     href += `/${segment}`;
 
     const page = nav?.find(x => (x._path as string) === href);

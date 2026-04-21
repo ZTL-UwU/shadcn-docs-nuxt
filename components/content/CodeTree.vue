@@ -24,7 +24,7 @@ function render() {
   const tree: FileTreeItem[] = [];
 
   for (const slot of slots) {
-    const parts: string[] = slot.props?.filename.split('/');
+    const parts: string[] = slot.props?.filename?.split('/') ?? [];
     if (parts[0] === '')
       parts.splice(0, 1);
 
@@ -53,7 +53,7 @@ function render() {
     CodeTreeInner,
     {
       height,
-      defaultValue: defaultValue || slots[0].props?.filename || '',
+      defaultValue: defaultValue || slots[0]?.props?.filename || '',
       inStack,
       tree,
       title,

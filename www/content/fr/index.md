@@ -2,6 +2,7 @@
 title: Accueil
 navigation: false
 fullpage: true
+description: Modèle de documentation Nuxt Content basé sur shadcn-vue. Personnalisable. Compatible. Open Source.
 ---
 
 ::hero

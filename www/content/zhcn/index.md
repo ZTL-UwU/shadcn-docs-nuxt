@@ -1,6 +1,7 @@
 ---
-title: Home
+title: 主页
 navigation: false
+description: 精美设计的 Nuxt Content 模板, 基于 shadcn-vue 构建. 可定制, 兼容, 开源.
 ---
 
 ::hero

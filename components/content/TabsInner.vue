@@ -118,12 +118,12 @@
         >
           <div class="flex items-center">
             <SmartIcon
-              v-if="icon(($slots.default?.() ?? [])[activeTabIndex].props)"
-              :name="icon(($slots.default?.() ?? [])[activeTabIndex].props)!"
+              v-if="icon(activeSlot?.props)"
+              :name="icon(activeSlot?.props)!"
               class="mr-1.5"
             />
             <span>
-              {{ label(($slots.default?.() ?? [])[activeTabIndex].props) }}
+              {{ label(activeSlot?.props) }}
             </span>
           </div>
           <Icon name="lucide:chevrons-up-down" />
@@ -191,6 +191,7 @@ const { sync, slotsData } = defineProps<{
   sync?: string;
 }>();
 defineSlots();
+const slots = useSlots();
 
 const syncState = useCookie<{ scope: string; value?: string }[]>('tabs-sync-state', {
   default: () => [],
@@ -213,13 +214,19 @@ const activeTabIndex = computed<number>({
       return;
     }
 
-    if (syncScopeIndex.value === -1)
+    let scopeIndex = syncScopeIndex.value;
+    if (scopeIndex === -1) {
       syncState.value.push({ scope: sync, value: undefined });
+      scopeIndex = syncState.value.length - 1;
+    }
 
-    syncState.value[syncScopeIndex.value].value = slotsData[index].label;
+    syncState.value[scopeIndex]!.value = slotsData[index]?.label;
     activeTabIndexData.value = index;
   },
 });
+
+const defaultSlots = computed(() => slots.default?.() ?? []);
+const activeSlot = computed(() => defaultSlots.value[activeTabIndex.value]);
 
 const iconMap = new Map(Object.entries(useConfig().value.main.codeIcon));
 function icon(props: any) {

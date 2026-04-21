@@ -40,7 +40,9 @@ function getIcon(filename: string, type: 'folder' | 'file') {
   if (filename.endsWith('/'))
     return 'lucide:folder';
 
-  return iconMap.get(filename.split('.')[filename.split('.').length - 1])
+  const ext = filename.split('.').pop();
+
+  return (ext && iconMap.get(ext))
     || iconMap.get(filename.toLowerCase())
     || (type === 'file' ? 'lucide:file' : 'lucide:folder');
 }

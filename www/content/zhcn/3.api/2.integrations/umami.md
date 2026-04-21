@@ -12,7 +12,6 @@ export default defineAppConfig({
     site: {
       umami: {
         enable: true,
-        src: 'https://cloud.umami.is/script.js',
         dataWebsiteId: 'your-data-website-id',
       },
     },
@@ -25,9 +24,6 @@ export default defineAppConfig({
 ::field-group
   ::field{name="enable" type="boolean" default-value="false"}
   是否开启 umami 整合.
-  ::
-  ::field{name="src" type="string" default-value="https://cloud.umami.is/script.js"}
-  跟踪代码中的链接源.
   ::
   ::field{name="dataWebsiteId" type="string"}
   来自 umami 仪表板的 _Website ID_.
