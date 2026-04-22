@@ -90,8 +90,8 @@ const isDev = import.meta.dev;
 useSeoMeta({
   title: `${page.value?.title ?? '404'} - ${config.value.site.name}`,
   ogTitle: page.value?.title,
-  description: page.value?.description,
-  ogDescription: page.value?.description,
+  description: page.value?.description || undefined,
+  ogDescription: page.value?.description || undefined,
   twitterCard: 'summary_large_image',
 });
 
