@@ -9,7 +9,7 @@ description: គំរូវេបសាយសម្រាប់សំណេរ�
 announcement:
   title: 'ធ្វើបច្ចុប្បន្នភាពទៅ Nuxt 4'
   icon: 'vscode-icons:file-type-nuxt'
-  to: /getting-started/upgrade/v1.2
+  to: /getting-started/upgrade/v1-2
 actions:
   - name: ចាប់ផ្តើម
     to: /getting-started/introduction

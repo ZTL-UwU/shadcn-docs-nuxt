@@ -10,7 +10,7 @@ description: Modèle de documentation Nuxt Content basé sur shadcn-vue. Personn
 announcement:
   title: 'Passez a Nuxt 4'
   icon: 'vscode-icons:file-type-nuxt'
-  to: /getting-started/upgrade/v1.2
+  to: /getting-started/upgrade/v1-2
 actions:
 - name: Commencer
   to: /getting-started/introduction
