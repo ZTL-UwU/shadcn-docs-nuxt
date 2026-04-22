@@ -7,9 +7,9 @@ description: គំរូវេបសាយសម្រាប់សំណេរ�
 ::hero
 ---
 announcement:
-  title: 'ការបញ្ចេញជំនាន់ v1.1 ផ្លូវការ'
-  icon: '🎉'
-  to: /blog/v1-1
+  title: 'ធ្វើបច្ចុប្បន្នភាពទៅ Nuxt 4'
+  icon: 'vscode-icons:file-type-nuxt'
+  to: /getting-started/upgrade/v1.2
 actions:
   - name: ចាប់ផ្តើម
     to: /getting-started/introduction

@@ -7,7 +7,6 @@ interface DefaultConfig {
     ogImageColor: 'dark' | 'light';
     umami: {
       enable: boolean;
-      src: string;
       dataWebsiteId: string;
     };
   };

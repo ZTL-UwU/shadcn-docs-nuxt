@@ -16,7 +16,6 @@ const defaultConfig: DefaultConfig = {
     ogImageColor: 'light',
     umami: {
       enable: false,
-      src: 'https://cloud.umami.is/script.js',
       dataWebsiteId: '',
     },
   },

@@ -8,9 +8,9 @@ description: Modèle de documentation Nuxt Content basé sur shadcn-vue. Personn
 ::hero
 ---
 announcement:
-  title: 'v1.1 est sorti'
-  icon: '🎉'
-  to: /blog/v1-1
+  title: 'Passez a Nuxt 4'
+  icon: 'vscode-icons:file-type-nuxt'
+  to: /getting-started/upgrade/v1.2
 actions:
 - name: Commencer
   to: /getting-started/introduction

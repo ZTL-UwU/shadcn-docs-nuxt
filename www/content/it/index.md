@@ -7,9 +7,9 @@ description: Template Nuxt Content dal design raffinato, creato con shadcn-vue. 
 ::hero
 ---
 announcement:
-  title: 'v1.1 release'
-  icon: '🎉'
-  to: /blog/v1-1
+  title: 'Aggiorna a Nuxt 4'
+  icon: 'vscode-icons:file-type-nuxt'
+  to: /getting-started/upgrade/v1.2
 actions:
   - name: Inizia subito
     to: /getting-started/introduction
