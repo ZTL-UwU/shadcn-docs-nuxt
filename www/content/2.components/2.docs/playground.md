@@ -1,9 +1,6 @@
 ---
 title: Playground
 icon: lucide:app-window
-navBadges:
-  - value: New
-    type: lime
 badges:
   - value: Source
     icon: lucide:code

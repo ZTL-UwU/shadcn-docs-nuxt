@@ -1,9 +1,6 @@
 ---
 title: 演示区
 icon: lucide:app-window
-navBadges:
-  - value: New
-    type: lime
 badges:
   - value: 源代码
     icon: lucide:code

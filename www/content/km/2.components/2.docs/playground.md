@@ -1,9 +1,6 @@
 ---
 title: កន្លែងតេស្តសាកល្បង
 icon: lucide:app-window
-navBadges:
-  - value: ថ្មី
-    type: lime
 badges:
   - value: ប្រភពកូដ
     icon: lucide:code
