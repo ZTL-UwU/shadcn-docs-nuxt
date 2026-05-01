@@ -4,6 +4,7 @@
 
 [![built with nuxt][nuxt-src]][nuxt-href]
 [![npm version][npm-version-src]][npm-version-href]
+[![pkg.pr.new][pkg-pr-new-src]][pkg-pr-new-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![License][license-src]][license-href]
 [![sponsor][sponsor-src]][sponsor-href]
@@ -71,6 +72,8 @@ Beautifully designed _Nuxt Content_ template built with _shadcn-vue_. **Customiz
 
 [npm-version-src]: https://img.shields.io/npm/v/shadcn-docs-nuxt?style=flat&colorA=18181b&colorB=18181b
 [npm-version-href]: https://npmx.dev/package/shadcn-docs-nuxt
+[pkg-pr-new-src]: https://pkg.pr.new/badge/ZTL-UwU/shadcn-docs-nuxt
+[pkg-pr-new-href]: https://pkg.pr.new/~/ZTL-UwU/shadcn-docs-nuxt
 [npm-downloads-src]: https://img.shields.io/npm/dm/shadcn-docs-nuxt?style=flat&colorA=18181b&colorB=18181b
 [npm-downloads-href]: https://npm.chart.dev/shadcn-docs-nuxt?primary=neutral&gray=zinc&theme=light
 [license-src]: https://img.shields.io/github/license/ZTL-UwU/shadcn-docs-nuxt.svg?style=flat&colorA=18181b&colorB=18181b
