@@ -67,7 +67,8 @@
     "tailwind-merge": "^3.5.0",
     "tailwindcss": "^4.2.4",
     "tailwindcss-animate": "^1.0.7",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "ufo": "^1.6.4"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^8.2.0",
