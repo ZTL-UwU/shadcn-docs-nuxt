@@ -17,7 +17,7 @@
     </div>
     <div class="relative">
       <h1
-        class="text-8xl font-bold"
+        class="text-8xl font-bold block"
         :class="[colorMode === 'light' ? 'text-zinc-900' : 'text-zinc-100']"
       >
         {{ title }}

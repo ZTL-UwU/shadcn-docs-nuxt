@@ -12,9 +12,7 @@
   "dependencies": {
     "@iconify-json/lucide-lab": "^1.2.3",
     "@iconify-json/simple-icons": "^1.2.80",
-    "@resvg/resvg-js": "^2.6.2",
     "nuxt": "^4.4.4",
-    "satori": "^0.26.0",
     "vue": "^3.5.33",
     "vue-router": "^5.0.6"
   }
