@@ -1,5 +1,5 @@
 <template>
-  <MDC :value="md" class="[&:not(:first-child)]:mt-5" />
+  <MDC :value="md" class="not-first:mt-5" />
 </template>
 
 <script setup lang="ts">
