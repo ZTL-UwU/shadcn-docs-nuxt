@@ -57,7 +57,7 @@
     "@nuxtjs/mdc": "^0.21.1",
     "@tailwindcss/vite": "^4.3.0",
     "@takumi-rs/core": "^1.1.2",
-    "@ztl-uwu/nuxt-content": "^2.14.0",
+    "@ztl-uwu/nuxt-content": "^2.14.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "mermaid": "^11.15.0",
