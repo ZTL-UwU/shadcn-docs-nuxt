@@ -1,11 +1,14 @@
 minimumReleaseAgeExclude:
-  - '@nuxt/kit@4.4.6'
-  - '@nuxt/nitro-server@4.4.6'
-  - '@nuxt/schema@4.4.6'
-  - '@nuxt/vite-builder@4.4.6'
-  - '@vue/language-core@3.3.0'
-  - nuxt@4.4.6
-  - vue-tsc@3.3.0
+  - '@takumi-rs/core-darwin-arm64@1.4.1'
+  - '@takumi-rs/core-darwin-x64@1.4.1'
+  - '@takumi-rs/core-linux-arm64-gnu@1.4.1'
+  - '@takumi-rs/core-linux-arm64-musl@1.4.1'
+  - '@takumi-rs/core-linux-x64-gnu@1.4.1'
+  - '@takumi-rs/core-linux-x64-musl@1.4.1'
+  - '@takumi-rs/core-win32-arm64-msvc@1.4.1'
+  - '@takumi-rs/core-win32-x64-msvc@1.4.1'
+  - '@takumi-rs/core@1.4.1'
+  - '@takumi-rs/helpers@1.4.1'
 shellEmulator: true
 
 packages:
