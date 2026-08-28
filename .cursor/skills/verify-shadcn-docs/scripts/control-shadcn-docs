@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Launch, doctor, drive, and stop the www/ docs site for verification.
+set -euo pipefail
+ROOT="$(cd "$(dirname "$0")" && pwd)"
+if [[ ! -d "$ROOT/node_modules/playwright-core" ]]; then
+  (cd "$ROOT" && npm install --omit=dev --no-fund --no-audit)
+fi
+exec node "$ROOT/control-shadcn-docs.mjs" "$@"

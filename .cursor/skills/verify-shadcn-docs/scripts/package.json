@@ -1,0 +1,9 @@
+{
+  "name": "control-shadcn-docs",
+  "private": true,
+  "type": "module",
+  "description": "Browser and process helper for the verify-shadcn-docs skill. Not part of the published template.",
+  "dependencies": {
+    "playwright-core": "^1.55.0"
+  }
+}

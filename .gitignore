@@ -9,6 +9,10 @@ dist
 # Node dependencies
 node_modules
 
+# Verification skill runtime (keep the skill, drop captured proof and helper installs)
+.cursor/skills/verify-shadcn-docs/artifacts/
+.cursor/skills/verify-shadcn-docs/scripts/node_modules/
+
 # Logs
 logs
 *.log
