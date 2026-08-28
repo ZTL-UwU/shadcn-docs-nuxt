@@ -31,7 +31,7 @@ Defaults, overridable with flags or env:
 
 Ready when `GET /` returns HTTP 200 and the HTML contains `shadcn-docs`. First compile after a cold start often takes 10 to 30 seconds. Launch waits up to 180 seconds.
 
-The command starts `pnpm exec nuxt dev www --host 127.0.0.1 --port $PORT` and a headless Chrome with `--user-data-dir` inside the run dir. Do not use `pnpm run dev` for verification: that script also runs `nuxt prepare` and binds the default port 3000, which may already be a human's session.
+The command starts `pnpm exec nuxt dev www --host 127.0.0.1 --port $PORT` and `/opt/google/chrome/google-chrome` (or `google-chrome-stable`) with `--user-data-dir` inside the run dir. It does not call `/usr/local/bin/google-chrome`, which in this environment wraps Chrome with a shared profile and CDP 9222. Do not use `pnpm run dev` for verification: that script also runs `nuxt prepare` and binds the default port 3000, which may already be a human's session.
 
 Concurrent runs are allowed if each has its own `VERIFY_SHADCN_DOCS_RUN_ID`, `--port`, and `--cdp-port`. Content is read-only files. Theme and locale live in the Chrome profile and cookies, so sharing a profile (or driving port 3000) will corrupt someone else's session. If launch says the port is owned by another pid, stop. Do not hijack it.
 
@@ -76,8 +76,9 @@ Stable handles on this site:
 
 | Control | How to aim at it |
 | --- | --- |
-| Search field in the header | `--role button --name "Search..."` (accessible name is `Search... ⌘ K`; substring match is enough) |
+| Search field in the header | `--in header --role button --name "Search..."` (accessible name is `Search... ⌘K`; substring match is enough) |
 | Search dialog input | `--placeholder "Search documentation..."` |
+| Search result | `--in dialog --role link --name "Introduction"` |
 | Search empty copy | text `No results found.` |
 | Dark mode | `--role button --name "Toggle theme"` |
 | Language menu | `--icon languages` (icon-only header button, class `i-lucide:languages`) |
@@ -97,7 +98,9 @@ Open search with the header button or `Control+k`. The dialog has an empty visua
 
 `browser goto --url` accepts a path. It is resolved against the launched origin. Use `domcontentloaded`; do not wait for `networkidle`. Umami is enabled on this demo and can hold the network open.
 
-After a mutation (theme, locale, query), capture both the action and the resulting DOM/url. `eval` is for attributes the user can also see (`html.lang`, `html.dark`, `body.theme-*`, `--radius`), not for poking Vue internals.
+After a mutation (theme, locale, query), capture both the action and the state it produced. `eval` is for attributes the user can also see (`html.lang`, `html.dark`, `body.theme-*`, `--radius`), not for poking Vue internals.
+
+`browser fill` selects all, types like a user, then waits until dialog copy is stable. SearchDialog calls `searchContent` on every key, and an earlier short query can resolve last.
 
 Routes that come up in the map:
 

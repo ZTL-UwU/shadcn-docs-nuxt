@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 import { spawn, execFileSync } from 'node:child_process';
-import { createWriteStream } from 'node:fs';
 import {
+  closeSync,
   existsSync,
   mkdirSync,
+  openSync,
   readFileSync,
   rmSync,
   writeFileSync,
@@ -40,9 +41,15 @@ function statePath() {
 }
 
 function chromePath() {
+  // Skip /usr/local/bin/google-chrome. In this environment it is a wrapper that
+  // forces --user-data-dir=$HOME/.config/google-chrome and CDP 9222.
   return process.env.VERIFY_SHADCN_DOCS_CHROME
-    || ['/usr/local/bin/google-chrome', '/usr/bin/google-chrome', '/usr/bin/chromium'].find(existsSync)
-    || 'google-chrome';
+    || [
+      '/opt/google/chrome/google-chrome',
+      '/usr/bin/google-chrome-stable',
+      '/usr/bin/chromium',
+    ].find(existsSync)
+    || 'google-chrome-stable';
 }
 
 function loadState() {
@@ -200,21 +207,23 @@ async function waitForCdp(cdpUrl, timeoutMs) {
 
 function spawnLogged(command, args, logPath, extraEnv = {}) {
   mkdirSync(dirname(logPath), { recursive: true });
-  const log = createWriteStream(logPath, { flags: 'a' });
-  const child = spawn(command, args, {
-    cwd: REPO_ROOT,
-    detached: true,
-    stdio: ['ignore', 'pipe', 'pipe'],
-    env: { ...process.env, ...extraEnv },
-  });
-  child.stdout.pipe(log);
-  child.stderr.pipe(log);
-  child.unref();
-  return child;
+  const fd = openSync(logPath, 'a');
+  try {
+    const child = spawn(command, args, {
+      cwd: REPO_ROOT,
+      detached: true,
+      stdio: ['ignore', fd, fd],
+      env: { ...process.env, ...extraEnv },
+    });
+    child.unref();
+    return child;
+  } finally {
+    closeSync(fd);
+  }
 }
 
 function killTree(pid) {
-  if (!pidAlive(pid))
+  if (!pid)
     return;
   try {
     process.kill(-pid, 'SIGTERM');
@@ -230,23 +239,33 @@ function killTree(pid) {
 async function stopFromState(state, { keepEvidence = true } = {}) {
   if (!state)
     return;
+  const extra = [...(state.nuxtListenPids || []), ...(state.chromeListenPids || [])];
   if (state.chromePid)
     killTree(state.chromePid);
   if (state.nuxtPid)
     killTree(state.nuxtPid);
+  for (const pid of extra)
+    killTree(pid);
   const start = Date.now();
   while (Date.now() - start < 8_000) {
     const nuxtGone = !state.nuxtPid || !pidAlive(state.nuxtPid);
     const chromeGone = !state.chromePid || !pidAlive(state.chromePid);
-    if (nuxtGone && chromeGone)
+    const extrasGone = extra.every(pid => !pidAlive(pid));
+    const portsGone = listeningPids(state.port).length === 0 && listeningPids(state.cdpPort).length === 0;
+    if (nuxtGone && chromeGone && extrasGone && portsGone)
       break;
     await sleep(200);
   }
-  if (state.chromePid && pidAlive(state.chromePid)) {
-    try { process.kill(-state.chromePid, 'SIGKILL'); } catch { /* ignore */ }
+  for (const pid of [state.chromePid, state.nuxtPid, ...extra]) {
+    if (pid && pidAlive(pid)) {
+      try { process.kill(-pid, 'SIGKILL'); } catch { /* ignore */ }
+      try { process.kill(pid, 'SIGKILL'); } catch { /* ignore */ }
+    }
   }
-  if (state.nuxtPid && pidAlive(state.nuxtPid)) {
-    try { process.kill(-state.nuxtPid, 'SIGKILL'); } catch { /* ignore */ }
+  for (const pid of [...listeningPids(state.port), ...listeningPids(state.cdpPort)]) {
+    if (pid === state.nuxtPid || pid === state.chromePid || extra.includes(pid) || isDescendant(pid, state.nuxtPid) || isDescendant(pid, state.chromePid)) {
+      try { process.kill(pid, 'SIGKILL'); } catch { /* ignore */ }
+    }
   }
   const dir = state.runDir || runDir();
   if (existsSync(dir))
@@ -309,6 +328,8 @@ async function cmdLaunch(flags) {
     '--disable-gpu',
     '--no-sandbox',
     '--disable-dev-shm-usage',
+    '--use-gl=angle',
+    '--use-angle=swiftshader-webgl',
     '--no-first-run',
     '--no-default-browser-check',
     '--disable-extensions',
@@ -347,6 +368,12 @@ async function cmdLaunch(flags) {
   const report = await doctorReport(loadState());
   if (!report.ok)
     fail(report.errors.join('\n'));
+  const fresh = loadState();
+  if (fresh) {
+    fresh.nuxtListenPids = report.nuxtListenPids;
+    fresh.chromeListenPids = report.chromeListenPids;
+    saveState(fresh);
+  }
   console.log(`launched ${url}`);
   printDoctor(report);
 }
@@ -457,19 +484,22 @@ async function withPage(state, fn) {
   const browser = await chromium.connectOverCDP(state.cdpUrl);
   try {
     const context = browser.contexts()[0] || await browser.newContext();
-    let page = context.pages().find(p => !p.url().startsWith('devtools://'));
+    const pages = context.pages().filter(p => !p.url().startsWith('devtools://'));
+    let page = pages.find(p => p.url().startsWith(state.url))
+      || pages.find(p => p.url() === 'about:blank')
+      || pages[0];
     if (!page)
       page = await context.newPage();
-    await page.setViewportSize({ width: 1440, height: 900 });
+    const size = page.viewportSize();
+    if (!size || size.width !== 1440 || size.height !== 900)
+      await page.setViewportSize({ width: 1440, height: 900 });
     page.setDefaultTimeout(15_000);
+    if (pages.length > 1)
+      console.error(`using ${page.url()} (pages: ${pages.map(p => p.url()).join(', ')})`);
     return await fn(page);
   } finally {
-    // Drop the CDP connection only. browser.close() on a CDP session can kill Chrome.
-    try {
-      browser.disconnect();
-    } catch {
-      // process exit will drop the socket
-    }
+    // Do not browser.close(): on a CDP session that can kill Chrome.
+    // The helper process exits after each command and drops the socket.
   }
 }
 
@@ -539,7 +569,29 @@ async function cmdBrowser(sub, flags) {
           fail('browser fill requires --value');
         const loc = locator(page, flags).first();
         await loc.click();
-        await loc.fill(String(flags.value));
+        await loc.press('Control+a');
+        await loc.press('Backspace');
+        // reka-ui ListboxFilter ignores a single fill() on v-model. Type like a user.
+        await loc.pressSequentially(String(flags.value), { delay: 15 });
+        // SearchDialog fires searchContent on every key. Earlier short queries can
+        // resolve after the final one. Wait until dialog copy stops changing.
+        const dialog = page.getByRole('dialog');
+        if (await dialog.count()) {
+          let last = '';
+          let stableAt = Date.now();
+          const start = Date.now();
+          while (Date.now() - start < 10_000) {
+            const text = await dialog.innerText().catch(() => '');
+            if (text === last) {
+              if (Date.now() - stableAt > 1000)
+                break;
+            } else {
+              last = text;
+              stableAt = Date.now();
+            }
+            await sleep(100);
+          }
+        }
         console.log(`filled ${JSON.stringify(flags.value)}`);
         return;
       }
@@ -554,6 +606,8 @@ async function cmdBrowser(sub, flags) {
         const timeout = Number(flags.timeout || 15_000);
         if (flags.text)
           await page.getByText(namePattern(flags.text), { exact: Boolean(flags.exact) }).first().waitFor({ timeout });
+        else if (flags.placeholder)
+          await page.getByPlaceholder(String(flags.placeholder)).first().waitFor({ timeout });
         else if (flags.url)
           await page.waitForFunction(needle => location.href.includes(needle), String(flags.url), { timeout });
         else if (flags.role)
@@ -703,6 +757,8 @@ async function main() {
   fail(`unknown command ${cmd}\n${HELP}`);
 }
 
-main().catch((error) => {
+main().then(() => {
+  process.exit(0);
+}).catch((error) => {
   fail(error instanceof Error ? error.stack || error.message : String(error));
 });
