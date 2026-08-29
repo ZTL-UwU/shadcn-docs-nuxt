@@ -1,6 +1,5 @@
 <template>
   <li>
-    <!-- Folder -->
     <div v-if="link.children">
       <template v-if="folderStyle === 'group'">
         <div
@@ -36,10 +35,9 @@
         </div>
       </template>
     </div>
-    <!-- Page -->
-    <NuxtLinkLocale
+    <NuxtLink
       v-else
-      :to="link._path"
+      :to="link.path"
       class="text-foreground/80 hover:bg-muted hover:text-primary flex items-center gap-2 rounded-md p-2 text-sm"
       :class="[
         isActive && 'bg-muted !text-primary font-medium',
@@ -47,43 +45,47 @@
       ]"
     >
       <LayoutAsideTreeItemButton :link />
-    </NuxtLinkLocale>
+    </NuxtLink>
   </li>
 </template>
 
 <script setup lang="ts">
-import type { NavItem } from '@ztl-uwu/nuxt-content';
+import type { DocsNavItem } from '../../utils/navigation'
 
 const { link, level } = defineProps<{
-  link: NavItem;
-  level: number;
-}>();
+  link: DocsNavItem
+  level: number
+}>()
 
-const { collapse, collapseLevel, folderStyle: defaultFolderStyle } = useConfig().value.aside;
+const { collapse, collapseLevel, folderStyle: defaultFolderStyle } = useConfig().value.aside
 
-const collapsed = useCollapsedMap();
-const route = useRoute();
+const collapsed = useCollapsedMap()
+const route = useRoute()
 
 function defaultOpen() {
-  if (route.path.includes(link._path))
-    return true;
+  if (route.path === link.path || route.path.startsWith(`${link.path}/`))
+    return true
   if (link.collapse !== undefined)
-    return !link.collapse;
+    return !link.collapse
 
-  return level < collapseLevel && !collapse;
+  return level < collapseLevel && !collapse
 }
 
-const isOpen = ref(collapsed.value.get(link._path) || defaultOpen());
+const isOpen = ref(collapsed.value.get(link.path) || defaultOpen())
 
 watch(isOpen, (v) => {
-  collapsed.value.set(link._path, v);
-});
+  collapsed.value.set(link.path, v)
+})
 
 function normalizePath(p: string) {
-  const out = p.replace(/\/+$/, '');
-  return out === '' ? '/' : out;
+  const out = p.replace(/\/+$/, '')
+  return out === '' ? '/' : out
 }
-const isActive = computed(() => normalizePath(link._path) === normalizePath(route.path));
+const isActive = computed(() => normalizePath(link.path) === normalizePath(route.path))
 
-const folderStyle = computed(() => link.sidebar?.style ?? defaultFolderStyle);
+const folderStyle = computed(() => {
+  const sidebar = link.sidebar
+  if (sidebar && typeof sidebar === 'object') return sidebar.style ?? defaultFolderStyle
+  return defaultFolderStyle
+})
 </script>

@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   extends: ['..'],
+  modules: ['@nuxtjs/i18n'],
   i18n: {
     defaultLocale: 'en',
     locales: [

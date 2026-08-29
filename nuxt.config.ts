@@ -1,23 +1,45 @@
-import { dirname, join } from 'node:path';
-import { fileURLToPath } from 'node:url';
-import tailwindcss from '@tailwindcss/vite';
+import { dirname, join } from 'node:path'
+import { fileURLToPath } from 'node:url'
+import { createResolver, extendViteConfig, useNuxt } from '@nuxt/kit'
+import tailwindcss from '@tailwindcss/vite'
 
-const currentDir = dirname(fileURLToPath(import.meta.url));
+const currentDir = dirname(fileURLToPath(import.meta.url))
+const { resolve } = createResolver(import.meta.url)
+
+type LayerI18nOptions = { locales?: Array<string | { code: string }> }
 
 export default defineNuxtConfig({
-  devtools: { enabled: true },
   modules: [
-    'shadcn-nuxt',
-    '@vueuse/nuxt',
-    '@ztl-uwu/nuxt-content',
+    resolve('./modules/config'),
+    resolve('./modules/routing'),
+    resolve('./modules/vercel-markdown-rewrite'),
+    resolve('./modules/skills'),
+    resolve('./modules/not-found'),
+    resolve('./modules/css'),
+    resolve('./modules/assistant'),
+    '@nuxt/content',
     '@nuxt/image',
     '@nuxt/icon',
     '@nuxtjs/color-mode',
+    '@nuxtjs/robots',
+    '@nuxtjs/mcp-toolkit',
     'nuxt-og-image',
-    '@nuxt/scripts',
-    '@nuxtjs/i18n',
+    'nuxt-llms',
+    'shadcn-nuxt',
+    '@vueuse/nuxt',
     '@nuxt/fonts',
+    '@nuxt/scripts',
+    () => {
+      extendViteConfig((config) => {
+        config.optimizeDeps ||= {}
+        config.optimizeDeps.include ||= []
+        config.optimizeDeps.include.push('@nuxt/content > slugify')
+        config.optimizeDeps.include = config.optimizeDeps.include
+          .map(id => id.replace(/^@nuxt\/content > /, 'shadcn-docs-nuxt > @nuxt/content > '))
+      })
+    },
   ],
+  devtools: { enabled: true },
   shadcn: {
     prefix: 'Ui',
     componentDir: join(currentDir, './components/ui'),
@@ -30,9 +52,6 @@ export default defineNuxtConfig({
       },
     ],
   },
-  i18n: {
-    strategy: 'prefix_except_default',
-  },
   colorMode: {
     classSuffix: '',
     disableTransition: true,
@@ -42,33 +61,55 @@ export default defineNuxtConfig({
     '~/assets/css/tailwind.css',
   ],
   content: {
-    documentDriven: true,
+    experimental: { sqliteConnector: 'native' },
+    build: {
+      markdown: {
+        highlight: {
+          langs: ['bash', 'diff', 'json', 'js', 'ts', 'html', 'css', 'vue', 'shell', 'mdc', 'md', 'yaml'],
+        },
+        remarkPlugins: {
+          'remark-mdc': {
+            options: {
+              autoUnwrap: true,
+            },
+          },
+        },
+      },
+    },
+  },
+  mdc: {
     highlight: {
-      theme: {
-        default: 'github-light',
-        dark: 'github-dark',
-      },
-      preload: ['json', 'js', 'ts', 'html', 'css', 'vue', 'diff', 'shell', 'markdown', 'mdc', 'yaml', 'bash', 'ini', 'dotenv'],
+      shikiEngine: 'javascript',
     },
-    navigation: {
-      fields: [
-        'icon',
-        'navBadges',
-        'navTruncate',
-        'badges',
-        'toc',
-        'sidebar',
-        'collapse',
-        'editLink',
-        'prevNext',
-        'breadcrumb',
-        'fullpage',
-      ],
+  },
+  experimental: {
+    asyncContext: true,
+  },
+  compatibilityDate: '2025-07-22',
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      failOnError: false,
+      autoSubfolderIndex: false,
     },
-    experimental: {
-      search: {
-        indexed: true,
-      },
+  },
+  hooks: {
+    'nitro:config'(nitroConfig) {
+      const nuxt = useNuxt()
+      const i18nOptions = (nuxt.options as typeof nuxt.options & { i18n?: LayerI18nOptions }).i18n
+      const routes: string[] = []
+      if (!i18nOptions) {
+        routes.push('/')
+      }
+      else {
+        routes.push(...(i18nOptions.locales?.map((locale: string | { code: string }) => (
+          typeof locale === 'string' ? `/${locale}` : `/${locale.code}`
+        )) || []))
+      }
+      nitroConfig.prerender = nitroConfig.prerender || {}
+      nitroConfig.prerender.routes = nitroConfig.prerender.routes || []
+      nitroConfig.prerender.routes.push(...routes)
+      nitroConfig.prerender.routes.push('/sitemap.xml')
     },
   },
   icon: {
@@ -76,11 +117,24 @@ export default defineNuxtConfig({
       scan: true,
       sizeLimitKb: 512,
     },
+    provider: 'iconify',
   },
   fonts: {
     defaults: {
       weights: ['300 800'],
     },
+  },
+  ogImage: {
+    zeroRuntime: true,
+  },
+  robots: {
+    groups: [
+      {
+        userAgent: '*',
+        allow: '/',
+      },
+    ],
+    sitemap: '/sitemap.xml',
   },
   vite: {
     plugins: [
@@ -88,10 +142,8 @@ export default defineNuxtConfig({
     ],
     optimizeDeps: {
       include: [
-        // https://github.com/ZTL-UwU/shadcn-docs-nuxt/issues/205
         'mermaid',
       ],
     },
   },
-  compatibilityDate: '2025-05-13',
-});
+})

@@ -1,5 +1,5 @@
 <template>
-  <template v-if="item.links">
+  <template v-if="item.children">
     <UiCollapsible v-model:open="isOpen">
       <UiCollapsibleTrigger class="w-full p-2 text-left">
         <div class="flex w-full gap-1">
@@ -13,7 +13,7 @@
       </UiCollapsibleTrigger>
       <UiCollapsibleContent>
         <ul class="pl-2">
-          <li v-for="link in item.links" :key="link.title">
+          <li v-for="link in item.children" :key="link.title">
             <NuxtLinkLocale
               :to="localePath(link.to)"
               :target="link.to"

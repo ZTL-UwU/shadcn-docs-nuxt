@@ -2,13 +2,13 @@
   <UiNavigationMenu>
     <UiNavigationMenuList>
       <UiNavigationMenuItem v-for="(item, i) in nav" :key="i" class="relative">
-        <template v-if="item.links">
+        <template v-if="item.children">
           <UiNavigationMenuTrigger class="bg-transparent font-semibold">
             {{ $t(item.title) }}
           </UiNavigationMenuTrigger>
           <UiNavigationMenuContent>
             <ul class="w-[250px] p-2">
-              <li v-for="link in item.links" :key="link.title">
+              <li v-for="link in item.children" :key="link.title">
                 <NuxtLinkLocale
                   :to="link.to && localePath(link.to)"
                   :target="link.target"
