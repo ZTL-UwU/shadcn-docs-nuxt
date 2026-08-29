@@ -1,6 +1,6 @@
 import type { GithubConfig } from '../utils/config';
-import { existsSync } from 'node:fs';
-import { join } from 'node:path';
+import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
+import { dirname, join } from 'node:path';
 import { createResolver, defineNuxtModule, logger } from '@nuxt/kit';
 import { defu } from 'defu';
 import { parseDocsNuxtConfig, resolveAppConfig } from '../utils/config';
@@ -60,6 +60,20 @@ export default defineNuxtModule({
     name: 'config',
   },
   async setup(_options, nuxt) {
+    const { resolve } = createResolver(import.meta.url)
+    const layerTsconfig = resolve('../.nuxt/tsconfig.json')
+    if (!existsSync(layerTsconfig)) {
+      mkdirSync(dirname(layerTsconfig), { recursive: true })
+      writeFileSync(layerTsconfig, JSON.stringify({
+        compilerOptions: {
+          skipLibCheck: true,
+          module: 'ESNext',
+          moduleResolution: 'Bundler',
+          paths: { '@/*': ['./*'] },
+        },
+      }))
+    }
+
     const docsConfig = parseDocsNuxtConfig(
       (nuxt.options as typeof nuxt.options & { docs?: unknown }).docs,
     );

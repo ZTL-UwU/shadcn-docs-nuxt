@@ -9,6 +9,7 @@ const { resolve } = createResolver(import.meta.url)
 type LayerI18nOptions = { locales?: Array<string | { code: string }> }
 
 export default defineNuxtConfig({
+  srcDir: '.',
   modules: [
     resolve('./modules/config'),
     resolve('./modules/routing'),
