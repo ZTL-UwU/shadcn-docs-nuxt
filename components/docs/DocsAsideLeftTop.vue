@@ -25,11 +25,11 @@
 
 <script setup lang="ts">
 const { subNavigationMode, sections } = useSubNavigation()
-const { localePath, isEnabled } = useDocusI18n()
+const { locale, localePath, isEnabled } = useDocusI18n()
 
 function localizedTo(to: string) {
   if (!isEnabled.value) return to
-  if (to.startsWith(`/${useDocusI18n().locale.value}`)) return to
+  if (to.startsWith(`/${locale.value}`)) return to
   return localePath(to)
 }
 </script>

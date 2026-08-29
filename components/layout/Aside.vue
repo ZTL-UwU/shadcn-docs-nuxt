@@ -1,6 +1,7 @@
 <template>
   <UiScrollArea orientation="vertical" class="relative h-full overflow-hidden py-6 pr-6 text-sm md:pr-4" type="hover">
     <LayoutHeaderNavMobile v-if="isMobile" class="mb-5 border-b pb-2" />
+    <DocsAsideLeftTop />
     <LayoutSearchButton v-if="config.search.inAside" />
     <LayoutAsideTree
       :links="tree"

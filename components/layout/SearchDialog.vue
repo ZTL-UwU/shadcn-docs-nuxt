@@ -181,7 +181,7 @@ watch(activeSelect, (value) => {
 
 async function handleEnter() {
   if (searchResult.value[activeSelect.value]?.id) {
-    await navigateTo(searchResult.value.value[activeSelect.value].id)
+    await navigateTo(searchResult.value[activeSelect.value].id)
     open.value = false
   }
 }

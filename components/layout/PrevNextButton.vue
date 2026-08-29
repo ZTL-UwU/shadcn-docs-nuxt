@@ -1,7 +1,7 @@
 <template>
   <NuxtLinkLocale
-    v-if="prevNext && prevNext._path"
-    :to="prevNext._path"
+    v-if="prevNext && prevNext.path"
+    :to="prevNext.path"
     class="basis-1/3"
   >
     <div class="hover:bg-muted/50 mb-4 space-y-2 rounded-lg border p-4 transition-all">

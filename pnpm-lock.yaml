@@ -74,6 +74,9 @@ importers:
       defu:
         specifier: ^6.1.7
         version: 6.1.7
+      fuse.js:
+        specifier: ^7.5.0
+        version: 7.5.0
       git-url-parse:
         specifier: ^16.1.0
         version: 16.1.0

@@ -1,6 +1,6 @@
 <template>
   <UiTabs
-    :model-value="navigation.find((link: any) => path.startsWith(link._path))._path"
+    :model-value="activePath"
     class="relative mr-auto w-full"
   >
     <div class="flex items-center justify-between overflow-x-auto">
@@ -10,14 +10,14 @@
       >
         <UiTabsTrigger
           v-for="link in navigation"
-          :key="link._path"
-          :value="link._path"
+          :key="link.path"
+          :value="link.path"
           class="text-muted-foreground data-[state=active]:border-b-primary data-[state=active]:text-foreground relative h-9 rounded-none border-b-2 border-b-transparent !bg-transparent px-4 pb-3 pt-2 font-semibold shadow-none transition-none data-[state=active]:shadow-none cursor-pointer"
-          @click="navigateTo(localePath(link.redirect ?? link._path))"
+          @click="navigateTo(localePath(String(link.redirect ?? link.path)))"
         >
           <SmartIcon
             v-if="link.icon"
-            :name="link.icon"
+            :name="String(link.icon)"
             class="mr-1.5 self-center -mb-[3px]"
           />
 
@@ -35,17 +35,27 @@
 </template>
 
 <script setup lang="ts">
-const { navigation, localePath } = useI18nDocs();
-const config = useConfig();
+import type { DocsNavItem } from '../../../utils/navigation'
 
-const route = useRoute();
-const path = computed(() => route.path);
+const navigation = inject<Ref<DocsNavItem[]>>('navigation', ref([]))
+const { localePath } = useDocusI18n()
+const config = useConfig()
+
+const route = useRoute()
+const path = computed(() => route.path)
+
+const activePath = computed(() => {
+  const match = navigation.value.find(link => path.value.startsWith(link.path))
+  return match?.path
+})
 
 const justifyContent = computed(() => {
-  return config.value.aside.headerLevelNavAlign === 'start'
-    ? 'md:justify-start'
-    : config.value.aside.headerLevelNavAlign === 'center'
-      ? 'md:justify-center'
-      : 'md:justify-end';
-});
+  if (config.value.aside.headerLevelNavAlign === 'center') {
+    return 'md:justify-center'
+  }
+  if (config.value.aside.headerLevelNavAlign === 'end') {
+    return 'md:justify-end'
+  }
+  return 'md:justify-start'
+})
 </script>
