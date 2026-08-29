@@ -3,6 +3,8 @@
 # Usage:
 #   scripts/verify.sh baseline
 #   scripts/verify.sh routes [origin]
+#   scripts/verify.sh mdc [origin]
+#   scripts/verify.sh generate [public-dir]
 set -euo pipefail
 
 root="$(cd "$(dirname "$0")/.." && pwd)"
@@ -139,7 +141,30 @@ PY
 		check_mdc '/en/components/prose/markdown' 'leading-7' raw
 		[ "$fail" -eq 0 ] || die "mdc gallery checks failed"
 		;;
+	generate)
+		public="${2:-$root/www/.output/public}"
+		[ -d "$public" ] || die "missing $public"
+		[ -f "$public/llms.txt" ] || die "missing $public/llms.txt"
+		[ -f "$public/llms-full.txt" ] || die "missing $public/llms-full.txt"
+		[ -f "$public/en.html" ] || die "missing $public/en.html"
+		[ -f "$public/404.html" ] || die "missing $public/404.html"
+		intro="$public/en/getting-started/introduction.html"
+		[ -f "$intro" ] || die "missing $intro"
+		grep -Fq 'theme-zinc' "$intro" || die "intro missing theme-zinc"
+		grep -Fq 'og:image' "$intro" || die "intro missing og:image"
+		grep -Fq 'hero.png' "$public/en.html" || die "home missing hero.png"
+		leaks=0
+		shopt -s nullglob
+		for f in "$public/_nuxt"/*.css; do
+			if grep -Fq '@source "' "$f"; then
+				printf 'FAIL leaked @source in %s\n' "$f" >&2
+				leaks=1
+			fi
+		done
+		[ "$leaks" -eq 0 ] || die "tailwind @source leaked into generated css"
+		printf 'generate ok: %s\n' "$public"
+		;;
 	*)
-		die "usage: scripts/verify.sh baseline | routes [origin] | mdc [origin]"
+		die "usage: scripts/verify.sh baseline | routes [origin] | mdc [origin] | generate [public-dir]"
 		;;
 esac
