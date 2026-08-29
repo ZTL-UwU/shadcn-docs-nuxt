@@ -40,6 +40,7 @@
     "shared",
     "pages",
     "plugins",
+    "server",
     "templates",
     "types",
     "utils"

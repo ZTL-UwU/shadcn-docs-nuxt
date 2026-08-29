@@ -153,6 +153,5 @@ badges:
   :field{name="type" type="'default' | 'info' | 'warning' | 'success' | 'danger' | 'secondary'" default-value="'default'"}
   :field{name="to" type="string"}[Link URL]
   :field{name="target" type="Target"}[A `target` attribute value to apply on the link]
-  :field{name="external" type="boolean"}[Alias to `target='_blank'`]
   :field{name="showLinkIcon" type="boolean" default-value="true"}[Whether to show the link indicator :icon{name="lucide:arrow-up-right"}]
 ::

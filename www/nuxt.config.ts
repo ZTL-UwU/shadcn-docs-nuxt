@@ -4,6 +4,11 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   extends: ['..'],
   modules: ['@nuxtjs/i18n'],
+  docs: {
+    assistant: {
+      enabled: true,
+    },
+  },
   i18n: {
     defaultLocale: 'en',
     locales: [

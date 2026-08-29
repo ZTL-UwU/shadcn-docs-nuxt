@@ -65,7 +65,7 @@
   <UiCard
     v-else-if="variant === 'card'"
     class="[&:not(:first-child)]:mt-5"
-    :class="[nested && 'mb-0 rounded-none border-none shadow-none']"
+    :class="[inStack && 'mb-0 rounded-none border-none shadow-none']"
   >
     <UiScrollArea>
       <div class="relative flex overflow-x-auto border-b p-0.5 text-sm">
@@ -181,7 +181,7 @@ import { cn } from '@/lib/utils'
 import ScrollBar from '../ui/scroll-area/ScrollBar.vue'
 import { injectNesting, provideNesting } from '../../utils/nesting'
 
-const { sync, slotsData } = defineProps<{
+const props = defineProps<{
   slotsData: { label: string, index: number }[]
   variant?: 'separate' | 'card' | 'line' | 'combobox'
   padded?: boolean
@@ -190,10 +190,12 @@ const { sync, slotsData } = defineProps<{
   searchEmpty?: string
   sync?: string
 }>()
+const { sync, slotsData, variant } = props
 defineSlots()
 const slots = useSlots()
-const nested = injectNesting() !== 'none'
-provideNesting('group')
+const inStack = injectNesting() === 'stack'
+if (variant === 'card' || variant === 'combobox')
+  provideNesting('group')
 
 const syncState = useCookie<{ scope: string; value?: string }[]>('tabs-sync-state', {
   default: () => [],

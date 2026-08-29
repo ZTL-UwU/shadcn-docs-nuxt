@@ -47,7 +47,5 @@ badges:
   :field{name="leftIcon" type="string"}[Icon on the left]
   :field{name="rightIcon" type="string"}[Icon on the right]
   :field{name="to" type="string"}[Link URL]
-  :field{name="href" type="string"}[Alias to `to`]
   :field{name="target" type="Target"}[A `target` attribute value to apply on the link]
-  :field{name="blank" type="boolean"}[Alias to `target='_blank'`]
 ::

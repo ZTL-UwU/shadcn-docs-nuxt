@@ -1,7 +1,7 @@
 <template>
   <UiCard
     class="overflow-clip lg:grid lg:grid-cols-3 [&:not(:first-child)]:mt-5"
-    :class="[nested && 'mb-0 rounded-none border-none shadow-none']"
+    :class="[inStack && 'mb-0 rounded-none border-none shadow-none']"
   >
     <div class="border-b lg:border-b-0 lg:border-r">
       <div v-if="title" class="flex items-center border-b p-3 text-sm">
@@ -40,7 +40,7 @@ const { defaultValue } = defineProps<{
   title?: string
 }>()
 
-const nested = injectNesting() !== 'none'
+const inStack = injectNesting() === 'stack'
 provideNesting('tree')
 
 const id = useId();

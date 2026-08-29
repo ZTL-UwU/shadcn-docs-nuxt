@@ -23,6 +23,7 @@ declare module 'nuxt/schema' {
     mcp: { route: string }
     docs: { locale: string, filteredLocales: Array<string | { code: string, name?: string, file?: string }> }
     ftsAvailable: boolean
+    assistant: { enabled: boolean, apiPath: string }
   }
 }
 
@@ -39,5 +40,6 @@ declare module '@nuxt/schema' {
     mcp: { route: string }
     docs: { locale: string, filteredLocales: Array<string | { code: string, name?: string, file?: string }> }
     ftsAvailable: boolean
+    assistant: { enabled: boolean, apiPath: string }
   }
 }

@@ -4,7 +4,7 @@
       class="relative h-full overflow-hidden transition-all"
       :class="[
         to && 'hover:bg-muted',
-        nested && 'mb-0 rounded-none border-none shadow-none',
+        inStack && 'mb-0 rounded-none border-none shadow-none',
       ]"
     >
       <NuxtImg
@@ -68,6 +68,6 @@ const {
 
 defineSlots()
 
-const nested = injectNesting() !== 'none'
+const inStack = injectNesting() === 'stack'
 const [UseTemplate, CardInner] = createReusableTemplate()
 </script>

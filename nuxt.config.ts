@@ -49,7 +49,13 @@ export default defineNuxtConfig({
     dirs: [
       {
         path: './components',
-        ignore: ['**/*.ts'],
+        ignore: ['**/*.ts', '**/content/**'],
+      },
+      {
+        path: './components/content',
+        pathPrefix: false,
+        prefix: '',
+        global: true,
       },
     ],
   },
@@ -95,6 +101,13 @@ export default defineNuxtConfig({
     },
   },
   hooks: {
+    'components:extend'(components) {
+      for (const component of components) {
+        const file = (component.filePath || component.shortPath || '').replaceAll('\\', '/')
+        if (file.includes('/components/content/'))
+          component.global = true
+      }
+    },
     'nitro:config'(nitroConfig) {
       const nuxt = useNuxt()
       const i18nOptions = (nuxt.options as typeof nuxt.options & { i18n?: LayerI18nOptions }).i18n

@@ -4,7 +4,7 @@
     :class="[
       typeTwClass[type],
       to && 'hover:bg-muted/50 cursor-pointer',
-      nested && 'm-0 rounded-none border-none',
+      inStack && 'm-0 rounded-none border-none',
     ]"
     @click="alertClick"
   >
@@ -41,7 +41,7 @@ const {
   showLinkIcon?: boolean
 }>()
 
-const nested = injectNesting() !== 'none'
+const inStack = injectNesting() === 'stack'
 
 const typeTwClass = {
   default: '',

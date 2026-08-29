@@ -66,8 +66,8 @@
 
 <script setup lang="ts">
 import type { BuiltinLanguage } from 'shiki';
-import ScrollBar from '../ui/scroll-area/ScrollBar.vue'
-import { injectNesting } from '../../utils/nesting'
+import ScrollBar from '../../ui/scroll-area/ScrollBar.vue'
+import { injectNesting } from '../../../utils/nesting'
 
 const {
   code = '',

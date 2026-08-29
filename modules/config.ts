@@ -98,7 +98,7 @@ export default defineNuxtModule({
       || '';
 
     typedNuxt.llms = defu(typedNuxt.llms, {
-      domain: url,
+      domain: url || 'http://localhost:3333',
       title: siteName,
       description: meta.description || '',
       full: {

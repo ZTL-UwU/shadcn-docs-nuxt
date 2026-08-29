@@ -153,6 +153,5 @@ badges:
   :field{name="type" type="'default' | 'info' | 'warning' | 'success' | 'danger' | 'secondary'" default-value="'default'"}
   :field{name="to" type="string"}[链接 URL]
   :field{name="target" type="Target"}[在链接上应用的 `target` 属性值]
-  :field{name="external" type="boolean"}[`target='_blank'` 的别名]
   :field{name="showLinkIcon" type="boolean" default-value="true"}[是否显示链接指示图标 :icon{name="lucide:arrow-up-right"}]
 ::

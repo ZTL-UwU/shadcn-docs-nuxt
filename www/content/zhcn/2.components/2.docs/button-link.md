@@ -47,7 +47,5 @@ badges:
   :field{name="leftIcon" type="string"}[左侧图标]
   :field{name="rightIcon" type="string"}[右侧图标]
   :field{name="to" type="string"}[链接 URL]
-  :field{name="href" type="string"}[`to` 的别名]
   :field{name="target" type="Target"}[在链接上应用的 `target` 属性值]
-  :field{name="blank" type="boolean"}[`target='_blank'` 的别名]
 ::
