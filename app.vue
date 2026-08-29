@@ -27,6 +27,7 @@ useSeoMeta({
 })
 
 useHead({
+  titleTemplate: config.value.seo.titleTemplate,
   htmlAttrs: {
     lang: locale,
   },

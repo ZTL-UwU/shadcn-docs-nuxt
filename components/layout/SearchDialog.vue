@@ -39,7 +39,7 @@
                 <Icon name="lucide:moon" class="mr-2 size-4" />
                 <span>{{ $t('Dark') }}</span>
               </UiCommandItem>
-              <UiCommandItem value="system" @click="colorMode.preference = 'auto'">
+              <UiCommandItem value="system" @click="colorMode.preference = 'system'">
                 <Icon name="lucide:monitor" class="mr-2 size-4" />
                 <span>{{ $t('System') }}</span>
               </UiCommandItem>

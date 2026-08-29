@@ -134,8 +134,11 @@ export default defineNuxtConfig({
     provider: 'iconify',
   },
   fonts: {
+    families: [
+      { name: 'Inter', provider: 'google' },
+    ],
     defaults: {
-      weights: ['300 800'],
+      weights: [400, 500, 600, 700],
     },
   },
   ogImage: {

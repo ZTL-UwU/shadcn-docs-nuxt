@@ -9,6 +9,7 @@ useSeo({
   title,
   description,
   type: 'website',
+  ogImage: config.value.site.ogImage,
 })
 </script>
 

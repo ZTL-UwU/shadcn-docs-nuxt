@@ -18,8 +18,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Geist', 'Noto Sans CJK SC'],
-        mono: ['Geist Mono'],
+        sans: ['Inter', 'Noto Sans CJK SC', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
       },
       colors: {
         border: 'hsl(var(--border))',

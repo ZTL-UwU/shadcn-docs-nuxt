@@ -45,6 +45,24 @@ case "$cmd" in
 			printf 'FAIL %s got %s want %s\n' "$path" "$code" "$*" >&2
 			fail=1
 		}
+		check_html() {
+			path="$1"
+			needle="$2"
+			want="${3:-200}"
+			outfile="${4:-/tmp/verify-html}"
+			code="$(curl -sS -o "$outfile" -w '%{http_code}' -H 'Accept: text/html' "$origin$path" || true)"
+			if [ "$code" != "$want" ]; then
+				printf 'FAIL %s got %s want %s\n' "$path" "$code" "$want" >&2
+				fail=1
+				return
+			fi
+			if ! grep -Fq "$needle" "$outfile"; then
+				printf 'FAIL %s missing %s\n' "$path" "$needle" >&2
+				fail=1
+				return
+			fi
+			printf 'ok %s html %s\n' "$path" "$needle"
+		}
 		check '/llms.txt' 200
 		check '/llms-full.txt' 200
 		# @nuxtjs/mcp-toolkit serves POST at /mcp; GET is 405 (stateless) or 200 with sessions.
@@ -52,6 +70,37 @@ case "$cmd" in
 		check '/.well-known/skills/index.json' 200 404
 		check '/en' 200
 		check '/en/getting-started/introduction' 200
+		check_html '/en/getting-started/introduction' 'theme-zinc' 200 /tmp/verify-intro
+		check_html '/en/getting-started/introduction' 'og:image' 200 /tmp/verify-intro
+		check_html '/en' 'hero.png' 200 /tmp/verify-home
+		check_html '/en/this-page-does-not-exist' 'This page could not be found' 404 /tmp/verify-404
+		og_url="$(python3 - <<'PY'
+import re
+html=open("/tmp/verify-intro",encoding="utf-8",errors="ignore").read()
+m=re.search(r'property=["\']og:image["\'][^>]*content=["\']([^"\']+)["\']', html)
+if not m:
+    m=re.search(r'content=["\']([^"\']+)["\'][^>]*property=["\']og:image["\']', html)
+print(m.group(1) if m else "")
+PY
+)"
+		if [ -z "$og_url" ]; then
+			printf 'FAIL could not extract og:image url from intro html\n' >&2
+			fail=1
+		else
+			case "$og_url" in
+				http://*|https://*) ;;
+				/*) og_url="$origin$og_url" ;;
+				*) og_url="$origin/$og_url" ;;
+			esac
+			og_code="$(curl -sS -o /tmp/verify-og -w '%{http_code}' "$og_url" || true)"
+			og_type="$(file -b --mime-type /tmp/verify-og 2>/dev/null || true)"
+			if [ "$og_code" = "200" ]; then
+				printf 'ok og:image %s %s\n' "$og_code" "$og_type"
+			else
+				printf 'FAIL og:image %s got %s\n' "$og_url" "$og_code" >&2
+				fail=1
+			fi
+		fi
 		[ "$fail" -eq 0 ] || die "route checks failed"
 		;;
 	mdc)
