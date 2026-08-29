@@ -4,7 +4,7 @@
     :class="[
       typeTwClass[type],
       to && 'hover:bg-muted/50 cursor-pointer',
-      inStack && 'm-0 rounded-none border-none',
+      nested && 'm-0 rounded-none border-none',
     ]"
     @click="alertClick"
   >
@@ -25,23 +25,23 @@
 </template>
 
 <script setup lang="ts">
+import { injectNesting } from '../../utils/nesting'
+
 const {
   to,
   target,
   type = 'default',
-  external = undefined,
-  inStack = false,
   showLinkIcon = true,
 } = defineProps<{
-  title?: string;
-  icon?: string;
-  type?: 'default' | 'info' | 'warning' | 'success' | 'danger' | 'secondary';
-  to?: string;
-  target?: Target;
-  external?: boolean;
-  inStack?: boolean;
-  showLinkIcon?: boolean;
-}>();
+  title?: string
+  icon?: string
+  type?: 'default' | 'info' | 'warning' | 'success' | 'danger' | 'secondary' | 'note' | 'example'
+  to?: string
+  target?: Target
+  showLinkIcon?: boolean
+}>()
+
+const nested = injectNesting() !== 'none'
 
 const typeTwClass = {
   default: '',
@@ -61,12 +61,12 @@ async function alertClick() {
     const localeTo = localePath(to);
     if (target) {
       await navigateTo(localeTo, {
-        external: external ?? to.startsWith('http'),
+        external: to.startsWith('http'),
         open: { target },
       });
     } else {
       await navigateTo(localeTo, {
-        external: external ?? to.startsWith('http'),
+        external: to.startsWith('http'),
       });
     }
   }

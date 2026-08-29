@@ -14,9 +14,11 @@
 </template>
 
 <script setup lang="ts">
+import { provideNesting } from '../../utils/nesting'
+
 type InputTreeItem = string | {
-  [key: string]: InputTreeItem[];
-};
+  [key: string]: InputTreeItem[]
+}
 
 const {
   tree,
@@ -31,6 +33,8 @@ const {
   showIcon?: boolean;
   tree: InputTreeItem[];
 }>();
+
+provideNesting('tree')
 
 const iconMap = new Map(Object.entries(useConfig().value.main.codeIcon));
 

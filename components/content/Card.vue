@@ -4,7 +4,7 @@
       class="relative h-full overflow-hidden transition-all"
       :class="[
         to && 'hover:bg-muted',
-        inStack && 'mb-0 rounded-none border-none shadow-none',
+        nested && 'mb-0 rounded-none border-none shadow-none',
       ]"
     >
       <NuxtImg
@@ -16,21 +16,21 @@
         <SmartIcon v-if="icon" :name="icon" :size="iconSize" :class="{ 'mb-2': !horizontal }" />
         <div class="flex flex-col gap-1.5">
           <UiCardTitle v-if="title || $slots.title">
-            <ContentSlot :use="$slots.title" unwrap="p" />
+            <slot name="title" mdc-unwrap="p" />
             {{ title }}
           </UiCardTitle>
           <UiCardDescription v-if="description || $slots.description">
-            <ContentSlot :use="$slots.description" unwrap="p" />
+            <slot name="description" mdc-unwrap="p" />
             {{ description }}
           </UiCardDescription>
         </div>
       </UiCardHeader>
       <UiCardContent v-if="content || $slots.content || $slots.default">
-        <ContentSlot :use="$slots.content" unwrap="p" />
-        <ContentSlot unwrap="p" />
+        <slot name="content" mdc-unwrap="p" />
+        <slot mdc-unwrap="p" />
       </UiCardContent>
       <UiCardFooter v-if="footer || $slots.footer">
-        <ContentSlot :use="$slots.footer" unwrap="p" />
+        <slot name="footer" mdc-unwrap="p" />
         {{ footer }}
       </UiCardFooter>
       <SmartIcon v-if="to && showLinkIcon" name="lucide:arrow-up-right" class="absolute right-4 top-4" />
@@ -46,26 +46,28 @@
 </template>
 
 <script setup lang="ts">
+import { injectNesting } from '../../utils/nesting'
+
 const {
   showLinkIcon = true,
   horizontal = false,
   iconSize = 24,
 } = defineProps<{
-  title?: string;
-  description?: string;
-  footer?: string;
-  content?: string;
-  to?: string;
-  target?: Target;
-  icon?: string;
-  iconSize?: number;
-  inStack?: boolean;
-  img?: string;
-  showLinkIcon?: boolean;
-  horizontal?: boolean;
-}>();
+  title?: string
+  description?: string
+  footer?: string
+  content?: string
+  to?: string
+  target?: Target
+  icon?: string
+  iconSize?: number
+  img?: string
+  showLinkIcon?: boolean
+  horizontal?: boolean
+}>()
 
-defineSlots();
+defineSlots()
 
-const [UseTemplate, CardInner] = createReusableTemplate();
+const nested = injectNesting() !== 'none'
+const [UseTemplate, CardInner] = createReusableTemplate()
 </script>

@@ -65,7 +65,7 @@
   <UiCard
     v-else-if="variant === 'card'"
     class="[&:not(:first-child)]:mt-5"
-    :class="[inStack && 'mb-0 rounded-none border-none shadow-none']"
+    :class="[nested && 'mb-0 rounded-none border-none shadow-none']"
   >
     <UiScrollArea>
       <div class="relative flex overflow-x-auto border-b p-0.5 text-sm">
@@ -103,7 +103,7 @@
       class="mt-0"
       :class="[padded && ($slots.default?.()[activeTabIndex]?.type as any).tag !== 'pre' && 'p-3']"
     >
-      <component :is="slot" :in-group="true" />
+      <component :is="slot" />
     </div>
   </UiCard>
 
@@ -171,27 +171,29 @@
       :value="label(slot.props)"
       class="mt-4"
     >
-      <component :is="slot" :in-group="true" />
+      <component :is="slot" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { cn } from '@/lib/utils';
-import ScrollBar from '../ui/scroll-area/ScrollBar.vue';
+import { cn } from '@/lib/utils'
+import ScrollBar from '../ui/scroll-area/ScrollBar.vue'
+import { injectNesting, provideNesting } from '../../utils/nesting'
 
 const { sync, slotsData } = defineProps<{
-  slotsData: { label: string; index: number }[];
-  variant?: 'separate' | 'card' | 'line' | 'combobox';
-  padded?: boolean;
-  inStack?: boolean;
-  disableSearch?: boolean;
-  searchPlaceholder?: string;
-  searchEmpty?: string;
-  sync?: string;
-}>();
-defineSlots();
-const slots = useSlots();
+  slotsData: { label: string, index: number }[]
+  variant?: 'separate' | 'card' | 'line' | 'combobox'
+  padded?: boolean
+  disableSearch?: boolean
+  searchPlaceholder?: string
+  searchEmpty?: string
+  sync?: string
+}>()
+defineSlots()
+const slots = useSlots()
+const nested = injectNesting() !== 'none'
+provideNesting('group')
 
 const syncState = useCookie<{ scope: string; value?: string }[]>('tabs-sync-state', {
   default: () => [],

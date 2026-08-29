@@ -22,7 +22,7 @@ badges:
   ::button-link{left-icon="lucide:github" variant="outline" to="https://github.com/ZTL-UwU/shadcn-docs-nuxt" target="_blank"}
     GitHub
   ::
-  ::button-link{left-icon="lucide:ghost" variant="ghost" href="https://github.com/ZTL-UwU/shadcn-docs-nuxt" blank}
+  ::button-link{left-icon="lucide:ghost" variant="ghost" to="https://github.com/ZTL-UwU/shadcn-docs-nuxt" target="_blank"}
     Ghost
   ::
   ::
@@ -33,7 +33,7 @@ badges:
   ::button-link{left-icon="lucide:github" variant="outline" to="https://github.com/ZTL-UwU/shadcn-docs-nuxt" target="_blank"}
     GitHub
   ::
-  ::button-link{left-icon="lucide:ghost" variant="ghost" href="https://github.com/ZTL-UwU/shadcn-docs-nuxt" blank}
+  ::button-link{left-icon="lucide:ghost" variant="ghost" to="https://github.com/ZTL-UwU/shadcn-docs-nuxt" target="_blank"}
     Ghost
   ::
   ```

@@ -7,16 +7,14 @@ import type { SetupContext } from 'vue';
 import CodeTreeInner from './CodeTreeInner.vue';
 
 const {
-  inStack = false,
   defaultValue,
   height = 400,
   title,
 } = defineProps<{
-  inStack?: boolean;
-  defaultValue?: string;
-  height?: number;
-  title?: string;
-}>();
+  defaultValue?: string
+  height?: number
+  title?: string
+}>()
 
 const _slots: SetupContext['slots'] = useSlots();
 function render() {
@@ -54,7 +52,6 @@ function render() {
     {
       height,
       defaultValue: defaultValue || slots[0]?.props?.filename || '',
-      inStack,
       tree,
       title,
     },

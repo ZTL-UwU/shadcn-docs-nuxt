@@ -22,7 +22,7 @@ badges:
   ::button-link{left-icon="lucide:github" variant="outline" to="https://github.com/ZTL-UwU/shadcn-docs-nuxt" target="_blank"}
     GitHub
   ::
-  ::button-link{left-icon="lucide:ghost" variant="ghost" href="https://github.com/ZTL-UwU/shadcn-docs-nuxt" blank}
+  ::button-link{left-icon="lucide:ghost" variant="ghost" to="https://github.com/ZTL-UwU/shadcn-docs-nuxt" target="_blank"}
     Ghost
   ::
   ::
@@ -33,7 +33,7 @@ badges:
   ::button-link{left-icon="lucide:github" variant="outline" to="https://github.com/ZTL-UwU/shadcn-docs-nuxt" target="_blank"}
     GitHub
   ::
-  ::button-link{left-icon="lucide:ghost" variant="ghost" href="https://github.com/ZTL-UwU/shadcn-docs-nuxt" blank}
+  ::button-link{left-icon="lucide:ghost" variant="ghost" to="https://github.com/ZTL-UwU/shadcn-docs-nuxt" target="_blank"}
     Ghost
   ::
   ```
@@ -47,7 +47,5 @@ badges:
   :field{name="leftIcon" type="string"}[Icon on the left]
   :field{name="rightIcon" type="string"}[Icon on the right]
   :field{name="to" type="string"}[Link URL]
-  :field{name="href" type="string"}[Alias to `to`]
   :field{name="target" type="Target"}[A `target` attribute value to apply on the link]
-  :field{name="blank" type="boolean"}[Alias to `target='_blank'`]
 ::

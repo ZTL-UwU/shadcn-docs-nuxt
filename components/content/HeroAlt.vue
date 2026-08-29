@@ -22,10 +22,10 @@
       </NuxtLinkLocale>
 
       <h1 class="text-3xl font-bold leading-tight tracking-tighter md:text-4xl lg:leading-[1.1]">
-        <ContentSlot :use="$slots.title" unwrap="p" />
+        <slot name="title" mdc-unwrap="p" />
       </h1>
       <p class="text-foreground max-w-2xl text-lg font-light">
-        <ContentSlot :use="$slots.description" unwrap="p" />
+        <slot name="description" mdc-unwrap="p" />
       </p>
 
       <div class="flex w-full items-center justify-start gap-2 py-2">
@@ -44,7 +44,7 @@
       </div>
     </section>
     <div class="mx-auto" :class="{ 'order-first md:order-last': mobileRight === 'top' }">
-      <ContentSlot :use="$slots.right" unwrap="p" />
+      <slot name="right" mdc-unwrap="p" />
     </div>
   </div>
 </template>
@@ -57,14 +57,14 @@ defineProps<{
     icon?: string;
     title: string;
   };
-  actions?: [{
-    name: string;
-    leftIcon?: string;
-    rightIcon?: string;
-    variant?: 'default' | 'link' | 'destructive' | 'outline' | 'secondary' | 'ghost';
-    to: string;
-    target?: Target;
-  }];
+  actions?: {
+    name: string
+    leftIcon?: string
+    rightIcon?: string
+    variant?: 'default' | 'link' | 'destructive' | 'outline' | 'secondary' | 'ghost'
+    to: string
+    target?: Target
+  }[]
   mobileRight?: 'top' | 'bottom';
 }>();
 defineSlots();

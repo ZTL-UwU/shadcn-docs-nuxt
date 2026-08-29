@@ -8,7 +8,11 @@
 </template>
 
 <script setup lang="ts">
+import { provideNesting } from '../../utils/nesting'
+
 const { cols = 2 } = defineProps<{
-  cols?: 1 | 2 | 3 | 4 | 5 | 6;
-}>();
+  cols?: 1 | 2 | 3 | 4 | 5 | 6
+}>()
+
+provideNesting('group')
 </script>

@@ -4,21 +4,19 @@
 
 <script setup lang="ts">
 const {
-  inStack = false,
   name,
   sync = '_pm',
   saveDev = false,
   noSync,
 } = defineProps<{
-  inStack?: boolean;
-  name?: string;
-  sync?: string;
-  saveDev?: boolean;
-  noSync?: boolean;
-}>();
+  name?: string
+  sync?: string
+  saveDev?: boolean
+  noSync?: boolean
+}>()
 
 const md = `
-::code-group{${inStack ? 'in-stack' : ''} ${noSync ? '' : `sync="${sync}"`}}
+::code-group{${noSync ? '' : `sync="${sync}"`}}
 ${
   usePm().packageManagers.value.map((pm) => {
     const code = name

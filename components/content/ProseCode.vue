@@ -7,11 +7,11 @@
     v-else
     class="bg-[#FBFBFB] dark:bg-[#121215] relative overflow-hidden [&:not(:first-child)]:mt-5 [&:not(:last-child)]:mb-5"
     :class="[
-      (inGroup || inTree) && 'mb-0 rounded-t-none border-none shadow-none',
-      inStack && 'mb-0 rounded-none border-none shadow-none',
+      (nesting === 'group' || nesting === 'tree') && 'mb-0 rounded-t-none border-none shadow-none',
+      nesting === 'stack' && 'mb-0 rounded-none border-none shadow-none',
     ]"
   >
-    <div v-if="!inGroup && filename" class="bg-background flex items-center border-b py-2 pl-3 pr-2 font-mono text-sm">
+    <div v-if="nesting !== 'group' && filename" class="bg-background flex items-center border-b py-2 pl-3 pr-2 font-mono text-sm">
       <SmartIcon v-if="icon" :name="icon" class="mr-1.5" />
       <span>{{ filename }}</span>
       <CodeCopy :code class="ml-auto" />
@@ -25,7 +25,7 @@
       <div
         :style="[((parsedMeta.has('height') || height) && !expanded) ? `height: ${height || parsedMeta.get('height')}px` : undefined]"
         class="overflow-x-auto overflow-y-hidden py-3 text-sm" :class="[
-          !inGroup && !inTree && !filename && 'inline-copy',
+          nesting !== 'group' && nesting !== 'tree' && !filename && 'inline-copy',
           !language && 'pl-3',
           parsedMeta.has('line-numbers') && 'show-line-number',
           expanded && 'pb-14',
@@ -41,7 +41,7 @@
     >
       <div
         class="overflow-x-auto py-3 text-sm" :class="[
-          !inGroup && !inTree && !filename && 'inline-copy',
+          nesting !== 'group' && nesting !== 'tree' && !filename && 'inline-copy',
           !language && 'pl-3',
           parsedMeta.has('line-numbers') && 'show-line-number',
         ]"
@@ -66,27 +66,24 @@
 
 <script setup lang="ts">
 import type { BuiltinLanguage } from 'shiki';
-import ScrollBar from '../ui/scroll-area/ScrollBar.vue';
+import ScrollBar from '../ui/scroll-area/ScrollBar.vue'
+import { injectNesting } from '../../utils/nesting'
 
 const {
   code = '',
-  inGroup = false,
-  inTree = false,
-  inStack = false,
   language,
   filename,
   meta,
 } = defineProps<{
-  code?: string;
-  language?: BuiltinLanguage;
-  filename?: string;
-  inGroup?: boolean;
-  inTree?: boolean;
-  inStack?: boolean;
-  highlights?: number[];
-  meta?: string;
-  height?: number;
-}>();
+  code?: string
+  language?: BuiltinLanguage
+  filename?: string
+  highlights?: number[]
+  meta?: string
+  height?: number
+}>()
+
+const nesting = injectNesting()
 
 const parsedMeta = computed(() => {
   const split = meta?.split(' ') ?? [];
