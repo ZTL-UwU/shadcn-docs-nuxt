@@ -1,18 +1,17 @@
-import type { Collections } from '@nuxt/content'
-import type { ContentNavigationItem } from '@nuxt/content'
-import { docsCollectionName, toCollectionLocale } from '../utils/locale'
-import { transformNavigation } from '../utils/navigation'
+import type { Collections, ContentNavigationItem } from '@nuxt/content';
+import { docsCollectionName, toCollectionLocale } from '../utils/locale';
+import { transformNavigation } from '../utils/navigation';
 
-const extraFields = ['icon', 'navBadges', 'navTruncate', 'collapse', 'sidebar'] as const
+const extraFields = ['icon', 'navBadges', 'navTruncate', 'collapse', 'sidebar'] as const;
 
 export async function useDocsNavigation() {
-  const { locale, isEnabled } = useDocusI18n()
+  const { locale, isEnabled } = useDocusI18n();
 
   const collectionName = computed(() => {
     return isEnabled.value
       ? docsCollectionName(toCollectionLocale(locale.value))
-      : docsCollectionName(undefined)
-  })
+      : docsCollectionName(undefined);
+  });
 
   const { data } = await useAsyncData(
     () => `navigation_${collectionName.value}`,
@@ -28,9 +27,9 @@ export async function useDocsNavigation() {
       ),
       watch: [locale],
     },
-  )
+  );
 
-  const navigation = computed(() => data.value ?? [])
+  const navigation = computed(() => data.value ?? []);
 
-  return { navigation }
+  return { navigation };
 }

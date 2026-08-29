@@ -3,16 +3,16 @@
 </template>
 
 <script setup lang="ts">
-import type { SetupContext } from 'vue'
-import Tabs from './Tabs.vue'
+import type { SetupContext } from 'vue';
+import Tabs from './Tabs.vue';
 
 const { sync } = defineProps<{
-  sync?: string
-}>()
+  sync?: string;
+}>();
 
-const _slots: SetupContext['slots'] = useSlots()
+const _slots: SetupContext['slots'] = useSlots();
 function render() {
-  const slots = _slots?.default?.() || []
+  const slots = _slots?.default?.() || [];
   return h(
     Tabs,
     {
@@ -20,6 +20,6 @@ function render() {
       sync,
     },
     () => slots,
-  )
+  );
 }
 </script>

@@ -9,7 +9,7 @@
     <div class="scroll-m-20 px-4">
       <p>{{ statusCode === 404 ? $t('This page could not be found.') : error?.message }}</p>
       <UiButton class="mt-4" variant="outline" as-child>
-        <NuxtLinkLocale :to="'/'">
+        <NuxtLinkLocale to="/">
           {{ $t('Go home') }}
         </NuxtLinkLocale>
       </UiButton>
@@ -19,19 +19,19 @@
 </template>
 
 <script setup lang="ts">
-const error = useError()
-const config = useConfig()
-const { locale } = useDocusI18n()
-const { themeClass, radius, setClassTheme } = useThemes()
+const error = useError();
+const config = useConfig();
+const { locale } = useDocusI18n();
+const { themeClass, radius, setClassTheme } = useThemes();
 
-provide('navigation', ref([]))
+provide('navigation', ref([]));
 
-const statusCode = computed(() => error.value?.statusCode || 500)
+const statusCode = computed(() => error.value?.statusCode || 500);
 
 useSeoMeta({
   title: computed(() => String(statusCode.value)),
   description: computed(() => error.value?.message || ''),
-})
+});
 
 useHead({
   htmlAttrs: {
@@ -41,9 +41,9 @@ useHead({
     class: themeClass.value,
     style: `--radius: ${radius.value}rem;`,
   },
-})
+});
 
 onMounted(() => {
-  setClassTheme()
-})
+  setClassTheme();
+});
 </script>

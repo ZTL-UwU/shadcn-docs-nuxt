@@ -5,5 +5,5 @@
 </template>
 
 <script setup lang="ts">
-const { isOpen } = useDocsSearch()
+const { isOpen } = useDocsSearch();
 </script>

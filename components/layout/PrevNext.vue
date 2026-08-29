@@ -7,9 +7,9 @@
 </template>
 
 <script setup lang="ts">
-const page = inject<Ref<{ prevNext?: boolean } | null>>('page', ref(null))
-const surround = inject<Ref<Array<{ path?: string, title?: string, description?: string } | null> | null>>('surround', ref(null))
+const page = inject<Ref<{ prevNext?: boolean } | null>>('page', ref(null));
+const surround = inject<Ref<Array<{ path?: string; title?: string; description?: string } | null> | null>>('surround', ref(null));
 
-const prev = computed(() => surround.value?.[0] ?? null)
-const next = computed(() => surround.value?.[1] ?? null)
+const prev = computed(() => surround.value?.[0] ?? null);
+const next = computed(() => surround.value?.[1] ?? null);
 </script>

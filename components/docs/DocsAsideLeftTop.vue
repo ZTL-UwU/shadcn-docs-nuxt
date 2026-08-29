@@ -24,12 +24,14 @@
 </template>
 
 <script setup lang="ts">
-const { subNavigationMode, sections } = useSubNavigation()
-const { locale, localePath, isEnabled } = useDocusI18n()
+const { subNavigationMode, sections } = useSubNavigation();
+const { locale, localePath, isEnabled } = useDocusI18n();
 
 function localizedTo(to: string) {
-  if (!isEnabled.value) return to
-  if (to.startsWith(`/${locale.value}`)) return to
-  return localePath(to)
+  if (!isEnabled.value)
+    return to;
+  if (to.startsWith(`/${locale.value}`))
+    return to;
+  return localePath(to);
 }
 </script>

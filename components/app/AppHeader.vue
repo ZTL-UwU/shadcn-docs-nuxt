@@ -39,9 +39,9 @@
 </template>
 
 <script setup lang="ts">
-const config = useConfig()
-const { isEnabled } = useDocusI18n()
-const { subNavigationMode } = useSubNavigation()
+const config = useConfig();
+const { isEnabled } = useDocusI18n();
+const { subNavigationMode } = useSubNavigation();
 
-const headerHeight = computed(() => subNavigationMode.value === 'header' ? '6.5rem' : '3.5rem')
+const headerHeight = computed(() => subNavigationMode.value === 'header' ? '6.5rem' : '3.5rem');
 </script>

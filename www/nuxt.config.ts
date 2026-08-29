@@ -40,8 +40,12 @@ export default defineNuxtConfig({
     ],
   },
   content: {
-    highlight: {
-      langs: ['mdc', 'mermaid', 'tsx'],
+    build: {
+      markdown: {
+        highlight: {
+          langs: ['mdc', 'mermaid', 'tsx'],
+        },
+      },
     },
   },
   compatibilityDate: '2025-05-13',

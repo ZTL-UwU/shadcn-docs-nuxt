@@ -40,7 +40,7 @@ const { copy } = useClipboard({ source: code, legacy: true });
 const copied = ref(false);
 
 const { toast } = useToast();
-const { t } = useI18n();
+const { t } = useDocusI18n();
 
 async function handleClick() {
   await copy(code.replaceAll(/\s*\/\/\s*\[!code (focus|\+\+|--|error|warning)\]/g, ''));

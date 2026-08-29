@@ -12,10 +12,10 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{ isMobile: boolean }>()
+defineProps<{ isMobile: boolean }>();
 
-const config = useConfig()
-const { sidebarNavigation } = useSubNavigation()
+const config = useConfig();
+const { sidebarNavigation } = useSubNavigation();
 
-const tree = computed(() => sidebarNavigation.value)
+const tree = computed(() => sidebarNavigation.value);
 </script>

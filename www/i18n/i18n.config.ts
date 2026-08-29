@@ -1,4 +1,4 @@
-export default defineI18nConfig(() => ({
+export default {
   legacy: false,
   locale: 'en',
   messages: {
@@ -22,6 +22,7 @@ export default defineI18nConfig(() => ({
       'Nuxt Content': 'Nuxt Content',
       'Content made easy for Vue Developers': 'Content made easy for Vue Developers',
       'Use This Template': 'Use This Template',
+      'Blog': 'Blog',
 
       // TOC
       'Star on GitHub': 'Star on GitHub',
@@ -51,6 +52,7 @@ export default defineI18nConfig(() => ({
       'Nuxt Content': 'Nuxt Content',
       'Content made easy for Vue Developers': 'Contenu simplifié pour les développeurs Vue',
       'Use This Template': 'Utiliser ce Template',
+      'Blog': 'Blog',
 
       // TOC
       'Star on GitHub': 'Star sur GitHub',
@@ -80,6 +82,7 @@ export default defineI18nConfig(() => ({
       'Nuxt Content': 'Nuxt Content',
       'Content made easy for Vue Developers': 'ការផលិតមាតិកាដោយងាយស្រួលសម្រាប់អ្នកអភិវឌ្ឍន៍ Vue',
       'Use This Template': 'ប្រើពុម្ពគម្រូនេះ',
+      'Blog': 'ប្លុក',
 
       // TOC
       'Star on GitHub': 'ឲ្យផ្កាយនៅលើ GitHub',
@@ -109,6 +112,7 @@ export default defineI18nConfig(() => ({
       'Nuxt Content': 'Nuxt Content',
       'Content made easy for Vue Developers': 'Content reso facile per gli sviluppatori di Vue',
       'Use This Template': 'Usa questo Template',
+      'Blog': 'Blog',
 
       // TOC
       'Star on GitHub': 'Stella su GitHub',
@@ -148,4 +152,4 @@ export default defineI18nConfig(() => ({
       'Sponsor Me': '赞助我',
     },
   },
-}));
+};

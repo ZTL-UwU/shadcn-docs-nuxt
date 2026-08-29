@@ -11,10 +11,10 @@ const {
   height = 400,
   title,
 } = defineProps<{
-  defaultValue?: string
-  height?: number
-  title?: string
-}>()
+  defaultValue?: string;
+  height?: number;
+  title?: string;
+}>();
 
 const _slots: SetupContext['slots'] = useSlots();
 function render() {

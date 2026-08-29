@@ -12,6 +12,6 @@
 </template>
 
 <script setup lang="ts">
-const config = useConfig()
-const { subNavigationMode } = useSubNavigation()
+const config = useConfig();
+const { subNavigationMode } = useSubNavigation();
 </script>

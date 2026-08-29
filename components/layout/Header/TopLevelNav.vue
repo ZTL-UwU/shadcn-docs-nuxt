@@ -35,27 +35,27 @@
 </template>
 
 <script setup lang="ts">
-import type { DocsNavItem } from '../../../utils/navigation'
+import type { DocsNavItem } from '../../../utils/navigation';
 
-const navigation = inject<Ref<DocsNavItem[]>>('navigation', ref([]))
-const { localePath } = useDocusI18n()
-const config = useConfig()
+const navigation = inject<Ref<DocsNavItem[]>>('navigation', ref([]));
+const { localePath } = useDocusI18n();
+const config = useConfig();
 
-const route = useRoute()
-const path = computed(() => route.path)
+const route = useRoute();
+const path = computed(() => route.path);
 
 const activePath = computed(() => {
-  const match = navigation.value.find(link => path.value.startsWith(link.path))
-  return match?.path
-})
+  const match = navigation.value.find(link => path.value.startsWith(link.path));
+  return match?.path;
+});
 
 const justifyContent = computed(() => {
   if (config.value.aside.headerLevelNavAlign === 'center') {
-    return 'md:justify-center'
+    return 'md:justify-center';
   }
   if (config.value.aside.headerLevelNavAlign === 'end') {
-    return 'md:justify-end'
+    return 'md:justify-end';
   }
-  return 'md:justify-start'
-})
+  return 'md:justify-start';
+});
 </script>

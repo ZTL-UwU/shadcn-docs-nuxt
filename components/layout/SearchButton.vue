@@ -26,6 +26,6 @@
 </template>
 
 <script setup lang="ts">
-const { open } = useDocsSearch()
-const { enable, inAside, style, placeholder } = useConfig().value.search
+const { open } = useDocsSearch();
+const { enable, inAside, style, placeholder } = useConfig().value.search;
 </script>

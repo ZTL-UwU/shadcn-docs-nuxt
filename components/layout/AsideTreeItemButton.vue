@@ -17,9 +17,9 @@
 </template>
 
 <script setup lang="ts">
-import type { DocsNavItem } from '../../utils/navigation'
+import type { DocsNavItem } from '../../utils/navigation';
 
 const { link } = defineProps<{
-  link: DocsNavItem
-}>()
+  link: DocsNavItem;
+}>();
 </script>

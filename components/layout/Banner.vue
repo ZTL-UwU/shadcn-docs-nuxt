@@ -25,7 +25,7 @@ const open = useCookie<boolean>('banner-open', { default: () => true });
 const { showClose, content, to, target, border } = useConfig().value.banner;
 
 function navigate() {
-  const localePath = useLocalePath();
+  const { localePath } = useDocusI18n();
 
   if (open.value && to) {
     navigateTo(localePath(to), {

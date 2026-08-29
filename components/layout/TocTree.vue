@@ -35,7 +35,7 @@
 </template>
 
 <script setup lang="ts">
-import type { TocLink } from '@nuxtjs/mdc'
+import type { TocLink } from '@nuxtjs/mdc';
 
 defineProps<{
   links: TocLink[];

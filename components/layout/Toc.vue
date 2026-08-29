@@ -77,27 +77,27 @@
 </template>
 
 <script setup lang="ts">
-import type { TocLink } from '@nuxtjs/mdc'
-import { pageTocLinks } from '../../utils/navigation'
+import type { TocLink } from '@nuxtjs/mdc';
+import { pageTocLinks } from '../../utils/navigation';
 
 const props = defineProps<{
-  isSmall: boolean
-  page?: { body?: { toc?: { links?: TocLink[] } }, toc?: unknown } | null
-}>()
+  isSmall: boolean;
+  page?: { body?: { toc?: { links?: TocLink[] } }; toc?: unknown } | null;
+}>();
 
-const config = useConfig()
-const injected = inject<Ref<typeof props.page>>('page', ref(null))
-const resolvedPage = computed(() => props.page ?? injected.value)
-const tocLinks = computed(() => pageTocLinks(resolvedPage.value) as TocLink[])
+const config = useConfig();
+const injected = inject<Ref<typeof props.page>>('page', ref(null));
+const resolvedPage = computed(() => props.page ?? injected.value);
+const tocLinks = computed(() => pageTocLinks(resolvedPage.value) as TocLink[]);
 
-const { title, iconLinks, carbonAds, bottom } = useConfig().value.toc
+const { title, iconLinks, carbonAds, bottom } = useConfig().value.toc;
 
-const isDesktop = useMediaQuery('(min-width: 1024px)')
+const isDesktop = useMediaQuery('(min-width: 1024px)');
 const carbonAdsEnabled = computed(
   () => carbonAds.enable && !(import.meta.dev && carbonAds.disableInDev),
-)
+);
 
-const isOpen = ref(false)
+const isOpen = ref(false);
 
-const links = computed(() => bottom.links)
+const links = computed(() => bottom.links);
 </script>

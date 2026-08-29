@@ -8,10 +8,10 @@ const {
   sync = '_pm',
   noSync,
 } = defineProps<{
-  script: string
-  sync?: string
-  noSync?: boolean
-}>()
+  script: string;
+  sync?: string;
+  noSync?: boolean;
+}>();
 
 const md = `
 ::code-group{${noSync ? '' : `sync="${sync}"`}}

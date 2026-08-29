@@ -10,6 +10,7 @@ export default antfu({
   vue: true,
   ignores: [
     'www/content/**/*.md',
+    '.audit/**',
   ],
 }, {
   rules: {

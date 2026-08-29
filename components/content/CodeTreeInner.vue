@@ -31,17 +31,17 @@
 </template>
 
 <script setup lang="ts">
-import { injectNesting, provideNesting } from '../../utils/nesting'
+import { injectNesting, provideNesting } from '../../utils/nesting';
 
 const { defaultValue } = defineProps<{
-  tree: FileTreeItem[]
-  defaultValue: string
-  height: number
-  title?: string
-}>()
+  tree: FileTreeItem[];
+  defaultValue: string;
+  height: number;
+  title?: string;
+}>();
 
-const inStack = injectNesting() === 'stack'
-provideNesting('tree')
+const inStack = injectNesting() === 'stack';
+provideNesting('tree');
 
 const id = useId();
 const open = useCodeTreeState(id, defaultValue);

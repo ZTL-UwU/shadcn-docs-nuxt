@@ -7,23 +7,31 @@ type DeepPartial<T> = {
 };
 
 interface AppConfigInputShape extends DeepPartial<Omit<AppConfigPublic, 'github'>> {
-  github?: DeepPartial<GithubConfig> | false
+  github?: DeepPartial<GithubConfig> | false;
+}
+
+declare module 'vue' {
+  interface ComponentCustomProperties {
+    $t: (key: string, ...args: unknown[]) => string;
+  }
 }
 
 declare module 'nuxt/schema' {
   interface AppConfig extends AppConfigPublic {}
   interface AppConfigInput extends AppConfigInputShape {}
   interface NuxtConfig {
-    docs?: DocsNuxtConfig
+    docs?: DocsNuxtConfig;
+    i18n?: Record<string, unknown>;
   }
   interface NuxtOptions {
-    docs?: DocsNuxtConfig
+    docs?: DocsNuxtConfig;
+    i18n?: Record<string, unknown>;
   }
   interface PublicRuntimeConfig {
-    mcp: { route: string }
-    docs: { locale: string, filteredLocales: Array<string | { code: string, name?: string, file?: string }> }
-    ftsAvailable: boolean
-    assistant: { enabled: boolean, apiPath: string }
+    mcp: { route: string };
+    docs: { locale: string; filteredLocales: Array<string | { code: string; name?: string; file?: string }> };
+    ftsAvailable: boolean;
+    assistant: { enabled: boolean; apiPath: string };
   }
 }
 
@@ -31,15 +39,17 @@ declare module '@nuxt/schema' {
   interface AppConfig extends AppConfigPublic {}
   interface AppConfigInput extends AppConfigInputShape {}
   interface NuxtConfig {
-    docs?: DocsNuxtConfig
+    docs?: DocsNuxtConfig;
+    i18n?: Record<string, unknown>;
   }
   interface NuxtOptions {
-    docs?: DocsNuxtConfig
+    docs?: DocsNuxtConfig;
+    i18n?: Record<string, unknown>;
   }
   interface PublicRuntimeConfig {
-    mcp: { route: string }
-    docs: { locale: string, filteredLocales: Array<string | { code: string, name?: string, file?: string }> }
-    ftsAvailable: boolean
-    assistant: { enabled: boolean, apiPath: string }
+    mcp: { route: string };
+    docs: { locale: string; filteredLocales: Array<string | { code: string; name?: string; file?: string }> };
+    ftsAvailable: boolean;
+    assistant: { enabled: boolean; apiPath: string };
   }
 }

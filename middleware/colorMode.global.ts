@@ -1,6 +1,6 @@
 export default defineNuxtRouteMiddleware((to) => {
-  const { forced } = useDocusColorMode()
+  const { forced } = useDocusColorMode();
   if (forced) {
-    to.meta.colorMode = forced
+    to.meta.colorMode = forced;
   }
-})
+});

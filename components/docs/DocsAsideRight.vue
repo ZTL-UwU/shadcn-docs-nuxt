@@ -5,9 +5,9 @@
 
 <script setup lang="ts">
 const props = defineProps<{
-  page?: Record<string, unknown> | null
-}>()
+  page?: Record<string, unknown> | null;
+}>();
 
-const injected = inject<Ref<Record<string, unknown> | null>>('page', ref(null))
-const page = computed(() => props.page ?? injected.value)
+const injected = inject<Ref<Record<string, unknown> | null>>('page', ref(null));
+const page = computed(() => props.page ?? injected.value);
 </script>

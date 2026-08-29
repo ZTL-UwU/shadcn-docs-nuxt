@@ -1,3 +1,3 @@
 import { defaultAppConfig } from './utils/config';
 
-export default defineAppConfig(defaultAppConfig);
+export default defineAppConfig(defaultAppConfig as never);

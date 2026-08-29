@@ -50,42 +50,43 @@
 </template>
 
 <script setup lang="ts">
-import type { DocsNavItem } from '../../utils/navigation'
+import type { DocsNavItem } from '../../utils/navigation';
 
 const { link, level } = defineProps<{
-  link: DocsNavItem
-  level: number
-}>()
+  link: DocsNavItem;
+  level: number;
+}>();
 
-const { collapse, collapseLevel, folderStyle: defaultFolderStyle } = useConfig().value.aside
+const { collapse, collapseLevel, folderStyle: defaultFolderStyle } = useConfig().value.aside;
 
-const collapsed = useCollapsedMap()
-const route = useRoute()
+const collapsed = useCollapsedMap();
+const route = useRoute();
 
 function defaultOpen() {
   if (route.path === link.path || route.path.startsWith(`${link.path}/`))
-    return true
+    return true;
   if (link.collapse !== undefined)
-    return !link.collapse
+    return !link.collapse;
 
-  return level < collapseLevel && !collapse
+  return level < collapseLevel && !collapse;
 }
 
-const isOpen = ref(collapsed.value.get(link.path) || defaultOpen())
+const isOpen = ref(collapsed.value.get(link.path) || defaultOpen());
 
 watch(isOpen, (v) => {
-  collapsed.value.set(link.path, v)
-})
+  collapsed.value.set(link.path, v);
+});
 
 function normalizePath(p: string) {
-  const out = p.replace(/\/+$/, '')
-  return out === '' ? '/' : out
+  const out = p.replace(/\/+$/, '');
+  return out === '' ? '/' : out;
 }
-const isActive = computed(() => normalizePath(link.path) === normalizePath(route.path))
+const isActive = computed(() => normalizePath(link.path) === normalizePath(route.path));
 
 const folderStyle = computed(() => {
-  const sidebar = link.sidebar
-  if (sidebar && typeof sidebar === 'object') return sidebar.style ?? defaultFolderStyle
-  return defaultFolderStyle
-})
+  const sidebar = link.sidebar;
+  if (sidebar && typeof sidebar === 'object')
+    return sidebar.style ?? defaultFolderStyle;
+  return defaultFolderStyle;
+});
 </script>

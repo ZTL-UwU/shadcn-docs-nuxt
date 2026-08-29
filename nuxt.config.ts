@@ -1,12 +1,12 @@
-import { dirname, join } from 'node:path'
-import { fileURLToPath } from 'node:url'
-import { createResolver, extendViteConfig, useNuxt } from '@nuxt/kit'
-import tailwindcss from '@tailwindcss/vite'
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { createResolver, extendViteConfig, useNuxt } from '@nuxt/kit';
+import tailwindcss from '@tailwindcss/vite';
 
-const currentDir = dirname(fileURLToPath(import.meta.url))
-const { resolve } = createResolver(import.meta.url)
+const currentDir = dirname(fileURLToPath(import.meta.url));
+const { resolve } = createResolver(import.meta.url);
 
-type LayerI18nOptions = { locales?: Array<string | { code: string }> }
+interface LayerI18nOptions { locales?: Array<string | { code: string }> }
 
 export default defineNuxtConfig({
   srcDir: '.',
@@ -32,12 +32,12 @@ export default defineNuxtConfig({
     '@nuxt/scripts',
     () => {
       extendViteConfig((config) => {
-        config.optimizeDeps ||= {}
-        config.optimizeDeps.include ||= []
-        config.optimizeDeps.include.push('@nuxt/content > slugify')
+        config.optimizeDeps ||= {};
+        config.optimizeDeps.include ||= [];
+        config.optimizeDeps.include.push('@nuxt/content > slugify');
         config.optimizeDeps.include = config.optimizeDeps.include
-          .map(id => id.replace(/^@nuxt\/content > /, 'shadcn-docs-nuxt > @nuxt/content > '))
-      })
+          .map(id => id.replace(/^@nuxt\/content > /, 'shadcn-docs-nuxt > @nuxt/content > '));
+      });
     },
   ],
   devtools: { enabled: true },
@@ -101,29 +101,28 @@ export default defineNuxtConfig({
     },
   },
   hooks: {
-    'components:extend'(components) {
+    'components:extend': function (components) {
       for (const component of components) {
-        const file = (component.filePath || component.shortPath || '').replaceAll('\\', '/')
+        const file = (component.filePath || component.shortPath || '').replaceAll('\\', '/');
         if (file.includes('/components/content/'))
-          component.global = true
+          component.global = true;
       }
     },
-    'nitro:config'(nitroConfig) {
-      const nuxt = useNuxt()
-      const i18nOptions = (nuxt.options as typeof nuxt.options & { i18n?: LayerI18nOptions }).i18n
-      const routes: string[] = []
+    'nitro:config': function (nitroConfig) {
+      const nuxt = useNuxt();
+      const i18nOptions = (nuxt.options as typeof nuxt.options & { i18n?: LayerI18nOptions }).i18n;
+      const routes: string[] = [];
       if (!i18nOptions) {
-        routes.push('/')
-      }
-      else {
+        routes.push('/');
+      } else {
         routes.push(...(i18nOptions.locales?.map((locale: string | { code: string }) => (
           typeof locale === 'string' ? `/${locale}` : `/${locale.code}`
-        )) || []))
+        )) || []));
       }
-      nitroConfig.prerender = nitroConfig.prerender || {}
-      nitroConfig.prerender.routes = nitroConfig.prerender.routes || []
-      nitroConfig.prerender.routes.push(...routes)
-      nitroConfig.prerender.routes.push('/sitemap.xml')
+      nitroConfig.prerender = nitroConfig.prerender || {};
+      nitroConfig.prerender.routes = nitroConfig.prerender.routes || [];
+      nitroConfig.prerender.routes.push(...routes);
+      nitroConfig.prerender.routes.push('/sitemap.xml');
     },
   },
   icon: {
@@ -163,4 +162,4 @@ export default defineNuxtConfig({
       ],
     },
   },
-})
+});

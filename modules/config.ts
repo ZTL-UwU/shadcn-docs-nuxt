@@ -9,25 +9,25 @@ import { getPackageJsonMetadata, inferSiteURL } from '../utils/meta';
 
 const log = logger.withTag('docs');
 
-type I18nLocale = string | { code: string, name?: string };
-type LayerI18nOptions = { locales?: I18nLocale[], strategy?: string };
-type LayerMcpOptions = { route?: string, enabled?: boolean };
-type RegisterModuleOptions = {
-  langDir: string
-  locales: Array<{ code: string, name: string, file: string }>
-};
-type LayerSiteOptions = { name?: string, url?: string, debug?: boolean };
-type LayerLlmsOptions = {
-  domain?: string
-  title?: string
-  description?: string
-  full?: { title?: string, description?: string }
-};
-type LayerColorModeOptions = { preference?: string, fallback?: string };
-type LayerContentOptions = {
-  experimental?: { sqliteConnector?: string }
-  database?: { type?: string }
-};
+type I18nLocale = string | { code: string; name?: string };
+interface LayerI18nOptions { locales?: I18nLocale[]; strategy?: string }
+interface LayerMcpOptions { route?: string; enabled?: boolean }
+interface RegisterModuleOptions {
+  langDir: string;
+  locales: Array<{ code: string; name: string; file: string }>;
+}
+interface LayerSiteOptions { name?: string; url?: string; debug?: boolean }
+interface LayerLlmsOptions {
+  domain?: string;
+  title?: string;
+  description?: string;
+  full?: { title?: string; description?: string };
+}
+interface LayerColorModeOptions { preference?: string; fallback?: string }
+interface LayerContentOptions {
+  experimental?: { sqliteConnector?: string };
+  database?: { type?: string };
+}
 
 function localeCode(locale: I18nLocale): string {
   return typeof locale === 'string' ? locale : locale.code;
@@ -60,10 +60,10 @@ export default defineNuxtModule({
     name: 'config',
   },
   async setup(_options, nuxt) {
-    const { resolve } = createResolver(import.meta.url)
-    const layerTsconfig = resolve('../.nuxt/tsconfig.json')
+    const { resolve } = createResolver(import.meta.url);
+    const layerTsconfig = resolve('../.nuxt/tsconfig.json');
     if (!existsSync(layerTsconfig)) {
-      mkdirSync(dirname(layerTsconfig), { recursive: true })
+      mkdirSync(dirname(layerTsconfig), { recursive: true });
       writeFileSync(layerTsconfig, JSON.stringify({
         compilerOptions: {
           skipLibCheck: true,
@@ -71,7 +71,7 @@ export default defineNuxtModule({
           moduleResolution: 'Bundler',
           paths: { '@/*': ['./*'] },
         },
-      }))
+      }));
     }
 
     const docsConfig = parseDocsNuxtConfig(
@@ -83,13 +83,13 @@ export default defineNuxtModule({
     const meta = await getPackageJsonMetadata(dir);
     const gitInfo = await getLocalGitInfo(dir) || getGitEnv();
     const typedNuxt = nuxt.options as typeof nuxt.options & {
-      site?: LayerSiteOptions
-      llms?: LayerLlmsOptions
-      colorMode?: LayerColorModeOptions
-      content?: LayerContentOptions
-      mcp?: LayerMcpOptions
-      i18n?: false | LayerI18nOptions
-      docs?: ReturnType<typeof parseDocsNuxtConfig>
+      site?: LayerSiteOptions;
+      llms?: LayerLlmsOptions;
+      colorMode?: LayerColorModeOptions;
+      content?: LayerContentOptions;
+      mcp?: LayerMcpOptions;
+      i18n?: false | LayerI18nOptions;
+      docs?: ReturnType<typeof parseDocsNuxtConfig>;
     };
     typedNuxt.docs = defu(typedNuxt.docs, docsConfig);
     const siteName = (typeof typedNuxt.site === 'object' && typedNuxt.site?.name)
@@ -97,7 +97,7 @@ export default defineNuxtModule({
       || gitInfo?.name
       || '';
 
-    typedNuxt.llms = defu(typedNuxt.llms, {
+    (typedNuxt as { llms?: LayerLlmsOptions }).llms = defu(typedNuxt.llms || {}, {
       domain: url || 'http://localhost:3333',
       title: siteName,
       description: meta.description || '',
@@ -107,11 +107,11 @@ export default defineNuxtModule({
       },
     });
 
-    typedNuxt.site = defu(typedNuxt.site, {
-      url,
+    (typedNuxt as { site?: LayerSiteOptions }).site = defu(typedNuxt.site || {}, {
+      url: url || undefined,
       name: siteName,
       debug: false,
-    });
+    }) as LayerSiteOptions;
 
     nuxt.options.appConfig.header = defu(nuxt.options.appConfig.header, {
       title: siteName,
@@ -129,7 +129,10 @@ export default defineNuxtModule({
       url: gitInfo?.url || '',
       branch: getGitBranch(),
     };
-    nuxt.options.appConfig.github = filledGithub(nuxt.options.appConfig.github, gitGithub);
+    (nuxt.options.appConfig as { github?: GithubConfig | false }).github = filledGithub(
+      (nuxt.options.appConfig as { github?: GithubConfig | false }).github,
+      gitGithub,
+    );
 
     const mcpOptions = typedNuxt.mcp;
     nuxt.options.runtimeConfig.public.mcp = defu(
@@ -140,7 +143,11 @@ export default defineNuxtModule({
     const resolved = resolveAppConfig(nuxt.options.appConfig);
     if (resolved.colorModeResolved.kind === 'forced') {
       const mode = resolved.colorModeResolved.mode;
-      typedNuxt.colorMode = defu({ preference: mode, fallback: mode }, typedNuxt.colorMode || {});
+      typedNuxt.colorMode = {
+        ...(typeof typedNuxt.colorMode === 'object' ? typedNuxt.colorMode : {}),
+        preference: mode,
+        fallback: mode,
+      } as typeof typedNuxt.colorMode;
     }
 
     nuxt.options.runtimeConfig.public.ftsAvailable = sqliteAvailable(typedNuxt.content);

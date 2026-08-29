@@ -177,25 +177,25 @@
 </template>
 
 <script setup lang="ts">
-import { cn } from '@/lib/utils'
-import ScrollBar from '../ui/scroll-area/ScrollBar.vue'
-import { injectNesting, provideNesting } from '../../utils/nesting'
+import { cn } from '@/lib/utils';
+import { injectNesting, provideNesting } from '../../utils/nesting';
+import ScrollBar from '../ui/scroll-area/ScrollBar.vue';
 
 const props = defineProps<{
-  slotsData: { label: string, index: number }[]
-  variant?: 'separate' | 'card' | 'line' | 'combobox'
-  padded?: boolean
-  disableSearch?: boolean
-  searchPlaceholder?: string
-  searchEmpty?: string
-  sync?: string
-}>()
-const { sync, slotsData, variant } = props
-defineSlots()
-const slots = useSlots()
-const inStack = injectNesting() === 'stack'
+  slotsData: { label: string; index: number }[];
+  variant?: 'separate' | 'card' | 'line' | 'combobox';
+  padded?: boolean;
+  disableSearch?: boolean;
+  searchPlaceholder?: string;
+  searchEmpty?: string;
+  sync?: string;
+}>();
+defineSlots();
+const { sync, slotsData, variant } = props;
+const slots = useSlots();
+const inStack = injectNesting() === 'stack';
 if (variant === 'card' || variant === 'combobox')
-  provideNesting('group')
+  provideNesting('group');
 
 const syncState = useCookie<{ scope: string; value?: string }[]>('tabs-sync-state', {
   default: () => [],

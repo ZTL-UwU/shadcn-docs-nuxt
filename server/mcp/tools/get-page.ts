@@ -32,6 +32,9 @@ WORKFLOW: This tool returns the complete page content including title, descripti
   ],
   cache: '1h',
   handler: async ({ path }) => {
-    return getMcpPage({ path });
+    const page = await getMcpPage({ path });
+    return {
+      content: [{ type: 'text' as const, text: page.content }],
+    };
   },
 });

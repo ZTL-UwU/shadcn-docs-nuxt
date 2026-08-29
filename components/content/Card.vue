@@ -46,28 +46,28 @@
 </template>
 
 <script setup lang="ts">
-import { injectNesting } from '../../utils/nesting'
+import { injectNesting } from '../../utils/nesting';
 
 const {
   showLinkIcon = true,
   horizontal = false,
   iconSize = 24,
 } = defineProps<{
-  title?: string
-  description?: string
-  footer?: string
-  content?: string
-  to?: string
-  target?: Target
-  icon?: string
-  iconSize?: number
-  img?: string
-  showLinkIcon?: boolean
-  horizontal?: boolean
-}>()
+  title?: string;
+  description?: string;
+  footer?: string;
+  content?: string;
+  to?: string;
+  target?: Target;
+  icon?: string;
+  iconSize?: number;
+  img?: string;
+  showLinkIcon?: boolean;
+  horizontal?: boolean;
+}>();
 
-defineSlots()
+defineSlots();
 
-const inStack = injectNesting() === 'stack'
-const [UseTemplate, CardInner] = createReusableTemplate()
+const inStack = injectNesting() === 'stack';
+const [UseTemplate, CardInner] = createReusableTemplate();
 </script>

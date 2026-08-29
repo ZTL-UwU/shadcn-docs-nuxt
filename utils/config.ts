@@ -28,12 +28,12 @@ export type ThemeColor = (typeof THEME_COLORS)[number];
 
 export type SubNavConfig
   = | { kind: 'none' }
-    | { kind: 'header', align?: 'start' | 'center' | 'end' }
+    | { kind: 'header'; align?: 'start' | 'center' | 'end' }
     | { kind: 'aside' };
 
 export type ColorModeConfig
   = | { kind: 'system' }
-    | { kind: 'forced', mode: 'light' | 'dark' };
+    | { kind: 'forced'; mode: 'light' | 'dark' };
 
 export interface DocsLink {
   to: string;
@@ -91,7 +91,7 @@ export interface LogoConfig {
   alt: string;
   class?: string;
   display?: LogoDisplay;
-  wordmark?: { light?: string, dark?: string };
+  wordmark?: { light?: string; dark?: string };
   favicon?: string;
   brandAssetsUrl?: string;
 }
@@ -122,7 +122,7 @@ export interface AppConfigHeader {
   showTitleInMobile?: boolean;
   border?: boolean;
   darkModeToggle?: boolean;
-  languageSwitcher?: {
+  languageSwitcher: {
     enable: boolean;
     triggerType: LanguageSwitcherTrigger;
     dropdownType: LanguageSwitcherDropdown;
@@ -173,7 +173,7 @@ export interface AppConfigAssistant {
   explainWithAi?: boolean;
   faqQuestions?: FaqQuestions | LocalizedFaqQuestions;
   shortcuts?: { focusInput?: string };
-  icons?: { trigger?: string, explain?: string };
+  icons?: { trigger?: string; explain?: string };
 }
 
 export interface AppConfigTheme {
@@ -299,7 +299,7 @@ type DeepPartial<T> = {
 };
 
 const customDefu = createDefu((obj, key, value) => {
-  if (Array.isArray(value) && value.every(x => typeof x === 'string')) {
+  if (Array.isArray(value) && value.every((x: unknown) => typeof x === 'string')) {
     obj[key] = value;
     return true;
   }

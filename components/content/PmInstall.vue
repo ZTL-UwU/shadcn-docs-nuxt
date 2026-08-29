@@ -9,11 +9,11 @@ const {
   saveDev = false,
   noSync,
 } = defineProps<{
-  name?: string
-  sync?: string
-  saveDev?: boolean
-  noSync?: boolean
-}>()
+  name?: string;
+  sync?: string;
+  saveDev?: boolean;
+  noSync?: boolean;
+}>();
 
 const md = `
 ::code-group{${noSync ? '' : `sync="${sync}"`}}

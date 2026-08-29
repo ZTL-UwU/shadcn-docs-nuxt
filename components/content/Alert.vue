@@ -25,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-import { injectNesting } from '../../utils/nesting'
+import { injectNesting } from '../../utils/nesting';
 
 const {
   to,
@@ -33,15 +33,15 @@ const {
   type = 'default',
   showLinkIcon = true,
 } = defineProps<{
-  title?: string
-  icon?: string
-  type?: 'default' | 'info' | 'warning' | 'success' | 'danger' | 'secondary' | 'note' | 'example'
-  to?: string
-  target?: Target
-  showLinkIcon?: boolean
-}>()
+  title?: string;
+  icon?: string;
+  type?: 'default' | 'info' | 'warning' | 'success' | 'danger' | 'secondary' | 'note' | 'example';
+  to?: string;
+  target?: Target;
+  showLinkIcon?: boolean;
+}>();
 
-const inStack = injectNesting() === 'stack'
+const inStack = injectNesting() === 'stack';
 
 const typeTwClass = {
   default: '',
@@ -55,7 +55,7 @@ const typeTwClass = {
 };
 
 async function alertClick() {
-  const localePath = useLocalePath();
+  const { localePath } = useDocusI18n();
 
   if (to) {
     const localeTo = localePath(to);

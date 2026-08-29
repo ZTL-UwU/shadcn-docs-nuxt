@@ -1,15 +1,16 @@
-import type { Collections } from '@nuxt/content'
-import { docsCollectionName, toCollectionLocale } from '../utils/locale'
+import type { Collections } from '@nuxt/content';
+import type { DocsChromePage } from '../utils/navigation';
+import { docsCollectionName, toCollectionLocale } from '../utils/locale';
 
 export async function useDocsPage() {
-  const route = useRoute()
-  const { locale, isEnabled } = useDocusI18n()
+  const route = useRoute();
+  const { locale, isEnabled } = useDocusI18n();
 
   const collectionName = computed(() => {
     return isEnabled.value
       ? docsCollectionName(toCollectionLocale(locale.value))
-      : docsCollectionName(undefined)
-  })
+      : docsCollectionName(undefined);
+  });
 
   const [{ data: page }, { data: surround }] = await Promise.all([
     useAsyncData(
@@ -24,21 +25,22 @@ export async function useDocsPage() {
       }),
       { watch: [locale] },
     ),
-  ])
+  ]);
 
   if (!page.value) {
-    throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+    throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true });
   }
 
-  const chromePage = useState<typeof page.value | null>('docs-chrome-page', () => null)
-  watch(page, (value) => {
-    chromePage.value = value
-  }, { immediate: true })
-  provide('page', page)
-  provide('surround', surround)
+  const docsPage = page as Ref<DocsChromePage>;
+  const chromePage = useState<DocsChromePage | null>('docs-chrome-page', () => null);
+  watch(docsPage, (value) => {
+    chromePage.value = value ?? null;
+  }, { immediate: true });
+  provide('page', docsPage);
+  provide('surround', surround);
 
   return {
-    page,
+    page: docsPage,
     surround,
-  }
+  };
 }

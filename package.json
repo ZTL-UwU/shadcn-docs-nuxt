@@ -24,11 +24,11 @@
   "main": "./nuxt.config.ts",
   "files": [
     "app",
+    "app.config.ts",
     "app.vue",
     "assets",
     "components",
     "composables",
-    "app.config.ts",
     "content.config.ts",
     "i18n",
     "index.d.ts",
@@ -37,10 +37,10 @@
     "modules",
     "nuxt.config.ts",
     "nuxt.schema.ts",
-    "shared",
     "pages",
     "plugins",
     "server",
+    "shared",
     "templates",
     "types",
     "utils"
@@ -53,6 +53,10 @@
     "typecheck": "nuxt prepare && nuxt typecheck",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
+  },
+  "peerDependencies": {
+    "better-sqlite3": "12.x",
+    "nuxt": "4.x"
   },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.123",
@@ -96,15 +100,10 @@
     "yaml": "^2.9.0",
     "zod": "^4.4.3"
   },
-  "peerDependencies": {
-    "better-sqlite3": "12.x",
-    "nuxt": "4.x"
-  },
   "devDependencies": {
     "@antfu/eslint-config": "^9.3.0",
     "@iconify/utils": "^3.1.4",
     "eslint": "^10.8.1",
-    "minisearch": "^7.2.0",
     "nuxt": "^4.5.2",
     "pkg-pr-new": "^0.0.73",
     "shiki": "^4.4.3",

@@ -9,14 +9,14 @@
 </template>
 
 <script setup lang="ts">
-import type { ButtonVariants } from '../ui/button'
+import type { ButtonVariants } from '../ui/button';
 
 defineProps<{
-  variant?: ButtonVariants['variant']
-  size?: ButtonVariants['size']
-  leftIcon?: string
-  rightIcon?: string
-  to: string
-  target?: Target
-}>()
+  variant?: ButtonVariants['variant'];
+  size?: ButtonVariants['size'];
+  leftIcon?: string;
+  rightIcon?: string;
+  to: string;
+  target?: Target;
+}>();
 </script>

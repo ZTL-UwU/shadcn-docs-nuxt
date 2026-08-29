@@ -23,11 +23,11 @@ This file is the caller contract. Types in `sketch.ts` are derived from the snip
 
 ```ts
 export default defineNuxtConfig({
-	extends: ['shadcn-docs-nuxt'],
-	site: {
-		url: 'https://docs.example.com',
-	},
-})
+  extends: ['shadcn-docs-nuxt'],
+  site: {
+    url: 'https://docs.example.com',
+  },
+});
 ```
 
 Do not register `@nuxtjs/i18n`. The layer loads UI strings from `docs.locale` in `nuxt.config.ts` (default `en`).
@@ -36,38 +36,38 @@ Do not register `@nuxtjs/i18n`. The layer loads UI strings from `docs.locale` in
 
 ```ts
 export default defineAppConfig({
-	seo: {
-		titleTemplate: '%s - Acme Docs',
-		title: 'Acme Docs',
-		description: 'How to ship Acme.',
-	},
-	header: {
-		title: 'Acme',
-		logo: {
-			light: '/logo.svg',
-			dark: '/logo-dark.svg',
-			alt: 'Acme',
-		},
-	},
-	github: {
-		url: 'https://github.com/acme/docs',
-		branch: 'main',
-	},
-	navigation: {
-		sub: '',
-	},
-	search: {
-		fts: false,
-	},
-	theme: {
-		customizable: true,
-		color: 'zinc',
-		radius: 0.5,
-	},
-	site: {
-		ogImage: '/og.png',
-	},
-})
+  seo: {
+    titleTemplate: '%s - Acme Docs',
+    title: 'Acme Docs',
+    description: 'How to ship Acme.',
+  },
+  header: {
+    title: 'Acme',
+    logo: {
+      light: '/logo.svg',
+      dark: '/logo-dark.svg',
+      alt: 'Acme',
+    },
+  },
+  github: {
+    url: 'https://github.com/acme/docs',
+    branch: 'main',
+  },
+  navigation: {
+    sub: '',
+  },
+  search: {
+    fts: false,
+  },
+  theme: {
+    customizable: true,
+    color: 'zinc',
+    radius: 0.5,
+  },
+  site: {
+    ogImage: '/og.png',
+  },
+});
 ```
 
 Content lives at `content/` in the consumer. `content/index.md` is the landing page. Everything else is docs. Put docs under `content/docs/` if you want a `/docs` prefix. Drop `app/pages/index.vue` in the consumer if you want to own `/` yourself. The layer then skips the landing collection and does not inject the `/` route.
@@ -80,26 +80,26 @@ You register `@nuxtjs/i18n`. The layer does not. The layer forces `strategy: 'pr
 
 ```ts
 export default defineNuxtConfig({
-	extends: ['shadcn-docs-nuxt'],
-	modules: ['@nuxtjs/i18n'],
-	i18n: {
-		defaultLocale: 'en',
-		locales: [
-			{ code: 'en', name: 'English' },
-			{ code: 'fr', name: 'Français' },
-			{ code: 'zh-CN', name: '简体中文' },
-		],
-	},
-	docs: {
-		assistant: {
-			enabled: true,
-		},
-		skills: {
-			dir: 'skills',
-		},
-		notFound: true,
-	},
-})
+  extends: ['shadcn-docs-nuxt'],
+  modules: ['@nuxtjs/i18n'],
+  i18n: {
+    defaultLocale: 'en',
+    locales: [
+      { code: 'en', name: 'English' },
+      { code: 'fr', name: 'Français' },
+      { code: 'zh-CN', name: '简体中文' },
+    ],
+  },
+  docs: {
+    assistant: {
+      enabled: true,
+    },
+    skills: {
+      dir: 'skills',
+    },
+    notFound: true,
+  },
+});
 ```
 
 Content layout:
@@ -165,51 +165,51 @@ Product keys that Docus does not have live as siblings, not under a wrapper:
 
 ```ts
 export default defineAppConfig({
-	banner: {
-		enable: true,
-		content: 'Acme 2.0 is out',
-		to: '/blog/acme-2',
-	},
-	aside: {
-		collapse: false,
-		collapseLevel: 1,
-		folderStyle: 'default',
-	},
-	main: {
-		pm: ['pnpm', 'npm', 'bun', 'yarn'],
-		editLink: {
-			enable: true,
-			text: 'Edit this page',
-			placement: ['docsFooter'],
-		},
-	},
-	footer: {
-		credits: '© Acme',
-	},
-	toc: {
-		title: 'On this page',
-		carbonAds: { enable: false },
-	},
-	search: {
-		enable: true,
-		fts: false,
-		placeholder: 'Search...',
-	},
-	socials: {
-		x: 'https://x.com/acme',
-	},
-	data: {
-		apiVersion: '2',
-	},
-	assistant: {
-		floatingInput: true,
-		explainWithAi: true,
-		faqQuestions: ['How do I install?', 'How do I configure i18n?'],
-	},
-	navigation: {
-		sub: 'header',
-	},
-})
+  banner: {
+    enable: true,
+    content: 'Acme 2.0 is out',
+    to: '/blog/acme-2',
+  },
+  aside: {
+    collapse: false,
+    collapseLevel: 1,
+    folderStyle: 'default',
+  },
+  main: {
+    pm: ['pnpm', 'npm', 'bun', 'yarn'],
+    editLink: {
+      enable: true,
+      text: 'Edit this page',
+      placement: ['docsFooter'],
+    },
+  },
+  footer: {
+    credits: '© Acme',
+  },
+  toc: {
+    title: 'On this page',
+    carbonAds: { enable: false },
+  },
+  search: {
+    enable: true,
+    fts: false,
+    placeholder: 'Search...',
+  },
+  socials: {
+    x: 'https://x.com/acme',
+  },
+  data: {
+    apiVersion: '2',
+  },
+  assistant: {
+    floatingInput: true,
+    explainWithAi: true,
+    faqQuestions: ['How do I install?', 'How do I configure i18n?'],
+  },
+  navigation: {
+    sub: 'header',
+  },
+});
 ```
 
 `navigation.sub` is `'header' | 'aside' | ''`. That is the public sub-nav switch. There is no `aside.useLevel` and no `aside.levelStyle`.
@@ -221,15 +221,15 @@ export default defineAppConfig({
 ### A. Read merged chrome
 
 ```vue
-<script setup lang="ts">
-const config = useConfig()
-const title = computed(() => config.value.header.title)
-const showToc = computed(() => config.value.toc.enable)
-</script>
-
 <template>
-	<h1>{{ config.header.title }}</h1>
+  <h1>{{ config.header.title }}</h1>
 </template>
+
+<script setup lang="ts">
+const config = useConfig();
+const title = computed(() => config.value.header.title);
+const showToc = computed(() => config.value.toc.enable);
+</script>
 ```
 
 `useConfig()` returns `ComputedRef<ResolvedAppConfig>`. Do not destructure it. `const { header } = useConfig()` does not compile. In templates Vue unwraps the computed, so `config.header` is fine.
@@ -240,16 +240,16 @@ Merge order is layer defaults, then your `app.config.ts`, then matching navigati
 
 ```vue
 <script setup lang="ts">
-const { locale, locales, localePath, t, isEnabled } = useDocusI18n()
-const { page, surround } = await useDocsPage()
-const { navigation } = await useDocsNavigation()
-const { sections, sidebarNavigation, subNavigationMode } = useSubNavigation()
+const { locale, locales, localePath, t, isEnabled } = useDocusI18n();
+const { page, surround } = await useDocsPage();
+const { navigation } = await useDocsNavigation();
+const { sections, sidebarNavigation, subNavigationMode } = useSubNavigation();
 
 useSeo({
-	title: page.value.title,
-	description: page.value.description,
-	type: 'article',
-})
+  title: page.value.title,
+  description: page.value.description,
+  type: 'article',
+});
 </script>
 ```
 
@@ -259,16 +259,16 @@ useSeo({
 
 ```vue
 <script setup lang="ts">
-const { open: openSearch } = useDocsSearch()
-const { forced } = useDocusColorMode()
-const { isEnabled: assistantOn, open: openAssistant } = useAssistant()
+const { open: openSearch } = useDocsSearch();
+const { forced } = useDocusColorMode();
+const { isEnabled: assistantOn, open: openAssistant } = useAssistant();
 
 function onSearchHotkey() {
-	openSearch()
+  openSearch();
 }
 
 function explainThisPage() {
-	openAssistant(`Explain ${useRoute().path}`)
+  openAssistant(`Explain ${useRoute().path}`);
 }
 </script>
 ```

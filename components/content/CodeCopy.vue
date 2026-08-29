@@ -23,7 +23,7 @@ const { code } = defineProps<{
 }>();
 
 const { toast } = useToast();
-const { t } = useI18n();
+const { t } = useDocusI18n();
 
 const { copy } = useClipboard({ source: code, legacy: true });
 const copied = ref(false);

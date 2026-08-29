@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import { provideNesting } from '../../utils/nesting'
+import { provideNesting } from '../../utils/nesting';
 
-provideNesting('stack')
+provideNesting('stack');
 </script>

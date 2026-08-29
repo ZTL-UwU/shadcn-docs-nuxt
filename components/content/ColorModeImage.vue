@@ -25,12 +25,12 @@
 
 <script setup lang="ts">
 defineProps<{
-  srcLight?: string
-  srcDark?: string
-  alt?: string
-  width?: string | number
-  height?: string | number
-  lifted?: boolean
-  zoom?: boolean
-}>()
+  srcLight?: string;
+  srcDark?: string;
+  alt?: string;
+  width?: string | number;
+  height?: string | number;
+  lifted?: boolean;
+  zoom?: boolean;
+}>();
 </script>

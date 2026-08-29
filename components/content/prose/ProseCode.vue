@@ -66,8 +66,8 @@
 
 <script setup lang="ts">
 import type { BuiltinLanguage } from 'shiki';
-import ScrollBar from '../../ui/scroll-area/ScrollBar.vue'
-import { injectNesting } from '../../../utils/nesting'
+import { injectNesting } from '../../../utils/nesting';
+import ScrollBar from '../../ui/scroll-area/ScrollBar.vue';
 
 const {
   code = '',
@@ -75,15 +75,15 @@ const {
   filename,
   meta,
 } = defineProps<{
-  code?: string
-  language?: BuiltinLanguage
-  filename?: string
-  highlights?: number[]
-  meta?: string
-  height?: number
-}>()
+  code?: string;
+  language?: BuiltinLanguage;
+  filename?: string;
+  highlights?: number[];
+  meta?: string;
+  height?: number;
+}>();
 
-const nesting = injectNesting()
+const nesting = injectNesting();
 
 const parsedMeta = computed(() => {
   const split = meta?.split(' ') ?? [];

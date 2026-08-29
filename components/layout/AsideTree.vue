@@ -13,10 +13,10 @@
 </template>
 
 <script setup lang="ts">
-import type { DocsNavItem } from '../../utils/navigation'
+import type { DocsNavItem } from '../../utils/navigation';
 
 defineProps<{
-  links: DocsNavItem[]
-  level: number
-}>()
+  links: DocsNavItem[];
+  level: number;
+}>();
 </script>

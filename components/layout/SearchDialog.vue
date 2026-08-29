@@ -22,7 +22,7 @@
               <UiCommandGroup v-if="item.children" :heading="item.title" class="p-1.5">
                 <NuxtLink v-for="child in item.children" :key="child.path" :to="child.path">
                   <UiCommandItem :value="child.path">
-                    <SmartIcon v-if="child.icon" :name="child.icon" class="mr-2 size-4" />
+                    <SmartIcon v-if="child.icon" :name="String(child.icon)" class="mr-2 size-4" />
                     <div v-else class="mr-2 size-4" />
                     <span>{{ child.title }}</span>
                   </UiCommandItem>
@@ -55,7 +55,7 @@
               :class="[i === activeSelect && 'bg-muted']"
               @click="open = false; activeSelect = i as number;"
             >
-              <SmartIcon v-if="getItemIcon(item.id)" :name="getItemIcon(item.id)" class="mr-2 size-4 shrink-0 self-center" />
+              <SmartIcon v-if="getItemIcon(item.id)" :name="getItemIcon(item.id) ?? ''" class="mr-2 size-4 shrink-0 self-center" />
               <div v-else class="mr-2 size-4 shrink-0" />
 
               <span v-for="(subtitle, j) in item.titles" :key="`${subtitle}${j}`" class="flex shrink-0 self-center">
@@ -78,80 +78,85 @@
 </template>
 
 <script setup lang="ts">
-import type { Collections, ContentNavigationItem } from '@nuxt/content'
-import type { Section } from '@nuxt/content/runtime'
-import Fuse from 'fuse.js'
-import { VisuallyHidden } from 'reka-ui'
-import { docsCollectionName, toCollectionLocale } from '../../utils/locale'
-import { findNavIcon } from '../../utils/navigation'
+import type { Collections, ContentNavigationItem } from '@nuxt/content';
+import Fuse from 'fuse.js';
+import { VisuallyHidden } from 'reka-ui';
+import { docsCollectionName, toCollectionLocale } from '../../utils/locale';
+import { findNavIcon } from '../../utils/navigation';
 
-const { darkModeToggle } = useConfig().value.header
-const { placeholderDetailed } = useConfig().value.search
-const useFts = useConfig().value.search.fts
+interface SearchSection {
+  id: string;
+  title: string;
+  titles?: string[];
+  content?: string;
+}
 
-const open = defineModel<boolean>('open')
-const colorMode = useColorMode()
-const { locale, isEnabled } = useDocusI18n()
-const navigation = inject<Ref<ContentNavigationItem[]>>('navigation', ref([]))
+const { darkModeToggle } = useConfig().value.header;
+const { placeholderDetailed } = useConfig().value.search;
+const useFts = useConfig().value.search.fts;
+
+const open = defineModel<boolean>('open');
+const colorMode = useColorMode();
+const { locale, isEnabled } = useDocusI18n();
+const navigation = inject<Ref<ContentNavigationItem[]>>('navigation', ref([]));
 
 const collectionName = computed(() => {
   return isEnabled.value
     ? docsCollectionName(toCollectionLocale(locale.value))
-    : docsCollectionName(undefined)
-})
+    : docsCollectionName(undefined);
+});
 
 const { data: files } = useFts
-  ? { data: ref<Section[] | null>(null) }
+  ? { data: ref<SearchSection[] | null>(null) }
   : await useLazyAsyncData(
       () => `search_${collectionName.value}`,
       () => queryCollectionSearchSections(collectionName.value as keyof Collections),
       { server: false, watch: [locale] },
-    )
+    );
 
 const fts = useFts
-  ? useSearchCollection(collectionName, { immediate: false, ignoredTags: ['style'] })
-  : { search: undefined as undefined | ((q: string) => Promise<Section[]>), status: ref('idle'), init: () => {} }
+  ? useSearchCollection(collectionName as never, { immediate: false, ignoredTags: ['style'] })
+  : { search: undefined as undefined | ((q: string) => Promise<SearchSection[]>), status: ref('idle'), init: () => {} };
 
 if (useFts) {
   watch(open, (value) => {
     if (value && fts.status.value === 'idle') {
-      fts.init()
+      fts.init();
     }
-  })
+  });
 }
 
-const activeSelect = ref(0)
+const activeSelect = ref(0);
 
 const { Meta_K, Ctrl_K } = useMagicKeys({
   passive: false,
   onEventFired(e) {
     if (e.key === 'k' && (e.metaKey || e.ctrlKey))
-      e.preventDefault()
+      e.preventDefault();
   },
-})
+});
 watch([Meta_K, Ctrl_K], (v) => {
   if (v[0] || v[1])
-    open.value = true
-})
+    open.value = true;
+});
 
-const input = ref('')
-const searchResult = ref<Section[]>([])
-const searchLoading = ref(false)
+const input = ref('');
+const searchResult = ref<SearchSection[]>([]);
+const searchLoading = ref(false);
 
 watch(
   input,
   async (v) => {
-    activeSelect.value = 0
+    activeSelect.value = 0;
     if (!v) {
-      searchResult.value = []
-      return
+      searchResult.value = [];
+      return;
     }
 
-    searchLoading.value = true
+    searchLoading.value = true;
     if (useFts && fts.search) {
-      searchResult.value = await fts.search(v)
-    }
-    else {
+      searchResult.value = await fts.search(v);
+    } else {
       const fuse = new Fuse(files.value || [], {
         keys: [
           { name: 'title', weight: 2 },
@@ -160,43 +165,44 @@ watch(
         ],
         ignoreLocation: true,
         threshold: 0.4,
-      })
-      searchResult.value = fuse.search(v).map(r => r.item)
+      });
+      searchResult.value = fuse.search(v).map(r => r.item);
     }
-    searchLoading.value = false
+    searchLoading.value = false;
   },
-)
+);
 
-function getHighlightedContent(text: string) {
-  return text.replace(input.value, `<span class="font-semibold underline">${input.value}</span>`)
+function getHighlightedContent(text?: string) {
+  return (text || '').replace(input.value, `<span class="font-semibold underline">${input.value}</span>`);
 }
 
-function getItemIcon(path: string) {
-  return findNavIcon(navigation.value, path)
+function getItemIcon(path?: string) {
+  return findNavIcon(navigation.value, path || '');
 }
 
 watch(activeSelect, (value) => {
-  document.querySelector(`[id="${value}"]`)?.scrollIntoView({ block: 'nearest' })
-})
+  document.querySelector(`[id="${value}"]`)?.scrollIntoView({ block: 'nearest' });
+});
 
 async function handleEnter() {
-  if (searchResult.value[activeSelect.value]?.id) {
-    await navigateTo(searchResult.value[activeSelect.value].id)
-    open.value = false
+  const hit = searchResult.value[activeSelect.value];
+  if (hit?.id) {
+    await navigateTo(hit.id);
+    open.value = false;
   }
 }
 
 function handleNavigate(delta: -1 | 1) {
   if (activeSelect.value + delta >= 0 && activeSelect.value + delta < searchResult.value.length)
-    activeSelect.value += delta
+    activeSelect.value += delta;
 }
 
-const router = useRouter()
+const router = useRouter();
 
 watch(
   () => router.currentRoute.value,
   () => {
-    open.value = false
+    open.value = false;
   },
-)
+);
 </script>

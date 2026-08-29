@@ -3,5 +3,5 @@
 </template>
 
 <script setup lang="ts">
-const { footer } = useConfig().value
+const { footer } = useConfig().value;
 </script>

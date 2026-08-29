@@ -11,20 +11,20 @@
 </template>
 
 <script setup lang="ts">
-import Toaster from '@/components/ui/toast/Toaster.vue'
+import Toaster from '@/components/ui/toast/Toaster.vue';
 
-const config = useConfig()
-const { locale } = useDocusI18n()
-const { themeClass, radius, setClassTheme } = useThemes()
-const { navigation } = await useDocsNavigation()
+const config = useConfig();
+const { locale } = useDocusI18n();
+const { themeClass, radius, setClassTheme } = useThemes();
+const { navigation } = await useDocsNavigation();
 
-provide('navigation', navigation)
+provide('navigation', navigation);
 
 useSeoMeta({
   description: config.value.site.description,
   ogDescription: config.value.site.description,
   twitterCard: 'summary_large_image',
-})
+});
 
 useHead({
   titleTemplate: config.value.seo.titleTemplate,
@@ -42,9 +42,9 @@ useHead({
       href: '/favicon.ico',
     },
   ],
-})
+});
 
 onMounted(() => {
-  setClassTheme()
-})
+  setClassTheme();
+});
 </script>

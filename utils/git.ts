@@ -1,4 +1,5 @@
 import { execSync } from 'node:child_process';
+import process from 'node:process';
 import gitUrlParse from 'git-url-parse';
 import { readGitConfig } from 'pkg-types';
 
@@ -24,8 +25,7 @@ export function getGitBranch() {
     if (branch && branch !== 'HEAD') {
       return branch;
     }
-  }
-  catch {
+  } catch {
     // git may be missing in CI images
   }
 
@@ -55,8 +55,7 @@ async function getLocalGitRemote(dir: string): Promise<string | undefined> {
       return;
     }
     return parsed.remote?.origin?.url;
-  }
-  catch {
+  } catch {
     // no .git in this worktree clone
   }
 }
@@ -86,8 +85,7 @@ export function getGitEnv(): GitInfo {
       const { name, owner } = gitUrlParse(envInfo.url);
       envInfo.name = name;
       envInfo.owner = owner;
-    }
-    catch {
+    } catch {
       // unparseable REPOSITORY_URL
     }
   }

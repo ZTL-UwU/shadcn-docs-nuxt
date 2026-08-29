@@ -1,26 +1,3 @@
-<script setup lang="ts">
-import { pageShowsAside, pageShowsToc } from '../utils/navigation'
-
-const { page, surround } = await useDocsPage()
-const config = useConfig()
-
-provide('page', page)
-provide('surround', surround)
-
-const isDev = import.meta.dev
-const showAside = computed(() => pageShowsAside(page.value))
-const showToc = computed(() => pageShowsToc(page.value, config.value.toc.enable))
-
-const title = page.value.seo?.title || page.value.title
-const description = page.value.seo?.description || page.value.description
-
-useSeo({
-  title,
-  description,
-  type: 'article',
-})
-</script>
-
 <template>
   <div
     v-if="page?.fullpage"
@@ -29,7 +6,7 @@ useSeo({
   >
     <ContentRenderer
       :key="page.path"
-      :value="page"
+      :value="(page as unknown as Record<string, unknown>)"
       :data="config.data"
     />
   </div>
@@ -56,7 +33,7 @@ useSeo({
     >
       <div class="mx-auto w-full min-w-0">
         <LayoutBreadcrumb
-          v-if="config.main.breadCrumb && (page.breadcrumb ?? true)"
+          v-if="config.main.breadCrumb && (page?.breadcrumb ?? true)"
           class="mb-4"
         />
         <LayoutTitle
@@ -85,8 +62,8 @@ useSeo({
 
         <ContentRenderer
           v-else
-          :key="page.path"
-          :value="page"
+          :key="page?.path"
+          :value="(page as unknown as Record<string, unknown>)"
           :data="config.data"
           class="docs-content"
         />
@@ -103,9 +80,32 @@ useSeo({
             config.subNav.kind === 'aside' ? 'md:top-[91px]' : 'md:top-[133px]',
           ]"
         >
-          <DocsAsideRight :page="page" />
+          <DocsAsideRight :page="(page as unknown as Record<string, unknown> | null)" />
         </div>
       </div>
     </main>
   </div>
 </template>
+
+<script setup lang="ts">
+import { pageShowsAside, pageShowsToc } from '../utils/navigation';
+
+const { page, surround } = await useDocsPage();
+const config = useConfig();
+
+provide('page', page);
+provide('surround', surround);
+
+const isDev = import.meta.dev;
+const showAside = computed(() => pageShowsAside(page.value));
+const showToc = computed(() => pageShowsToc(page.value, config.value.toc.enable));
+
+const title = page.value.seo?.title || page.value.title;
+const description = page.value.seo?.description || page.value.description;
+
+useSeo({
+  title: title || '',
+  description: description || '',
+  type: 'article',
+});
+</script>

@@ -14,13 +14,13 @@ const {
   searchEmpty = 'No tab found.',
   sync,
 } = defineProps<{
-  variant?: 'separate' | 'card' | 'line' | 'combobox'
-  padded?: boolean
-  disableSearch?: boolean
-  searchPlaceholder?: string
-  searchEmpty?: string
-  sync?: string
-}>()
+  variant?: 'separate' | 'card' | 'line' | 'combobox';
+  padded?: boolean;
+  disableSearch?: boolean;
+  searchPlaceholder?: string;
+  searchEmpty?: string;
+  sync?: string;
+}>();
 
 const _slots: SetupContext['slots'] = useSlots();
 function render() {

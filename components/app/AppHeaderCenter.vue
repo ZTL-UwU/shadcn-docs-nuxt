@@ -4,5 +4,5 @@
 </template>
 
 <script setup lang="ts">
-const config = useConfig()
+const config = useConfig();
 </script>

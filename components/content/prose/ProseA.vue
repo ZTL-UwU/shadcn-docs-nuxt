@@ -12,7 +12,7 @@
 const {
   href = '',
 } = defineProps<{
-  href?: string
-  target?: Target
-}>()
+  href?: string;
+  target?: Target;
+}>();
 </script>
