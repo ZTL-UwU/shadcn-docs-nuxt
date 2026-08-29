@@ -15,8 +15,8 @@
         <ul class="pl-2">
           <li v-for="link in item.children" :key="link.title">
             <NuxtLinkLocale
-              :to="localePath(link.to)"
-              :target="link.to"
+              :to="link.to"
+              :target="link.target"
               class="hover:bg-muted mb-1 flex w-full gap-2 rounded-md px-3 py-2 transition-all"
             >
               <SmartIcon v-if="link.icon" :name="link.icon" :size="16" class="mt-1 min-w-5" />
@@ -35,7 +35,7 @@
       </UiCollapsibleContent>
     </UiCollapsible>
   </template>
-  <NuxtLinkLocale v-else :to="localePath(item.to)" :target="item.target" class="flex w-full p-2">
+  <NuxtLinkLocale v-else :to="item.to" :target="item.target" class="flex w-full p-2">
     {{ $t(item.title) }}
     <Icon v-if="item.showLinkIcon ?? true" name="lucide:arrow-up-right" class="text-muted-foreground ml-1" size="12" />
   </NuxtLinkLocale>
@@ -46,8 +46,6 @@ const props = defineProps<{
   item: any;
   index: number;
 }>();
-const { localePath } = useI18nDocs();
-
 const collapsed = useCollapsedMap();
 const isOpen = ref(collapsed.value.get(`mobile-header-nav${props.index}`) || false);
 watch(isOpen, (v) => {

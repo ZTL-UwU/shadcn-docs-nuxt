@@ -10,7 +10,7 @@
             <ul class="w-[250px] p-2">
               <li v-for="link in item.children" :key="link.title">
                 <NuxtLinkLocale
-                  :to="link.to && localePath(link.to)"
+                  :to="link.to"
                   :target="link.target"
                   class="hover:bg-muted mb-1 flex w-full gap-2 rounded-md px-3 py-2 transition-all"
                 >
@@ -29,7 +29,7 @@
             </ul>
           </UiNavigationMenuContent>
         </template>
-        <NuxtLinkLocale v-else :to="localePath(item.to)" :target="item.target">
+        <NuxtLinkLocale v-else :to="item.to" :target="item.target">
           <Icon v-if="item.showLinkIcon ?? true" name="lucide:arrow-up-right" class="text-muted-foreground absolute right-2 top-2" size="13" />
           <div class="bg-transparent font-semibold" :class="[navigationMenuTriggerStyle(), (item.showLinkIcon ?? true) && 'pr-6']">
             {{ $t(item.title) }}
@@ -44,5 +44,4 @@
 import { navigationMenuTriggerStyle } from '@/components/ui/navigation-menu';
 
 const { nav } = useConfig().value.header;
-const { localePath } = useI18nDocs();
 </script>

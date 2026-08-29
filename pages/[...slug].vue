@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { pageShowsAside, pageShowsToc } from '../../utils/navigation'
+import { pageShowsAside, pageShowsToc } from '../utils/navigation'
 
 const { page, surround } = await useDocsPage()
 const config = useConfig()

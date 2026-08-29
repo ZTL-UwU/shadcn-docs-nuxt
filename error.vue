@@ -9,7 +9,7 @@
     <div class="scroll-m-20 px-4">
       <p>{{ statusCode === 404 ? $t('This page could not be found.') : error?.message }}</p>
       <UiButton class="mt-4" variant="outline" as-child>
-        <NuxtLinkLocale :to="localePath('/')">
+        <NuxtLinkLocale :to="'/'">
           {{ $t('Go home') }}
         </NuxtLinkLocale>
       </UiButton>
@@ -21,7 +21,7 @@
 <script setup lang="ts">
 const error = useError()
 const config = useConfig()
-const { locale, localePath } = useDocusI18n()
+const { locale } = useDocusI18n()
 const { themeClass, radius, setClassTheme } = useThemes()
 
 provide('navigation', ref([]))

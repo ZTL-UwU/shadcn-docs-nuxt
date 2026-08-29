@@ -25,7 +25,7 @@
         <NuxtLinkLocale
           v-for="(link, i) in links"
           :key="i"
-          :to="localePath(link.to)"
+          :to="link.to"
           :target="link.target"
           class="flex w-full gap-1 underline-offset-4 hover:underline [&:not(:first-child)]:pt-3"
         >
@@ -42,7 +42,7 @@
         <NuxtLinkLocale
           v-for="(link, i) in iconLinks"
           :key="i"
-          :to="localePath(link.to)"
+          :to="link.to"
           :target="link.target"
         >
           <UiButton size="icon" variant="ghost" class="size-7">
@@ -90,7 +90,6 @@ const injected = inject<Ref<typeof props.page>>('page', ref(null))
 const resolvedPage = computed(() => props.page ?? injected.value)
 const tocLinks = computed(() => pageTocLinks(resolvedPage.value) as TocLink[])
 
-const { localePath } = useDocusI18n()
 const { title, iconLinks, carbonAds, bottom } = useConfig().value.toc
 
 const isDesktop = useMediaQuery('(min-width: 1024px)')

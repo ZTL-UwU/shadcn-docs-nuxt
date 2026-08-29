@@ -20,7 +20,7 @@
           <NuxtLinkLocale
             v-for="(link, i) in config.header.links"
             :key="i"
-            :to="localePath(link?.to)"
+            :to="link?.to"
             :target="link?.target"
           >
             <UiButton variant="ghost" size="icon" class="flex gap-2">
@@ -35,5 +35,5 @@
 
 <script setup lang="ts">
 const config = useConfig();
-const { isEnabled, localePath } = useDocusI18n();
+const { isEnabled } = useDocusI18n();
 </script>

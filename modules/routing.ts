@@ -1,17 +1,12 @@
 import { createResolver, defineNuxtModule, extendPages } from '@nuxt/kit'
 import { landingPageExists } from '../utils/pages'
 
-type LayerI18nOptions = { locales?: Array<string | { code: string }> }
-
 export default defineNuxtModule({
   meta: {
     name: 'routing',
   },
   async setup(_options, nuxt) {
     const { resolve } = createResolver(import.meta.url)
-
-    const i18nOptions = (nuxt.options as typeof nuxt.options & { i18n?: LayerI18nOptions }).i18n
-    const isI18nEnabled = !!i18nOptions?.locales
 
     nuxt.hook('imports:extend', (imports) => {
       const from = resolve('../composables/useDocusI18n')
@@ -25,22 +20,11 @@ export default defineNuxtModule({
 
     if (!landingPageExists(nuxt.options.rootDir)) {
       extendPages((pages) => {
-        const landingTemplate = resolve('../templates/landing.vue')
-
-        if (isI18nEnabled) {
-          pages.push({
-            name: 'lang-index',
-            path: '/:lang?',
-            file: landingTemplate,
-          })
-        }
-        else {
-          pages.push({
-            name: 'index',
-            path: '/',
-            file: landingTemplate,
-          })
-        }
+        pages.push({
+          name: 'index',
+          path: '/',
+          file: resolve('../templates/landing.vue'),
+        })
       })
     }
   },
