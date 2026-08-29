@@ -8,20 +8,18 @@ description: 在目录部分底部投放广告.
 
 ```ts [app.config.ts]
 export default defineAppConfig({
-  shadcnDocs: {
-    toc: {
+  toc: {
+    enable: true,
+    carbonAds: {
       enable: true,
-      carbonAds: {
-        enable: true,
-        disableInDev: false,
-        disableInMobile: false,
-        fallback: false, // 当被广告拦截器阻止时是否显示备用消息
-        code: 'your-carbon-code', // 也就是 'serve' 代码
-        placement: 'your-carbon-placement',
-        format: 'your-carbon-format', // 默认为 "cover"
-      },
-    }
-  },
+      disableInDev: false,
+      disableInMobile: false,
+      fallback: false, // 当被广告拦截器阻止时是否显示备用消息
+      code: 'your-carbon-code', // 也就是 'serve' 代码
+      placement: 'your-carbon-placement',
+      format: 'your-carbon-format', // 默认为 "cover"
+    },
+  }
 });
 ```
 

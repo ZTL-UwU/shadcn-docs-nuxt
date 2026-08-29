@@ -8,20 +8,18 @@ description: Run ads at the bottom of the TOC section.
 
 ```ts [app.config.ts]
 export default defineAppConfig({
-  shadcnDocs: {
-    toc: {
+  toc: {
+    enable: true,
+    carbonAds: {
       enable: true,
-      carbonAds: {
-        enable: true,
-        disableInDev: false,
-        disableInMobile: false,
-        fallback: false, // whether to show fallback message when blocked by ad blockers
-        code: 'your-carbon-code', // aka the 'serve' code
-        placement: 'your-carbon-placement',
-        format: 'your-carbon-format', // defaults to 'cover'
-      },
-    }
-  },
+      disableInDev: false,
+      disableInMobile: false,
+      fallback: false, // whether to show fallback message when blocked by ad blockers
+      code: 'your-carbon-code', // aka the 'serve' code
+      placement: 'your-carbon-placement',
+      format: 'your-carbon-format', // defaults to 'cover'
+    },
+  }
 });
 ```
 

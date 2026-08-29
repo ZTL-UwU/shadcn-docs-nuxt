@@ -8,20 +8,18 @@ description: Afficher des publicités en bas de la section TOC.
 
 ```ts [app.config.ts]
 export default defineAppConfig({
-  shadcnDocs: {
-    toc: {
+  toc: {
+    enable: true,
+    carbonAds: {
       enable: true,
-      carbonAds: {
-        enable: true,
-        disableInDev: false,
-        disableInMobile: false,
-        fallback: false, // si un message de secours doit être affiché lorsque bloqué par les bloqueurs de publicités
-        code: 'votre-code-carbon', // alias le code 'serve'
-        placement: 'votre-placement-carbon',
-        format: 'votre-format-carbon', // par défaut 'cover'
-      },
-    }
-  },
+      disableInDev: false,
+      disableInMobile: false,
+      fallback: false, // si un message de secours doit être affiché lorsque bloqué par les bloqueurs de publicités
+      code: 'votre-code-carbon', // alias le code 'serve'
+      placement: 'votre-placement-carbon',
+      format: 'votre-format-carbon', // par défaut 'cover'
+    },
+  }
 });
 ```
 

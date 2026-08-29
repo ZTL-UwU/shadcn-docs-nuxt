@@ -8,20 +8,18 @@ description: Mostra annunci nella parte inferiore della sezione TOC.
 
 ```ts [app.config.ts]
 export default defineAppConfig({
-  shadcnDocs: {
-    toc: {
+  toc: {
+    enable: true,
+    carbonAds: {
       enable: true,
-      carbonAds: {
-        enable: true,
-        disableInDev: false,
-        disableInMobile: false,
-        fallback: false, // definisce se mostrare il messaggio di fallback quando bloccato da ad blocker
-        code: 'your-carbon-code', // ovvero il codice 'serve'
-        placement: 'your-carbon-placement',
-        format: 'your-carbon-format', // predefinito su 'cover'
-      },
-    }
-  },
+      disableInDev: false,
+      disableInMobile: false,
+      fallback: false, // definisce se mostrare il messaggio di fallback quando bloccato da ad blocker
+      code: 'your-carbon-code', // ovvero il codice 'serve'
+      placement: 'your-carbon-placement',
+      format: 'your-carbon-format', // predefinito su 'cover'
+    },
+  }
 });
 ```
 

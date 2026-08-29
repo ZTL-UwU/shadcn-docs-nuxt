@@ -8,12 +8,10 @@ description: Intégration pour les analyses Umami.
 
 ```ts [app.config.ts]
 export default defineAppConfig({
-  shadcnDocs: {
-    site: {
-      umami: {
-        enable: true,
-        dataWebsiteId: 'votre-data-website-id',
-      },
+  site: {
+    umami: {
+      enable: true,
+      dataWebsiteId: 'votre-data-website-id',
     },
   },
 });
