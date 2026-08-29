@@ -26,7 +26,6 @@ export function getGitBranch() {
       return branch;
     }
   } catch {
-    // git may be missing in CI images
   }
 
   return 'main';
@@ -56,7 +55,6 @@ async function getLocalGitRemote(dir: string): Promise<string | undefined> {
     }
     return parsed.remote?.origin?.url;
   } catch {
-    // no .git in this worktree clone
   }
 }
 
@@ -86,7 +84,6 @@ export function getGitEnv(): GitInfo {
       envInfo.name = name;
       envInfo.owner = owner;
     } catch {
-      // unparseable REPOSITORY_URL
     }
   }
 

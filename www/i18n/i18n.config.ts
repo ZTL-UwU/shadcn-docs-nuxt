@@ -3,7 +3,6 @@ export default {
   locale: 'en',
   messages: {
     en: {
-      // Header nav
       'shadcn-docs': 'shadcn-docs',
       'Docs': 'Docs',
       'Getting Started': 'Getting Started',
@@ -24,16 +23,13 @@ export default {
       'Use This Template': 'Use This Template',
       'Blog': 'Blog',
 
-      // TOC
       'Star on GitHub': 'Star on GitHub',
       'Create Issues': 'Create Issues',
 
-      // Footer
       'FOOTER_CREDIT': 'Made with ❤️ by [**Tony Zhang**](https://github.com/ZTL-UwU/)',
       'Sponsor Me': 'Sponsor Me',
     },
     fr: {
-      // Header nav
       'shadcn-docs': 'shadcn-docs',
       'Docs': 'Docs',
       'Getting Started': 'Mise en Route',
@@ -54,16 +50,13 @@ export default {
       'Use This Template': 'Utiliser ce Template',
       'Blog': 'Blog',
 
-      // TOC
       'Star on GitHub': 'Star sur GitHub',
       'Create Issues': 'Créer une Issue',
 
-      // Footer
       'FOOTER_CREDIT': 'Fait avec ❤️ par [**Tony Zhang**](https://github.com/ZTL-UwU/)',
       'Sponsor Me': 'Me Sponsoriser',
     },
     km: {
-      // Header nav
       'shadcn-docs': 'shadcn-docs',
       'Docs': 'ឯកសារ',
       'Getting Started': 'ការចាប់ផ្តើម',
@@ -84,16 +77,13 @@ export default {
       'Use This Template': 'ប្រើពុម្ពគម្រូនេះ',
       'Blog': 'ប្លុក',
 
-      // TOC
       'Star on GitHub': 'ឲ្យផ្កាយនៅលើ GitHub',
       'Create Issues': 'បង្កើតចំណោទបញ្ហា',
 
-      // Footer
       'FOOTER_CREDIT': 'បានបង្កើតជាមួយនឹង ❤️ ដោយ [**Tony Zhang**](https://github.com/ZTL-UwU/)',
       'Sponsor Me': 'គាំទ្រខ្ញុំ',
     },
     it: {
-      // Header nav
       'shadcn-docs': 'shadcn-docs',
       'Docs': 'Documentazione',
       'Getting Started': 'Inizia subito',
@@ -114,16 +104,13 @@ export default {
       'Use This Template': 'Usa questo Template',
       'Blog': 'Blog',
 
-      // TOC
       'Star on GitHub': 'Stella su GitHub',
       'Create Issues': 'Crea Segnalazioni',
 
-      // Footer
       'FOOTER_CREDIT': 'Realizzato con ❤️ da [**Tony Zhang**](https://github.com/ZTL-UwU/)',
       'Sponsor Me': 'Sponsorizzami',
     },
     zhcn: {
-      // Header nav
       'shadcn-docs': 'shadcn-docs',
       'Docs': '文档',
       'Getting Started': '开始使用',
@@ -143,11 +130,9 @@ export default {
       'Content made easy for Vue Developers': '为 Vue 开发者简化内容',
       'Blog': '博客',
 
-      // TOC
       'Star on GitHub': '在 GitHub 上 Star',
       'Create Issues': '创建一个 Issue',
 
-      // Footer
       'FOOTER_CREDIT': '由 [**Tony Zhang**](https://github.com/ZTL-UwU/) ❤️ 制作',
       'Sponsor Me': '赞助我',
     },

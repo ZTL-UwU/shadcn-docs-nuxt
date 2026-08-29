@@ -1,16 +1,6 @@
 import type { Nuxt } from '@nuxt/schema';
-/**
- * Type sketch for the Docus-faithful rewrite. Bodies throw.
- * Public names match USAGE.md. Collection ids, MCP wiring, and Fuse vs FTS
- * internals stay behind the composables below.
- */
 import type { ComputedRef, Ref } from 'vue';
 import { z } from '@nuxt/content';
-
-// ---------------------------------------------------------------------------
-// Locale. One helper. Every collection id, query, MCP tool, and nav transform
-// goes through toCollectionLocale. Folder names keep the raw i18n code.
-// ---------------------------------------------------------------------------
 
 export type CollectionLocale = string & { readonly __brand: 'CollectionLocale' };
 
@@ -30,10 +20,6 @@ export function docsCollectionName(locale: CollectionLocale | undefined): DocsCo
 export function landingCollectionName(locale: CollectionLocale | undefined): LandingCollectionName {
   throw new Error('not implemented');
 }
-
-// ---------------------------------------------------------------------------
-// Shared chrome fragments
-// ---------------------------------------------------------------------------
 
 export const docsLinkSchema = z.object({
   to: z.string(),
@@ -95,7 +81,6 @@ export interface Nesting {
   context: NestingContext;
 }
 
-/** Every alert/badge class that exists at runtime. */
 export type Tone
   = | 'default'
     | 'note'
@@ -170,11 +155,6 @@ export interface LogoConfig {
   brandAssetsUrl?: string;
 }
 
-// ---------------------------------------------------------------------------
-// AppConfig. Flat sibling groups. No `shadcnDocs` wrapper.
-// Docus-shaped sibling groups, then product groups. No AppConfig `docus` pocket.
-// ---------------------------------------------------------------------------
-
 export interface AppConfigShortcuts {
   toggleColorMode?: string;
 }
@@ -211,7 +191,6 @@ export interface AppConfigHeader {
 }
 
 export interface AppConfigNavigation {
-  /** Public sub-nav switch. Maps internally to aside leveling. */
   sub: SubNavMode;
 }
 
@@ -344,7 +323,6 @@ export interface AppConfigPublic {
 }
 
 export interface ResolvedAppConfig extends AppConfigPublic {
-  /** Parser output. Components read this, not `navigation.sub`. */
   subNav: SubNavConfig;
   colorModeResolved: ColorModeConfig;
 }
@@ -358,15 +336,10 @@ type DeepPartial<T> = {
   [K in keyof T]?: T[K] extends object ? DeepPartial<T[K]> : T[K]
 };
 
-/** Parse consumer `app.config` plus layer defaults. Trust the result inside. */
 export function resolveAppConfig(raw: unknown): ResolvedAppConfig {
   throw new Error('not implemented');
 }
 
-/**
- * Flat AppConfig + optional page overlay + runtime flags.
- * Applies discriminant rules (sub-nav, color mode, chrome vs fullpage).
- */
 export function parseDocsConfig(
   raw: unknown,
   ctx: {
@@ -381,10 +354,6 @@ export function parseDocsConfig(
 export function publicSubNavToConfig(sub: SubNavMode, align?: 'start' | 'center' | 'end'): SubNavConfig {
   throw new Error('not implemented');
 }
-
-// ---------------------------------------------------------------------------
-// NuxtConfig. Namespace is `docs` (this package is not docus).
-// ---------------------------------------------------------------------------
 
 export interface AssistantModuleOptions {
   enabled?: boolean;
@@ -417,11 +386,6 @@ declare module '@nuxt/schema' {
 export function parseDocsNuxtConfig(raw: unknown): DocsNuxtConfig {
   throw new Error('not implemented');
 }
-
-// ---------------------------------------------------------------------------
-// Page schema. Docus `links[]` plus the 11 legacy nav fields as optional keys.
-// Not a discriminated union. Overlay groups exist so useConfig can merge.
-// ---------------------------------------------------------------------------
 
 export const sidebarSchema = z.union([
   z.boolean(),
@@ -521,7 +485,6 @@ export interface ChromeOverlay {
   footer?: Partial<AppConfigFooter>;
 }
 
-/** Walk a Content 3 nav tree. Replaces Content v2 `navKeyFromPath`. */
 export function overlayFromNavigation(navigation: DocsNavItem[], path: string): ChromeOverlay {
   throw new Error('not implemented');
 }
@@ -543,11 +506,6 @@ export function findPageBreadcrumbs(navigation: DocsNavItem[] | undefined, path:
   throw new Error('not implemented');
 }
 
-// ---------------------------------------------------------------------------
-// Content collections. Called from content.config.ts. existsSync at load,
-// matching Docus. Consumers never pass collection names.
-// ---------------------------------------------------------------------------
-
 export function landingPageExists(rootDir: string): boolean {
   throw new Error('not implemented');
 }
@@ -561,23 +519,10 @@ export function defineLayerCollections(input: {
   locales?: Array<string | { code: string }>;
 }): Record<CollectionName, unknown> {
   throw new Error('not implemented');
-  // TODO: i18n → docs_${toCollectionLocale(code)} + landing_* unless Vue landing exists.
-  // TODO: no i18n → docs + optional landing. Exclude index.md from docs.
-  // TODO: content/docs or content/{locale}/docs sets prefix. Folders use raw code.
 }
 
-// ---------------------------------------------------------------------------
-// Public composables. Short chains. No pass-through wrappers.
-// ---------------------------------------------------------------------------
-
-/**
- * Layer defaults, then app.config, then nav overlay, then page frontmatter.
- * String arrays replace. Returns a computed so `const { header } = useConfig()`
- * does not compile.
- */
 export function useConfig(): ComputedRef<ResolvedAppConfig> {
   throw new Error('not implemented');
-  // TODO: parseDocsConfig(useAppConfig(), { page, navOverlay, ftsAvailable })
 }
 
 export interface DocusI18nApi {
@@ -593,7 +538,6 @@ export function useDocusI18n(): DocusI18nApi {
   throw new Error('not implemented');
 }
 
-/** Re-export alias. Same function object, not a wrapper. */
 export const useI18nDocs: typeof useDocusI18n = useDocusI18n;
 
 /** Throws a fatal 404 when the path has no page. Collection name stays inside. */
@@ -645,7 +589,6 @@ export function useDocsSearch(): {
   isOpen: Ref<boolean>;
 } {
   throw new Error('not implemented');
-  // TODO: search.fts === true → Content FTS5. else Fuse over search sections.
 }
 
 export function useAssistant(): {
@@ -669,10 +612,6 @@ export function useThemeCookie(): {
 } {
   throw new Error('not implemented');
 }
-
-// ---------------------------------------------------------------------------
-// Server helpers. Same toCollectionLocale as content.config.ts.
-// ---------------------------------------------------------------------------
 
 export function getAvailableLocales(config: unknown): string[] {
   throw new Error('not implemented');
@@ -714,31 +653,20 @@ export function getMcpPage(input: { path: string }): Promise<McpPage> {
   throw new Error('not implemented');
 }
 
-// ---------------------------------------------------------------------------
-// Module setups. Filenames and responsibilities copy Docus. assistant is in
-// modules[] explicitly. css.ts does not import @nuxt/ui.
-// ---------------------------------------------------------------------------
-
 export async function setupConfigModule(_options: Record<string, never>, _nuxt: Nuxt): Promise<void> {
   throw new Error('not implemented');
-  // TODO: seed site.url/name, llms.*, header/seo/github from git, package.json, env.
-  // TODO: force i18n.strategy = 'prefix'. Filter locales to JSON + content folder.
-  // TODO: expose public.mcp.route. Honor parsed colorModeResolved for @nuxtjs/color-mode.
 }
 
 export async function setupRoutingModule(_options: Record<string, never>, _nuxt: Nuxt): Promise<void> {
   throw new Error('not implemented');
-  // TODO: register useDocusI18n. Inject landing route unless app/pages/index.vue exists.
 }
 
 export async function setupCssModule(_options: Record<string, never>, _nuxt: Nuxt): Promise<void> {
   throw new Error('not implemented');
-  // TODO: inject layer theme CSS + @source for layer components. Consumer owns Tailwind entry.
 }
 
 export async function setupAssistantModule(_options: AssistantModuleOptions, _nuxt: Nuxt): Promise<void> {
   throw new Error('not implemented');
-  // TODO: enabled ?? (AI_GATEWAY_API_KEY || VERCEL_OIDC_TOKEN). Default apiPath /__docs__/assistant.
 }
 
 export async function setupSkillsModule(_options: SkillsModuleOptions, _nuxt: Nuxt): Promise<void> {
@@ -747,7 +675,6 @@ export async function setupSkillsModule(_options: SkillsModuleOptions, _nuxt: Nu
 
 export async function setupNotFoundModule(_options: Record<string, never>, _nuxt: Nuxt): Promise<void> {
   throw new Error('not implemented');
-  // TODO: skip when docs.notFound === false. Markdown 404 with Vary: Accept.
 }
 
 export async function setupVercelMarkdownRewriteModule(_options: Record<string, never>, _nuxt: Nuxt): Promise<void> {
@@ -758,10 +685,6 @@ export async function setupVercelMarkdownRewriteModule(_options: Record<string, 
 export function layerModulePaths(): string[] {
   throw new Error('not implemented');
 }
-
-// ---------------------------------------------------------------------------
-// Page meta (Docus) and shell flags
-// ---------------------------------------------------------------------------
 
 declare module '#app' {
   interface PageMeta {
@@ -775,7 +698,6 @@ export function isDocsChrome(input: {
   fullpage: boolean;
 }): { aside: boolean; toc: boolean; breadcrumb: boolean; title: boolean; docsFooter: boolean } {
   throw new Error('not implemented');
-  // TODO: homepage (landing / index) never gets the aside grid. fullpage skips aside, toc, breadcrumb, title, docs footer.
 }
 
 export function provideNesting(ctx: NestingContext): void {

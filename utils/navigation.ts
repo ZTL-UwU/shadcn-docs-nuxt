@@ -50,9 +50,6 @@ export function flattenNavigation(items?: ContentNavigationItem[]): ContentNavig
   ) || [];
 }
 
-/**
- * Strip the locale prefix, then an optional `/docs` folder, matching Docus.
- */
 export function transformNavigation(
   data: ContentNavigationItem[],
   isI18nEnabled: boolean,
